@@ -1,0 +1,74 @@
+<body>
+<ion-content class="login-page" fullscreen>
+<!-- Header -->
+  <div class="login-header">
+    <div class="barra-superior"></div>
+    <div class="barra-inferior"></div>
+  </div>
+
+<!-- Titulo Inicio de Sesión -->
+  <div class="titulo-container">
+    <h1 class="titulo-texto">Inicio de Sesión</h1>
+    <div class="barra-texto"></div>
+  </div>
+
+<!-- Input Nombre -->
+  <div class="input-container">
+    <h1 class="titulos">Nombre</h1>
+    <ion-input 
+      placeholder="Ingrese su Nombre" 
+      [(ngModel)]="nombre"
+      (ionInput)="actualizarNombre($event)"
+      (keypress)="onKeyPressNombre($event)">
+    </ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineNombre}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="nombreError" style="color:red; font-size:12px">{{nombreError}}</p>
+
+<!-- Input Apellido -->
+  <div class="input-container">
+    <h1 class="titulos">Apellido</h1>
+    <ion-input placeholder="Ingrese su Apellido" [(ngModel)]="apellido"(ionInput)="actualizarApellido($event)"(keypress)="onKeyPressApellido($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineApellido}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="apellidoError" style="color:red; font-size:12px">{{apellidoError}}</p>
+
+<!-- Input Rut -->
+  <div class="input-container">
+    <h1 class="titulos">RUT</h1>
+    <ion-input placeholder="Ingrese RUT" [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
+
+<!-- Input Correo -->
+  <div class="input-container">
+    <h1 class="titulos">Correo Electrónico</h1>
+    <ion-input placeholder="Ingrese su Correo"[(ngModel)]="correo"(ionInput)="actualizarCorreo($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineCorreo}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="correoError" style="color:red; font-size:12px">{{correoError}}</p>
+
+<!-- Input Contraseña -->
+  <div class="input-container">
+    <h1 class="titulos">Contraseña</h1>
+    <ion-input type="password" [(ngModel)]="password"(input)="actualizarPassword($event)" placeholder="Ingrese su Contraseña"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineColorcontrasenia}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="passwordError">{{passwordError}}</p>
+
+<!-- Input Confirmar Contraseña -->
+<div class="input-container">
+  <h1 class="titulos">Confirmación de Contraseña</h1>
+  <ion-input type="password"placeholder="Repita su Contraseña"[(ngModel)]="confirmPassword"(ionInput)="actualizarConfirmPassword($event)"></ion-input>
+  <div class="underline" [ngStyle]="{'background-color': underlineConfirmPassword}"></div>
+</div>
+<p class="mensaje-error" *ngIf="confirmPasswordError" style="color:red; font-size:12px">{{confirmPasswordError}}</p>
+
+<!-- Boton Registro -->
+  <div class="botones">
+    <ion-button expand="block" class="btn-login" (click)="handleClick()">Registrarse</ion-button>
+  </div>
+
+</ion-content>
+</body>
