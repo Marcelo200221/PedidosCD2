@@ -1,0 +1,23 @@
+{
+    "gerente": [
+        "view_pedidos",
+        "view_usuarios",
+        "view_reportes",
+        "create_pedidos",
+        "edit_pedidos",
+        "delete_pedidos",
+        "view_facturar"
+    ],
+    "monitor": [
+        "view_pedidos",
+        "create_pedidos",
+        "edit_pedidos",
+        "delete_pedidos",
+        "view_facturar"
+    ],
+    "repartidor": [
+        "view_pedidos",
+        "create_pedidos",
+        "edit_pedidos"
+    ]
+}
