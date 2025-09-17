@@ -104,7 +104,7 @@ export class LoginPage implements OnInit {
 
     //Si todo esta bien
     console.log('Login válido:', this.rut, this.password);
-    alert('Inicio de sesión correcto ✅');
+    alert('Inicio de sesión correcto');
   }
 
   olvidar() {
