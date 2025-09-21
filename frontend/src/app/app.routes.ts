@@ -7,12 +7,6 @@ export const routes: Routes = [
   },
   {
     path: '',
-<<<<<<< HEAD
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-];
-=======
     redirectTo: 'splash', 
     pathMatch: 'full',
   },
@@ -33,4 +27,3 @@ export const routes: Routes = [
     loadComponent: () => import('./splash/splash.page').then( m => m.SplashPage)
   },
 ];
->>>>>>> d23bf4677673ad39805fb8a11a153cb77beb4245
