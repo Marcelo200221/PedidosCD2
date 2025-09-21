@@ -1,0 +1,84 @@
+<ion-content class="login-page">
+<!-- Header -->
+  <div class="login-header">
+    <div class="barra-superior"></div>
+  </div>
+
+<!-- Vista 1: Ingresar correo -->
+  <div *ngIf="!mostrarCodigo && !mostrarNuevaContrasenia">
+    <div class="titulo-container">
+      <h1 class="titulo-texto">Recuperar</h1>
+      <div class="barra-texto"></div>
+    </div>
+
+<!-- Input Correo -->
+    <div class="input-container">
+      <h1 class="titulos">Correo Electrónico</h1>
+      <ion-input placeholder="Ingrese su Correo"[(ngModel)]="correo"name="correo"(ionInput)="actualizarCorreo($event)"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineCorreo}"></div>
+    </div>
+    <p class="mensaje-error" *ngIf="correoError" style="color:red; font-size:12px">
+      {{correoError}}
+    </p>
+
+<!-- Boton Codigo -->
+    <div class="botones">
+      <ion-button expand="block" class="btn-login" (click)="enviarCodigo()">Enviar Código</ion-button>
+    </div>
+  </div>
+
+<!-- Vista 2: Ingresar código enviado -->
+  <div *ngIf="mostrarCodigo">
+    <div class="titulo-container">
+      <h1 class="titulo-texto">Inserte el código enviado</h1>
+      <div class="barra-texto"></div>
+    </div>
+
+<!-- Input Código -->
+  <div class="input-container">
+      <h1 class="titulos">Código</h1>
+      <ion-input placeholder="Ingrese el código" [(ngModel)]="codigo" name="codigo"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineCodigo}"></div>
+    </div>
+    <p class="mensaje-error" *ngIf="errorCodigo" style="color:red; font-size:12px">{{ errorCodigo }}</p>
+
+  <div class="botones">
+    <ion-button expand="block" class="btn-login" (click)="validarCodigo()"> Validar Código </ion-button>
+  </div>
+
+  </div>
+
+<!-- Vista 3: Ingresar nueva contraseña -->
+  <div *ngIf="mostrarNuevaContrasenia">
+    <div class="titulo-container">
+      <h1 class="titulo-texto">Nueva Contraseña</h1>
+      <div class="barra-texto"></div>
+    </div>
+
+<!-- Input Contraseña -->
+    <div class="input-container">
+      <h1 class="titulos">Contraseña</h1>
+      <ion-input type="password" [(ngModel)]="password"(input)="actualizarPassword($event)" placeholder="Ingrese su Contraseña"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineColorcontrasenia}"></div>
+    </div>
+    <p class="mensaje-error" *ngIf="passwordError">{{passwordError}}</p>
+
+<!-- Input Confirmar Contraseña -->
+  <div class="input-container">
+    <h1 class="titulos">Confirmación de Contraseña</h1>
+    <ion-input type="password"placeholder="Repita su Contraseña"[(ngModel)]="confirmPassword"(ionInput)="actualizarConfirmPassword($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineConfirmPassword}"></div>
+  </div>
+    <p class="mensaje-error" *ngIf="confirmPasswordError" style="color:red; font-size:12px">{{confirmPasswordError}}</p>
+
+<!-- Boton Contraseña nueva -->
+    <div class="botones">
+      <ion-button expand="block" class="btn-login" (click)="cambiarContrasenia()"> Cambiar Contraseña </ion-button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="olvido-footer">
+    <div class="barra-fsuperior"></div>
+  </div>
+</ion-content>

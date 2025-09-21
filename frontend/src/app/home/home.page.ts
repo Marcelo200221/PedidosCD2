@@ -1,26 +1,31 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../services/api.spec';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  standalone: true, 
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonButton 
+  ],
 })
+
 export class HomePage {
 
-  message: string='';
-  constructor(private apiService: ApiService) {}
+  constructor(private router: Router) {}
 
-  ionViewDidEnter(){
-    this.apiService.getHello().subscribe(
-      (data) => {
-        this.message = data.message;
-      },
-      (error) => {
-        console.error('Error: ', error);
-      }
-    );
+  Iralogin() {
+    this.router.navigate(['/login']);
   }
+
+  Iraregistro() {
+    this.router.navigate(['/registro']);
+  }
+
 }

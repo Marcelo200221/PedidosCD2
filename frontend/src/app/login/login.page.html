@@ -1,0 +1,43 @@
+<!-- Header -->
+  <ion-content class="login-page">
+  <div class="login-header">
+    <div class="barra-superior"></div>
+    <div class="barra-inferior"></div>
+  </div>
+
+<!-- Titulo Inicio de Sesión -->
+  <div class="titulo-container">
+    <h1 class="titulo-texto">Inicio de Sesión</h1>
+    <div class="barra-texto"></div>
+  </div>
+
+<!-- Input Rut -->
+  <div class="input-container">
+    <h1 class="titulo-rut">RUT</h1>
+    <ion-input placeholder="Ingrese RUT" [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
+
+<!-- Input Contraseña -->
+  <div class="input-container">
+    <h1 class="titulo-contraseña">Contraseña</h1>
+    <ion-input type="password" [(ngModel)]="password"(input)="actualizarPassword($event)" placeholder="Ingrese su Contraseña"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineColorcontrasenia}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="passwordError">{{passwordError}}</p>
+
+<!-- Olvido Contraseña -->
+  <div class="olvido-container" (click)="olvidar()">¿Olvido su Contraseña?</div>
+
+<!-- Boton Inicio sesion -->
+  <div class="botones">
+    <ion-button expand="block" class="btn-login" (click)="handleClick()">Iniciar Sesión</ion-button>
+  </div>
+
+<!-- Footer -->
+  <div class="login-footer">
+    <div class="barra-foot"></div>
+  </div>
+
+</ion-content>
