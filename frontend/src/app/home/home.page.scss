@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-=======
 .barra-superior {
   width: 100%;
   height: 40px;             
@@ -86,5 +58,4 @@ ion-input {
   --highlight-color-focused: transparent; /* Quita el color cuando el input tiene focus */
   --highlight-color-valid: transparent;   /* Quita el verde por defecto */
   --highlight-color-invalid: transparent; /* Quita el rojo por defecto */
->>>>>>> d23bf4677673ad39805fb8a11a153cb77beb4245
 }
