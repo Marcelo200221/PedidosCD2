@@ -1,0 +1,154 @@
+{
+  "hash": "ee855f67",
+  "configHash": "c0bb73bf",
+  "lockfileHash": "249fa554",
+  "browserHash": "f33c8ce8",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "aa95eab3",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "d091182f",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "d1d5f84f",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "80bbf71a",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "d86b5627",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "51ea00ea",
+      "needsInterop": false
+    },
+    "@ionic/angular/standalone": {
+      "src": "../../../../../../node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs",
+      "file": "@ionic_angular_standalone.js",
+      "fileHash": "5590a6ad",
+      "needsInterop": false
+    },
+    "zone.js": {
+      "src": "../../../../../../node_modules/zone.js/fesm2015/zone.js",
+      "file": "zone__js.js",
+      "fileHash": "db32876f",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "input-shims-DRWPUO7H": {
+      "file": "input-shims-DRWPUO7H.js"
+    },
+    "focus-visible-SRMJZUM5": {
+      "file": "focus-visible-SRMJZUM5.js"
+    },
+    "ios.transition-HFKAZTJM": {
+      "file": "ios__transition-HFKAZTJM.js"
+    },
+    "md.transition-NJ37WOUF": {
+      "file": "md__transition-NJ37WOUF.js"
+    },
+    "index3-26IM2PQW": {
+      "file": "index3-26IM2PQW.js"
+    },
+    "hardware-back-button-FE7SUCZS": {
+      "file": "hardware-back-button-FE7SUCZS.js"
+    },
+    "swipe-back-7W25ZFFB": {
+      "file": "swipe-back-7W25ZFFB.js"
+    },
+    "keyboard-KEPVVU3Q": {
+      "file": "keyboard-KEPVVU3Q.js"
+    },
+    "index7-BL4DNTZS": {
+      "file": "index7-BL4DNTZS.js"
+    },
+    "status-tap-T6QT3WMM": {
+      "file": "status-tap-T6QT3WMM.js"
+    },
+    "chunk-OLCYCN2L": {
+      "file": "chunk-OLCYCN2L.js"
+    },
+    "chunk-XFEM4A5H": {
+      "file": "chunk-XFEM4A5H.js"
+    },
+    "chunk-H2KP4XPX": {
+      "file": "chunk-H2KP4XPX.js"
+    },
+    "chunk-JL5RZDID": {
+      "file": "chunk-JL5RZDID.js"
+    },
+    "chunk-JZU6EQUV": {
+      "file": "chunk-JZU6EQUV.js"
+    },
+    "chunk-7TX3CDI3": {
+      "file": "chunk-7TX3CDI3.js"
+    },
+    "chunk-FSGIMOFN": {
+      "file": "chunk-FSGIMOFN.js"
+    },
+    "chunk-GLRQZDAX": {
+      "file": "chunk-GLRQZDAX.js"
+    },
+    "chunk-BTHYQ5FI": {
+      "file": "chunk-BTHYQ5FI.js"
+    },
+    "chunk-QEE7QVES": {
+      "file": "chunk-QEE7QVES.js"
+    },
+    "chunk-WJMTBH7K": {
+      "file": "chunk-WJMTBH7K.js"
+    },
+    "chunk-PHINHIIC": {
+      "file": "chunk-PHINHIIC.js"
+    },
+    "chunk-KU2B7TFN": {
+      "file": "chunk-KU2B7TFN.js"
+    },
+    "chunk-DVQC2WOX": {
+      "file": "chunk-DVQC2WOX.js"
+    },
+    "chunk-TFVXFSDB": {
+      "file": "chunk-TFVXFSDB.js"
+    },
+    "chunk-NF6J2HUL": {
+      "file": "chunk-NF6J2HUL.js"
+    },
+    "chunk-VF3GQKUY": {
+      "file": "chunk-VF3GQKUY.js"
+    },
+    "chunk-BKYBAYZJ": {
+      "file": "chunk-BKYBAYZJ.js"
+    },
+    "chunk-ZVXTDBKF": {
+      "file": "chunk-ZVXTDBKF.js"
+    },
+    "chunk-F5SLGJC4": {
+      "file": "chunk-F5SLGJC4.js"
+    },
+    "chunk-4DUSPO4K": {
+      "file": "chunk-4DUSPO4K.js"
+    },
+    "chunk-EXLSCMNP": {
+      "file": "chunk-EXLSCMNP.js"
+    }
+  }
+}
