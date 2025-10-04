@@ -1,0 +1,269 @@
+<ion-content class="login-page">
+
+  <!-- Header -->
+  <div *ngIf="!mostrarAgregarPedido && !mostrarAgregarProductos && !mostrarEliminarPedido && !mostrarEditarPedido" class="login-header">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">Pedidos</h1>
+        <ion-icon name="filter" class="icon-right"></ion-icon>
+      </div>
+      <ion-searchbar 
+        placeholder="Buscar..." 
+        [(ngModel)]="terminoBusqueda"
+        (ionInput)="buscarPedidos($event)"
+        (ionClear)="limpiarBusqueda()"
+        showClearButton="focus">
+      </ion-searchbar>
+    </div>
+  </div>
+
+  <!-- Header: Modo eliminar -->
+  <div *ngIf="mostrarEliminarPedido" class="login-header">
+    <div class="barra-superior barra-eliminar">
+      <div class="top-row">
+        <ion-icon name="close" class="icon-left" (click)="cancelarModoEliminar()"></ion-icon>
+        <h1 class="titulo-texto">Seleccionar para eliminar ({{ pedidosSeleccionados }})</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header: Modo editar -->
+  <div *ngIf="mostrarEditarPedido" class="login-header">
+    <div class="barra-superior barra-editar">
+      <div class="top-row">
+        <ion-icon name="close" class="icon-left" (click)="cancelarModoEditar()"></ion-icon>
+        <h1 class="titulo-texto">Seleccionar pedido a editar</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pedidos -->
+  <ion-list *ngIf="!mostrarAgregarPedido && !mostrarAgregarProductos && !mostrarEliminarPedido && !mostrarEditarPedido">
+    <div *ngIf="pedidosFiltrados.length === 0 && terminoBusqueda" class="mensaje-sin-resultados">
+      <ion-icon name="search" class="icon-sin-resultados"></ion-icon>
+      <p>No se encontraron pedidos con "{{ terminoBusqueda }}"</p>
+    </div>
+    
+    <div *ngIf="pedidosFiltrados.length === 0 && !terminoBusqueda" class="mensaje-sin-resultados">
+      <ion-icon name="document-text" class="icon-sin-resultados"></ion-icon>
+      <p>No hay pedidos registrados</p>
+    </div>
+    
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none">
+      <div class="pedido-postit">
+        <div class="postit-id">
+        {{ pedido.nombre }}
+        </div>
+        <div class="postit-header">{{ pedido.direccion }}</div>
+        <div class="postit-info">
+          <strong>Cliente:</strong> {{ pedido.cliente }}
+        </div>
+        <div class="postit-productos">
+          <div *ngFor="let prod of pedido.productos" class="postit-producto-item">
+            {{ prod.nombre }} - {{ prod.kg }} KG
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Pedidos: Modo eliminar -->
+  <ion-list *ngIf="mostrarEliminarPedido">
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
+      <div 
+        class="pedido-postit-seleccionable" 
+        [class.seleccionado-eliminar]="pedido.seleccionado"
+        (click)="toggleSeleccionPedido(pedido)">
+        
+        <ion-checkbox 
+          slot="start" 
+          class="postit-checkbox"
+          [(ngModel)]="pedido.seleccionado"
+          (click)="$event.stopPropagation()">
+        </ion-checkbox>
+        
+        <div class="postit-contenido">
+            <div class="postit-id-seleccionable-eliminar">
+              {{ pedido.nombre }}
+            </div>
+          <div class="postit-header-seleccionable">{{ pedido.direccion }}</div>
+          <div class="postit-info-seleccionable">
+            <strong>Cliente:</strong> {{ pedido.cliente }}
+          </div>
+          <div class="postit-productos-seleccionable">
+            <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+              {{ prod.nombre }} - {{ prod.kg }} KG
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Pedidos: Modo editar -->
+  <ion-list *ngIf="mostrarEditarPedido">
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
+      <div 
+        class="pedido-postit-seleccionable" 
+        [class.seleccionado-editar]="pedido.seleccionado"
+        (click)="toggleSeleccionPedidoEditar(pedido)">
+        
+        <ion-checkbox 
+          slot="start" 
+          class="postit-checkbox"
+          [(ngModel)]="pedido.seleccionado"
+          (click)="$event.stopPropagation()">
+        </ion-checkbox>
+        
+        <div class="postit-contenido">
+          <div class="postit-id-seleccionable">
+            {{ pedido.nombre }}
+          </div>
+          <div class="postit-header-seleccionable">{{ pedido.direccion }}</div>
+          <div class="postit-info-seleccionable">
+            <strong>Cliente:</strong> {{ pedido.cliente }}
+          </div>
+          <div class="postit-productos-seleccionable">
+            <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+              {{ prod.nombre }} - {{ prod.kg }} KG
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botones: Modo eliminar -->
+  <div *ngIf="mostrarEliminarPedido" class="botones-eliminar">
+    <ion-button expand="block" color="danger" (click)="eliminarPedidosSeleccionados()">
+      <ion-icon slot="start" name="trash-bin"></ion-icon>
+      Eliminar Seleccionados ({{ pedidosSeleccionados }})
+    </ion-button>
+    <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarModoEliminar()">Cancelar</ion-button>
+  </div>
+
+  <!-- Botones: Modo editar -->
+  <div *ngIf="mostrarEditarPedido" class="botones-editar">
+    <ion-button expand="block" class="editarConfirmarBoton" (click)="editarPedidoSeleccionado()" [disabled]="!hayPedidoSeleccionadoEditar">
+      <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+      Editar Pedido Seleccionado
+    </ion-button>
+    <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarModoEditar()">
+      Cancelar
+    </ion-button>
+  </div>
+
+  <!-- Agregar Pedido -->
+  <div *ngIf="mostrarAgregarPedido">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">{{ indiceEditando >= 0 ? 'Editar Pedido' : 'Nuevo Pedido' }}</h1>
+        <ion-icon name="filter" class="icon-right"></ion-icon>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <h1 class="titulos-small">Id del pedido</h1>
+      <ion-input 
+        placeholder="Ingrese el ID del pedido" 
+        [(ngModel)]="nuevoPedido.nombre"
+        (ionInput)="actualizarNombrePedido($event)">
+      </ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineNombrePedido}"></div>
+    </div>
+
+    <div class="input-container">
+      <h1 class="titulos-small">Cliente</h1>
+      <ion-input placeholder="Ingrese nombre del cliente" [(ngModel)]="nuevoPedido.cliente"(ionInput)="actualizarCliente($event)"(keypress)="onKeyPressCliente($event)"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineCliente}"></div>
+    </div>
+    <p class="mensaje-error" *ngIf="clienteError">{{clienteError}}</p>
+
+    <div class="input-container">
+      <h1 class="titulos-small">Dirección a enviar</h1>
+      <ion-input placeholder="Ingrese dirección" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
+    </div>
+
+    <div class="boton-container">
+      <ion-button expand="block" class="guardarPedidoBoton" (click)="abrirAgregarProducto()">Continuar a Productos</ion-button>
+      <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarAgregar()">Cancelar</ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="mostrarAgregarProductos">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">{{ indiceEditando >= 0 ? 'Editar Productos' : 'Agregar Productos' }}</h1>
+        <ion-icon name="filter" class="icon-right"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Agregar Productos -->
+    <div *ngFor="let producto of productosInputs; let i = index" class="producto-grupo">
+      <div class="producto-header">
+        <h1 class="titulos">Producto {{ i + 1 }} <ion-icon *ngIf="productosInputs.length > 1" name="remove-circle" class="icon-eliminar" (click)="eliminarCampoProducto(i)"></ion-icon></h1>
+      </div>
+
+      <div class="input-container">
+        <h1 class="titulos-small">Nombre del Producto</h1>
+        <ion-input 
+          placeholder="Ingrese nombre del producto" 
+          [(ngModel)]="producto.nombre"
+          (ionInput)="actualizarNombreProducto($event, i)"
+          (keypress)="onKeyPressProducto($event)">
+        </ion-input>
+        <div class="underline" [ngStyle]="{'background-color': underlinesProductosNombre[i] || '#cccccc'}"></div>
+      </div>
+      <p class="mensaje-error" *ngIf="productosErrors[i]">{{productosErrors[i]}}</p>
+
+      <div class="input-container">
+        <h1 class="titulos-small">KG del Producto</h1>
+        <ion-input 
+          type="number" 
+          placeholder="Ingrese KG" 
+          [(ngModel)]="producto.kg" 
+          (ionInput)="actualizarKGProducto($event, i)"
+          min="0"
+          step="0.01">
+        </ion-input>
+        <div class="underline" [ngStyle]="{'background-color': underlinesProductosKG[i] || '#cccccc'}"></div>
+      </div>
+    </div>
+
+    <div class="contAgregar">
+      <ion-button expand="block" class="agregarProductoBoton" (click)="agregarCampoProducto()">
+        <ion-icon slot="start" class="Prodicon" name="add-circle"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="boton-container">
+      <ion-button expand="block" class="guardarPedidoBoton" (click)="guardarPedido()">
+        {{ indiceEditando >= 0 ? 'Actualizar Pedido' : 'Guardar Pedido' }}
+      </ion-button>
+      <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarAgregar()">Cancelar</ion-button>
+    </div>
+  </div>
+
+  <!-- Boton inferior -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="activarModoEditar()">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="activarModoEliminar()">
+        <ion-icon name="remove-circle"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="abrirAgregarPedido()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
