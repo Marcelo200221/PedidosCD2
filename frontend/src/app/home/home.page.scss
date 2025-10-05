@@ -1,0 +1,61 @@
+.barra-superior {
+  width: 100%;
+  height: 40px;             
+  background-color: #6a0d0d; 
+}
+
+.barra-inferior {
+  width: 55%;             
+  height: 40px;              
+  background-color: #97201d; 
+  border-bottom-right-radius: 15px; 
+}
+
+.logo-container {
+  margin-top: 25%;
+  margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.logo{
+    width: 80%;
+}
+
+.botones{
+  height: 100%;            
+  display: flex;             
+  flex-direction: column;   
+  justify-content: center;  
+  align-items: center;     
+  gap: 5px;
+}
+
+.btn-login{
+ width: 75%;
+ height: 40px;
+ font-size: 90%;
+ --background: #97201d;
+ --color: #f8f7f6;
+ --border-radius: 15px;    
+ font-family: 'Catamaran', sans-serif;
+ font-weight: bold;
+}
+
+.btn-registro{
+ width: 75%;
+ height: 40px;
+ font-size: 90%;
+ --color: #97201d;
+ --border-color: #97201d; 
+ --border-radius: 15px;    
+ font-family: 'Catamaran', sans-serif;
+ font-weight: bold;
+}
+
+ion-input {
+  --highlight-color-focused: transparent; /* Quita el color cuando el input tiene focus */
+  --highlight-color-valid: transparent;   /* Quita el verde por defecto */
+  --highlight-color-invalid: transparent; /* Quita el rojo por defecto */
+}

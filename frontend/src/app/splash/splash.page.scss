@@ -1,0 +1,25 @@
+ion-content.splash-screen {
+  --background: #f8f7f6; 
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background-color: #f8f7f6;
+  transition: opacity 1s ease, transform 1s ease; 
+}
+
+.splash-container img {
+    width: 100%; 
+    margin-bottom: 20px;
+}
+
+/*Animacion de salida*/
+.fade-out {
+  opacity: 0;
+  transform: scale(1.1);
+}
