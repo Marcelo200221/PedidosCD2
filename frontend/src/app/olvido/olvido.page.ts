@@ -56,7 +56,6 @@ export class OlvidoPage implements OnInit {
   }
 }
 
-
   //Funcion de envio de codigo
   enviarCodigo() {
      if (!this.correo) {
