@@ -6,6 +6,8 @@ backend/*/*/__pycache__/
 *.sqlite3
 *.pyc
 
+env_pedidoscd/
+
 node_modules/
 npm-debug.log*
 yarn-debug.log*

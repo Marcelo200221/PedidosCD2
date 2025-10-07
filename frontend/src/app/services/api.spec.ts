@@ -56,7 +56,7 @@ export class ApiService{
       if(access){
         alert("Inicio de sesion exitoso")
         localStorage.setItem('auth_token', access)
-        this.router.navigate(['/home']);
+        this.router.navigate(['/hub']);
       }
     })
   }

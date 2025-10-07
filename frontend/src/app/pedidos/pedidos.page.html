@@ -196,7 +196,7 @@
     </div>
 
     <div class="seccion-pedido">
-      <h2 class="titulo-seccion">Información del Pedido</h2>
+      <h2 class="titulo-seccion">InformaciÃ³n del Pedido</h2>
       <div class="input-container">
         <h1 class="titulos-small">Nombre del pedido</h1>
         <ion-input placeholder="Ingrese nombre del pedido" [(ngModel)]="nuevoPedido.nombre"(ionInput)="actualizarNombrePedido($event)">
@@ -213,8 +213,8 @@
       <p class="mensaje-error" *ngIf="clienteError">{{clienteError}}</p>
 
       <div class="input-container">
-        <h1 class="titulos-small">Dirección a enviar</h1>
-        <ion-input placeholder="Ingrese dirección" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+        <h1 class="titulos-small">DirecciÃ³n a enviar</h1>
+        <ion-input placeholder="Ingrese direcciÃ³n" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
         <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
       </div>
     </div>
@@ -271,7 +271,7 @@
     </div>
   </div>
 
-  <!-- Asignación de pesos -->
+  <!-- AsignaciÃ³n de pesos -->
   <div *ngIf="pedidoParaPesos" class="formulario-pesos">
     <div class="barra-superior">
       <div class="top-row">

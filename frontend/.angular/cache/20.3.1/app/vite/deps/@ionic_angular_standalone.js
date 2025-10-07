@@ -1,4 +1,12 @@
 import {
+  KEYBOARD_DID_OPEN
+} from "./chunk-6Q6C7NXY.js";
+import {
+  Keyboard,
+  KeyboardResize,
+  getCapacitor
+} from "./chunk-OBNI42HK.js";
+import {
   ION_CONTENT_CLASS_SELECTOR,
   ION_CONTENT_ELEMENT_SELECTOR,
   disableContentScrollY,
@@ -14,10 +22,10 @@ import {
 } from "./chunk-BT7IIGPC.js";
 import {
   iosTransitionAnimation
-} from "./chunk-ZUG5KN4O.js";
+} from "./chunk-57DJTJGX.js";
 import {
   mdTransitionAnimation
-} from "./chunk-4ECMH34L.js";
+} from "./chunk-TQLEGIFX.js";
 import {
   LIFECYCLE_DID_ENTER,
   LIFECYCLE_DID_LEAVE,
@@ -30,7 +38,7 @@ import {
   setPageHidden,
   transition,
   waitForMount
-} from "./chunk-GGL6JZC5.js";
+} from "./chunk-ARUNE6M7.js";
 import {
   Build,
   Fragment,
@@ -50,23 +58,14 @@ import {
   MENU_BACK_BUTTON_PRIORITY,
   OVERLAY_BACK_BUTTON_PRIORITY,
   shouldUseCloseWatcher
-} from "./chunk-ZV3RRYDM.js";
+} from "./chunk-I4BKJ77S.js";
+import {
+  doc,
+  win
+} from "./chunk-QEE7QVES.js";
 import {
   isRTL
 } from "./chunk-CPZP4QFR.js";
-import {
-  BACKDROP_NO_SCROLL,
-  GESTURE_CONTROLLER,
-  createGesture
-} from "./chunk-PRLH52G5.js";
-import {
-  KEYBOARD_DID_OPEN
-} from "./chunk-6Q6C7NXY.js";
-import {
-  Keyboard,
-  KeyboardResize,
-  getCapacitor
-} from "./chunk-OBNI42HK.js";
 import {
   addEventListener,
   assert,
@@ -88,6 +87,11 @@ import {
   transitionEndAsync
 } from "./chunk-7XU6V3I6.js";
 import {
+  BACKDROP_NO_SCROLL,
+  GESTURE_CONTROLLER,
+  createGesture
+} from "./chunk-PRLH52G5.js";
+import {
   config,
   configFromSession,
   configFromURL,
@@ -95,10 +99,6 @@ import {
   printIonWarning,
   saveConfig
 } from "./chunk-MF64L6EH.js";
-import {
-  doc,
-  win
-} from "./chunk-QEE7QVES.js";
 import {
   ActivatedRoute,
   ChildrenOutletContexts,
@@ -4772,7 +4772,7 @@ var RouterOutlet = proxyCustomElement((_a8 = class extends H {
           this.swipeHandler.onStart();
         }
       }, "onStart");
-      this.gesture = (yield import("./swipe-back-TDJNIMTO.js")).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), (step) => {
+      this.gesture = (yield import("./swipe-back-SZHFRUEN.js")).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), (step) => {
         var _a190;
         return (_a190 = this.ani) === null || _a190 === void 0 ? void 0 : _a190.progressStep(step);
       }, (shouldComplete, step, dur) => {
@@ -8913,16 +8913,16 @@ var App = proxyCustomElement((_a16 = class extends H {
       rIC(() => __async(this, null, function* () {
         const isHybrid2 = isPlatform(window, "hybrid");
         if (!config.getBoolean("_testing")) {
-          import("./index7-E37U6SKT.js").then((module) => module.startTapClick(config));
+          import("./index7-NQCGMKA4.js").then((module) => module.startTapClick(config));
         }
         if (config.getBoolean("statusTap", isHybrid2)) {
           import("./status-tap-JBGZFXDR.js").then((module) => module.startStatusTap());
         }
         if (config.getBoolean("inputShims", needInputShims())) {
           const platform = isPlatform(window, "ios") ? "ios" : "android";
-          import("./input-shims-Z3VGHK67.js").then((module) => module.startInputShims(config, platform));
+          import("./input-shims-NRDOIM4X.js").then((module) => module.startInputShims(config, platform));
         }
-        const hardwareBackButtonModule = yield import("./hardware-back-button-BNBVFBAE.js");
+        const hardwareBackButtonModule = yield import("./hardware-back-button-KJBZLIJX.js");
         const supportsHardwareBackButtonEvents = isHybrid2 || shouldUseCloseWatcher();
         if (config.getBoolean("hardwareBackButton", supportsHardwareBackButtonEvents)) {
           hardwareBackButtonModule.startHardwareBackButton();
@@ -20528,7 +20528,7 @@ var Nav = proxyCustomElement((_a87 = class extends H {
     return __async(this, null, function* () {
       this.didLoad = true;
       this.rootChanged();
-      this.gesture = (yield import("./swipe-back-TDJNIMTO.js")).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
+      this.gesture = (yield import("./swipe-back-SZHFRUEN.js")).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
       this.swipeGestureChanged();
     });
   }
