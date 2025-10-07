@@ -18,7 +18,6 @@
   <div *ngIf="mostrarEliminarPedido" class="login-header">
     <div class="barra-superior barra-eliminar">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Seleccionar para eliminar ({{ pedidosSeleccionados }})</h1>
       </div>
     </div>
@@ -28,7 +27,6 @@
   <div *ngIf="mostrarEditarPedido" class="login-header">
     <div class="barra-superior barra-editar">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Seleccionar pedido a editar</h1>
       </div>
     </div>
@@ -38,7 +36,6 @@
   <div *ngIf="mostrarAsignarPesos && !pedidoParaPesos" class="login-header">
     <div class="barra-superior barra-pesos">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Seleccione para asignar pesos</h1>
       </div>
     </div>
@@ -275,7 +272,6 @@
   <div *ngIf="pedidoParaPesos" class="formulario-pesos">
     <div class="barra-superior">
       <div class="top-row">
-        <ion-icon name="arrow-back" class="icon-left" (click)="cancelarAsignacionPesos()"></ion-icon>
         <h1 class="titulo-texto">Asignar Pesos</h1>
       </div>
     </div>
