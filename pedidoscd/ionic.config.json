@@ -1,7 +1,0 @@
-{
-  "name": "pedidoscd",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}

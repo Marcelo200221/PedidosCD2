@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.spec';
+
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput } from '@ionic/angular/standalone';
 
 @Component({
@@ -13,7 +15,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput } from
 })
 export class OlvidoPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private api: ApiService) { }
 
   //Definicion de Variables
   correo: string = '';
@@ -63,6 +65,7 @@ export class OlvidoPage implements OnInit {
       }
 
       //Si el correo es válido
+      this.api.recuperarPassword(this.correo);
       console.log('Código enviado a: ' + this.correo);
       alert('Codigo enviado a: ' + this.correo);
       this.mostrarCodigo = true; 
@@ -82,9 +85,10 @@ validarCodigo() {
     return;
   }
 
-  if (this.codigo === '1234') {
+  if (this.codigo.length === 6) {
     this.underlineCodigo = '#28a745';
     this.errorCodigo = '';
+    this.api.condfirmarRecuperacion(this.codigo)
     alert('Codigo válido');
     this.mostrarNuevaContrasenia = true;
     this.mostrarCodigo = false;
@@ -141,6 +145,7 @@ validarCodigo() {
       alert('Por favor, corrige los errores antes de continuar.'); 
       return;
     }     
+    this.api.cambiarPassword(this.codigo, this.password, this.confirmPassword)
     alert('Contraseña cambiada exitosamente.');
     this.mostrarNuevaContrasenia = false;
     this.router.navigate(['/login']);

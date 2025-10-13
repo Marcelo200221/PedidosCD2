@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
+import { ApiService } from '../services/api.spec';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/angular/standalone';
 
 @Component({
@@ -215,9 +217,11 @@ export class RegistroPage implements OnInit {
   alert('Registro completado correctamente');
 }
 
-  constructor() { }
+  constructor(private api: ApiService) { }
+
 
   ngOnInit() {
+    this.api.getUsuarios()
   }
 
 }
