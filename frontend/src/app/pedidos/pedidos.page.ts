@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, IonList, IonItem, IonLabel, IonIcon, IonInput, 
-  IonCheckbox, IonSelect, IonSelectOption} from '@ionic/angular/standalone';
+  IonCheckbox, IonSelect, IonSelectOption, IonSpinner} from '@ionic/angular/standalone';
+
+import { ApiService } from '../services/api.spec';
 
 import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter,  menu,  close, trashBin, checkmarkCircle, search,
@@ -10,12 +12,14 @@ import { chevronUpCircle, pencil, addCircle, removeCircle, filter,  menu,  close
 
 //Interfaces
 export interface Producto {
+  id: number;
   nombre: string;
   cajas: number | null;
   pesos?: number[]; 
 }
 
 export interface Pedido {
+  id: number;
   nombre: string;
   cliente: string;
   direccion: string;
@@ -38,7 +42,7 @@ addIcons({
     FormsModule,
     CommonModule,
     IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton,
-    IonList, IonItem, IonLabel, IonIcon, IonInput, IonCheckbox, IonSelect, IonSelectOption
+    IonList, IonItem, IonLabel, IonIcon, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonSpinner
   ]
 })
 export class PedidosPage implements OnInit {
@@ -47,13 +51,18 @@ export class PedidosPage implements OnInit {
   //Arrays de datos principales
   pedidos: Pedido[] = [];
   pedidosFiltrados: Pedido[] = [];
-  productosInputs: Producto[] = [{ nombre: '', cajas: null }];
+  productosInputs: Producto[] = [{ id: 0,nombre: '', cajas: null }];
+
+  pedidoEditandoId?: number;
   
+  productosDisponibles: any[] = [];
+
   //Variable de busqueda
   terminoBusqueda: string = '';
   
   //Variables de nuevo pedido
   nuevoPedido: Pedido = {
+    id: 0,
     nombre: '',
     cliente: '',
     direccion: '',
@@ -76,14 +85,6 @@ export class PedidosPage implements OnInit {
   pedidoDetalle: Pedido | null = null;
   pesosTemporales: { [productoIndex: number]: number[] } = {};
   
-  //Carnes disponibles
-  tiposCarne: string[] = [
-    'Posta negra',
-    'Posta rosada',
-    'Filete de pollo',
-    'Pulpa de cerdo'
-  ];
-  
   //Variables de color
   underlineNombrePedido: string = '#cccccc';
   underlineCliente: string = '#cccccc';
@@ -97,10 +98,60 @@ export class PedidosPage implements OnInit {
   productosErrors: string[] = [''];
   pesosErrors: { [productoIndex: number]: string[] } = {};
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.pedidosFiltrados = [...this.pedidos];
+    await this.cargarProductosDisponibles();
+    await this.cargarPedidosDesdeBackend();
+  }
+
+  async cargarPedidosDesdeBackend(){
+    try{
+      const pedidosBackend = await this.api.listarPedidos();
+      console.log('Pedidos cargados desde backend:', pedidosBackend);
+
+      this.pedidos = pedidosBackend.map((pedido: any) => this.mapearPedidoBackend(pedido));
+      this.pedidosFiltrados = [...this.pedidos];
+
+      console.log('Pedidos transformados:', this.pedidos);
+    } catch(error) {
+      console.error('Erro al cargar pedidos:', error);
+      alert('Error al cargar los pedidos');
+    }
+  }
+
+  private mapearPedidoBackend(pedidosBackend: any): Pedido {
+    const productos: Producto[] = pedidosBackend.lineas.map((linea: any) => {
+      const pesos = linea.cajas ? linea.cajas.map((caja: any) => caja.peso) : [];
+
+      return {
+        id: linea.producto.id,
+        nombre: linea.producto.nombre,
+        cajas: linea.cantidad_cajas,
+        pesos: pesos.length > 0 ? pesos : undefined
+      };
+    });
+
+    return {
+      id: pedidosBackend.id,
+      nombre: `pedido ${pedidosBackend.id}`,
+      cliente: 'Cliente por defecto',
+      direccion: pedidosBackend.direccion,
+      productos: productos,
+      seleccionado: false
+    };
+  }
+
+
+  async cargarProductosDisponibles() {
+    try{
+      this.productosDisponibles = await this.api.productos();
+      console.log('Productos cargados: ', this.productosDisponibles)
+    } catch(error){
+      console.error("Error al cargar productos: ", error);
+      alert("Error al cargar productos disponibles");
+    }
   }
 
   //Funcion de busqueda
@@ -169,7 +220,14 @@ export class PedidosPage implements OnInit {
 
   //Validacion: Producto
   actualizarNombreProducto(event: any, index: number) {
-    this.productosInputs[index].nombre = event.target.value;
+    const productoSeleccionado = this.productosDisponibles.find(
+      prod => prod.id === parseInt(event.detail.value)
+    );
+
+    if(productoSeleccionado){
+      this.productosInputs[index].id = productoSeleccionado.id;
+      this.productosInputs[index].nombre = productoSeleccionado.nombre;
+    }
     
     while (this.productosErrors.length <= index) {
       this.productosErrors.push('');
@@ -284,7 +342,7 @@ export class PedidosPage implements OnInit {
   }
 
   agregarCampoProducto() {
-    this.productosInputs.push({ nombre: '', cajas: null });
+    this.productosInputs.push({id: 0, nombre: '', cajas: null });
     this.productosErrors.push('');
     this.underlinesProductosNombre.push('#cccccc');
     this.underlinesProductosCajas.push('#cccccc');
@@ -301,7 +359,7 @@ export class PedidosPage implements OnInit {
     }
   }
 
-  guardarPedido() {
+  async guardarPedido() {
     if (!this.nuevoPedido.nombre.trim()) {
       alert('Ingresa el nombre del pedido');
       return;
@@ -327,39 +385,60 @@ export class PedidosPage implements OnInit {
       return;
     }
 
-    this.nuevoPedido.productos = productosValidos.map(prod => ({
-      nombre: prod.nombre,
-      cajas: Number(prod.cajas)
-    }));
-
-    if (this.indiceEditando >= 0) {
-      this.pedidos[this.indiceEditando] = { ...this.nuevoPedido, seleccionado: false };
-      alert('Pedido actualizado correctamente');
-      this.indiceEditando = -1;
-    } else {
-      this.pedidos.push({ ...this.nuevoPedido, seleccionado: false });
+    const payload = {
+      direccion: this.nuevoPedido.direccion,
+      fecha_entrega: new Date().toISOString().split('T')[0],
+      lineas: productosValidos.map(prod => ({
+        producto_id: prod.id,
+        cajas: Array.from({length: prod.cajas || 0}, () => ({
+          peso: 0,
+          etiqueta: ''
+        }))
+      }))
     }
-    
-    this.pedidosFiltrados = [...this.pedidos];
-    
-    this.nuevoPedido = { nombre: '', cliente: '', direccion: '', productos: [] };
-    this.productosInputs = [{ nombre: '', cajas: null }];
-    this.mostrarAgregarPedido = false;
-    
-    this.underlineNombrePedido = '#cccccc';
-    this.underlineCliente = '#cccccc';
-    this.underlineDireccion = '#cccccc';
-    this.underlinesProductosNombre = ['#cccccc'];
-    this.underlinesProductosCajas = ['#cccccc'];
-    this.clienteError = '';
-    this.productosErrors = [''];
+
+    try{
+      if(this.pedidoEditandoId){
+        console.log("Editando pedido con ID:", this.pedidoEditandoId);
+        const res = await this.api.editarPedido(this.pedidoEditandoId, payload);
+        console.log("Pedido editado exitosamente: ", res);
+        alert("Pedido editado con éxito");
+      }else{
+        console.log("Enviando pedido al backend:", payload);
+        const res = await this.api.crearPedido(
+          payload.direccion,
+          payload.fecha_entrega,
+          payload.lineas
+        );
+
+        console.log("Pedido creado exitosamente: ", res );
+        alert("Pedido creado con exito");
+
+        await this.cargarPedidosDesdeBackend();
+
+        this.nuevoPedido = { id: 0, nombre: '', cliente: '', direccion: '', productos: [] };
+        this.productosInputs = [{ id: 0, nombre: '', cajas: null }];
+        this.mostrarAgregarPedido = false;
+        
+        this.underlineNombrePedido = '#cccccc';
+        this.underlineCliente = '#cccccc';
+        this.underlineDireccion = '#cccccc';
+        this.underlinesProductosNombre = ['#cccccc'];
+        this.underlinesProductosCajas = ['#cccccc'];
+        this.clienteError = '';
+        this.productosErrors = [''];
+      }
+    } catch(error) {
+      console.error("Error al crear pedido:", error);
+      alert("Error al crear el pedido");
+    }
   }
 
   cancelarAgregar() {
     this.mostrarAgregarPedido = false;
     this.mostrarEditarPedido = false;
-    this.nuevoPedido = { nombre: '', cliente: '', direccion: '', productos: [] };
-    this.productosInputs = [{ nombre: '', cajas: null }];
+    this.nuevoPedido = {id: 0, nombre: '', cliente: '', direccion: '', productos: [] };
+    this.productosInputs = [{id: 0,  nombre: '', cajas: null }];
     this.indiceEditando = -1;
     
     this.underlineNombrePedido = '#cccccc';
@@ -396,15 +475,16 @@ export class PedidosPage implements OnInit {
     pedido.seleccionado = !pedido.seleccionado;
   }
 
-  eliminarPedidosSeleccionados() {
-    const seleccionados = this.pedidos.filter(p => p.seleccionado).length;
+  async eliminarPedidosSeleccionados() {
+    const seleccionados = this.pedidos.filter(p => p.seleccionado);
     
-    if (seleccionados === 0) {
+    if (seleccionados.length === 0) {
       alert('Selecciona al menos un pedido para eliminar');
       return;
     }
 
     if (confirm(`¿Estás seguro de eliminar ${seleccionados} pedido(s)?`)) {
+      const ids = seleccionados.map(pedido => pedido.id);
       this.pedidos = this.pedidos.filter(p => !p.seleccionado);
       this.pedidosFiltrados = this.pedidos.filter(pedido => {
         if (!this.terminoBusqueda) return true;
@@ -416,7 +496,8 @@ export class PedidosPage implements OnInit {
                pedido.productos.some(prod => prod.nombre.toLowerCase().includes(termino));
       });
       this.mostrarEliminarPedido = false;
-      alert(`${seleccionados} pedido(s) eliminado(s) correctamente`);
+      await this.api.eliminarPedidos(ids);
+      alert(`${seleccionados.length} pedido(s) eliminado(s) correctamente`);
     }
   }
   get pedidosSeleccionados(): number {
@@ -456,7 +537,7 @@ export class PedidosPage implements OnInit {
     pedido.seleccionado = !pedido.seleccionado;
   }
 
-  editarPedidoSeleccionado() {
+  async editarPedidoSeleccionado() {
     const pedidoSeleccionado = this.pedidos.find(p => p.seleccionado);
     
     if (!pedidoSeleccionado) {
@@ -464,8 +545,10 @@ export class PedidosPage implements OnInit {
       return;
     }
 
+    this.pedidoEditandoId = pedidoSeleccionado.id;
     this.indiceEditando = this.pedidos.findIndex(p => p.seleccionado);
     this.nuevoPedido = {
+      id: pedidoSeleccionado.id,
       nombre: pedidoSeleccionado.nombre,
       cliente: pedidoSeleccionado.cliente,
       direccion: pedidoSeleccionado.direccion,
@@ -473,6 +556,7 @@ export class PedidosPage implements OnInit {
     };
 
     this.productosInputs = pedidoSeleccionado.productos.map(prod => ({
+      id: prod.id,
       nombre: prod.nombre,
       cajas: prod.cajas,
       pesos: prod.pesos ? [...prod.pesos] : undefined
@@ -488,6 +572,7 @@ export class PedidosPage implements OnInit {
 
     this.mostrarEditarPedido = false;
     this.mostrarAgregarPedido = true;
+
   }
 
   get hayPedidoSeleccionadoEditar(): boolean {
@@ -594,8 +679,13 @@ export class PedidosPage implements OnInit {
     }
   }
 
-  guardarPesos() {
-    if (!this.pedidoParaPesos) return;
+  async guardarPesos() {
+    if (!this.pedidoParaPesos || !this.pedidoParaPesos.id){ 
+      alert('No se puede guardar: Pedido sin ID');
+      return;
+    }
+
+    const pedidoId = this.pedidoParaPesos.id;
 
     for (let i = 0; i < this.pedidoParaPesos.productos.length; i++) {
       const pesos = this.pesosTemporales[i];
@@ -613,20 +703,33 @@ export class PedidosPage implements OnInit {
         }
       }
     }
+    try{
+      const productosConPesos = this.pedidoParaPesos.productos.map((prod, index) => ({
+        id: prod.id,
+        pesos: this.pesosTemporales[index]
+      }))
+      await this.api.guardarPesosPedido(pedidoId, this.pedidoParaPesos, productosConPesos);
+    
 
-    this.pedidoParaPesos.productos.forEach((prod, index) => {
-      prod.pesos = this.pesosTemporales[index];
-    });
+      this.pedidoParaPesos.productos.forEach((prod, index) => {
+        prod.pesos = this.pesosTemporales[index];
+      });
 
-    this.pedidos[this.indiceParaPesos] = this.pedidoParaPesos;
-    this.pedidosFiltrados = [...this.pedidos];
+      this.pedidos[this.indiceParaPesos] = this.pedidoParaPesos;
+      this.pedidosFiltrados = [...this.pedidos];
 
-    alert('Pesos asignados correctamente');
+      this.pedidoEditandoId = this.pedidoParaPesos.id
 
-    this.pedidoParaPesos = null;
-    this.indiceParaPesos = -1;
-    this.pesosTemporales = {};
-    this.mostrarAsignarPesos = false;
+      alert('Pesos asignados correctamente');
+
+      this.pedidoParaPesos = null;
+      this.indiceParaPesos = -1;
+      this.pesosTemporales = {};
+      this.mostrarAsignarPesos = false;
+    } catch(error) {
+      console.error('Error al guardar pesos', error);
+      alert('Error al guardar los pesos. Por favor, intenta nuevamente.')
+    }
   }
 
   cancelarAsignacionPesos() {

@@ -37,10 +37,21 @@ class CustomLoginSerializer(LoginSerializer):
                raise serializers.ValidationError("Debe proporcionar rut y contraseña.")
           
 class UserRegistrationSerializer(RegisterSerializer):
+    username= None
     first_name = serializers.CharField(required=True)
     last_name = serializers.CharField(required=True)
     rut = serializers.CharField(required=True)
     email = serializers.EmailField(required=True)
+
+    def validate_rut(self, value):
+        if Usuario.objects.filter(rut=value).exists():
+            raise serializers.ValidationError("Este RUT ya está registrado")
+        return value
+
+    def validate_email(self, value):
+        if Usuario.objects.filter(email=value).exists():
+            raise serializers.ValidationError("Este email ya está registrado")
+        return value
 
     def get_cleaned_data(self):
         data = super().get_cleaned_data()
@@ -50,12 +61,15 @@ class UserRegistrationSerializer(RegisterSerializer):
         data['email'] = self.validated_data.get('email', '')
         return data
     def save(self, request):
-        user = super().save(request)
-        user.first_name = self.cleaned_data.get('first_name')
-        user.last_name = self.cleaned_data.get('last_name')
-        user.rut = self.cleaned_data.get('rut')
-        user.email = self.cleaned_data.get('email')
-        user.save()
+        cleaned_data = self.get_cleaned_data()
+        user = Usuario.objects.create_user(
+            rut=cleaned_data['rut'],
+            username=cleaned_data['rut'],  
+            email=cleaned_data['email'],
+            first_name=cleaned_data['first_name'],
+            last_name=cleaned_data['last_name'],
+            password=cleaned_data['password1']
+        )
         return user
     
 class JWTSerializer(serializers.Serializer):
@@ -78,5 +92,10 @@ class JWTSerializer(serializers.Serializer):
             'refresh': str(refresh),
             'access': str(refresh.access_token)
         }
+    
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = ['id', 'rut', 'email', 'first_name', 'last_name', 'username']
     
 

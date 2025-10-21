@@ -7,6 +7,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from usuarios.models import Usuario
+from usuarios.serializer import UsuarioSerializer
 from api.models import PasswordResetCode
 from api.serializers import PasswordResetConfirmSerializer, PasswordResetRequestSerielizer, PasswordChangeConfirmSerializer
 
@@ -48,8 +49,6 @@ def password_reset_confirm(request):
         try:
             reset_code = PasswordResetCode.objects.get(code=code, is_used=False)
             if reset_code.is_valid():
-                reset_code.is_used = True
-                reset_code.save()
                 return Response({'message': 'Codigo valido, se procede al cambio de contraseña'}, status=status.HTTP_200_OK)
             return Response({'error': 'Codigo expirado'}, status=status.HTTP_400_BAD_REQUEST)
         except PasswordResetCode.DoesNotExist:
@@ -73,10 +72,36 @@ def password_reset_change(request):
                 reset_code.is_used = True
                 reset_code.save()
                 return Response({'message': 'Contraseña actualizada exitosamente'}, status=status.HTTP_200_OK)
-            return Response({'error': 'Código expirado'}, stauts=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Código expirado'}, status=status.HTTP_400_BAD_REQUEST)  # Corregido: stauts -> status
         except PasswordResetCode.DoesNotExist:
             return Response({'error': 'Código no valido'}, status=status.HTTP_404_NOT_FOUND)
+    
+    # IMPORTANTE: Mostrar los errores del serializer
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def usuario_lista(request):
+    rut = request.query_params.get("rut", None)
+
+    if rut:
+        try:
+            usuario = Usuario.objects.get(rut=rut)
+            serializer = UsuarioSerializer(usuario)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Usuario.DoesNotExist:
+            return Response({'exists': False}, status=status.HTTP_404_NOT_FOUND)      
+
+    else:
+        usuarios = Usuario.objects.all()
+        serializer = UsuarioSerializer(usuarios, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def lista_usuarios(request):
+    usuarios = Usuario.objects.all()
+    serializer = UsuarioSerializer(usuarios, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 

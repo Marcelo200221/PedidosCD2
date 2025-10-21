@@ -14,6 +14,11 @@
     </div>
   </div>
 
+  <div *ngIf="productosDisponibles.length === 0 && !mostrarAgregarPedido" class="mensaje-carga">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando productos...</p>
+  </div>
+
   <!-- Header: Modo eliminar -->
   <div *ngIf="mostrarEliminarPedido" class="login-header">
     <div class="barra-superior barra-eliminar">
@@ -229,9 +234,10 @@
 
         <div class="input-container">
           <h1 class="titulos-small">Tipo de Carne</h1>
-          <ion-select placeholder="Seleccione tipo de carne" [(ngModel)]="producto.nombre"(ionChange)="actualizarNombreProducto($event, i)"
-            interface="action-sheet"class="select-carne">
-            <ion-select-option *ngFor="let tipo of tiposCarne" [value]="tipo">{{ tipo }}</ion-select-option>
+
+          <ion-select placeholder="Seleccione tipo de carne" [value]="producto.nombre" (ionChange)="actualizarNombreProducto($event, i)"
+            interface="popover" class="select-carne">
+            <ion-select-option *ngFor="let productoDisponible of productosDisponibles" [value]="productoDisponible.id">{{ productoDisponible.nombre }}</ion-select-option>
           </ion-select>
           <div class="underline" [ngStyle]="{'background-color': underlinesProductosNombre[i] || '#cccccc'}"></div>
         </div>

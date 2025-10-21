@@ -135,20 +135,53 @@ validarCodigo() {
   }
   
   //Funcion para cambiar la contraseña
-  cambiarContrasenia() {
+  async cambiarContrasenia() {
     if (!this.password || !this.confirmPassword) {
-      alert('Por favor, completa todos los campos.'); 
-      return;
-    }
+    alert('Por favor, completa todos los campos.'); 
+    return;
+  }
 
-    if (this.passwordError || this.confirmPasswordError) {
-      alert('Por favor, corrige los errores antes de continuar.'); 
-      return;
-    }     
-    this.api.cambiarPassword(this.codigo, this.password, this.confirmPassword)
+  if (this.password.length < 8) {
+    alert('La contraseña debe tener al menos 8 caracteres.');
+    return;
+  }
+
+  if (this.password !== this.confirmPassword) {
+    alert('Las contraseñas no coinciden.');
+    return;
+  }
+
+  if (this.passwordError || this.confirmPasswordError) {
+    alert('Por favor, corrige los errores antes de continuar.'); 
+    return;
+  }
+  
+  try {
+    const response = await this.api.cambiarPassword(
+      this.codigo, 
+      this.password, 
+      this.confirmPassword
+    );
+    
+    console.log("Contraseña cambiada:", response);
     alert('Contraseña cambiada exitosamente.');
     this.mostrarNuevaContrasenia = false;
     this.router.navigate(['/login']);
+  } catch (error: any) {
+    console.error("Error al cambiar contraseña:", error);
+    
+    if (error.code) {
+      alert(`Error: ${error.code.join(', ')}`);
+    } else if (error.new_password) {
+      alert(`Error en contraseña: ${error.new_password.join(', ')}`);
+    } else if (error.confirm_password) {
+      alert(`Error: ${error.confirm_password.join(', ')}`);
+    } else if (error.error) {
+      alert(`Error: ${error.error}`);
+    } else {
+      alert('Error al cambiar la contraseña. Intenta nuevamente.');
+    }
+  }
 }
 
   ngOnInit() {

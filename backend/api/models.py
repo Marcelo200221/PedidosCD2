@@ -35,7 +35,7 @@ class DetallePedido(models.Model):
         unique_together = ("pedido", "producto")
 
     def __str__(self):
-        return f"Pedido {self.pedido.id} - {self.producto.nombre}"
+        return f"Pedido {self.pedido.id} - {self.producto.nombre} - {self.cantidad_cajas} - {self.peso_total_producto}"
     
     def recompute_peso_total(self):
         agg = self.cajas.aggregate(total=Sum("peso"))

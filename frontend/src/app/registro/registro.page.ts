@@ -14,6 +14,8 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from
 })
 export class RegistroPage implements OnInit {
 
+  constructor( private api: ApiService) { }
+
   //Definicion de variables
   rut: string = '';
   password: string = '';
@@ -206,6 +208,15 @@ export class RegistroPage implements OnInit {
     return;
   }
 
+  this.api.registro(
+    this.rut, 
+    this.nombre, 
+    this.apellido, 
+    this.correo, 
+    this.password  
+  );
+  
+
   //Si todo esta bien
   console.log('Registro válido:', {
     nombre: this.nombre,
@@ -217,11 +228,9 @@ export class RegistroPage implements OnInit {
   alert('Registro completado correctamente');
 }
 
-  constructor(private api: ApiService) { }
 
 
   ngOnInit() {
-    this.api.getUsuarios()
   }
 
 }
