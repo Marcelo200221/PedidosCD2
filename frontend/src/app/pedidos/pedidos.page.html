@@ -1,0 +1,388 @@
+<ion-content class="pedidos-page">
+
+  <!-- Header Normal -->
+  <div *ngIf="!mostrarAgregarPedido && !mostrarEliminarPedido && !mostrarEditarPedido && !mostrarAsignarPesos && !pedidoParaPesos" class="login-header">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">Pedidos</h1>
+        <ion-icon name="filter" class="icon-right"></ion-icon>
+      </div>
+      <ion-searchbar placeholder="Buscar..." [(ngModel)]="terminoBusqueda"(ionInput)="buscarPedidos($event)"
+        (ionClear)="limpiarBusqueda()" showClearButton="focus">
+      </ion-searchbar>
+    </div>
+  </div>
+
+  <div *ngIf="productosDisponibles.length === 0 && !mostrarAgregarPedido" class="mensaje-carga">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando productos...</p>
+  </div>
+
+  <!-- Header: Modo eliminar -->
+  <div *ngIf="mostrarEliminarPedido" class="login-header">
+    <div class="barra-superior barra-eliminar">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">Seleccionar para eliminar ({{ pedidosSeleccionados }})</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header: Modo editar -->
+  <div *ngIf="mostrarEditarPedido" class="login-header">
+    <div class="barra-superior barra-editar">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">Seleccionar pedido a editar</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header: Modo asignar pesos -->
+  <div *ngIf="mostrarAsignarPesos && !pedidoParaPesos" class="login-header">
+    <div class="barra-superior barra-pesos">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">Seleccione para asignar pesos</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de pedidos: Modo normal-->
+  <ion-list *ngIf="!mostrarAgregarPedido && !mostrarEliminarPedido && !mostrarEditarPedido && !mostrarAsignarPesos && !pedidoParaPesos">
+    <div *ngIf="pedidosFiltrados.length === 0 && terminoBusqueda" class="mensaje-sin-resultados">
+      <ion-icon name="search" class="icon-sin-resultados"></ion-icon>
+      <p>No se encontraron pedidos con "{{ terminoBusqueda }}"</p>
+    </div>
+    
+    <div *ngIf="pedidosFiltrados.length === 0 && !terminoBusqueda" class="mensaje-sin-resultados">
+      <ion-icon name="document-text" class="icon-sin-resultados"></ion-icon>
+      <p>No hay pedidos registrados</p>
+    </div>
+    
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none">
+      <div class="pedido-postit">
+        <div class="postit-id">
+          {{ pedido.nombre }}
+          <ion-icon *ngIf="tienePesosAsignados(pedido)" name="eye"  class="icon-ver-detalle" (click)="abrirDetallePesos(pedido)"></ion-icon>
+        </div>
+        <div class="postit-header">{{ pedido.direccion }}</div>
+        <div class="postit-info">
+          <strong>Cliente:</strong> {{ pedido.cliente }}
+        </div>
+        <div class="postit-productos">
+          <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+            {{ prod.nombre }} - {{ prod.cajas }} Cajas,
+            <span *ngIf="prod.pesos && prod.pesos.length > 0" class="peso-asignado">{{ getPesoTotal(prod) | number:'1.0-3' }} KG Totales</span>
+            <span *ngIf="!prod.pesos || prod.pesos.length === 0" class="peso-pendiente">KG Por Asignar</span>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+
+  <!-- Lista de pedidos: Modo eliminar -->
+  <ion-list *ngIf="mostrarEliminarPedido">
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
+      <div class="pedido-postit-seleccionable" 
+        [class.seleccionado-eliminar]="pedido.seleccionado"
+        (click)="toggleSeleccionPedido(pedido)">
+        <ion-checkbox slot="start" class="postit-checkbox"[(ngModel)]="pedido.seleccionado"(click)="$event.stopPropagation()"></ion-checkbox>
+        
+        <div class="postit-contenido">
+          <div class="postit-id-seleccionable-eliminar">{{ pedido.nombre }}</div>
+          <div class="postit-header-seleccionable">{{ pedido.direccion }}</div>
+          <div class="postit-info-seleccionable"><strong>Cliente:</strong> {{ pedido.cliente }}</div>
+          <div class="postit-productos-seleccionable">
+            <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+              {{ prod.nombre }} - {{ prod.cajas }} Cajas,
+              <span *ngIf="prod.pesos && prod.pesos.length > 0" class="peso-asignado">
+                {{ getPesoTotal(prod) | number:'1.2-2' }} KG Totales
+              </span>
+              <span *ngIf="!prod.pesos || prod.pesos.length === 0" class="peso-pendiente">KG Por Asignar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Lista de pedidos: Modo editar -->
+  <ion-list *ngIf="mostrarEditarPedido">
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
+      <div 
+        class="pedido-postit-seleccionable" 
+        [class.seleccionado-editar]="pedido.seleccionado"
+        (click)="toggleSeleccionPedidoEditar(pedido)">
+        <ion-checkbox slot="start" class="postit-checkbox"[(ngModel)]="pedido.seleccionado"(click)="$event.stopPropagation()"></ion-checkbox>
+        
+        <div class="postit-contenido">
+          <div class="postit-id-seleccionable">{{ pedido.nombre }}</div>
+          <div class="postit-header-seleccionable">{{ pedido.direccion }}</div>
+          <div class="postit-info-seleccionable"><strong>Cliente:</strong> {{ pedido.cliente }}</div>
+          <div class="postit-productos-seleccionable">
+            <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+              {{ prod.nombre }} - {{ prod.cajas }} Cajas,
+              <span *ngIf="prod.pesos && prod.pesos.length > 0" class="peso-asignado">
+                {{ getPesoTotal(prod) | number:'1.2-2' }} KG Totales
+              </span>
+              <span *ngIf="!prod.pesos || prod.pesos.length === 0" class="peso-pendiente">KG Por Asignar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Lista de Pedidos: Modo asignar pesos -->
+  <ion-list *ngIf="mostrarAsignarPesos">
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
+      <div 
+        class="pedido-postit-seleccionable" 
+        [class.seleccionado-pesos]="pedido.seleccionado"
+        (click)="toggleSeleccionPedidoPesos(pedido)">
+        <ion-checkbox slot="start" class="postit-checkbox" [(ngModel)]="pedido.seleccionado" (click)="$event.stopPropagation()"></ion-checkbox>
+        
+        <div class="postit-contenido">
+          <div class="postit-id-seleccionable">{{ pedido.nombre }}</div>
+          <div class="postit-header-seleccionable">{{ pedido.direccion }}</div>
+          <div class="postit-info-seleccionable"><strong>Cliente:</strong> {{ pedido.cliente }}</div>
+          <div class="postit-productos-seleccionable">
+            <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+              {{ prod.nombre }} - {{ prod.cajas }} Cajas,
+              <span *ngIf="prod.pesos && prod.pesos.length > 0" class="peso-asignado">
+                {{ getPesoTotal(prod) | number:'1.2-2' }} KG Totales
+              </span>
+              <span *ngIf="!prod.pesos || prod.pesos.length === 0" class="peso-pendiente">KG Por Asignar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botones: modo eliminar -->
+  <div *ngIf="mostrarEliminarPedido" class="botones-eliminar">
+    <ion-button expand="block" class="eliminar-seleccionados-boton" (click)="eliminarPedidosSeleccionados()">
+      <ion-icon slot="start" name="trash-bin"></ion-icon>
+        Eliminar Seleccionados ({{ pedidosSeleccionados }})
+    </ion-button>
+    <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarModoEliminar()">Cancelar</ion-button>
+  </div>
+
+  <!-- Botones: modo editar -->
+  <div *ngIf="mostrarEditarPedido" class="botones-editar">
+    <ion-button expand="block" class="editarConfirmarBoton" (click)="editarPedidoSeleccionado()" [disabled]="!hayPedidoSeleccionadoEditar">
+      <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+      Editar Pedido Seleccionado
+    </ion-button>
+    <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarModoEditar()">Cancelar</ion-button>
+  </div>
+
+  <!-- Botones: modo asignar pesos -->
+  <div *ngIf="mostrarAsignarPesos && !pedidoParaPesos" class="botones-editar">
+    <ion-button expand="block" class="asignarPesosBoton" (click)="abrirFormularioPesos()" [disabled]="!hayPedidoSeleccionadoPesos">
+      <ion-icon slot="start" name="cube"></ion-icon>
+      Asignar Pesos
+    </ion-button>
+    <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarModoAsignarPesos()">Cancelar</ion-button>
+  </div>
+
+  <!-- Agregar/editar pedido y productos -->
+  <div *ngIf="mostrarAgregarPedido">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">{{ indiceEditando >= 0 ? 'Editar Pedido' : 'Nuevo Pedido' }}</h1>
+        <ion-icon name="filter" class="icon-right"></ion-icon>
+      </div>
+    </div>
+
+    <div class="seccion-pedido">
+      <h2 class="titulo-seccion">InformaciÃ³n del Pedido</h2>
+      <div class="input-container">
+        <h1 class="titulos-small">Nombre del pedido</h1>
+        <ion-input placeholder="Ingrese nombre del pedido" [(ngModel)]="nuevoPedido.nombre"(ionInput)="actualizarNombrePedido($event)">
+        </ion-input>
+        <div class="underline" [ngStyle]="{'background-color': underlineNombrePedido}"></div>
+      </div>
+
+      <div class="input-container">
+        <h1 class="titulos-small">Cliente</h1>
+        <ion-input placeholder="Ingrese nombre del cliente" [(ngModel)]="nuevoPedido.cliente"(ionInput)="actualizarCliente($event)"(keypress)="onKeyPressCliente($event)">
+        </ion-input>
+        <div class="underline" [ngStyle]="{'background-color': underlineCliente}"></div>
+      </div>
+      <p class="mensaje-error" *ngIf="clienteError">{{clienteError}}</p>
+
+      <div class="input-container">
+        <h1 class="titulos-small">DirecciÃ³n a enviar</h1>
+        <ion-input placeholder="Ingrese direcciÃ³n" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+        <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
+      </div>
+    </div>
+
+    <div class="seccion-productos">
+      <h2 class="titulo-seccion">Productos del Pedido</h2>
+      <div *ngFor="let producto of productosInputs; let i = index" class="producto-grupo">
+        <div class="producto-header">
+          <h1 class="titulos">Producto {{ i + 1 }}</h1>
+          <ion-icon *ngIf="productosInputs.length > 1" name="remove-circle" class="icon-eliminar" (click)="eliminarCampoProducto(i)"></ion-icon>
+        </div>
+
+        <div class="input-container">
+          <h1 class="titulos-small">Tipo de Carne</h1>
+
+          <ion-select placeholder="Seleccione tipo de carne" [value]="producto.nombre" (ionChange)="actualizarNombreProducto($event, i)"
+            interface="popover" class="select-carne">
+            <ion-select-option *ngFor="let productoDisponible of productosDisponibles" [value]="productoDisponible.id">{{ productoDisponible.nombre }}</ion-select-option>
+          </ion-select>
+          <div class="underline" [ngStyle]="{'background-color': underlinesProductosNombre[i] || '#cccccc'}"></div>
+        </div>
+        <p class="mensaje-error" *ngIf="productosErrors[i]">{{productosErrors[i]}}</p>
+
+        <div class="input-container">
+          <h1 class="titulos-small">Cantidad de Cajas</h1>
+          <ion-input 
+            type="number" 
+            placeholder="Ingrese cantidad de cajas" 
+            [(ngModel)]="producto.cajas" 
+            (ionInput)="actualizarCajasProducto($event, i)"
+            min="1"
+            step="1"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            (keypress)="onKeyPressCajas($event)">
+          </ion-input>
+          <div class="underline" [ngStyle]="{'background-color': underlinesProductosCajas[i] || '#cccccc'}"></div>
+        </div>
+      </div>
+
+      <!-- Boton: agregar producto -->
+      <div class="contAgregar">
+        <ion-button expand="block" class="agregarProductoBoton" (click)="agregarCampoProducto()">
+          <ion-icon slot="start" class="Prodicon" name="add-circle"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <!-- Boton: finalizar -->
+    <div class="botones-formulario">
+      <ion-button expand="block" class="guardarPedidoBoton" (click)="guardarPedido()">
+        {{ indiceEditando >= 0 ? 'Actualizar Pedido' : 'Guardar Pedido' }}
+      </ion-button>
+      <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarAgregar()">Cancelar</ion-button>
+    </div>
+  </div>
+
+  <!-- AsignaciÃ³n de pesos -->
+  <div *ngIf="pedidoParaPesos" class="formulario-pesos">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="arrow-back" class="icon-left" (click)="cancelarAsignacionPesos()"></ion-icon>
+        <h1 class="titulo-texto">Asignar Pesos</h1>
+      </div>
+    </div>
+
+    <div class="info-pedido-pesos">
+      <p class="titulo-peso">{{ pedidoParaPesos.direccion }}</p>
+      <p class="detalle-peso"><strong>ID:</strong> {{ pedidoParaPesos.nombre }}</p>
+      <p class="detalle-peso"><strong>Cliente:</strong> {{ pedidoParaPesos.cliente }}</p>
+    </div>
+
+    <div *ngFor="let producto of pedidoParaPesos.productos; let prodIndex = index" class="producto-pesos-grupo">
+      <h2 class="titulo-producto-pesos">{{ producto.nombre }} ({{ producto.cajas }} Cajas)</h2>
+      
+      <div *ngFor="let caja of [].constructor(producto.cajas); let cajaIndex = index" class="caja-peso-item">
+        <div class="input-container-pesos">
+          <h1 class="titulos-small">Caja {{ cajaIndex + 1 }} - Peso (KG)</h1>
+         <ion-input type="number" placeholder="Ingrese peso en KG" [value]="pesosTemporales[prodIndex]?.[cajaIndex]" (ionInput)="actualizarPesoCaja(prodIndex, cajaIndex, $event)"
+            (keypress)="onKeyPressPeso($event)" min="0.001" step="0.001" inputmode="decimal" class="input-peso">
+          </ion-input>
+          <div class="underline" [ngStyle]="{'background-color': underlinesPesos[prodIndex]?.[cajaIndex] || '#cccccc'}"></div>
+        </div>
+        <p class="mensaje-error" *ngIf="pesosErrors[prodIndex]?.[cajaIndex]">{{ pesosErrors[prodIndex][cajaIndex] }}</p>
+      </div>
+    </div>
+
+    <!-- Peso total general del pedido -->
+    <div class="peso-total-general" *ngIf="pedidoParaPesos.productos.length > 0">
+      <p><ion-icon name="cube"></ion-icon> KG Total del Pedido: {{ calcularPesoTotalPedido() | number:'1.2-2' }} KG</p>
+    </div>
+
+    <!-- Boton: Guardar -->
+    <div class="botones-formulario">
+      <ion-button expand="block" class="guardarPedidoBoton" (click)="guardarPesos()">
+        <ion-icon slot="start" name="checkmark-circle"></ion-icon>Guardar Pesos
+      </ion-button>
+      <ion-button expand="block" class="cancelarPedidoBoton" (click)="cancelarAsignacionPesos()">Cancelar</ion-button>
+    </div>
+  </div>
+
+  <!-- Detalle de Pesos -->
+  <div *ngIf="mostrarDetallePesos && pedidoDetalle" class="modal-detalle-pesos">
+    <div class="modal-overlay" (click)="cerrarDetallePesos()"></div>
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 class="titulos">Detalle de Pesos</h2>
+        <ion-icon name="close" class="icon-cerrar-modal" (click)="cerrarDetallePesos()"></ion-icon>
+      </div>
+      
+      <div class="modal-body">
+        <div class="info-pedido-modal">
+          <h3>{{ pedidoDetalle.direccion }}</h3>
+          <p><strong>ID:</strong> {{ pedidoDetalle.nombre }}</p>
+          <p><strong>Cliente:</strong> {{ pedidoDetalle.cliente }}</p>
+        </div>
+        
+        <div *ngFor="let producto of pedidoDetalle.productos" class="producto-detalle-modal">
+          <h4>{{ producto.nombre }}</h4>
+          <div *ngIf="producto.pesos && producto.pesos.length > 0" class="cajas-detalle">
+            <div *ngFor="let peso of producto.pesos; let i = index" class="caja-detalle-item">
+              <span class="caja-numero">Caja {{ i + 1 }}:</span>
+              <span class="caja-peso">{{ peso | number:'1.0-3' }} KG</span>
+            </div>
+            <div class="total-producto-modal"><strong>Total {{ producto.nombre }}:</strong> {{ getPesoTotal(producto) | number:'1.0-3' }} KG</div>
+          </div>
+          
+          <div *ngIf="!producto.pesos || producto.pesos.length === 0" class="sin-pesos"><p>Sin pesos asignados</p></div>
+        </div>
+        
+        <div class="total-general-modal">
+          <h3>Total General del Pedido</h3>
+          <div class="total-value-modal">
+            {{ calcularPesoTotalDelPedido(pedidoDetalle) | number:'1.0-3' }} KG
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <ion-button class="cerrar-detalle" expand="block" (click)="cerrarDetallePesos()">Cerrar</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boton: Inferior -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="checkmark-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="activarModoAsignarPesos()">
+        <ion-icon name="cube"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="activarModoEditar()">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="activarModoEliminar()">
+        <ion-icon name="remove-circle"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="abrirAgregarPedido()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

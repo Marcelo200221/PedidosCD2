@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonTitle, IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.spec';
+
+const response: string = "";
+const token: string="";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,8 @@ import { Router } from '@angular/router';
 })
 
 export class LoginPage implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private api: ApiService) { }
+  
 
   //Definicion de variables
   rut: string = '';
@@ -91,8 +96,7 @@ export class LoginPage implements OnInit {
       alert('Por favor, completa todos los campos.');
       return;
     }
-
-    if (this.password.length < 8) {
+     if (this.password.length < 8) {
       alert('La contraseña debe tener al menos 8 caracteres.');
       return;
     }
@@ -101,15 +105,20 @@ export class LoginPage implements OnInit {
       alert('Por favor corrige los errores antes de continuar.');
       return;
     }
+    
 
+   
     //Si todo esta bien
     console.log('Login válido:', this.rut, this.password);
-    alert('Inicio de sesión correcto');
+    this.api.login(this.rut, this.password);
+    
   }
 
   olvidar() {
     this.router.navigate(['/olvido']);
   }
 
-  ngOnInit() {}
+
+  ngOnInit() {
+  }
 }

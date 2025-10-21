@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.spec';
+
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput } from '@ionic/angular/standalone';
 
 @Component({
@@ -13,7 +15,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput } from
 })
 export class OlvidoPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private api: ApiService) { }
 
   //Definicion de Variables
   correo: string = '';
@@ -63,6 +65,7 @@ export class OlvidoPage implements OnInit {
       }
 
       //Si el correo es válido
+      this.api.recuperarPassword(this.correo);
       console.log('Código enviado a: ' + this.correo);
       alert('Codigo enviado a: ' + this.correo);
       this.mostrarCodigo = true; 
@@ -82,9 +85,10 @@ validarCodigo() {
     return;
   }
 
-  if (this.codigo === '1234') {
+  if (this.codigo.length === 6) {
     this.underlineCodigo = '#28a745';
     this.errorCodigo = '';
+    this.api.condfirmarRecuperacion(this.codigo)
     alert('Codigo válido');
     this.mostrarNuevaContrasenia = true;
     this.mostrarCodigo = false;
@@ -131,19 +135,53 @@ validarCodigo() {
   }
   
   //Funcion para cambiar la contraseña
-  cambiarContrasenia() {
+  async cambiarContrasenia() {
     if (!this.password || !this.confirmPassword) {
-      alert('Por favor, completa todos los campos.'); 
-      return;
-    }
+    alert('Por favor, completa todos los campos.'); 
+    return;
+  }
 
-    if (this.passwordError || this.confirmPasswordError) {
-      alert('Por favor, corrige los errores antes de continuar.'); 
-      return;
-    }     
+  if (this.password.length < 8) {
+    alert('La contraseña debe tener al menos 8 caracteres.');
+    return;
+  }
+
+  if (this.password !== this.confirmPassword) {
+    alert('Las contraseñas no coinciden.');
+    return;
+  }
+
+  if (this.passwordError || this.confirmPasswordError) {
+    alert('Por favor, corrige los errores antes de continuar.'); 
+    return;
+  }
+  
+  try {
+    const response = await this.api.cambiarPassword(
+      this.codigo, 
+      this.password, 
+      this.confirmPassword
+    );
+    
+    console.log("Contraseña cambiada:", response);
     alert('Contraseña cambiada exitosamente.');
     this.mostrarNuevaContrasenia = false;
     this.router.navigate(['/login']);
+  } catch (error: any) {
+    console.error("Error al cambiar contraseña:", error);
+    
+    if (error.code) {
+      alert(`Error: ${error.code.join(', ')}`);
+    } else if (error.new_password) {
+      alert(`Error en contraseña: ${error.new_password.join(', ')}`);
+    } else if (error.confirm_password) {
+      alert(`Error: ${error.confirm_password.join(', ')}`);
+    } else if (error.error) {
+      alert(`Error: ${error.error}`);
+    } else {
+      alert('Error al cambiar la contraseña. Intenta nuevamente.');
+    }
+  }
 }
 
   ngOnInit() {

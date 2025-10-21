@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
+import { ApiService } from '../services/api.spec';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/angular/standalone';
 
 @Component({
@@ -11,6 +13,8 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, CommonModule, FormsModule]
 })
 export class RegistroPage implements OnInit {
+
+  constructor( private api: ApiService) { }
 
   //Definicion de variables
   rut: string = '';
@@ -204,6 +208,15 @@ export class RegistroPage implements OnInit {
     return;
   }
 
+  this.api.registro(
+    this.rut, 
+    this.nombre, 
+    this.apellido, 
+    this.correo, 
+    this.password  
+  );
+  
+
   //Si todo esta bien
   console.log('Registro válido:', {
     nombre: this.nombre,
@@ -215,7 +228,7 @@ export class RegistroPage implements OnInit {
   alert('Registro completado correctamente');
 }
 
-  constructor() { }
+
 
   ngOnInit() {
   }

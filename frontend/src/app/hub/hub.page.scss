@@ -1,0 +1,70 @@
+.barra-superior {
+  width: 100%;
+  height: 40px;             
+  background-color: #6a0d0d; 
+}
+
+.barra-inferior {
+  width: 55%;             
+  height: 40px;              
+  background-color: #97201d; 
+  border-bottom-right-radius: 15px; 
+  margin-bottom: -20%;
+}
+
+.botones{
+  height: 100%;            
+  display: flex;             
+  flex-direction: column;   
+  justify-content: center;  
+  align-items: center;     
+  gap: 5px;
+  margin-top: -20%;
+}
+
+.btn-pedidos{
+ width: 75%;
+ height: 100px;
+ font-size: 90%;
+ --background: #97201d;
+ --color: #f8f7f6;
+ --border-radius: 15px;    
+ font-family: 'Catamaran', sans-serif;
+ font-weight: bold;
+}
+
+.btn-facturas{
+ width: 75%;
+ height: 100px;
+ font-size: 90%;
+ --background: #1d3557;
+ --color: #f8f7f6;
+ --border-radius: 15px;    
+ font-family: 'Catamaran', sans-serif;
+ font-weight: bold;
+}
+
+.btn-dashboard{
+ width: 75%;
+ height: 100px;
+ font-size: 90%;
+ --background: #4b6b50;
+ --color: #f8f7f6;
+ --border-radius: 15px;    
+ font-family: 'Catamaran', sans-serif;
+ font-weight: bold;
+}
+
+.titulo-texto{
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin-top: 30%;
+  margin-bottom: -60%;
+}
+
+.titulo-container{
+  display: flex;
+  flex-direction: column;    
+  align-items: center;
+}

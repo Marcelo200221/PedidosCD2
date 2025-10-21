@@ -12,8 +12,8 @@ class Usuario(AbstractUser):
         )
     email = models.EmailField(unique=True)
     
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'rut', 'username']
+    USERNAME_FIELD = 'rut'
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'email', 'username']
 
     @property
     def permisos(self):
