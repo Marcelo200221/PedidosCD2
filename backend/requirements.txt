@@ -7,3 +7,4 @@ djangorestframework-simplejwt==5.2.2
 virtualenv==20.34.0
 mysqlclient==2.2.7
 dotenv==0.9.9
+pymysql==1.1.2

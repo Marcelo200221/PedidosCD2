@@ -3,9 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
 import axios from "axios";
+import { environment } from "src/environments/environment";
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000/api/',
+    baseURL: environment.apiUrl,
     headers: {
       "Content-Type": "application/json",
     },
