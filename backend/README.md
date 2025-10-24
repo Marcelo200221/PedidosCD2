@@ -58,14 +58,20 @@ $ python manage.py makemigrations
 ```bash
 $ python manage.py migrate
 ```
+12. Ejecutar creación de grupos y permisos
 
-12. Crear un superuser
+```bash
+$ python manage.py cargar_grupos_permisos data/grupos_permisos.json
+
+```
+
+13. Crear un superuser
 
 ```bash
 $ python manage.py createsuperuser
 ```
 
-13. Correr Servidor
+14. Correr Servidor
 
 ```bash
 $ python maange.py runserver

@@ -88,3 +88,14 @@ def cleanup_codes(sender, **kwargs):
     PasswordResetCode.clean_expired_codes()
 
 
+class Cliente(models.Model):
+    id_cliente = models.CharField(max_length=200, primary_key=True)
+    rut = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=200)
+    direccion = models.CharField(max_length=200)
+    razon_social = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.nombre} - {self.rut} - {self.razon_social} - {self.direccion}"
+
+

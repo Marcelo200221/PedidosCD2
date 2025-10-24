@@ -70,6 +70,11 @@ class UserRegistrationSerializer(RegisterSerializer):
             last_name=cleaned_data['last_name'],
             password=cleaned_data['password1']
         )
+        try:
+            grupo_base = Group.objects.get(name="repartidor")
+            user.groups.add(grupo_base)
+        except Group.DoesNotExist:
+            print("Grupo 'repartidor' inexistente")
         return user
     
 class JWTSerializer(serializers.Serializer):
