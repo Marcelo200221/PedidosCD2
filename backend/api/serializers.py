@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from usuarios.models import Usuario
-from api.models import Pedidos, DetallePedido, Caja, Productos
+from api.models import Pedidos, DetallePedido, Caja, Productos, Cliente
 from .models import PasswordResetCode
 
 class PasswordResetRequestSerielizer(serializers.Serializer):
@@ -114,4 +114,16 @@ class PedidoSerializer(serializers.ModelSerializer):
                     Caja.objects.create(pedido_producto=detalle, **caja_data)
                 detalle.recompute_peso_total()
         return instance
+    
+
+class ClienteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cliente
+        fields = [
+            "id_cliente",
+            "rut",
+            "nombre",
+            "direccion",
+            "razon_social"
+        ]
 
