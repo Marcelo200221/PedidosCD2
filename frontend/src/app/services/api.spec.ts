@@ -329,4 +329,38 @@ export class ApiService{
     }
   }
 
+  async agregarCliente(id: string, nombre: string, rut: string, direccion: string, razonSocial: string){
+    try{
+      await api.post("agregar-cliente/", {
+        id_cliente: id,
+        rut: rut,
+        nombre: nombre,
+        direccion: direccion, 
+        razon_social: razonSocial
+      })
+    } catch(error){
+      console.error(error);
+    }
+  }
+
+  async eliminarCliente(id: string){
+    try{
+      await api.delete(`eliminar/cliente/${id}`)
+    } catch(error){
+      console.error(error)
+    }
+  }
+
+  async listarClientes(){
+    let clientes;
+    try{
+      const res = await api.get("lista/clientes");
+      clientes = res.data
+      console.log(clientes)
+      return clientes;
+    } catch(error) {
+      console.error(error);
+    }
+  }
+
 }

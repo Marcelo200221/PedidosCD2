@@ -127,3 +127,13 @@ class ClienteSerializer(serializers.ModelSerializer):
             "razon_social"
         ]
 
+    def validate_rut(self, value):
+        if Cliente.objects.filter(rut=value).exists():
+            raise serializers.ValidationError("Este RUT ya está registrado")
+        return value
+    
+    def validate_id_cliente(self, value):
+        if Cliente.objects.filter(id_cliente=value).exists():
+            raise serializers.ValidationError("Este ID ya existe")
+        return value
+

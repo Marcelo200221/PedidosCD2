@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item lines="full" *ngFor="let cliente of clientes">
+      <ion-label>
+        <h2>{{ cliente.nombre }}</h2>
+        <p><strong>RUT:</strong> {{ cliente.rut }}</p>
+        <p><strong>Dirección:</strong> {{ cliente.direccion }}</p>
+        <p><strong>Razón social:</strong> {{ cliente.razon_social }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
