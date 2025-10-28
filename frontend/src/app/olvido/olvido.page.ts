@@ -88,7 +88,7 @@ validarCodigo() {
   if (this.codigo.length === 6) {
     this.underlineCodigo = '#28a745';
     this.errorCodigo = '';
-    this.api.condfirmarRecuperacion(this.codigo)
+    this.api.confirmarRecuperacion(this.codigo)
     alert('Codigo válido');
     this.mostrarNuevaContrasenia = true;
     this.mostrarCodigo = false;
