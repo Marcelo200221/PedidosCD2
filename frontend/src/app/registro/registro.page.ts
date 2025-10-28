@@ -225,7 +225,6 @@ export class RegistroPage implements OnInit {
     correo: this.correo,
     password: this.password
   });
-  alert('Registro completado correctamente');
 }
 
 

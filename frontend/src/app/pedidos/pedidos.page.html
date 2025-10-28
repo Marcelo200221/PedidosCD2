@@ -1,16 +1,84 @@
 <ion-content class="pedidos-page">
 
-  <!-- Header Normal -->
+    <!-- Header Normal -->
   <div *ngIf="!mostrarAgregarPedido && !mostrarEliminarPedido && !mostrarEditarPedido && !mostrarAsignarPesos && !pedidoParaPesos" class="login-header">
     <div class="barra-superior">
       <div class="top-row">
         <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Pedidos</h1>
-        <ion-icon name="filter" class="icon-right"></ion-icon>
+        <ion-icon name="filter" class="icon-right" (click)="toggleMenuFiltro()"></ion-icon>
       </div>
-      <ion-searchbar placeholder="Buscar..." [(ngModel)]="terminoBusqueda"(ionInput)="buscarPedidos($event)"
-        (ionClear)="limpiarBusqueda()" showClearButton="focus">
-      </ion-searchbar>
+        <ion-searchbar 
+          placeholder="Buscar por pedido, producto, estado..." 
+          [(ngModel)]="terminoBusqueda"
+          (ionInput)="buscarPedidos($event)"
+          (ionClear)="limpiarBusqueda()" 
+          showClearButton="focus">
+        </ion-searchbar>
+      
+      <!-- Indicador de filtro activo -->
+      <div *ngIf="filtroEstadoActivo" class="filtro-activo-badge">
+        <span>Filtrando por: {{ getTextoEstado(filtroEstadoActivo) }}</span>
+        <ion-icon name="close-circle" (click)="limpiarFiltros()"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú de filtro -->
+  <div *ngIf="mostrarMenuFiltro" class="menu-filtro-overlay" (click)="toggleMenuFiltro()">
+    <div class="menu-filtro-contenido" (click)="$event.stopPropagation()">
+      <div class="menu-filtro-header">
+        <h2>Filtrar por Estado</h2>
+        <ion-icon name="close" (click)="toggleMenuFiltro()"></ion-icon>
+      </div>
+      
+      <div class="menu-filtro-opciones">
+        <div class="filtro-opcion" 
+            [class.activo]="filtroEstadoActivo === null"
+            (click)="aplicarFiltroEstado(null)">
+          <div class="filtro-color todos"></div>
+          <span>Todos los pedidos</span>
+          <span class="filtro-contador">{{ pedidos.length }}</span>
+        </div>
+        
+        <div class="filtro-opcion" 
+            [class.activo]="filtroEstadoActivo === 'pendiente_pesos'"
+            (click)="aplicarFiltroEstado('pendiente_pesos')">
+          <div class="filtro-color pendiente-pesos"></div>
+          <span>Pendiente de Pesos</span>
+          <span class="filtro-contador">{{ getContadorPorEstado('pendiente_pesos') }}</span>
+        </div>
+        
+        <div class="filtro-opcion" 
+            [class.activo]="filtroEstadoActivo === 'listo_facturar'"
+            (click)="aplicarFiltroEstado('listo_facturar')">
+          <div class="filtro-color listo-facturar"></div>
+          <span>Listo para Facturar</span>
+          <span class="filtro-contador">{{ getContadorPorEstado('listo_facturar') }}</span>
+        </div>
+        
+        <div class="filtro-opcion" 
+            [class.activo]="filtroEstadoActivo === 'pendiente_confirmacion'"
+            (click)="aplicarFiltroEstado('pendiente_confirmacion')">
+          <div class="filtro-color pendiente-confirmacion"></div>
+          <span>Pendiente de Confirmación</span>
+          <span class="filtro-contador">{{ getContadorPorEstado('pendiente_confirmacion') }}</span>
+        </div>
+        
+        <div class="filtro-opcion" 
+            [class.activo]="filtroEstadoActivo === 'completado'"
+            (click)="aplicarFiltroEstado('completado')">
+          <div class="filtro-color completado"></div>
+          <span>Completado</span>
+          <span class="filtro-contador">{{ getContadorPorEstado('completado') }}</span>
+        </div>
+      </div>
+      
+      <div class="menu-filtro-footer">
+        <ion-button expand="block" (click)="limpiarFiltros()">
+          Limpiar Filtros
+        </ion-button>
+      </div>
     </div>
   </div>
 
@@ -62,7 +130,7 @@
     </div>
     
     <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none">
-      <div class="pedido-postit">
+      <div class="pedido-postit" [ngClass]="getClaseEstado(pedido)">
         <div class="postit-id">
           {{ pedido.nombre }}
           <ion-icon *ngIf="tienePesosAsignados(pedido)" name="eye"  class="icon-ver-detalle" (click)="abrirDetallePesos(pedido)"></ion-icon>
@@ -78,6 +146,11 @@
             <span *ngIf="!prod.pesos || prod.pesos.length === 0" class="peso-pendiente">KG Por Asignar</span>
           </div>
         </div>
+        
+        <!-- Botón de enviar a facturación -->
+        <ion-icon 
+          *ngIf="pedido.estado === 'listo_facturar'" name="send" class="icon-enviar-facturacion" (click)="enviarAFacturacion(pedido)" title="Enviar a Facturación">
+        </ion-icon>
       </div>
     </ion-item>
   </ion-list>
@@ -87,8 +160,7 @@
   <ion-list *ngIf="mostrarEliminarPedido">
     <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
       <div class="pedido-postit-seleccionable" 
-        [class.seleccionado-eliminar]="pedido.seleccionado"
-        (click)="toggleSeleccionPedido(pedido)">
+        [class.seleccionado-eliminar]="pedido.seleccionado" [ngClass]="getClaseEstado(pedido)" (click)="toggleSeleccionPedido(pedido)">
         <ion-checkbox slot="start" class="postit-checkbox"[(ngModel)]="pedido.seleccionado"(click)="$event.stopPropagation()"></ion-checkbox>
         
         <div class="postit-contenido">
@@ -115,6 +187,7 @@
       <div 
         class="pedido-postit-seleccionable" 
         [class.seleccionado-editar]="pedido.seleccionado"
+        [ngClass]="getClaseEstado(pedido)"
         (click)="toggleSeleccionPedidoEditar(pedido)">
         <ion-checkbox slot="start" class="postit-checkbox"[(ngModel)]="pedido.seleccionado"(click)="$event.stopPropagation()"></ion-checkbox>
         
@@ -142,6 +215,7 @@
       <div 
         class="pedido-postit-seleccionable" 
         [class.seleccionado-pesos]="pedido.seleccionado"
+        [ngClass]="getClaseEstado(pedido)"
         (click)="toggleSeleccionPedidoPesos(pedido)">
         <ion-checkbox slot="start" class="postit-checkbox" [(ngModel)]="pedido.seleccionado" (click)="$event.stopPropagation()"></ion-checkbox>
         
@@ -159,6 +233,8 @@
             </div>
           </div>
         </div>
+        
+        <!-- Botón en modo asignar pesos -->
       </div>
     </ion-item>
   </ion-list>
@@ -201,7 +277,7 @@
     </div>
 
     <div class="seccion-pedido">
-      <h2 class="titulo-seccion">InformaciÃ³n del Pedido</h2>
+      <h2 class="titulo-seccion">Información del Pedido</h2>
       <div class="input-container">
         <h1 class="titulos-small">Nombre del pedido</h1>
         <ion-input placeholder="Ingrese nombre del pedido" [(ngModel)]="nuevoPedido.nombre"(ionInput)="actualizarNombrePedido($event)">
@@ -218,8 +294,8 @@
       <p class="mensaje-error" *ngIf="clienteError">{{clienteError}}</p>
 
       <div class="input-container">
-        <h1 class="titulos-small">DirecciÃ³n a enviar</h1>
-        <ion-input placeholder="Ingrese direcciÃ³n" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+        <h1 class="titulos-small">Dirección a enviar</h1>
+        <ion-input placeholder="Ingrese dirección" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
         <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
       </div>
     </div>
@@ -235,9 +311,15 @@
         <div class="input-container">
           <h1 class="titulos-small">Tipo de Carne</h1>
 
-          <ion-select placeholder="Seleccione tipo de carne" [value]="producto.nombre" (ionChange)="actualizarNombreProducto($event, i)"
-            interface="popover" class="select-carne">
-            <ion-select-option *ngFor="let productoDisponible of productosDisponibles" [value]="productoDisponible.id">{{ productoDisponible.nombre }}</ion-select-option>
+          <ion-select placeholder="Seleccione tipo de carne" 
+            [(ngModel)]="producto.id" 
+            (ionChange)="actualizarNombreProducto($event, i)"
+            interface="popover" 
+            class="select-carne">
+            <ion-select-option *ngFor="let productoDisponible of getProductosDisponiblesParaIndice(i)" 
+              [value]="productoDisponible.id">
+              {{ productoDisponible.nombre }}
+            </ion-select-option>
           </ion-select>
           <div class="underline" [ngStyle]="{'background-color': underlinesProductosNombre[i] || '#cccccc'}"></div>
         </div>
@@ -277,7 +359,7 @@
     </div>
   </div>
 
-  <!-- AsignaciÃ³n de pesos -->
+  <!-- Asignación de pesos -->
   <div *ngIf="pedidoParaPesos" class="formulario-pesos">
     <div class="barra-superior">
       <div class="top-row">
@@ -367,7 +449,7 @@
   <!-- Boton: Inferior -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>
-      <ion-icon name="checkmark-circle"></ion-icon>
+      <ion-icon name="chevron-up-circle"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
       <ion-fab-button (click)="activarModoAsignarPesos()">

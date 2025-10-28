@@ -1,0 +1,87 @@
+<body>
+  <ion-content class="login-page" fullscreen>
+
+  <div class="login-header">
+    <div class="barra-superior"></div>
+  </div>
+
+    <!-- Titulo Inicio de Sesión -->
+  <div class="titulo-container">
+    <h1 class="titulo-texto">Dashboards</h1>
+  </div>
+
+  <div class="contenido">
+  <!-- Spinner de carga -->
+    <div *ngIf="cargando" class="loading-container">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Cargando estadísticas...</p>
+    </div>
+
+    <!-- Contenido del dashboard -->
+    <div *ngIf="!cargando">
+
+      <!-- Tarjeta de resumen -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Estado de Pedidos</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="resumen-total">
+            <div class="grafico-torta">
+              <svg viewBox="0 0 400 400" class="pie-chart">
+
+                <!-- Círculo base -->
+                <circle cx="200" cy="200" r="150" fill="#f5f5f5"/>
+
+                <!-- Segmentos del gráfico -->
+                <g *ngFor="let stat of estadisticas; let i = index">
+                  <path 
+                    [attr.d]="calcularSegmento(i)" 
+                    [attr.fill]="stat.color"
+                    class="pie-segment"
+                    [attr.data-porcentaje]="stat.porcentaje"
+                  />
+                </g>
+
+                <!-- Círculo central para efecto dona (opcional) -->
+                <circle cx="200" cy="200" r="80" fill="white"/>
+
+                <!-- Texto central -->
+                <text x="200" y="195" text-anchor="middle" class="pie-center-text">
+                  Total
+                </text>
+                <text x="200" y="220" text-anchor="middle" class="pie-center-number">
+                  {{ totalPedidos }}
+                </text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="estadisticas-lista">
+            <div 
+              *ngFor="let stat of estadisticas" 
+              class="estadistica-item"
+              [style.border-left]="'4px solid ' + stat.color">
+              <div class="estadistica-info">
+                <div class="estadistica-header">
+                  <span class="estadistica-nombre">{{ stat.estado }}</span>
+                  <span class="estadistica-porcentaje">{{ stat.porcentaje }}%</span>
+                </div>
+                <div class="estadistica-barra">
+                  <div 
+                    class="estadistica-progreso" 
+                    [style.width.%]="stat.porcentaje"
+                    [style.background-color]="stat.color">
+                  </div>
+                </div>
+                <span class="estadistica-cantidad">{{ stat.cantidad }} pedido(s)</span>
+              </div>
+            </div>
+          </div>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>
