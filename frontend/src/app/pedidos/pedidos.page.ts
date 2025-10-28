@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, IonList, IonItem, IonLabel, IonIcon, IonInput, 
   IonCheckbox, IonSelect, IonSelectOption, IonSpinner} from '@ionic/angular/standalone';
-
 import { ApiService } from '../services/api.spec';
-
 import { addIcons } from 'ionicons';
-import { chevronUpCircle, pencil, addCircle, removeCircle, filter,  menu,  close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye } from 'ionicons/icons';
+import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send } from 'ionicons/icons';
 
 //Interfaces
 export interface Producto {
@@ -25,12 +23,13 @@ export interface Pedido {
   direccion: string;
   productos: Producto[];
   seleccionado?: boolean;
+  estado?: 'pendiente_pesos' | 'listo_facturar' | 'pendiente_confirmacion' | 'completado'; // ← AGREGAR
 }
 
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye 
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle
 });
 
 @Component({
@@ -59,6 +58,8 @@ export class PedidosPage implements OnInit {
 
   //Variable de busqueda
   terminoBusqueda: string = '';
+  mostrarMenuFiltro: boolean = false;
+  filtroEstadoActivo: string | null = null; // null = sin filtro, 'pendiente_pesos', 'listo_facturar', etc.
   
   //Variables de nuevo pedido
   nuevoPedido: Pedido = {
@@ -123,15 +124,35 @@ export class PedidosPage implements OnInit {
 
   private mapearPedidoBackend(pedidosBackend: any): Pedido {
     const productos: Producto[] = pedidosBackend.lineas.map((linea: any) => {
-      const pesos = linea.cajas ? linea.cajas.map((caja: any) => caja.peso) : [];
+      const pesos = linea.cajas ? linea.cajas
+        .map((caja: any) => caja.peso)
+        .filter((peso: number) => peso > 0) 
+        : [];
 
       return {
         id: linea.producto.id,
         nombre: linea.producto.nombre,
         cajas: linea.cantidad_cajas,
-        pesos: pesos.length > 0 ? pesos : undefined
+        pesos: pesos.length > 0 ? pesos : undefined 
       };
     });
+
+    // Determinar el estado
+    let estado: 'pendiente_pesos' | 'listo_facturar' | 'pendiente_confirmacion' | 'completado';
+    
+    if (pedidosBackend.estado) {
+      estado = pedidosBackend.estado;
+    } else {
+      const todosTienenPesos = productos.every(p => 
+        p.pesos && 
+        p.pesos.length === p.cajas && 
+        p.pesos.length > 0 &&        
+        p.pesos.every(peso => peso > 0) 
+      );
+      estado = todosTienenPesos ? 'listo_facturar' : 'pendiente_pesos';
+    }
+
+    console.log(`Pedido ${pedidosBackend.id} - Estado: ${estado} - Productos:`, productos);
 
     return {
       id: pedidosBackend.id,
@@ -139,7 +160,8 @@ export class PedidosPage implements OnInit {
       cliente: 'Cliente por defecto',
       direccion: pedidosBackend.direccion,
       productos: productos,
-      seleccionado: false
+      seleccionado: false,
+      estado: estado
     };
   }
 
@@ -158,21 +180,74 @@ export class PedidosPage implements OnInit {
   buscarPedidos(event: any) {
     const termino = event.target.value.toLowerCase().trim();
     this.terminoBusqueda = termino;
-
+    
     if (!termino) {
-      this.pedidosFiltrados = [...this.pedidos];
+      this.aplicarFiltros();
       return;
     }
-
+    
+    //Palabras clave para estados
+    const palabrasClave: { [key: string]: string[] } = {
+      'pendiente_pesos': ['pendiente', 'pesos', 'amarillo', 'sin pesos', 'falta pesar'],
+      'listo_facturar': ['listo', 'facturar', 'verde', 'completo', 'facturacion'],
+      'pendiente_confirmacion': ['confirmacion', 'naranja', 'facturado', 'confirmar'],
+      'completado': ['completado', 'finalizado', 'terminado', 'gris', 'entregado']
+    };
+    
+    //Buscar por estado usando palabras clave
+    let estadoBuscado: string | null = null;
+    for (const [estado, palabras] of Object.entries(palabrasClave)) {
+      if (palabras.some(palabra => termino.includes(palabra))) {
+        estadoBuscado = estado;
+        break;
+      }
+    }
+    
+    //Filtrar pedidos
     this.pedidosFiltrados = this.pedidos.filter(pedido => {
-      if (pedido.nombre.toLowerCase().includes(termino)) return true;
-      if (pedido.cliente.toLowerCase().includes(termino)) return true;
-      if (pedido.direccion.toLowerCase().includes(termino)) return true;
+      const estado = pedido.estado || 'pendiente_pesos';
       
+      //Buscar por estado
+      if (estadoBuscado && estado === estadoBuscado) {
+        return true;
+      }
+      
+      //Buscar por ID/nombre del pedido
+      if (pedido.nombre.toLowerCase().includes(termino)) {
+        return true;
+      }
+      
+      //Buscar por cliente
+      if (pedido.cliente.toLowerCase().includes(termino)) {
+        return true;
+      }
+      
+      //Buscar por dirección
+      if (pedido.direccion.toLowerCase().includes(termino)) {
+        return true;
+      }
+      
+      //Buscar por nombre del estado
+      const textoEstado = this.getTextoEstado(estado).toLowerCase();
+      if (textoEstado.includes(termino)) {
+        return true;
+      }
+      
+      //Buscar por productos
       const encontradoEnProductos = pedido.productos.some(prod => 
         prod.nombre.toLowerCase().includes(termino)
       );
-      return encontradoEnProductos;
+      if (encontradoEnProductos) {
+        return true;
+      }
+      
+      //Buscar por número de pedido
+      const numeroPedido = pedido.id.toString();
+      if (numeroPedido.includes(termino)) {
+        return true;
+      }
+      
+      return false;
     });
   }
 
@@ -180,6 +255,7 @@ export class PedidosPage implements OnInit {
   limpiarBusqueda() {
     this.terminoBusqueda = '';
     this.pedidosFiltrados = [...this.pedidos];
+    this.aplicarFiltros();
   }
 
   //Funcion de validacion
@@ -220,8 +296,22 @@ export class PedidosPage implements OnInit {
 
   //Validacion: Producto
   actualizarNombreProducto(event: any, index: number) {
+    const productoId = parseInt(event.detail.value);
+    
+    const yaSeleccionado = this.productosInputs.some((prod, i) => 
+      i !== index && prod.id === productoId
+    );
+    
+    if (yaSeleccionado) {
+      alert('Este producto ya fue seleccionado. Por favor, elige otro.');
+      this.productosInputs[index].id = 0;
+      this.productosInputs[index].nombre = '';
+      this.underlinesProductosNombre[index] = '#ff4d4d';
+      return;
+    }
+    
     const productoSeleccionado = this.productosDisponibles.find(
-      prod => prod.id === parseInt(event.detail.value)
+      prod => prod.id === productoId
     );
 
     if(productoSeleccionado){
@@ -402,7 +492,24 @@ export class PedidosPage implements OnInit {
         console.log("Editando pedido con ID:", this.pedidoEditandoId);
         const res = await this.api.editarPedido(this.pedidoEditandoId, payload);
         console.log("Pedido editado exitosamente: ", res);
-        alert("Pedido editado con éxito");
+        
+        await this.cargarPedidosDesdeBackend(); 
+        
+        this.nuevoPedido = { id: 0, nombre: '', cliente: '', direccion: '', productos: [] };
+        this.productosInputs = [{ id: 0, nombre: '', cajas: null }];
+        this.pedidoEditandoId = undefined; 
+        this.indiceEditando = -1;
+
+
+        this.mostrarAgregarPedido = false;
+        this.underlineNombrePedido = '#cccccc';
+        this.underlineCliente = '#cccccc';
+        this.underlineDireccion = '#cccccc';
+        this.underlinesProductosNombre = ['#cccccc'];
+        this.underlinesProductosCajas = ['#cccccc'];
+        this.clienteError = '';
+        this.productosErrors = [''];
+        
       }else{
         console.log("Enviando pedido al backend:", payload);
         const res = await this.api.crearPedido(
@@ -412,7 +519,6 @@ export class PedidosPage implements OnInit {
         );
 
         console.log("Pedido creado exitosamente: ", res );
-        alert("Pedido creado con exito");
 
         await this.cargarPedidosDesdeBackend();
 
@@ -427,10 +533,11 @@ export class PedidosPage implements OnInit {
         this.underlinesProductosCajas = ['#cccccc'];
         this.clienteError = '';
         this.productosErrors = [''];
+        
       }
     } catch(error) {
-      console.error("Error al crear pedido:", error);
-      alert("Error al crear el pedido");
+      console.error("Error al guardar pedido:", error);
+      alert("Error al guardar el pedido");
     }
   }
 
@@ -456,6 +563,13 @@ export class PedidosPage implements OnInit {
       alert('No hay pedidos para eliminar');
       return;
     }
+    
+    const pedidosEliminables = this.pedidos.filter(p => this.puedeEliminar(p));
+    if (pedidosEliminables.length === 0) {
+      alert('No hay pedidos disponibles para eliminar. Solo se pueden eliminar pedidos en estado "Pendiente de Pesos"');
+      return;
+    }
+    
     this.mostrarEliminarPedido = true;
     this.mostrarEditarPedido = false;
     this.mostrarAgregarPedido = false;
@@ -472,9 +586,12 @@ export class PedidosPage implements OnInit {
   }
 
   toggleSeleccionPedido(pedido: Pedido) {
+    if (!this.puedeEliminar(pedido)) {
+      alert('Este pedido no se puede eliminar porque ya tiene pesos asignados o está en proceso de facturación');
+      return;
+    }
     pedido.seleccionado = !pedido.seleccionado;
   }
-
   async eliminarPedidosSeleccionados() {
     const seleccionados = this.pedidos.filter(p => p.seleccionado);
     
@@ -497,7 +614,6 @@ export class PedidosPage implements OnInit {
       });
       this.mostrarEliminarPedido = false;
       await this.api.eliminarPedidos(ids);
-      alert(`${seleccionados.length} pedido(s) eliminado(s) correctamente`);
     }
   }
   get pedidosSeleccionados(): number {
@@ -510,6 +626,13 @@ export class PedidosPage implements OnInit {
       alert('No hay pedidos para editar');
       return;
     }
+    
+    const pedidosEditables = this.pedidos.filter(p => this.puedeEditar(p));
+    if (pedidosEditables.length === 0) {
+      alert('No hay pedidos disponibles para editar. Solo se pueden editar pedidos en estado "Pendiente de Pesos"');
+      return;
+    }
+    
     this.mostrarEditarPedido = true;
     this.mostrarEliminarPedido = false;
     this.mostrarAgregarPedido = false;
@@ -528,6 +651,10 @@ export class PedidosPage implements OnInit {
 
 
   toggleSeleccionPedidoEditar(pedido: Pedido) {
+    if (!this.puedeEditar(pedido)) {
+      alert('Este pedido no se puede editar porque ya tiene pesos asignados o está en proceso de facturación');
+      return;
+    }
     this.pedidos.forEach(p => {
       if (p !== pedido) p.seleccionado = false;
     });
@@ -585,6 +712,13 @@ export class PedidosPage implements OnInit {
       alert('No hay pedidos para asignar pesos');
       return;
     }
+    
+    const pedidosConPesosAsignables = this.pedidos.filter(p => this.puedeAsignarPesos(p));
+    if (pedidosConPesosAsignables.length === 0) {
+      alert('No hay pedidos disponibles para asignar pesos. Solo se pueden asignar pesos a pedidos en estado "Pendiente de Pesos"');
+      return;
+    }
+    
     this.mostrarAsignarPesos = true;
     this.mostrarEditarPedido = false;
     this.mostrarEliminarPedido = false;
@@ -605,6 +739,10 @@ export class PedidosPage implements OnInit {
   }
 
   toggleSeleccionPedidoPesos(pedido: Pedido) {
+    if (!this.puedeAsignarPesos(pedido)) {
+      alert('Este pedido no se puede modificar porque ya está en proceso de facturación');
+      return;
+    }
     this.pedidos.forEach(p => {
       if (p !== pedido) p.seleccionado = false;
     });
@@ -715,6 +853,8 @@ export class PedidosPage implements OnInit {
         prod.pesos = this.pesosTemporales[index];
       });
 
+      this.pedidoParaPesos.estado = 'listo_facturar';
+
       this.pedidos[this.indiceParaPesos] = this.pedidoParaPesos;
       this.pedidosFiltrados = [...this.pedidos];
 
@@ -790,4 +930,128 @@ export class PedidosPage implements OnInit {
     });
     return total;
   }
-}
+  
+  getClaseEstado(pedido: Pedido): string {
+    const estado = pedido.estado || 'pendiente_pesos';
+    return `pedido-postit-${estado.replace(/_/g, '-')}`;
+  }
+
+  getTextoEstado(estado: string): string {
+    const textos: { [key: string]: string } = {
+      'pendiente_pesos': 'Pendiente de Pesos',
+      'listo_facturar': 'Listo para Facturar',
+      'pendiente_confirmacion': 'Pendiente de Confirmación',
+      'completado': 'Completado'
+    };
+    return textos[estado] || 'Sin estado';
+  }
+
+  //Validaciones de estado
+  puedeEditar(pedido: Pedido): boolean {
+    return !pedido.estado || pedido.estado === 'pendiente_pesos';
+  }
+
+  puedeEliminar(pedido: Pedido): boolean {
+    return !pedido.estado || pedido.estado === 'pendiente_pesos';
+  }
+
+  puedeAsignarPesos(pedido: Pedido): boolean {
+    return !pedido.estado || pedido.estado === 'pendiente_pesos';
+  }
+
+  //Filtro por estado
+  toggleMenuFiltro() {
+    this.mostrarMenuFiltro = !this.mostrarMenuFiltro;
+  }
+
+  aplicarFiltroEstado(estado: string | null) {
+    this.filtroEstadoActivo = estado;
+    this.mostrarMenuFiltro = false;
+    this.aplicarFiltros();
+  }
+
+  aplicarFiltros() {
+    let pedidosFiltrados = [...this.pedidos];
+    
+    //Filtrar por búsqueda
+    if (this.terminoBusqueda) {
+      const termino = this.terminoBusqueda.toLowerCase();
+      pedidosFiltrados = pedidosFiltrados.filter(pedido => {
+        return pedido.nombre.toLowerCase().includes(termino) ||
+              pedido.cliente.toLowerCase().includes(termino) ||
+              pedido.direccion.toLowerCase().includes(termino) ||
+              pedido.productos.some(prod => prod.nombre.toLowerCase().includes(termino));
+      });
+    }
+    
+    //Filtrar por estado
+    if (this.filtroEstadoActivo) {
+      pedidosFiltrados = pedidosFiltrados.filter(pedido => {
+        const estado = pedido.estado || 'pendiente_pesos';
+        return estado === this.filtroEstadoActivo;
+      });
+    }
+    
+    this.pedidosFiltrados = pedidosFiltrados;
+  }
+
+  limpiarFiltros() {
+    this.filtroEstadoActivo = null;
+    this.terminoBusqueda = '';
+    this.mostrarMenuFiltro = false;
+    this.pedidosFiltrados = [...this.pedidos];
+  }
+
+  getContadorPorEstado(estado: string): number {
+    return this.pedidos.filter(p => (p.estado || 'pendiente_pesos') === estado).length;
+  }
+
+  //Enviar a Facturación
+
+  async enviarAFacturacion(pedido: Pedido) {
+    if (pedido.estado !== 'listo_facturar') {
+      alert('Solo se pueden enviar a facturación pedidos con estado "Listo para Facturar"');
+      return;
+    }
+    
+    const confirmar = confirm(`¿Deseas enviar el ${pedido.nombre} a facturación?\n\nDirección: ${pedido.direccion}`);
+    
+    if (!confirmar) {
+      return;
+    }
+    
+    try {
+      //Cambiar el estado a 'pendiente_confirmacion' o 'facturado'
+      pedido.estado = 'pendiente_confirmacion';
+      
+      //Actualizar en el backend
+      await this.api.actualizarEstadoPedido(pedido.id, pedido.estado);
+      
+      //Actualizar la lista localmente
+      const index = this.pedidos.findIndex(p => p.id === pedido.id);
+      if (index !== -1) {
+        this.pedidos[index] = pedido;
+      }
+      
+      this.pedidosFiltrados = [...this.pedidos];
+      this.aplicarFiltros();
+      
+      alert(`${pedido.nombre} enviado a facturación exitosamente`);
+      
+      console.log('Pedido enviado a facturación:', pedido);
+      
+    } catch (error) {
+      console.error('Error al enviar a facturación:', error);
+      alert('Error al enviar el pedido a facturación');
+    }
+  }
+
+  getProductosDisponiblesParaIndice(indice: number): any[] {
+    const idsSeleccionados = this.productosInputs
+      .map((prod, i) => i !== indice ? prod.id : null)
+      .filter(id => id !== null && id !== 0);
+    return this.productosDisponibles.filter(
+      prod => !idsSeleccionados.includes(prod.id)
+    );
+  }
+} 

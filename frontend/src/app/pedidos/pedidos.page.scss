@@ -806,3 +806,338 @@ ion-item.item-seleccionable {
   border-top: 1px solid #e0e0e0;
   background: #f8f9fa;
 }
+
+.pedido-postit-pendiente-pesos {
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%) !important;
+  
+  &::before {
+    background: rgba(255, 193, 7, 0.08) !important;
+  }
+}
+
+.pedido-postit-completado {
+  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%) !important;
+  
+  &::before {
+    background: rgba(76, 175, 80, 0.08) !important;
+  }
+  
+  .postit-header {
+    color: #2e7d32 !important;
+  }
+  
+  .postit-info strong {
+    color: #388e3c !important;
+  }
+  
+  .postit-producto-item::before,
+  .postit-producto-item-seleccionable::before {
+    color: #388e3c !important;
+  }
+}
+
+.pedido-postit-listo-facturar {
+  background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%) !important;
+  
+  &::before {
+    background: rgba(33, 150, 243, 0.08) !important;
+  }
+  
+  .postit-header {
+    color: #1565c0 !important;
+  }
+  
+  .postit-info strong {
+    color: #1976d2 !important;
+  }
+
+  .icon-enviar-facturacion{
+    color: #1976d2 !important;
+  }
+  
+  .postit-producto-item::before,
+  .postit-producto-item-seleccionable::before {
+    color: #1976d2 !important;
+  }
+}
+
+.pedido-postit-pendiente-confirmacion {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%) !important;
+  
+  &::before {
+    background: rgba(255, 152, 0, 0.08) !important;
+  }
+  
+  .postit-header {
+    color: #e65100 !important;
+  }
+  
+  .postit-info strong {
+    color: #f57c00 !important;
+  }
+  
+  .postit-producto-item::before,
+  .postit-producto-item-seleccionable::before {
+    color: #f57c00 !important;
+  }
+}
+
+.pedido-postit-seleccionable {
+  &.estado-pendiente-pesos {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%) !important;
+  }
+  
+  &.estado-listo-facturar {
+    background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%) !important;
+    
+    .postit-header-seleccionable {
+      color: #2e7d32 !important;
+    }
+    
+    .postit-info-seleccionable strong {
+      color: #388e3c !important;
+    }
+    
+    .postit-producto-item-seleccionable::before {
+      color: #388e3c !important;
+    }
+  }
+  
+  &.estado-facturado {
+    background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%) !important;
+    
+    .postit-header-seleccionable {
+      color: #1565c0 !important;
+    }
+    
+    .postit-info-seleccionable strong {
+      color: #1976d2 !important;
+    }
+    
+    .postit-producto-item-seleccionable::before {
+      color: #1976d2 !important;
+    }
+  }
+  
+  &.estado-pendiente-confirmacion {
+    background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%) !important;
+    
+    .postit-header-seleccionable {
+      color: #e65100 !important;
+    }
+    
+    .postit-info-seleccionable strong {
+      color: #f57c00 !important;
+    }
+    
+    .postit-producto-item-seleccionable::before {
+      color: #f57c00 !important;
+    }
+  }
+  
+  &.estado-completado {
+    background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%) !important;
+    
+    .postit-header-seleccionable {
+      color: #424242 !important;
+    }
+    
+    .postit-info-seleccionable strong {
+      color: #616161 !important;
+    }
+    
+    .postit-producto-item-seleccionable::before {
+      color: #616161 !important;
+    }
+  }
+}
+
+.filtro-activo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-top: 10px;
+  
+  span {
+    color: #f8f7f6;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  ion-icon {
+    color: #f8f7f6;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.menu-filtro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 60px;
+}
+
+.menu-filtro-contenido {
+  background: white;
+  width: 90%;
+  max-width: 350px;
+  margin-right: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.menu-filtro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #6a0d0d;
+  color: white;
+  
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  ion-icon {
+    font-size: 24px;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.menu-filtro-opciones {
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.filtro-opcion {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 12px;
+  
+  &:hover {
+    background: #f5f5f5;
+  }
+  
+  &.activo {
+    background: #e3f2fd;
+    border: 2px solid #2196f3;
+  }
+  
+  span {
+    flex: 1;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .filtro-contador {
+    flex: 0;
+    background: #97201d;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+.filtro-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  
+  &.todos {
+    background: linear-gradient(135deg, #fff9c4 0%, #c8e6c9 50%, #bbdefb 100%);
+  }
+  
+  &.pendiente-pesos {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+  }
+  
+  &.listo-facturar {
+    background: linear-gradient(135deg, #c8e6c9 0%, #1976d2 100%);
+  }
+  
+  &.pendiente-confirmacion {
+    background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+  }
+  
+  &.completado {
+    background: linear-gradient(135deg, #e0e0e0 0%, #388e3c 100%);
+  }
+}
+
+.menu-filtro-footer {
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  
+  ion-button {
+    --background: #dd2a39;
+    --color: white;
+    margin: 0;
+  }
+}
+
+.icon-enviar-facturacion-seleccionable {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #28a745;
+  cursor: pointer;
+  z-index: 10;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #1e7e34;
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+  }
+}
