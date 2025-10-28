@@ -119,10 +119,10 @@ export class ApiService{
 }
 
 
-  login(rut: string, password: string){
+  async login(rut: string, password: string){
 
 
-    return api.post("auth/login/", {
+    return await api.post("auth/login/", {
       username: rut,
       password: password
     }).then(response => {
@@ -157,8 +157,8 @@ export class ApiService{
     return api.get("lista/usuarios")
   }
 
-  recuperarPassword(email: string): Promise<any>{
-    return api.post('password-reset-request/', {
+  async recuperarPassword(email: string): Promise<any>{
+    return await api.post('password-reset-request/', {
       email: email
     }).then(response => {
       return response.data
@@ -167,8 +167,8 @@ export class ApiService{
     });
   }
 
-  condfirmarRecuperacion(codigo: string): Promise<any>{
-    return api.post("password-reset-confirm/", {
+  async confirmarRecuperacion(codigo: string): Promise<any>{
+    return await api.post("password-reset-confirm/", {
       code: codigo,
     }).then(response => {
       return response.data;
@@ -177,14 +177,14 @@ export class ApiService{
     })
   }
 
-  cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
+  async cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
   console.log("Enviando cambio de contraseña:", {
     code: codigo,
     new_password: '***',
     confirm_password: '***'
   });
   
-  return api.post("password-reset-change/", {
+  return await api.post("password-reset-change/", {
     code: codigo,
     new_password: nuevaPassword,
     confirm_password: confirmarPassword
@@ -309,6 +309,7 @@ export class ApiService{
       const payload = {
         direccion: pedidoCompleto.direccion,
         fecha_entrega: new Date().toISOString().split('T')[0],
+        estado: 'listo_facturar',  // ← AGREGAR ESTO
         lineas: productosConPesos.map((producto) => ({
           producto_id: producto.id,
           cajas: producto.pesos.map((peso: number, cajaIndex: number) => ({
@@ -360,6 +361,46 @@ export class ApiService{
       return clientes;
     } catch(error) {
       console.error(error);
+    }
+  }
+
+  async actualizarEstadoPedido(id: number, estado: string) {
+    try {
+      console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
+      
+      // Primero obtenemos el pedido completo
+      const getResponse = await api.get(`pedidos/${id}/`);
+      const pedidoActual = getResponse.data;
+      
+      console.log('Pedido actual:', pedidoActual);
+      
+      // Construimos el payload manteniendo TODA la estructura original
+      const payload = {
+        direccion: pedidoActual.direccion,
+        fecha_entrega: pedidoActual.fecha_entrega,
+        estado: estado,  // Solo cambiamos el estado
+        lineas: pedidoActual.lineas.map((linea: any) => ({
+          producto_id: linea.producto.id,
+          cajas: linea.cajas && linea.cajas.length > 0 
+            ? linea.cajas.map((caja: any) => ({
+                peso: Number(caja.peso),
+                etiqueta: caja.etiqueta || `Caja ${linea.cajas.indexOf(caja) + 1}`
+              }))
+            : []
+        }))
+      };
+      
+      console.log('Payload a enviar:', JSON.stringify(payload, null, 2));
+      
+      const updateResponse = await api.put(`pedidos/${id}/`, payload);
+      console.log('Estado actualizado exitosamente');
+      return updateResponse;
+      
+    } catch(error: any) {
+      console.error('Error completo:', error);
+      console.error('Response data:', error.response?.data);
+      console.error('Status:', error.response?.status);
+      throw error;
     }
   }
 
