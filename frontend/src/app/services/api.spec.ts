@@ -330,7 +330,7 @@ export class ApiService{
     }
   }
 
-  async agregarCliente(id: string, nombre: string, rut: string, direccion: string, razonSocial: string){
+  async agregarCliente(id: string, rut: string, nombre: string, direccion: string, razonSocial: string){
     try{
       await api.post("agregar-cliente/", {
         id_cliente: id,
