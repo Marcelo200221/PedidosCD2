@@ -1,21 +1,53 @@
+/* Estilos base y header */
+.facturacion-page {
+  --background: #f5f5f5;
+}
+
 .barra-superior {
   width: 100%;
-  height: 70px;             
+  padding: 2%;            
   background-color: #6a0d0d; 
+  display: flex;
+  flex-direction: column;    
+  align-items: center;
 }
 
-.contenido{
-    margin-top: 20%;
+.top-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;         
+  margin-bottom: 10px;           
 }
 
-.titulo-texto{
-  color: #000;
+.titulo-texto {
+  color: #f8f7f6;
   font-weight: bold;
   font-family: catamaran, sans-serif;
-  margin-bottom: -60%;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  margin-right: 10%;
+  margin-top: 4%;
 }
 
-.titulo-container{
+.user-name {
+  font-weight: bold;
+}
+
+.icon-left, .icon-right {
+  font-size: 170%;
+  color: #f8f7f6;
+  cursor: pointer;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.contenido {
+  margin-top: 5%;
+}
+
+.titulo-container {
   display: flex;
   flex-direction: column;    
   align-items: left;
@@ -28,70 +60,70 @@
   align-items: center;
   justify-content: center;
   height: 60vh;
-  
-  ion-spinner {
-    transform: scale(1.5);
-    margin-bottom: 20px;
-  }
-  
-  p {
-    color: #666;
-    font-size: 14px;
-  }
+}
+
+.loading-container ion-spinner {
+  transform: scale(1.5);
+  margin-bottom: 20px;
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 14px;
 }
 
 .resumen-total {
   text-align: center;
-  
-  h1 {
-    font-size: 64px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  p {
-    font-size: 18px;
-    color: #666;
-    margin: 5px 0 0 0;
-  }
+}
+
+.resumen-total h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.resumen-total p {
+  font-size: 18px;
+  color: #666;
+  margin: 5px 0 0 0;
 }
 
 .grafico-torta {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  
-  .pie-chart {
-    width: 100%;
-    height: auto;
-  }
-  
-  .pie-segment {
-    transition: all 0.3s ease;
-    cursor: pointer;
-    
-    &:hover {
-      opacity: 0.8;
-      transform: scale(1.02);
-    }
-  }
-  
-  .pie-center-text {
-    font-size: 16px;
-    fill: #666;
-    font-weight: 500;
-  }
-  
-  .pie-center-number {
-    font-size: 32px;
-    font-weight: bold;
-  }
+}
+
+.grafico-torta .pie-chart {
+  width: 100%;
+  height: auto;
+}
+
+.pie-segment {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pie-segment:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.pie-center-text {
+  font-size: 16px;
+  fill: #666;
+  font-weight: 500;
+}
+
+.pie-center-number {
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .estadisticas-lista {
   display: flex;
   flex-direction: column;
-  gap: 20px;;
+  gap: 20px;
 }
 
 .estadistica-item {
@@ -100,11 +132,11 @@
   border-radius: 8px;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  
-  &:hover {
-    transform: translateX(5px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
+}
+
+.estadistica-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .estadistica-info {
@@ -163,40 +195,186 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  ion-icon {
-    font-size: 32px;
-  }
+}
+
+.mini-card-icon ion-icon {
+  font-size: 32px;
 }
 
 .mini-card-info {
   flex: 1;
-  
-  h3 {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 0;
-    color: #333;
-  }
-  
-  p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0 0 0;
-  }
+}
+
+.mini-card-info h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.mini-card-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 0 0;
 }
 
 ion-card {
   background-color: #f8f7f6;
+}
+
+ion-card ion-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+}
+
+ion-card ion-card-title ion-icon {
+  font-size: 24px;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: left 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-lateral.abierto {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #6a0d0d;
+  color: #f8f7f6;
+}
+
+.menu-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.menu-header .icon-cerrar-menu {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-header .icon-cerrar-menu:hover {
+  transform: rotate(90deg);
+}
+
+.menu-contenido {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Catamaran', sans-serif;
+  color: #333;
+}
+
+.menu-item ion-icon {
+  font-size: 24px;
+  color: #97201d;
+}
+
+.menu-item span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu-item:hover {
+  background: #f5f5f5;
+  padding-left: 30px;
+}
+
+.menu-item:hover ion-icon {
+  color: #6a0d0d;
+}
+
+.menu-item:active {
+  background: #e0e0e0;
+}
+
+.menu-divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 15px 25px;
+}
+
+.icon-left {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icon-left:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.icon-left:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+  .menu-lateral {
+    width: 320px;
+    left: -320px;
+  }
   
-  ion-card-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #000;
-    
-    ion-icon {
-      font-size: 24px;
-    }
+  .menu-item {
+    padding: 18px 30px;
+  }
+  
+  .menu-item ion-icon {
+    font-size: 26px;
+  }
+  
+  .menu-item span {
+    font-size: 18px;
+  }
+  
+  .menu-item:hover {
+    padding-left: 35px;
   }
 }

@@ -120,20 +120,42 @@ export class ApiService{
 
 
   async login(rut: string, password: string){
-
-
     return await api.post("auth/login/", {
       username: rut,
       password: password
     }).then(response => {
       const access = response.data.token.access;
       console.log(response.data)
+      
       if(access){
-        alert("Inicio de sesion exitoso")
-        localStorage.setItem('auth_token', access)
+        // Guardar el token
+        localStorage.setItem('auth_token', access);
+        
+        // Guardar datos del usuario (ajusta según lo que devuelva tu API)
+        const usuario = {
+          nombre: response.data.user?.first_name || response.data.first_name || '',
+          apellido: response.data.user?.last_name || response.data.last_name || '',
+          email: response.data.user?.email || response.data.email || '',
+          rut: rut
+        };
+        
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+        
+        alert("Inicio de sesion exitoso");
         this.router.navigate(['/hub']);
       }
     })
+  }
+
+  // Agregar estos métodos nuevos
+  getUsuarioActual(): any {
+    const usuario = localStorage.getItem('usuario');
+    return usuario ? JSON.parse(usuario) : null;
+  }
+
+  getNombreCompleto(): string {
+    const usuario = this.getUsuarioActual();
+    return usuario ? `${usuario.nombre} ${usuario.apellido}`.trim() : '';
   }
 
   saveToken(token: string){
@@ -146,6 +168,8 @@ export class ApiService{
 
   logout(){
     localStorage.removeItem('auth_token');
+    localStorage.removeItem('usuario'); 
+    this.router.navigate(['/login']);
   }
 
   getHello(){
