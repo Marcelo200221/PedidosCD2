@@ -161,7 +161,7 @@ export class PedidosPage implements OnInit {
     return {
       id: pedidosBackend.id,
       nombre: `pedido ${pedidosBackend.id}`,
-      cliente: 'Cliente por defecto',
+      cliente: (pedidosBackend.cliente && (pedidosBackend.cliente.nombre || pedidosBackend.cliente.razon_social)) || 'Cliente por defecto',
       direccion: pedidosBackend.direccion,
       productos: productos,
       seleccionado: false,
@@ -480,6 +480,7 @@ export class PedidosPage implements OnInit {
     }
 
     const payload = {
+      cliente: this.nuevoPedido.cliente,
       direccion: this.nuevoPedido.direccion,
       fecha_entrega: new Date().toISOString().split('T')[0],
       lineas: productosValidos.map(prod => ({
@@ -517,6 +518,7 @@ export class PedidosPage implements OnInit {
       }else{
         console.log("Enviando pedido al backend:", payload);
         const res = await this.api.crearPedido(
+          payload.cliente,
           payload.direccion,
           payload.fecha_entrega,
           payload.lineas

@@ -201,13 +201,14 @@ export class ApiService{
     throw error.response?.data || error;
   });
 }
-  async crearPedido(direccion: String, fechaEntrega: String, lineas: {
+  async crearPedido(cliente: String,direccion: String, fechaEntrega: String, lineas: {
     producto_id: Number, cajas: {peso: Number, etiqueta?: String}[]
   }[]){
     try{
       console.log("Creando pedido con: ", {direccion, fechaEntrega, lineas})
 
       const res = await api.post("pedidos/", {
+        cliente: cliente,
         direccion: direccion,
         fecha_entrega: fechaEntrega,
         lineas: lineas
@@ -330,6 +331,50 @@ export class ApiService{
       return response;
     } catch(error) {
       console.error('Error al guardar pesos:', error);
+      throw error;
+    }
+  }
+
+  // Facturación: generar PDF por pedido (descargar)
+  async generarFacturaPorPedido(pedidoId: number, opciones?: {
+    factura_numero?: string;
+    descuento?: number;
+    impuesto_porcentaje?: number;
+    moneda?: string;
+    notas?: string;
+  }): Promise<void> {
+    try {
+      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `factura-pedido-${pedidoId}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error al generar factura:', error);
+      throw error;
+    }
+  }
+
+  // Facturación: previsualizar PDF por pedido (abre en nueva pestaña)
+  async previsualizarFacturaPorPedido(pedidoId: number, opciones?: {
+    factura_numero?: string;
+    descuento?: number;
+    impuesto_porcentaje?: number;
+    moneda?: string;
+    notas?: string;
+  }): Promise<void> {
+    try {
+      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      window.open(url, '_blank');
+    } catch (error) {
+      console.error('Error al previsualizar factura:', error);
       throw error;
     }
   }

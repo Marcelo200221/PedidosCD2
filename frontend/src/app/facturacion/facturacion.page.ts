@@ -6,7 +6,7 @@ import { IonContent, IonButton, IonSearchbar, IonItem,
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, download } from 'ionicons/icons';
 
 // Interfaces
 export interface Producto {
@@ -29,7 +29,7 @@ export interface Pedido {
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, download
 });
 
 @Component({
@@ -101,7 +101,7 @@ export class FacturacionPage implements OnInit {
     return {
       id: pedidosBackend.id,
       nombre: `pedido ${pedidosBackend.id}`,
-      cliente: 'Cliente por defecto',
+      cliente: (pedidosBackend.cliente && (pedidosBackend.cliente.nombre || pedidosBackend.cliente.razon_social)) || 'Cliente por defecto',
       direccion: pedidosBackend.direccion,
       productos: productos,
       seleccionado: false,
@@ -130,6 +130,33 @@ export class FacturacionPage implements OnInit {
   limpiarBusqueda() {
     this.terminoBusqueda = '';
     this.pedidosFiltrados = [...this.pedidos];
+  }
+
+  // Acciones de facturación
+  async verFactura(pedido: Pedido) {
+    try {
+      await this.api.previsualizarFacturaPorPedido(pedido.id);
+    } catch (error) {
+      console.error('Error al previsualizar factura:', error);
+      alert('No se pudo previsualizar la factura');
+    }
+  }
+
+  async generarFacturasSeleccionadas() {
+    const seleccionados = this.pedidos.filter(p => p.seleccionado);
+    if (seleccionados.length === 0) {
+      alert('Selecciona al menos un pedido');
+      return;
+    }
+    try {
+      for (const pedido of seleccionados) {
+        await this.api.generarFacturaPorPedido(pedido.id);
+      }
+      alert(`Se generaron ${seleccionados.length} factura(s).`);
+    } catch (error) {
+      console.error('Error generando facturas:', error);
+      alert('Ocurrió un error al generar alguna factura');
+    }
   }
 
   //Detalle de pesos
@@ -199,6 +226,7 @@ export class FacturacionPage implements OnInit {
     try {
       //Cambiar estado a 'completado'
       for (const pedido of seleccionados) {
+        await this.api.generarFacturaPorPedido(pedido.id);
         await this.api.actualizarEstadoPedido(pedido.id, 'completado');
       }
 
@@ -224,6 +252,7 @@ export class FacturacionPage implements OnInit {
     if (!confirmar) return;
     
     try {
+      await this.api.generarFacturaPorPedido(pedido.id);
       await this.api.actualizarEstadoPedido(pedido.id, 'completado');
       
       //Remover de la lista

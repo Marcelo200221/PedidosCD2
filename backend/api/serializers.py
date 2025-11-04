@@ -116,6 +116,19 @@ class PedidoSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         lineas_data = validated_data.pop('lineas', [])
         pedido = Pedidos.objects.create(**validated_data)
+        # Compatibilidad: si no vino cliente_id pero sí 'cliente' (texto) en el payload,
+        # intentar resolverlo por id_cliente, rut o nombre.
+        if not pedido.cliente:
+            raw_cliente = (self.initial_data or {}).get('cliente')
+            if raw_cliente:
+                cli = (
+                    Cliente.objects.filter(id_cliente=raw_cliente).first()
+                    or Cliente.objects.filter(rut=raw_cliente).first()
+                    or Cliente.objects.filter(nombre=raw_cliente).first()
+                )
+                if cli:
+                    pedido.cliente = cli
+                    pedido.save(update_fields=['cliente'])
         for linea_data in lineas_data:
             cajas_data = linea_data.pop('cajas', [])
 
@@ -134,6 +147,17 @@ class PedidoSerializer(serializers.ModelSerializer):
             instance.estado = validated_data.get('estado', instance.estado)
         if 'cliente' in validated_data:
             instance.cliente = validated_data.get('cliente')
+        else:
+            # Compatibilidad: permitir 'cliente' en texto en updates
+            raw_cliente = (self.initial_data or {}).get('cliente')
+            if raw_cliente:
+                cli = (
+                    Cliente.objects.filter(id_cliente=raw_cliente).first()
+                    or Cliente.objects.filter(rut=raw_cliente).first()
+                    or Cliente.objects.filter(nombre=raw_cliente).first()
+                )
+                if cli:
+                    instance.cliente = cli
         instance.save()
 
         if lineas_data is not None:
