@@ -1,0 +1,189 @@
+<ion-content class="facturacion-page">
+
+  <!-- Header Normal -->
+  <div *ngIf="!mostrarSeleccionMultiple" class="login-header">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left"></ion-icon>
+        <h1 class="titulo-texto">Pedidos</h1>
+      </div>
+        <ion-searchbar 
+          placeholder="Buscar por pedido, producto, estado..." 
+          [(ngModel)]="terminoBusqueda"
+          (ionInput)="buscarPedidos($event)"
+          (ionClear)="limpiarBusqueda()" 
+          showClearButton="focus">
+        </ion-searchbar>
+    </div>
+  </div>
+
+  <!-- Header Selección Múltiple -->
+  <div *ngIf="mostrarSeleccionMultiple" class="login-header">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="arrow-back" class="icon-left" (click)="cancelarSeleccionMultiple()"></ion-icon>
+        <h1 class="titulo-texto">Seleccionados ({{ pedidosSeleccionados }})</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicador de carga -->
+  <div *ngIf="cargando" class="mensaje-carga">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando pedidos...</p>
+  </div>
+
+  <!-- Lista de pedidos -->
+  <ion-list *ngIf="!cargando && !mostrarSeleccionMultiple">
+    <!-- Sin resultados -->
+    <div *ngIf="pedidosFiltrados.length === 0 && terminoBusqueda" class="mensaje-sin-resultados">
+      <ion-icon name="search" class="icon-sin-resultados"></ion-icon>
+      <p>No se encontraron pedidos con "{{ terminoBusqueda }}"</p>
+    </div>
+    
+    <div *ngIf="pedidosFiltrados.length === 0 && !terminoBusqueda" class="mensaje-sin-resultados">
+      <ion-icon name="document-text" class="icon-sin-resultados"></ion-icon>
+      <p>No hay pedidos pendientes de confirmación</p>
+    </div>
+    
+    <!-- Pedidos -->
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none">
+      <div class="pedido-postit pedido-postit-pendiente-confirmacion">
+        <div class="postit-id">
+          {{ pedido.nombre }}
+          <ion-icon name="eye" class="icon-ver-detalle" (click)="abrirDetallePesos(pedido)"></ion-icon>
+        </div>
+        <div class="postit-header">{{ pedido.direccion }}</div>
+        <div class="postit-info">
+          <strong>Cliente:</strong> {{ pedido.cliente }}
+        </div>
+        <div class="postit-info">
+          <strong>Peso Total:</strong> {{ calcularPesoTotalDelPedido(pedido) | number:'1.0-3' }} KG
+        </div>
+        <div class="postit-productos">
+          <div *ngFor="let prod of pedido.productos" class="postit-producto-item">
+            {{ prod.nombre }} - {{ prod.cajas }} Cajas - {{ getPesoTotal(prod) | number:'1.0-3' }} KG
+          </div>
+        </div>
+        
+        <!-- Botón de confirmar facturación individual -->
+        <ion-icon 
+          name="checkmark-circle" 
+          class="icon-confirmar-facturacion" 
+          (click)="confirmarFacturacionIndividual(pedido)" 
+          title="Confirmar Facturación">
+        </ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Lista con selección múltiple -->
+  <ion-list *ngIf="!cargando && mostrarSeleccionMultiple">
+    <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none" class="item-seleccionable">
+      <div 
+        class="pedido-postit-seleccionable estado-pendiente-confirmacion" 
+        [class.seleccionado-confirmar]="pedido.seleccionado"
+        (click)="toggleSeleccionPedido(pedido)">
+        <ion-checkbox 
+          slot="start" 
+          class="postit-checkbox" 
+          [(ngModel)]="pedido.seleccionado" 
+          (click)="$event.stopPropagation()">
+        </ion-checkbox>
+        
+        <div class="postit-contenido">
+          <div class="postit-id-seleccionable">{{ pedido.nombre }}</div>
+          <div class="postit-header-seleccionable">{{ pedido.direccion }}</div>
+          <div class="postit-info-seleccionable">
+            <strong>Cliente:</strong> {{ pedido.cliente }}
+          </div>
+          <div class="postit-info-seleccionable">
+            <strong>Peso Total:</strong> {{ calcularPesoTotalDelPedido(pedido) | number:'1.0-3' }} KG
+          </div>
+          <div class="postit-productos-seleccionable">
+            <div *ngFor="let prod of pedido.productos" class="postit-producto-item-seleccionable">
+              {{ prod.nombre }} - {{ prod.cajas }} Cajas - {{ getPesoTotal(prod) | number:'1.0-3' }} KG
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botones de selección múltiple -->
+  <div *ngIf="mostrarSeleccionMultiple" class="botones-confirmar">
+    <ion-button 
+      expand="block" 
+      class="confirmar-seleccionados-boton" 
+      (click)="confirmarFacturacionSeleccionados()"
+      [disabled]="pedidosSeleccionados === 0">
+      <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+      Confirmar Seleccionados ({{ pedidosSeleccionados }})
+    </ion-button>
+    <ion-button 
+      expand="block" 
+      class="cancelarBoton" 
+      (click)="cancelarSeleccionMultiple()">
+      Cancelar
+    </ion-button>
+  </div>
+
+  <!-- Modal Detalle de Pesos -->
+  <div *ngIf="mostrarDetallePesos && pedidoDetalle" class="modal-detalle-pesos">
+    <div class="modal-overlay" (click)="cerrarDetallePesos()"></div>
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 class="titulos">Detalle de Pesos</h2>
+        <ion-icon name="close" class="icon-cerrar-modal" (click)="cerrarDetallePesos()"></ion-icon>
+      </div>
+      
+      <div class="modal-body">
+        <div class="info-pedido-modal">
+          <h3>{{ pedidoDetalle.direccion }}</h3>
+          <p><strong>ID:</strong> {{ pedidoDetalle.nombre }}</p>
+          <p><strong>Cliente:</strong> {{ pedidoDetalle.cliente }}</p>
+        </div>
+        
+        <div *ngFor="let producto of pedidoDetalle.productos" class="producto-detalle-modal">
+          <h4>{{ producto.nombre }}</h4>
+          <div *ngIf="producto.pesos && producto.pesos.length > 0" class="cajas-detalle">
+            <div *ngFor="let peso of producto.pesos; let i = index" class="caja-detalle-item">
+              <span class="caja-numero">Caja {{ i + 1 }}:</span>
+              <span class="caja-peso">{{ peso | number:'1.0-3' }} KG</span>
+            </div>
+            <div class="total-producto-modal">
+              <strong>Total {{ producto.nombre }}:</strong> {{ getPesoTotal(producto) | number:'1.0-3' }} KG
+            </div>
+          </div>
+        </div>
+        
+        <div class="total-general-modal">
+          <h3>Total General del Pedido</h3>
+          <div class="total-value-modal">
+            {{ calcularPesoTotalDelPedido(pedidoDetalle) | number:'1.0-3' }} KG
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <ion-button class="cerrar-detalle" expand="block" (click)="cerrarDetallePesos()">
+          Cerrar
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Boton: Inferior -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="activarSeleccionMultiple()">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

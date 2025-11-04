@@ -1090,23 +1090,23 @@ ion-item.item-seleccionable {
   border: 2px solid rgba(0, 0, 0, 0.1);
   
   &.todos {
-    background: linear-gradient(135deg, #fff9c4 0%, #c8e6c9 50%, #bbdefb 100%);
+    background:#ffffff;
   }
   
   &.pendiente-pesos {
-    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+    background:#fff59d;
   }
   
   &.listo-facturar {
-    background: linear-gradient(135deg, #c8e6c9 0%, #1976d2 100%);
+    background: #1976d2;
   }
   
   &.pendiente-confirmacion {
-    background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+    background: #ffcc80;
   }
   
   &.completado {
-    background: linear-gradient(135deg, #e0e0e0 0%, #388e3c 100%);
+    background: #388e3c;
   }
 }
 
