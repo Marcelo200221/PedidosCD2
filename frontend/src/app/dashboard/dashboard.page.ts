@@ -5,7 +5,10 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader,
   IonSpinner } from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
-import { pieChart, barChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline } from 'ionicons/icons';
+import { Router } from '@angular/router';
+import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart } from 'ionicons/icons';
 
 interface EstadisticaPedidos {
   estado: string;
@@ -19,7 +22,9 @@ addIcons({
   'hourglass-outline': hourglassOutline,
   'checkmark-circle-outline': checkmarkCircleOutline,
   'time-outline': timeOutline,
-  'checkmark-done-outline': checkmarkDoneOutline
+  'checkmark-done-outline': checkmarkDoneOutline,  chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle,
+  logOut
 });
 
 @Component({
@@ -40,6 +45,11 @@ export class DashboardPage implements OnInit {
   totalPedidos: number = 0;
   cargando: boolean = true;
 
+  //Variables del menú
+  menuAbierto: boolean = false;
+  nombreUsuario: string = '';
+  apellidoUsuario: string = '';
+
   // Colores para cada estado
   coloresEstados: { [key: string]: string } = {
     'pendiente_pesos': '#ffd93d',
@@ -55,10 +65,24 @@ export class DashboardPage implements OnInit {
     'completado': 'Completado'
   };
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private router: Router) {}
 
   async ngOnInit() {
     await this.cargarEstadisticas();
+    this.cargarDatosUsuario();
+  }
+
+  cargarDatosUsuario() {
+    const usuario = this.api.getUsuarioActual();
+    if (usuario) {
+      this.nombreUsuario = usuario.nombre;
+      this.apellidoUsuario = usuario.apellido;
+      console.log('Usuario cargado:', usuario); 
+    } else {
+      //Si no hay usuario, redirigir al login
+      console.warn('No hay usuario en localStorage, redirigiendo al login');
+      this.router.navigate(['/login']);
+    }
   }
 
   async cargarEstadisticas() {
@@ -145,5 +169,46 @@ export class DashboardPage implements OnInit {
       'Completado': 'checkmark-done-outline'
     };
     return iconos[estado] || 'ellipse-outline';
+  }
+    ngOnDestroy() {
+    this.menuAbierto = false;
+  }
+
+  //Control del menú
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
+
+//Navegación desde menú lateral
+  Irapedidosmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/pedidos']);
+  }
+
+  Irafacturasmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/facturacion']);
+  }
+
+  Iradashboardsmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/dashboard']);
+  }
+
+  IrMenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/hub']);
+  }
+
+  //Cerrar sesión
+  cerrarSesion() {
+    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+      this.api.logout();
+      this.cerrarMenu();
+    }
   }
 }

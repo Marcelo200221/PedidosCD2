@@ -1,4 +1,7 @@
 import {
+  isRTL
+} from "./chunk-BDZMTM6E.js";
+import {
   KEYBOARD_DID_OPEN
 } from "./chunk-4J7GP47S.js";
 import {
@@ -21,15 +24,11 @@ import {
   startFocusVisible
 } from "./chunk-G4NIR46C.js";
 import {
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-B643ERWT.js";
-import {
   iosTransitionAnimation
-} from "./chunk-BQIVGCNN.js";
+} from "./chunk-RZO5B7WV.js";
 import {
   mdTransitionAnimation
-} from "./chunk-OMOCVRPW.js";
+} from "./chunk-6EQ74STZ.js";
 import {
   LIFECYCLE_DID_ENTER,
   LIFECYCLE_DID_LEAVE,
@@ -42,7 +41,7 @@ import {
   setPageHidden,
   transition,
   waitForMount
-} from "./chunk-DH7GHTJC.js";
+} from "./chunk-PFGFVLIL.js";
 import {
   Build,
   Fragment,
@@ -58,18 +57,6 @@ import {
   setMode,
   writeTask
 } from "./chunk-LRGZUMX5.js";
-import {
-  MENU_BACK_BUTTON_PRIORITY,
-  OVERLAY_BACK_BUTTON_PRIORITY,
-  shouldUseCloseWatcher
-} from "./chunk-PV6F2B3V.js";
-import {
-  doc,
-  win
-} from "./chunk-2JHVMQEL.js";
-import {
-  isRTL
-} from "./chunk-BDZMTM6E.js";
 import {
   addEventListener,
   assert,
@@ -96,6 +83,15 @@ import {
   createGesture
 } from "./chunk-3XCRDJYW.js";
 import {
+  MENU_BACK_BUTTON_PRIORITY,
+  OVERLAY_BACK_BUTTON_PRIORITY,
+  shouldUseCloseWatcher
+} from "./chunk-PV6F2B3V.js";
+import {
+  doc,
+  win
+} from "./chunk-2JHVMQEL.js";
+import {
   config,
   configFromSession,
   configFromURL,
@@ -104,6 +100,10 @@ import {
   saveConfig
 } from "./chunk-FWNV42WI.js";
 import {
+  NG_VALUE_ACCESSOR,
+  NgControl
+} from "./chunk-VSHBVSWM.js";
+import {
   ActivatedRoute,
   ChildrenOutletContexts,
   NavigationStart,
@@ -111,16 +111,16 @@ import {
   Router,
   RouterLink,
   UrlSerializer
-} from "./chunk-M2QJOJJH.js";
-import "./chunk-MBOJX7Y7.js";
+} from "./chunk-IEWRWNUQ.js";
+import "./chunk-QDM77YTK.js";
+import "./chunk-YHSQNZJX.js";
 import {
   CommonModule,
   Location,
   LocationStrategy,
   NgIf,
   NgTemplateOutlet
-} from "./chunk-ISROFK6K.js";
-import "./chunk-CIW3M5WR.js";
+} from "./chunk-BZJSKMYE.js";
 import "./chunk-SQNCADWX.js";
 import {
   APP_INITIALIZER,
@@ -151,7 +151,6 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
-  __decorate,
   combineLatest,
   createComponent,
   distinctUntilChanged,
@@ -193,7 +192,10 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-34JUPYZJ.js";
+} from "./chunk-XDQ7H4UV.js";
+import {
+  __decorate
+} from "./chunk-TBSHZMKZ.js";
 import {
   __async,
   __name,
@@ -8913,14 +8915,14 @@ var App = proxyCustomElement((_a16 = class extends H {
       rIC(() => __async(this, null, function* () {
         const isHybrid2 = isPlatform(window, "hybrid");
         if (!config.getBoolean("_testing")) {
-          import("./index7-5HC62VQL.js").then((module) => module.startTapClick(config));
+          import("./index7-S4K7SZEG.js").then((module) => module.startTapClick(config));
         }
         if (config.getBoolean("statusTap", isHybrid2)) {
           import("./status-tap-JYM74VAY.js").then((module) => module.startStatusTap());
         }
         if (config.getBoolean("inputShims", needInputShims())) {
           const platform = isPlatform(window, "ios") ? "ios" : "android";
-          import("./input-shims-EUYIR3LX.js").then((module) => module.startInputShims(config, platform));
+          import("./input-shims-PYCIEHNT.js").then((module) => module.startInputShims(config, platform));
         }
         const hardwareBackButtonModule = yield import("./hardware-back-button-WGSNSH2S.js");
         const supportsHardwareBackButtonEvents = isHybrid2 || shouldUseCloseWatcher();

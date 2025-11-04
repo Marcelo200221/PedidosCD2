@@ -5,6 +5,7 @@ import { IonContent, IonButton, IonSearchbar, IonItem,
   IonLabel, IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton, IonList,} from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
+import { Router } from '@angular/router';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send } from 'ionicons/icons';
 
@@ -56,10 +57,30 @@ export class FacturacionPage implements OnInit {
   
   mostrarSeleccionMultiple: boolean = false;
 
-  constructor(private api: ApiService) { }
+  //Variables del menú
+  menuAbierto: boolean = false;
+  nombreUsuario: string = '';
+  apellidoUsuario: string = '';
+
+  constructor(private api: ApiService, 
+    private router: Router) { }
 
   async ngOnInit() {
     await this.cargarPedidosPendientesConfirmacion();
+    this.cargarDatosUsuario();
+  }
+
+    cargarDatosUsuario() {
+    const usuario = this.api.getUsuarioActual();
+    if (usuario) {
+      this.nombreUsuario = usuario.nombre;
+      this.apellidoUsuario = usuario.apellido;
+      console.log('Usuario cargado:', usuario); 
+    } else {
+      //Si no hay usuario, redirigir al login
+      console.warn('No hay usuario en localStorage, redirigiendo al login');
+      this.router.navigate(['/login']);
+    }
   }
 
   async cargarPedidosPendientesConfirmacion() {
@@ -235,6 +256,49 @@ export class FacturacionPage implements OnInit {
     } catch (error) {
       console.error('Error al confirmar facturación:', error);
       alert('Error al confirmar la facturación');
+    }
+  }
+
+  ngOnDestroy() {
+    this.menuAbierto = false;
+  }
+
+
+  //Control del menú
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
+
+  //Navegación desde menú lateral
+  Irapedidosmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/pedidos']);
+  }
+
+  Irafacturasmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/facturacion']);
+  }
+
+  Iradashboardsmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/dashboard']);
+  }
+  
+  IrMenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/hub']);
+  }
+
+  //Cerrar sesión
+  cerrarSesion() {
+    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+      this.api.logout();
+      this.cerrarMenu();
     }
   }
 }

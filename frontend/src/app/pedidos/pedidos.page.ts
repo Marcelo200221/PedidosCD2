@@ -5,6 +5,7 @@ import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, 
   IonCheckbox, IonSelect, IonSelectOption, IonSpinner} from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
+import { Router } from '@angular/router';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, checkmarkDone} from 'ionicons/icons';
 
@@ -51,6 +52,11 @@ export class PedidosPage implements OnInit {
   pedidos: Pedido[] = [];
   pedidosFiltrados: Pedido[] = [];
   productosInputs: Producto[] = [{ id: 0,nombre: '', cajas: null }];
+
+  //Variables del menú
+  menuAbierto: boolean = false;
+  nombreUsuario: string = '';
+  apellidoUsuario: string = '';
 
   pedidoEditandoId?: number;
   
@@ -99,12 +105,68 @@ export class PedidosPage implements OnInit {
   productosErrors: string[] = [''];
   pesosErrors: { [productoIndex: number]: string[] } = {};
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   async ngOnInit() {
     this.pedidosFiltrados = [...this.pedidos];
     await this.cargarProductosDisponibles();
     await this.cargarPedidosDesdeBackend();
+    this.cargarDatosUsuario();
+  }
+
+  cargarDatosUsuario() {
+    const usuario = this.api.getUsuarioActual();
+    if (usuario) {
+      this.nombreUsuario = usuario.nombre;
+      this.apellidoUsuario = usuario.apellido;
+      console.log('Usuario cargado:', usuario); 
+    } else {
+      //Si no hay usuario, redirigir al login
+      console.warn('No hay usuario en localStorage, redirigiendo al login');
+      this.router.navigate(['/login']);
+    }
+  }
+
+  //Control del menú
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
+
+  ngOnDestroy() {
+    this.menuAbierto = false;
+  }
+
+   //Navegación desde menú lateral
+  Irapedidosmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/pedidos']);
+  }
+
+  Irafacturasmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/facturacion']);
+  }
+
+  Iradashboardsmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/dashboard']);
+  }
+  
+  IrMenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/hub']);
+  }
+
+  //Cerrar sesión
+  cerrarSesion() {
+    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+      this.api.logout();
+      this.cerrarMenu();
+    }
   }
 
   async cargarPedidosDesdeBackend(){
