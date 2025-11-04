@@ -1,0 +1,130 @@
+/* Encabezado consistente */
+.barra-superior {
+  width: 100%;
+  height: 40px;
+  background-color: #6a0d0d;
+}
+
+.barra-inferior {
+  width: 55%;
+  height: 40px;
+  background-color: #97201d;
+  border-bottom-right-radius: 15px;
+}
+
+.titulo-texto {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 1%;
+}
+
+.barra-texto {
+  width: 30%;
+  height: 4px;
+  background-color: #97201d;
+  margin-left: 10%;
+  margin-bottom: 10%;
+}
+
+.lista-productos {
+  padding: 0 10% 20% 10%;
+  ion-item.producto-item {
+    --background: transparent;
+    --inner-padding-end: 0;
+    --min-height: unset;
+    margin: 0 0 14px 0;
+  }
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.producto-nombre {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  font-size: 115%;
+  margin: 0 0 4px 0;
+}
+
+.producto-detalle {
+  color: #000;
+  font-size: 92%;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-cambiar {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 12px;
+  height: 36px;
+  font-weight: bold;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--ion-background-color);
+  color: var(--ion-text-color);
+  width: min(520px, 92%);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--ion-color-step-150, #ececec);
+}
+
+.modal-body {
+  padding: 12px 16px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px 16px;
+}
+
+.btn-guardar {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 12px;
+}
+
+.btn-cancelar {
+  --color: #97201d;
+}

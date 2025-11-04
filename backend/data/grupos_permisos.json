@@ -6,18 +6,26 @@
         "create_pedidos",
         "edit_pedidos",
         "delete_pedidos",
-        "view_facturar"
+        "view_facturar",
+        "view_clientes",
+        "agregar_clientes",
+        "editar_clientes",
+        "eliminar_clientes"
     ],
     "monitor": [
         "view_pedidos",
         "create_pedidos",
         "edit_pedidos",
         "delete_pedidos",
-        "view_facturar"
+        "view_facturar",
+        "view_clientes",
+        "agregar_clientes",
+        "editar_clientes"
     ],
     "repartidor": [
         "view_pedidos",
         "create_pedidos",
-        "edit_pedidos"
+        "edit_pedidos",
+        "view_clientes"
     ]
 }

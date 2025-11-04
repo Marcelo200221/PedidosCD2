@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 from .views import views, usuarios, pedidos, clientes
+from .views.facturas import GenerarFacturaPDF, PreviewFacturaPDF, GenerarFacturaPorPedido
 
 router = DefaultRouter()
 router.register(r'pedidos', pedidos.PedidoViewSet, basename='pedidos')
@@ -12,8 +13,13 @@ urlpatterns = [
     path('password-reset-confirm/', usuarios.password_reset_confirm),
     path('password-reset-change/', usuarios.password_reset_change),
     path('usuarios/lista', usuarios.usuario_lista, name="usuario-lista"),
+    path('usuarios/permisos', usuarios.permisos_usuario, name="usuario-permisos"),
     path('productos/', pedidos.productos, name="productos"),
     path('lista/clientes', clientes.listar_clientes, name="lista_clientes"),
     path("agregar-cliente/", clientes.agregar_cliente, name="agregar-cliente"),
-    path("eliminar/cliente/<str:pk>/", clientes.eliminar_cliente, name="eliminar-cliente")
+    path("eliminar/cliente/<str:pk>/", clientes.eliminar_cliente, name="eliminar-cliente"),
+    path('facturas/preview', PreviewFacturaPDF.as_view(), name='facturas-preview'),
+    path('facturas/generar', GenerarFacturaPDF.as_view(), name='facturas-generar'),
+    path('facturas/generar-por-pedido/<int:pedido_id>', GenerarFacturaPorPedido.as_view(), name='facturas-generar-por-pedido'),
+    path('asignar/precio', pedidos.asignar_precio_v2, name="asignar-precio")
 ] + router.urls

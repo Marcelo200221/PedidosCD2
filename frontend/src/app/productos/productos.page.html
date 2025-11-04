@@ -1,0 +1,41 @@
+<ion-content class="productos-page">
+  <div class="barra-superior"></div>
+  <div class="barra-inferior"></div>
+  <h1 class="titulo-texto">Productos</h1>
+  <div class="barra-texto"></div>
+
+  <div class="lista-productos">
+    <ion-list>
+      <ion-item class="producto-item" *ngFor="let p of productos">
+        <div class="producto-card">
+          <div class="producto-info">
+            <div class="producto-nombre">{{ p.nombre }}</div>
+            <div class="producto-detalle">Precio actual: <b>{{ p.precio | number:'1.0-0' }} CLP</b></div>
+          </div>
+          <div class="acciones">
+            <ion-button class="btn-cambiar" (click)="abrirModal(p)">Cambiar precio</ion-button>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Modal simple controlado por flags -->
+  <div class="modal-backdrop" *ngIf="mostrarModal" (click)="cerrarModal()"></div>
+  <div class="modal" *ngIf="mostrarModal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Cambiar precio</h3>
+    </div>
+    <div class="modal-body">
+      <p *ngIf="productoSeleccionado">{{ productoSeleccionado?.nombre }}</p>
+      <ion-item>
+        <ion-label position="stacked">Nuevo precio (CLP)</ion-label>
+        <ion-input type="number" [(ngModel)]="nuevoPrecio"></ion-input>
+      </ion-item>
+    </div>
+    <div class="modal-actions">
+      <ion-button class="btn-cancelar" fill="clear" (click)="cerrarModal()">Cancelar</ion-button>
+      <ion-button class="btn-guardar" (click)="confirmarCambio()">Guardar</ion-button>
+    </div>
+  </div>
+</ion-content>

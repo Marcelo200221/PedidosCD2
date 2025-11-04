@@ -1,15 +1,104 @@
-.tabla-clientes {
+/* Encabezado consistente con resto de vistas */
+.barra-superior {
   width: 100%;
-  border-collapse: collapse;
-  text-align: left;
+  height: 40px;
+  background-color: #6a0d0d;
+}
 
-  th, td {
-    padding: 8px 12px;
-    border-bottom: 1px solid #ccc;
-  }
+.barra-inferior {
+  width: 55%;
+  height: 40px;
+  background-color: #97201d;
+  border-bottom-right-radius: 15px;
+}
 
-  th {
-    background-color: var(--ion-color-light);
-    font-weight: bold;
-  }
+.titulo-texto {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 1%;
+}
+
+.barra-texto {
+  width: 30%;
+  height: 4px;
+  background-color: #97201d;
+  margin-left: 10%;
+  margin-bottom: 10%;
+}
+
+/* Lista de clientes */
+.clientes-list {
+  padding: 0 10% 20% 10%;
+}
+
+ion-item.cliente-item {
+  --background: transparent;
+  --inner-padding-end: 0;
+  --min-height: unset;
+  margin: 0 0 14px 0;
+}
+
+.cliente-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eee;
+}
+
+.cliente-nombre {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  font-size: 115%;
+  margin: 0 0 4px 0;
+}
+
+.cliente-detalle {
+  color: #000;
+  font-size: 92%;
+  margin: 2px 0;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn-eliminar {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 12px;
+  height: 36px;
+  font-weight: bold;
+}
+
+.botones {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-agregar {
+  width: 75%;
+  height: 40px;
+  font-size: 90%;
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 15px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: bold;
+}
+
+ion-input {
+  --highlight-color-focused: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
 }

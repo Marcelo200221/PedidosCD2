@@ -127,10 +127,12 @@ export class ApiService{
       password: password
     }).then(response => {
       const access = response.data.token.access;
+      const user = response.data.user;
       console.log(response.data)
       if(access){
         alert("Inicio de sesion exitoso")
         localStorage.setItem('auth_token', access)
+        localStorage.setItem('user', JSON.stringify(user))
         this.router.navigate(['/hub']);
       }
     })
@@ -339,6 +341,7 @@ export class ApiService{
         direccion: direccion, 
         razon_social: razonSocial
       })
+      this.router.navigate(['/lista-clientes'])
     } catch(error){
       console.error(error);
     }
@@ -401,6 +404,17 @@ export class ApiService{
       console.error('Response data:', error.response?.data);
       console.error('Status:', error.response?.status);
       throw error;
+    }
+  }
+
+  async actualizarPrecios(precio: number, id: number){
+    try{
+      await api.put("asignar/precio", {
+        precio: precio,
+        pk: id
+      })
+    }catch(error){
+      console.error(error)
     }
   }
 

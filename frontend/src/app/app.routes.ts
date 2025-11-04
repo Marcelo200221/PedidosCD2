@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authzGuard } from './guards/authz-guard';
 
 export const routes: Routes = [
   {
@@ -7,44 +8,65 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'splash', 
+    redirectTo: 'splash',
     pathMatch: 'full',
   },
   {
     path: 'registro',
-    loadComponent: () => import('./registro/registro.page').then( m => m.RegistroPage)
+    loadComponent: () => import('./registro/registro.page').then((m) => m.RegistroPage),
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./login/login.page').then((m) => m.LoginPage),
   },
   {
     path: 'olvido',
-    loadComponent: () => import('./olvido/olvido.page').then( m => m.OlvidoPage)
+    loadComponent: () => import('./olvido/olvido.page').then((m) => m.OlvidoPage),
   },
   {
     path: 'splash',
-    loadComponent: () => import('./splash/splash.page').then( m => m.SplashPage)
+    loadComponent: () => import('./splash/splash.page').then((m) => m.SplashPage),
   },
   {
     path: 'hub',
-    loadComponent: () => import('./hub/hub.page').then( m => m.HubPage)
+    loadComponent: () => import('./hub/hub.page').then((m) => m.HubPage),
   },
   {
     path: 'pedidos',
-    loadComponent: () => import('./pedidos/pedidos.page').then( m => m.PedidosPage)
-  },  {
+    canActivate: [authzGuard],
+    data: { permiso: 'view_pedidos' },
+    loadComponent: () => import('./pedidos/pedidos.page').then((m) => m.PedidosPage),
+  },
+  {
     path: 'dashboard',
-    loadComponent: () => import('./dashboard/dashboard.page').then( m => m.DashboardPage)
+    canActivate: [authzGuard],
+    data: { permiso: 'view_reportes' },
+    loadComponent: () => import('./dashboard/dashboard.page').then((m) => m.DashboardPage),
   },
   {
     path: 'clientes',
-    loadComponent: () => import('./clientes/clientes.page').then( m => m.ClientesPage)
+    canActivate: [authzGuard],
+    data: { permiso: 'agregar_clientes' },
+    loadComponent: () => import('./clientes/clientes.page').then((m) => m.ClientesPage),
   },
   {
     path: 'lista-clientes',
-    loadComponent: () => import('./lista-clientes/lista-clientes.page').then( m => m.ListaClientesPage)
+    canActivate: [authzGuard],
+    data: { permiso: 'view_clientes' },
+    loadComponent: () => import('./lista-clientes/lista-clientes.page').then((m) => m.ListaClientesPage),
   },
-
-
+  {
+    path: 'productos',
+    loadComponent: () => import('./productos/productos.page').then( m => m.ProductosPage)
+  },
+  {
+    path: 'acceso-denegado',
+    loadComponent: () => import('./acceso-denegado/acceso-denegado.page').then((m) => m.AccesoDenegadoPage),
+  },
+  // 404 catch-all
+  {
+    path: '**',
+    loadComponent: () => import('./not-found/not-found.page').then((m) => m.NotFoundPage),
+  },
 ];
+
