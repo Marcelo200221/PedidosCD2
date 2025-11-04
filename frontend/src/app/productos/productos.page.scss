@@ -31,10 +31,19 @@
 
 .lista-productos {
   padding: 0 10% 20% 10%;
+  background: transparent;
+
+  ion-list {
+    background: transparent !important;
+  }
+
   ion-item.producto-item {
     --background: transparent;
+    --ion-item-background: transparent;
+    background: transparent;
     --inner-padding-end: 0;
     --min-height: unset;
+    border: none;
     margin: 0 0 14px 0;
   }
 }
@@ -93,8 +102,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: var(--ion-background-color);
-  color: var(--ion-text-color);
+  background: #ffffff;
+  color: #000000;
   width: min(520px, 92%);
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.25);
@@ -110,6 +119,23 @@
 
 .modal-body {
   padding: 12px 16px;
+  color: #000;
+
+  p { color: #000; }
+
+  ion-item {
+    --background: transparent;
+  }
+
+  ion-label { color: #000; }
+
+  ion-input {
+    --color: #000;
+  }
+
+  ion-input::part(native) {
+    color: #000;
+  }
 }
 
 .modal-actions {

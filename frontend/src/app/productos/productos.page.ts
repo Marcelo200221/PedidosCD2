@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonInput } from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
+import {mdiPencil} from '@mdi/js';
 
 @Component({
   selector: 'app-productos',
@@ -12,6 +13,8 @@ import { ApiService } from '../services/api.spec';
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonInput, CommonModule, FormsModule]
 })
 export class ProductosPage implements OnInit {
+
+  mdi = {edit: mdiPencil};
 
   productos: { id: number; nombre: string; precio: number }[] = [];
   mostrarModal = false;

@@ -4,6 +4,7 @@ import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
 import axios from "axios";
 import { environment } from "src/environments/environment";
+import { getItem as ssGetItem, setItem as ssSetItem, removeItem as ssRemoveItem } from './token-storage';
 
 const api = axios.create({
     baseURL: environment.apiUrl,
@@ -13,10 +14,11 @@ const api = axios.create({
 })
 
 api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('auth_token');
+  async (config) => {
+    const token = await ssGetItem('auth_token');
     if(token){
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers = config.headers || {} as any;
+      (config.headers as any).Authorization = `Bearer ${token}`;
     }
     return config;
   },
@@ -31,7 +33,7 @@ api.interceptors.response.use(
   },
   (error) => {
     if(error.response?.status === 401) {
-      localStorage.removeItem('auth_token');
+      ssRemoveItem('auth_token');
     }
     return Promise.reject(error);
   }
@@ -79,7 +81,7 @@ export class ApiService{
     
     if (access) {
       alert("Registro exitoso");
-      localStorage.setItem('auth_token', access);
+      await ssSetItem('auth_token', access);
       this.router.navigate(['/hub']);
     } else {
       console.log("Estructura de respuesta:", response.data);
@@ -131,23 +133,23 @@ export class ApiService{
       console.log(response.data)
       if(access){
         alert("Inicio de sesion exitoso")
-        localStorage.setItem('auth_token', access)
-        localStorage.setItem('user', JSON.stringify(user))
+        ssSetItem('auth_token', access)
+        ssSetItem('user', JSON.stringify(user))
         this.router.navigate(['/hub']);
       }
     })
   }
 
-  saveToken(token: string){
-    localStorage.setItem('auth_token', token);
+  async saveToken(token: string){
+    await ssSetItem('auth_token', token);
   }
 
-  getToken(): string | null {
-    return localStorage.getItem('auth_token');
+  async getToken(): Promise<string | null> {
+    return await ssGetItem('auth_token');
   }
 
-  logout(){
-    localStorage.removeItem('auth_token');
+  async logout(){
+    await ssRemoveItem('auth_token');
   }
 
   getHello(){

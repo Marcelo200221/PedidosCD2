@@ -13,7 +13,15 @@
             <div class="producto-detalle">Precio actual: <b>{{ p.precio | number:'1.0-0' }} CLP</b></div>
           </div>
           <div class="acciones">
-            <ion-button class="btn-cambiar" (click)="abrirModal(p)">Cambiar precio</ion-button>
+            <ion-button class="btn-cambiar" (click)="abrirModal(p)">
+                <svg slot="start"
+                    viewBox="0 0 24 24"
+                    width="22" height="22"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true" focusable="false">
+                  <path [attr.d]="mdi.edit" fill="currentColor"></path>
+                </svg>
+            </ion-button>
           </div>
         </div>
       </ion-item>

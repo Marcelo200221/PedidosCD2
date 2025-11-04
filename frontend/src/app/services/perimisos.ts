@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { getToken as ssGetToken, removeToken as ssRemoveToken } from './token-storage';
 
 type UserInfo = {
   id: number;
@@ -19,8 +20,8 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('auth_token');
+  async (config) => {
+    const token = await ssGetToken();
     if (token) {
       config.headers = config.headers || {};
       (config.headers as any).Authorization = `Bearer ${token}`;
@@ -33,9 +34,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('auth_token');
-    }
+    if (error.response?.status === 401) { ssRemoveToken(); }
     return Promise.reject(error);
   }
 );
