@@ -6,7 +6,7 @@ import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, 
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, checkmarkDone} from 'ionicons/icons';
 
 //Interfaces
 export interface Producto {
@@ -29,7 +29,7 @@ export interface Pedido {
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, checkmarkDone
 });
 
 @Component({
@@ -113,11 +113,15 @@ export class PedidosPage implements OnInit {
       console.log('Pedidos cargados desde backend:', pedidosBackend);
 
       this.pedidos = pedidosBackend.map((pedido: any) => this.mapearPedidoBackend(pedido));
+      
+      //Orden
+      this.pedidos = this.ordenarPedidosPorEstado(this.pedidos);
+      
       this.pedidosFiltrados = [...this.pedidos];
 
-      console.log('Pedidos transformados:', this.pedidos);
+      console.log('Pedidos transformados y ordenados:', this.pedidos);
     } catch(error) {
-      console.error('Erro al cargar pedidos:', error);
+      console.error('Error al cargar pedidos:', error);
       alert('Error al cargar los pedidos');
     }
   }
@@ -566,10 +570,10 @@ export class PedidosPage implements OnInit {
     
     const pedidosEliminables = this.pedidos.filter(p => this.puedeEliminar(p));
     if (pedidosEliminables.length === 0) {
-      alert('No hay pedidos disponibles para eliminar. Solo se pueden eliminar pedidos en estado "Pendiente de Pesos"');
+      alert('No hay pedidos disponibles para eliminar. Solo se pueden eliminar pedidos en estado "Pendiente de Pesos" o "Pendiente de Confirmación"');
       return;
     }
-    
+      
     this.mostrarEliminarPedido = true;
     this.mostrarEditarPedido = false;
     this.mostrarAgregarPedido = false;
@@ -592,6 +596,7 @@ export class PedidosPage implements OnInit {
     }
     pedido.seleccionado = !pedido.seleccionado;
   }
+  
   async eliminarPedidosSeleccionados() {
     const seleccionados = this.pedidos.filter(p => p.seleccionado);
     
@@ -948,11 +953,15 @@ export class PedidosPage implements OnInit {
 
   //Validaciones de estado
   puedeEditar(pedido: Pedido): boolean {
+    // Solo se pueden editar pedidos en estado 'pendiente_pesos'
     return !pedido.estado || pedido.estado === 'pendiente_pesos';
   }
 
   puedeEliminar(pedido: Pedido): boolean {
-    return !pedido.estado || pedido.estado === 'pendiente_pesos';
+    // Se pueden eliminar pedidos en 'pendiente_pesos' y 'pendiente_confirmacion'
+    return !pedido.estado || 
+          pedido.estado === 'pendiente_pesos' || 
+          pedido.estado === 'pendiente_confirmacion';
   }
 
   puedeAsignarPesos(pedido: Pedido): boolean {
@@ -1054,4 +1063,29 @@ export class PedidosPage implements OnInit {
       prod => !idsSeleccionados.includes(prod.id)
     );
   }
+  // Función de ordenamiento por estado
+ordenarPedidosPorEstado(pedidos: Pedido[]): Pedido[] {
+  const ordenEstados = {
+    'pendiente_pesos': 1,
+    'listo_facturar': 2,
+    'pendiente_confirmacion': 3,
+    'completado': 4
+  };
+  
+  return pedidos.sort((a, b) => {
+    const estadoA = a.estado || 'pendiente_pesos';
+    const estadoB = b.estado || 'pendiente_pesos';
+    
+    const prioridadA = ordenEstados[estadoA] || 999;
+    const prioridadB = ordenEstados[estadoB] || 999;
+    
+    // Si tienen el mismo estado, ordenar por ID descendente (más reciente primero)
+    if (prioridadA === prioridadB) {
+      return b.id - a.id;
+    }
+    
+    return prioridadA - prioridadB;
+  });
+}
+
 } 

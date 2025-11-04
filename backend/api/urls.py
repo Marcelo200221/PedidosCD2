@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from .views import views, usuarios, pedidos, clientes
+from .views import views, usuarios, pedidos
 
 router = DefaultRouter()
 router.register(r'pedidos', pedidos.PedidoViewSet, basename='pedidos')
