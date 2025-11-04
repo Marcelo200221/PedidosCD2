@@ -143,23 +143,31 @@ export class ApiService{
     await ssSetItem('auth_token', token);
   }
   // Agregar estos métodos nuevos
-  getUsuarioActual(): any {
-    const usuario = localStorage.getItem('usuario');
-    return usuario ? JSON.parse(usuario) : null;
+  async getUsuarioActual(): Promise<any | null> {
+    const userStr = await ssGetItem('user');
+    if (!userStr) return null;
+    try {
+      const u = JSON.parse(userStr);
+      const nombre = u.nombre ?? u.first_name ?? u.firstName ?? (typeof u.name === 'string' ? u.name.split(' ')[0] : undefined) ?? '';
+      const apellido = u.apellido ?? u.last_name ?? u.lastName ?? (typeof u.name === 'string' ? (u.name.split(' ').slice(1).join(' ') || '') : undefined) ?? '';
+      return { ...u, nombre, apellido };
+    } catch (_) {
+      return null;
+    }
   }
 
-  getNombreCompleto(): string {
-    const usuario = this.getUsuarioActual();
-    return usuario ? `${usuario.nombre} ${usuario.apellido}`.trim() : '';
+  async getNombreCompleto(): Promise<string> {
+    const usuario = await this.getUsuarioActual();
+    return usuario ? `${usuario.nombre ?? ''} ${usuario.apellido ?? ''}`.trim() : '';
   }
 
   async getToken(): Promise<string | null> {
     return await ssGetItem('auth_token');
   }
 
-  logout(){
-    localStorage.removeItem('auth_token');
-    localStorage.removeItem('usuario'); 
+  async logout(){
+    await ssRemoveItem('auth_token');
+    await ssRemoveItem('user');
     this.router.navigate(['/login']);
   }
 
