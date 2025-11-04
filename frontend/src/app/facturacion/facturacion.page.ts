@@ -70,15 +70,15 @@ export class FacturacionPage implements OnInit {
     this.cargarDatosUsuario();
   }
 
-    cargarDatosUsuario() {
-    const usuario = this.api.getUsuarioActual();
+    async cargarDatosUsuario() {
+    const usuario = await this.api.getUsuarioActual();
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
       console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
-      console.warn('No hay usuario en localStorage, redirigiendo al login');
+      console.warn('No hay usuario en IndexedDB, redirigiendo al login');
       this.router.navigate(['/login']);
     }
   }
