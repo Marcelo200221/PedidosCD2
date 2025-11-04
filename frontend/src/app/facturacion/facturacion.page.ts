@@ -7,7 +7,7 @@ import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, people, personAdd } from 'ionicons/icons';
 
 // Interfaces
 export interface Producto {
@@ -30,7 +30,7 @@ export interface Pedido {
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, people, personAdd
 });
 
 @Component({
@@ -292,6 +292,16 @@ export class FacturacionPage implements OnInit {
   IrMenu() {
     this.cerrarMenu();
     this.router.navigate(['/hub']);
+  }
+
+  IrClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/clientes']);
+  }
+
+  IrListarClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/lista-clientes']);
   }
 
   //Cerrar sesión

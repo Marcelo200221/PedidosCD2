@@ -6,7 +6,7 @@ import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, 
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
-import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search, people, personAdd,
   documentText, cube, calculator, scale, eye, closeCircle, send, checkmarkDone} from 'ionicons/icons';
 
 //Interfaces
@@ -30,7 +30,7 @@ export interface Pedido {
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, checkmarkDone
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, checkmarkDone, people, personAdd
 });
 
 @Component({
@@ -159,6 +159,16 @@ export class PedidosPage implements OnInit {
   IrMenu() {
     this.cerrarMenu();
     this.router.navigate(['/hub']);
+  }
+
+  IrClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/clientes']);
+  }
+
+  IrListarClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/lista-clientes']);
   }
 
   //Cerrar sesión

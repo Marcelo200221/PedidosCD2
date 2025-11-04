@@ -6,13 +6,13 @@ import { IonContent, IonButton, IonSearchbar, IonItem,
   IonLabel, IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton, IonList } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd } from 'ionicons/icons';
 import { ApiService } from '../services/api.spec';
 
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle,
+  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, people, personAdd,
   logOut, barChart, arrowUndo
 });
 
@@ -102,6 +102,16 @@ export class HubPage implements OnInit {
   IrMenu() {
     this.cerrarMenu();
     this.router.navigate(['/hub']);
+  }
+
+  IrClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/clientes']);
+  }
+
+  IrListarClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/lista-clientes']);
   }
 
   //Cerrar sesión

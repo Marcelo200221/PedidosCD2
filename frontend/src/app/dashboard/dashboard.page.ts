@@ -8,7 +8,7 @@ import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
 import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd } from 'ionicons/icons';
 
 interface EstadisticaPedidos {
   estado: string;
@@ -24,7 +24,7 @@ addIcons({
   'time-outline': timeOutline,
   'checkmark-done-outline': checkmarkDoneOutline,  chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
   trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle,
-  logOut
+  logOut, people, personAdd
 });
 
 @Component({
@@ -202,6 +202,16 @@ export class DashboardPage implements OnInit {
   IrMenu() {
     this.cerrarMenu();
     this.router.navigate(['/hub']);
+  }
+
+  IrClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/clientes']);
+  }
+
+  IrListarClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/lista-clientes']);
   }
 
   //Cerrar sesión

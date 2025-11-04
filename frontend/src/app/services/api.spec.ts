@@ -119,8 +119,8 @@ export class ApiService{
 }
 
 
-  login(rut: string, password: string){
-    return api.post("auth/login/", {
+  async login(rut: string, password: string){
+    return await api.post("auth/login/", {
       username: rut,
       password: password
     }).then(response => {
@@ -181,8 +181,8 @@ export class ApiService{
     return api.get("lista/usuarios")
   }
 
-  recuperarPassword(email: string): Promise<any>{
-    return api.post('password-reset-request/', {
+  async recuperarPassword(email: string): Promise<any>{
+    return await api.post('password-reset-request/', {
       email: email
     }).then(response => {
       return response.data
@@ -191,8 +191,8 @@ export class ApiService{
     });
   }
 
-  condfirmarRecuperacion(codigo: string): Promise<any>{
-    return api.post("password-reset-confirm/", {
+  async confirmarRecuperacion(codigo: string): Promise<any>{
+    return await api.post("password-reset-confirm/", {
       code: codigo,
     }).then(response => {
       return response.data;
@@ -201,14 +201,14 @@ export class ApiService{
     })
   }
 
-  cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
+  async cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
   console.log("Enviando cambio de contraseña:", {
     code: codigo,
     new_password: '***',
     confirm_password: '***'
   });
   
-  return api.post("password-reset-change/", {
+  return await api.post("password-reset-change/", {
     code: codigo,
     new_password: nuevaPassword,
     confirm_password: confirmarPassword
@@ -351,6 +351,40 @@ export class ApiService{
     } catch(error) {
       console.error('Error al guardar pesos:', error);
       throw error;
+    }
+  }
+
+  async agregarCliente(id: string, rut: string, nombre: string, direccion: string, razonSocial: string){
+    try{
+      await api.post("agregar-cliente/", {
+        id_cliente: id,
+        rut: rut,
+        nombre: nombre,
+        direccion: direccion, 
+        razon_social: razonSocial
+      })
+    } catch(error){
+      console.error(error);
+    }
+  }
+
+  async eliminarCliente(id: string){
+    try{
+      await api.delete(`eliminar/cliente/${id}`)
+    } catch(error){
+      console.error(error)
+    }
+  }
+
+  async listarClientes(){
+    let clientes;
+    try{
+      const res = await api.get("lista/clientes");
+      clientes = res.data
+      console.log(clientes)
+      return clientes;
+    } catch(error) {
+      console.error(error);
     }
   }
 
