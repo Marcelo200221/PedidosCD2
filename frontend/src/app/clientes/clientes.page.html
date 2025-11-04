@@ -1,0 +1,59 @@
+<body>
+<ion-content class="login-page" fullscreen>
+<!-- Header -->
+  <div class="login-header">
+    <div class="barra-superior"></div>
+    <div class="barra-inferior"></div>
+  </div>
+
+<!-- Titulo Inicio de Sesión -->
+  <div class="titulo-container">
+    <h1 class="titulo-texto">Agregar Cliente</h1>
+    <div class="barra-texto"></div>
+  </div>
+
+<!-- Input Nombre -->
+  <div class="input-container">
+    <h1 class="titulos">Nombre</h1>
+    <ion-input 
+      placeholder="Ingrese Nombre del cliente" 
+      [(ngModel)]="nombre"
+      (ionInput)="actualizarNombre($event)">
+    
+      
+    </ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineNombre}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="nombreError" style="color:red; font-size:12px">{{nombreError}}</p>
+
+<!-- Input Rut -->
+  <div class="input-container">
+    <h1 class="titulos">RUT</h1>
+    <ion-input placeholder="Ingrese RUT del cliente" [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
+
+<!-- Input Correo -->
+  <div class="input-container">
+    <h1 class="titulos">Direccion</h1>
+    <ion-input placeholder="Ingrese direccion del cliente"[(ngModel)]="direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="direccionError" style="color:red; font-size:12px">{{direccionError}}</p>
+
+<!-- Input Contraseña -->
+  <div class="input-container">
+    <h1 class="titulos">Razon Social</h1>
+    <ion-input [(ngModel)]="razonSocial"(input)="actualizarRazonSocial($event)" placeholder="Ingrese razon social del cliente"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineRazonSocial}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="razonSocial">{{razonSocialError}}</p>
+
+<!-- Boton Registro -->
+  <div class="botones">
+    <ion-button expand="block" class="btn-login" (click)="handleClick()">Guardar</ion-button>
+  </div>
+
+</ion-content>
+</body>

@@ -13,5 +13,7 @@ urlpatterns = [
     path('password-reset-change/', usuarios.password_reset_change),
     path('usuarios/lista', usuarios.usuario_lista, name="usuario-lista"),
     path('productos/', pedidos.productos, name="productos"),
-    #path('lista/clientes', clientes.listar_clientes, name="lista_clientes")
+    path('lista/clientes', clientes.listar_clientes, name="lista_clientes"),
+    path("agregar-cliente/", clientes.agregar_cliente, name="agregar-cliente"),
+    path("eliminar/cliente/<str:pk>/", clientes.eliminar_cliente, name="eliminar-cliente")
 ] + router.urls
