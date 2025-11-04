@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from .views import views, usuarios, pedidos, clientes
+from .views import views, usuarios, pedidos
 
 router = DefaultRouter()
 router.register(r'pedidos', pedidos.PedidoViewSet, basename='pedidos')
@@ -13,5 +13,5 @@ urlpatterns = [
     path('password-reset-change/', usuarios.password_reset_change),
     path('usuarios/lista', usuarios.usuario_lista, name="usuario-lista"),
     path('productos/', pedidos.productos, name="productos"),
-    path('lista/clientes', clientes.listar_clientes, name="lista_clientes")
+    #path('lista/clientes', clientes.listar_clientes, name="lista_clientes")
 ] + router.urls

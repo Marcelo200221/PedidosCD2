@@ -18,11 +18,23 @@ class Productos(models.Model):
         return f"{self.id} - {self.nombre}"
 
 class Pedidos(models.Model):
+    ESTADO_CHOICES = [
+        ('pendiente_pesos', 'Pendiente de Pesos'),
+        ('listo_facturar', 'Listo para Facturar'),
+        ('pendiente_confirmacion', 'Pendiente de Confirmación'),
+        ('completado', 'Completado'), #Estados
+    ]
+    
     direccion = models.CharField(max_length=200)
     fecha_entrega = models.DateField()
+    estado = models.CharField(
+        max_length=50,
+        choices=ESTADO_CHOICES,
+        default='pendiente_pesos'
+    )
     
     def __str__(self):
-        return f"Pedido {self.id} - {self.fecha_entrega}"
+        return f"Pedido {self.id} - {self.fecha_entrega} - {self.get_estado_display()}"
     
 class DetallePedido(models.Model):
     pedido = models.ForeignKey(Pedidos, on_delete=models.CASCADE, related_name="lineas")

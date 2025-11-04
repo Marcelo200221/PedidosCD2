@@ -11,8 +11,8 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
 
 class PasswordChangeConfirmSerializer(serializers.Serializer):
     code = serializers.CharField(max_length=6)
-    new_password = serializers.CharField(min_length=8)  # Cambiado de 6 a 8 para coincidir con tu validación frontend
-    confirm_password = serializers.CharField(min_length=8)  # AGREGAR ESTE CAMPO
+    new_password = serializers.CharField(min_length=8)
+    confirm_password = serializers.CharField(min_length=8)
     
     def validate(self, data):
         """Validar que ambas contraseñas coincidan"""
@@ -82,7 +82,7 @@ class PedidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pedidos
-        fields = ['id', 'direccion', 'fecha_entrega', 'lineas']
+        fields = ['id', 'direccion', 'fecha_entrega', 'estado', 'lineas']  #Estado
     
     def create(self, validated_data):
         lineas_data = validated_data.pop('lineas', [])
@@ -101,6 +101,7 @@ class PedidoSerializer(serializers.ModelSerializer):
         lineas_data = validated_data.pop('lineas', None)
         instance.direccion = validated_data.get('direccion', instance.direccion)
         instance.fecha_entrega = validated_data.get('fecha_entrega', instance.fecha_entrega)
+        instance.estado = validated_data.get('estado', instance.estado)  
         instance.save()
 
         if lineas_data is not None:
@@ -126,4 +127,3 @@ class ClienteSerializer(serializers.ModelSerializer):
             "direccion",
             "razon_social"
         ]
-
