@@ -9,10 +9,6 @@ class Migration(migrations.Migration):
         ('api', '0002_cliente'),
     ]
 
-    operations = [
-        migrations.AddField(
-            model_name='pedidos',
-            name='estado',
-            field=models.CharField(choices=[('pendiente_pesos', 'Pendiente de Pesos'), ('listo_facturar', 'Listo para Facturar'), ('pendiente_confirmacion', 'Pendiente de Confirmación'), ('completado', 'Completado')], default='pendiente_pesos', max_length=50),
-        ),
-    ]
+    # Intencionalmente vacío para evitar duplicar la creación de la columna 'estado'.
+    # La migración 0004_pedidos_estado agrega físicamente la columna.
+    operations = []

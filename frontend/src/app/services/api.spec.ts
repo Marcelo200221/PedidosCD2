@@ -4,6 +4,7 @@ import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
 import axios from "axios";
 import { environment } from "src/environments/environment";
+import { getItem as ssGetItem, setItem as ssSetItem, removeItem as ssRemoveItem } from './token-storage';
 
 const api = axios.create({
     baseURL: environment.apiUrl,
@@ -13,10 +14,11 @@ const api = axios.create({
 })
 
 api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('auth_token');
+  async (config) => {
+    const token = await ssGetItem('auth_token');
     if(token){
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers = config.headers || {} as any;
+      (config.headers as any).Authorization = `Bearer ${token}`;
     }
     return config;
   },
@@ -31,7 +33,7 @@ api.interceptors.response.use(
   },
   (error) => {
     if(error.response?.status === 401) {
-      localStorage.removeItem('auth_token');
+      ssRemoveItem('auth_token');
     }
     return Promise.reject(error);
   }
@@ -79,7 +81,7 @@ export class ApiService{
     
     if (access) {
       alert("Registro exitoso");
-      localStorage.setItem('auth_token', access);
+      await ssSetItem('auth_token', access);
       this.router.navigate(['/hub']);
     } else {
       console.log("Estructura de respuesta:", response.data);
@@ -125,28 +127,21 @@ export class ApiService{
       password: password
     }).then(response => {
       const access = response.data.token.access;
+      const user = response.data.user;
       console.log(response.data)
       
       if(access){
-        // Guardar el token
-        localStorage.setItem('auth_token', access);
-        
-        // Guardar datos del usuario (ajusta según lo que devuelva tu API)
-        const usuario = {
-          nombre: response.data.user?.first_name || response.data.first_name || '',
-          apellido: response.data.user?.last_name || response.data.last_name || '',
-          email: response.data.user?.email || response.data.email || '',
-          rut: rut
-        };
-        
-        localStorage.setItem('usuario', JSON.stringify(usuario));
-        
-        alert("Inicio de sesion exitoso");
+        alert("Inicio de sesion exitoso")
+        ssSetItem('auth_token', access)
+        ssSetItem('user', JSON.stringify(user))
         this.router.navigate(['/hub']);
       }
     })
   }
 
+  async saveToken(token: string){
+    await ssSetItem('auth_token', token);
+  }
   // Agregar estos métodos nuevos
   getUsuarioActual(): any {
     const usuario = localStorage.getItem('usuario');
@@ -158,12 +153,8 @@ export class ApiService{
     return usuario ? `${usuario.nombre} ${usuario.apellido}`.trim() : '';
   }
 
-  saveToken(token: string){
-    localStorage.setItem('auth_token', token);
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem('auth_token');
+  async getToken(): Promise<string | null> {
+    return await ssGetItem('auth_token');
   }
 
   logout(){
@@ -221,13 +212,14 @@ export class ApiService{
     throw error.response?.data || error;
   });
 }
-  async crearPedido(direccion: String, fechaEntrega: String, lineas: {
+  async crearPedido(cliente: String,direccion: String, fechaEntrega: String, lineas: {
     producto_id: Number, cajas: {peso: Number, etiqueta?: String}[]
   }[]){
     try{
       console.log("Creando pedido con: ", {direccion, fechaEntrega, lineas})
 
       const res = await api.post("pedidos/", {
+        cliente: cliente,
         direccion: direccion,
         fecha_entrega: fechaEntrega,
         lineas: lineas
@@ -354,6 +346,50 @@ export class ApiService{
     }
   }
 
+  // Facturación: generar PDF por pedido (descargar)
+  async generarFacturaPorPedido(pedidoId: number, opciones?: {
+    factura_numero?: string;
+    descuento?: number;
+    impuesto_porcentaje?: number;
+    moneda?: string;
+    notas?: string;
+  }): Promise<void> {
+    try {
+      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `factura-pedido-${pedidoId}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error al generar factura:', error);
+      throw error;
+    }
+  }
+
+  // Facturación: previsualizar PDF por pedido (abre en nueva pestaña)
+  async previsualizarFacturaPorPedido(pedidoId: number, opciones?: {
+    factura_numero?: string;
+    descuento?: number;
+    impuesto_porcentaje?: number;
+    moneda?: string;
+    notas?: string;
+  }): Promise<void> {
+    try {
+      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      window.open(url, '_blank');
+    } catch (error) {
+      console.error('Error al previsualizar factura:', error);
+      throw error;
+    }
+  }
+
   async agregarCliente(id: string, rut: string, nombre: string, direccion: string, razonSocial: string){
     try{
       await api.post("agregar-cliente/", {
@@ -363,6 +399,7 @@ export class ApiService{
         direccion: direccion, 
         razon_social: razonSocial
       })
+      this.router.navigate(['/lista-clientes'])
     } catch(error){
       console.error(error);
     }
@@ -425,6 +462,17 @@ export class ApiService{
       console.error('Response data:', error.response?.data);
       console.error('Status:', error.response?.status);
       throw error;
+    }
+  }
+
+  async actualizarPrecios(precio: number, id: number){
+    try{
+      await api.put("asignar/precio", {
+        precio: precio,
+        pk: id
+      })
+    }catch(error){
+      console.error(error)
     }
   }
 

@@ -13,9 +13,10 @@ import secrets
 class Productos(models.Model):
     id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=200)
+    precio = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.id} - {self.nombre}"
+        return f"{self.id} - {self.nombre} - {self.precio}"
 
 class Pedidos(models.Model):
     ESTADO_CHOICES = [
@@ -27,12 +28,17 @@ class Pedidos(models.Model):
     
     direccion = models.CharField(max_length=200)
     fecha_entrega = models.DateField()
-    estado = models.CharField(
-        max_length=50,
-        choices=ESTADO_CHOICES,
-        default='pendiente_pesos'
-    )
-    
+    # Relación al cliente que realiza el pedido
+    cliente = models.ForeignKey('Cliente', on_delete=models.PROTECT, related_name='pedidos', null=True, blank=True)
+
+    ESTADO_CHOICES = [
+        ('pendiente_pesos', 'Pendiente de Pesos'),
+        ('listo_facturar', 'Listo para Facturar'),
+        ('pendiente_confirmacion', 'Pendiente de Confirmación'),
+        ('completado', 'Completado'),
+    ]
+    estado = models.CharField(max_length=50, choices=ESTADO_CHOICES, default='pendiente_pesos')
+
     def __str__(self):
         return f"Pedido {self.id} - {self.fecha_entrega} - {self.get_estado_display()}"
     

@@ -1,10 +1,11 @@
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.views import APIView
 from django.shortcuts import render
 from rest_framework.response import Response
 from django.core.mail import send_mail
 from django.conf import settings
+from rest_framework.permissions import IsAuthenticated
 
 from usuarios.models import Usuario
 from usuarios.serializer import UsuarioSerializer
@@ -102,6 +103,30 @@ def lista_usuarios(request):
     serializer = UsuarioSerializer(usuarios, many=True)
 
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def permisos_usuario(request):
+    user = request.user
+    if not user.is_authenticated:
+        return Response({'detail': 'Authentication credentials were not provided.'}, status=status.HTTP_401_UNAUTHORIZED)
+
+    grupos = [g.name for g in user.groups.all()]
+    try:
+        permisos = getattr(user, 'permisos', [])
+    except Exception:
+        permisos = []
+
+    return Response({
+        'id': user.id,
+        'rut': getattr(user, 'rut', None),
+        'email': user.email,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'groups': grupos,
+        'permisos': permisos,
+    }, status=status.HTTP_200_OK)
 
 
 

@@ -36,6 +36,10 @@ class Usuario(AbstractUser):
             ("create_pedidos", "Puede crear pedidos"),
             ("edit_pedidos", "Puede editar pedidos"),
             ("delete_pedidos", "Puede eliminar pedidos"),
-            ("view_facturar", "Puede ingresar a la vista de factura")
+            ("view_facturar", "Puede ingresar a la vista de factura"),
+            ("view_clientes", "Puede ver la vista de agregar cliente y lista de clientes"),
+            ("agregar_clientes", "Puede agregar clientes a la base de datos"),
+            ("editar_clientes", "Puede editar los datos de los clientes"),
+            ("eliminar_clientes", "Puede eliminar clientes")
         ]
     

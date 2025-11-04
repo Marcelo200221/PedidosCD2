@@ -22,10 +22,31 @@ class PasswordChangeConfirmSerializer(serializers.Serializer):
             })
         return data
 
+class ClienteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cliente
+        fields = [
+            "id_cliente",
+            "rut",
+            "nombre",
+            "direccion",
+            "razon_social"
+        ]
+
+    def validate_rut(self, value):
+        if Cliente.objects.filter(rut=value).exists():
+            raise serializers.ValidationError("Este RUT ya está registrado")
+        return value
+    
+    def validate_id_cliente(self, value):
+        if Cliente.objects.filter(id_cliente=value).exists():
+            raise serializers.ValidationError("Este ID ya existe")
+        return value
+
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Productos
-        fields = ['id', 'nombre']
+        fields = ['id', 'nombre', 'precio']
 
 class CajaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -79,14 +100,35 @@ class DetallePedidoSerializer(serializers.ModelSerializer):
 
 class PedidoSerializer(serializers.ModelSerializer):
     lineas = DetallePedidoSerializer(many=True)
+    cliente = ClienteSerializer(read_only=True)
+    cliente_id = serializers.PrimaryKeyRelatedField(
+        queryset=Cliente.objects.all(),
+        source='cliente',
+        write_only=True,
+        required=False,
+        allow_null=True,
+    )
 
     class Meta:
         model = Pedidos
-        fields = ['id', 'direccion', 'fecha_entrega', 'estado', 'lineas']  #Estado
+        fields = ['id', 'direccion', 'fecha_entrega', 'estado', 'cliente', 'cliente_id', 'lineas']
     
     def create(self, validated_data):
         lineas_data = validated_data.pop('lineas', [])
         pedido = Pedidos.objects.create(**validated_data)
+        # Compatibilidad: si no vino cliente_id pero sí 'cliente' (texto) en el payload,
+        # intentar resolverlo por id_cliente, rut o nombre.
+        if not pedido.cliente:
+            raw_cliente = (self.initial_data or {}).get('cliente')
+            if raw_cliente:
+                cli = (
+                    Cliente.objects.filter(id_cliente=raw_cliente).first()
+                    or Cliente.objects.filter(rut=raw_cliente).first()
+                    or Cliente.objects.filter(nombre=raw_cliente).first()
+                )
+                if cli:
+                    pedido.cliente = cli
+                    pedido.save(update_fields=['cliente'])
         for linea_data in lineas_data:
             cajas_data = linea_data.pop('cajas', [])
 
@@ -101,7 +143,21 @@ class PedidoSerializer(serializers.ModelSerializer):
         lineas_data = validated_data.pop('lineas', None)
         instance.direccion = validated_data.get('direccion', instance.direccion)
         instance.fecha_entrega = validated_data.get('fecha_entrega', instance.fecha_entrega)
-        instance.estado = validated_data.get('estado', instance.estado)  
+        if 'estado' in validated_data:
+            instance.estado = validated_data.get('estado', instance.estado)
+        if 'cliente' in validated_data:
+            instance.cliente = validated_data.get('cliente')
+        else:
+            # Compatibilidad: permitir 'cliente' en texto en updates
+            raw_cliente = (self.initial_data or {}).get('cliente')
+            if raw_cliente:
+                cli = (
+                    Cliente.objects.filter(id_cliente=raw_cliente).first()
+                    or Cliente.objects.filter(rut=raw_cliente).first()
+                    or Cliente.objects.filter(nombre=raw_cliente).first()
+                )
+                if cli:
+                    instance.cliente = cli
         instance.save()
 
         if lineas_data is not None:
@@ -116,25 +172,4 @@ class PedidoSerializer(serializers.ModelSerializer):
                 detalle.recompute_peso_total()
         return instance
     
-
-class ClienteSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Cliente
-        fields = [
-            "id_cliente",
-            "rut",
-            "nombre",
-            "direccion",
-            "razon_social"
-        ]
-
-    def validate_rut(self, value):
-        if Cliente.objects.filter(rut=value).exists():
-            raise serializers.ValidationError("Este RUT ya está registrado")
-        return value
-    
-    def validate_id_cliente(self, value):
-        if Cliente.objects.filter(id_cliente=value).exists():
-            raise serializers.ValidationError("Este ID ya existe")
-        return value
 

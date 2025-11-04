@@ -28,6 +28,7 @@
     "@capacitor/splash-screen": "^7.0.3",
     "@capacitor/status-bar": "7.0.3",
     "@ionic/angular": "^8.0.0",
+    "@mdi/js": "^7.4.47",
     "axios": "^1.12.2",
     "ionicons": "^7.4.0",
     "rxjs": "~7.8.0",

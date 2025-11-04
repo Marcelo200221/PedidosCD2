@@ -115,6 +115,18 @@
             {{ prod.nombre }} - {{ prod.cajas }} Cajas - {{ getPesoTotal(prod) | number:'1.0-3' }} KG
           </div>
         </div>
+
+        <!-- Acciones de factura -->
+        <div class="acciones-factura">
+          <ion-button size="small" (click)="verFactura(pedido)">
+            <ion-icon slot="start" name="document-text"></ion-icon>
+            Ver factura
+          </ion-button>
+          <ion-button size="small" (click)="confirmarFacturacionIndividual(pedido)">
+            <ion-icon slot="start" name="download"></ion-icon>
+            Descargar PDF
+          </ion-button>
+        </div>
         
         <!-- Botón de confirmar facturación individual -->
         <ion-icon 
@@ -164,11 +176,10 @@
   <div *ngIf="mostrarSeleccionMultiple" class="botones-confirmar">
     <ion-button 
       expand="block" 
-      class="confirmar-seleccionados-boton" 
       (click)="confirmarFacturacionSeleccionados()"
       [disabled]="pedidosSeleccionados === 0">
-      <ion-icon slot="start" name="checkmark-circle"></ion-icon>
-      Confirmar Seleccionados ({{ pedidosSeleccionados }})
+      <ion-icon slot="start" name="document-text"></ion-icon>
+      Generar Facturas Seleccionadas ({{ pedidosSeleccionados }})
     </ion-button>
     <ion-button 
       expand="block" 
