@@ -122,8 +122,6 @@ export class ApiService{
 
 
   async login(rut: string, password: string){
-
-
     return await api.post("auth/login/", {
       username: rut,
       password: password
@@ -131,6 +129,7 @@ export class ApiService{
       const access = response.data.token.access;
       const user = response.data.user;
       console.log(response.data)
+      
       if(access){
         alert("Inicio de sesion exitoso")
         ssSetItem('auth_token', access)
@@ -143,13 +142,25 @@ export class ApiService{
   async saveToken(token: string){
     await ssSetItem('auth_token', token);
   }
+  // Agregar estos métodos nuevos
+  getUsuarioActual(): any {
+    const usuario = localStorage.getItem('usuario');
+    return usuario ? JSON.parse(usuario) : null;
+  }
+
+  getNombreCompleto(): string {
+    const usuario = this.getUsuarioActual();
+    return usuario ? `${usuario.nombre} ${usuario.apellido}`.trim() : '';
+  }
 
   async getToken(): Promise<string | null> {
     return await ssGetItem('auth_token');
   }
 
-  async logout(){
-    await ssRemoveItem('auth_token');
+  logout(){
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('usuario'); 
+    this.router.navigate(['/login']);
   }
 
   getHello(){
