@@ -19,6 +19,13 @@ class Productos(models.Model):
         return f"{self.id} - {self.nombre} - {self.precio}"
 
 class Pedidos(models.Model):
+    ESTADO_CHOICES = [
+        ('pendiente_pesos', 'Pendiente de Pesos'),
+        ('listo_facturar', 'Listo para Facturar'),
+        ('pendiente_confirmacion', 'Pendiente de Confirmación'),
+        ('completado', 'Completado'), #Estados
+    ]
+    
     direccion = models.CharField(max_length=200)
     fecha_entrega = models.DateField()
     # Relación al cliente que realiza el pedido

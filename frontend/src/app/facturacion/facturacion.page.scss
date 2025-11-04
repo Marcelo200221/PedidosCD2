@@ -1,0 +1,697 @@
+// Estilos base y header
+.facturacion-page {
+  --background: #f5f5f5;
+}
+
+.barra-superior {
+  width: 100%;
+  padding: 2%;            
+  background-color: #6a0d0d; 
+  display: flex;
+  flex-direction: column;    
+  align-items: center;
+}
+
+.top-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;         
+  margin-bottom: 10px;           
+}
+
+.titulo-texto {
+  color: #f8f7f6;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  margin-top: 10px;
+  margin-right: 10%;
+}
+
+.icon-left, .icon-right {
+  font-size: 170%;
+  color: #f8f7f6;
+  cursor: pointer;
+}
+
+ion-searchbar {
+  --background: #f8f7f6;   
+  --color: #000;        
+  --icon-color: #97201d;   
+  --border-radius: 10px;  
+  font-family: catamaran, sans-serif;
+  width: 100%;               
+}
+
+// Spinner de carga
+.mensaje-carga {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #666;
+  
+  ion-spinner {
+    margin-bottom: 20px;
+    --color: #97201d;
+  }
+  
+  p {
+    font-size: 110%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+// Mensajes sin resultados
+.mensaje-sin-resultados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #666;
+  
+  .icon-sin-resultados {
+    font-size: 80px;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 110%;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+// Lista de pedidos
+ion-list {
+  background: transparent;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ion-item {
+  --background: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 25px;
+  border: none;
+  width: 100%;
+  max-width: 500px; 
+  
+  ion-label {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+// Estilo Post-it normal
+.pedido-postit {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+  padding: 30px 25px; 
+  border-radius: 3px;
+  box-shadow: 
+    0 6px 10px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Catamaran', sans-serif;
+  width: 100%;
+  min-height: 180px; 
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px; 
+    background: rgba(255, 152, 0, 0.08);
+    border-radius: 3px 3px 0 0;
+  }
+  
+  &:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 
+      0 12px 24px rgba(0, 0, 0, 0.18),
+      0 4px 8px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+  
+  &:nth-child(odd) {
+    transform: rotate(1deg);
+  }
+  
+  &:nth-child(3n) {
+    transform: rotate(-2deg);
+  }
+  
+  &:nth-child(4n) {
+    transform: rotate(1.5deg);
+  }
+}
+
+.pedido-postit-pendiente-confirmacion {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%) !important;
+  
+  &::before {
+    background: rgba(255, 152, 0, 0.08) !important;
+  }
+  
+  .postit-header {
+    color: #e65100 !important;
+  }
+  
+  .postit-info strong {
+    color: #f57c00 !important;
+  }
+  
+  .postit-producto-item::before {
+    color: #f57c00 !important;
+  }
+}
+
+.postit-header {
+  font-size: 160%; 
+  font-weight: bold;
+  color: #e65100;
+  margin-bottom: 15px;
+  padding-top: 20px; 
+  text-align: center; 
+}
+
+.postit-info {
+  font-size: 115%; 
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  
+  strong {
+    color: #f57c00;
+  }
+}
+
+.postit-id {
+  font-size: 115%; 
+  color: #e65100;
+  line-height: 1.6;
+  margin-bottom: -8%;
+  margin-top: -7%;
+  position: relative;
+}
+
+.postit-productos {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postit-producto-item {
+  font-size: 105%;
+  color: #555;
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+  
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 5px;
+    color: #f57c00;
+    font-weight: bold;
+    font-size: 120%;
+  }
+}
+
+// Iconos de acción
+.icon-ver-detalle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #e65100;
+  cursor: pointer;
+  z-index: 10;
+  margin-top: -3%;
+  transform: rotate(3deg);
+  
+  &:hover {
+    color: #bf360c;
+    transform: rotate(0deg) scale(1.1);
+  }
+}
+
+.icon-confirmar-facturacion {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 28px;
+  color: #6a0d0d;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  padding: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #1e7e34;
+    transform: scale(1.15) rotate(15deg);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+  }
+}
+
+// Estilo Post-it seleccionable
+.pedido-postit-seleccionable {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+  padding: 30px 25px;
+  padding-left: 15px; 
+  border-radius: 3px;
+  box-shadow: 
+    0 6px 10px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: 'Catamaran', sans-serif;
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background: rgba(255, 152, 0, 0.08);
+    border-radius: 3px 3px 0 0;
+  }
+  
+  &:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 
+      0 12px 24px rgba(0, 0, 0, 0.18),
+      0 4px 8px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+  
+  &:nth-child(odd) {
+    transform: rotate(1deg);
+    
+    &:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+  }
+  
+  &:nth-child(3n) {
+    transform: rotate(-2deg);
+    
+    &:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+  }
+  
+  &:nth-child(4n) {
+    transform: rotate(1.5deg);
+    
+    &:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+  }
+}
+
+.estado-pendiente-confirmacion {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%) !important;
+  
+  &::before {
+    background: rgba(255, 152, 0, 0.08) !important;
+  }
+}
+
+.pedido-postit-seleccionable.seleccionado-confirmar {
+  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 
+    0 12px 24px rgba(40, 167, 69, 0.25),
+    0 4px 8px rgba(40, 167, 69, 0.15);
+  
+  &::before {
+    background: rgba(40, 167, 69, 0.08);
+  }
+}
+
+.postit-checkbox {
+  margin-top: 40px; 
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.postit-contenido {
+  flex: 1;
+  padding-top: 5px;
+}
+
+.postit-id-seleccionable {
+  font-size: 115%; 
+  color: #e65100;
+  line-height: 1.6;
+  margin-bottom: -8%;
+  margin-top: -8%;
+}
+
+.postit-header-seleccionable {
+  font-size: 160%;
+  font-weight: bold;
+  color: #e65100;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.postit-info-seleccionable {
+  font-size: 105%;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  
+  strong {
+    color: #f57c00;
+  }
+}
+
+.postit-productos-seleccionable {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+.postit-producto-item-seleccionable {
+  font-size: 95%;
+  color: #555;
+  margin: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+  
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 5px;
+    color: #f57c00;
+    font-weight: bold;
+    font-size: 120%;
+  }
+}
+
+ion-item.item-seleccionable {
+  --background: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 25px;
+  border: none;
+  width: 100%;
+  max-width: 500px;
+  
+  ion-label {
+    margin: 0;
+    width: 100%;
+  }
+  
+  ion-checkbox {
+    display: none; 
+  }
+}
+
+// Botones de acción
+.botones-confirmar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.confirmar-seleccionados-boton {
+  --background: #28a745;
+  color: #fff;
+  margin-bottom: 10px;
+  
+  &:disabled {
+    --background: #cccccc;
+  }
+}
+
+.cancelarBoton {
+  --background: #dd2a39;
+  color: #fff;
+}
+
+// Modal de detalle de pesos
+.modal-detalle-pesos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal-contenido {
+  position: relative;
+  z-index: 2;
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f8f9fa;
+  
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Catamaran', sans-serif;
+  }
+}
+
+.icon-cerrar-modal {
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+  
+  &:hover {
+    color: #000;
+  }
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.info-pedido-modal {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  
+  h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  p {
+    margin: 5px 0;
+    color: #666;
+    font-family: 'Catamaran', sans-serif;
+  }
+}
+
+.producto-detalle-modal {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  
+  h4 {
+    margin: 0 0 15px 0;
+    color: #f57c00;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Catamaran', sans-serif;
+  }
+}
+
+.cajas-detalle {
+  .caja-detalle-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: 'Catamaran', sans-serif;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .caja-numero {
+      color: #666;
+    }
+    
+    .caja-peso {
+      font-weight: 600;
+      color: #28a745;
+    }
+  }
+}
+
+.total-producto-modal {
+  margin-top: 10px;
+  padding: 10px;
+  background: #e8f5e9;
+  border-radius: 6px;
+  text-align: right;
+  color: #28a745;
+  font-weight: 600;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.total-general-modal {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f57c00;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  
+  h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  .total-value-modal {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Catamaran', sans-serif;
+  }
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.cerrar-detalle {
+  color: #fff;
+  --background: #6a0d0d;
+}
+
+.titulos {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  font-size: 150%;
+  margin-left: 10px;
+}
+
+// Responsive
+@media (min-width: 768px) {
+  ion-item, ion-item.item-seleccionable {
+    max-width: 600px; 
+  }
+  
+  .pedido-postit, .pedido-postit-seleccionable {
+    padding: 40px 35px;
+    min-height: 220px;
+  }
+  
+  .pedido-postit-seleccionable {
+    padding-left: 20px;
+  }
+  
+  .postit-header, .postit-header-seleccionable {
+    font-size: 180%;
+  }
+  
+  .postit-info, .postit-info-seleccionable {
+    font-size: 125%;
+  }
+  
+  .postit-producto-item, .postit-producto-item-seleccionable {
+    font-size: 115%;
+  }
+}
+
+@media (min-width: 1024px) {
+  ion-item, ion-item.item-seleccionable {
+    max-width: 700px;
+  }
+  
+  .pedido-postit, .pedido-postit-seleccionable {
+    padding: 45px 40px;
+    min-height: 240px;
+  }
+  
+  .pedido-postit-seleccionable {
+    padding-left: 25px;
+  }
+}
+
+ion-fab-button {
+  --background: #97201d;   
+  --color: #fff;           
+}

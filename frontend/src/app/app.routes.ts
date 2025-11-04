@@ -44,6 +44,10 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/dashboard.page').then((m) => m.DashboardPage),
   },
   {
+    path: 'facturacion',
+    loadComponent: () => import('./facturacion/facturacion.page').then( m => m.FacturacionPage)
+  },
+  {
     path: 'clientes',
     canActivate: [authzGuard],
     data: { permiso: 'agregar_clientes' },

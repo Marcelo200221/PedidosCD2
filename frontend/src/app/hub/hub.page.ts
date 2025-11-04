@@ -20,7 +20,7 @@ export class HubPage implements OnInit {
   }
 
   Irafacturas() {
-    this.router.navigate(['/facturas']);
+    this.router.navigate(['/facturacion']);
   }
 
   Iradashboards() {

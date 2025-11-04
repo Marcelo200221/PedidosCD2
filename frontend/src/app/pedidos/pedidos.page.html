@@ -130,7 +130,7 @@
     </div>
     
     <ion-item *ngFor="let pedido of pedidosFiltrados" lines="none">
-      <div class="pedido-postit" [ngClass]="getClaseEstado(pedido)">
+  <div [ngClass]="['pedido-postit', getClaseEstado(pedido)]">
         <div class="postit-id">
           {{ pedido.nombre }}
           <ion-icon *ngIf="tienePesosAsignados(pedido)" name="eye"  class="icon-ver-detalle" (click)="abrirDetallePesos(pedido)"></ion-icon>

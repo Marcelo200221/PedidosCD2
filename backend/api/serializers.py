@@ -11,8 +11,8 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
 
 class PasswordChangeConfirmSerializer(serializers.Serializer):
     code = serializers.CharField(max_length=6)
-    new_password = serializers.CharField(min_length=8)  # Cambiado de 6 a 8 para coincidir con tu validación frontend
-    confirm_password = serializers.CharField(min_length=8)  # AGREGAR ESTE CAMPO
+    new_password = serializers.CharField(min_length=8)
+    confirm_password = serializers.CharField(min_length=8)
     
     def validate(self, data):
         """Validar que ambas contraseñas coincidan"""
