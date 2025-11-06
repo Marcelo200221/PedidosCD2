@@ -14,9 +14,10 @@ class Productos(models.Model):
     id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=200)
     precio = models.IntegerField(default=0)
+    stock = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.id} - {self.nombre} - {self.precio}"
+        return f"{self.id} - {self.nombre} - {self.precio} - {self.stock}"
 
 class Pedidos(models.Model):
     ESTADO_CHOICES = [

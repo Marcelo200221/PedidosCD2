@@ -6,10 +6,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         productos = [
-            {"id": 6, "nombre": "Posta Rosada"},
-            {"id": 5, "nombre": "Posta Negra"},
-            {"id": 4, "nombre": "Filete de pollo"},
-            {"id": 2, "nombre": "Pulta de cerdo"},
+            {"id": 6, "nombre": "Posta Rosada", "precio": 7250, "stock": 200},
+            {"id": 5, "nombre": "Posta Negra", "precio": 6850, "stock": 150},
+            {"id": 4, "nombre": "Filete de pollo", "precio": 4580, "stock": 100},
+            {"id": 2, "nombre": "Pulta de cerdo", "precio": 2550, "stock": 120},
         ]
 
         clientes = [
