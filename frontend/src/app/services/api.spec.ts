@@ -433,6 +433,40 @@ export class ApiService{
     }
   }
 
+  async infoCliente(id: String){
+    try{
+      const res = await api.get(`datos/cliente/${id}`);
+      const data = res.data || {};
+      const normalizado = {
+        id: data.id_cliente ?? data.id ?? String(id),
+        rut: data.rut ?? '',
+        nombre: data.nombre ?? '',
+        direccion: data.direccion ?? '',
+        razonSocial: data.razon_social ?? data.razonSocial ?? ''
+      };
+      console.log('Cliente (normalizado):', normalizado);
+      return normalizado;
+    } catch(error){
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async editarCliente(id: string, rut: string, nombre: string, direccion: string, razonSocial: string){
+    try{
+      await api.put(`editar/cliente/${id}`, {
+        id_cliente: id,
+        rut: rut,
+        nombre: nombre,
+        direccion: direccion, 
+        razon_social: razonSocial
+      })
+      this.router.navigate(['/lista-clientes'])
+    } catch(error){
+      console.error(error);
+    }
+  }
+
   async actualizarEstadoPedido(id: number, estado: string) {
     try {
       console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
@@ -481,6 +515,17 @@ export class ApiService{
       })
     }catch(error){
       console.error(error)
+    }
+  }
+
+  // Avisos del bot: obtiene la lista de avisos actuales
+  async getAvisos(): Promise<any[]> {
+    try {
+      const res = await api.get("avisos/");
+      return Array.isArray(res.data) ? res.data : [];
+    } catch (error) {
+      console.error('Error obteniendo avisos:', error);
+      return [];
     }
   }
 

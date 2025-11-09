@@ -6,10 +6,61 @@ from api.models import Pedidos, Productos
 from api.serializers import PedidoSerializer, ProductoSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
+from django.db import transaction
+from django.utils import timezone
+
+from api.utils.inventario import crear_mensaje_stock_bajo
+from datetime import timedelta
 
 class PedidoViewSet(viewsets.ModelViewSet):
     queryset = Pedidos.objects.all()
     serializer_class = PedidoSerializer
+
+    def update(self, request, *args, **kwargs):
+        """
+        Al actualizar un pedido, si el estado queda en 'completado' y aún no ha sido
+        marcado como facturado, se aplica la lógica de descuento de stock por
+        cantidad de cajas y se setea `facturado_en`.
+        """
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        pedido = serializer.save()
+
+        # Si quedó como completado y aún no se había facturado, descontar stock
+        if pedido.estado == 'completado' and not pedido.facturado_en:
+            ahora = timezone.now()
+            throttle_ventana = ahora - timedelta(hours=4)
+            afectados = []
+
+            try:
+                with transaction.atomic():
+                    for det in pedido.lineas.select_related('producto').all():
+                        det.recompute_peso_total()
+                        prod = det.producto
+                        cajas = det.cantidad_cajas or det.cajas.count()
+
+                        nuevo_stock = max(0, (prod.stock or 0) - (cajas or 0))
+                        if nuevo_stock != prod.stock:
+                            prod.stock = nuevo_stock
+                            prod.save(update_fields=["stock"])
+                            afectados.append(prod)
+
+                    pedido.facturado_en = ahora
+                    pedido.save(update_fields=["facturado_en"])
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+            # Avisos de stock bajo
+            for prod in afectados:
+                if prod.stock <= (prod.umbral_minimo or 0):
+                    if not prod.ultima_alerta_astock_bajo or prod.ultima_alerta_astock_bajo < throttle_ventana:
+                        crear_mensaje_stock_bajo(prod)
+                        prod.ultima_alerta_astock_bajo = ahora
+                        prod.save(update_fields=["ultima_alerta_astock_bajo"])
+
+        return Response(self.get_serializer(pedido).data)
 
     @action(detail=False, methods=['delete'])
     def eliminar_multiples(self, request):
@@ -39,6 +90,53 @@ class PedidoViewSet(viewsets.ModelViewSet):
                 {'error': str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+
+    @action(detail=True, methods=['post'])
+    def facturar(self, request, pk=None):
+        """
+        Marca el pedido como facturado, descuenta stock por cantidad de cajas en cada línea
+        y genera alertas de stock bajo (broadcast) cuando corresponda.
+        """
+        pedido = self.get_object()
+        if pedido.facturado_en:
+            return Response({"detail": "El pedido ya fue facturado"}, status=status.HTTP_400_BAD_REQUEST)
+
+        ahora = timezone.now()
+        throttle_ventana = ahora - timedelta(hours=4)
+        afectados = []
+
+        try:
+            with transaction.atomic():
+                for det in pedido.lineas.select_related('producto').all():
+                    # Asegura que cantidad_cajas esté actualizada
+                    det.recompute_peso_total()
+                    prod = det.producto
+                    cajas = det.cantidad_cajas or det.cajas.count()
+
+                    # Descontar sin permitir negativos
+                    nuevo_stock = max(0, (prod.stock or 0) - (cajas or 0))
+                    if nuevo_stock != prod.stock:
+                        prod.stock = nuevo_stock
+                        prod.save(update_fields=["stock"])
+                        afectados.append(prod)
+
+                pedido.facturado_en = ahora
+                # Opcional: mover a 'completado' al facturar
+                pedido.estado = 'completado'
+                pedido.save(update_fields=["facturado_en", "estado"])
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Crear mensajes de stock bajo sólo para los productos afectados
+        for prod in afectados:
+            if prod.stock <= (prod.umbral_minimo or 0):
+                if not prod.ultima_alerta_astock_bajo or prod.ultima_alerta_astock_bajo < throttle_ventana:
+                    crear_mensaje_stock_bajo(prod)
+                    prod.ultima_alerta_astock_bajo = ahora
+                    prod.save(update_fields=["ultima_alerta_astock_bajo"])
+
+        serializer = self.get_serializer(pedido)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(["GET"])
 def productos(request):

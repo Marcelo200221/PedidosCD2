@@ -367,7 +367,7 @@
             class="select-carne">
             <ion-select-option *ngFor="let productoDisponible of getProductosDisponiblesParaIndice(i)" 
               [value]="productoDisponible.id">
-              {{ productoDisponible.nombre }}
+              {{ productoDisponible.nombre }} - ${{ productoDisponible.precio }}
             </ion-select-option>
           </ion-select>
           <div class="underline" [ngStyle]="{'background-color': underlinesProductosNombre[i] || '#cccccc'}"></div>

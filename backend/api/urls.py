@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from .views import views, usuarios, pedidos, clientes
+from .views import views, usuarios, pedidos, clientes, avisos
 from .views.facturas import GenerarFacturaPDF, PreviewFacturaPDF, GenerarFacturaPorPedido
 
 router = DefaultRouter()
@@ -15,11 +15,14 @@ urlpatterns = [
     path('usuarios/lista', usuarios.usuario_lista, name="usuario-lista"),
     path('usuarios/permisos', usuarios.permisos_usuario, name="usuario-permisos"),
     path('productos/', pedidos.productos, name="productos"),
-    path('lista/clientes', clientes.listar_clientes, name="lista_clientes"),
+    path('lista/clientes', clientes.ClienteVIew.as_view(), name="lista_clientes"),
     path("agregar-cliente/", clientes.agregar_cliente, name="agregar-cliente"),
+    path("editar/cliente/<str:pk>", clientes.editar_cliente, name="editar-cliente"),
     path("eliminar/cliente/<str:pk>/", clientes.eliminar_cliente, name="eliminar-cliente"),
     path('facturas/preview', PreviewFacturaPDF.as_view(), name='facturas-preview'),
     path('facturas/generar', GenerarFacturaPDF.as_view(), name='facturas-generar'),
     path('facturas/generar-por-pedido/<int:pedido_id>', GenerarFacturaPorPedido.as_view(), name='facturas-generar-por-pedido'),
-    path('asignar/precio', pedidos.asignar_precio_v2, name="asignar-precio")
+    path('asignar/precio', pedidos.asignar_precio_v2, name="asignar-precio"),
+    path('datos/cliente/<str:pk>', clientes.ClienteVIew.as_view(), name="datos-cliente"),
+    path('avisos/', avisos.listar_avisos, name='avisos-listar')
 ] + router.urls

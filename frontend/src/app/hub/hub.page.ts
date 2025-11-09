@@ -8,6 +8,8 @@ import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd } from 'ionicons/icons';
 import { ApiService } from '../services/api.spec';
+import { ToastController } from '@ionic/angular';
+import { NotificacionService } from '../services/notificacion.service';
 
 //Iconos
 addIcons({ 
@@ -34,18 +36,33 @@ export class HubPage implements OnInit {
   menuAbierto: boolean = false;
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
+  private avisosVistos = new Set<number>();
+  private avisosTimer: any;
 
   constructor(
     private api: ApiService, 
-    private router: Router
+    private router: Router,
+    private toast: ToastController,
+    private notificaciones: NotificacionService
   ) {}
   
   ngOnInit() {
     this.cargarDatosUsuario();
+    this.iniciarAvisos();
+  }
+
+  iniciarAvisos() {
+    this.notificaciones.start();
   }
 
   ngOnDestroy() {
     this.menuAbierto = false;
+    // Detener avisos si están activos
+    this.notificaciones.stop();
+    if (this.avisosTimer) {
+      clearInterval(this.avisosTimer);
+      this.avisosTimer = null;
+    }
   }
 
   async cargarDatosUsuario() {

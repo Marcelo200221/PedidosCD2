@@ -54,6 +54,12 @@ export const routes: Routes = [
     loadComponent: () => import('./clientes/clientes.page').then((m) => m.ClientesPage),
   },
   {
+    path: 'clientes/:id',
+    canActivate: [authzGuard],
+    data: { permiso: 'editar_clientes' },
+    loadComponent: () => import('./clientes/clientes.page').then((m) => m.ClientesPage),
+  },
+  {
     path: 'lista-clientes',
     canActivate: [authzGuard],
     data: { permiso: 'view_clientes' },
