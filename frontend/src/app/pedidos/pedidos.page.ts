@@ -6,8 +6,10 @@ import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, 
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
-import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search, people, personAdd,
-  documentText, cube, calculator, scale, eye, closeCircle, send, checkmarkDone} from 'ionicons/icons';
+import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
+  bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
 
 //Interfaces
 export interface Producto {
@@ -21,16 +23,19 @@ export interface Pedido {
   id: number;
   nombre: string;
   cliente: string;
+  clienteId?: string; // AGREGAR ESTA LÍNEA (opcional)
   direccion: string;
   productos: Producto[];
   seleccionado?: boolean;
-  estado?: 'pendiente_pesos' | 'listo_facturar' | 'pendiente_confirmacion' | 'completado'; // ← AGREGAR
+  estado?: 'pendiente_pesos' | 'listo_facturar' | 'pendiente_confirmacion' | 'completado';
 }
 
 //Iconos
 addIcons({ 
-  chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, checkmarkDone, people, personAdd
+ pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
+  bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone
 });
 
 @Component({
@@ -52,6 +57,7 @@ export class PedidosPage implements OnInit {
   pedidos: Pedido[] = [];
   pedidosFiltrados: Pedido[] = [];
   productosInputs: Producto[] = [{ id: 0,nombre: '', cajas: null }];
+  clientesDisponibles: any[] = [];
 
   //Variables del menú
   menuAbierto: boolean = false;
@@ -107,12 +113,23 @@ export class PedidosPage implements OnInit {
 
   constructor(private api: ApiService, private router: Router) { }
 
-  async ngOnInit() {
-    this.pedidosFiltrados = [...this.pedidos];
-    await this.cargarProductosDisponibles();
-    await this.cargarPedidosDesdeBackend();
-    this.cargarDatosUsuario();
+async ngOnInit() {
+  this.pedidosFiltrados = [...this.pedidos];
+  await this.cargarProductosDisponibles();
+  await this.cargarClientesDisponibles(); // AGREGAR ESTA LÍNEA
+  await this.cargarPedidosDesdeBackend();
+  this.cargarDatosUsuario();
+}
+
+async cargarClientesDisponibles() {
+  try {
+    this.clientesDisponibles = await this.api.listarClientes();
+    console.log('Clientes cargados: ', this.clientesDisponibles);
+  } catch(error) {
+    console.error("Error al cargar clientes: ", error);
+    alert("Error al cargar clientes disponibles");
   }
+}
 
   async cargarDatosUsuario() {
     const usuario = await this.api.getUsuarioActual();
@@ -169,6 +186,11 @@ export class PedidosPage implements OnInit {
   IrListarClientes() {
     this.cerrarMenu();
     this.router.navigate(['/lista-clientes']);
+  }
+
+  IraProductos(){
+    this.cerrarMenu();
+    this.router.navigate(['/productos']);
   }
 
   //Cerrar sesión
@@ -343,24 +365,30 @@ export class PedidosPage implements OnInit {
 
   //Validacion: Cliente
   actualizarCliente(event: any) {
-    this.nuevoPedido.cliente = event.target.value;
-    if (this.nuevoPedido.cliente.length === 0) {
+    const clienteId = event.detail.value;
+    
+    // Buscar el cliente seleccionado
+    const clienteSeleccionado = this.clientesDisponibles.find(
+      cliente => cliente.id_cliente === clienteId || cliente.id === clienteId
+    );
+    
+    if (clienteSeleccionado) {
+      // Asignar nombre del cliente
+      this.nuevoPedido.cliente = clienteSeleccionado.nombre || clienteSeleccionado.razon_social || '';
+      this.nuevoPedido.clienteId = clienteSeleccionado.id_cliente || clienteSeleccionado.id;
+      
+      // Autocompletar dirección
+      this.nuevoPedido.direccion = clienteSeleccionado.direccion || '';
+      
+      // Actualizar estilos
+      this.underlineCliente = '#28a745';
+      this.underlineDireccion = this.nuevoPedido.direccion.length > 0 ? '#28a745' : '#cccccc';
+      this.clienteError = '';
+      
+      console.log('Cliente seleccionado:', clienteSeleccionado);
+    } else {
       this.underlineCliente = '#cccccc';
       this.clienteError = '';
-    } else if (this.nuevoPedido.cliente.trim().length < 3) {
-      this.underlineCliente = '#ff4d4d';
-      this.clienteError = 'El nombre del cliente debe tener al menos 3 letras';
-    } else {
-      this.underlineCliente = '#28a745';
-      this.clienteError = '';
-    }
-  }
-
-  onKeyPressCliente(event: KeyboardEvent) {
-    const key = event.key;
-    if (key.length > 1) return; 
-    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]$/.test(key)) {
-      event.preventDefault(); 
     }
   }
 
@@ -530,14 +558,14 @@ export class PedidosPage implements OnInit {
       alert('Ingresa el nombre del pedido');
       return;
     }
-
-    if (this.nuevoPedido.cliente.trim().length < 3) {
-      alert('El nombre del cliente debe tener al menos 3 letras');
+    
+    if (!this.nuevoPedido.cliente || this.nuevoPedido.cliente.trim().length < 3) {
+      alert('Selecciona un cliente válido');
       return;
     }
 
     if (!this.nuevoPedido.direccion.trim()) {
-      alert('Ingresa la dirección de envío');
+      alert('La dirección de envío es requerida (debe tener el cliente seleccionado una dirección)');
       return;
     }
 
@@ -633,21 +661,25 @@ export class PedidosPage implements OnInit {
     this.underlinesProductosCajas = ['#cccccc'];
     this.clienteError = '';
     this.productosErrors = [''];
+    this.pedidosFiltrados = [...this.pedidos];
+    this.aplicarFiltros();
   }
 
   //Modo: Eliminar pedido
   activarModoEliminar() {
-    if (this.pedidos.length === 0) {
-      alert('No hay pedidos para eliminar');
+    const pedidosActivos = this.pedidos.filter(p => p.estado !== 'completado');
+
+    if (pedidosActivos.length === 0) {
+      alert('No hay pedidos activos para eliminar');
       return;
     }
     
-    const pedidosEliminables = this.pedidos.filter(p => this.puedeEliminar(p));
+    const pedidosEliminables = pedidosActivos.filter(p => this.puedeEliminar(p));
     if (pedidosEliminables.length === 0) {
       alert('No hay pedidos disponibles para eliminar. Solo se pueden eliminar pedidos en estado "Pendiente de Pesos" o "Pendiente de Confirmación"');
       return;
     }
-      
+        
     this.mostrarEliminarPedido = true;
     this.mostrarEditarPedido = false;
     this.mostrarAgregarPedido = false;
@@ -655,12 +687,15 @@ export class PedidosPage implements OnInit {
     this.pedidoParaPesos = null;
     this.pedidos.forEach(pedido => pedido.seleccionado = false);
     this.pedidosFiltrados.forEach(pedido => pedido.seleccionado = false);
+    this.pedidosFiltrados = pedidosActivos;
   }
 
   cancelarModoEliminar() {
     this.mostrarEliminarPedido = false;
     this.pedidos.forEach(pedido => pedido.seleccionado = false);
     this.pedidosFiltrados.forEach(pedido => pedido.seleccionado = false);
+    this.pedidosFiltrados = [...this.pedidos];
+    this.aplicarFiltros();
   }
 
   toggleSeleccionPedido(pedido: Pedido) {
@@ -701,16 +736,18 @@ export class PedidosPage implements OnInit {
 
   //Modo: Editar pedido
   activarModoEditar() {
-    if (this.pedidos.length === 0) {
-      alert('No hay pedidos para editar');
-      return;
-    }
-    
-    const pedidosEditables = this.pedidos.filter(p => this.puedeEditar(p));
-    if (pedidosEditables.length === 0) {
-      alert('No hay pedidos disponibles para editar. Solo se pueden editar pedidos en estado "Pendiente de Pesos"');
-      return;
-    }
+  const pedidosActivos = this.pedidos.filter(p => p.estado == 'pendiente_pesos');
+  
+  if (pedidosActivos.length === 0) {
+    alert('No hay pedidos activos para editar');
+    return;
+  }
+  
+  const pedidosEditables = pedidosActivos.filter(p => this.puedeEditar(p));
+  if (pedidosEditables.length === 0) {
+    alert('No hay pedidos disponibles para editar. Solo se pueden editar pedidos en estado "Pendiente de Pesos"');
+    return;
+  }
     
     this.mostrarEditarPedido = true;
     this.mostrarEliminarPedido = false;
@@ -719,6 +756,7 @@ export class PedidosPage implements OnInit {
     this.pedidoParaPesos = null; 
     this.pedidos.forEach(pedido => pedido.seleccionado = false);
     this.pedidosFiltrados.forEach(pedido => pedido.seleccionado = false);
+    this.pedidosFiltrados = pedidosActivos;
   }
 
 
@@ -726,6 +764,8 @@ export class PedidosPage implements OnInit {
     this.mostrarEditarPedido = false;
     this.pedidos.forEach(pedido => pedido.seleccionado = false);
     this.pedidosFiltrados.forEach(pedido => pedido.seleccionado = false);
+    this.pedidosFiltrados = [...this.pedidos];
+    this.aplicarFiltros();
   }
 
 
@@ -787,12 +827,14 @@ export class PedidosPage implements OnInit {
 
   //Modo: Asignar peso
   activarModoAsignarPesos() {
-    if (this.pedidos.length === 0) {
-      alert('No hay pedidos para asignar pesos');
+  const pedidosActivos = this.pedidos.filter(p => p.estado == 'pendiente_pesos');
+    
+    if (pedidosActivos.length === 0) {
+      alert('No hay pedidos activos para asignar pesos');
       return;
     }
     
-    const pedidosConPesosAsignables = this.pedidos.filter(p => this.puedeAsignarPesos(p));
+    const pedidosConPesosAsignables = pedidosActivos.filter(p => this.puedeAsignarPesos(p));
     if (pedidosConPesosAsignables.length === 0) {
       alert('No hay pedidos disponibles para asignar pesos. Solo se pueden asignar pesos a pedidos en estado "Pendiente de Pesos"');
       return;
@@ -804,6 +846,7 @@ export class PedidosPage implements OnInit {
     this.mostrarAgregarPedido = false;
     this.pedidos.forEach(pedido => pedido.seleccionado = false);
     this.pedidosFiltrados.forEach(pedido => pedido.seleccionado = false);
+    this.pedidosFiltrados = pedidosActivos;
   }
 
   cancelarModoAsignarPesos() {
@@ -815,6 +858,8 @@ export class PedidosPage implements OnInit {
     this.pesosTemporales = {};
     this.underlinesPesos = {};
     this.pesosErrors = {};
+    this.pedidosFiltrados = [...this.pedidos];
+    this.aplicarFiltros();
   }
 
   toggleSeleccionPedidoPesos(pedido: Pedido) {
@@ -957,7 +1002,9 @@ export class PedidosPage implements OnInit {
     this.pesosTemporales = {};
     this.underlinesPesos = {};
     this.pesosErrors = {};
-    this.mostrarAsignarPesos = true;
+    this.mostrarAsignarPesos = false;
+    this.pedidosFiltrados = [...this.pedidos];
+    this.aplicarFiltros();
   }
 
   get hayPedidoSeleccionadoPesos(): boolean {
@@ -1035,7 +1082,8 @@ export class PedidosPage implements OnInit {
     // Se pueden eliminar pedidos en 'pendiente_pesos' y 'pendiente_confirmacion'
     return !pedido.estado || 
           pedido.estado === 'pendiente_pesos' || 
-          pedido.estado === 'pendiente_confirmacion';
+          pedido.estado === 'pendiente_confirmacion' ||
+          pedido.estado === 'listo_facturar';
   }
 
   puedeAsignarPesos(pedido: Pedido): boolean {
@@ -1160,6 +1208,11 @@ ordenarPedidosPorEstado(pedidos: Pedido[]): Pedido[] {
     
     return prioridadA - prioridadB;
   });
+}
+
+async ionViewWillEnter() {
+  await this.cargarPedidosDesdeBackend();
+  this.aplicarFiltros();
 }
 
 } 
