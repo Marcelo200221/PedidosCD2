@@ -48,7 +48,6 @@ export class HubPage implements OnInit {
   
   ngOnInit() {
     this.cargarDatosUsuario();
-    this.iniciarAvisos();
   }
 
   iniciarAvisos() {
@@ -71,6 +70,8 @@ export class HubPage implements OnInit {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
       console.log('Usuario cargado:', usuario); 
+      // Iniciar avisos solo cuando hay usuario en IndexedDB (login hecho)
+      this.iniciarAvisos();
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');

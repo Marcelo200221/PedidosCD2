@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from django.db.models import Q
+from django.db.models import Q, F
 
 from api.models import MensajeBot
 
@@ -17,18 +17,25 @@ def listar_avisos(request):
     """
     user = getattr(request, "user", None)
 
+    base_filter = Q(producto__isnull=True) | Q(producto__stock__lte=F("producto__umbral_minimo"))
+
     if user and getattr(user, "is_authenticated", False):
         qs = (
             MensajeBot.objects.filter(
-                Q(audiencia="all")
-                | Q(audiencia="users", destinatarios=user)
-                | Q(audiencia="groups", grupos__in=user.groups.all())
+                (Q(audiencia="all")
+                 | Q(audiencia="users", destinatarios=user)
+                 | Q(audiencia="groups", grupos__in=user.groups.all()))
+                & base_filter
             )
             .distinct()
             .order_by("-created_at")[:50]
         )
     else:
-        qs = MensajeBot.objects.filter(audiencia="all").order_by("-created_at")[:50]
+        qs = (
+            MensajeBot.objects.filter(audiencia="all")
+            .filter(base_filter)
+            .order_by("-created_at")[:50]
+        )
 
     data = [
         {
@@ -41,4 +48,3 @@ def listar_avisos(request):
         for m in qs
     ]
     return Response(data)
-

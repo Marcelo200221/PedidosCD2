@@ -200,6 +200,12 @@ ion-select {
   --padding-end: 0;
 }
 
+/* Resaltar productos con bajo stock en el selector */
+.stock-bajo {
+  color: #c62828; /* rojo */
+  font-weight: 600;
+}
+
 .input-container {
   ion-select.select-carne {
     --border-width: 0;

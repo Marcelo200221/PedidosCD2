@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import Sum
 from django.core.validators import MinValueValidator
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import Group
 from usuarios.models import Usuario
@@ -161,5 +161,18 @@ class Cliente(models.Model):
 
     def __str__(self):
         return f"{self.nombre} - {self.rut} - {self.razon_social} - {self.direccion}"
+
+
+# Limpieza automática de avisos de stock bajo cuando el producto es repuesto
+@receiver(post_save, sender=Productos)
+def limpiar_avisos_al_reponer_stock(sender, instance: Productos, **kwargs):
+    try:
+        # Si el stock actual supera el umbral, elimina mensajes low_stock de ese producto
+        if (instance.stock or 0) > (instance.umbral_minimo or 0):
+            from api.models import MensajeBot  # evitar problemas de import ciclico
+            MensajeBot.objects.filter(producto=instance, tipo="low_stock").delete()
+    except Exception:
+        # No romper el flujo de guardado por errores de limpieza
+        pass
 
 

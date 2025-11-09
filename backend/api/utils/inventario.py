@@ -14,7 +14,7 @@ from api.models import Productos, MensajeBot
 def _formatear_texto_stock_bajo(producto: Productos) -> str:
     return (
         f"Stock bajo: {producto.nombre} (ID {producto.id}). "
-        f"Stock actual: {producto.stock}. Umbral mínimo: {producto.umbral_minimo}."
+        f"Stock actual: {producto.stock}."
     )
 
 
