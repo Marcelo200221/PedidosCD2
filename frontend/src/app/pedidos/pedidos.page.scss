@@ -38,6 +38,10 @@
   margin-right: 3%;
 }
 
+.user-name{
+  font-weight: bold;
+}
+
 ion-searchbar {
   --background: #f8f7f6;   
   --color: #000;        
@@ -1292,4 +1296,13 @@ ion-item.item-seleccionable {
       padding-left: 35px;
     }
   }
+}
+
+.select-cliente {
+  width: 85%;
+  --placeholder-color: #000000;
+  --placeholder-opacity: 0.7;
+  font-family: catamaran, sans-serif;
+  font-size: 100%;
+  color: #000;
 }

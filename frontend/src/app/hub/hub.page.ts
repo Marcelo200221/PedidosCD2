@@ -6,7 +6,7 @@ import { IonContent, IonButton, IonSearchbar, IonItem,
   IonLabel, IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton, IonList } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd, bag, person} from 'ionicons/icons';
 import { ApiService } from '../services/api.spec';
 import { ToastController } from '@ionic/angular';
 import { NotificacionService } from '../services/notificacion.service';
@@ -15,7 +15,7 @@ import { NotificacionService } from '../services/notificacion.service';
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
   trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, people, personAdd,
-  logOut, barChart, arrowUndo
+  logOut, barChart, arrowUndo, bag, person
 });
 
 @Component({
@@ -131,6 +131,12 @@ export class HubPage implements OnInit {
     this.cerrarMenu();
     this.router.navigate(['/lista-clientes']);
   }
+
+  IraProductos() {
+    this.cerrarMenu();
+    this.router.navigate(['/productos']);
+  }
+
 
   //Cerrar sesión
   cerrarSesion() {

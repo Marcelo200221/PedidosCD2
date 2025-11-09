@@ -47,8 +47,18 @@
       <div class="menu-divider"></div>
 
       <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="person"></ion-icon>
+        <span>Usuario</span>
+      </div>
+      
+      <div class="menu-item" (click)="IrListarClientes()">
         <ion-icon name="people"></ion-icon>
         <span>Clientes</span>
+      </div>
+
+      <div class="menu-item" (click)="IraProductos()">
+        <ion-icon name="bag"></ion-icon>
+        <span>Productos</span>
       </div>
       
       <div class="menu-divider"></div>
@@ -102,7 +112,7 @@
             [class.activo]="filtroEstadoActivo === 'listo_facturar'"
             (click)="aplicarFiltroEstado('listo_facturar')">
           <div class="filtro-color listo-facturar"></div>
-          <span>Listo para Facturar</span>
+          <span>Pendiente de Confirmación</span>
           <span class="filtro-contador">{{ getContadorPorEstado('listo_facturar') }}</span>
         </div>
         
@@ -110,7 +120,7 @@
             [class.activo]="filtroEstadoActivo === 'pendiente_confirmacion'"
             (click)="aplicarFiltroEstado('pendiente_confirmacion')">
           <div class="filtro-color pendiente-confirmacion"></div>
-          <span>Pendiente de Confirmación</span>
+          <span>Listo para Facturar</span>
           <span class="filtro-contador">{{ getContadorPorEstado('pendiente_confirmacion') }}</span>
         </div>
         
@@ -140,7 +150,6 @@
   <div *ngIf="mostrarEliminarPedido" class="login-header">
     <div class="barra-superior barra-eliminar">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Seleccionar para eliminar ({{ pedidosSeleccionados }})</h1>
       </div>
     </div>
@@ -150,7 +159,6 @@
   <div *ngIf="mostrarEditarPedido" class="login-header">
     <div class="barra-superior barra-editar">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Seleccionar pedido a editar</h1>
       </div>
     </div>
@@ -160,7 +168,6 @@
   <div *ngIf="mostrarAsignarPesos && !pedidoParaPesos" class="login-header">
     <div class="barra-superior barra-pesos">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">Seleccione para asignar pesos</h1>
       </div>
     </div>
@@ -319,9 +326,7 @@
   <div *ngIf="mostrarAgregarPedido">
     <div class="barra-superior">
       <div class="top-row">
-        <ion-icon name="menu" class="icon-left"></ion-icon>
         <h1 class="titulo-texto">{{ indiceEditando >= 0 ? 'Editar Pedido' : 'Nuevo Pedido' }}</h1>
-        <ion-icon name="filter" class="icon-right"></ion-icon>
       </div>
     </div>
 
@@ -336,15 +341,30 @@
 
       <div class="input-container">
         <h1 class="titulos-small">Cliente</h1>
-        <ion-input placeholder="Ingrese nombre del cliente" [(ngModel)]="nuevoPedido.cliente"(ionInput)="actualizarCliente($event)"(keypress)="onKeyPressCliente($event)">
-        </ion-input>
+        <ion-select 
+          placeholder="Seleccione un cliente" 
+          [(ngModel)]="nuevoPedido.clienteId"
+          (ionChange)="actualizarCliente($event)"
+          interface="popover" 
+          class="select-cliente">
+          <ion-select-option 
+            *ngFor="let cliente of clientesDisponibles" 
+            [value]="cliente.id_cliente || cliente.id">
+            {{ cliente.nombre || cliente.razon_social }}
+          </ion-select-option>
+        </ion-select>
         <div class="underline" [ngStyle]="{'background-color': underlineCliente}"></div>
       </div>
       <p class="mensaje-error" *ngIf="clienteError">{{clienteError}}</p>
 
       <div class="input-container">
         <h1 class="titulos-small">Dirección a enviar</h1>
-        <ion-input placeholder="Ingrese dirección" [(ngModel)]="nuevoPedido.direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+        <ion-input 
+          placeholder="Se autocompletará al seleccionar cliente" 
+          [(ngModel)]="nuevoPedido.direccion"
+          (ionInput)="actualizarDireccion($event)"
+          readonly>
+        </ion-input>
         <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
       </div>
     </div>
@@ -417,7 +437,6 @@
   <div *ngIf="pedidoParaPesos" class="formulario-pesos">
     <div class="barra-superior">
       <div class="top-row">
-        <ion-icon name="arrow-back" class="icon-left" (click)="cancelarAsignacionPesos()"></ion-icon>
         <h1 class="titulo-texto">Asignar Pesos</h1>
       </div>
     </div>

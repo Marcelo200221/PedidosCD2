@@ -333,7 +333,7 @@ export class ApiService{
       const payload = {
         direccion: pedidoCompleto.direccion,
         fecha_entrega: new Date().toISOString().split('T')[0],
-        estado: 'listo_facturar',  // ← AGREGAR ESTO
+        estado: 'listo_facturar', 
         lineas: productosConPesos.map((producto) => ({
           producto_id: producto.id,
           cajas: producto.pesos.map((peso: number, cajaIndex: number) => ({
@@ -354,7 +354,7 @@ export class ApiService{
     }
   }
 
-  // Facturación: generar PDF por pedido (descargar)
+  //Facturación: generar PDF por pedido (descargar)
   async generarFacturaPorPedido(pedidoId: number, opciones?: {
     factura_numero?: string;
     descuento?: number;
@@ -379,7 +379,7 @@ export class ApiService{
     }
   }
 
-  // Facturación: previsualizar PDF por pedido (abre en nueva pestaña)
+  //Facturación: previsualizar PDF por pedido (abre en nueva pestaña)
   async previsualizarFacturaPorPedido(pedidoId: number, opciones?: {
     factura_numero?: string;
     descuento?: number;
@@ -471,17 +471,17 @@ export class ApiService{
     try {
       console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
       
-      // Primero obtenemos el pedido completo
+      //Primero obtenemos el pedido completo
       const getResponse = await api.get(`pedidos/${id}/`);
       const pedidoActual = getResponse.data;
       
       console.log('Pedido actual:', pedidoActual);
       
-      // Construimos el payload manteniendo TODA la estructura original
+      //Construimos el payload manteniendo TODA la estructura original
       const payload = {
         direccion: pedidoActual.direccion,
         fecha_entrega: pedidoActual.fecha_entrega,
-        estado: estado,  // Solo cambiamos el estado
+        estado: estado,  //Solo cambiamos el estado
         lineas: pedidoActual.lineas.map((linea: any) => ({
           producto_id: linea.producto.id,
           cajas: linea.cajas && linea.cajas.length > 0 
@@ -528,5 +528,31 @@ export class ApiService{
       return [];
     }
   }
+  async listarProductosMasVendidos(): Promise<any[]> {
+  try {
+    console.log("Obteniendo productos más vendidos");
+    const res = await api.get("productos/mas-vendidos/");
+    
+    console.log("Productos más vendidos:", res.data);
+    return res.data;
+  } catch (error) {
+    console.error("Error al obtener productos más vendidos:", error);
+    //Retornar array vacío en caso de error
+    return [];
+  }
+}
+
+async listarClientesConMasPedidos(): Promise<any[]> {
+  try {
+    console.log("🔄 Obteniendo clientes con más pedidos");
+    const res = await api.get("clientes-mas-pedidos/");
+    
+    console.log("Clientes con más pedidos:", res.data);
+    return res.data;
+  } catch (error) {
+    console.error("Error al obtener clientes con más pedidos:", error);
+    return [];
+  }
+}
 
 }

@@ -1,8 +1,12 @@
 <ion-content class="productos-page">
-  <div class="barra-superior"></div>
-  <div class="barra-inferior"></div>
-  <h1 class="titulo-texto">Productos</h1>
-  <div class="barra-texto"></div>
+  <div class="login-header">
+    <div class="barra-superior">
+      <div class="top-row">
+        <ion-icon name="menu" class="icon-left" (click)="toggleMenu()"></ion-icon>
+        <h1 class="titulo-texto">Productos</h1>
+      </div>
+    </div>
+  </div>
 
   <div class="lista-productos">
     <ion-list>
@@ -44,6 +48,65 @@
     <div class="modal-actions">
       <ion-button class="btn-cancelar" fill="clear" (click)="cerrarModal()">Cancelar</ion-button>
       <ion-button class="btn-guardar" (click)="confirmarCambio()">Guardar</ion-button>
+    </div>
+  </div>
+
+    <!-- Overlay del menú -->
+  <div class="menu-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
+
+  <!-- Menú lateral -->
+  <div class="menu-lateral" [class.abierto]="menuAbierto">
+    <div class="menu-header">
+      <div class="menu-user-info">
+        <p>Bienvenido,</p><p class="user-name" *ngIf="nombreUsuario">{{ nombreUsuario }} {{ apellidoUsuario }}</p>
+      </div>
+      <ion-icon name="close" class="icon-cerrar-menu" (click)="cerrarMenu()"></ion-icon>
+    </div>
+    
+    <div class="menu-contenido">
+      <div class="menu-item" (click)="Irapedidosmenu()">
+        <ion-icon name="cube"></ion-icon>
+        <span>Pedidos</span>
+      </div>
+      
+      <div class="menu-item" (click)="Irafacturasmenu()">
+        <ion-icon name="document-text"></ion-icon>
+        <span>Facturas</span>
+      </div>
+      
+      <div class="menu-item" (click)="Iradashboardsmenu()">
+        <ion-icon name="bar-chart"></ion-icon>
+        <span>Dashboards</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="person"></ion-icon>
+        <span>Usuario</span>
+      </div>
+      
+      <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="people"></ion-icon>
+        <span>Clientes</span>
+      </div>
+
+      <div class="menu-item" (click)="IraProductos()">
+        <ion-icon name="bag"></ion-icon>
+        <span>Productos</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item" (click)="IrMenu()">
+        <ion-icon name="arrow-undo"></ion-icon>
+        <span>Volver al Menu</span>
+      </div>
+      
+      <div class="menu-item" (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+        <span>Cerrar Sesión</span>
+      </div>
     </div>
   </div>
 </ion-content>
