@@ -27,14 +27,14 @@
   margin-top: 1%;
 }
 
-.botones{
-  height: 100%;            
-  display: flex;             
-  flex-direction: column;   
-  justify-content: center;  
-  align-items: center;     
-  gap: 5px;
-  margin-top: -20%;
+.botones {
+  height: 100vh;              
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    
+  align-items: center;       
+  gap: 15px;                  
+  margin-top: -250px;              
 }
 
 .btn-pedidos{
@@ -75,7 +75,6 @@
   font-weight: bold;
   font-family: catamaran, sans-serif;
   margin-top: 30%;
-  margin-bottom: -60%;
 }
 
 .titulo-container{

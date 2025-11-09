@@ -6,8 +6,9 @@ import { IonContent, IonButton, IonSearchbar, IonItem,
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
-import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, download, people, personAdd  } from 'ionicons/icons';
+import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person  } from 'ionicons/icons';
 
 // Interfaces
 export interface Producto {
@@ -29,8 +30,9 @@ export interface Pedido {
 
 //Iconos
 addIcons({ 
-  chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
-  trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, people, personAdd, download
+  pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person
 });
 
 @Component({
@@ -249,6 +251,7 @@ export class FacturacionPage implements OnInit {
       for (const pedido of seleccionados) {
         await this.api.generarFacturaPorPedido(pedido.id);
         await this.api.actualizarEstadoPedido(pedido.id, 'completado');
+        await this.recargarPedidos();
       }
 
       this.pedidos = this.pedidos.filter(p => !p.seleccionado);
@@ -275,6 +278,7 @@ export class FacturacionPage implements OnInit {
     try {
       await this.api.generarFacturaPorPedido(pedido.id);
       await this.api.actualizarEstadoPedido(pedido.id, 'completado');
+      await this.recargarPedidos();
       
       //Remover de la lista
       this.pedidos = this.pedidos.filter(p => p.id !== pedido.id);
@@ -292,6 +296,9 @@ export class FacturacionPage implements OnInit {
     this.menuAbierto = false;
   }
 
+  async recargarPedidos() {
+  await this.cargarPedidosPendientesConfirmacion();
+}
 
   //Control del menú
   toggleMenu() {
@@ -331,6 +338,11 @@ export class FacturacionPage implements OnInit {
   IrListarClientes() {
     this.cerrarMenu();
     this.router.navigate(['/lista-clientes']);
+  }
+
+  IraProductos(){
+    this.cerrarMenu();
+    this.router.navigate(['/productos']);
   }
 
   //Cerrar sesión
