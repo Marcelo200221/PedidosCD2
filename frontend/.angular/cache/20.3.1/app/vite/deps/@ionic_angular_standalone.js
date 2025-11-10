@@ -24,7 +24,6 @@ import {
   startFocusVisible
 } from "./chunk-G4NIR46C.js";
 import {
-<<<<<<< HEAD
   AngularDelegate,
   BACKDROP,
   Config,
@@ -96,11 +95,6 @@ import {
 import {
   shouldUseCloseWatcher
 } from "./chunk-PV6F2B3V.js";
-=======
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-B643ERWT.js";
->>>>>>> bf407ff19ae4f570890717f8ab85d8525e9b154e
 import {
   iosTransitionAnimation
 } from "./chunk-RZO5B7WV.js";
@@ -165,28 +159,16 @@ import {
 } from "./chunk-B643ERWT.js";
 import {
   ActivatedRoute,
-<<<<<<< HEAD
   Router
 } from "./chunk-HPP7U4GR.js";
 import "./chunk-POYGUSKF.js";
 import "./chunk-CIW3M5WR.js";
-=======
-  ChildrenOutletContexts,
-  NavigationStart,
-  PRIMARY_OUTLET,
-  Router,
-  RouterLink,
-  UrlSerializer
-} from "./chunk-M2QJOJJH.js";
-import "./chunk-MBOJX7Y7.js";
->>>>>>> bf407ff19ae4f570890717f8ab85d8525e9b154e
 import {
   CommonModule,
   Location,
   NgIf,
   NgTemplateOutlet
 } from "./chunk-ISROFK6K.js";
-import "./chunk-CIW3M5WR.js";
 import "./chunk-SQNCADWX.js";
 import {
   APP_INITIALIZER,

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from './api.spec';
-import { getItem as ssGetItem, setItem as ssSetItem } from './token-storage';
+import { getItem as ssGetItem } from './token-storage';
 
 @Injectable({ providedIn: 'root' })
 export class NotificacionService {
   private timer: any;
   private vistos = new Set<number>();
-  private readonly STORAGE_KEY = 'avisos_vistos';
+  private activos: any[] = [];
 
   constructor(
     private api: ApiService,
@@ -21,8 +21,8 @@ export class NotificacionService {
     const token = await ssGetItem('auth_token');
     if (!token) return;
 
-    // Cargar avisos vistos persistidos
-    await this.cargarVistosPersistidos();
+    // Reiniciar vistos por sesión (sin persistir)
+    this.vistos.clear();
 
     // Un único pull al iniciar sesión
     await this.pull();
@@ -49,7 +49,6 @@ export class NotificacionService {
         console.log("Mensaje: ", mensaje);
         if (id && mensaje && !this.vistos.has(id)) {
           this.vistos.add(id);
-          await this.persistirVistos();
           await this.mostrar(mensaje);
         }
       }
@@ -59,32 +58,36 @@ export class NotificacionService {
     }
   }
 
-  private async cargarVistosPersistidos() {
-    try {
-      const raw = await ssGetItem(this.STORAGE_KEY);
-      if (!raw) return;
-      const arr: number[] = JSON.parse(raw);
-      if (Array.isArray(arr)) {
-        arr.forEach(id => this.vistos.add(Number(id)));
-      }
-    } catch (_) { /* noop */ }
-  }
-
-  private async persistirVistos() {
-    try {
-      const arr = Array.from(this.vistos.values());
-      await ssSetItem(this.STORAGE_KEY, JSON.stringify(arr));
-    } catch (_) { /* noop */ }
-  }
+  // Persistencia de vistos eliminada para mostrar avisos al entrar a cada vista
 
   private async mostrar(mensaje: string) {
+    const index = this.activos.length;
     const t = await this.toast.create({
       message: mensaje,
       duration: 3000,
       position: 'top',
       color: 'primary',
-      icon: 'alert-circle'
+      cssClass: ['notif-toast', `notif-offset-${index}`]
     });
     await t.present();
+    this.activos.push(t as any);
+    t.onDidDismiss().then(() => {
+      const i = this.activos.indexOf(t as any);
+      if (i >= 0) this.activos.splice(i, 1);
+      this.reordenarToasts();
+    });
+  }
+
+  private reordenarToasts() {
+    this.activos.forEach((el, i) => {
+      try {
+        const cl: DOMTokenList | undefined = (el as any).classList as DOMTokenList | undefined;
+        if (!cl) return;
+        const toRemove: string[] = [];
+        cl.forEach((c: string) => { if (c.startsWith('notif-offset-')) toRemove.push(c); });
+        toRemove.forEach((c) => cl.remove(c));
+        cl.add(`notif-offset-${i}`);
+      } catch (_) { /* noop */ }
+    });
   }
 }

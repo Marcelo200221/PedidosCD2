@@ -1,0 +1,25 @@
+<ion-content class="lista-clientes-page" fullscreen>
+  <!-- Header consistente -->
+  <div class="login-header">
+    <div class="barra-superior"></div>
+    <div class="barra-inferior"></div>
+  </div>
+
+  <!-- Título -->
+  <div class="titulo-container">
+    <h1 class="titulo-texto">Usuarios</h1>
+    <div class="barra-texto"></div>
+  </div>
+
+  <!-- Lista de clientes -->
+  <ion-list class="clientes-list">
+    <ion-item class="cliente-item" lines="none" *ngFor="let usuario of usuarios">
+      <ion-label class="cliente-card">
+        <h2 class="cliente-nombre">{{ usuario.first_name}} {{usuario.last_name}}</h2>
+        <p class="cliente-detalle"><strong>ID:</strong> {{ usuario.id }}</p>
+        <p class="cliente-detalle"><strong>RUT:</strong> {{ usuario.rut }}</p>
+        <p class="cliente-detalle"><strong>Dirección:</strong> {{ usuario.email }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

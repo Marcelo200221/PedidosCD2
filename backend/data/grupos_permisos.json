@@ -10,7 +10,9 @@
         "view_clientes",
         "agregar_clientes",
         "editar_clientes",
-        "eliminar_clientes"
+        "eliminar_clientes",
+        "view_productos",
+        "edit_productos"
     ],
     "monitor": [
         "view_pedidos",
@@ -20,12 +22,15 @@
         "view_facturar",
         "view_clientes",
         "agregar_clientes",
-        "editar_clientes"
+        "editar_clientes",
+        "view_productos",
+        "edit_productos"
     ],
     "repartidor": [
         "view_pedidos",
         "create_pedidos",
         "edit_pedidos",
-        "view_clientes"
+        "view_clientes",
+        "view_productos"
     ]
 }

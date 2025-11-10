@@ -11,6 +11,9 @@ import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
   bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
 
+import { Perimisos } from '../services/perimisos';
+import { NotificacionService } from '../services/notificacion.service';
+
 //Interfaces
 export interface Producto {
   id: number;
@@ -64,6 +67,8 @@ export class PedidosPage implements OnInit {
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
 
+  puedeIr = false;
+
   pedidoEditandoId?: number;
   
   productosDisponibles: any[] = [];
@@ -111,14 +116,17 @@ export class PedidosPage implements OnInit {
   productosErrors: string[] = [''];
   pesosErrors: { [productoIndex: number]: string[] } = {};
 
-  constructor(private api: ApiService, private router: Router) { }
+  constructor(private api: ApiService, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService) { }
 
 async ngOnInit() {
+  this.puedeIr = await this.permisos.checkPermission('view_usuarios')
   this.pedidosFiltrados = [...this.pedidos];
   await this.cargarProductosDisponibles();
   await this.cargarClientesDisponibles(); // AGREGAR ESTA LÍNEA
   await this.cargarPedidosDesdeBackend();
   this.cargarDatosUsuario();
+  // Disparar chequeo de avisos solo al entrar a pedidos
+  this.notificaciones.start();
 }
 
 async cargarClientesDisponibles() {
@@ -155,6 +163,7 @@ async cargarClientesDisponibles() {
 
   ngOnDestroy() {
     this.menuAbierto = false;
+    this.notificaciones.stop();
   }
 
    //Navegación desde menú lateral

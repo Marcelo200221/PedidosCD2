@@ -40,7 +40,7 @@ ion-content.lista-clientes-page {
   margin-bottom: 10%;
 }
 
-/* Lista de clientes */
+/* Lista (reutiliza clases de clientes) */
 .clientes-list {
   padding: 0 10% 20% 10%;
 }
@@ -75,12 +75,14 @@ ion-item.cliente-item {
   margin: 2px 0;
 }
 
+/* Contenedores de acciones existen en markup pero sin botones para lectura */
 .acciones {
   display: flex;
   justify-content: flex-end;
   margin-top: 8px;
 }
 
+/* Mantener estilos por consistencia aunque no se usen en usuarios */
 .btn-eliminar {
   --background: #97201d;
   --color: #f8f7f6;

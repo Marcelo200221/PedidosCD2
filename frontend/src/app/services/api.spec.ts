@@ -470,36 +470,17 @@ export class ApiService{
   async actualizarEstadoPedido(id: number, estado: string) {
     try {
       console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
-      
-      //Primero obtenemos el pedido completo
-      const getResponse = await api.get(`pedidos/${id}/`);
-      const pedidoActual = getResponse.data;
-      
-      console.log('Pedido actual:', pedidoActual);
-      
-      //Construimos el payload manteniendo TODA la estructura original
-      const payload = {
-        direccion: pedidoActual.direccion,
-        fecha_entrega: pedidoActual.fecha_entrega,
-        estado: estado,  //Solo cambiamos el estado
-        lineas: pedidoActual.lineas.map((linea: any) => ({
-          producto_id: linea.producto.id,
-          cajas: linea.cajas && linea.cajas.length > 0 
-            ? linea.cajas.map((caja: any) => ({
-                peso: Number(caja.peso),
-                etiqueta: caja.etiqueta || `Caja ${linea.cajas.indexOf(caja) + 1}`
-              }))
-            : []
-        }))
-      };
-      
-      console.log('Payload a enviar:', JSON.stringify(payload, null, 2));
-      
-      const updateResponse = await api.put(`pedidos/${id}/`, payload);
+
+      // Importante: enviar SOLO el cambio de estado.
+      // No reenviar 'lineas' para evitar borrar cajas accidentalmente
+      // cuando no estamos editando pesos/cajas.
+      const payload = { estado } as any;
+
+      const updateResponse = await api.patch(`pedidos/${id}/`, payload);
       console.log('Estado actualizado exitosamente');
       return updateResponse;
-      
-    } catch(error: any) {
+
+    } catch (error: any) {
       console.error('Error completo:', error);
       console.error('Response data:', error.response?.data);
       console.error('Status:', error.response?.status);
@@ -511,6 +492,17 @@ export class ApiService{
     try{
       await api.put("asignar/precio", {
         precio: precio,
+        pk: id
+      })
+    }catch(error){
+      console.error(error)
+    }
+  }
+
+  async actualizarStock(stock: number, id: number){
+    try{
+      await api.put("editar/stock", {
+        stock: stock,
         pk: id
       })
     }catch(error){

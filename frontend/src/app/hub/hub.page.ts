@@ -10,6 +10,7 @@ import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, 
 import { ApiService } from '../services/api.spec';
 import { ToastController } from '@ionic/angular';
 import { NotificacionService } from '../services/notificacion.service';
+import { Perimisos } from '../services/perimisos';
 
 //Iconos
 addIcons({ 
@@ -38,15 +39,22 @@ export class HubPage implements OnInit {
   apellidoUsuario: string = '';
   private avisosVistos = new Set<number>();
   private avisosTimer: any;
+  puedeIr = false;
+  verReportes = false;
+  verProductos = false;
 
   constructor(
     private api: ApiService, 
     private router: Router,
     private toast: ToastController,
-    private notificaciones: NotificacionService
+    private notificaciones: NotificacionService,
+    private permisos: Perimisos
   ) {}
   
-  ngOnInit() {
+  async ngOnInit() {
+    this.verProductos = await this.permisos.checkPermission('view_productos')
+    this.puedeIr = await this.permisos.checkPermission('view_usuarios')
+    this.verReportes = await this.permisos.checkPermission('view_reportes')
     this.cargarDatosUsuario();
   }
 
@@ -125,6 +133,11 @@ export class HubPage implements OnInit {
   IrClientes() {
     this.cerrarMenu();
     this.router.navigate(['/clientes']);
+  }
+
+  IrUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['usuarios'])
   }
 
   IrListarClientes() {

@@ -9,15 +9,34 @@
   </div>
 
   <div class="lista-productos">
+    <ion-button *ngIf="editStock && !editPrecio" (click)="editarPrecio()" class="btn-cambiar">
+      Editar Precio
+    </ion-button>
+    <ion-button *ngIf="!editStock && editPrecio" (click)="editarStock()" class="btn-cambiar">
+      Editar Stock
+    </ion-button>
     <ion-list>
       <ion-item class="producto-item" *ngFor="let p of productos">
         <div class="producto-card">
-          <div class="producto-info">
+          <div *ngIf="!editStock && editPrecio" class="producto-info">
             <div class="producto-nombre">{{ p.nombre }}</div>
             <div class="producto-detalle">Precio actual: <b>{{ p.precio | number:'1.0-0' }} CLP</b></div>
           </div>
-          <div class="acciones">
-            <ion-button class="btn-cambiar" (click)="abrirModal(p)">
+          <div *ngIf="editStock && !editPrecio" class="producto-info">
+            <div class="producto-nombre">{{ p.nombre }}</div>
+            <div class="producto-detalle">Stock actual: <b>{{ p.stock | number:'1.0-0' }}</b></div>
+          </div>
+          <div *ngIf="editProductos" class="acciones">
+            <ion-button *ngIf="editPrecio && !editStock" class="btn-cambiar" (click)="abrirModal(p)">
+                <svg slot="start"
+                    viewBox="0 0 24 24"
+                    width="22" height="22"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true" focusable="false">
+                  <path [attr.d]="mdi.edit" fill="currentColor"></path>
+                </svg>
+            </ion-button>
+            <ion-button *ngIf="!editPrecio && editStock" class="btn-cambiar" (click)="abrirModalStock(p)">
                 <svg slot="start"
                     viewBox="0 0 24 24"
                     width="22" height="22"
@@ -33,7 +52,7 @@
   </div>
 
   <!-- Modal simple controlado por flags -->
-  <div class="modal-backdrop" *ngIf="mostrarModal" (click)="cerrarModal()"></div>
+  <div class="modal-backdrop" *ngIf="mostrarModal && editPrecio && !editStock" (click)="cerrarModal()"></div>
   <div class="modal" *ngIf="mostrarModal" (click)="$event.stopPropagation()">
     <div class="modal-header">
       <h3>Cambiar precio</h3>
@@ -48,6 +67,24 @@
     <div class="modal-actions">
       <ion-button class="btn-cancelar" fill="clear" (click)="cerrarModal()">Cancelar</ion-button>
       <ion-button class="btn-guardar" (click)="confirmarCambio()">Guardar</ion-button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" *ngIf="mostrarModalStock && !editPrecio && editStock" (click)="cerrarModalStock()"></div>
+  <div class="modal" *ngIf="mostrarModalStock" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Cambiar stock</h3>
+    </div>
+    <div class="modal-body">
+      <p *ngIf="productoSeleccionado">{{ productoSeleccionado?.nombre }}</p>
+      <ion-item>
+        <ion-label position="stacked">Nuevo stock</ion-label>
+        <ion-input type="number" [(ngModel)]="nuevoStock"></ion-input>
+      </ion-item>
+    </div>
+    <div class="modal-actions">
+      <ion-button class="btn-cancelar" fill="clear" (click)="cerrarModalStock()">Cancelar</ion-button>
+      <ion-button class="btn-guardar" (click)="confirmarCambioStock()">Guardar</ion-button>
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from .views import views, usuarios, pedidos, clientes, avisos
+from .views import pedidos, views, usuarios, clientes, avisos
 from .views.facturas import GenerarFacturaPDF, PreviewFacturaPDF, GenerarFacturaPorPedido
 from .views.pedidos import clientes_con_mas_pedidos
 
@@ -25,8 +25,9 @@ urlpatterns = [
     path('facturas/generar', GenerarFacturaPDF.as_view(), name='facturas-generar'),
     path('facturas/generar-por-pedido/<int:pedido_id>', GenerarFacturaPorPedido.as_view(), name='facturas-generar-por-pedido'),
     path('asignar/precio', pedidos.asignar_precio_v2, name="asignar-precio"),
+    path('editar/stock', pedidos.editar_stock, name="editar-stock"),
     path('datos/cliente/<str:pk>', clientes.ClienteVIew.as_view(), name="datos-cliente"),
     path('avisos/', avisos.listar_avisos, name='avisos-listar'),
     path('productos/mas-vendidos/', pedidos.productos_mas_vendidos, name='productos-mas-vendidos'),
-    path('clientes-mas-pedidos/', clientes_con_mas_pedidos, name='clientes-mas-pedidos'),
+    path('clientes-mas-pedidos/', pedidos.clientes_con_mas_pedidos, name='clientes-mas-pedidos'),
 ] + router.urls

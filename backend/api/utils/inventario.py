@@ -37,12 +37,26 @@ def crear_mensaje_stock_bajo(producto: Productos, meta_extra: dict | None = None
     )
     return mensaje
 
+def eliminar_mensaje_stock_bajo(producto: Productos, meta_extra: dict | None = None) -> int:
+    """
+    Elimina mensajes de tipo "low_stock" asociados al producto indicado.
+    Devuelve la cantidad de filas afectadas.
+
+    Nota: `meta_extra` queda reservado por compatibilidad, pero no se usa.
+    """
+    try:
+        deleted, _ = MensajeBot.objects.filter(producto=producto, tipo="low_stock").delete()
+        return deleted
+    except Exception:
+        return 0
+
 
 @transaction.atomic
 def chequear_y_notificar_stock_bajo(
     *,
     ahora=None,
-    throttle_horas: int = 4,
+    throttle_minutos: int = 5,
+    throttle_horas: int | None = None,
 ) -> List[Tuple[Productos, MensajeBot | None]]:
     """
     Recorre productos con stock <= umbral_minimo y genera mensajes broadcast.
@@ -51,7 +65,10 @@ def chequear_y_notificar_stock_bajo(
     Retorna lista de tuplas (producto, mensaje_creado | None).
     """
     now = ahora or timezone.now()
-    ventana = now - timedelta(hours=throttle_horas)
+    if throttle_horas is not None:
+        ventana = now - timedelta(hours=throttle_horas)
+    else:
+        ventana = now - timedelta(minutes=throttle_minutos)
 
     resultados: List[Tuple[Productos, MensajeBot | None]] = []
 

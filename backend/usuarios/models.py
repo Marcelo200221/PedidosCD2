@@ -40,6 +40,8 @@ class Usuario(AbstractUser):
             ("view_clientes", "Puede ver la vista de agregar cliente y lista de clientes"),
             ("agregar_clientes", "Puede agregar clientes a la base de datos"),
             ("editar_clientes", "Puede editar los datos de los clientes"),
-            ("eliminar_clientes", "Puede eliminar clientes")
+            ("eliminar_clientes", "Puede eliminar clientes"),
+            ("edit_productos", "Puede editar productos"),
+            ("view_productos", "Puede visualizar los productos")
         ]
     

@@ -70,6 +70,16 @@ export const routes: Routes = [
     loadComponent: () => import('./productos/productos.page').then( m => m.ProductosPage)
   },
   {
+    path: 'usuarios',
+    canActivate: [authzGuard],
+    data: { permiso: 'view_usuarios' },
+    loadComponent: () => import('./usuarios/usuarios.page').then( m => m.UsuariosPage)
+  },
+  {
+    path: 'perfil',
+    loadComponent: () => import('./perfil/perfil.page').then( m => m.PerfilPage)
+  },
+  {
     path: 'acceso-denegado',
     loadComponent: () => import('./acceso-denegado/acceso-denegado.page').then((m) => m.AccesoDenegadoPage),
   },
@@ -78,5 +88,7 @@ export const routes: Routes = [
     path: '**',
     loadComponent: () => import('./not-found/not-found.page').then((m) => m.NotFoundPage),
   },
+  
+
 ];
 

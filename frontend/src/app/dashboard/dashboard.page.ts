@@ -144,14 +144,15 @@ export class DashboardPage implements OnInit {
       }
       
       //Calcular el total de cajas vendidas
-      const totalCajas = productos.reduce((sum: number, prod: any) => sum + (prod.cantidad || 0), 0);
-      this.maxCantidadProducto = Math.max(...productos.map((p: any) => p.cantidad || 0));
+      // Backend devuelve { id, nombre, total_cajas }
+      const totalCajas = productos.reduce((sum: number, prod: any) => sum + (prod.total_cajas || 0), 0);
+      this.maxCantidadProducto = Math.max(...productos.map((p: any) => p.total_cajas || 0));
       
       // Mapear los productos (máximo 6 para el gráfico)
       this.productosVendidos = productos.slice(0, 6).map((producto: any, index: number) => ({
         nombre: producto.nombre,
-        cantidad: producto.cantidad,
-        porcentaje: totalCajas > 0 ? Math.round((producto.cantidad / totalCajas) * 100) : 0,
+        cantidad: producto.total_cajas || 0,
+        porcentaje: totalCajas > 0 ? Math.round(((producto.total_cajas || 0) / totalCajas) * 100) : 0,
         color: colores[index % colores.length]
       }));
       
@@ -186,14 +187,15 @@ export class DashboardPage implements OnInit {
       }
       
       //Calcular el total de pedidos
-      const totalPedidos = clientes.reduce((sum: number, cliente: any) => sum + (cliente.cantidad || 0), 0);
-      this.maxCantidadCliente = Math.max(...clientes.map((c: any) => c.cantidad || 0));
+      // Backend devuelve { id, nombre, total_pedidos }
+      const totalPedidos = clientes.reduce((sum: number, cliente: any) => sum + (cliente.total_pedidos || 0), 0);
+      this.maxCantidadCliente = Math.max(...clientes.map((c: any) => c.total_pedidos || 0));
       
       //Mapear los clientes (máximo 6 para el gráfico)
       this.clientesPedidos = clientes.slice(0, 6).map((cliente: any, index: number) => ({
         nombre: cliente.nombre || 'Sin nombre',
-        cantidad: cliente.cantidad || 0,
-        porcentaje: totalPedidos > 0 ? Math.round((cliente.cantidad / totalPedidos) * 100) : 0,
+        cantidad: cliente.total_pedidos || 0,
+        porcentaje: totalPedidos > 0 ? Math.round(((cliente.total_pedidos || 0) / totalPedidos) * 100) : 0,
         color: colores[index % colores.length]
       }));
       

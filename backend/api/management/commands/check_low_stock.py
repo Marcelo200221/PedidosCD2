@@ -17,8 +17,14 @@ class Command(BaseCommand):
         parser.add_argument(
             "--throttle-horas",
             type=int,
-            default=4,
-            help="Horas mínimas entre alertas del mismo producto (default: 4)",
+            default=None,
+            help="Horas mínimas entre alertas del mismo producto (si se especifica, tiene prioridad)",
+        )
+        parser.add_argument(
+            "--throttle-minutos",
+            type=int,
+            default=5,
+            help="Minutos mínimos entre alertas del mismo producto (default: 5)",
         )
         parser.add_argument(
             "--dry-run",
@@ -27,12 +33,16 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
-        throttle_horas: int = options["throttle_horas"]
+        throttle_horas = options.get("throttle_horas")
+        throttle_minutos = options.get("throttle_minutos", 5)
         dry_run: bool = options["dry_run"]
 
         if dry_run:
             now = timezone.now()
-            ventana = now - timedelta(hours=throttle_horas)
+            if throttle_horas is not None:
+                ventana = now - timedelta(hours=throttle_horas)
+            else:
+                ventana = now - timedelta(minutes=throttle_minutos)
             candidatos = (
                 Productos.objects.filter(stock__lte=F("umbral_minimo"))
                 .filter(Q(ultima_alerta_astock_bajo__isnull=True) | Q(ultima_alerta_astock_bajo__lt=ventana))
@@ -47,7 +57,10 @@ class Command(BaseCommand):
                 )
             return
 
-        resultados = chequear_y_notificar_stock_bajo(throttle_horas=throttle_horas)
+        resultados = chequear_y_notificar_stock_bajo(
+            throttle_horas=throttle_horas,
+            throttle_minutos=throttle_minutos,
+        )
 
         creados = [r for r in resultados if r[1] is not None]
         omitidos = len(resultados) - len(creados)
@@ -58,4 +71,3 @@ class Command(BaseCommand):
         # Mostrar breve resumen de los creados
         for prod, msg in creados:
             self.stdout.write(f" - Producto {prod.id} | mensaje {msg.id}")
-

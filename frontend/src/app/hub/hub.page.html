@@ -1,4 +1,3 @@
-<body>
   <ion-content class="login-page" fullscreen>
 
   <div class="login-header">
@@ -23,7 +22,7 @@
         Facturas
       </ion-button>
 
-      <ion-button expand="block" class="btn-dashboard" (click)="Iradashboards()">
+      <ion-button *ngIf="verReportes" expand="block" class="btn-dashboard" (click)="Iradashboards()">
         Dashboards
       </ion-button>
 
@@ -52,14 +51,14 @@
         <span>Facturas</span>
       </div>
       
-      <div class="menu-item" (click)="Iradashboardsmenu()">
+      <div *ngIf="verReportes" class="menu-item" (click)="Iradashboardsmenu()">
         <ion-icon name="bar-chart"></ion-icon>
         <span>Dashboards</span>
       </div>
 
       <div class="menu-divider"></div>
 
-      <div class="menu-item" (click)="IrListarClientes()">
+      <div *ngIf="puedeIr" class="menu-item" (click)="IrUsuarios()">
         <ion-icon name="person"></ion-icon>
         <span>Usuario</span>
       </div>
@@ -69,7 +68,7 @@
         <span>Clientes</span>
       </div>
 
-      <div class="menu-item" (click)="IraProductos()">
+      <div *ngIf="verProductos" class="menu-item" (click)="IraProductos()">
         <ion-icon name="bag"></ion-icon>
         <span>Productos</span>
       </div>
@@ -88,5 +87,4 @@
     </div>
   </div>
 
-</ion-content>
-</body>
+  </ion-content>
