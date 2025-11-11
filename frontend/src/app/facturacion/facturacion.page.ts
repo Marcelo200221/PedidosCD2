@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton, IonSearchbar, IonItem, 
   IonLabel, IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton, IonList,} from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
+import { NotificacionService } from '../services/notificacion.service';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
 import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person  } from 'ionicons/icons';
+import { Perimisos } from '../services/perimisos';
 
 // Interfaces
 export interface Producto {
@@ -64,12 +66,18 @@ export class FacturacionPage implements OnInit {
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
 
+  puedeIr = false;
+
   constructor(private api: ApiService, 
-    private router: Router) { }
+    private router: Router, private permisos: Perimisos,
+    private notificaciones: NotificacionService) { }
 
   async ngOnInit() {
+    this.puedeIr = await this.permisos.checkPermission('view_usuarios')
     await this.cargarPedidosPendientesConfirmacion();
     this.cargarDatosUsuario();
+    // Inicializa el servicio de avisos si hay sesión
+    try { await this.notificaciones.start(); } catch {}
   }
 
     async cargarDatosUsuario() {
@@ -252,6 +260,8 @@ export class FacturacionPage implements OnInit {
         await this.api.generarFacturaPorPedido(pedido.id);
         await this.api.actualizarEstadoPedido(pedido.id, 'completado');
         await this.recargarPedidos();
+        // Revisar avisos tras completar (posible alerta de stock bajo)
+        try { await this.notificaciones.checkNow(); } catch {}
       }
 
       this.pedidos = this.pedidos.filter(p => !p.seleccionado);
@@ -278,6 +288,8 @@ export class FacturacionPage implements OnInit {
     try {
       await this.api.generarFacturaPorPedido(pedido.id);
       await this.api.actualizarEstadoPedido(pedido.id, 'completado');
+      // Revisar avisos tras completar
+      try { await this.notificaciones.checkNow(); } catch {}
       await this.recargarPedidos();
       
       //Remover de la lista
@@ -323,6 +335,16 @@ export class FacturacionPage implements OnInit {
   Iradashboardsmenu() {
     this.cerrarMenu();
     this.router.navigate(['/dashboard']);
+  }
+
+  IrAUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['/usuarios'])
+  }
+
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil'])
   }
   
   IrMenu() {

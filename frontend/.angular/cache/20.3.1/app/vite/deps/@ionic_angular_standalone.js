@@ -1,9 +1,4 @@
 import {
-  MENU_BACK_BUTTON_PRIORITY,
-  OVERLAY_BACK_BUTTON_PRIORITY,
-  shouldUseCloseWatcher
-} from "./chunk-PV6F2B3V.js";
-import {
   isRTL
 } from "./chunk-BDZMTM6E.js";
 import {
@@ -29,19 +24,85 @@ import {
   startFocusVisible
 } from "./chunk-G4NIR46C.js";
 import {
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-B643ERWT.js";
-import {
-  iosTransitionAnimation
-} from "./chunk-BQIVGCNN.js";
+  AngularDelegate,
+  BACKDROP,
+  Config,
+  ConfigToken,
+  CoreDelegate,
+  DomController,
+  ENABLE_HTML_CONTENT_DEFAULT,
+  FOCUS_TRAP_DISABLE_CLASS,
+  GESTURE,
+  IonBackButton,
+  IonModal,
+  IonModalToken,
+  IonNav,
+  IonPopover,
+  IonRouterOutlet,
+  IonTabs,
+  IonicRouteStrategy,
+  IonicSafeString,
+  IonicSlides,
+  MenuController,
+  NavController,
+  NavParams,
+  OVERLAY_GESTURE_PRIORITY,
+  OverlayBaseController,
+  Platform,
+  ProxyCmp,
+  RouterLinkDelegateDirective,
+  RouterLinkWithHrefDelegateDirective,
+  ValueAccessor,
+  actionSheetController,
+  alertController,
+  attachComponent,
+  createColorClasses,
+  createDelegateController,
+  createTriggerController,
+  detachComponent,
+  dismiss,
+  eventMethod,
+  focusFirstDescendant,
+  focusLastDescendant,
+  getClassMap,
+  getIonMode,
+  getPlatforms,
+  getPresentedOverlay,
+  getTimeGivenProgression,
+  hostContext,
+  initialize,
+  isCancel,
+  isPlatform,
+  loadingController,
+  menuController,
+  modalController,
+  openURL,
+  pickerController,
+  popoverController,
+  prepareOverlay,
+  present,
+  provideComponentInputBinding,
+  safeCall,
+  sanitizeDOMString,
+  setIonicClasses,
+  setOverlayId,
+  toastController
+} from "./chunk-XZI6ZLOC.js";
 import {
   mdTransitionAnimation
-} from "./chunk-OMOCVRPW.js";
+} from "./chunk-6PXER3CY.js";
 import {
-  LIFECYCLE_DID_ENTER,
+  GESTURE_CONTROLLER,
+  createGesture
+} from "./chunk-3XCRDJYW.js";
+import {
+  shouldUseCloseWatcher
+} from "./chunk-PV6F2B3V.js";
+import {
+  iosTransitionAnimation
+} from "./chunk-J6ZS7UTP.js";
+import {
   LIFECYCLE_DID_LEAVE,
-  LIFECYCLE_WILL_ENTER,
   LIFECYCLE_WILL_LEAVE,
   LIFECYCLE_WILL_UNLOAD,
   createAnimation,
@@ -50,7 +111,7 @@ import {
   setPageHidden,
   transition,
   waitForMount
-} from "./chunk-DH7GHTJC.js";
+} from "./chunk-WG3HAAMV.js";
 import {
   Build,
   Fragment,
@@ -59,17 +120,11 @@ import {
   createEvent,
   forceUpdate,
   getAssetPath,
-  getMode,
   h,
   proxyCustomElement,
   readTask,
-  setMode,
   writeTask
 } from "./chunk-LRGZUMX5.js";
-import {
-  doc,
-  win
-} from "./chunk-2JHVMQEL.js";
 import {
   addEventListener,
   assert,
@@ -91,42 +146,33 @@ import {
   transitionEndAsync
 } from "./chunk-LQCKMTQB.js";
 import {
+  doc,
+  win
+} from "./chunk-2JHVMQEL.js";
+import {
   config,
-  configFromSession,
-  configFromURL,
   printIonError,
-  printIonWarning,
-  saveConfig
+  printIonWarning
 } from "./chunk-FWNV42WI.js";
 import {
-  BACKDROP_NO_SCROLL,
-  GESTURE_CONTROLLER,
-  createGesture
-} from "./chunk-3XCRDJYW.js";
-import {
   ActivatedRoute,
-  ChildrenOutletContexts,
-  NavigationStart,
-  PRIMARY_OUTLET,
-  Router,
-  RouterLink,
-  UrlSerializer
-} from "./chunk-M2QJOJJH.js";
-import "./chunk-MBOJX7Y7.js";
+  Router
+} from "./chunk-JODPBHML.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-VSHBVSWM.js";
+import "./chunk-REIBDCTS.js";
 import {
   CommonModule,
   Location,
-  LocationStrategy,
   NgIf,
   NgTemplateOutlet
-} from "./chunk-ISROFK6K.js";
-import "./chunk-CIW3M5WR.js";
+} from "./chunk-BZJSKMYE.js";
+import "./chunk-YHSQNZJX.js";
 import "./chunk-SQNCADWX.js";
 import {
   APP_INITIALIZER,
-  ApplicationRef,
   Attribute,
-  BehaviorSubject,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -136,36 +182,20 @@ import {
   Directive,
   ElementRef,
   EnvironmentInjector,
-  EventEmitter,
   HostListener,
-  Inject,
   Injectable,
-  InjectionToken,
   Injector,
-  Input,
   NgZone,
   Optional,
-  Output,
   SkipSelf,
-  Subject,
-  TemplateRef,
   ViewChild,
   ViewContainerRef,
-  __decorate,
-  combineLatest,
-  createComponent,
-  distinctUntilChanged,
-  filter,
   forwardRef,
   fromEvent,
   inject,
   makeEnvironmentProviders,
-  of,
-  reflectComponentType,
   setClassMetadata,
-  switchMap,
   ɵɵInheritDefinitionFeature,
-  ɵɵNgOnChangesFeature,
   ɵɵProvidersFeature,
   ɵɵadvance,
   ɵɵcontentQuery,
@@ -193,3952 +223,17 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-34JUPYZJ.js";
+} from "./chunk-XDQ7H4UV.js";
+import {
+  __decorate
+} from "./chunk-TBSHZMKZ.js";
 import {
   __async,
   __name,
-  __objRest,
   __publicField,
   __spreadProps,
   __spreadValues
 } from "./chunk-CNBF5ZLE.js";
-
-// node_modules/@ionic/core/components/cubic-bezier.js
-var getTimeGivenProgression = /* @__PURE__ */ __name((p0, p1, p2, p3, progression) => {
-  return solveCubicBezier(p0[1], p1[1], p2[1], p3[1], progression).map((tValue) => {
-    return solveCubicParametricEquation(p0[0], p1[0], p2[0], p3[0], tValue);
-  });
-}, "getTimeGivenProgression");
-var solveCubicParametricEquation = /* @__PURE__ */ __name((p0, p1, p2, p3, t) => {
-  const partA = 3 * p1 * Math.pow(t - 1, 2);
-  const partB = -3 * p2 * t + 3 * p2 + p3 * t;
-  const partC = p0 * Math.pow(t - 1, 3);
-  return t * (partA + t * partB) - partC;
-}, "solveCubicParametricEquation");
-var solveCubicBezier = /* @__PURE__ */ __name((p0, p1, p2, p3, refPoint) => {
-  p0 -= refPoint;
-  p1 -= refPoint;
-  p2 -= refPoint;
-  p3 -= refPoint;
-  const roots = solveCubicEquation(p3 - 3 * p2 + 3 * p1 - p0, 3 * p2 - 6 * p1 + 3 * p0, 3 * p1 - 3 * p0, p0);
-  return roots.filter((root) => root >= 0 && root <= 1);
-}, "solveCubicBezier");
-var solveQuadraticEquation = /* @__PURE__ */ __name((a, b, c) => {
-  const discriminant = b * b - 4 * a * c;
-  if (discriminant < 0) {
-    return [];
-  } else {
-    return [(-b + Math.sqrt(discriminant)) / (2 * a), (-b - Math.sqrt(discriminant)) / (2 * a)];
-  }
-}, "solveQuadraticEquation");
-var solveCubicEquation = /* @__PURE__ */ __name((a, b, c, d) => {
-  if (a === 0) {
-    return solveQuadraticEquation(b, c, d);
-  }
-  b /= a;
-  c /= a;
-  d /= a;
-  const p = (3 * c - b * b) / 3;
-  const q = (2 * b * b * b - 9 * b * c + 27 * d) / 27;
-  if (p === 0) {
-    return [Math.pow(-q, 1 / 3)];
-  } else if (q === 0) {
-    return [Math.sqrt(-p), -Math.sqrt(-p)];
-  }
-  const discriminant = Math.pow(q / 2, 2) + Math.pow(p / 3, 3);
-  if (discriminant === 0) {
-    return [Math.pow(q / 2, 1 / 2) - b / 3];
-  } else if (discriminant > 0) {
-    return [
-      Math.pow(-(q / 2) + Math.sqrt(discriminant), 1 / 3) - Math.pow(q / 2 + Math.sqrt(discriminant), 1 / 3) - b / 3
-    ];
-  }
-  const r = Math.sqrt(Math.pow(-(p / 3), 3));
-  const phi = Math.acos(-(q / (2 * Math.sqrt(Math.pow(-(p / 3), 3)))));
-  const s = 2 * Math.pow(r, 1 / 3);
-  return [
-    s * Math.cos(phi / 3) - b / 3,
-    s * Math.cos((phi + 2 * Math.PI) / 3) - b / 3,
-    s * Math.cos((phi + 4 * Math.PI) / 3) - b / 3
-  ];
-}, "solveCubicEquation");
-
-// node_modules/@ionic/core/components/ionic-global.js
-var getPlatforms = /* @__PURE__ */ __name((win4) => setupPlatforms(win4), "getPlatforms");
-var isPlatform = /* @__PURE__ */ __name((winOrPlatform, platform) => {
-  if (typeof winOrPlatform === "string") {
-    platform = winOrPlatform;
-    winOrPlatform = void 0;
-  }
-  return getPlatforms(winOrPlatform).includes(platform);
-}, "isPlatform");
-var setupPlatforms = /* @__PURE__ */ __name((win4 = window) => {
-  if (typeof win4 === "undefined") {
-    return [];
-  }
-  win4.Ionic = win4.Ionic || {};
-  let platforms = win4.Ionic.platforms;
-  if (platforms == null) {
-    platforms = win4.Ionic.platforms = detectPlatforms(win4);
-    platforms.forEach((p) => win4.document.documentElement.classList.add(`plt-${p}`));
-  }
-  return platforms;
-}, "setupPlatforms");
-var detectPlatforms = /* @__PURE__ */ __name((win4) => {
-  const customPlatformMethods = config.get("platform");
-  return Object.keys(PLATFORMS_MAP).filter((p) => {
-    const customMethod = customPlatformMethods === null || customPlatformMethods === void 0 ? void 0 : customPlatformMethods[p];
-    return typeof customMethod === "function" ? customMethod(win4) : PLATFORMS_MAP[p](win4);
-  });
-}, "detectPlatforms");
-var isMobileWeb = /* @__PURE__ */ __name((win4) => isMobile(win4) && !isHybrid(win4), "isMobileWeb");
-var isIpad = /* @__PURE__ */ __name((win4) => {
-  if (testUserAgent(win4, /iPad/i)) {
-    return true;
-  }
-  if (testUserAgent(win4, /Macintosh/i) && isMobile(win4)) {
-    return true;
-  }
-  return false;
-}, "isIpad");
-var isIphone = /* @__PURE__ */ __name((win4) => testUserAgent(win4, /iPhone/i), "isIphone");
-var isIOS = /* @__PURE__ */ __name((win4) => testUserAgent(win4, /iPhone|iPod/i) || isIpad(win4), "isIOS");
-var isAndroid = /* @__PURE__ */ __name((win4) => testUserAgent(win4, /android|sink/i), "isAndroid");
-var isAndroidTablet = /* @__PURE__ */ __name((win4) => {
-  return isAndroid(win4) && !testUserAgent(win4, /mobile/i);
-}, "isAndroidTablet");
-var isPhablet = /* @__PURE__ */ __name((win4) => {
-  const width = win4.innerWidth;
-  const height = win4.innerHeight;
-  const smallest = Math.min(width, height);
-  const largest = Math.max(width, height);
-  return smallest > 390 && smallest < 520 && largest > 620 && largest < 800;
-}, "isPhablet");
-var isTablet = /* @__PURE__ */ __name((win4) => {
-  const width = win4.innerWidth;
-  const height = win4.innerHeight;
-  const smallest = Math.min(width, height);
-  const largest = Math.max(width, height);
-  return isIpad(win4) || isAndroidTablet(win4) || smallest > 460 && smallest < 820 && largest > 780 && largest < 1400;
-}, "isTablet");
-var isMobile = /* @__PURE__ */ __name((win4) => matchMedia2(win4, "(any-pointer:coarse)"), "isMobile");
-var isDesktop = /* @__PURE__ */ __name((win4) => !isMobile(win4), "isDesktop");
-var isHybrid = /* @__PURE__ */ __name((win4) => isCordova(win4) || isCapacitorNative(win4), "isHybrid");
-var isCordova = /* @__PURE__ */ __name((win4) => !!(win4["cordova"] || win4["phonegap"] || win4["PhoneGap"]), "isCordova");
-var isCapacitorNative = /* @__PURE__ */ __name((win4) => {
-  const capacitor = win4["Capacitor"];
-  return !!((capacitor === null || capacitor === void 0 ? void 0 : capacitor.isNative) || (capacitor === null || capacitor === void 0 ? void 0 : capacitor.isNativePlatform) && !!capacitor.isNativePlatform());
-}, "isCapacitorNative");
-var isElectron = /* @__PURE__ */ __name((win4) => testUserAgent(win4, /electron/i), "isElectron");
-var isPWA = /* @__PURE__ */ __name((win4) => {
-  var _a190;
-  return !!(((_a190 = win4.matchMedia) === null || _a190 === void 0 ? void 0 : _a190.call(win4, "(display-mode: standalone)").matches) || win4.navigator.standalone);
-}, "isPWA");
-var testUserAgent = /* @__PURE__ */ __name((win4, expr) => expr.test(win4.navigator.userAgent), "testUserAgent");
-var matchMedia2 = /* @__PURE__ */ __name((win4, query) => {
-  var _a190;
-  return (_a190 = win4.matchMedia) === null || _a190 === void 0 ? void 0 : _a190.call(win4, query).matches;
-}, "matchMedia");
-var PLATFORMS_MAP = {
-  ipad: isIpad,
-  iphone: isIphone,
-  ios: isIOS,
-  android: isAndroid,
-  phablet: isPhablet,
-  tablet: isTablet,
-  cordova: isCordova,
-  capacitor: isCapacitorNative,
-  electron: isElectron,
-  pwa: isPWA,
-  mobile: isMobile,
-  mobileweb: isMobileWeb,
-  desktop: isDesktop,
-  hybrid: isHybrid
-};
-var defaultMode;
-var getIonMode = /* @__PURE__ */ __name((ref) => {
-  return ref && getMode(ref) || defaultMode;
-}, "getIonMode");
-var initialize = /* @__PURE__ */ __name((userConfig = {}) => {
-  if (typeof window === "undefined") {
-    return;
-  }
-  const doc2 = window.document;
-  const win4 = window;
-  const Ionic = win4.Ionic = win4.Ionic || {};
-  const configObj = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, configFromSession(win4)), { persistConfig: false }), Ionic.config), configFromURL(win4)), userConfig);
-  config.reset(configObj);
-  if (config.getBoolean("persistConfig")) {
-    saveConfig(win4, configObj);
-  }
-  setupPlatforms(win4);
-  Ionic.config = config;
-  Ionic.mode = defaultMode = config.get("mode", doc2.documentElement.getAttribute("mode") || (isPlatform(win4, "ios") ? "ios" : "md"));
-  config.set("mode", defaultMode);
-  doc2.documentElement.setAttribute("mode", defaultMode);
-  doc2.documentElement.classList.add(defaultMode);
-  if (config.getBoolean("_testing")) {
-    config.set("animated", false);
-  }
-  const isIonicElement = /* @__PURE__ */ __name((elm) => {
-    var _a190;
-    return (_a190 = elm.tagName) === null || _a190 === void 0 ? void 0 : _a190.startsWith("ION-");
-  }, "isIonicElement");
-  const isAllowedIonicModeValue = /* @__PURE__ */ __name((elmMode) => ["ios", "md"].includes(elmMode), "isAllowedIonicModeValue");
-  setMode((elm) => {
-    while (elm) {
-      const elmMode = elm.mode || elm.getAttribute("mode");
-      if (elmMode) {
-        if (isAllowedIonicModeValue(elmMode)) {
-          return elmMode;
-        } else if (isIonicElement(elm)) {
-          printIonWarning('Invalid ionic mode: "' + elmMode + '", expected: "ios" or "md"');
-        }
-      }
-      elm = elm.parentElement;
-    }
-    return defaultMode;
-  });
-}, "initialize");
-
-// node_modules/@ionic/core/components/config.js
-var sanitizeDOMString = /* @__PURE__ */ __name((untrustedString) => {
-  try {
-    if (untrustedString instanceof IonicSafeString) {
-      return untrustedString.value;
-    }
-    if (!isSanitizerEnabled() || typeof untrustedString !== "string" || untrustedString === "") {
-      return untrustedString;
-    }
-    if (untrustedString.includes("onload=")) {
-      return "";
-    }
-    const documentFragment = document.createDocumentFragment();
-    const workingDiv = document.createElement("div");
-    documentFragment.appendChild(workingDiv);
-    workingDiv.innerHTML = untrustedString;
-    blockedTags.forEach((blockedTag) => {
-      const getElementsToRemove = documentFragment.querySelectorAll(blockedTag);
-      for (let elementIndex = getElementsToRemove.length - 1; elementIndex >= 0; elementIndex--) {
-        const element = getElementsToRemove[elementIndex];
-        if (element.parentNode) {
-          element.parentNode.removeChild(element);
-        } else {
-          documentFragment.removeChild(element);
-        }
-        const childElements = getElementChildren(element);
-        for (let childIndex = 0; childIndex < childElements.length; childIndex++) {
-          sanitizeElement(childElements[childIndex]);
-        }
-      }
-    });
-    const dfChildren = getElementChildren(documentFragment);
-    for (let childIndex = 0; childIndex < dfChildren.length; childIndex++) {
-      sanitizeElement(dfChildren[childIndex]);
-    }
-    const fragmentDiv = document.createElement("div");
-    fragmentDiv.appendChild(documentFragment);
-    const getInnerDiv = fragmentDiv.querySelector("div");
-    return getInnerDiv !== null ? getInnerDiv.innerHTML : fragmentDiv.innerHTML;
-  } catch (err2) {
-    printIonError("sanitizeDOMString", err2);
-    return "";
-  }
-}, "sanitizeDOMString");
-var sanitizeElement = /* @__PURE__ */ __name((element) => {
-  if (element.nodeType && element.nodeType !== 1) {
-    return;
-  }
-  if (typeof NamedNodeMap !== "undefined" && !(element.attributes instanceof NamedNodeMap)) {
-    element.remove();
-    return;
-  }
-  for (let i = element.attributes.length - 1; i >= 0; i--) {
-    const attribute = element.attributes.item(i);
-    const attributeName = attribute.name;
-    if (!allowedAttributes.includes(attributeName.toLowerCase())) {
-      element.removeAttribute(attributeName);
-      continue;
-    }
-    const attributeValue = attribute.value;
-    const propertyValue = element[attributeName];
-    if (attributeValue != null && attributeValue.toLowerCase().includes("javascript:") || propertyValue != null && propertyValue.toLowerCase().includes("javascript:")) {
-      element.removeAttribute(attributeName);
-    }
-  }
-  const childElements = getElementChildren(element);
-  for (let i = 0; i < childElements.length; i++) {
-    sanitizeElement(childElements[i]);
-  }
-}, "sanitizeElement");
-var getElementChildren = /* @__PURE__ */ __name((el) => {
-  return el.children != null ? el.children : el.childNodes;
-}, "getElementChildren");
-var isSanitizerEnabled = /* @__PURE__ */ __name(() => {
-  var _a190;
-  const win4 = window;
-  const config2 = (_a190 = win4 === null || win4 === void 0 ? void 0 : win4.Ionic) === null || _a190 === void 0 ? void 0 : _a190.config;
-  if (config2) {
-    if (config2.get) {
-      return config2.get("sanitizerEnabled", true);
-    } else {
-      return config2.sanitizerEnabled === true || config2.sanitizerEnabled === void 0;
-    }
-  }
-  return true;
-}, "isSanitizerEnabled");
-var allowedAttributes = ["class", "id", "href", "src", "name", "slot"];
-var blockedTags = ["script", "style", "iframe", "meta", "link", "object", "embed"];
-var _IonicSafeString = class _IonicSafeString {
-  constructor(value) {
-    this.value = value;
-  }
-};
-__name(_IonicSafeString, "IonicSafeString");
-var IonicSafeString = _IonicSafeString;
-var ENABLE_HTML_CONTENT_DEFAULT = false;
-
-// node_modules/@ionic/core/components/theme.js
-var hostContext = /* @__PURE__ */ __name((selector, el) => {
-  return el.closest(selector) !== null;
-}, "hostContext");
-var createColorClasses = /* @__PURE__ */ __name((color, cssClassMap) => {
-  return typeof color === "string" && color.length > 0 ? Object.assign({ "ion-color": true, [`ion-color-${color}`]: true }, cssClassMap) : cssClassMap;
-}, "createColorClasses");
-var getClassList = /* @__PURE__ */ __name((classes) => {
-  if (classes !== void 0) {
-    const array = Array.isArray(classes) ? classes : classes.split(" ");
-    return array.filter((c) => c != null).map((c) => c.trim()).filter((c) => c !== "");
-  }
-  return [];
-}, "getClassList");
-var getClassMap = /* @__PURE__ */ __name((classes) => {
-  const map2 = {};
-  getClassList(classes).forEach((c) => map2[c] = true);
-  return map2;
-}, "getClassMap");
-var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
-var openURL = /* @__PURE__ */ __name((url, ev, direction, animation) => __async(null, null, function* () {
-  if (url != null && url[0] !== "#" && !SCHEME.test(url)) {
-    const router = document.querySelector("ion-router");
-    if (router) {
-      if (ev != null) {
-        ev.preventDefault();
-      }
-      return router.push(url, direction, animation);
-    }
-  }
-  return false;
-}), "openURL");
-
-// node_modules/@ionic/core/components/index5.js
-var baseAnimation = /* @__PURE__ */ __name((isIos) => {
-  return createAnimation().duration(isIos ? 400 : 300);
-}, "baseAnimation");
-var menuOverlayAnimation = /* @__PURE__ */ __name((menu) => {
-  let closedX;
-  let openedX;
-  const width = menu.width + 8;
-  const menuAnimation = createAnimation();
-  const backdropAnimation = createAnimation();
-  if (menu.isEndSide) {
-    closedX = width + "px";
-    openedX = "0px";
-  } else {
-    closedX = -width + "px";
-    openedX = "0px";
-  }
-  menuAnimation.addElement(menu.menuInnerEl).fromTo("transform", `translateX(${closedX})`, `translateX(${openedX})`);
-  const mode = getIonMode(menu);
-  const isIos = mode === "ios";
-  const opacity = isIos ? 0.2 : 0.25;
-  backdropAnimation.addElement(menu.backdropEl).fromTo("opacity", 0.01, opacity);
-  return baseAnimation(isIos).addAnimation([menuAnimation, backdropAnimation]);
-}, "menuOverlayAnimation");
-var menuPushAnimation = /* @__PURE__ */ __name((menu) => {
-  let contentOpenedX;
-  let menuClosedX;
-  const mode = getIonMode(menu);
-  const width = menu.width;
-  if (menu.isEndSide) {
-    contentOpenedX = -width + "px";
-    menuClosedX = width + "px";
-  } else {
-    contentOpenedX = width + "px";
-    menuClosedX = -width + "px";
-  }
-  const menuAnimation = createAnimation().addElement(menu.menuInnerEl).fromTo("transform", `translateX(${menuClosedX})`, "translateX(0px)");
-  const contentAnimation = createAnimation().addElement(menu.contentEl).fromTo("transform", "translateX(0px)", `translateX(${contentOpenedX})`);
-  const backdropAnimation = createAnimation().addElement(menu.backdropEl).fromTo("opacity", 0.01, 0.32);
-  return baseAnimation(mode === "ios").addAnimation([menuAnimation, contentAnimation, backdropAnimation]);
-}, "menuPushAnimation");
-var menuRevealAnimation = /* @__PURE__ */ __name((menu) => {
-  const mode = getIonMode(menu);
-  const openedX = menu.width * (menu.isEndSide ? -1 : 1) + "px";
-  const contentOpen = createAnimation().addElement(menu.contentEl).fromTo("transform", "translateX(0px)", `translateX(${openedX})`);
-  return baseAnimation(mode === "ios").addAnimation(contentOpen);
-}, "menuRevealAnimation");
-var createMenuController = /* @__PURE__ */ __name(() => {
-  const menuAnimations = /* @__PURE__ */ new Map();
-  const menus = [];
-  const open = /* @__PURE__ */ __name((menu) => __async(null, null, function* () {
-    const menuEl = yield get(menu, true);
-    if (menuEl) {
-      return menuEl.open();
-    }
-    return false;
-  }), "open");
-  const close2 = /* @__PURE__ */ __name((menu) => __async(null, null, function* () {
-    const menuEl = yield menu !== void 0 ? get(menu, true) : getOpen();
-    if (menuEl !== void 0) {
-      return menuEl.close();
-    }
-    return false;
-  }), "close");
-  const toggle = /* @__PURE__ */ __name((menu) => __async(null, null, function* () {
-    const menuEl = yield get(menu, true);
-    if (menuEl) {
-      return menuEl.toggle();
-    }
-    return false;
-  }), "toggle");
-  const enable = /* @__PURE__ */ __name((shouldEnable, menu) => __async(null, null, function* () {
-    const menuEl = yield get(menu);
-    if (menuEl) {
-      menuEl.disabled = !shouldEnable;
-    }
-    return menuEl;
-  }), "enable");
-  const swipeGesture = /* @__PURE__ */ __name((shouldEnable, menu) => __async(null, null, function* () {
-    const menuEl = yield get(menu);
-    if (menuEl) {
-      menuEl.swipeGesture = shouldEnable;
-    }
-    return menuEl;
-  }), "swipeGesture");
-  const isOpen = /* @__PURE__ */ __name((menu) => __async(null, null, function* () {
-    if (menu != null) {
-      const menuEl = yield get(menu);
-      return menuEl !== void 0 && menuEl.isOpen();
-    } else {
-      const menuEl = yield getOpen();
-      return menuEl !== void 0;
-    }
-  }), "isOpen");
-  const isEnabled = /* @__PURE__ */ __name((menu) => __async(null, null, function* () {
-    const menuEl = yield get(menu);
-    if (menuEl) {
-      return !menuEl.disabled;
-    }
-    return false;
-  }), "isEnabled");
-  const get = /* @__PURE__ */ __name((menu, logOnMultipleSideMenus = false) => __async(null, null, function* () {
-    yield waitUntilReady();
-    if (menu === "start" || menu === "end") {
-      const menuRefs = menus.filter((m) => m.side === menu && !m.disabled);
-      if (menuRefs.length >= 1) {
-        if (menuRefs.length > 1 && logOnMultipleSideMenus) {
-          printIonWarning(`menuController queried for a menu on the "${menu}" side, but ${menuRefs.length} menus were found. The first menu reference will be used. If this is not the behavior you want then pass the ID of the menu instead of its side.`, menuRefs.map((m) => m.el));
-        }
-        return menuRefs[0].el;
-      }
-      const sideMenuRefs = menus.filter((m) => m.side === menu);
-      if (sideMenuRefs.length >= 1) {
-        if (sideMenuRefs.length > 1 && logOnMultipleSideMenus) {
-          printIonWarning(`menuController queried for a menu on the "${menu}" side, but ${sideMenuRefs.length} menus were found. The first menu reference will be used. If this is not the behavior you want then pass the ID of the menu instead of its side.`, sideMenuRefs.map((m) => m.el));
-        }
-        return sideMenuRefs[0].el;
-      }
-    } else if (menu != null) {
-      return find((m) => m.menuId === menu);
-    }
-    const menuEl = find((m) => !m.disabled);
-    if (menuEl) {
-      return menuEl;
-    }
-    return menus.length > 0 ? menus[0].el : void 0;
-  }), "get");
-  const getOpen = /* @__PURE__ */ __name(() => __async(null, null, function* () {
-    yield waitUntilReady();
-    return _getOpenSync();
-  }), "getOpen");
-  const getMenus = /* @__PURE__ */ __name(() => __async(null, null, function* () {
-    yield waitUntilReady();
-    return getMenusSync();
-  }), "getMenus");
-  const isAnimating = /* @__PURE__ */ __name(() => __async(null, null, function* () {
-    yield waitUntilReady();
-    return isAnimatingSync();
-  }), "isAnimating");
-  const registerAnimation = /* @__PURE__ */ __name((name, animation) => {
-    menuAnimations.set(name, animation);
-  }, "registerAnimation");
-  const _register = /* @__PURE__ */ __name((menu) => {
-    if (menus.indexOf(menu) < 0) {
-      menus.push(menu);
-    }
-  }, "_register");
-  const _unregister = /* @__PURE__ */ __name((menu) => {
-    const index = menus.indexOf(menu);
-    if (index > -1) {
-      menus.splice(index, 1);
-    }
-  }, "_unregister");
-  const _setOpen = /* @__PURE__ */ __name((menu, shouldOpen, animated, role) => __async(null, null, function* () {
-    if (isAnimatingSync()) {
-      return false;
-    }
-    if (shouldOpen) {
-      const openedMenu = yield getOpen();
-      if (openedMenu && menu.el !== openedMenu) {
-        yield openedMenu.setOpen(false, false);
-      }
-    }
-    return menu._setOpen(shouldOpen, animated, role);
-  }), "_setOpen");
-  const _createAnimation = /* @__PURE__ */ __name((type, menuCmp) => {
-    const animationBuilder = menuAnimations.get(type);
-    if (!animationBuilder) {
-      throw new Error("animation not registered");
-    }
-    const animation = animationBuilder(menuCmp);
-    return animation;
-  }, "_createAnimation");
-  const _getOpenSync = /* @__PURE__ */ __name(() => {
-    return find((m) => m._isOpen);
-  }, "_getOpenSync");
-  const getMenusSync = /* @__PURE__ */ __name(() => {
-    return menus.map((menu) => menu.el);
-  }, "getMenusSync");
-  const isAnimatingSync = /* @__PURE__ */ __name(() => {
-    return menus.some((menu) => menu.isAnimating);
-  }, "isAnimatingSync");
-  const find = /* @__PURE__ */ __name((predicate) => {
-    const instance = menus.find(predicate);
-    if (instance !== void 0) {
-      return instance.el;
-    }
-    return void 0;
-  }, "find");
-  const waitUntilReady = /* @__PURE__ */ __name(() => {
-    return Promise.all(Array.from(document.querySelectorAll("ion-menu")).map((menu) => new Promise((resolve) => componentOnReady(menu, resolve))));
-  }, "waitUntilReady");
-  registerAnimation("reveal", menuRevealAnimation);
-  registerAnimation("push", menuPushAnimation);
-  registerAnimation("overlay", menuOverlayAnimation);
-  doc === null || doc === void 0 ? void 0 : doc.addEventListener("ionBackButton", (ev) => {
-    const openMenu = _getOpenSync();
-    if (openMenu) {
-      ev.detail.register(MENU_BACK_BUTTON_PRIORITY, () => {
-        return openMenu.close();
-      });
-    }
-  });
-  return {
-    registerAnimation,
-    get,
-    getMenus,
-    getOpen,
-    isEnabled,
-    swipeGesture,
-    isAnimating,
-    isOpen,
-    enable,
-    toggle,
-    close: close2,
-    open,
-    _getOpenSync,
-    _createAnimation,
-    _register,
-    _unregister,
-    _setOpen
-  };
-}, "createMenuController");
-var menuController = createMenuController();
-
-// node_modules/@ionic/core/components/framework-delegate.js
-var attachComponent = /* @__PURE__ */ __name((delegate, container, component, cssClasses, componentProps, inline) => __async(null, null, function* () {
-  var _a190;
-  if (delegate) {
-    return delegate.attachViewToDom(container, component, componentProps, cssClasses);
-  }
-  if (!inline && typeof component !== "string" && !(component instanceof HTMLElement)) {
-    throw new Error("framework delegate is missing");
-  }
-  const el = typeof component === "string" ? (_a190 = container.ownerDocument) === null || _a190 === void 0 ? void 0 : _a190.createElement(component) : component;
-  if (cssClasses) {
-    cssClasses.forEach((c) => el.classList.add(c));
-  }
-  if (componentProps) {
-    Object.assign(el, componentProps);
-  }
-  container.appendChild(el);
-  yield new Promise((resolve) => componentOnReady(el, resolve));
-  return el;
-}), "attachComponent");
-var detachComponent = /* @__PURE__ */ __name((delegate, element) => {
-  if (element) {
-    if (delegate) {
-      const container = element.parentElement;
-      return delegate.removeViewFromDom(container, element);
-    }
-    element.remove();
-  }
-  return Promise.resolve();
-}, "detachComponent");
-var CoreDelegate = /* @__PURE__ */ __name(() => {
-  let BaseComponent;
-  let Reference;
-  const attachViewToDom = /* @__PURE__ */ __name((_0, _1, ..._2) => __async(null, [_0, _1, ..._2], function* (parentElement, userComponent, userComponentProps = {}, cssClasses = []) {
-    var _a190, _b;
-    BaseComponent = parentElement;
-    let ChildComponent;
-    if (userComponent) {
-      const el = typeof userComponent === "string" ? (_a190 = BaseComponent.ownerDocument) === null || _a190 === void 0 ? void 0 : _a190.createElement(userComponent) : userComponent;
-      cssClasses.forEach((c) => el.classList.add(c));
-      Object.assign(el, userComponentProps);
-      BaseComponent.appendChild(el);
-      ChildComponent = el;
-      yield new Promise((resolve) => componentOnReady(el, resolve));
-    } else if (BaseComponent.children.length > 0 && (BaseComponent.tagName === "ION-MODAL" || BaseComponent.tagName === "ION-POPOVER")) {
-      const root = ChildComponent = BaseComponent.children[0];
-      if (!root.classList.contains("ion-delegate-host")) {
-        const el = (_b = BaseComponent.ownerDocument) === null || _b === void 0 ? void 0 : _b.createElement("div");
-        el.classList.add("ion-delegate-host");
-        cssClasses.forEach((c) => el.classList.add(c));
-        el.append(...BaseComponent.children);
-        BaseComponent.appendChild(el);
-        ChildComponent = el;
-      }
-    }
-    const app = document.querySelector("ion-app") || document.body;
-    Reference = document.createComment("ionic teleport");
-    BaseComponent.parentNode.insertBefore(Reference, BaseComponent);
-    app.appendChild(BaseComponent);
-    return ChildComponent !== null && ChildComponent !== void 0 ? ChildComponent : BaseComponent;
-  }), "attachViewToDom");
-  const removeViewFromDom = /* @__PURE__ */ __name(() => {
-    if (BaseComponent && Reference) {
-      Reference.parentNode.insertBefore(BaseComponent, Reference);
-      Reference.remove();
-    }
-    return Promise.resolve();
-  }, "removeViewFromDom");
-  return { attachViewToDom, removeViewFromDom };
-}, "CoreDelegate");
-
-// node_modules/@ionic/core/components/overlays.js
-var focusableQueryString = '[tabindex]:not([tabindex^="-"]):not([hidden]):not([disabled]), input:not([type=hidden]):not([tabindex^="-"]):not([hidden]):not([disabled]), textarea:not([tabindex^="-"]):not([hidden]):not([disabled]), button:not([tabindex^="-"]):not([hidden]):not([disabled]), select:not([tabindex^="-"]):not([hidden]):not([disabled]), ion-checkbox:not([tabindex^="-"]):not([hidden]):not([disabled]), ion-radio:not([tabindex^="-"]):not([hidden]):not([disabled]), .ion-focusable:not([tabindex^="-"]):not([hidden]):not([disabled]), .ion-focusable[disabled="false"]:not([tabindex^="-"]):not([hidden])';
-var focusFirstDescendant = /* @__PURE__ */ __name((ref, fallbackElement) => {
-  const firstInput = ref.querySelector(focusableQueryString);
-  focusElementInContext(firstInput, fallbackElement !== null && fallbackElement !== void 0 ? fallbackElement : ref);
-}, "focusFirstDescendant");
-var focusLastDescendant = /* @__PURE__ */ __name((ref, fallbackElement) => {
-  const inputs = Array.from(ref.querySelectorAll(focusableQueryString));
-  const lastInput = inputs.length > 0 ? inputs[inputs.length - 1] : null;
-  focusElementInContext(lastInput, fallbackElement !== null && fallbackElement !== void 0 ? fallbackElement : ref);
-}, "focusLastDescendant");
-var focusElementInContext = /* @__PURE__ */ __name((hostToFocus, fallbackElement) => {
-  let elementToFocus = hostToFocus;
-  const shadowRoot = hostToFocus === null || hostToFocus === void 0 ? void 0 : hostToFocus.shadowRoot;
-  if (shadowRoot) {
-    elementToFocus = shadowRoot.querySelector(focusableQueryString) || hostToFocus;
-  }
-  if (elementToFocus) {
-    const radioGroup = elementToFocus.closest("ion-radio-group");
-    if (radioGroup) {
-      radioGroup.setFocus();
-    } else {
-      focusVisibleElement(elementToFocus);
-    }
-  } else {
-    fallbackElement.focus();
-  }
-}, "focusElementInContext");
-var lastOverlayIndex = 0;
-var lastId = 0;
-var activeAnimations = /* @__PURE__ */ new WeakMap();
-var createController = /* @__PURE__ */ __name((tagName) => {
-  return {
-    create(options) {
-      return createOverlay(tagName, options);
-    },
-    dismiss(data, role, id) {
-      return dismissOverlay(document, data, role, tagName, id);
-    },
-    getTop() {
-      return __async(this, null, function* () {
-        return getPresentedOverlay(document, tagName);
-      });
-    }
-  };
-}, "createController");
-var alertController = createController("ion-alert");
-var actionSheetController = createController("ion-action-sheet");
-var loadingController = createController("ion-loading");
-var modalController = createController("ion-modal");
-var pickerController = createController("ion-picker-legacy");
-var popoverController = createController("ion-popover");
-var toastController = createController("ion-toast");
-var prepareOverlay = /* @__PURE__ */ __name((el) => {
-  if (typeof document !== "undefined") {
-    connectListeners(document);
-  }
-  const overlayIndex = lastOverlayIndex++;
-  el.overlayIndex = overlayIndex;
-}, "prepareOverlay");
-var setOverlayId = /* @__PURE__ */ __name((el) => {
-  if (!el.hasAttribute("id")) {
-    el.id = `ion-overlay-${++lastId}`;
-  }
-  return el.id;
-}, "setOverlayId");
-var createOverlay = /* @__PURE__ */ __name((tagName, opts) => {
-  if (typeof window !== "undefined" && typeof window.customElements !== "undefined") {
-    return window.customElements.whenDefined(tagName).then(() => {
-      const element = document.createElement(tagName);
-      element.classList.add("overlay-hidden");
-      Object.assign(element, Object.assign(Object.assign({}, opts), { hasController: true }));
-      getAppRoot(document).appendChild(element);
-      return new Promise((resolve) => componentOnReady(element, resolve));
-    });
-  }
-  return Promise.resolve();
-}, "createOverlay");
-var isOverlayHidden = /* @__PURE__ */ __name((overlay) => overlay.classList.contains("overlay-hidden"), "isOverlayHidden");
-var focusElementInOverlay = /* @__PURE__ */ __name((hostToFocus, overlay) => {
-  let elementToFocus = hostToFocus;
-  const shadowRoot = hostToFocus === null || hostToFocus === void 0 ? void 0 : hostToFocus.shadowRoot;
-  if (shadowRoot) {
-    elementToFocus = shadowRoot.querySelector(focusableQueryString) || hostToFocus;
-  }
-  if (elementToFocus) {
-    focusVisibleElement(elementToFocus);
-  } else {
-    overlay.focus();
-  }
-}, "focusElementInOverlay");
-var trapKeyboardFocus = /* @__PURE__ */ __name((ev, doc2) => {
-  const lastOverlay = getPresentedOverlay(doc2, "ion-alert,ion-action-sheet,ion-loading,ion-modal,ion-picker-legacy,ion-popover");
-  const target = ev.target;
-  if (!lastOverlay || !target) {
-    return;
-  }
-  if (lastOverlay.classList.contains(FOCUS_TRAP_DISABLE_CLASS)) {
-    return;
-  }
-  const trapScopedFocus = /* @__PURE__ */ __name(() => {
-    if (lastOverlay === target) {
-      lastOverlay.lastFocus = void 0;
-    } else if (target.tagName === "ION-TOAST") {
-      focusElementInOverlay(lastOverlay.lastFocus, lastOverlay);
-    } else {
-      const overlayRoot = getElementRoot(lastOverlay);
-      if (!overlayRoot.contains(target)) {
-        return;
-      }
-      const overlayWrapper = overlayRoot.querySelector(".ion-overlay-wrapper");
-      if (!overlayWrapper) {
-        return;
-      }
-      if (overlayWrapper.contains(target) || target === overlayRoot.querySelector("ion-backdrop")) {
-        lastOverlay.lastFocus = target;
-      } else {
-        const lastFocus = lastOverlay.lastFocus;
-        focusFirstDescendant(overlayWrapper, lastOverlay);
-        if (lastFocus === doc2.activeElement) {
-          focusLastDescendant(overlayWrapper, lastOverlay);
-        }
-        lastOverlay.lastFocus = doc2.activeElement;
-      }
-    }
-  }, "trapScopedFocus");
-  const trapShadowFocus = /* @__PURE__ */ __name(() => {
-    if (lastOverlay.contains(target)) {
-      lastOverlay.lastFocus = target;
-    } else if (target.tagName === "ION-TOAST") {
-      focusElementInOverlay(lastOverlay.lastFocus, lastOverlay);
-    } else {
-      const lastFocus = lastOverlay.lastFocus;
-      focusFirstDescendant(lastOverlay);
-      if (lastFocus === doc2.activeElement) {
-        focusLastDescendant(lastOverlay);
-      }
-      lastOverlay.lastFocus = doc2.activeElement;
-    }
-  }, "trapShadowFocus");
-  if (lastOverlay.shadowRoot) {
-    trapShadowFocus();
-  } else {
-    trapScopedFocus();
-  }
-}, "trapKeyboardFocus");
-var connectListeners = /* @__PURE__ */ __name((doc2) => {
-  if (lastOverlayIndex === 0) {
-    lastOverlayIndex = 1;
-    doc2.addEventListener("focus", (ev) => {
-      trapKeyboardFocus(ev, doc2);
-    }, true);
-    doc2.addEventListener("ionBackButton", (ev) => {
-      const lastOverlay = getPresentedOverlay(doc2);
-      if (lastOverlay === null || lastOverlay === void 0 ? void 0 : lastOverlay.backdropDismiss) {
-        ev.detail.register(OVERLAY_BACK_BUTTON_PRIORITY, () => {
-          lastOverlay.dismiss(void 0, BACKDROP);
-        });
-      }
-    });
-    if (!shouldUseCloseWatcher()) {
-      doc2.addEventListener("keydown", (ev) => {
-        if (ev.key === "Escape") {
-          const lastOverlay = getPresentedOverlay(doc2);
-          if (lastOverlay === null || lastOverlay === void 0 ? void 0 : lastOverlay.backdropDismiss) {
-            lastOverlay.dismiss(void 0, BACKDROP);
-          }
-        }
-      });
-    }
-  }
-}, "connectListeners");
-var dismissOverlay = /* @__PURE__ */ __name((doc2, data, role, overlayTag, id) => {
-  const overlay = getPresentedOverlay(doc2, overlayTag, id);
-  if (!overlay) {
-    return Promise.reject("overlay does not exist");
-  }
-  return overlay.dismiss(data, role);
-}, "dismissOverlay");
-var getOverlays = /* @__PURE__ */ __name((doc2, selector) => {
-  if (selector === void 0) {
-    selector = "ion-alert,ion-action-sheet,ion-loading,ion-modal,ion-picker-legacy,ion-popover,ion-toast";
-  }
-  return Array.from(doc2.querySelectorAll(selector)).filter((c) => c.overlayIndex > 0);
-}, "getOverlays");
-var getPresentedOverlays = /* @__PURE__ */ __name((doc2, overlayTag) => {
-  return getOverlays(doc2, overlayTag).filter((o) => !isOverlayHidden(o));
-}, "getPresentedOverlays");
-var getPresentedOverlay = /* @__PURE__ */ __name((doc2, overlayTag, id) => {
-  const overlays = getPresentedOverlays(doc2, overlayTag);
-  return id === void 0 ? overlays[overlays.length - 1] : overlays.find((o) => o.id === id);
-}, "getPresentedOverlay");
-var setRootAriaHidden = /* @__PURE__ */ __name((hidden = false) => {
-  const root = getAppRoot(document);
-  const viewContainer = root.querySelector("ion-router-outlet, ion-nav, #ion-view-container-root");
-  if (!viewContainer) {
-    return;
-  }
-  if (hidden) {
-    viewContainer.setAttribute("aria-hidden", "true");
-  } else {
-    viewContainer.removeAttribute("aria-hidden");
-  }
-}, "setRootAriaHidden");
-var present = /* @__PURE__ */ __name((overlay, name, iosEnterAnimation8, mdEnterAnimation7, opts) => __async(null, null, function* () {
-  var _a190, _b;
-  if (overlay.presented) {
-    return;
-  }
-  if (overlay.el.tagName !== "ION-TOAST") {
-    setRootAriaHidden(true);
-    document.body.classList.add(BACKDROP_NO_SCROLL);
-  }
-  hideUnderlyingOverlaysFromScreenReaders(overlay.el);
-  hideAnimatingOverlayFromScreenReaders(overlay.el);
-  overlay.presented = true;
-  overlay.willPresent.emit();
-  (_a190 = overlay.willPresentShorthand) === null || _a190 === void 0 ? void 0 : _a190.emit();
-  const mode = getIonMode(overlay);
-  const animationBuilder = overlay.enterAnimation ? overlay.enterAnimation : config.get(name, mode === "ios" ? iosEnterAnimation8 : mdEnterAnimation7);
-  const completed = yield overlayAnimation(overlay, animationBuilder, overlay.el, opts);
-  if (completed) {
-    overlay.didPresent.emit();
-    (_b = overlay.didPresentShorthand) === null || _b === void 0 ? void 0 : _b.emit();
-  }
-  if (overlay.el.tagName !== "ION-TOAST") {
-    restoreElementFocus(overlay.el);
-  }
-  if (overlay.keyboardClose && (document.activeElement === null || !overlay.el.contains(document.activeElement))) {
-    overlay.el.focus();
-  }
-  overlay.el.removeAttribute("aria-hidden");
-}), "present");
-var restoreElementFocus = /* @__PURE__ */ __name((overlayEl) => __async(null, null, function* () {
-  let previousElement = document.activeElement;
-  if (!previousElement) {
-    return;
-  }
-  const shadowRoot = previousElement === null || previousElement === void 0 ? void 0 : previousElement.shadowRoot;
-  if (shadowRoot) {
-    previousElement = shadowRoot.querySelector(focusableQueryString) || previousElement;
-  }
-  yield overlayEl.onDidDismiss();
-  if (document.activeElement === null || document.activeElement === document.body) {
-    previousElement.focus();
-  }
-}), "restoreElementFocus");
-var dismiss = /* @__PURE__ */ __name((overlay, data, role, name, iosLeaveAnimation8, mdLeaveAnimation7, opts) => __async(null, null, function* () {
-  var _a190, _b;
-  if (!overlay.presented) {
-    return false;
-  }
-  const presentedOverlays = doc !== void 0 ? getPresentedOverlays(doc) : [];
-  const overlaysNotToast = presentedOverlays.filter((o) => o.tagName !== "ION-TOAST");
-  const lastOverlayNotToast = overlaysNotToast.length === 1 && overlaysNotToast[0].id === overlay.el.id;
-  if (lastOverlayNotToast) {
-    setRootAriaHidden(false);
-    document.body.classList.remove(BACKDROP_NO_SCROLL);
-  }
-  overlay.presented = false;
-  try {
-    hideAnimatingOverlayFromScreenReaders(overlay.el);
-    overlay.el.style.setProperty("pointer-events", "none");
-    overlay.willDismiss.emit({ data, role });
-    (_a190 = overlay.willDismissShorthand) === null || _a190 === void 0 ? void 0 : _a190.emit({ data, role });
-    const mode = getIonMode(overlay);
-    const animationBuilder = overlay.leaveAnimation ? overlay.leaveAnimation : config.get(name, mode === "ios" ? iosLeaveAnimation8 : mdLeaveAnimation7);
-    if (role !== GESTURE) {
-      yield overlayAnimation(overlay, animationBuilder, overlay.el, opts);
-    }
-    overlay.didDismiss.emit({ data, role });
-    (_b = overlay.didDismissShorthand) === null || _b === void 0 ? void 0 : _b.emit({ data, role });
-    const animations = activeAnimations.get(overlay) || [];
-    animations.forEach((ani) => ani.destroy());
-    activeAnimations.delete(overlay);
-    overlay.el.classList.add("overlay-hidden");
-    overlay.el.style.removeProperty("pointer-events");
-    if (overlay.el.lastFocus !== void 0) {
-      overlay.el.lastFocus = void 0;
-    }
-  } catch (err2) {
-    printIonError(`[${overlay.el.tagName.toLowerCase()}] - `, err2);
-  }
-  overlay.el.remove();
-  revealOverlaysToScreenReaders();
-  return true;
-}), "dismiss");
-var getAppRoot = /* @__PURE__ */ __name((doc2) => {
-  return doc2.querySelector("ion-app") || doc2.body;
-}, "getAppRoot");
-var overlayAnimation = /* @__PURE__ */ __name((overlay, animationBuilder, baseEl, opts) => __async(null, null, function* () {
-  baseEl.classList.remove("overlay-hidden");
-  const aniRoot = overlay.el;
-  const animation = animationBuilder(aniRoot, opts);
-  if (!overlay.animated || !config.getBoolean("animated", true)) {
-    animation.duration(0);
-  }
-  if (overlay.keyboardClose) {
-    animation.beforeAddWrite(() => {
-      const activeElement = baseEl.ownerDocument.activeElement;
-      if (activeElement === null || activeElement === void 0 ? void 0 : activeElement.matches("input,ion-input, ion-textarea")) {
-        activeElement.blur();
-      }
-    });
-  }
-  const activeAni = activeAnimations.get(overlay) || [];
-  activeAnimations.set(overlay, [...activeAni, animation]);
-  yield animation.play();
-  return true;
-}), "overlayAnimation");
-var eventMethod = /* @__PURE__ */ __name((element, eventName) => {
-  let resolve;
-  const promise = new Promise((r) => resolve = r);
-  onceEvent(element, eventName, (event) => {
-    resolve(event.detail);
-  });
-  return promise;
-}, "eventMethod");
-var onceEvent = /* @__PURE__ */ __name((element, eventName, callback) => {
-  const handler = /* @__PURE__ */ __name((ev) => {
-    removeEventListener(element, eventName, handler);
-    callback(ev);
-  }, "handler");
-  addEventListener(element, eventName, handler);
-}, "onceEvent");
-var isCancel = /* @__PURE__ */ __name((role) => {
-  return role === "cancel" || role === BACKDROP;
-}, "isCancel");
-var defaultGate = /* @__PURE__ */ __name((h3) => h3(), "defaultGate");
-var safeCall = /* @__PURE__ */ __name((handler, arg) => {
-  if (typeof handler === "function") {
-    const jmp = config.get("_zoneGate", defaultGate);
-    return jmp(() => {
-      try {
-        return handler(arg);
-      } catch (e) {
-        throw e;
-      }
-    });
-  }
-  return void 0;
-}, "safeCall");
-var BACKDROP = "backdrop";
-var GESTURE = "gesture";
-var OVERLAY_GESTURE_PRIORITY = 39;
-var createDelegateController = /* @__PURE__ */ __name((ref) => {
-  let inline = false;
-  let workingDelegate;
-  const coreDelegate = CoreDelegate();
-  const getDelegate = /* @__PURE__ */ __name((force = false) => {
-    if (workingDelegate && !force) {
-      return {
-        delegate: workingDelegate,
-        inline
-      };
-    }
-    const { el, hasController, delegate } = ref;
-    const parentEl = el.parentNode;
-    inline = parentEl !== null && !hasController;
-    workingDelegate = inline ? delegate || coreDelegate : delegate;
-    return { inline, delegate: workingDelegate };
-  }, "getDelegate");
-  const attachViewToDom = /* @__PURE__ */ __name((component) => __async(null, null, function* () {
-    const { delegate } = getDelegate(true);
-    if (delegate) {
-      return yield delegate.attachViewToDom(ref.el, component);
-    }
-    const { hasController } = ref;
-    if (hasController && component !== void 0) {
-      throw new Error("framework delegate is missing");
-    }
-    return null;
-  }), "attachViewToDom");
-  const removeViewFromDom = /* @__PURE__ */ __name(() => {
-    const { delegate } = getDelegate();
-    if (delegate && ref.el !== void 0) {
-      delegate.removeViewFromDom(ref.el.parentElement, ref.el);
-    }
-  }, "removeViewFromDom");
-  return {
-    attachViewToDom,
-    removeViewFromDom
-  };
-}, "createDelegateController");
-var createTriggerController = /* @__PURE__ */ __name(() => {
-  let destroyTriggerInteraction;
-  const removeClickListener = /* @__PURE__ */ __name(() => {
-    if (destroyTriggerInteraction) {
-      destroyTriggerInteraction();
-      destroyTriggerInteraction = void 0;
-    }
-  }, "removeClickListener");
-  const addClickListener = /* @__PURE__ */ __name((el, trigger) => {
-    removeClickListener();
-    const triggerEl = trigger !== void 0 ? document.getElementById(trigger) : null;
-    if (!triggerEl) {
-      printIonWarning(`[${el.tagName.toLowerCase()}] - A trigger element with the ID "${trigger}" was not found in the DOM. The trigger element must be in the DOM when the "trigger" property is set on an overlay component.`, el);
-      return;
-    }
-    const configureTriggerInteraction2 = /* @__PURE__ */ __name((targetEl, overlayEl) => {
-      const openOverlay = /* @__PURE__ */ __name(() => {
-        overlayEl.present();
-      }, "openOverlay");
-      targetEl.addEventListener("click", openOverlay);
-      return () => {
-        targetEl.removeEventListener("click", openOverlay);
-      };
-    }, "configureTriggerInteraction");
-    destroyTriggerInteraction = configureTriggerInteraction2(triggerEl, el);
-  }, "addClickListener");
-  return {
-    addClickListener,
-    removeClickListener
-  };
-}, "createTriggerController");
-var hideAnimatingOverlayFromScreenReaders = /* @__PURE__ */ __name((overlay) => {
-  if (doc === void 0)
-    return;
-  if (isPlatform("android")) {
-    overlay.setAttribute("aria-hidden", "true");
-  }
-}, "hideAnimatingOverlayFromScreenReaders");
-var hideUnderlyingOverlaysFromScreenReaders = /* @__PURE__ */ __name((newTopMostOverlay) => {
-  var _a190;
-  if (doc === void 0)
-    return;
-  const overlays = getPresentedOverlays(doc);
-  for (let i = overlays.length - 1; i >= 0; i--) {
-    const presentedOverlay = overlays[i];
-    const nextPresentedOverlay = (_a190 = overlays[i + 1]) !== null && _a190 !== void 0 ? _a190 : newTopMostOverlay;
-    if (nextPresentedOverlay.hasAttribute("aria-hidden") || nextPresentedOverlay.tagName !== "ION-TOAST") {
-      presentedOverlay.setAttribute("aria-hidden", "true");
-    }
-  }
-}, "hideUnderlyingOverlaysFromScreenReaders");
-var revealOverlaysToScreenReaders = /* @__PURE__ */ __name(() => {
-  if (doc === void 0)
-    return;
-  const overlays = getPresentedOverlays(doc);
-  for (let i = overlays.length - 1; i >= 0; i--) {
-    const currentOverlay = overlays[i];
-    currentOverlay.removeAttribute("aria-hidden");
-    if (currentOverlay.tagName !== "ION-TOAST") {
-      break;
-    }
-  }
-}, "revealOverlaysToScreenReaders");
-var FOCUS_TRAP_DISABLE_CLASS = "ion-disable-focus-trap";
-
-// node_modules/@ionic/core/components/index.js
-var IonicSlides = /* @__PURE__ */ __name((opts) => {
-  const { swiper, extendParams } = opts;
-  const slidesParams = {
-    effect: void 0,
-    direction: "horizontal",
-    initialSlide: 0,
-    loop: false,
-    parallax: false,
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 300,
-    slidesPerColumn: 1,
-    slidesPerColumnFill: "column",
-    slidesPerGroup: 1,
-    centeredSlides: false,
-    slidesOffsetBefore: 0,
-    slidesOffsetAfter: 0,
-    touchEventsTarget: "container",
-    freeMode: false,
-    freeModeMomentum: true,
-    freeModeMomentumRatio: 1,
-    freeModeMomentumBounce: true,
-    freeModeMomentumBounceRatio: 1,
-    freeModeMomentumVelocityRatio: 1,
-    freeModeSticky: false,
-    freeModeMinimumVelocity: 0.02,
-    autoHeight: false,
-    setWrapperSize: false,
-    zoom: {
-      maxRatio: 3,
-      minRatio: 1,
-      toggle: false
-    },
-    touchRatio: 1,
-    touchAngle: 45,
-    simulateTouch: true,
-    touchStartPreventDefault: false,
-    shortSwipes: true,
-    longSwipes: true,
-    longSwipesRatio: 0.5,
-    longSwipesMs: 300,
-    followFinger: true,
-    threshold: 0,
-    touchMoveStopPropagation: true,
-    touchReleaseOnEdges: false,
-    iOSEdgeSwipeDetection: false,
-    iOSEdgeSwipeThreshold: 20,
-    resistance: true,
-    resistanceRatio: 0.85,
-    watchSlidesProgress: false,
-    watchSlidesVisibility: false,
-    preventClicks: true,
-    preventClicksPropagation: true,
-    slideToClickedSlide: false,
-    loopAdditionalSlides: 0,
-    noSwiping: true,
-    runCallbacksOnInit: true,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true
-    },
-    flipEffect: {
-      slideShadows: true,
-      limitRotation: true
-    },
-    cubeEffect: {
-      slideShadows: true,
-      shadow: true,
-      shadowOffset: 20,
-      shadowScale: 0.94
-    },
-    fadeEffect: {
-      crossFade: false
-    },
-    a11y: {
-      prevSlideMessage: "Previous slide",
-      nextSlideMessage: "Next slide",
-      firstSlideMessage: "This is the first slide",
-      lastSlideMessage: "This is the last slide"
-    }
-  };
-  if (swiper.pagination) {
-    slidesParams.pagination = {
-      type: "bullets",
-      clickable: false,
-      hideOnClick: false
-    };
-  }
-  if (swiper.scrollbar) {
-    slidesParams.scrollbar = {
-      hide: true
-    };
-  }
-  extendParams(slidesParams);
-}, "IonicSlides");
-
-// node_modules/@ionic/angular/fesm2022/ionic-angular-common.mjs
-var _c0 = ["tabsInner"];
-var _DomController = class _DomController {
-  /**
-   * Schedules a task to run during the READ phase of the next frame.
-   * This task should only read the DOM, but never modify it.
-   */
-  read(cb) {
-    getQueue().read(cb);
-  }
-  /**
-   * Schedules a task to run during the WRITE phase of the next frame.
-   * This task should write the DOM, but never READ it.
-   */
-  write(cb) {
-    getQueue().write(cb);
-  }
-};
-__name(_DomController, "DomController");
-/** @nocollapse */
-__publicField(_DomController, "ɵfac", /* @__PURE__ */ __name(function DomController_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _DomController)();
-}, "DomController_Factory"));
-/** @nocollapse */
-__publicField(_DomController, "ɵprov", ɵɵdefineInjectable({
-  token: _DomController,
-  factory: _DomController.ɵfac,
-  providedIn: "root"
-}));
-var DomController = _DomController;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DomController, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var getQueue = /* @__PURE__ */ __name(() => {
-  const win4 = typeof window !== "undefined" ? window : null;
-  if (win4 != null) {
-    const Ionic = win4.Ionic;
-    if (Ionic?.queue) {
-      return Ionic.queue;
-    }
-    return {
-      read: /* @__PURE__ */ __name((cb) => win4.requestAnimationFrame(cb), "read"),
-      write: /* @__PURE__ */ __name((cb) => win4.requestAnimationFrame(cb), "write")
-    };
-  }
-  return {
-    read: /* @__PURE__ */ __name((cb) => cb(), "read"),
-    write: /* @__PURE__ */ __name((cb) => cb(), "write")
-  };
-}, "getQueue");
-var _MenuController = class _MenuController {
-  menuController;
-  constructor(menuController2) {
-    this.menuController = menuController2;
-  }
-  /**
-   * Programmatically open the Menu.
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return returns a promise when the menu is fully opened
-   */
-  open(menuId) {
-    return this.menuController.open(menuId);
-  }
-  /**
-   * Programmatically close the Menu. If no `menuId` is given as the first
-   * argument then it'll close any menu which is open. If a `menuId`
-   * is given then it'll close that exact menu.
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return returns a promise when the menu is fully closed
-   */
-  close(menuId) {
-    return this.menuController.close(menuId);
-  }
-  /**
-   * Toggle the menu. If it's closed, it will open, and if opened, it
-   * will close.
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return returns a promise when the menu has been toggled
-   */
-  toggle(menuId) {
-    return this.menuController.toggle(menuId);
-  }
-  /**
-   * Used to enable or disable a menu. For example, there could be multiple
-   * left menus, but only one of them should be able to be opened at the same
-   * time. If there are multiple menus on the same side, then enabling one menu
-   * will also automatically disable all the others that are on the same side.
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return Returns the instance of the menu, which is useful for chaining.
-   */
-  enable(shouldEnable, menuId) {
-    return this.menuController.enable(shouldEnable, menuId);
-  }
-  /**
-   * Used to enable or disable the ability to swipe open the menu.
-   * @param shouldEnable  True if it should be swipe-able, false if not.
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return Returns the instance of the menu, which is useful for chaining.
-   */
-  swipeGesture(shouldEnable, menuId) {
-    return this.menuController.swipeGesture(shouldEnable, menuId);
-  }
-  /**
-   * @param [menuId] Optionally get the menu by its id, or side.
-   * @return Returns true if the specified menu is currently open, otherwise false.
-   * If the menuId is not specified, it returns true if ANY menu is currenly open.
-   */
-  isOpen(menuId) {
-    return this.menuController.isOpen(menuId);
-  }
-  /**
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return Returns true if the menu is currently enabled, otherwise false.
-   */
-  isEnabled(menuId) {
-    return this.menuController.isEnabled(menuId);
-  }
-  /**
-   * Used to get a menu instance. If a `menuId` is not provided then it'll
-   * return the first menu found. If a `menuId` is `left` or `right`, then
-   * it'll return the enabled menu on that side. Otherwise, if a `menuId` is
-   * provided, then it'll try to find the menu using the menu's `id`
-   * property. If a menu is not found then it'll return `null`.
-   * @param [menuId]  Optionally get the menu by its id, or side.
-   * @return Returns the instance of the menu if found, otherwise `null`.
-   */
-  get(menuId) {
-    return this.menuController.get(menuId);
-  }
-  /**
-   * @return Returns the instance of the menu already opened, otherwise `null`.
-   */
-  getOpen() {
-    return this.menuController.getOpen();
-  }
-  /**
-   * @return Returns an array of all menu instances.
-   */
-  getMenus() {
-    return this.menuController.getMenus();
-  }
-  registerAnimation(name, animation) {
-    return this.menuController.registerAnimation(name, animation);
-  }
-  isAnimating() {
-    return this.menuController.isAnimating();
-  }
-  _getOpenSync() {
-    return this.menuController._getOpenSync();
-  }
-  _createAnimation(type, menuCmp) {
-    return this.menuController._createAnimation(type, menuCmp);
-  }
-  _register(menu) {
-    return this.menuController._register(menu);
-  }
-  _unregister(menu) {
-    return this.menuController._unregister(menu);
-  }
-  _setOpen(menu, shouldOpen, animated) {
-    return this.menuController._setOpen(menu, shouldOpen, animated);
-  }
-};
-__name(_MenuController, "MenuController");
-var MenuController = _MenuController;
-var _Platform = class _Platform {
-  doc;
-  _readyPromise;
-  win;
-  /**
-   * @hidden
-   */
-  backButton = new Subject();
-  /**
-   * The keyboardDidShow event emits when the
-   * on-screen keyboard is presented.
-   */
-  keyboardDidShow = new Subject();
-  /**
-   * The keyboardDidHide event emits when the
-   * on-screen keyboard is hidden.
-   */
-  keyboardDidHide = new Subject();
-  /**
-   * The pause event emits when the native platform puts the application
-   * into the background, typically when the user switches to a different
-   * application. This event would emit when a Cordova app is put into
-   * the background, however, it would not fire on a standard web browser.
-   */
-  pause = new Subject();
-  /**
-   * The resume event emits when the native platform pulls the application
-   * out from the background. This event would emit when a Cordova app comes
-   * out from the background, however, it would not fire on a standard web browser.
-   */
-  resume = new Subject();
-  /**
-   * The resize event emits when the browser window has changed dimensions. This
-   * could be from a browser window being physically resized, or from a device
-   * changing orientation.
-   */
-  resize = new Subject();
-  constructor(doc2, zone) {
-    this.doc = doc2;
-    zone.run(() => {
-      this.win = doc2.defaultView;
-      this.backButton.subscribeWithPriority = function(priority, callback) {
-        return this.subscribe((ev) => {
-          return ev.register(priority, (processNextHandler) => zone.run(() => callback(processNextHandler)));
-        });
-      };
-      proxyEvent(this.pause, doc2, "pause", zone);
-      proxyEvent(this.resume, doc2, "resume", zone);
-      proxyEvent(this.backButton, doc2, "ionBackButton", zone);
-      proxyEvent(this.resize, this.win, "resize", zone);
-      proxyEvent(this.keyboardDidShow, this.win, "ionKeyboardDidShow", zone);
-      proxyEvent(this.keyboardDidHide, this.win, "ionKeyboardDidHide", zone);
-      let readyResolve;
-      this._readyPromise = new Promise((res) => {
-        readyResolve = res;
-      });
-      if (this.win?.["cordova"]) {
-        doc2.addEventListener("deviceready", () => {
-          readyResolve("cordova");
-        }, {
-          once: true
-        });
-      } else {
-        readyResolve("dom");
-      }
-    });
-  }
-  /**
-   * @returns returns true/false based on platform.
-   * @description
-   * Depending on the platform the user is on, `is(platformName)` will
-   * return `true` or `false`. Note that the same app can return `true`
-   * for more than one platform name. For example, an app running from
-   * an iPad would return `true` for the platform names: `mobile`,
-   * `ios`, `ipad`, and `tablet`. Additionally, if the app was running
-   * from Cordova then `cordova` would be true, and if it was running
-   * from a web browser on the iPad then `mobileweb` would be `true`.
-   *
-   * ```
-   * import { Platform } from 'ionic-angular';
-   *
-   * @Component({...})
-   * export MyPage {
-   *   constructor(public platform: Platform) {
-   *     if (this.platform.is('ios')) {
-   *       // This will only print when on iOS
-   *       console.log('I am an iOS device!');
-   *     }
-   *   }
-   * }
-   * ```
-   *
-   * | Platform Name   | Description                        |
-   * |-----------------|------------------------------------|
-   * | android         | on a device running Android.       |
-   * | capacitor       | on a device running Capacitor.     |
-   * | cordova         | on a device running Cordova.       |
-   * | ios             | on a device running iOS.           |
-   * | ipad            | on an iPad device.                 |
-   * | iphone          | on an iPhone device.               |
-   * | phablet         | on a phablet device.               |
-   * | tablet          | on a tablet device.                |
-   * | electron        | in Electron on a desktop device.   |
-   * | pwa             | as a PWA app.                      |
-   * | mobile          | on a mobile device.                |
-   * | mobileweb       | on a mobile device in a browser.   |
-   * | desktop         | on a desktop device.               |
-   * | hybrid          | is a cordova or capacitor app.     |
-   *
-   */
-  is(platformName) {
-    return isPlatform(this.win, platformName);
-  }
-  /**
-   * @returns the array of platforms
-   * @description
-   * Depending on what device you are on, `platforms` can return multiple values.
-   * Each possible value is a hierarchy of platforms. For example, on an iPhone,
-   * it would return `mobile`, `ios`, and `iphone`.
-   *
-   * ```
-   * import { Platform } from 'ionic-angular';
-   *
-   * @Component({...})
-   * export MyPage {
-   *   constructor(public platform: Platform) {
-   *     // This will print an array of the current platforms
-   *     console.log(this.platform.platforms());
-   *   }
-   * }
-   * ```
-   */
-  platforms() {
-    return getPlatforms(this.win);
-  }
-  /**
-   * Returns a promise when the platform is ready and native functionality
-   * can be called. If the app is running from within a web browser, then
-   * the promise will resolve when the DOM is ready. When the app is running
-   * from an application engine such as Cordova, then the promise will
-   * resolve when Cordova triggers the `deviceready` event.
-   *
-   * The resolved value is the `readySource`, which states which platform
-   * ready was used. For example, when Cordova is ready, the resolved ready
-   * source is `cordova`. The default ready source value will be `dom`. The
-   * `readySource` is useful if different logic should run depending on the
-   * platform the app is running from. For example, only Cordova can execute
-   * the status bar plugin, so the web should not run status bar plugin logic.
-   *
-   * ```
-   * import { Component } from '@angular/core';
-   * import { Platform } from 'ionic-angular';
-   *
-   * @Component({...})
-   * export MyApp {
-   *   constructor(public platform: Platform) {
-   *     this.platform.ready().then((readySource) => {
-   *       console.log('Platform ready from', readySource);
-   *       // Platform now ready, execute any required native code
-   *     });
-   *   }
-   * }
-   * ```
-   */
-  ready() {
-    return this._readyPromise;
-  }
-  /**
-   * Returns if this app is using right-to-left language direction or not.
-   * We recommend the app's `index.html` file already has the correct `dir`
-   * attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`.
-   * [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
-   */
-  get isRTL() {
-    return this.doc.dir === "rtl";
-  }
-  /**
-   * Get the query string parameter
-   */
-  getQueryParam(key) {
-    return readQueryParam(this.win.location.href, key);
-  }
-  /**
-   * Returns `true` if the app is in landscape mode.
-   */
-  isLandscape() {
-    return !this.isPortrait();
-  }
-  /**
-   * Returns `true` if the app is in portrait mode.
-   */
-  isPortrait() {
-    return this.win.matchMedia?.("(orientation: portrait)").matches;
-  }
-  testUserAgent(expression) {
-    const nav = this.win.navigator;
-    return !!(nav?.userAgent && nav.userAgent.indexOf(expression) >= 0);
-  }
-  /**
-   * Get the current url.
-   */
-  url() {
-    return this.win.location.href;
-  }
-  /**
-   * Gets the width of the platform's viewport using `window.innerWidth`.
-   */
-  width() {
-    return this.win.innerWidth;
-  }
-  /**
-   * Gets the height of the platform's viewport using `window.innerHeight`.
-   */
-  height() {
-    return this.win.innerHeight;
-  }
-};
-__name(_Platform, "Platform");
-/** @nocollapse */
-__publicField(_Platform, "ɵfac", /* @__PURE__ */ __name(function Platform_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _Platform)(ɵɵinject(DOCUMENT), ɵɵinject(NgZone));
-}, "Platform_Factory"));
-/** @nocollapse */
-__publicField(_Platform, "ɵprov", ɵɵdefineInjectable({
-  token: _Platform,
-  factory: _Platform.ɵfac,
-  providedIn: "root"
-}));
-var Platform = _Platform;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Platform, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: NgZone
-    }];
-  }, null);
-})();
-var readQueryParam = /* @__PURE__ */ __name((url, key) => {
-  key = key.replace(/[[\]\\]/g, "\\$&");
-  const regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
-  const results = regex.exec(url);
-  return results ? decodeURIComponent(results[1].replace(/\+/g, " ")) : null;
-}, "readQueryParam");
-var proxyEvent = /* @__PURE__ */ __name((emitter, el, eventName, zone) => {
-  if (el) {
-    el.addEventListener(eventName, (ev) => {
-      zone.run(() => {
-        const value = ev != null ? ev.detail : void 0;
-        emitter.next(value);
-      });
-    });
-  }
-}, "proxyEvent");
-var _NavController = class _NavController {
-  location;
-  serializer;
-  router;
-  topOutlet;
-  direction = DEFAULT_DIRECTION;
-  animated = DEFAULT_ANIMATED;
-  animationBuilder;
-  guessDirection = "forward";
-  guessAnimation;
-  lastNavId = -1;
-  constructor(platform, location, serializer, router) {
-    this.location = location;
-    this.serializer = serializer;
-    this.router = router;
-    if (router) {
-      router.events.subscribe((ev) => {
-        if (ev instanceof NavigationStart) {
-          const id = ev.restoredState ? ev.restoredState.navigationId : ev.id;
-          this.guessDirection = this.guessAnimation = id < this.lastNavId ? "back" : "forward";
-          this.lastNavId = this.guessDirection === "forward" ? ev.id : id;
-        }
-      });
-    }
-    platform.backButton.subscribeWithPriority(0, (processNextHandler) => {
-      this.pop();
-      processNextHandler();
-    });
-  }
-  /**
-   * This method uses Angular's [Router](https://angular.io/api/router/Router) under the hood,
-   * it's equivalent to calling `this.router.navigateByUrl()`, but it's explicit about the **direction** of the transition.
-   *
-   * Going **forward** means that a new page is going to be pushed to the stack of the outlet (ion-router-outlet),
-   * and that it will show a "forward" animation by default.
-   *
-   * Navigating forward can also be triggered in a declarative manner by using the `[routerDirection]` directive:
-   *
-   * ```html
-   * <a routerLink="/path/to/page" routerDirection="forward">Link</a>
-   * ```
-   */
-  navigateForward(url, options = {}) {
-    this.setDirection("forward", options.animated, options.animationDirection, options.animation);
-    return this.navigate(url, options);
-  }
-  /**
-   * This method uses Angular's [Router](https://angular.io/api/router/Router) under the hood,
-   * it's equivalent to calling:
-   *
-   * ```ts
-   * this.navController.setDirection('back');
-   * this.router.navigateByUrl(path);
-   * ```
-   *
-   * Going **back** means that all the pages in the stack until the navigated page is found will be popped,
-   * and that it will show a "back" animation by default.
-   *
-   * Navigating back can also be triggered in a declarative manner by using the `[routerDirection]` directive:
-   *
-   * ```html
-   * <a routerLink="/path/to/page" routerDirection="back">Link</a>
-   * ```
-   */
-  navigateBack(url, options = {}) {
-    this.setDirection("back", options.animated, options.animationDirection, options.animation);
-    return this.navigate(url, options);
-  }
-  /**
-   * This method uses Angular's [Router](https://angular.io/api/router/Router) under the hood,
-   * it's equivalent to calling:
-   *
-   * ```ts
-   * this.navController.setDirection('root');
-   * this.router.navigateByUrl(path);
-   * ```
-   *
-   * Going **root** means that all existing pages in the stack will be removed,
-   * and the navigated page will become the single page in the stack.
-   *
-   * Navigating root can also be triggered in a declarative manner by using the `[routerDirection]` directive:
-   *
-   * ```html
-   * <a routerLink="/path/to/page" routerDirection="root">Link</a>
-   * ```
-   */
-  navigateRoot(url, options = {}) {
-    this.setDirection("root", options.animated, options.animationDirection, options.animation);
-    return this.navigate(url, options);
-  }
-  /**
-   * Same as [Location](https://angular.io/api/common/Location)'s back() method.
-   * It will use the standard `window.history.back()` under the hood, but featuring a `back` animation
-   * by default.
-   */
-  back(options = {
-    animated: true,
-    animationDirection: "back"
-  }) {
-    this.setDirection("back", options.animated, options.animationDirection, options.animation);
-    return this.location.back();
-  }
-  /**
-   * This methods goes back in the context of Ionic's stack navigation.
-   *
-   * It recursively finds the top active `ion-router-outlet` and calls `pop()`.
-   * This is the recommended way to go back when you are using `ion-router-outlet`.
-   *
-   * Resolves to `true` if it was able to pop.
-   */
-  pop() {
-    return __async(this, null, function* () {
-      let outlet = this.topOutlet;
-      while (outlet) {
-        if (yield outlet.pop()) {
-          return true;
-        } else {
-          outlet = outlet.parentOutlet;
-        }
-      }
-      return false;
-    });
-  }
-  /**
-   * This methods specifies the direction of the next navigation performed by the Angular router.
-   *
-   * `setDirection()` does not trigger any transition, it just sets some flags to be consumed by `ion-router-outlet`.
-   *
-   * It's recommended to use `navigateForward()`, `navigateBack()` and `navigateRoot()` instead of `setDirection()`.
-   */
-  setDirection(direction, animated, animationDirection, animationBuilder) {
-    this.direction = direction;
-    this.animated = getAnimation(direction, animated, animationDirection);
-    this.animationBuilder = animationBuilder;
-  }
-  /**
-   * @internal
-   */
-  setTopOutlet(outlet) {
-    this.topOutlet = outlet;
-  }
-  /**
-   * @internal
-   */
-  consumeTransition() {
-    let direction = "root";
-    let animation;
-    const animationBuilder = this.animationBuilder;
-    if (this.direction === "auto") {
-      direction = this.guessDirection;
-      animation = this.guessAnimation;
-    } else {
-      animation = this.animated;
-      direction = this.direction;
-    }
-    this.direction = DEFAULT_DIRECTION;
-    this.animated = DEFAULT_ANIMATED;
-    this.animationBuilder = void 0;
-    return {
-      direction,
-      animation,
-      animationBuilder
-    };
-  }
-  navigate(url, options) {
-    if (Array.isArray(url)) {
-      return this.router.navigate(url, options);
-    } else {
-      const urlTree = this.serializer.parse(url.toString());
-      if (options.queryParams !== void 0) {
-        urlTree.queryParams = __spreadValues({}, options.queryParams);
-      }
-      if (options.fragment !== void 0) {
-        urlTree.fragment = options.fragment;
-      }
-      return this.router.navigateByUrl(urlTree, options);
-    }
-  }
-};
-__name(_NavController, "NavController");
-/** @nocollapse */
-__publicField(_NavController, "ɵfac", /* @__PURE__ */ __name(function NavController_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _NavController)(ɵɵinject(Platform), ɵɵinject(Location), ɵɵinject(UrlSerializer), ɵɵinject(Router, 8));
-}, "NavController_Factory"));
-/** @nocollapse */
-__publicField(_NavController, "ɵprov", ɵɵdefineInjectable({
-  token: _NavController,
-  factory: _NavController.ɵfac,
-  providedIn: "root"
-}));
-var NavController = _NavController;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NavController, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: Platform
-    }, {
-      type: Location
-    }, {
-      type: UrlSerializer
-    }, {
-      type: Router,
-      decorators: [{
-        type: Optional
-      }]
-    }];
-  }, null);
-})();
-var getAnimation = /* @__PURE__ */ __name((direction, animated, animationDirection) => {
-  if (animated === false) {
-    return void 0;
-  }
-  if (animationDirection !== void 0) {
-    return animationDirection;
-  }
-  if (direction === "forward" || direction === "back") {
-    return direction;
-  } else if (direction === "root" && animated === true) {
-    return "forward";
-  }
-  return void 0;
-}, "getAnimation");
-var DEFAULT_DIRECTION = "auto";
-var DEFAULT_ANIMATED = void 0;
-var _Config = class _Config {
-  get(key, fallback) {
-    const c = getConfig();
-    if (c) {
-      return c.get(key, fallback);
-    }
-    return null;
-  }
-  getBoolean(key, fallback) {
-    const c = getConfig();
-    if (c) {
-      return c.getBoolean(key, fallback);
-    }
-    return false;
-  }
-  getNumber(key, fallback) {
-    const c = getConfig();
-    if (c) {
-      return c.getNumber(key, fallback);
-    }
-    return 0;
-  }
-};
-__name(_Config, "Config");
-/** @nocollapse */
-__publicField(_Config, "ɵfac", /* @__PURE__ */ __name(function Config_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _Config)();
-}, "Config_Factory"));
-/** @nocollapse */
-__publicField(_Config, "ɵprov", ɵɵdefineInjectable({
-  token: _Config,
-  factory: _Config.ɵfac,
-  providedIn: "root"
-}));
-var Config = _Config;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Config, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var ConfigToken = new InjectionToken("USERCONFIG");
-var getConfig = /* @__PURE__ */ __name(() => {
-  if (typeof window !== "undefined") {
-    const Ionic = window.Ionic;
-    if (Ionic?.config) {
-      return Ionic.config;
-    }
-  }
-  return null;
-}, "getConfig");
-var _NavParams = class _NavParams {
-  data;
-  constructor(data = {}) {
-    this.data = data;
-    console.warn(`[Ionic Warning]: NavParams has been deprecated in favor of using Angular's input API. Developers should migrate to either the @Input decorator or the Signals-based input API.`);
-  }
-  /**
-   * Get the value of a nav-parameter for the current view
-   *
-   * ```ts
-   * import { NavParams } from 'ionic-angular';
-   *
-   * export class MyClass{
-   *  constructor(public navParams: NavParams){
-   *    // userParams is an object we have in our nav-parameters
-   *    this.navParams.get('userParams');
-   *  }
-   * }
-   * ```
-   *
-   * @param param Which param you want to look up
-   */
-  get(param) {
-    return this.data[param];
-  }
-};
-__name(_NavParams, "NavParams");
-var NavParams = _NavParams;
-var IonModalToken = new InjectionToken("IonModalToken");
-var _AngularDelegate = class _AngularDelegate {
-  zone = inject(NgZone);
-  applicationRef = inject(ApplicationRef);
-  config = inject(ConfigToken);
-  create(environmentInjector, injector, elementReferenceKey) {
-    return new AngularFrameworkDelegate(environmentInjector, injector, this.applicationRef, this.zone, elementReferenceKey, this.config.useSetInputAPI ?? false);
-  }
-};
-__name(_AngularDelegate, "AngularDelegate");
-/** @nocollapse */
-__publicField(_AngularDelegate, "ɵfac", /* @__PURE__ */ __name(function AngularDelegate_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _AngularDelegate)();
-}, "AngularDelegate_Factory"));
-/** @nocollapse */
-__publicField(_AngularDelegate, "ɵprov", ɵɵdefineInjectable({
-  token: _AngularDelegate,
-  factory: _AngularDelegate.ɵfac
-}));
-var AngularDelegate = _AngularDelegate;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngularDelegate, [{
-    type: Injectable
-  }], null, null);
-})();
-var _AngularFrameworkDelegate = class _AngularFrameworkDelegate {
-  environmentInjector;
-  injector;
-  applicationRef;
-  zone;
-  elementReferenceKey;
-  enableSignalsSupport;
-  elRefMap = /* @__PURE__ */ new WeakMap();
-  elEventsMap = /* @__PURE__ */ new WeakMap();
-  constructor(environmentInjector, injector, applicationRef, zone, elementReferenceKey, enableSignalsSupport) {
-    this.environmentInjector = environmentInjector;
-    this.injector = injector;
-    this.applicationRef = applicationRef;
-    this.zone = zone;
-    this.elementReferenceKey = elementReferenceKey;
-    this.enableSignalsSupport = enableSignalsSupport;
-  }
-  attachViewToDom(container, component, params, cssClasses) {
-    return this.zone.run(() => {
-      return new Promise((resolve) => {
-        const componentProps = __spreadValues({}, params);
-        if (this.elementReferenceKey !== void 0) {
-          componentProps[this.elementReferenceKey] = container;
-        }
-        const el = attachView(this.zone, this.environmentInjector, this.injector, this.applicationRef, this.elRefMap, this.elEventsMap, container, component, componentProps, cssClasses, this.elementReferenceKey, this.enableSignalsSupport);
-        resolve(el);
-      });
-    });
-  }
-  removeViewFromDom(_container, component) {
-    return this.zone.run(() => {
-      return new Promise((resolve) => {
-        const componentRef = this.elRefMap.get(component);
-        if (componentRef) {
-          componentRef.destroy();
-          this.elRefMap.delete(component);
-          const unbindEvents = this.elEventsMap.get(component);
-          if (unbindEvents) {
-            unbindEvents();
-            this.elEventsMap.delete(component);
-          }
-        }
-        resolve();
-      });
-    });
-  }
-};
-__name(_AngularFrameworkDelegate, "AngularFrameworkDelegate");
-var AngularFrameworkDelegate = _AngularFrameworkDelegate;
-var attachView = /* @__PURE__ */ __name((zone, environmentInjector, injector, applicationRef, elRefMap, elEventsMap, container, component, params, cssClasses, elementReferenceKey, enableSignalsSupport) => {
-  const providers = getProviders(params);
-  if (container.tagName.toLowerCase() === "ion-modal") {
-    providers.push({
-      provide: IonModalToken,
-      useValue: container
-    });
-  }
-  const childInjector = Injector.create({
-    providers,
-    parent: injector
-  });
-  const componentRef = createComponent(component, {
-    environmentInjector,
-    elementInjector: childInjector
-  });
-  const instance = componentRef.instance;
-  const hostElement = componentRef.location.nativeElement;
-  if (params) {
-    if (elementReferenceKey && instance[elementReferenceKey] !== void 0) {
-      console.error(`[Ionic Error]: ${elementReferenceKey} is a reserved property when using ${container.tagName.toLowerCase()}. Rename or remove the "${elementReferenceKey}" property from ${component.name}.`);
-    }
-    if (enableSignalsSupport === true && componentRef.setInput !== void 0) {
-      const _a190 = params, {
-        modal,
-        popover
-      } = _a190, otherParams = __objRest(_a190, [
-        "modal",
-        "popover"
-      ]);
-      for (const key in otherParams) {
-        componentRef.setInput(key, otherParams[key]);
-      }
-      if (modal !== void 0) {
-        Object.assign(instance, {
-          modal
-        });
-      }
-      if (popover !== void 0) {
-        Object.assign(instance, {
-          popover
-        });
-      }
-    } else {
-      Object.assign(instance, params);
-    }
-  }
-  if (cssClasses) {
-    for (const cssClass of cssClasses) {
-      hostElement.classList.add(cssClass);
-    }
-  }
-  const unbindEvents = bindLifecycleEvents(zone, instance, hostElement);
-  container.appendChild(hostElement);
-  applicationRef.attachView(componentRef.hostView);
-  elRefMap.set(hostElement, componentRef);
-  elEventsMap.set(hostElement, unbindEvents);
-  return hostElement;
-}, "attachView");
-var LIFECYCLES = [LIFECYCLE_WILL_ENTER, LIFECYCLE_DID_ENTER, LIFECYCLE_WILL_LEAVE, LIFECYCLE_DID_LEAVE, LIFECYCLE_WILL_UNLOAD];
-var bindLifecycleEvents = /* @__PURE__ */ __name((zone, instance, element) => {
-  return zone.run(() => {
-    const unregisters = LIFECYCLES.filter((eventName) => typeof instance[eventName] === "function").map((eventName) => {
-      const handler = /* @__PURE__ */ __name((ev) => instance[eventName](ev.detail), "handler");
-      element.addEventListener(eventName, handler);
-      return () => element.removeEventListener(eventName, handler);
-    });
-    return () => unregisters.forEach((fn) => fn());
-  });
-}, "bindLifecycleEvents");
-var NavParamsToken = new InjectionToken("NavParamsToken");
-var getProviders = /* @__PURE__ */ __name((params) => {
-  return [{
-    provide: NavParamsToken,
-    useValue: params
-  }, {
-    provide: NavParams,
-    useFactory: provideNavParamsInjectable,
-    deps: [NavParamsToken]
-  }];
-}, "getProviders");
-var provideNavParamsInjectable = /* @__PURE__ */ __name((params) => {
-  return new NavParams(params);
-}, "provideNavParamsInjectable");
-var proxyInputs = /* @__PURE__ */ __name((Cmp, inputs) => {
-  const Prototype = Cmp.prototype;
-  inputs.forEach((item) => {
-    Object.defineProperty(Prototype, item, {
-      get() {
-        return this.el[item];
-      },
-      set(val) {
-        this.z.runOutsideAngular(() => this.el[item] = val);
-      }
-    });
-  });
-}, "proxyInputs");
-var proxyMethods = /* @__PURE__ */ __name((Cmp, methods) => {
-  const Prototype = Cmp.prototype;
-  methods.forEach((methodName) => {
-    Prototype[methodName] = function() {
-      const args = arguments;
-      return this.z.runOutsideAngular(() => this.el[methodName].apply(this.el, args));
-    };
-  });
-}, "proxyMethods");
-var proxyOutputs = /* @__PURE__ */ __name((instance, el, events) => {
-  events.forEach((eventName) => instance[eventName] = fromEvent(el, eventName));
-}, "proxyOutputs");
-function ProxyCmp(opts) {
-  const decorator = /* @__PURE__ */ __name(function(cls) {
-    const {
-      defineCustomElementFn,
-      inputs,
-      methods
-    } = opts;
-    if (defineCustomElementFn !== void 0) {
-      defineCustomElementFn();
-    }
-    if (inputs) {
-      proxyInputs(cls, inputs);
-    }
-    if (methods) {
-      proxyMethods(cls, methods);
-    }
-    return cls;
-  }, "decorator");
-  return decorator;
-}
-__name(ProxyCmp, "ProxyCmp");
-var MODAL_INPUTS = ["animated", "keepContentsMounted", "backdropBreakpoint", "backdropDismiss", "breakpoints", "canDismiss", "cssClass", "enterAnimation", "expandToScroll", "event", "focusTrap", "handle", "handleBehavior", "initialBreakpoint", "isOpen", "keyboardClose", "leaveAnimation", "mode", "presentingElement", "showBackdrop", "translucent", "trigger"];
-var MODAL_METHODS = ["present", "dismiss", "onDidDismiss", "onWillDismiss", "setCurrentBreakpoint", "getCurrentBreakpoint"];
-var _a;
-var IonModal = (_a = class {
-  z;
-  // TODO(FW-2827): type
-  template;
-  isCmpOpen = false;
-  el;
-  constructor(c, r, z) {
-    this.z = z;
-    this.el = r.nativeElement;
-    this.el.addEventListener("ionMount", () => {
-      this.isCmpOpen = true;
-      c.detectChanges();
-    });
-    this.el.addEventListener("didDismiss", () => {
-      this.isCmpOpen = false;
-      c.detectChanges();
-    });
-    proxyOutputs(this, this.el, ["ionModalDidPresent", "ionModalWillPresent", "ionModalWillDismiss", "ionModalDidDismiss", "ionBreakpointDidChange", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
-  }
-}, __name(_a, "IonModal"), /** @nocollapse */
-__publicField(_a, "ɵfac", /* @__PURE__ */ __name(function IonModal_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
-}, "IonModal_Factory")), /** @nocollapse */
-__publicField(_a, "ɵdir", ɵɵdefineDirective({
-  type: _a,
-  selectors: [["ion-modal"]],
-  contentQueries: /* @__PURE__ */ __name(function IonModal_ContentQueries(rf, ctx, dirIndex) {
-    if (rf & 1) {
-      ɵɵcontentQuery(dirIndex, TemplateRef, 5);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.template = _t.first);
-    }
-  }, "IonModal_ContentQueries"),
-  inputs: {
-    animated: "animated",
-    keepContentsMounted: "keepContentsMounted",
-    backdropBreakpoint: "backdropBreakpoint",
-    backdropDismiss: "backdropDismiss",
-    breakpoints: "breakpoints",
-    canDismiss: "canDismiss",
-    cssClass: "cssClass",
-    enterAnimation: "enterAnimation",
-    expandToScroll: "expandToScroll",
-    event: "event",
-    focusTrap: "focusTrap",
-    handle: "handle",
-    handleBehavior: "handleBehavior",
-    initialBreakpoint: "initialBreakpoint",
-    isOpen: "isOpen",
-    keyboardClose: "keyboardClose",
-    leaveAnimation: "leaveAnimation",
-    mode: "mode",
-    presentingElement: "presentingElement",
-    showBackdrop: "showBackdrop",
-    translucent: "translucent",
-    trigger: "trigger"
-  },
-  standalone: false
-})), _a);
-IonModal = __decorate([
-  ProxyCmp({
-    inputs: MODAL_INPUTS,
-    methods: MODAL_METHODS
-  })
-  /**
-   * @Component extends from @Directive
-   * so by defining the inputs here we
-   * do not need to re-define them for the
-   * lazy loaded popover.
-   */
-], IonModal);
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonModal, [{
-    type: Directive,
-    args: [{
-      selector: "ion-modal",
-      // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-      inputs: MODAL_INPUTS
-    }]
-  }], function() {
-    return [{
-      type: ChangeDetectorRef
-    }, {
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
-    template: [{
-      type: ContentChild,
-      args: [TemplateRef, {
-        static: false
-      }]
-    }]
-  });
-})();
-var POPOVER_INPUTS = ["alignment", "animated", "arrow", "keepContentsMounted", "backdropDismiss", "cssClass", "dismissOnSelect", "enterAnimation", "event", "focusTrap", "isOpen", "keyboardClose", "leaveAnimation", "mode", "showBackdrop", "translucent", "trigger", "triggerAction", "reference", "size", "side"];
-var POPOVER_METHODS = ["present", "dismiss", "onDidDismiss", "onWillDismiss"];
-var _a2;
-var IonPopover = (_a2 = class {
-  z;
-  // TODO(FW-2827): type
-  template;
-  isCmpOpen = false;
-  el;
-  constructor(c, r, z) {
-    this.z = z;
-    this.el = r.nativeElement;
-    this.el.addEventListener("ionMount", () => {
-      this.isCmpOpen = true;
-      c.detectChanges();
-    });
-    this.el.addEventListener("didDismiss", () => {
-      this.isCmpOpen = false;
-      c.detectChanges();
-    });
-    proxyOutputs(this, this.el, ["ionPopoverDidPresent", "ionPopoverWillPresent", "ionPopoverWillDismiss", "ionPopoverDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
-  }
-}, __name(_a2, "IonPopover"), /** @nocollapse */
-__publicField(_a2, "ɵfac", /* @__PURE__ */ __name(function IonPopover_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a2)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
-}, "IonPopover_Factory")), /** @nocollapse */
-__publicField(_a2, "ɵdir", ɵɵdefineDirective({
-  type: _a2,
-  selectors: [["ion-popover"]],
-  contentQueries: /* @__PURE__ */ __name(function IonPopover_ContentQueries(rf, ctx, dirIndex) {
-    if (rf & 1) {
-      ɵɵcontentQuery(dirIndex, TemplateRef, 5);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.template = _t.first);
-    }
-  }, "IonPopover_ContentQueries"),
-  inputs: {
-    alignment: "alignment",
-    animated: "animated",
-    arrow: "arrow",
-    keepContentsMounted: "keepContentsMounted",
-    backdropDismiss: "backdropDismiss",
-    cssClass: "cssClass",
-    dismissOnSelect: "dismissOnSelect",
-    enterAnimation: "enterAnimation",
-    event: "event",
-    focusTrap: "focusTrap",
-    isOpen: "isOpen",
-    keyboardClose: "keyboardClose",
-    leaveAnimation: "leaveAnimation",
-    mode: "mode",
-    showBackdrop: "showBackdrop",
-    translucent: "translucent",
-    trigger: "trigger",
-    triggerAction: "triggerAction",
-    reference: "reference",
-    size: "size",
-    side: "side"
-  },
-  standalone: false
-})), _a2);
-IonPopover = __decorate([
-  ProxyCmp({
-    inputs: POPOVER_INPUTS,
-    methods: POPOVER_METHODS
-  })
-  /**
-   * @Component extends from @Directive
-   * so by defining the inputs here we
-   * do not need to re-define them for the
-   * lazy loaded popover.
-   */
-], IonPopover);
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonPopover, [{
-    type: Directive,
-    args: [{
-      selector: "ion-popover",
-      // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-      inputs: POPOVER_INPUTS
-    }]
-  }], function() {
-    return [{
-      type: ChangeDetectorRef
-    }, {
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
-    template: [{
-      type: ContentChild,
-      args: [TemplateRef, {
-        static: false
-      }]
-    }]
-  });
-})();
-var insertView = /* @__PURE__ */ __name((views, view, direction) => {
-  if (direction === "root") {
-    return setRoot(views, view);
-  } else if (direction === "forward") {
-    return setForward(views, view);
-  } else {
-    return setBack(views, view);
-  }
-}, "insertView");
-var setRoot = /* @__PURE__ */ __name((views, view) => {
-  views = views.filter((v) => v.stackId !== view.stackId);
-  views.push(view);
-  return views;
-}, "setRoot");
-var setForward = /* @__PURE__ */ __name((views, view) => {
-  const index = views.indexOf(view);
-  if (index >= 0) {
-    views = views.filter((v) => v.stackId !== view.stackId || v.id <= view.id);
-  } else {
-    views.push(view);
-  }
-  return views;
-}, "setForward");
-var setBack = /* @__PURE__ */ __name((views, view) => {
-  const index = views.indexOf(view);
-  if (index >= 0) {
-    return views.filter((v) => v.stackId !== view.stackId || v.id <= view.id);
-  } else {
-    return setRoot(views, view);
-  }
-}, "setBack");
-var getUrl = /* @__PURE__ */ __name((router, activatedRoute) => {
-  const urlTree = router.createUrlTree(["."], {
-    relativeTo: activatedRoute
-  });
-  return router.serializeUrl(urlTree);
-}, "getUrl");
-var isTabSwitch = /* @__PURE__ */ __name((enteringView, leavingView) => {
-  if (!leavingView) {
-    return true;
-  }
-  return enteringView.stackId !== leavingView.stackId;
-}, "isTabSwitch");
-var computeStackId = /* @__PURE__ */ __name((prefixUrl, url) => {
-  if (!prefixUrl) {
-    return void 0;
-  }
-  const segments = toSegments(url);
-  for (let i = 0; i < segments.length; i++) {
-    if (i >= prefixUrl.length) {
-      return segments[i];
-    }
-    if (segments[i] !== prefixUrl[i]) {
-      return void 0;
-    }
-  }
-  return void 0;
-}, "computeStackId");
-var toSegments = /* @__PURE__ */ __name((path) => {
-  return path.split("/").map((s) => s.trim()).filter((s) => s !== "");
-}, "toSegments");
-var destroyView = /* @__PURE__ */ __name((view) => {
-  if (view) {
-    view.ref.destroy();
-    view.unlistenEvents();
-  }
-}, "destroyView");
-var _StackController = class _StackController {
-  containerEl;
-  router;
-  navCtrl;
-  zone;
-  location;
-  views = [];
-  runningTask;
-  skipTransition = false;
-  tabsPrefix;
-  activeView;
-  nextId = 0;
-  constructor(tabsPrefix, containerEl, router, navCtrl, zone, location) {
-    this.containerEl = containerEl;
-    this.router = router;
-    this.navCtrl = navCtrl;
-    this.zone = zone;
-    this.location = location;
-    this.tabsPrefix = tabsPrefix !== void 0 ? toSegments(tabsPrefix) : void 0;
-  }
-  createView(ref, activatedRoute) {
-    const url = getUrl(this.router, activatedRoute);
-    const element = ref?.location?.nativeElement;
-    const unlistenEvents = bindLifecycleEvents(this.zone, ref.instance, element);
-    return {
-      id: this.nextId++,
-      stackId: computeStackId(this.tabsPrefix, url),
-      unlistenEvents,
-      element,
-      ref,
-      url
-    };
-  }
-  getExistingView(activatedRoute) {
-    const activatedUrlKey = getUrl(this.router, activatedRoute);
-    const view = this.views.find((vw) => vw.url === activatedUrlKey);
-    if (view) {
-      view.ref.changeDetectorRef.reattach();
-    }
-    return view;
-  }
-  setActive(enteringView) {
-    const consumeResult = this.navCtrl.consumeTransition();
-    let {
-      direction,
-      animation,
-      animationBuilder
-    } = consumeResult;
-    const leavingView = this.activeView;
-    const tabSwitch = isTabSwitch(enteringView, leavingView);
-    if (tabSwitch) {
-      direction = "back";
-      animation = void 0;
-    }
-    const viewsSnapshot = this.views.slice();
-    let currentNavigation;
-    const router = this.router;
-    if (router.getCurrentNavigation) {
-      currentNavigation = router.getCurrentNavigation();
-    } else if (router.navigations?.value) {
-      currentNavigation = router.navigations.value;
-    }
-    if (currentNavigation?.extras?.replaceUrl) {
-      if (this.views.length > 0) {
-        this.views.splice(-1, 1);
-      }
-    }
-    const reused = this.views.includes(enteringView);
-    const views = this.insertView(enteringView, direction);
-    if (!reused) {
-      enteringView.ref.changeDetectorRef.detectChanges();
-    }
-    const customAnimation = enteringView.animationBuilder;
-    if (animationBuilder === void 0 && direction === "back" && !tabSwitch && customAnimation !== void 0) {
-      animationBuilder = customAnimation;
-    }
-    if (leavingView) {
-      leavingView.animationBuilder = animationBuilder;
-    }
-    return this.zone.runOutsideAngular(() => {
-      return this.wait(() => {
-        if (leavingView) {
-          leavingView.ref.changeDetectorRef.detach();
-        }
-        enteringView.ref.changeDetectorRef.reattach();
-        return this.transition(enteringView, leavingView, animation, this.canGoBack(1), false, animationBuilder).then(() => cleanupAsync(enteringView, views, viewsSnapshot, this.location, this.zone)).then(() => ({
-          enteringView,
-          direction,
-          animation,
-          tabSwitch
-        }));
-      });
-    });
-  }
-  canGoBack(deep, stackId = this.getActiveStackId()) {
-    return this.getStack(stackId).length > deep;
-  }
-  pop(deep, stackId = this.getActiveStackId()) {
-    return this.zone.run(() => {
-      const views = this.getStack(stackId);
-      if (views.length <= deep) {
-        return Promise.resolve(false);
-      }
-      const view = views[views.length - deep - 1];
-      let url = view.url;
-      const viewSavedData = view.savedData;
-      if (viewSavedData) {
-        const primaryOutlet = viewSavedData.get("primary");
-        if (primaryOutlet?.route?._routerState?.snapshot.url) {
-          url = primaryOutlet.route._routerState.snapshot.url;
-        }
-      }
-      const {
-        animationBuilder
-      } = this.navCtrl.consumeTransition();
-      return this.navCtrl.navigateBack(url, __spreadProps(__spreadValues({}, view.savedExtras), {
-        animation: animationBuilder
-      })).then(() => true);
-    });
-  }
-  startBackTransition() {
-    const leavingView = this.activeView;
-    if (leavingView) {
-      const views = this.getStack(leavingView.stackId);
-      const enteringView = views[views.length - 2];
-      const customAnimation = enteringView.animationBuilder;
-      return this.wait(() => {
-        return this.transition(
-          enteringView,
-          // entering view
-          leavingView,
-          // leaving view
-          "back",
-          this.canGoBack(2),
-          true,
-          customAnimation
-        );
-      });
-    }
-    return Promise.resolve();
-  }
-  endBackTransition(shouldComplete) {
-    if (shouldComplete) {
-      this.skipTransition = true;
-      this.pop(1);
-    } else if (this.activeView) {
-      cleanup(this.activeView, this.views, this.views, this.location, this.zone);
-    }
-  }
-  getLastUrl(stackId) {
-    const views = this.getStack(stackId);
-    return views.length > 0 ? views[views.length - 1] : void 0;
-  }
-  /**
-   * @internal
-   */
-  getRootUrl(stackId) {
-    const views = this.getStack(stackId);
-    return views.length > 0 ? views[0] : void 0;
-  }
-  getActiveStackId() {
-    return this.activeView ? this.activeView.stackId : void 0;
-  }
-  /**
-   * @internal
-   */
-  getActiveView() {
-    return this.activeView;
-  }
-  hasRunningTask() {
-    return this.runningTask !== void 0;
-  }
-  destroy() {
-    this.containerEl = void 0;
-    this.views.forEach(destroyView);
-    this.activeView = void 0;
-    this.views = [];
-  }
-  getStack(stackId) {
-    return this.views.filter((v) => v.stackId === stackId);
-  }
-  insertView(enteringView, direction) {
-    this.activeView = enteringView;
-    this.views = insertView(this.views, enteringView, direction);
-    return this.views.slice();
-  }
-  transition(enteringView, leavingView, direction, showGoBack, progressAnimation, animationBuilder) {
-    if (this.skipTransition) {
-      this.skipTransition = false;
-      return Promise.resolve(false);
-    }
-    if (leavingView === enteringView) {
-      return Promise.resolve(false);
-    }
-    const enteringEl = enteringView ? enteringView.element : void 0;
-    const leavingEl = leavingView ? leavingView.element : void 0;
-    const containerEl = this.containerEl;
-    if (enteringEl && enteringEl !== leavingEl) {
-      enteringEl.classList.add("ion-page");
-      enteringEl.classList.add("ion-page-invisible");
-      if (containerEl.commit) {
-        return containerEl.commit(enteringEl, leavingEl, {
-          duration: direction === void 0 ? 0 : void 0,
-          direction,
-          showGoBack,
-          progressAnimation,
-          animationBuilder
-        });
-      }
-    }
-    return Promise.resolve(false);
-  }
-  wait(task) {
-    return __async(this, null, function* () {
-      if (this.runningTask !== void 0) {
-        yield this.runningTask;
-        this.runningTask = void 0;
-      }
-      const promise = this.runningTask = task();
-      promise.finally(() => this.runningTask = void 0);
-      return promise;
-    });
-  }
-};
-__name(_StackController, "StackController");
-var StackController = _StackController;
-var cleanupAsync = /* @__PURE__ */ __name((activeRoute, views, viewsSnapshot, location, zone) => {
-  if (typeof requestAnimationFrame === "function") {
-    return new Promise((resolve) => {
-      requestAnimationFrame(() => {
-        cleanup(activeRoute, views, viewsSnapshot, location, zone);
-        resolve();
-      });
-    });
-  }
-  return Promise.resolve();
-}, "cleanupAsync");
-var cleanup = /* @__PURE__ */ __name((activeRoute, views, viewsSnapshot, location, zone) => {
-  zone.run(() => viewsSnapshot.filter((view) => !views.includes(view)).forEach(destroyView));
-  views.forEach((view) => {
-    const locationWithoutParams = location.path().split("?")[0];
-    const locationWithoutFragment = locationWithoutParams.split("#")[0];
-    if (view !== activeRoute && view.url !== locationWithoutFragment) {
-      const element = view.element;
-      element.setAttribute("aria-hidden", "true");
-      element.classList.add("ion-page-hidden");
-      view.ref.changeDetectorRef.detach();
-    }
-  });
-}, "cleanup");
-var _IonRouterOutlet = class _IonRouterOutlet {
-  parentOutlet;
-  nativeEl;
-  activatedView = null;
-  tabsPrefix;
-  _swipeGesture;
-  stackCtrl;
-  // Maintain map of activated route proxies for each component instance
-  proxyMap = /* @__PURE__ */ new WeakMap();
-  // Keep the latest activated route in a subject for the proxy routes to switch map to
-  currentActivatedRoute$ = new BehaviorSubject(null);
-  activated = null;
-  /** @internal */
-  get activatedComponentRef() {
-    return this.activated;
-  }
-  _activatedRoute = null;
-  /**
-   * The name of the outlet
-   */
-  name = PRIMARY_OUTLET;
-  /** @internal */
-  stackWillChange = new EventEmitter();
-  /** @internal */
-  stackDidChange = new EventEmitter();
-  // eslint-disable-next-line @angular-eslint/no-output-rename
-  activateEvents = new EventEmitter();
-  // eslint-disable-next-line @angular-eslint/no-output-rename
-  deactivateEvents = new EventEmitter();
-  parentContexts = inject(ChildrenOutletContexts);
-  location = inject(ViewContainerRef);
-  environmentInjector = inject(EnvironmentInjector);
-  inputBinder = inject(INPUT_BINDER, {
-    optional: true
-  });
-  /** @nodoc */
-  supportsBindingToComponentInputs = true;
-  // Ionic providers
-  config = inject(Config);
-  navCtrl = inject(NavController);
-  set animation(animation) {
-    this.nativeEl.animation = animation;
-  }
-  set animated(animated) {
-    this.nativeEl.animated = animated;
-  }
-  set swipeGesture(swipe) {
-    this._swipeGesture = swipe;
-    this.nativeEl.swipeHandler = swipe ? {
-      canStart: /* @__PURE__ */ __name(() => this.stackCtrl.canGoBack(1) && !this.stackCtrl.hasRunningTask(), "canStart"),
-      onStart: /* @__PURE__ */ __name(() => this.stackCtrl.startBackTransition(), "onStart"),
-      onEnd: /* @__PURE__ */ __name((shouldContinue) => this.stackCtrl.endBackTransition(shouldContinue), "onEnd")
-    } : void 0;
-  }
-  constructor(name, tabs, commonLocation, elementRef, router, zone, activatedRoute, parentOutlet) {
-    this.parentOutlet = parentOutlet;
-    this.nativeEl = elementRef.nativeElement;
-    this.name = name || PRIMARY_OUTLET;
-    this.tabsPrefix = tabs === "true" ? getUrl(router, activatedRoute) : void 0;
-    this.stackCtrl = new StackController(this.tabsPrefix, this.nativeEl, router, this.navCtrl, zone, commonLocation);
-    this.parentContexts.onChildOutletCreated(this.name, this);
-  }
-  ngOnDestroy() {
-    this.stackCtrl.destroy();
-    this.inputBinder?.unsubscribeFromRouteData(this);
-  }
-  getContext() {
-    return this.parentContexts.getContext(this.name);
-  }
-  ngOnInit() {
-    this.initializeOutletWithName();
-  }
-  // Note: Ionic deviates from the Angular Router implementation here
-  initializeOutletWithName() {
-    if (!this.activated) {
-      const context = this.getContext();
-      if (context?.route) {
-        this.activateWith(context.route, context.injector);
-      }
-    }
-    new Promise((resolve) => componentOnReady(this.nativeEl, resolve)).then(() => {
-      if (this._swipeGesture === void 0) {
-        this.swipeGesture = this.config.getBoolean("swipeBackEnabled", this.nativeEl.mode === "ios");
-      }
-    });
-  }
-  get isActivated() {
-    return !!this.activated;
-  }
-  get component() {
-    if (!this.activated) {
-      throw new Error("Outlet is not activated");
-    }
-    return this.activated.instance;
-  }
-  get activatedRoute() {
-    if (!this.activated) {
-      throw new Error("Outlet is not activated");
-    }
-    return this._activatedRoute;
-  }
-  get activatedRouteData() {
-    if (this._activatedRoute) {
-      return this._activatedRoute.snapshot.data;
-    }
-    return {};
-  }
-  /**
-   * Called when the `RouteReuseStrategy` instructs to detach the subtree
-   */
-  detach() {
-    throw new Error("incompatible reuse strategy");
-  }
-  /**
-   * Called when the `RouteReuseStrategy` instructs to re-attach a previously detached subtree
-   */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  attach(_ref, _activatedRoute) {
-    throw new Error("incompatible reuse strategy");
-  }
-  deactivate() {
-    if (this.activated) {
-      if (this.activatedView) {
-        const context = this.getContext();
-        this.activatedView.savedData = new Map(context.children["contexts"]);
-        const primaryOutlet = this.activatedView.savedData.get("primary");
-        if (primaryOutlet && context.route) {
-          primaryOutlet.route = __spreadValues({}, context.route);
-        }
-        this.activatedView.savedExtras = {};
-        if (context.route) {
-          const contextSnapshot = context.route.snapshot;
-          this.activatedView.savedExtras.queryParams = contextSnapshot.queryParams;
-          this.activatedView.savedExtras.fragment = contextSnapshot.fragment;
-        }
-      }
-      const c = this.component;
-      this.activatedView = null;
-      this.activated = null;
-      this._activatedRoute = null;
-      this.deactivateEvents.emit(c);
-    }
-  }
-  activateWith(activatedRoute, environmentInjector) {
-    if (this.isActivated) {
-      throw new Error("Cannot activate an already activated outlet");
-    }
-    this._activatedRoute = activatedRoute;
-    let cmpRef;
-    let enteringView = this.stackCtrl.getExistingView(activatedRoute);
-    if (enteringView) {
-      cmpRef = this.activated = enteringView.ref;
-      const saved = enteringView.savedData;
-      if (saved) {
-        const context = this.getContext();
-        context.children["contexts"] = saved;
-      }
-      this.updateActivatedRouteProxy(cmpRef.instance, activatedRoute);
-    } else {
-      const snapshot = activatedRoute._futureSnapshot;
-      const childContexts = this.parentContexts.getOrCreateContext(this.name).children;
-      const component$ = new BehaviorSubject(null);
-      const activatedRouteProxy = this.createActivatedRouteProxy(component$, activatedRoute);
-      const injector = new OutletInjector(activatedRouteProxy, childContexts, this.location.injector);
-      const component = snapshot.routeConfig.component ?? snapshot.component;
-      cmpRef = this.activated = this.outletContent.createComponent(component, {
-        index: this.outletContent.length,
-        injector,
-        environmentInjector: environmentInjector ?? this.environmentInjector
-      });
-      component$.next(cmpRef.instance);
-      enteringView = this.stackCtrl.createView(this.activated, activatedRoute);
-      this.proxyMap.set(cmpRef.instance, activatedRouteProxy);
-      this.currentActivatedRoute$.next({
-        component: cmpRef.instance,
-        activatedRoute
-      });
-    }
-    this.inputBinder?.bindActivatedRouteToOutletComponent(this);
-    this.activatedView = enteringView;
-    this.navCtrl.setTopOutlet(this);
-    const leavingView = this.stackCtrl.getActiveView();
-    this.stackWillChange.emit({
-      enteringView,
-      tabSwitch: isTabSwitch(enteringView, leavingView)
-    });
-    this.stackCtrl.setActive(enteringView).then((data) => {
-      this.activateEvents.emit(cmpRef.instance);
-      this.stackDidChange.emit(data);
-    });
-  }
-  /**
-   * Returns `true` if there are pages in the stack to go back.
-   */
-  canGoBack(deep = 1, stackId) {
-    return this.stackCtrl.canGoBack(deep, stackId);
-  }
-  /**
-   * Resolves to `true` if it the outlet was able to sucessfully pop the last N pages.
-   */
-  pop(deep = 1, stackId) {
-    return this.stackCtrl.pop(deep, stackId);
-  }
-  /**
-   * Returns the URL of the active page of each stack.
-   */
-  getLastUrl(stackId) {
-    const active = this.stackCtrl.getLastUrl(stackId);
-    return active ? active.url : void 0;
-  }
-  /**
-   * Returns the RouteView of the active page of each stack.
-   * @internal
-   */
-  getLastRouteView(stackId) {
-    return this.stackCtrl.getLastUrl(stackId);
-  }
-  /**
-   * Returns the root view in the tab stack.
-   * @internal
-   */
-  getRootView(stackId) {
-    return this.stackCtrl.getRootUrl(stackId);
-  }
-  /**
-   * Returns the active stack ID. In the context of ion-tabs, it means the active tab.
-   */
-  getActiveStackId() {
-    return this.stackCtrl.getActiveStackId();
-  }
-  /**
-   * Since the activated route can change over the life time of a component in an ion router outlet, we create
-   * a proxy so that we can update the values over time as a user navigates back to components already in the stack.
-   */
-  createActivatedRouteProxy(component$, activatedRoute) {
-    const proxy = new ActivatedRoute();
-    proxy._futureSnapshot = activatedRoute._futureSnapshot;
-    proxy._routerState = activatedRoute._routerState;
-    proxy.snapshot = activatedRoute.snapshot;
-    proxy.outlet = activatedRoute.outlet;
-    proxy.component = activatedRoute.component;
-    proxy._paramMap = this.proxyObservable(component$, "paramMap");
-    proxy._queryParamMap = this.proxyObservable(component$, "queryParamMap");
-    proxy.url = this.proxyObservable(component$, "url");
-    proxy.params = this.proxyObservable(component$, "params");
-    proxy.queryParams = this.proxyObservable(component$, "queryParams");
-    proxy.fragment = this.proxyObservable(component$, "fragment");
-    proxy.data = this.proxyObservable(component$, "data");
-    return proxy;
-  }
-  /**
-   * Create a wrapped observable that will switch to the latest activated route matched by the given component
-   */
-  proxyObservable(component$, path) {
-    return component$.pipe(
-      // First wait until the component instance is pushed
-      filter((component) => !!component),
-      switchMap((component) => this.currentActivatedRoute$.pipe(filter((current) => current !== null && current.component === component), switchMap((current) => current && current.activatedRoute[path]), distinctUntilChanged()))
-    );
-  }
-  /**
-   * Updates the activated route proxy for the given component to the new incoming router state
-   */
-  updateActivatedRouteProxy(component, activatedRoute) {
-    const proxy = this.proxyMap.get(component);
-    if (!proxy) {
-      throw new Error(`Could not find activated route proxy for view`);
-    }
-    proxy._futureSnapshot = activatedRoute._futureSnapshot;
-    proxy._routerState = activatedRoute._routerState;
-    proxy.snapshot = activatedRoute.snapshot;
-    proxy.outlet = activatedRoute.outlet;
-    proxy.component = activatedRoute.component;
-    this.currentActivatedRoute$.next({
-      component,
-      activatedRoute
-    });
-  }
-};
-__name(_IonRouterOutlet, "IonRouterOutlet");
-/** @nocollapse */
-__publicField(_IonRouterOutlet, "ɵfac", /* @__PURE__ */ __name(function IonRouterOutlet_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _IonRouterOutlet)(ɵɵinjectAttribute("name"), ɵɵinjectAttribute("tabs"), ɵɵdirectiveInject(Location), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(_IonRouterOutlet, 12));
-}, "IonRouterOutlet_Factory"));
-/** @nocollapse */
-__publicField(_IonRouterOutlet, "ɵdir", ɵɵdefineDirective({
-  type: _IonRouterOutlet,
-  selectors: [["ion-router-outlet"]],
-  inputs: {
-    animated: "animated",
-    animation: "animation",
-    mode: "mode",
-    swipeGesture: "swipeGesture",
-    name: "name"
-  },
-  outputs: {
-    stackWillChange: "stackWillChange",
-    stackDidChange: "stackDidChange",
-    activateEvents: "activate",
-    deactivateEvents: "deactivate"
-  },
-  exportAs: ["outlet"],
-  standalone: false
-}));
-var IonRouterOutlet = _IonRouterOutlet;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonRouterOutlet, [{
-    type: Directive,
-    args: [{
-      selector: "ion-router-outlet",
-      exportAs: "outlet",
-      // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-      inputs: ["animated", "animation", "mode", "swipeGesture"]
-    }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Attribute,
-        args: ["name"]
-      }]
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Optional
-      }, {
-        type: Attribute,
-        args: ["tabs"]
-      }]
-    }, {
-      type: Location
-    }, {
-      type: ElementRef
-    }, {
-      type: Router
-    }, {
-      type: NgZone
-    }, {
-      type: ActivatedRoute
-    }, {
-      type: IonRouterOutlet,
-      decorators: [{
-        type: SkipSelf
-      }, {
-        type: Optional
-      }]
-    }];
-  }, {
-    name: [{
-      type: Input
-    }],
-    stackWillChange: [{
-      type: Output
-    }],
-    stackDidChange: [{
-      type: Output
-    }],
-    activateEvents: [{
-      type: Output,
-      args: ["activate"]
-    }],
-    deactivateEvents: [{
-      type: Output,
-      args: ["deactivate"]
-    }]
-  });
-})();
-var _OutletInjector = class _OutletInjector {
-  route;
-  childContexts;
-  parent;
-  constructor(route, childContexts, parent) {
-    this.route = route;
-    this.childContexts = childContexts;
-    this.parent = parent;
-  }
-  get(token, notFoundValue) {
-    if (token === ActivatedRoute) {
-      return this.route;
-    }
-    if (token === ChildrenOutletContexts) {
-      return this.childContexts;
-    }
-    return this.parent.get(token, notFoundValue);
-  }
-};
-__name(_OutletInjector, "OutletInjector");
-var OutletInjector = _OutletInjector;
-var INPUT_BINDER = new InjectionToken("");
-var _RoutedComponentInputBinder = class _RoutedComponentInputBinder {
-  outletDataSubscriptions = /* @__PURE__ */ new Map();
-  bindActivatedRouteToOutletComponent(outlet) {
-    this.unsubscribeFromRouteData(outlet);
-    this.subscribeToRouteData(outlet);
-  }
-  unsubscribeFromRouteData(outlet) {
-    this.outletDataSubscriptions.get(outlet)?.unsubscribe();
-    this.outletDataSubscriptions.delete(outlet);
-  }
-  subscribeToRouteData(outlet) {
-    const {
-      activatedRoute
-    } = outlet;
-    const dataSubscription = combineLatest([activatedRoute.queryParams, activatedRoute.params, activatedRoute.data]).pipe(switchMap(([queryParams, params, data], index) => {
-      data = __spreadValues(__spreadValues(__spreadValues({}, queryParams), params), data);
-      if (index === 0) {
-        return of(data);
-      }
-      return Promise.resolve(data);
-    })).subscribe((data) => {
-      if (!outlet.isActivated || !outlet.activatedComponentRef || outlet.activatedRoute !== activatedRoute || activatedRoute.component === null) {
-        this.unsubscribeFromRouteData(outlet);
-        return;
-      }
-      const mirror = reflectComponentType(activatedRoute.component);
-      if (!mirror) {
-        this.unsubscribeFromRouteData(outlet);
-        return;
-      }
-      for (const {
-        templateName
-      } of mirror.inputs) {
-        outlet.activatedComponentRef.setInput(templateName, data[templateName]);
-      }
-    });
-    this.outletDataSubscriptions.set(outlet, dataSubscription);
-  }
-};
-__name(_RoutedComponentInputBinder, "RoutedComponentInputBinder");
-/** @nocollapse */
-__publicField(_RoutedComponentInputBinder, "ɵfac", /* @__PURE__ */ __name(function RoutedComponentInputBinder_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _RoutedComponentInputBinder)();
-}, "RoutedComponentInputBinder_Factory"));
-/** @nocollapse */
-__publicField(_RoutedComponentInputBinder, "ɵprov", ɵɵdefineInjectable({
-  token: _RoutedComponentInputBinder,
-  factory: _RoutedComponentInputBinder.ɵfac
-}));
-var RoutedComponentInputBinder = _RoutedComponentInputBinder;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RoutedComponentInputBinder, [{
-    type: Injectable
-  }], null, null);
-})();
-var provideComponentInputBinding = /* @__PURE__ */ __name(() => {
-  return {
-    provide: INPUT_BINDER,
-    useFactory: componentInputBindingFactory,
-    deps: [Router]
-  };
-}, "provideComponentInputBinding");
-function componentInputBindingFactory(router) {
-  if (router?.componentInputBindingEnabled) {
-    return new RoutedComponentInputBinder();
-  }
-  return null;
-}
-__name(componentInputBindingFactory, "componentInputBindingFactory");
-var raf2 = /* @__PURE__ */ __name((h3) => {
-  if (typeof __zone_symbol__requestAnimationFrame === "function") {
-    return __zone_symbol__requestAnimationFrame(h3);
-  }
-  if (typeof requestAnimationFrame === "function") {
-    return requestAnimationFrame(h3);
-  }
-  return setTimeout(h3);
-}, "raf");
-var _ValueAccessor = class _ValueAccessor {
-  injector;
-  elementRef;
-  onChange = /* @__PURE__ */ __name(() => {
-  }, "onChange");
-  onTouched = /* @__PURE__ */ __name(() => {
-  }, "onTouched");
-  lastValue;
-  statusChanges;
-  constructor(injector, elementRef) {
-    this.injector = injector;
-    this.elementRef = elementRef;
-  }
-  writeValue(value) {
-    this.elementRef.nativeElement.value = this.lastValue = value;
-    setIonicClasses(this.elementRef);
-  }
-  /**
-   * Notifies the ControlValueAccessor of a change in the value of the control.
-   *
-   * This is called by each of the ValueAccessor directives when we want to update
-   * the status and validity of the form control. For example with text components this
-   * is called when the ionInput event is fired. For select components this is called
-   * when the ionChange event is fired.
-   *
-   * This also updates the Ionic form status classes on the element.
-   *
-   * @param el The component element.
-   * @param value The new value of the control.
-   */
-  handleValueChange(el, value) {
-    if (el === this.elementRef.nativeElement) {
-      if (value !== this.lastValue) {
-        this.lastValue = value;
-        this.onChange(value);
-      }
-      setIonicClasses(this.elementRef);
-    }
-  }
-  _handleBlurEvent(el) {
-    if (el === this.elementRef.nativeElement) {
-      this.onTouched();
-      setIonicClasses(this.elementRef);
-    } else if (el.closest("ion-radio-group") === this.elementRef.nativeElement) {
-      this.onTouched();
-    }
-  }
-  registerOnChange(fn) {
-    this.onChange = fn;
-  }
-  registerOnTouched(fn) {
-    this.onTouched = fn;
-  }
-  setDisabledState(isDisabled) {
-    this.elementRef.nativeElement.disabled = isDisabled;
-  }
-  ngOnDestroy() {
-    if (this.statusChanges) {
-      this.statusChanges.unsubscribe();
-    }
-  }
-  ngAfterViewInit() {
-    let ngControl;
-    try {
-      ngControl = this.injector.get(NgControl);
-    } catch {
-    }
-    if (!ngControl) {
-      return;
-    }
-    if (ngControl.statusChanges) {
-      this.statusChanges = ngControl.statusChanges.subscribe(() => setIonicClasses(this.elementRef));
-    }
-    const formControl = ngControl.control;
-    if (formControl) {
-      const methodsToPatch = ["markAsTouched", "markAllAsTouched", "markAsUntouched", "markAsDirty", "markAsPristine"];
-      methodsToPatch.forEach((method) => {
-        if (typeof formControl[method] !== "undefined") {
-          const oldFn = formControl[method].bind(formControl);
-          formControl[method] = (...params) => {
-            oldFn(...params);
-            setIonicClasses(this.elementRef);
-          };
-        }
-      });
-    }
-  }
-};
-__name(_ValueAccessor, "ValueAccessor");
-/** @nocollapse */
-__publicField(_ValueAccessor, "ɵfac", /* @__PURE__ */ __name(function ValueAccessor_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _ValueAccessor)(ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(ElementRef));
-}, "ValueAccessor_Factory"));
-/** @nocollapse */
-__publicField(_ValueAccessor, "ɵdir", ɵɵdefineDirective({
-  type: _ValueAccessor,
-  hostBindings: /* @__PURE__ */ __name(function ValueAccessor_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("ionBlur", /* @__PURE__ */ __name(function ValueAccessor_ionBlur_HostBindingHandler($event) {
-        return ctx._handleBlurEvent($event.target);
-      }, "ValueAccessor_ionBlur_HostBindingHandler"));
-    }
-  }, "ValueAccessor_HostBindings"),
-  standalone: false
-}));
-var ValueAccessor = _ValueAccessor;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ValueAccessor, [{
-    type: Directive
-  }], function() {
-    return [{
-      type: Injector
-    }, {
-      type: ElementRef
-    }];
-  }, {
-    _handleBlurEvent: [{
-      type: HostListener,
-      args: ["ionBlur", ["$event.target"]]
-    }]
-  });
-})();
-var setIonicClasses = /* @__PURE__ */ __name((element) => {
-  raf2(() => {
-    const input = element.nativeElement;
-    const hasValue = input.value != null && input.value.toString().length > 0;
-    const classes = getClasses(input);
-    setClasses(input, classes);
-    const item = input.closest("ion-item");
-    if (item) {
-      if (hasValue) {
-        setClasses(item, [...classes, "item-has-value"]);
-      } else {
-        setClasses(item, classes);
-      }
-    }
-  });
-}, "setIonicClasses");
-var getClasses = /* @__PURE__ */ __name((element) => {
-  const classList = element.classList;
-  const classes = [];
-  for (let i = 0; i < classList.length; i++) {
-    const item = classList.item(i);
-    if (item !== null && startsWith(item, "ng-")) {
-      classes.push(`ion-${item.substring(3)}`);
-    }
-  }
-  return classes;
-}, "getClasses");
-var setClasses = /* @__PURE__ */ __name((element, classes) => {
-  const classList = element.classList;
-  classList.remove("ion-valid", "ion-invalid", "ion-touched", "ion-untouched", "ion-dirty", "ion-pristine");
-  classList.add(...classes);
-}, "setClasses");
-var startsWith = /* @__PURE__ */ __name((input, search) => {
-  return input.substring(0, search.length) === search;
-}, "startsWith");
-var BACK_BUTTON_INPUTS = ["color", "defaultHref", "disabled", "icon", "mode", "routerAnimation", "text", "type"];
-var _a3;
-var IonBackButton = (_a3 = class {
-  routerOutlet;
-  navCtrl;
-  config;
-  r;
-  z;
-  el;
-  constructor(routerOutlet, navCtrl, config2, r, z, c) {
-    this.routerOutlet = routerOutlet;
-    this.navCtrl = navCtrl;
-    this.config = config2;
-    this.r = r;
-    this.z = z;
-    c.detach();
-    this.el = this.r.nativeElement;
-  }
-  /**
-   * @internal
-   */
-  onClick(ev) {
-    const defaultHref = this.defaultHref || this.config.get("backButtonDefaultHref");
-    if (this.routerOutlet?.canGoBack()) {
-      this.navCtrl.setDirection("back", void 0, void 0, this.routerAnimation);
-      this.routerOutlet.pop();
-      ev.preventDefault();
-    } else if (defaultHref != null) {
-      this.navCtrl.navigateBack(defaultHref, {
-        animation: this.routerAnimation
-      });
-      ev.preventDefault();
-    }
-  }
-}, __name(_a3, "IonBackButton"), /** @nocollapse */
-__publicField(_a3, "ɵfac", /* @__PURE__ */ __name(function IonBackButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a3)(ɵɵdirectiveInject(IonRouterOutlet, 8), ɵɵdirectiveInject(NavController), ɵɵdirectiveInject(Config), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
-}, "IonBackButton_Factory")), /** @nocollapse */
-__publicField(_a3, "ɵdir", ɵɵdefineDirective({
-  type: _a3,
-  hostBindings: /* @__PURE__ */ __name(function IonBackButton_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("click", /* @__PURE__ */ __name(function IonBackButton_click_HostBindingHandler($event) {
-        return ctx.onClick($event);
-      }, "IonBackButton_click_HostBindingHandler"));
-    }
-  }, "IonBackButton_HostBindings"),
-  inputs: {
-    color: "color",
-    defaultHref: "defaultHref",
-    disabled: "disabled",
-    icon: "icon",
-    mode: "mode",
-    routerAnimation: "routerAnimation",
-    text: "text",
-    type: "type"
-  },
-  standalone: false
-})), _a3);
-IonBackButton = __decorate([ProxyCmp({
-  inputs: BACK_BUTTON_INPUTS
-})], IonBackButton);
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonBackButton, [{
-    type: Directive,
-    args: [{
-      // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-      inputs: BACK_BUTTON_INPUTS
-    }]
-  }], function() {
-    return [{
-      type: IonRouterOutlet,
-      decorators: [{
-        type: Optional
-      }]
-    }, {
-      type: NavController
-    }, {
-      type: Config
-    }, {
-      type: ElementRef
-    }, {
-      type: NgZone
-    }, {
-      type: ChangeDetectorRef
-    }];
-  }, {
-    onClick: [{
-      type: HostListener,
-      args: ["click", ["$event"]]
-    }]
-  });
-})();
-var NAV_INPUTS = ["animated", "animation", "root", "rootParams", "swipeGesture"];
-var NAV_METHODS = ["push", "insert", "insertPages", "pop", "popTo", "popToRoot", "removeIndex", "setRoot", "setPages", "getActive", "getByIndex", "canGoBack", "getPrevious"];
-var _a4;
-var IonNav = (_a4 = class {
-  z;
-  el;
-  constructor(ref, environmentInjector, injector, angularDelegate, z, c) {
-    this.z = z;
-    c.detach();
-    this.el = ref.nativeElement;
-    ref.nativeElement.delegate = angularDelegate.create(environmentInjector, injector);
-    proxyOutputs(this, this.el, ["ionNavDidChange", "ionNavWillChange"]);
-  }
-}, __name(_a4, "IonNav"), /** @nocollapse */
-__publicField(_a4, "ɵfac", /* @__PURE__ */ __name(function IonNav_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a4)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(EnvironmentInjector), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(AngularDelegate), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
-}, "IonNav_Factory")), /** @nocollapse */
-__publicField(_a4, "ɵdir", ɵɵdefineDirective({
-  type: _a4,
-  inputs: {
-    animated: "animated",
-    animation: "animation",
-    root: "root",
-    rootParams: "rootParams",
-    swipeGesture: "swipeGesture"
-  },
-  standalone: false
-})), _a4);
-IonNav = __decorate([ProxyCmp({
-  inputs: NAV_INPUTS,
-  methods: NAV_METHODS
-})], IonNav);
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonNav, [{
-    type: Directive,
-    args: [{
-      // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-      inputs: NAV_INPUTS
-    }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: EnvironmentInjector
-    }, {
-      type: Injector
-    }, {
-      type: AngularDelegate
-    }, {
-      type: NgZone
-    }, {
-      type: ChangeDetectorRef
-    }];
-  }, null);
-})();
-var _RouterLinkDelegateDirective = class _RouterLinkDelegateDirective {
-  locationStrategy;
-  navCtrl;
-  elementRef;
-  router;
-  routerLink;
-  routerDirection = "forward";
-  routerAnimation;
-  constructor(locationStrategy, navCtrl, elementRef, router, routerLink) {
-    this.locationStrategy = locationStrategy;
-    this.navCtrl = navCtrl;
-    this.elementRef = elementRef;
-    this.router = router;
-    this.routerLink = routerLink;
-  }
-  ngOnInit() {
-    this.updateTargetUrlAndHref();
-    this.updateTabindex();
-  }
-  ngOnChanges() {
-    this.updateTargetUrlAndHref();
-  }
-  /**
-   * The `tabindex` is set to `0` by default on the host element when
-   * the `routerLink` directive is used. This causes issues with Ionic
-   * components that wrap an `a` or `button` element, such as `ion-item`.
-   * See issue https://github.com/angular/angular/issues/28345
-   *
-   * This method removes the `tabindex` attribute from the host element
-   * to allow the Ionic component to manage the focus state correctly.
-   */
-  updateTabindex() {
-    const ionicComponents = ["ION-BACK-BUTTON", "ION-BREADCRUMB", "ION-BUTTON", "ION-CARD", "ION-FAB-BUTTON", "ION-ITEM", "ION-ITEM-OPTION", "ION-MENU-BUTTON", "ION-SEGMENT-BUTTON", "ION-TAB-BUTTON"];
-    const hostElement = this.elementRef.nativeElement;
-    if (ionicComponents.includes(hostElement.tagName)) {
-      if (hostElement.getAttribute("tabindex") === "0") {
-        hostElement.removeAttribute("tabindex");
-      }
-    }
-  }
-  updateTargetUrlAndHref() {
-    if (this.routerLink?.urlTree) {
-      const href = this.locationStrategy.prepareExternalUrl(this.router.serializeUrl(this.routerLink.urlTree));
-      this.elementRef.nativeElement.href = href;
-    }
-  }
-  /**
-   * @internal
-   */
-  onClick(ev) {
-    this.navCtrl.setDirection(this.routerDirection, void 0, void 0, this.routerAnimation);
-    ev.preventDefault();
-  }
-};
-__name(_RouterLinkDelegateDirective, "RouterLinkDelegateDirective");
-/** @nocollapse */
-__publicField(_RouterLinkDelegateDirective, "ɵfac", /* @__PURE__ */ __name(function RouterLinkDelegateDirective_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _RouterLinkDelegateDirective)(ɵɵdirectiveInject(LocationStrategy), ɵɵdirectiveInject(NavController), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(RouterLink, 8));
-}, "RouterLinkDelegateDirective_Factory"));
-/** @nocollapse */
-__publicField(_RouterLinkDelegateDirective, "ɵdir", ɵɵdefineDirective({
-  type: _RouterLinkDelegateDirective,
-  selectors: [["", "routerLink", "", 5, "a", 5, "area"]],
-  hostBindings: /* @__PURE__ */ __name(function RouterLinkDelegateDirective_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("click", /* @__PURE__ */ __name(function RouterLinkDelegateDirective_click_HostBindingHandler($event) {
-        return ctx.onClick($event);
-      }, "RouterLinkDelegateDirective_click_HostBindingHandler"));
-    }
-  }, "RouterLinkDelegateDirective_HostBindings"),
-  inputs: {
-    routerDirection: "routerDirection",
-    routerAnimation: "routerAnimation"
-  },
-  standalone: false,
-  features: [ɵɵNgOnChangesFeature]
-}));
-var RouterLinkDelegateDirective = _RouterLinkDelegateDirective;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterLinkDelegateDirective, [{
-    type: Directive,
-    args: [{
-      selector: ":not(a):not(area)[routerLink]"
-    }]
-  }], function() {
-    return [{
-      type: LocationStrategy
-    }, {
-      type: NavController
-    }, {
-      type: ElementRef
-    }, {
-      type: Router
-    }, {
-      type: RouterLink,
-      decorators: [{
-        type: Optional
-      }]
-    }];
-  }, {
-    routerDirection: [{
-      type: Input
-    }],
-    routerAnimation: [{
-      type: Input
-    }],
-    onClick: [{
-      type: HostListener,
-      args: ["click", ["$event"]]
-    }]
-  });
-})();
-var _RouterLinkWithHrefDelegateDirective = class _RouterLinkWithHrefDelegateDirective {
-  locationStrategy;
-  navCtrl;
-  elementRef;
-  router;
-  routerLink;
-  routerDirection = "forward";
-  routerAnimation;
-  constructor(locationStrategy, navCtrl, elementRef, router, routerLink) {
-    this.locationStrategy = locationStrategy;
-    this.navCtrl = navCtrl;
-    this.elementRef = elementRef;
-    this.router = router;
-    this.routerLink = routerLink;
-  }
-  ngOnInit() {
-    this.updateTargetUrlAndHref();
-  }
-  ngOnChanges() {
-    this.updateTargetUrlAndHref();
-  }
-  updateTargetUrlAndHref() {
-    if (this.routerLink?.urlTree) {
-      const href = this.locationStrategy.prepareExternalUrl(this.router.serializeUrl(this.routerLink.urlTree));
-      this.elementRef.nativeElement.href = href;
-    }
-  }
-  /**
-   * @internal
-   */
-  onClick() {
-    this.navCtrl.setDirection(this.routerDirection, void 0, void 0, this.routerAnimation);
-  }
-};
-__name(_RouterLinkWithHrefDelegateDirective, "RouterLinkWithHrefDelegateDirective");
-/** @nocollapse */
-__publicField(_RouterLinkWithHrefDelegateDirective, "ɵfac", /* @__PURE__ */ __name(function RouterLinkWithHrefDelegateDirective_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _RouterLinkWithHrefDelegateDirective)(ɵɵdirectiveInject(LocationStrategy), ɵɵdirectiveInject(NavController), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(RouterLink, 8));
-}, "RouterLinkWithHrefDelegateDirective_Factory"));
-/** @nocollapse */
-__publicField(_RouterLinkWithHrefDelegateDirective, "ɵdir", ɵɵdefineDirective({
-  type: _RouterLinkWithHrefDelegateDirective,
-  selectors: [["a", "routerLink", ""], ["area", "routerLink", ""]],
-  hostBindings: /* @__PURE__ */ __name(function RouterLinkWithHrefDelegateDirective_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("click", /* @__PURE__ */ __name(function RouterLinkWithHrefDelegateDirective_click_HostBindingHandler() {
-        return ctx.onClick();
-      }, "RouterLinkWithHrefDelegateDirective_click_HostBindingHandler"));
-    }
-  }, "RouterLinkWithHrefDelegateDirective_HostBindings"),
-  inputs: {
-    routerDirection: "routerDirection",
-    routerAnimation: "routerAnimation"
-  },
-  standalone: false,
-  features: [ɵɵNgOnChangesFeature]
-}));
-var RouterLinkWithHrefDelegateDirective = _RouterLinkWithHrefDelegateDirective;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RouterLinkWithHrefDelegateDirective, [{
-    type: Directive,
-    args: [{
-      selector: "a[routerLink],area[routerLink]"
-    }]
-  }], function() {
-    return [{
-      type: LocationStrategy
-    }, {
-      type: NavController
-    }, {
-      type: ElementRef
-    }, {
-      type: Router
-    }, {
-      type: RouterLink,
-      decorators: [{
-        type: Optional
-      }]
-    }];
-  }, {
-    routerDirection: [{
-      type: Input
-    }],
-    routerAnimation: [{
-      type: Input
-    }],
-    onClick: [{
-      type: HostListener,
-      args: ["click"]
-    }]
-  });
-})();
-var _IonTabs = class _IonTabs {
-  navCtrl;
-  tabsInner;
-  /**
-   * Emitted before the tab view is changed.
-   */
-  ionTabsWillChange = new EventEmitter();
-  /**
-   * Emitted after the tab view is changed.
-   */
-  ionTabsDidChange = new EventEmitter();
-  tabBarSlot = "bottom";
-  hasTab = false;
-  selectedTab;
-  leavingTab;
-  constructor(navCtrl) {
-    this.navCtrl = navCtrl;
-  }
-  ngAfterViewInit() {
-    const firstTab = this.tabs.length > 0 ? this.tabs.first : void 0;
-    if (firstTab) {
-      this.hasTab = true;
-      this.setActiveTab(firstTab.tab);
-      this.tabSwitch();
-    }
-  }
-  ngAfterContentInit() {
-    this.detectSlotChanges();
-  }
-  ngAfterContentChecked() {
-    this.detectSlotChanges();
-  }
-  /**
-   * @internal
-   */
-  onStackWillChange({
-    enteringView,
-    tabSwitch
-  }) {
-    const stackId = enteringView.stackId;
-    if (tabSwitch && stackId !== void 0) {
-      this.ionTabsWillChange.emit({
-        tab: stackId
-      });
-    }
-  }
-  /**
-   * @internal
-   */
-  onStackDidChange({
-    enteringView,
-    tabSwitch
-  }) {
-    const stackId = enteringView.stackId;
-    if (tabSwitch && stackId !== void 0) {
-      if (this.tabBar) {
-        this.tabBar.selectedTab = stackId;
-      }
-      this.ionTabsDidChange.emit({
-        tab: stackId
-      });
-    }
-  }
-  /**
-   * When a tab button is clicked, there are several scenarios:
-   * 1. If the selected tab is currently active (the tab button has been clicked
-   *    again), then it should go to the root view for that tab.
-   *
-   *   a. Get the saved root view from the router outlet. If the saved root view
-   *      matches the tabRootUrl, set the route view to this view including the
-   *      navigation extras.
-   *   b. If the saved root view from the router outlet does
-   *      not match, navigate to the tabRootUrl. No navigation extras are
-   *      included.
-   *
-   * 2. If the current tab tab is not currently selected, get the last route
-   *    view from the router outlet.
-   *
-   *   a. If the last route view exists, navigate to that view including any
-   *      navigation extras
-   *   b. If the last route view doesn't exist, then navigate
-   *      to the default tabRootUrl
-   */
-  select(tabOrEvent) {
-    const isTabString = typeof tabOrEvent === "string";
-    const tab = isTabString ? tabOrEvent : tabOrEvent.detail.tab;
-    if (this.hasTab) {
-      this.setActiveTab(tab);
-      this.tabSwitch();
-      return;
-    }
-    const alreadySelected = this.outlet.getActiveStackId() === tab;
-    const tabRootUrl = `${this.outlet.tabsPrefix}/${tab}`;
-    if (!isTabString) {
-      tabOrEvent.stopPropagation();
-    }
-    if (alreadySelected) {
-      const activeStackId = this.outlet.getActiveStackId();
-      const activeView = this.outlet.getLastRouteView(activeStackId);
-      if (activeView?.url === tabRootUrl) {
-        return;
-      }
-      const rootView = this.outlet.getRootView(tab);
-      const navigationExtras = rootView && tabRootUrl === rootView.url && rootView.savedExtras;
-      return this.navCtrl.navigateRoot(tabRootUrl, __spreadProps(__spreadValues({}, navigationExtras), {
-        animated: true,
-        animationDirection: "back"
-      }));
-    } else {
-      const lastRoute = this.outlet.getLastRouteView(tab);
-      const url = lastRoute?.url || tabRootUrl;
-      const navigationExtras = lastRoute?.savedExtras;
-      return this.navCtrl.navigateRoot(url, __spreadProps(__spreadValues({}, navigationExtras), {
-        animated: true,
-        animationDirection: "back"
-      }));
-    }
-  }
-  setActiveTab(tab) {
-    const tabs = this.tabs;
-    const selectedTab = tabs.find((t) => t.tab === tab);
-    if (!selectedTab) {
-      console.error(`[Ionic Error]: Tab with id: "${tab}" does not exist`);
-      return;
-    }
-    this.leavingTab = this.selectedTab;
-    this.selectedTab = selectedTab;
-    this.ionTabsWillChange.emit({
-      tab
-    });
-    selectedTab.el.active = true;
-  }
-  tabSwitch() {
-    const {
-      selectedTab,
-      leavingTab
-    } = this;
-    if (this.tabBar && selectedTab) {
-      this.tabBar.selectedTab = selectedTab.tab;
-    }
-    if (leavingTab?.tab !== selectedTab?.tab) {
-      if (leavingTab?.el) {
-        leavingTab.el.active = false;
-      }
-    }
-    if (selectedTab) {
-      this.ionTabsDidChange.emit({
-        tab: selectedTab.tab
-      });
-    }
-  }
-  getSelected() {
-    if (this.hasTab) {
-      return this.selectedTab?.tab;
-    }
-    return this.outlet.getActiveStackId();
-  }
-  /**
-   * Detects changes to the slot attribute of the tab bar.
-   *
-   * If the slot attribute has changed, then the tab bar
-   * should be relocated to the new slot position.
-   */
-  detectSlotChanges() {
-    this.tabBars.forEach((tabBar) => {
-      const currentSlot = tabBar.el.getAttribute("slot");
-      if (currentSlot !== this.tabBarSlot) {
-        this.tabBarSlot = currentSlot;
-        this.relocateTabBar();
-      }
-    });
-  }
-  /**
-   * Relocates the tab bar to the new slot position.
-   */
-  relocateTabBar() {
-    const tabBar = this.tabBar.el;
-    if (this.tabBarSlot === "top") {
-      this.tabsInner.nativeElement.before(tabBar);
-    } else {
-      this.tabsInner.nativeElement.after(tabBar);
-    }
-  }
-};
-__name(_IonTabs, "IonTabs");
-/** @nocollapse */
-__publicField(_IonTabs, "ɵfac", /* @__PURE__ */ __name(function IonTabs_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _IonTabs)(ɵɵdirectiveInject(NavController));
-}, "IonTabs_Factory"));
-/** @nocollapse */
-__publicField(_IonTabs, "ɵdir", ɵɵdefineDirective({
-  type: _IonTabs,
-  selectors: [["ion-tabs"]],
-  viewQuery: /* @__PURE__ */ __name(function IonTabs_Query(rf, ctx) {
-    if (rf & 1) {
-      ɵɵviewQuery(_c0, 7, ElementRef);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.tabsInner = _t.first);
-    }
-  }, "IonTabs_Query"),
-  hostBindings: /* @__PURE__ */ __name(function IonTabs_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("ionTabButtonClick", /* @__PURE__ */ __name(function IonTabs_ionTabButtonClick_HostBindingHandler($event) {
-        return ctx.select($event);
-      }, "IonTabs_ionTabButtonClick_HostBindingHandler"));
-    }
-  }, "IonTabs_HostBindings"),
-  outputs: {
-    ionTabsWillChange: "ionTabsWillChange",
-    ionTabsDidChange: "ionTabsDidChange"
-  },
-  standalone: false
-}));
-var IonTabs = _IonTabs;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonTabs, [{
-    type: Directive,
-    args: [{
-      selector: "ion-tabs"
-    }]
-  }], function() {
-    return [{
-      type: NavController
-    }];
-  }, {
-    tabsInner: [{
-      type: ViewChild,
-      args: ["tabsInner", {
-        read: ElementRef,
-        static: true
-      }]
-    }],
-    ionTabsWillChange: [{
-      type: Output
-    }],
-    ionTabsDidChange: [{
-      type: Output
-    }],
-    select: [{
-      type: HostListener,
-      args: ["ionTabButtonClick", ["$event"]]
-    }]
-  });
-})();
-var _OverlayBaseController = class _OverlayBaseController {
-  ctrl;
-  constructor(ctrl) {
-    this.ctrl = ctrl;
-  }
-  /**
-   * Creates a new overlay
-   */
-  create(opts) {
-    return this.ctrl.create(opts || {});
-  }
-  /**
-   * When `id` is not provided, it dismisses the top overlay.
-   */
-  dismiss(data, role, id) {
-    return this.ctrl.dismiss(data, role, id);
-  }
-  /**
-   * Returns the top overlay.
-   */
-  getTop() {
-    return this.ctrl.getTop();
-  }
-};
-__name(_OverlayBaseController, "OverlayBaseController");
-var OverlayBaseController = _OverlayBaseController;
-var _IonicRouteStrategy = class _IonicRouteStrategy {
-  /**
-   * Whether the given route should detach for later reuse.
-   */
-  shouldDetach(_route) {
-    return false;
-  }
-  /**
-   * Returns `false`, meaning the route (and its subtree) is never reattached
-   */
-  shouldAttach(_route) {
-    return false;
-  }
-  /**
-   * A no-op; the route is never stored since this strategy never detaches routes for later re-use.
-   */
-  store(_route, _detachedTree) {
-    return;
-  }
-  /**
-   * Returns `null` because this strategy does not store routes for later re-use.
-   */
-  retrieve(_route) {
-    return null;
-  }
-  /**
-   * Determines if a route should be reused.
-   * This strategy returns `true` when the future route config and
-   * current route config are identical and all route parameters are identical.
-   */
-  shouldReuseRoute(future, curr) {
-    if (future.routeConfig !== curr.routeConfig) {
-      return false;
-    }
-    const futureParams = future.params;
-    const currentParams = curr.params;
-    const keysA = Object.keys(futureParams);
-    const keysB = Object.keys(currentParams);
-    if (keysA.length !== keysB.length) {
-      return false;
-    }
-    for (const key of keysA) {
-      if (currentParams[key] !== futureParams[key]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
-__name(_IonicRouteStrategy, "IonicRouteStrategy");
-var IonicRouteStrategy = _IonicRouteStrategy;
 
 // node_modules/@ionic/core/components/index6.js
 var arrowBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='ionicon'><path d='M244 400 100 256l144-144M120 256h292' stroke-linecap='square' stroke-miterlimit='10' stroke-width='48px' class='ionicon-fill-none'/></svg>";
@@ -4181,7 +276,7 @@ var getIconMap = /* @__PURE__ */ __name(() => {
     return CACHED_MAP;
   }
 }, "getIconMap");
-var getUrl2 = /* @__PURE__ */ __name((i) => {
+var getUrl = /* @__PURE__ */ __name((i) => {
   let url = getSrc(i.src);
   if (url) {
     return url;
@@ -4360,8 +455,8 @@ function fetchSvg(url, sanitize) {
 }
 __name(fetchSvg, "fetchSvg");
 var iconCss = ":host{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}:host .ionicon{stroke:currentColor}.ionicon-fill-none{fill:none}.ionicon-stroke-width{stroke-width:var(--ionicon-stroke-width, 32px)}.icon-inner,.ionicon,svg{display:block;height:100%;width:100%}@supports (background: -webkit-named-image(i)){:host(.icon-rtl) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}}@supports not selector(:dir(rtl)) and selector(:host-context([dir='rtl'])){:host(.icon-rtl) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}}:host(.flip-rtl):host-context([dir='rtl']) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}@supports selector(:dir(rtl)){:host(.flip-rtl:dir(rtl)) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}:host(.flip-rtl:dir(ltr)) .icon-inner{-webkit-transform:scaleX(1);transform:scaleX(1)}}:host(.icon-small){font-size:1.125rem !important}:host(.icon-large){font-size:2rem !important}:host(.ion-color){color:var(--ion-color-base) !important}:host(.ion-color-primary){--ion-color-base:var(--ion-color-primary, #3880ff)}:host(.ion-color-secondary){--ion-color-base:var(--ion-color-secondary, #0cd1e8)}:host(.ion-color-tertiary){--ion-color-base:var(--ion-color-tertiary, #f4a942)}:host(.ion-color-success){--ion-color-base:var(--ion-color-success, #10dc60)}:host(.ion-color-warning){--ion-color-base:var(--ion-color-warning, #ffce00)}:host(.ion-color-danger){--ion-color-base:var(--ion-color-danger, #f14141)}:host(.ion-color-light){--ion-color-base:var(--ion-color-light, #f4f5f8)}:host(.ion-color-medium){--ion-color-base:var(--ion-color-medium, #989aa2)}:host(.ion-color-dark){--ion-color-base:var(--ion-color-dark, #222428)}";
-var _a5;
-var Icon = proxyCustomElement((_a5 = class extends H {
+var _a;
+var Icon = proxyCustomElement((_a = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -4426,7 +521,7 @@ var Icon = proxyCustomElement((_a5 = class extends H {
    */
   loadIcon() {
     if (Build.isBrowser && this.isVisible) {
-      const url = getUrl2(this);
+      const url = getUrl(this);
       if (url) {
         if (ioniconContent.has(url)) {
           this.svgContent = ioniconContent.get(url);
@@ -4463,7 +558,7 @@ var Icon = proxyCustomElement((_a5 = class extends H {
   static get style() {
     return iconCss;
   }
-}, __name(_a5, "Icon"), _a5), [257, "ion-icon", {
+}, __name(_a, "Icon"), _a), [257, "ion-icon", {
   "mode": [1025],
   "color": [1],
   "ios": [1],
@@ -4510,8 +605,8 @@ __name(defineCustomElement, "defineCustomElement");
 
 // node_modules/@ionic/core/components/ripple-effect.js
 var rippleEffectCss = ":host{left:0;right:0;top:0;bottom:0;position:absolute;contain:strict;pointer-events:none}:host(.unbounded){contain:layout size style}.ripple-effect{border-radius:50%;position:absolute;background-color:currentColor;color:inherit;contain:strict;opacity:0;-webkit-animation:225ms rippleAnimation forwards, 75ms fadeInAnimation forwards;animation:225ms rippleAnimation forwards, 75ms fadeInAnimation forwards;will-change:transform, opacity;pointer-events:none}.fade-out{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1));-webkit-animation:150ms fadeOutAnimation forwards;animation:150ms fadeOutAnimation forwards}@-webkit-keyframes rippleAnimation{from{-webkit-animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);-webkit-transform:scale(1);transform:scale(1)}to{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1))}}@keyframes rippleAnimation{from{-webkit-animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);-webkit-transform:scale(1);transform:scale(1)}to{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1))}}@-webkit-keyframes fadeInAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0}to{opacity:0.16}}@keyframes fadeInAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0}to{opacity:0.16}}@-webkit-keyframes fadeOutAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0.16}to{opacity:0}}@keyframes fadeOutAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0.16}to{opacity:0}}";
-var _a6;
-var RippleEffect = proxyCustomElement((_a6 = class extends H {
+var _a2;
+var RippleEffect = proxyCustomElement((_a2 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -4583,7 +678,7 @@ var RippleEffect = proxyCustomElement((_a6 = class extends H {
   static get style() {
     return rippleEffectCss;
   }
-}, __name(_a6, "RippleEffect"), _a6), [257, "ion-ripple-effect", {
+}, __name(_a2, "RippleEffect"), _a2), [257, "ion-ripple-effect", {
   "type": [1],
   "addRipple": [64]
 }]);
@@ -4615,8 +710,8 @@ __name(defineCustomElement2, "defineCustomElement");
 // node_modules/@ionic/core/components/ion-back-button.js
 var backButtonIosCss = ':host{--background:transparent;--color-focused:currentColor;--color-hover:currentColor;--icon-margin-top:0;--icon-margin-bottom:0;--icon-padding-top:0;--icon-padding-end:0;--icon-padding-bottom:0;--icon-padding-start:0;--margin-top:0;--margin-end:0;--margin-bottom:0;--margin-start:0;--min-width:auto;--min-height:auto;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;--opacity:1;--ripple-color:currentColor;--transition:background-color, opacity 100ms linear;display:none;min-width:var(--min-width);min-height:var(--min-height);color:var(--color);font-family:var(--ion-font-family, inherit);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-font-kerning:none;font-kerning:none}ion-ripple-effect{color:var(--ripple-color)}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.show-back-button){display:block}:host(.back-button-disabled){cursor:default;opacity:0.5;pointer-events:none}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:100%;height:100%;min-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;opacity:var(--opacity);overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{-webkit-padding-start:var(--icon-padding-start);padding-inline-start:var(--icon-padding-start);-webkit-padding-end:var(--icon-padding-end);padding-inline-end:var(--icon-padding-end);padding-top:var(--icon-padding-top);padding-bottom:var(--icon-padding-bottom);-webkit-margin-start:var(--icon-margin-start);margin-inline-start:var(--icon-margin-start);-webkit-margin-end:var(--icon-margin-end);margin-inline-end:var(--icon-margin-end);margin-top:var(--icon-margin-top);margin-bottom:var(--icon-margin-bottom);display:inherit;font-size:var(--icon-font-size);font-weight:var(--icon-font-weight);pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-color.ion-focused) .button-native{color:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native{color:var(--ion-color-base)}}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-hover:transparent;--background-hover-opacity:1;--background-focused:currentColor;--background-focused-opacity:.1;--border-radius:4px;--color:var(--ion-color-primary, #0054e9);--icon-margin-end:1px;--icon-margin-start:-4px;--icon-font-size:1.6em;--min-height:32px;font-size:clamp(17px, 1.0625rem, 21.998px)}.button-native{-webkit-transform:translateZ(0);transform:translateZ(0);overflow:visible;z-index:99}:host(.ion-activated) .button-native{opacity:0.4}@media (any-hover: hover){:host(:hover){opacity:0.6}}';
 var backButtonMdCss = ':host{--background:transparent;--color-focused:currentColor;--color-hover:currentColor;--icon-margin-top:0;--icon-margin-bottom:0;--icon-padding-top:0;--icon-padding-end:0;--icon-padding-bottom:0;--icon-padding-start:0;--margin-top:0;--margin-end:0;--margin-bottom:0;--margin-start:0;--min-width:auto;--min-height:auto;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;--opacity:1;--ripple-color:currentColor;--transition:background-color, opacity 100ms linear;display:none;min-width:var(--min-width);min-height:var(--min-height);color:var(--color);font-family:var(--ion-font-family, inherit);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-font-kerning:none;font-kerning:none}ion-ripple-effect{color:var(--ripple-color)}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.show-back-button){display:block}:host(.back-button-disabled){cursor:default;opacity:0.5;pointer-events:none}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:100%;height:100%;min-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;opacity:var(--opacity);overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{-webkit-padding-start:var(--icon-padding-start);padding-inline-start:var(--icon-padding-start);-webkit-padding-end:var(--icon-padding-end);padding-inline-end:var(--icon-padding-end);padding-top:var(--icon-padding-top);padding-bottom:var(--icon-padding-bottom);-webkit-margin-start:var(--icon-margin-start);margin-inline-start:var(--icon-margin-start);-webkit-margin-end:var(--icon-margin-end);margin-inline-end:var(--icon-margin-end);margin-top:var(--icon-margin-top);margin-bottom:var(--icon-margin-bottom);display:inherit;font-size:var(--icon-font-size);font-weight:var(--icon-font-weight);pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-color.ion-focused) .button-native{color:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native{color:var(--ion-color-base)}}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--border-radius:4px;--background-focused:currentColor;--background-focused-opacity:.12;--background-hover:currentColor;--background-hover-opacity:0.04;--color:currentColor;--icon-margin-end:0;--icon-margin-start:0;--icon-font-size:1.5rem;--icon-font-weight:normal;--min-height:32px;--min-width:44px;--padding-start:12px;--padding-end:12px;font-size:0.875rem;font-weight:500;text-transform:uppercase}:host(.back-button-has-icon-only){--border-radius:50%;min-width:48px;min-height:48px;aspect-ratio:1/1}.button-native{-webkit-box-shadow:none;box-shadow:none}.button-text{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:4px;padding-inline-end:4px;padding-top:0;padding-bottom:0}ion-icon{line-height:0.67;text-align:start}@media (any-hover: hover){:host(.ion-color:hover) .button-native::after{background:var(--ion-color-base)}}:host(.ion-color.ion-focused) .button-native::after{background:var(--ion-color-base)}';
-var _a7;
-var BackButton = proxyCustomElement((_a7 = class extends H {
+var _a3;
+var BackButton = proxyCustomElement((_a3 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -4689,7 +784,7 @@ var BackButton = proxyCustomElement((_a7 = class extends H {
       md: backButtonMdCss
     };
   }
-}, __name(_a7, "BackButton"), _a7), [289, "ion-back-button", {
+}, __name(_a3, "BackButton"), _a3), [289, "ion-back-button", {
   "color": [513],
   "defaultHref": [1025, "default-href"],
   "disabled": [516],
@@ -4745,8 +840,8 @@ var createLockController = /* @__PURE__ */ __name(() => {
 
 // node_modules/@ionic/core/components/ion-router-outlet.js
 var routerOutletCss = ":host{left:0;right:0;top:0;bottom:0;position:absolute;contain:layout size style;z-index:0}";
-var _a8;
-var RouterOutlet = proxyCustomElement((_a8 = class extends H {
+var _a4;
+var RouterOutlet = proxyCustomElement((_a4 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -4772,9 +867,9 @@ var RouterOutlet = proxyCustomElement((_a8 = class extends H {
           this.swipeHandler.onStart();
         }
       }, "onStart");
-      this.gesture = (yield import("./swipe-back-I6MCE3N6.js")).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), (step) => {
-        var _a190;
-        return (_a190 = this.ani) === null || _a190 === void 0 ? void 0 : _a190.progressStep(step);
+      this.gesture = (yield import("./swipe-back-T2ZLW6E4.js")).createSwipeBackGesture(this.el, () => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart(), () => onStart(), (step) => {
+        var _a186;
+        return (_a186 = this.ani) === null || _a186 === void 0 ? void 0 : _a186.progressStep(step);
       }, (shouldComplete, step, dur) => {
         if (this.ani) {
           this.ani.onFinish(() => {
@@ -4915,7 +1010,7 @@ var RouterOutlet = proxyCustomElement((_a8 = class extends H {
   static get style() {
     return routerOutletCss;
   }
-}, __name(_a8, "RouterOutlet"), _a8), [257, "ion-router-outlet", {
+}, __name(_a4, "RouterOutlet"), _a4), [257, "ion-router-outlet", {
   "mode": [1025],
   "delegate": [16],
   "animated": [4],
@@ -4948,8 +1043,8 @@ var defineCustomElement4 = defineCustomElement$12;
 // node_modules/@ionic/core/components/backdrop.js
 var backdropIosCss = ":host{left:0;right:0;top:0;bottom:0;display:block;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);contain:strict;cursor:pointer;opacity:0.01;-ms-touch-action:none;touch-action:none;z-index:2}:host(.backdrop-hide){background:transparent}:host(.backdrop-no-tappable){cursor:auto}:host{background-color:var(--ion-backdrop-color, #000)}";
 var backdropMdCss = ":host{left:0;right:0;top:0;bottom:0;display:block;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);contain:strict;cursor:pointer;opacity:0.01;-ms-touch-action:none;touch-action:none;z-index:2}:host(.backdrop-hide){background:transparent}:host(.backdrop-no-tappable){cursor:auto}:host{background-color:var(--ion-backdrop-color, #000)}";
-var _a9;
-var Backdrop = proxyCustomElement((_a9 = class extends H {
+var _a5;
+var Backdrop = proxyCustomElement((_a5 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -4985,7 +1080,7 @@ var Backdrop = proxyCustomElement((_a9 = class extends H {
       md: backdropMdCss
     };
   }
-}, __name(_a9, "Backdrop"), _a9), [289, "ion-backdrop", {
+}, __name(_a5, "Backdrop"), _a5), [289, "ion-backdrop", {
   "visible": [4],
   "tappable": [4],
   "stopPropagation": [4, "stop-propagation"]
@@ -5251,9 +1346,9 @@ var iosEnterAnimation = /* @__PURE__ */ __name((baseEl, opts) => {
   backdropAnimation.addElement(root.querySelector("ion-backdrop"));
   wrapperAnimation.addElement(root.querySelectorAll(".modal-wrapper, .modal-shadow")).beforeStyles({ opacity: 1 });
   !expandToScroll && (contentAnimation === null || contentAnimation === void 0 ? void 0 : contentAnimation.addElement(baseEl.querySelector(".ion-page")));
-  const baseAnimation2 = createAnimation("entering-base").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(500).addAnimation([wrapperAnimation]);
+  const baseAnimation = createAnimation("entering-base").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(500).addAnimation([wrapperAnimation]);
   if (contentAnimation) {
-    baseAnimation2.addAnimation(contentAnimation);
+    baseAnimation.addAnimation(contentAnimation);
   }
   if (presentingEl) {
     const isPortrait = window.innerWidth < 768;
@@ -5276,9 +1371,9 @@ var iosEnterAnimation = /* @__PURE__ */ __name((baseEl, opts) => {
         { offset: 0, filter: "contrast(1)", transform: "translateY(0px) scale(1)", borderRadius: "0px" },
         { offset: 1, filter: "contrast(0.85)", transform: finalTransform, borderRadius: "10px 10px 0 0" }
       ]);
-      baseAnimation2.addAnimation(presentingAnimation);
+      baseAnimation.addAnimation(presentingAnimation);
     } else {
-      baseAnimation2.addAnimation(backdropAnimation);
+      baseAnimation.addAnimation(backdropAnimation);
       if (!hasCardModal) {
         wrapperAnimation.fromTo("opacity", "0", "1");
       } else {
@@ -5296,13 +1391,13 @@ var iosEnterAnimation = /* @__PURE__ */ __name((baseEl, opts) => {
           { offset: 0, opacity: "1", transform: "translateY(0) scale(1)" },
           { offset: 1, opacity: "0", transform: finalTransform }
         ]);
-        baseAnimation2.addAnimation([presentingAnimation, shadowAnimation]);
+        baseAnimation.addAnimation([presentingAnimation, shadowAnimation]);
       }
     }
   } else {
-    baseAnimation2.addAnimation(backdropAnimation);
+    baseAnimation.addAnimation(backdropAnimation);
   }
-  return baseAnimation2;
+  return baseAnimation;
 }, "iosEnterAnimation");
 var createLeaveAnimation$1 = /* @__PURE__ */ __name(() => {
   const backdropAnimation = createAnimation().fromTo("opacity", "var(--backdrop-opacity)", 0);
@@ -5315,7 +1410,7 @@ var iosLeaveAnimation = /* @__PURE__ */ __name((baseEl, opts, duration = 500) =>
   const { wrapperAnimation, backdropAnimation } = currentBreakpoint !== void 0 ? createSheetLeaveAnimation(opts) : createLeaveAnimation$1();
   backdropAnimation.addElement(root.querySelector("ion-backdrop"));
   wrapperAnimation.addElement(root.querySelectorAll(".modal-wrapper, .modal-shadow")).beforeStyles({ opacity: 1 });
-  const baseAnimation2 = createAnimation("leaving-base").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(duration).addAnimation(wrapperAnimation);
+  const baseAnimation = createAnimation("leaving-base").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(duration).addAnimation(wrapperAnimation);
   if (presentingEl) {
     const isPortrait = window.innerWidth < 768;
     const hasCardModal = presentingEl.tagName === "ION-MODAL" && presentingEl.presentingElement !== void 0;
@@ -5340,9 +1435,9 @@ var iosLeaveAnimation = /* @__PURE__ */ __name((baseEl, opts, duration = 500) =>
         { offset: 0, filter: "contrast(0.85)", transform: finalTransform, borderRadius: "10px 10px 0 0" },
         { offset: 1, filter: "contrast(1)", transform: "translateY(0px) scale(1)", borderRadius: "0px" }
       ]);
-      baseAnimation2.addAnimation(presentingAnimation);
+      baseAnimation.addAnimation(presentingAnimation);
     } else {
-      baseAnimation2.addAnimation(backdropAnimation);
+      baseAnimation.addAnimation(backdropAnimation);
       if (!hasCardModal) {
         wrapperAnimation.fromTo("opacity", "1", "0");
       } else {
@@ -5360,13 +1455,13 @@ var iosLeaveAnimation = /* @__PURE__ */ __name((baseEl, opts, duration = 500) =>
           { offset: 0, opacity: "0", transform: finalTransform },
           { offset: 1, opacity: "1", transform: "translateY(0) scale(1)" }
         ]);
-        baseAnimation2.addAnimation([presentingAnimation, shadowAnimation]);
+        baseAnimation.addAnimation([presentingAnimation, shadowAnimation]);
       }
     }
   } else {
-    baseAnimation2.addAnimation(backdropAnimation);
+    baseAnimation.addAnimation(backdropAnimation);
   }
-  return baseAnimation2;
+  return baseAnimation;
 }, "iosLeaveAnimation");
 var portraitToLandscapeTransition = /* @__PURE__ */ __name((baseEl, opts, duration = 300) => {
   const { presentingEl } = opts;
@@ -5376,7 +1471,7 @@ var portraitToLandscapeTransition = /* @__PURE__ */ __name((baseEl, opts, durati
   const presentingElIsCardModal = presentingEl.tagName === "ION-MODAL" && presentingEl.presentingElement !== void 0;
   const presentingElRoot = getElementRoot(presentingEl);
   const bodyEl = document.body;
-  const baseAnimation2 = createAnimation("portrait-to-landscape-transition").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(duration);
+  const baseAnimation = createAnimation("portrait-to-landscape-transition").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(duration);
   const presentingAnimation = createAnimation().beforeStyles({
     transform: "translateY(0)",
     "transform-origin": "top center",
@@ -5393,7 +1488,7 @@ var portraitToLandscapeTransition = /* @__PURE__ */ __name((baseEl, opts, durati
       transform: "translateY(0px) scale(1)",
       "border-radius": "0px"
     }).beforeAddWrite(() => bodyEl.style.setProperty("background-color", "")).fromTo("transform", fromTransform, "translateY(0px) scale(1)").fromTo("filter", "contrast(0.85)", "contrast(1)").fromTo("border-radius", "10px 10px 0 0", "0px");
-    baseAnimation2.addAnimation([presentingAnimation, wrapperAnimation, backdropAnimation]);
+    baseAnimation.addAnimation([presentingAnimation, wrapperAnimation, backdropAnimation]);
   } else {
     const toPresentingScale = SwipeToCloseDefaults.MIN_PRESENTING_SCALE;
     const fromTransform = `translateY(-10px) scale(${toPresentingScale})`;
@@ -5405,9 +1500,9 @@ var portraitToLandscapeTransition = /* @__PURE__ */ __name((baseEl, opts, durati
       transform: toTransform,
       opacity: "0"
     }).fromTo("transform", fromTransform, toTransform);
-    baseAnimation2.addAnimation([presentingAnimation, shadowAnimation]);
+    baseAnimation.addAnimation([presentingAnimation, shadowAnimation]);
   }
-  return baseAnimation2;
+  return baseAnimation;
 }, "portraitToLandscapeTransition");
 var landscapeToPortraitTransition = /* @__PURE__ */ __name((baseEl, opts, duration = 300) => {
   const { presentingEl } = opts;
@@ -5417,7 +1512,7 @@ var landscapeToPortraitTransition = /* @__PURE__ */ __name((baseEl, opts, durati
   const presentingElIsCardModal = presentingEl.tagName === "ION-MODAL" && presentingEl.presentingElement !== void 0;
   const presentingElRoot = getElementRoot(presentingEl);
   const bodyEl = document.body;
-  const baseAnimation2 = createAnimation("landscape-to-portrait-transition").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(duration);
+  const baseAnimation = createAnimation("landscape-to-portrait-transition").addElement(baseEl).easing("cubic-bezier(0.32,0.72,0,1)").duration(duration);
   const presentingAnimation = createAnimation().beforeStyles({
     transform: "translateY(0)",
     "transform-origin": "top center",
@@ -5437,7 +1532,7 @@ var landscapeToPortraitTransition = /* @__PURE__ */ __name((baseEl, opts, durati
       { offset: 0.2, transform: "translateY(0px) scale(1)", filter: "contrast(1)", borderRadius: "10px 10px 0 0" },
       { offset: 1, transform: toTransform, filter: "contrast(0.85)", borderRadius: "10px 10px 0 0" }
     ]);
-    baseAnimation2.addAnimation([presentingAnimation, wrapperAnimation, backdropAnimation]);
+    baseAnimation.addAnimation([presentingAnimation, wrapperAnimation, backdropAnimation]);
   } else {
     const toPresentingScale = SwipeToCloseDefaults.MIN_PRESENTING_SCALE;
     const fromTransform = `translateY(-10px) scale(${toPresentingScale})`;
@@ -5449,9 +1544,9 @@ var landscapeToPortraitTransition = /* @__PURE__ */ __name((baseEl, opts, durati
       transform: toTransform,
       opacity: "0"
     }).fromTo("transform", fromTransform, toTransform);
-    baseAnimation2.addAnimation([presentingAnimation, shadowAnimation]);
+    baseAnimation.addAnimation([presentingAnimation, shadowAnimation]);
   }
-  return baseAnimation2;
+  return baseAnimation;
 }, "landscapeToPortraitTransition");
 var createEnterAnimation = /* @__PURE__ */ __name(() => {
   const backdropAnimation = createAnimation().fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
@@ -5470,11 +1565,11 @@ var mdEnterAnimation = /* @__PURE__ */ __name((baseEl, opts) => {
   backdropAnimation.addElement(root.querySelector("ion-backdrop"));
   wrapperAnimation.addElement(root.querySelector(".modal-wrapper"));
   !expandToScroll && (contentAnimation === null || contentAnimation === void 0 ? void 0 : contentAnimation.addElement(baseEl.querySelector(".ion-page")));
-  const baseAnimation2 = createAnimation().addElement(baseEl).easing("cubic-bezier(0.36,0.66,0.04,1)").duration(280).addAnimation([backdropAnimation, wrapperAnimation]);
+  const baseAnimation = createAnimation().addElement(baseEl).easing("cubic-bezier(0.36,0.66,0.04,1)").duration(280).addAnimation([backdropAnimation, wrapperAnimation]);
   if (contentAnimation) {
-    baseAnimation2.addAnimation(contentAnimation);
+    baseAnimation.addAnimation(contentAnimation);
   }
-  return baseAnimation2;
+  return baseAnimation;
 }, "mdEnterAnimation");
 var createLeaveAnimation = /* @__PURE__ */ __name(() => {
   const backdropAnimation = createAnimation().fromTo("opacity", "var(--backdrop-opacity)", 0);
@@ -5490,8 +1585,8 @@ var mdLeaveAnimation = /* @__PURE__ */ __name((baseEl, opts) => {
   const { wrapperAnimation, backdropAnimation } = currentBreakpoint !== void 0 ? createSheetLeaveAnimation(opts) : createLeaveAnimation();
   backdropAnimation.addElement(root.querySelector("ion-backdrop"));
   wrapperAnimation.addElement(root.querySelector(".modal-wrapper"));
-  const baseAnimation2 = createAnimation().easing("cubic-bezier(0.47,0,0.745,0.715)").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
-  return baseAnimation2;
+  const baseAnimation = createAnimation().easing("cubic-bezier(0.47,0,0.745,0.715)").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation;
 }, "mdLeaveAnimation");
 var createSheetGesture = /* @__PURE__ */ __name((baseEl, backdropEl, wrapperEl, initialBreakpoint, backdropBreakpoint, animation, breakpoints = [], expandToScroll, getCurrentBreakpoint, onDismiss, onBreakpointChange) => {
   const defaultBackdrop = [
@@ -5774,8 +1869,8 @@ var createSheetGesture = /* @__PURE__ */ __name((baseEl, backdropEl, wrapperEl, 
 }, "createSheetGesture");
 var modalIosCss = ':host{--width:100%;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--overflow:hidden;--border-radius:0;--border-width:0;--border-style:none;--border-color:transparent;--background:var(--ion-background-color, #fff);--box-shadow:none;--backdrop-opacity:0;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;color:var(--ion-text-color, #000);contain:strict}.modal-wrapper,ion-backdrop{pointer-events:auto}:host(.overlay-hidden){display:none}.modal-wrapper,.modal-shadow{border-radius:var(--border-radius);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);overflow:var(--overflow);z-index:10}.modal-shadow{position:absolute;background:transparent}@media only screen and (min-width: 768px) and (min-height: 600px){:host{--width:600px;--height:500px;--ion-safe-area-top:0px;--ion-safe-area-bottom:0px;--ion-safe-area-right:0px;--ion-safe-area-left:0px}}@media only screen and (min-width: 768px) and (min-height: 768px){:host{--width:600px;--height:600px}}.modal-handle{left:0px;right:0px;top:5px;border-radius:8px;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;position:absolute;width:36px;height:5px;-webkit-transform:translateZ(0);transform:translateZ(0);border:0;background:var(--ion-color-step-350, var(--ion-background-color-step-350, #c0c0be));cursor:pointer;z-index:11}.modal-handle::before{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:4px;padding-inline-end:4px;padding-top:4px;padding-bottom:4px;position:absolute;width:36px;height:5px;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);content:""}:host(.modal-sheet){--height:calc(100% - (var(--ion-safe-area-top) + 10px))}:host(.modal-sheet) .modal-wrapper,:host(.modal-sheet) .modal-shadow{position:absolute;bottom:0}:host(.modal-sheet.modal-no-expand-scroll) ion-footer{position:absolute;bottom:0;width:var(--width)}:host{--backdrop-opacity:var(--ion-backdrop-opacity, 0.4)}:host(.modal-card),:host(.modal-sheet){--border-radius:10px}@media only screen and (min-width: 768px) and (min-height: 600px){:host{--border-radius:10px}}.modal-wrapper{-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0)}@media screen and (max-width: 767px){@supports (width: max(0px, 1px)){:host(.modal-card){--height:calc(100% - max(30px, var(--ion-safe-area-top)) - 10px)}}@supports not (width: max(0px, 1px)){:host(.modal-card){--height:calc(100% - 40px)}}:host(.modal-card) .modal-wrapper{border-start-start-radius:var(--border-radius);border-start-end-radius:var(--border-radius);border-end-end-radius:0;border-end-start-radius:0}:host(.modal-card){--backdrop-opacity:0;--width:100%;-ms-flex-align:end;align-items:flex-end}:host(.modal-card) .modal-shadow{display:none}:host(.modal-card) ion-backdrop{pointer-events:none}}@media screen and (min-width: 768px){:host(.modal-card){--width:calc(100% - 120px);--height:calc(100% - (120px + var(--ion-safe-area-top) + var(--ion-safe-area-bottom)));--max-width:720px;--max-height:1000px;--backdrop-opacity:0;--box-shadow:0px 0px 30px 10px rgba(0, 0, 0, 0.1);-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out}:host(.modal-card) .modal-wrapper{-webkit-box-shadow:none;box-shadow:none}:host(.modal-card) .modal-shadow{-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow)}}:host(.modal-sheet) .modal-wrapper{border-start-start-radius:var(--border-radius);border-start-end-radius:var(--border-radius);border-end-end-radius:0;border-end-start-radius:0}';
 var modalMdCss = ':host{--width:100%;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--overflow:hidden;--border-radius:0;--border-width:0;--border-style:none;--border-color:transparent;--background:var(--ion-background-color, #fff);--box-shadow:none;--backdrop-opacity:0;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;color:var(--ion-text-color, #000);contain:strict}.modal-wrapper,ion-backdrop{pointer-events:auto}:host(.overlay-hidden){display:none}.modal-wrapper,.modal-shadow{border-radius:var(--border-radius);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);overflow:var(--overflow);z-index:10}.modal-shadow{position:absolute;background:transparent}@media only screen and (min-width: 768px) and (min-height: 600px){:host{--width:600px;--height:500px;--ion-safe-area-top:0px;--ion-safe-area-bottom:0px;--ion-safe-area-right:0px;--ion-safe-area-left:0px}}@media only screen and (min-width: 768px) and (min-height: 768px){:host{--width:600px;--height:600px}}.modal-handle{left:0px;right:0px;top:5px;border-radius:8px;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;position:absolute;width:36px;height:5px;-webkit-transform:translateZ(0);transform:translateZ(0);border:0;background:var(--ion-color-step-350, var(--ion-background-color-step-350, #c0c0be));cursor:pointer;z-index:11}.modal-handle::before{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:4px;padding-inline-end:4px;padding-top:4px;padding-bottom:4px;position:absolute;width:36px;height:5px;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);content:""}:host(.modal-sheet){--height:calc(100% - (var(--ion-safe-area-top) + 10px))}:host(.modal-sheet) .modal-wrapper,:host(.modal-sheet) .modal-shadow{position:absolute;bottom:0}:host(.modal-sheet.modal-no-expand-scroll) ion-footer{position:absolute;bottom:0;width:var(--width)}:host{--backdrop-opacity:var(--ion-backdrop-opacity, 0.32)}@media only screen and (min-width: 768px) and (min-height: 600px){:host{--border-radius:2px;--box-shadow:0 28px 48px rgba(0, 0, 0, 0.4)}}.modal-wrapper{-webkit-transform:translate3d(0,  40px,  0);transform:translate3d(0,  40px,  0);opacity:0.01}';
-var _a10;
-var Modal = proxyCustomElement((_a10 = class extends H {
+var _a6;
+var Modal = proxyCustomElement((_a6 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -5891,7 +1986,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
     this.cleanupParentRemovalObserver();
   }
   componentWillLoad() {
-    var _a190;
+    var _a186;
     const { breakpoints, initialBreakpoint, el, htmlAttributes } = this;
     const isSheetModal = this.isSheetModal = breakpoints !== void 0 && initialBreakpoint !== void 0;
     const attributesToInherit = ["aria-label", "role"];
@@ -5914,7 +2009,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
     if (breakpoints !== void 0 && initialBreakpoint !== void 0 && !breakpoints.includes(initialBreakpoint)) {
       printIonWarning("[ion-modal] - Your breakpoints array must include the initialBreakpoint value.");
     }
-    if (!((_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id)) {
+    if (!((_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id)) {
       setOverlayId(this.el);
     }
   }
@@ -6016,7 +2111,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
     });
   }
   initSwipeToClose() {
-    var _a190;
+    var _a186;
     if (getIonMode(this) !== "ios") {
       return;
     }
@@ -6031,7 +2126,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
       printIonContentErrorMsg(el);
       return;
     }
-    const statusBarStyle = (_a190 = this.statusBarStyle) !== null && _a190 !== void 0 ? _a190 : Style.Default;
+    const statusBarStyle = (_a186 = this.statusBarStyle) !== null && _a186 !== void 0 ? _a186 : Style.Default;
     this.gesture = createSwipeToCloseGesture(el, ani, statusBarStyle, () => {
       this.gestureAnimationDismissing = true;
       setCardStatusBarDefault(this.statusBarStyle);
@@ -6056,8 +2151,8 @@ var Modal = proxyCustomElement((_a10 = class extends H {
     });
     ani.progressStart(true, 1);
     const { gesture, moveSheetToBreakpoint } = createSheetGesture(this.el, this.backdropEl, wrapperEl, initialBreakpoint, backdropBreakpoint, ani, this.sortedBreakpoints, this.expandToScroll, () => {
-      var _a190;
-      return (_a190 = this.currentBreakpoint) !== null && _a190 !== void 0 ? _a190 : 0;
+      var _a186;
+      return (_a186 = this.currentBreakpoint) !== null && _a186 !== void 0 ? _a186 : 0;
     }, () => this.sheetOnDismiss(), (breakpoint) => {
       if (this.currentBreakpoint !== breakpoint) {
         this.currentBreakpoint = breakpoint;
@@ -6089,7 +2184,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
    */
   dismiss(data, role) {
     return __async(this, null, function* () {
-      var _a190;
+      var _a186;
       if (this.gestureAnimationDismissing && role !== GESTURE) {
         return false;
       }
@@ -6110,7 +2205,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
       }
       const dismissed = yield dismiss(this, data, role, "modalLeave", iosLeaveAnimation, mdLeaveAnimation, {
         presentingEl: presentingElement,
-        currentBreakpoint: (_a190 = this.currentBreakpoint) !== null && _a190 !== void 0 ? _a190 : this.initialBreakpoint,
+        currentBreakpoint: (_a186 = this.currentBreakpoint) !== null && _a186 !== void 0 ? _a186 : this.initialBreakpoint,
         backdropBreakpoint: this.backdropBreakpoint,
         expandToScroll: this.expandToScroll
       });
@@ -6304,9 +2399,9 @@ var Modal = proxyCustomElement((_a10 = class extends H {
       mutations.forEach((mutation) => {
         if (mutation.type === "childList" && mutation.removedNodes.length > 0) {
           const cachedParentWasRemoved = Array.from(mutation.removedNodes).some((node) => {
-            var _a190, _b;
+            var _a186, _b;
             const isDirectMatch = node === this.cachedOriginalParent;
-            const isContainedMatch = this.cachedOriginalParent ? (_b = (_a190 = node).contains) === null || _b === void 0 ? void 0 : _b.call(_a190, this.cachedOriginalParent) : false;
+            const isContainedMatch = this.cachedOriginalParent ? (_b = (_a186 = node).contains) === null || _b === void 0 ? void 0 : _b.call(_a186, this.cachedOriginalParent) : false;
             return isDirectMatch || isContainedMatch;
           });
           const cachedParentDisconnected = this.cachedOriginalParent && !this.cachedOriginalParent.isConnected;
@@ -6323,8 +2418,8 @@ var Modal = proxyCustomElement((_a10 = class extends H {
     });
   }
   cleanupParentRemovalObserver() {
-    var _a190;
-    (_a190 = this.parentRemovalObserver) === null || _a190 === void 0 ? void 0 : _a190.disconnect();
+    var _a186;
+    (_a186 = this.parentRemovalObserver) === null || _a186 === void 0 ? void 0 : _a186.disconnect();
     this.parentRemovalObserver = void 0;
   }
   render() {
@@ -6376,7 +2471,7 @@ var Modal = proxyCustomElement((_a10 = class extends H {
       md: modalMdCss
     };
   }
-}, __name(_a10, "Modal"), _a10), [289, "ion-modal", {
+}, __name(_a6, "Modal"), _a6), [289, "ion-modal", {
   "hasController": [4, "has-controller"],
   "overlayIndex": [2, "overlay-index"],
   "delegate": [16],
@@ -6636,10 +2731,10 @@ var focusItem = /* @__PURE__ */ __name((item) => {
 var isTriggerElement = /* @__PURE__ */ __name((el) => el.hasAttribute("data-ion-popover-trigger"), "isTriggerElement");
 var configureKeyboardInteraction = /* @__PURE__ */ __name((popoverEl) => {
   const callback = /* @__PURE__ */ __name((ev) => __async(null, null, function* () {
-    var _a190;
+    var _a186;
     const activeElement = document.activeElement;
     let items = [];
-    const targetTagName = (_a190 = ev.target) === null || _a190 === void 0 ? void 0 : _a190.tagName;
+    const targetTagName = (_a186 = ev.target) === null || _a186 === void 0 ? void 0 : _a186.tagName;
     if (targetTagName !== "ION-POPOVER" && targetTagName !== "ION-ITEM") {
       return;
     }
@@ -6720,7 +2815,7 @@ var configureKeyboardInteraction = /* @__PURE__ */ __name((popoverEl) => {
   return () => popoverEl.removeEventListener("keydown", callback);
 }, "configureKeyboardInteraction");
 var getPopoverPosition = /* @__PURE__ */ __name((isRTL4, contentWidth, contentHeight, arrowWidth, arrowHeight, reference, side, align, defaultPosition, triggerEl, event) => {
-  var _a190;
+  var _a186;
   let referenceCoordinates = {
     top: 0,
     left: 0,
@@ -6750,7 +2845,7 @@ var getPopoverPosition = /* @__PURE__ */ __name((isRTL4, contentWidth, contentHe
     case "trigger":
     default:
       const customEv = event;
-      const actualTriggerEl = triggerEl || ((_a190 = customEv === null || customEv === void 0 ? void 0 : customEv.detail) === null || _a190 === void 0 ? void 0 : _a190.ionShadowTarget) || (customEv === null || customEv === void 0 ? void 0 : customEv.target);
+      const actualTriggerEl = triggerEl || ((_a186 = customEv === null || customEv === void 0 ? void 0 : customEv.detail) === null || _a186 === void 0 ? void 0 : _a186.ionShadowTarget) || (customEv === null || customEv === void 0 ? void 0 : customEv.target);
       if (!actualTriggerEl) {
         return defaultPosition;
       }
@@ -6965,7 +3060,7 @@ var shouldShowArrow = /* @__PURE__ */ __name((side, didAdjustBounds = false, ev,
 }, "shouldShowArrow");
 var POPOVER_IOS_BODY_PADDING = 5;
 var iosEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
-  var _a190;
+  var _a186;
   const { event: ev, size, trigger, reference, side, align } = opts;
   const doc2 = baseEl.ownerDocument;
   const isRTL4 = doc2.dir === "rtl";
@@ -6974,7 +3069,7 @@ var iosEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
   const root = getElementRoot(baseEl);
   const contentEl = root.querySelector(".popover-content");
   const arrowEl = root.querySelector(".popover-arrow");
-  const referenceSizeEl = trigger || ((_a190 = ev === null || ev === void 0 ? void 0 : ev.detail) === null || _a190 === void 0 ? void 0 : _a190.ionShadowTarget) || (ev === null || ev === void 0 ? void 0 : ev.target);
+  const referenceSizeEl = trigger || ((_a186 = ev === null || ev === void 0 ? void 0 : ev.detail) === null || _a186 === void 0 ? void 0 : _a186.ionShadowTarget) || (ev === null || ev === void 0 ? void 0 : ev.target);
   const { contentWidth, contentHeight } = getPopoverDimensions(size, contentEl, referenceSizeEl);
   const { arrowWidth, arrowHeight } = getArrowDimensions(arrowEl);
   const defaultPosition = {
@@ -6987,14 +3082,14 @@ var iosEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
   const padding = size === "cover" ? 0 : POPOVER_IOS_BODY_PADDING;
   const margin = size === "cover" ? 0 : 25;
   const { originX, originY, top, left, bottom, checkSafeAreaLeft, checkSafeAreaRight, arrowTop, arrowLeft, addPopoverBottomClass } = calculateWindowAdjustment(side, results.top, results.left, padding, bodyWidth, bodyHeight, contentWidth, contentHeight, margin, results.originX, results.originY, results.referenceCoordinates, results.arrowTop, results.arrowLeft, arrowHeight);
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const contentAnimation = createAnimation();
   backdropAnimation.addElement(root.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
     "pointer-events": "none"
   }).afterClearStyles(["pointer-events"]);
   contentAnimation.addElement(root.querySelector(".popover-arrow")).addElement(root.querySelector(".popover-content")).fromTo("opacity", 0.01, 1);
-  return baseAnimation2.easing("ease").duration(100).beforeAddWrite(() => {
+  return baseAnimation.easing("ease").duration(100).beforeAddWrite(() => {
     if (size === "cover") {
       baseEl.style.setProperty("--width", `${contentWidth}px`);
     }
@@ -7032,12 +3127,12 @@ var iosLeaveAnimation2 = /* @__PURE__ */ __name((baseEl) => {
   const root = getElementRoot(baseEl);
   const contentEl = root.querySelector(".popover-content");
   const arrowEl = root.querySelector(".popover-arrow");
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const contentAnimation = createAnimation();
   backdropAnimation.addElement(root.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
   contentAnimation.addElement(root.querySelector(".popover-arrow")).addElement(root.querySelector(".popover-content")).fromTo("opacity", 0.99, 0);
-  return baseAnimation2.easing("ease").afterAddWrite(() => {
+  return baseAnimation.easing("ease").afterAddWrite(() => {
     baseEl.style.removeProperty("--width");
     baseEl.classList.remove("popover-bottom");
     contentEl.style.removeProperty("top");
@@ -7053,7 +3148,7 @@ var iosLeaveAnimation2 = /* @__PURE__ */ __name((baseEl) => {
 }, "iosLeaveAnimation");
 var POPOVER_MD_BODY_PADDING = 12;
 var mdEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
-  var _a190;
+  var _a186;
   const { event: ev, size, trigger, reference, side, align } = opts;
   const doc2 = baseEl.ownerDocument;
   const isRTL4 = doc2.dir === "rtl";
@@ -7061,7 +3156,7 @@ var mdEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
   const bodyHeight = doc2.defaultView.innerHeight;
   const root = getElementRoot(baseEl);
   const contentEl = root.querySelector(".popover-content");
-  const referenceSizeEl = trigger || ((_a190 = ev === null || ev === void 0 ? void 0 : ev.detail) === null || _a190 === void 0 ? void 0 : _a190.ionShadowTarget) || (ev === null || ev === void 0 ? void 0 : ev.target);
+  const referenceSizeEl = trigger || ((_a186 = ev === null || ev === void 0 ? void 0 : ev.detail) === null || _a186 === void 0 ? void 0 : _a186.ionShadowTarget) || (ev === null || ev === void 0 ? void 0 : ev.target);
   const { contentWidth, contentHeight } = getPopoverDimensions(size, contentEl, referenceSizeEl);
   const defaultPosition = {
     top: bodyHeight / 2 - contentHeight / 2,
@@ -7072,7 +3167,7 @@ var mdEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
   const results = getPopoverPosition(isRTL4, contentWidth, contentHeight, 0, 0, reference, side, align, defaultPosition, trigger, ev);
   const padding = size === "cover" ? 0 : POPOVER_MD_BODY_PADDING;
   const { originX, originY, top, left, bottom } = calculateWindowAdjustment(side, results.top, results.left, padding, bodyWidth, bodyHeight, contentWidth, contentHeight, 0, results.originX, results.originY, results.referenceCoordinates);
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   const contentAnimation = createAnimation();
@@ -7091,7 +3186,7 @@ var mdEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
     }
   }).fromTo("transform", "scale(0.8)", "scale(1)");
   viewportAnimation.addElement(root.querySelector(".popover-viewport")).fromTo("opacity", 0.01, 1);
-  return baseAnimation2.easing("cubic-bezier(0.36,0.66,0.04,1)").duration(300).beforeAddWrite(() => {
+  return baseAnimation.easing("cubic-bezier(0.36,0.66,0.04,1)").duration(300).beforeAddWrite(() => {
     if (size === "cover") {
       baseEl.style.setProperty("--width", `${contentWidth}px`);
     }
@@ -7103,12 +3198,12 @@ var mdEnterAnimation2 = /* @__PURE__ */ __name((baseEl, opts) => {
 var mdLeaveAnimation2 = /* @__PURE__ */ __name((baseEl) => {
   const root = getElementRoot(baseEl);
   const contentEl = root.querySelector(".popover-content");
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(root.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
   wrapperAnimation.addElement(root.querySelector(".popover-wrapper")).fromTo("opacity", 0.99, 0);
-  return baseAnimation2.easing("ease").afterAddWrite(() => {
+  return baseAnimation.easing("ease").afterAddWrite(() => {
     baseEl.style.removeProperty("--width");
     baseEl.classList.remove("popover-bottom");
     contentEl.style.removeProperty("top");
@@ -7119,8 +3214,8 @@ var mdLeaveAnimation2 = /* @__PURE__ */ __name((baseEl) => {
 }, "mdLeaveAnimation");
 var popoverIosCss = ':host{--background:var(--ion-background-color, #fff);--min-width:0;--min-height:0;--max-width:auto;--height:auto;--offset-x:0px;--offset-y:0px;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:fixed;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;color:var(--ion-text-color, #000);z-index:1001}:host(.popover-nested){pointer-events:none}:host(.popover-nested) .popover-wrapper{pointer-events:auto}:host(.overlay-hidden){display:none}.popover-wrapper{z-index:10}.popover-content{display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);overflow:auto;z-index:10}::slotted(.popover-viewport){--ion-safe-area-top:0px;--ion-safe-area-right:0px;--ion-safe-area-bottom:0px;--ion-safe-area-left:0px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}:host(.popover-nested.popover-side-left){--offset-x:5px}:host(.popover-nested.popover-side-right){--offset-x:-5px}:host(.popover-nested.popover-side-start){--offset-x:5px}:host-context([dir=rtl]):host(.popover-nested.popover-side-start),:host-context([dir=rtl]).popover-nested.popover-side-start{--offset-x:-5px}@supports selector(:dir(rtl)){:host(.popover-nested.popover-side-start:dir(rtl)){--offset-x:-5px}}:host(.popover-nested.popover-side-end){--offset-x:-5px}:host-context([dir=rtl]):host(.popover-nested.popover-side-end),:host-context([dir=rtl]).popover-nested.popover-side-end{--offset-x:5px}@supports selector(:dir(rtl)){:host(.popover-nested.popover-side-end:dir(rtl)){--offset-x:5px}}:host{--width:200px;--max-height:90%;--box-shadow:none;--backdrop-opacity:var(--ion-backdrop-opacity, 0.08)}:host(.popover-desktop){--box-shadow:0px 4px 16px 0px rgba(0, 0, 0, 0.12)}.popover-content{border-radius:10px}:host(.popover-desktop) .popover-content{border:0.5px solid var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.popover-arrow{display:block;position:absolute;width:20px;height:10px;overflow:hidden;z-index:11}.popover-arrow::after{top:3px;border-radius:3px;position:absolute;width:14px;height:14px;-webkit-transform:rotate(45deg);transform:rotate(45deg);background:var(--background);content:"";z-index:10}.popover-arrow::after{inset-inline-start:3px}:host(.popover-bottom) .popover-arrow{top:auto;bottom:-10px}:host(.popover-bottom) .popover-arrow::after{top:-6px}:host(.popover-side-left) .popover-arrow{-webkit-transform:rotate(90deg);transform:rotate(90deg)}:host(.popover-side-right) .popover-arrow{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}:host(.popover-side-top) .popover-arrow{-webkit-transform:rotate(180deg);transform:rotate(180deg)}:host(.popover-side-start) .popover-arrow{-webkit-transform:rotate(90deg);transform:rotate(90deg)}:host-context([dir=rtl]):host(.popover-side-start) .popover-arrow,:host-context([dir=rtl]).popover-side-start .popover-arrow{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}@supports selector(:dir(rtl)){:host(.popover-side-start:dir(rtl)) .popover-arrow{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}}:host(.popover-side-end) .popover-arrow{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}:host-context([dir=rtl]):host(.popover-side-end) .popover-arrow,:host-context([dir=rtl]).popover-side-end .popover-arrow{-webkit-transform:rotate(90deg);transform:rotate(90deg)}@supports selector(:dir(rtl)){:host(.popover-side-end:dir(rtl)) .popover-arrow{-webkit-transform:rotate(90deg);transform:rotate(90deg)}}.popover-arrow,.popover-content{opacity:0}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.popover-translucent) .popover-content,:host(.popover-translucent) .popover-arrow::after{background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}}';
 var popoverMdCss = ":host{--background:var(--ion-background-color, #fff);--min-width:0;--min-height:0;--max-width:auto;--height:auto;--offset-x:0px;--offset-y:0px;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:fixed;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;color:var(--ion-text-color, #000);z-index:1001}:host(.popover-nested){pointer-events:none}:host(.popover-nested) .popover-wrapper{pointer-events:auto}:host(.overlay-hidden){display:none}.popover-wrapper{z-index:10}.popover-content{display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);overflow:auto;z-index:10}::slotted(.popover-viewport){--ion-safe-area-top:0px;--ion-safe-area-right:0px;--ion-safe-area-bottom:0px;--ion-safe-area-left:0px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}:host(.popover-nested.popover-side-left){--offset-x:5px}:host(.popover-nested.popover-side-right){--offset-x:-5px}:host(.popover-nested.popover-side-start){--offset-x:5px}:host-context([dir=rtl]):host(.popover-nested.popover-side-start),:host-context([dir=rtl]).popover-nested.popover-side-start{--offset-x:-5px}@supports selector(:dir(rtl)){:host(.popover-nested.popover-side-start:dir(rtl)){--offset-x:-5px}}:host(.popover-nested.popover-side-end){--offset-x:-5px}:host-context([dir=rtl]):host(.popover-nested.popover-side-end),:host-context([dir=rtl]).popover-nested.popover-side-end{--offset-x:5px}@supports selector(:dir(rtl)){:host(.popover-nested.popover-side-end:dir(rtl)){--offset-x:5px}}:host{--width:250px;--max-height:90%;--box-shadow:0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);--backdrop-opacity:var(--ion-backdrop-opacity, 0.32)}.popover-content{border-radius:4px;-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]) .popover-content{-webkit-transform-origin:right top;transform-origin:right top}[dir=rtl] .popover-content{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.popover-content:dir(rtl){-webkit-transform-origin:right top;transform-origin:right top}}.popover-viewport{-webkit-transition-delay:100ms;transition-delay:100ms}.popover-wrapper{opacity:0}";
-var _a11;
-var Popover = proxyCustomElement((_a11 = class extends H {
+var _a7;
+var Popover = proxyCustomElement((_a7 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -7226,9 +3321,9 @@ var Popover = proxyCustomElement((_a11 = class extends H {
     }
   }
   componentWillLoad() {
-    var _a190, _b;
+    var _a186, _b;
     const { el } = this;
-    const popoverId = (_b = (_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id) !== null && _b !== void 0 ? _b : setOverlayId(el);
+    const popoverId = (_b = (_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id) !== null && _b !== void 0 ? _b : setOverlayId(el);
     this.parentPopover = el.closest(`ion-popover:not(#${popoverId})`);
     if (this.alignment === void 0) {
       this.alignment = getIonMode(this) === "ios" ? "center" : "start";
@@ -7405,7 +3500,7 @@ var Popover = proxyCustomElement((_a11 = class extends H {
       md: popoverMdCss
     };
   }
-}, __name(_a11, "Popover"), _a11), [289, "ion-popover", {
+}, __name(_a7, "Popover"), _a7), [289, "ion-popover", {
   "hasController": [4, "has-controller"],
   "delegate": [16],
   "overlayIndex": [2, "overlay-index"],
@@ -7479,8 +3574,8 @@ var defineCustomElement9 = defineCustomElement8;
 // node_modules/@ionic/core/components/ion-accordion.js
 var accordionIosCss = ":host{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}:host(.accordion-expanding) ::slotted(ion-item[slot=header]),:host(.accordion-expanded) ::slotted(ion-item[slot=header]){--border-width:0px}:host(.accordion-animated){-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}:host(.accordion-animated) #content{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}#content{overflow:hidden;will-change:max-height}:host(.accordion-collapsing) #content{max-height:0 !important}:host(.accordion-collapsed) #content{display:none}:host(.accordion-expanding) #content{max-height:0}:host(.accordion-expanding) #content-wrapper{overflow:auto}:host(.accordion-disabled) #header,:host(.accordion-readonly) #header,:host(.accordion-disabled) #content,:host(.accordion-readonly) #content{pointer-events:none}:host(.accordion-disabled) #header,:host(.accordion-disabled) #content{opacity:0.4}@media (prefers-reduced-motion: reduce){:host,#content{-webkit-transition:none !important;transition:none !important}}:host(.accordion-next) ::slotted(ion-item[slot=header]){--border-width:0.55px 0px 0.55px 0px}";
 var accordionMdCss = ":host{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}:host(.accordion-expanding) ::slotted(ion-item[slot=header]),:host(.accordion-expanded) ::slotted(ion-item[slot=header]){--border-width:0px}:host(.accordion-animated){-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}:host(.accordion-animated) #content{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}#content{overflow:hidden;will-change:max-height}:host(.accordion-collapsing) #content{max-height:0 !important}:host(.accordion-collapsed) #content{display:none}:host(.accordion-expanding) #content{max-height:0}:host(.accordion-expanding) #content-wrapper{overflow:auto}:host(.accordion-disabled) #header,:host(.accordion-readonly) #header,:host(.accordion-disabled) #content,:host(.accordion-readonly) #content{pointer-events:none}:host(.accordion-disabled) #header,:host(.accordion-disabled) #content{opacity:0.4}@media (prefers-reduced-motion: reduce){:host,#content{-webkit-transition:none !important;transition:none !important}}";
-var _a12;
-var Accordion = proxyCustomElement((_a12 = class extends H {
+var _a8;
+var Accordion = proxyCustomElement((_a8 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -7671,8 +3766,8 @@ var Accordion = proxyCustomElement((_a12 = class extends H {
     this.updateState();
   }
   connectedCallback() {
-    var _a190;
-    const accordionGroupEl = this.accordionGroupEl = (_a190 = this.el) === null || _a190 === void 0 ? void 0 : _a190.closest("ion-accordion-group");
+    var _a186;
+    const accordionGroupEl = this.accordionGroupEl = (_a186 = this.el) === null || _a186 === void 0 ? void 0 : _a186.closest("ion-accordion-group");
     if (accordionGroupEl) {
       this.updateState(true);
       addEventListener(accordionGroupEl, "ionValueChange", this.updateListener);
@@ -7738,7 +3833,7 @@ var Accordion = proxyCustomElement((_a12 = class extends H {
       md: accordionMdCss
     };
   }
-}, __name(_a12, "Accordion"), _a12), [305, "ion-accordion", {
+}, __name(_a8, "Accordion"), _a8), [305, "ion-accordion", {
   "value": [1],
   "disabled": [4],
   "readonly": [4],
@@ -7777,8 +3872,8 @@ var defineCustomElement10 = defineCustomElement$13;
 // node_modules/@ionic/core/components/ion-accordion-group.js
 var accordionGroupIosCss = ":host{display:block}:host(.accordion-group-expand-inset){-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded){border-bottom:none}";
 var accordionGroupMdCss = ":host{display:block}:host(.accordion-group-expand-inset){-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}:host(.accordion-group-expand-inset) ::slotted(ion-accordion){-webkit-box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)}:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded){margin-left:0;margin-right:0;margin-top:16px;margin-bottom:16px;border-radius:6px}:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous){border-end-end-radius:6px;border-end-start-radius:6px}:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next){border-start-start-radius:6px;border-start-end-radius:6px}:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
-var _a13;
-var AccordionGroup = proxyCustomElement((_a13 = class extends H {
+var _a9;
+var AccordionGroup = proxyCustomElement((_a9 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -7962,7 +4057,7 @@ var AccordionGroup = proxyCustomElement((_a13 = class extends H {
       md: accordionGroupMdCss
     };
   }
-}, __name(_a13, "AccordionGroup"), _a13), [289, "ion-accordion-group", {
+}, __name(_a9, "AccordionGroup"), _a9), [289, "ion-accordion-group", {
   "animated": [4],
   "multiple": [4],
   "value": [1025],
@@ -8138,45 +4233,45 @@ var createButtonActiveGesture = /* @__PURE__ */ __name((el, isButton) => {
 
 // node_modules/@ionic/core/components/action-sheet.js
 var iosEnterAnimation3 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
     "pointer-events": "none"
   }).afterClearStyles(["pointer-events"]);
   wrapperAnimation.addElement(baseEl.querySelector(".action-sheet-wrapper")).fromTo("transform", "translateY(100%)", "translateY(0%)");
-  return baseAnimation2.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosEnterAnimation");
 var iosLeaveAnimation3 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
   wrapperAnimation.addElement(baseEl.querySelector(".action-sheet-wrapper")).fromTo("transform", "translateY(0%)", "translateY(100%)");
-  return baseAnimation2.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(450).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(450).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosLeaveAnimation");
 var mdEnterAnimation3 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
     "pointer-events": "none"
   }).afterClearStyles(["pointer-events"]);
   wrapperAnimation.addElement(baseEl.querySelector(".action-sheet-wrapper")).fromTo("transform", "translateY(100%)", "translateY(0%)");
-  return baseAnimation2.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "mdEnterAnimation");
 var mdLeaveAnimation3 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
   wrapperAnimation.addElement(baseEl.querySelector(".action-sheet-wrapper")).fromTo("transform", "translateY(0%)", "translateY(100%)");
-  return baseAnimation2.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(450).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(450).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "mdLeaveAnimation");
 var actionSheetIosCss = '.sc-ion-action-sheet-ios-h{--color:initial;--button-color-activated:var(--button-color);--button-color-focused:var(--button-color);--button-color-hover:var(--button-color);--button-color-selected:var(--button-color);--min-width:auto;--width:100%;--max-width:500px;--min-height:auto;--height:auto;--max-height:calc(100% - (var(--ion-safe-area-top) + var(--ion-safe-area-bottom)));-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:block;position:fixed;outline:none;font-family:var(--ion-font-family, inherit);-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-action-sheet-ios-h{display:none}.action-sheet-wrapper.sc-ion-action-sheet-ios{left:0;right:0;bottom:0;-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);display:block;position:absolute;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);z-index:10;pointer-events:none}.action-sheet-button.sc-ion-action-sheet-ios{display:block;position:relative;width:100%;border:0;outline:none;background:var(--button-background);color:var(--button-color);font-family:inherit;overflow:hidden}.action-sheet-button.sc-ion-action-sheet-ios:disabled{color:var(--button-color-disabled);opacity:0.4}.action-sheet-button-inner.sc-ion-action-sheet-ios{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;pointer-events:none;width:100%;height:100%;z-index:1}.action-sheet-container.sc-ion-action-sheet-ios{display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column;-ms-flex-pack:end;justify-content:flex-end;height:100%;max-height:calc(100vh - (var(--ion-safe-area-top, 0) + var(--ion-safe-area-bottom, 0)));max-height:calc(100dvh - (var(--ion-safe-area-top, 0) + var(--ion-safe-area-bottom, 0)))}.action-sheet-group.sc-ion-action-sheet-ios{-ms-flex-negative:2;flex-shrink:2;overscroll-behavior-y:contain;overflow-y:auto;-webkit-overflow-scrolling:touch;pointer-events:all;background:var(--background)}@media (any-pointer: coarse){.action-sheet-group.sc-ion-action-sheet-ios::-webkit-scrollbar{display:none}}.action-sheet-group-cancel.sc-ion-action-sheet-ios{-ms-flex-negative:0;flex-shrink:0;overflow:hidden}.action-sheet-button.sc-ion-action-sheet-ios::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.action-sheet-selected.sc-ion-action-sheet-ios{color:var(--button-color-selected)}.action-sheet-selected.sc-ion-action-sheet-ios::after{background:var(--button-background-selected);opacity:var(--button-background-selected-opacity)}.action-sheet-button.ion-activated.sc-ion-action-sheet-ios{color:var(--button-color-activated)}.action-sheet-button.ion-activated.sc-ion-action-sheet-ios::after{background:var(--button-background-activated);opacity:var(--button-background-activated-opacity)}.action-sheet-button.ion-focused.sc-ion-action-sheet-ios{color:var(--button-color-focused)}.action-sheet-button.ion-focused.sc-ion-action-sheet-ios::after{background:var(--button-background-focused);opacity:var(--button-background-focused-opacity)}@media (any-hover: hover){.action-sheet-button.sc-ion-action-sheet-ios:not(:disabled):hover{color:var(--button-color-hover)}.action-sheet-button.sc-ion-action-sheet-ios:not(:disabled):hover::after{background:var(--button-background-hover);opacity:var(--button-background-hover-opacity)}}.sc-ion-action-sheet-ios-h{--background:var(--ion-overlay-background-color, var(--ion-color-step-100, var(--ion-background-color-step-100, #f9f9f9)));--backdrop-opacity:var(--ion-backdrop-opacity, 0.4);--button-background:linear-gradient(0deg, rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08), rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08) 50%, transparent 50%) bottom/100% 1px no-repeat transparent;--button-background-activated:var(--ion-text-color, #000);--button-background-activated-opacity:.08;--button-background-hover:currentColor;--button-background-hover-opacity:.04;--button-background-focused:currentColor;--button-background-focused-opacity:.12;--button-background-selected:var(--ion-color-step-150, var(--ion-background-color-step-150, var(--ion-background-color, #fff)));--button-background-selected-opacity:1;--button-color:var(--ion-color-primary, #0054e9);--button-color-disabled:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));--color:var(--ion-color-step-400, var(--ion-text-color-step-600, #999999));text-align:center}.action-sheet-wrapper.sc-ion-action-sheet-ios{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:var(--ion-safe-area-top, 0);padding-bottom:var(--ion-safe-area-bottom, 0);-webkit-box-sizing:content-box;box-sizing:content-box}.action-sheet-container.sc-ion-action-sheet-ios{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:0;padding-bottom:0}.action-sheet-group.sc-ion-action-sheet-ios{border-radius:13px;margin-bottom:8px}.action-sheet-group.sc-ion-action-sheet-ios:first-child{margin-top:10px}.action-sheet-group.sc-ion-action-sheet-ios:last-child{margin-bottom:10px}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){.action-sheet-translucent.sc-ion-action-sheet-ios-h .action-sheet-group.sc-ion-action-sheet-ios{background-color:transparent;-webkit-backdrop-filter:saturate(280%) blur(20px);backdrop-filter:saturate(280%) blur(20px)}.action-sheet-translucent.sc-ion-action-sheet-ios-h .action-sheet-title.sc-ion-action-sheet-ios,.action-sheet-translucent.sc-ion-action-sheet-ios-h .action-sheet-button.sc-ion-action-sheet-ios{background-color:transparent;background-image:-webkit-gradient(linear, left bottom, left top, from(rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8)), to(rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8))), -webkit-gradient(linear, left bottom, left top, from(rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.4)), color-stop(50%, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.4)), color-stop(50%, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8)));background-image:linear-gradient(0deg, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8), rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8) 100%), linear-gradient(0deg, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.4), rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.4) 50%, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8) 50%);background-repeat:no-repeat;background-position:top, bottom;background-size:100% calc(100% - 1px), 100% 1px;-webkit-backdrop-filter:saturate(120%);backdrop-filter:saturate(120%)}.action-sheet-translucent.sc-ion-action-sheet-ios-h .action-sheet-button.ion-activated.sc-ion-action-sheet-ios{background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.7);background-image:none}.action-sheet-translucent.sc-ion-action-sheet-ios-h .action-sheet-cancel.sc-ion-action-sheet-ios{background:var(--button-background-selected)}}.action-sheet-title.sc-ion-action-sheet-ios{background:-webkit-gradient(linear, left bottom, left top, from(rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08)), color-stop(50%, rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08)), color-stop(50%, transparent)) bottom/100% 1px no-repeat transparent;background:linear-gradient(0deg, rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08), rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08) 50%, transparent 50%) bottom/100% 1px no-repeat transparent}.action-sheet-title.sc-ion-action-sheet-ios{-webkit-padding-start:10px;padding-inline-start:10px;-webkit-padding-end:10px;padding-inline-end:10px;padding-top:14px;padding-bottom:13px;color:var(--color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-size:max(13px, 0.8125rem);font-weight:400;text-align:center}.action-sheet-title.action-sheet-has-sub-title.sc-ion-action-sheet-ios{font-weight:600}.action-sheet-sub-title.sc-ion-action-sheet-ios{padding-left:0;padding-right:0;padding-top:6px;padding-bottom:0;font-size:max(13px, 0.8125rem);font-weight:400}.action-sheet-button.sc-ion-action-sheet-ios{-webkit-padding-start:14px;padding-inline-start:14px;-webkit-padding-end:14px;padding-inline-end:14px;padding-top:14px;padding-bottom:14px;min-height:56px;font-size:max(20px, 1.25rem);contain:content}.action-sheet-button.sc-ion-action-sheet-ios .action-sheet-icon.sc-ion-action-sheet-ios{-webkit-margin-end:0.3em;margin-inline-end:0.3em;font-size:max(28px, 1.75rem);pointer-events:none}.action-sheet-button.sc-ion-action-sheet-ios:last-child{background-image:none}.action-sheet-selected.sc-ion-action-sheet-ios{font-weight:bold}.action-sheet-cancel.sc-ion-action-sheet-ios{font-weight:600}.action-sheet-cancel.sc-ion-action-sheet-ios::after{background:var(--button-background-selected);opacity:var(--button-background-selected-opacity)}.action-sheet-destructive.sc-ion-action-sheet-ios,.action-sheet-destructive.ion-activated.sc-ion-action-sheet-ios,.action-sheet-destructive.ion-focused.sc-ion-action-sheet-ios{color:var(--ion-color-danger, #c5000f)}@media (any-hover: hover){.action-sheet-destructive.sc-ion-action-sheet-ios:hover{color:var(--ion-color-danger, #c5000f)}}';
 var actionSheetMdCss = '.sc-ion-action-sheet-md-h{--color:initial;--button-color-activated:var(--button-color);--button-color-focused:var(--button-color);--button-color-hover:var(--button-color);--button-color-selected:var(--button-color);--min-width:auto;--width:100%;--max-width:500px;--min-height:auto;--height:auto;--max-height:calc(100% - (var(--ion-safe-area-top) + var(--ion-safe-area-bottom)));-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:block;position:fixed;outline:none;font-family:var(--ion-font-family, inherit);-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-action-sheet-md-h{display:none}.action-sheet-wrapper.sc-ion-action-sheet-md{left:0;right:0;bottom:0;-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);display:block;position:absolute;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);z-index:10;pointer-events:none}.action-sheet-button.sc-ion-action-sheet-md{display:block;position:relative;width:100%;border:0;outline:none;background:var(--button-background);color:var(--button-color);font-family:inherit;overflow:hidden}.action-sheet-button.sc-ion-action-sheet-md:disabled{color:var(--button-color-disabled);opacity:0.4}.action-sheet-button-inner.sc-ion-action-sheet-md{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;pointer-events:none;width:100%;height:100%;z-index:1}.action-sheet-container.sc-ion-action-sheet-md{display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column;-ms-flex-pack:end;justify-content:flex-end;height:100%;max-height:calc(100vh - (var(--ion-safe-area-top, 0) + var(--ion-safe-area-bottom, 0)));max-height:calc(100dvh - (var(--ion-safe-area-top, 0) + var(--ion-safe-area-bottom, 0)))}.action-sheet-group.sc-ion-action-sheet-md{-ms-flex-negative:2;flex-shrink:2;overscroll-behavior-y:contain;overflow-y:auto;-webkit-overflow-scrolling:touch;pointer-events:all;background:var(--background)}@media (any-pointer: coarse){.action-sheet-group.sc-ion-action-sheet-md::-webkit-scrollbar{display:none}}.action-sheet-group-cancel.sc-ion-action-sheet-md{-ms-flex-negative:0;flex-shrink:0;overflow:hidden}.action-sheet-button.sc-ion-action-sheet-md::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.action-sheet-selected.sc-ion-action-sheet-md{color:var(--button-color-selected)}.action-sheet-selected.sc-ion-action-sheet-md::after{background:var(--button-background-selected);opacity:var(--button-background-selected-opacity)}.action-sheet-button.ion-activated.sc-ion-action-sheet-md{color:var(--button-color-activated)}.action-sheet-button.ion-activated.sc-ion-action-sheet-md::after{background:var(--button-background-activated);opacity:var(--button-background-activated-opacity)}.action-sheet-button.ion-focused.sc-ion-action-sheet-md{color:var(--button-color-focused)}.action-sheet-button.ion-focused.sc-ion-action-sheet-md::after{background:var(--button-background-focused);opacity:var(--button-background-focused-opacity)}@media (any-hover: hover){.action-sheet-button.sc-ion-action-sheet-md:not(:disabled):hover{color:var(--button-color-hover)}.action-sheet-button.sc-ion-action-sheet-md:not(:disabled):hover::after{background:var(--button-background-hover);opacity:var(--button-background-hover-opacity)}}.sc-ion-action-sheet-md-h{--background:var(--ion-overlay-background-color, var(--ion-background-color, #fff));--backdrop-opacity:var(--ion-backdrop-opacity, 0.32);--button-background:transparent;--button-background-selected:currentColor;--button-background-selected-opacity:0;--button-background-activated:transparent;--button-background-activated-opacity:0;--button-background-hover:currentColor;--button-background-hover-opacity:.04;--button-background-focused:currentColor;--button-background-focused-opacity:.12;--button-color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));--button-color-disabled:var(--button-color);--color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54)}.action-sheet-wrapper.sc-ion-action-sheet-md{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:var(--ion-safe-area-top, 0);margin-bottom:0}.action-sheet-title.sc-ion-action-sheet-md{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:20px;padding-bottom:17px;min-height:60px;color:var(--color, rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54));font-size:1rem;text-align:start}.action-sheet-sub-title.sc-ion-action-sheet-md{padding-left:0;padding-right:0;padding-top:16px;padding-bottom:0;font-size:0.875rem}.action-sheet-group.sc-ion-action-sheet-md:first-child{padding-top:0}.action-sheet-group.sc-ion-action-sheet-md:last-child{padding-bottom:var(--ion-safe-area-bottom)}.action-sheet-button.sc-ion-action-sheet-md{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:12px;padding-bottom:12px;position:relative;min-height:52px;font-size:1rem;text-align:start;contain:content;overflow:hidden}.action-sheet-icon.sc-ion-action-sheet-md{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:32px;margin-inline-end:32px;margin-top:0;margin-bottom:0;color:var(--color);font-size:1.5rem}.action-sheet-button-inner.sc-ion-action-sheet-md{-ms-flex-pack:start;justify-content:flex-start}.action-sheet-selected.sc-ion-action-sheet-md{font-weight:bold}';
-var _a14;
-var ActionSheet = proxyCustomElement((_a14 = class extends H {
+var _a10;
+var ActionSheet = proxyCustomElement((_a10 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -8311,8 +4406,8 @@ var ActionSheet = proxyCustomElement((_a14 = class extends H {
     this.triggerController.removeClickListener();
   }
   componentWillLoad() {
-    var _a190;
-    if (!((_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id)) {
+    var _a186;
+    if (!((_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id)) {
       setOverlayId(this.el);
     }
   }
@@ -8361,7 +4456,7 @@ var ActionSheet = proxyCustomElement((_a14 = class extends H {
       md: actionSheetMdCss
     };
   }
-}, __name(_a14, "ActionSheet"), _a14), [290, "ion-action-sheet", {
+}, __name(_a10, "ActionSheet"), _a10), [290, "ion-action-sheet", {
   "overlayIndex": [2, "overlay-index"],
   "delegate": [16],
   "hasController": [4, "has-controller"],
@@ -8426,7 +4521,7 @@ var defineCustomElement13 = defineCustomElement12;
 
 // node_modules/@ionic/core/components/alert.js
 var iosEnterAnimation4 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
@@ -8436,10 +4531,10 @@ var iosEnterAnimation4 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: "0.01", transform: "scale(1.1)" },
     { offset: 1, opacity: "1", transform: "scale(1)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosEnterAnimation");
 var iosLeaveAnimation4 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
@@ -8447,10 +4542,10 @@ var iosLeaveAnimation4 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: 0.99, transform: "scale(1)" },
     { offset: 1, opacity: 0, transform: "scale(0.9)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosLeaveAnimation");
 var mdEnterAnimation4 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
@@ -8460,20 +4555,20 @@ var mdEnterAnimation4 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: "0.01", transform: "scale(0.9)" },
     { offset: 1, opacity: "1", transform: "scale(1)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(150).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(150).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "mdEnterAnimation");
 var mdLeaveAnimation4 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
   wrapperAnimation.addElement(baseEl.querySelector(".alert-wrapper")).fromTo("opacity", 0.99, 0);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(150).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(150).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "mdLeaveAnimation");
 var alertIosCss = ".sc-ion-alert-ios-h{--min-width:250px;--width:auto;--min-height:auto;--height:auto;--max-height:90%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-alert-ios-h{display:none}.alert-top.sc-ion-alert-ios-h{padding-top:50px;-ms-flex-align:start;align-items:flex-start}.alert-wrapper.sc-ion-alert-ios{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:content;opacity:0;z-index:10}.alert-title.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}.alert-sub-title.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-weight:normal}.alert-message.sc-ion-alert-ios,.alert-input-group.sc-ion-alert-ios{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-overflow-scrolling:touch;overflow-y:auto;overscroll-behavior-y:contain}.alert-checkbox-label.sc-ion-alert-ios,.alert-radio-label.sc-ion-alert-ios{overflow-wrap:anywhere}@media (any-pointer: coarse){.alert-checkbox-group.sc-ion-alert-ios::-webkit-scrollbar,.alert-radio-group.sc-ion-alert-ios::-webkit-scrollbar,.alert-message.sc-ion-alert-ios::-webkit-scrollbar{display:none}}.alert-input.sc-ion-alert-ios{padding-left:0;padding-right:0;padding-top:10px;padding-bottom:10px;width:100%;border:0;background:inherit;font:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}.alert-button-group.sc-ion-alert-ios{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;width:100%}.alert-button-group-vertical.sc-ion-alert-ios{-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.alert-button.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;border:0;font-size:0.875rem;line-height:1.25rem;z-index:0}.alert-button.ion-focused.sc-ion-alert-ios,.alert-tappable.ion-focused.sc-ion-alert-ios{background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.alert-button-inner.sc-ion-alert-ios{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;min-height:inherit}.alert-input-disabled.sc-ion-alert-ios,.alert-checkbox-button-disabled.sc-ion-alert-ios .alert-button-inner.sc-ion-alert-ios,.alert-radio-button-disabled.sc-ion-alert-ios .alert-button-inner.sc-ion-alert-ios{cursor:default;opacity:0.5;pointer-events:none}.alert-tappable.sc-ion-alert-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:-ms-flexbox;display:flex;width:100%;border:0;background:transparent;font-size:inherit;line-height:initial;text-align:start;-webkit-appearance:none;-moz-appearance:none;appearance:none;contain:content}.alert-button.sc-ion-alert-ios,.alert-checkbox.sc-ion-alert-ios,.alert-input.sc-ion-alert-ios,.alert-radio.sc-ion-alert-ios{outline:none}.alert-radio-icon.sc-ion-alert-ios,.alert-checkbox-icon.sc-ion-alert-ios,.alert-checkbox-inner.sc-ion-alert-ios{-webkit-box-sizing:border-box;box-sizing:border-box}textarea.alert-input.sc-ion-alert-ios{min-height:37px;resize:none}.sc-ion-alert-ios-h{--background:var(--ion-overlay-background-color, var(--ion-color-step-100, var(--ion-background-color-step-100, #f9f9f9)));--max-width:clamp(270px, 16.875rem, 324px);--backdrop-opacity:var(--ion-backdrop-opacity, 0.3);font-size:max(14px, 0.875rem)}.alert-wrapper.sc-ion-alert-ios{border-radius:13px;-webkit-box-shadow:none;box-shadow:none;overflow:hidden}.alert-button.sc-ion-alert-ios .alert-button-inner.sc-ion-alert-ios{pointer-events:none}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){.alert-translucent.sc-ion-alert-ios-h .alert-wrapper.sc-ion-alert-ios{background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.9);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}}.alert-head.sc-ion-alert-ios{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:12px;padding-bottom:7px;text-align:center}.alert-title.sc-ion-alert-ios{margin-top:8px;color:var(--ion-text-color, #000);font-size:max(17px, 1.0625rem);font-weight:600}.alert-sub-title.sc-ion-alert-ios{color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));font-size:max(14px, 0.875rem)}.alert-message.sc-ion-alert-ios,.alert-input-group.sc-ion-alert-ios{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:0;padding-bottom:21px;color:var(--ion-text-color, #000);font-size:max(13px, 0.8125rem);text-align:center}.alert-message.sc-ion-alert-ios{max-height:240px}.alert-message.sc-ion-alert-ios:empty{padding-left:0;padding-right:0;padding-top:0;padding-bottom:12px}.alert-input.sc-ion-alert-ios{border-radius:7px;margin-top:10px;-webkit-padding-start:7px;padding-inline-start:7px;-webkit-padding-end:7px;padding-inline-end:7px;padding-top:7px;padding-bottom:7px;border:0.55px solid var(--ion-color-step-250, var(--ion-background-color-step-250, #bfbfbf));background-color:var(--ion-background-color, #fff);-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:1rem}.alert-input.sc-ion-alert-ios::-webkit-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::-moz-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios:-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-ios::-ms-clear{display:none}.alert-input.sc-ion-alert-ios::-webkit-date-and-time-value{height:18px}.alert-radio-group.sc-ion-alert-ios,.alert-checkbox-group.sc-ion-alert-ios{-ms-scroll-chaining:none;overscroll-behavior:contain;max-height:240px;border-top:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);overflow-y:auto;-webkit-overflow-scrolling:touch}.alert-tappable.sc-ion-alert-ios{min-height:44px}.alert-radio-label.sc-ion-alert-ios{-webkit-padding-start:13px;padding-inline-start:13px;-webkit-padding-end:13px;padding-inline-end:13px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;-ms-flex-order:0;order:0;color:var(--ion-text-color, #000)}[aria-checked=true].sc-ion-alert-ios .alert-radio-label.sc-ion-alert-ios{color:var(--ion-color-primary, #0054e9)}.alert-radio-icon.sc-ion-alert-ios{position:relative;-ms-flex-order:1;order:1;min-width:30px}[aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios{top:-7px;position:absolute;width:6px;height:12px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:2px;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--ion-color-primary, #0054e9)}[aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios{inset-inline-start:7px}.alert-checkbox-label.sc-ion-alert-ios{-webkit-padding-start:13px;padding-inline-start:13px;-webkit-padding-end:13px;padding-inline-end:13px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;color:var(--ion-text-color, #000)}.alert-checkbox-icon.sc-ion-alert-ios{border-radius:50%;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:6px;margin-inline-end:6px;margin-top:10px;margin-bottom:10px;position:relative;width:min(1.375rem, 55.836px);height:min(1.375rem, 55.836px);border-width:0.125rem;border-style:solid;border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));background-color:var(--ion-item-background, var(--ion-background-color, #fff));contain:strict}[aria-checked=true].sc-ion-alert-ios .alert-checkbox-icon.sc-ion-alert-ios{border-color:var(--ion-color-primary, #0054e9);background-color:var(--ion-color-primary, #0054e9)}[aria-checked=true].sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios{top:calc(min(1.375rem, 55.836px) / 8);position:absolute;width:calc(min(1.375rem, 55.836px) / 6 + 1px);height:calc(min(1.375rem, 55.836px) * 0.5);-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:0.125rem;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--ion-background-color, #fff)}[aria-checked=true].sc-ion-alert-ios .alert-checkbox-inner.sc-ion-alert-ios{inset-inline-start:calc(min(1.375rem, 55.836px) / 3)}.alert-button-group.sc-ion-alert-ios{-webkit-margin-end:-0.55px;margin-inline-end:-0.55px;-ms-flex-wrap:wrap;flex-wrap:wrap}.alert-button-group-vertical.sc-ion-alert-ios .alert-button.sc-ion-alert-ios{border-right:none}[dir=rtl].sc-ion-alert-ios-h .alert-button-group-vertical.sc-ion-alert-ios .alert-button.sc-ion-alert-ios:last-child,[dir=rtl] .sc-ion-alert-ios-h .alert-button-group-vertical.sc-ion-alert-ios .alert-button.sc-ion-alert-ios:last-child{border-right:none}[dir=rtl].sc-ion-alert-ios .alert-button-group-vertical.sc-ion-alert-ios .alert-button.sc-ion-alert-ios:last-child{border-right:none}@supports selector(:dir(rtl)){.alert-button-group-vertical.sc-ion-alert-ios .alert-button.sc-ion-alert-ios:last-child:dir(rtl){border-right:none}}.alert-button.sc-ion-alert-ios{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:0;-ms-flex:1 1 auto;flex:1 1 auto;min-width:50%;height:max(44px, 2.75rem);border-top:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);border-right:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);background-color:transparent;color:var(--ion-color-primary, #0054e9);font-size:max(17px, 1.0625rem);overflow:hidden}[dir=rtl].sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:first-child,[dir=rtl] .sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:first-child{border-right:0}[dir=rtl].sc-ion-alert-ios .alert-button.sc-ion-alert-ios:first-child{border-right:0}@supports selector(:dir(rtl)){.alert-button.sc-ion-alert-ios:first-child:dir(rtl){border-right:0}}.alert-button.sc-ion-alert-ios:last-child{border-right:0;font-weight:bold}[dir=rtl].sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:last-child,[dir=rtl] .sc-ion-alert-ios-h .alert-button.sc-ion-alert-ios:last-child{border-right:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}[dir=rtl].sc-ion-alert-ios .alert-button.sc-ion-alert-ios:last-child{border-right:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}@supports selector(:dir(rtl)){.alert-button.sc-ion-alert-ios:last-child:dir(rtl){border-right:0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}}.alert-button.ion-activated.sc-ion-alert-ios{background-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1)}.alert-button-role-destructive.sc-ion-alert-ios,.alert-button-role-destructive.ion-activated.sc-ion-alert-ios,.alert-button-role-destructive.ion-focused.sc-ion-alert-ios{color:var(--ion-color-danger, #c5000f)}";
 var alertMdCss = ".sc-ion-alert-md-h{--min-width:250px;--width:auto;--min-height:auto;--height:auto;--max-height:90%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-alert-md-h{display:none}.alert-top.sc-ion-alert-md-h{padding-top:50px;-ms-flex-align:start;align-items:flex-start}.alert-wrapper.sc-ion-alert-md{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:content;opacity:0;z-index:10}.alert-title.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}.alert-sub-title.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-weight:normal}.alert-message.sc-ion-alert-md,.alert-input-group.sc-ion-alert-md{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-overflow-scrolling:touch;overflow-y:auto;overscroll-behavior-y:contain}.alert-checkbox-label.sc-ion-alert-md,.alert-radio-label.sc-ion-alert-md{overflow-wrap:anywhere}@media (any-pointer: coarse){.alert-checkbox-group.sc-ion-alert-md::-webkit-scrollbar,.alert-radio-group.sc-ion-alert-md::-webkit-scrollbar,.alert-message.sc-ion-alert-md::-webkit-scrollbar{display:none}}.alert-input.sc-ion-alert-md{padding-left:0;padding-right:0;padding-top:10px;padding-bottom:10px;width:100%;border:0;background:inherit;font:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}.alert-button-group.sc-ion-alert-md{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;width:100%}.alert-button-group-vertical.sc-ion-alert-md{-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.alert-button.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;border:0;font-size:0.875rem;line-height:1.25rem;z-index:0}.alert-button.ion-focused.sc-ion-alert-md,.alert-tappable.ion-focused.sc-ion-alert-md{background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.alert-button-inner.sc-ion-alert-md{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;min-height:inherit}.alert-input-disabled.sc-ion-alert-md,.alert-checkbox-button-disabled.sc-ion-alert-md .alert-button-inner.sc-ion-alert-md,.alert-radio-button-disabled.sc-ion-alert-md .alert-button-inner.sc-ion-alert-md{cursor:default;opacity:0.5;pointer-events:none}.alert-tappable.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:-ms-flexbox;display:flex;width:100%;border:0;background:transparent;font-size:inherit;line-height:initial;text-align:start;-webkit-appearance:none;-moz-appearance:none;appearance:none;contain:content}.alert-button.sc-ion-alert-md,.alert-checkbox.sc-ion-alert-md,.alert-input.sc-ion-alert-md,.alert-radio.sc-ion-alert-md{outline:none}.alert-radio-icon.sc-ion-alert-md,.alert-checkbox-icon.sc-ion-alert-md,.alert-checkbox-inner.sc-ion-alert-md{-webkit-box-sizing:border-box;box-sizing:border-box}textarea.alert-input.sc-ion-alert-md{min-height:37px;resize:none}.sc-ion-alert-md-h{--background:var(--ion-overlay-background-color, var(--ion-background-color, #fff));--max-width:280px;--backdrop-opacity:var(--ion-backdrop-opacity, 0.32);font-size:0.875rem}.alert-wrapper.sc-ion-alert-md{border-radius:4px;-webkit-box-shadow:0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);box-shadow:0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12)}.alert-head.sc-ion-alert-md{-webkit-padding-start:23px;padding-inline-start:23px;-webkit-padding-end:23px;padding-inline-end:23px;padding-top:20px;padding-bottom:15px;text-align:start}.alert-title.sc-ion-alert-md{color:var(--ion-text-color, #000);font-size:1.25rem;font-weight:500}.alert-sub-title.sc-ion-alert-md{color:var(--ion-text-color, #000);font-size:1rem}.alert-message.sc-ion-alert-md,.alert-input-group.sc-ion-alert-md{-webkit-padding-start:24px;padding-inline-start:24px;-webkit-padding-end:24px;padding-inline-end:24px;padding-top:20px;padding-bottom:20px;color:var(--ion-color-step-550, var(--ion-text-color-step-450, #737373))}.alert-message.sc-ion-alert-md{font-size:1rem}@media screen and (max-width: 767px){.alert-message.sc-ion-alert-md{max-height:266px}}.alert-message.sc-ion-alert-md:empty{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}.alert-head.sc-ion-alert-md+.alert-message.sc-ion-alert-md{padding-top:0}.alert-input.sc-ion-alert-md{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:5px;border-bottom:1px solid var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));color:var(--ion-text-color, #000)}.alert-input.sc-ion-alert-md::-webkit-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::-moz-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md:-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::-ms-input-placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::placeholder{color:var(--ion-placeholder-color, var(--ion-color-step-400, var(--ion-text-color-step-600, #999999)));font-family:inherit;font-weight:inherit}.alert-input.sc-ion-alert-md::-ms-clear{display:none}.alert-input.sc-ion-alert-md:focus{margin-bottom:4px;border-bottom:2px solid var(--ion-color-primary, #0054e9)}.alert-radio-group.sc-ion-alert-md,.alert-checkbox-group.sc-ion-alert-md{position:relative;border-top:1px solid var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));border-bottom:1px solid var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));overflow:auto}@media screen and (max-width: 767px){.alert-radio-group.sc-ion-alert-md,.alert-checkbox-group.sc-ion-alert-md{max-height:266px}}.alert-tappable.sc-ion-alert-md{position:relative;min-height:48px}.alert-radio-label.sc-ion-alert-md{-webkit-padding-start:52px;padding-inline-start:52px;-webkit-padding-end:26px;padding-inline-end:26px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));font-size:1rem}.alert-radio-icon.sc-ion-alert-md{top:0;border-radius:50%;display:block;position:relative;width:20px;height:20px;border-width:2px;border-style:solid;border-color:var(--ion-color-step-550, var(--ion-background-color-step-550, #737373))}.alert-radio-icon.sc-ion-alert-md{inset-inline-start:26px}.alert-radio-inner.sc-ion-alert-md{top:3px;border-radius:50%;position:absolute;width:10px;height:10px;-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0);-webkit-transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);background-color:var(--ion-color-primary, #0054e9)}.alert-radio-inner.sc-ion-alert-md{inset-inline-start:3px}[aria-checked=true].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md{color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626))}[aria-checked=true].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md{border-color:var(--ion-color-primary, #0054e9)}[aria-checked=true].sc-ion-alert-md .alert-radio-inner.sc-ion-alert-md{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}.alert-checkbox-label.sc-ion-alert-md{-webkit-padding-start:53px;padding-inline-start:53px;-webkit-padding-end:26px;padding-inline-end:26px;padding-top:13px;padding-bottom:13px;-ms-flex:1;flex:1;width:calc(100% - 53px);color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));font-size:1rem}.alert-checkbox-icon.sc-ion-alert-md{top:0;border-radius:2px;position:relative;width:16px;height:16px;border-width:2px;border-style:solid;border-color:var(--ion-color-step-550, var(--ion-background-color-step-550, #737373));contain:strict}.alert-checkbox-icon.sc-ion-alert-md{inset-inline-start:26px}[aria-checked=true].sc-ion-alert-md .alert-checkbox-icon.sc-ion-alert-md{border-color:var(--ion-color-primary, #0054e9);background-color:var(--ion-color-primary, #0054e9)}[aria-checked=true].sc-ion-alert-md .alert-checkbox-inner.sc-ion-alert-md{top:0;position:absolute;width:6px;height:10px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:2px;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--ion-color-primary-contrast, #fff)}[aria-checked=true].sc-ion-alert-md .alert-checkbox-inner.sc-ion-alert-md{inset-inline-start:3px}.alert-button-group.sc-ion-alert-md{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:8px;padding-bottom:8px;-webkit-box-sizing:border-box;box-sizing:border-box;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;-ms-flex-pack:end;justify-content:flex-end}.alert-button.sc-ion-alert-md{border-radius:2px;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:0;margin-bottom:0;-webkit-padding-start:10px;padding-inline-start:10px;-webkit-padding-end:10px;padding-inline-end:10px;padding-top:10px;padding-bottom:10px;position:relative;background-color:transparent;color:var(--ion-color-primary, #0054e9);font-weight:500;text-align:end;text-transform:uppercase;overflow:hidden}.alert-button-inner.sc-ion-alert-md{-ms-flex-pack:end;justify-content:flex-end}@media screen and (min-width: 768px){.sc-ion-alert-md-h{--max-width:min(100vw - 96px, 560px);--max-height:min(100vh - 96px, 560px)}}";
-var _a15;
-var Alert = proxyCustomElement((_a15 = class extends H {
+var _a11;
+var Alert = proxyCustomElement((_a11 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -8525,7 +4620,7 @@ var Alert = proxyCustomElement((_a15 = class extends H {
     }
   }
   onKeydown(ev) {
-    var _a190;
+    var _a186;
     const inputTypes = new Set(this.processedInputs.map((i) => i.type));
     if (inputTypes.has("checkbox") && ev.key === "Enter") {
       ev.preventDefault();
@@ -8534,7 +4629,7 @@ var Alert = proxyCustomElement((_a15 = class extends H {
     if (ev.target.classList.contains("alert-wrapper")) {
       if (ev.key === "Tab" && ev.shiftKey) {
         ev.preventDefault();
-        const lastChildBtn = (_a190 = this.wrapperEl) === null || _a190 === void 0 ? void 0 : _a190.querySelector(".alert-button:last-child");
+        const lastChildBtn = (_a186 = this.wrapperEl) === null || _a186 === void 0 ? void 0 : _a186.querySelector(".alert-button:last-child");
         lastChildBtn.focus();
         return;
       }
@@ -8577,7 +4672,7 @@ var Alert = proxyCustomElement((_a15 = class extends H {
     }
     this.inputType = inputTypes.values().next().value;
     this.processedInputs = inputs.map((i, index) => {
-      var _a190;
+      var _a186;
       return {
         type: i.type || "text",
         name: i.name || `${index}`,
@@ -8590,7 +4685,7 @@ var Alert = proxyCustomElement((_a15 = class extends H {
         handler: i.handler,
         min: i.min,
         max: i.max,
-        cssClass: (_a190 = i.cssClass) !== null && _a190 !== void 0 ? _a190 : "",
+        cssClass: (_a186 = i.cssClass) !== null && _a186 !== void 0 ? _a186 : "",
         attributes: i.attributes || {},
         tabindex: i.type === "radio" && i !== focusable ? -1 : 0
       };
@@ -8601,8 +4696,8 @@ var Alert = proxyCustomElement((_a15 = class extends H {
     this.triggerChanged();
   }
   componentWillLoad() {
-    var _a190;
-    if (!((_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id)) {
+    var _a186;
+    if (!((_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id)) {
       setOverlayId(this.el);
     }
     this.inputsChanged();
@@ -8633,9 +4728,9 @@ var Alert = proxyCustomElement((_a15 = class extends H {
       const unlock = yield this.lockController.lock();
       yield this.delegateController.attachViewToDom();
       yield present(this, "alertEnter", iosEnterAnimation4, mdEnterAnimation4).then(() => {
-        var _a190, _b;
+        var _a186, _b;
         if (this.buttons.length === 1 && this.inputs.length === 0) {
-          const queryBtn = (_a190 = this.wrapperEl) === null || _a190 === void 0 ? void 0 : _a190.querySelector(".alert-button");
+          const queryBtn = (_a186 = this.wrapperEl) === null || _a186 === void 0 ? void 0 : _a186.querySelector(".alert-button");
           queryBtn.focus();
         } else {
           (_b = this.wrapperEl) === null || _b === void 0 ? void 0 : _b.focus();
@@ -8769,20 +4864,20 @@ var Alert = proxyCustomElement((_a15 = class extends H {
       return null;
     }
     return h("div", { class: "alert-input-group" }, inputs.map((i) => {
-      var _a190, _b, _c, _d;
+      var _a186, _b, _c, _d;
       if (i.type === "textarea") {
-        return h("div", { class: "alert-input-wrapper" }, h("textarea", Object.assign({ placeholder: i.placeholder, value: i.value, id: i.id, tabIndex: i.tabindex }, i.attributes, { disabled: (_b = (_a190 = i.attributes) === null || _a190 === void 0 ? void 0 : _a190.disabled) !== null && _b !== void 0 ? _b : i.disabled, class: inputClass(i), onInput: /* @__PURE__ */ __name((e) => {
-          var _a191;
+        return h("div", { class: "alert-input-wrapper" }, h("textarea", Object.assign({ placeholder: i.placeholder, value: i.value, id: i.id, tabIndex: i.tabindex }, i.attributes, { disabled: (_b = (_a186 = i.attributes) === null || _a186 === void 0 ? void 0 : _a186.disabled) !== null && _b !== void 0 ? _b : i.disabled, class: inputClass(i), onInput: /* @__PURE__ */ __name((e) => {
+          var _a187;
           i.value = e.target.value;
-          if ((_a191 = i.attributes) === null || _a191 === void 0 ? void 0 : _a191.onInput) {
+          if ((_a187 = i.attributes) === null || _a187 === void 0 ? void 0 : _a187.onInput) {
             i.attributes.onInput(e);
           }
         }, "onInput") })));
       } else {
         return h("div", { class: "alert-input-wrapper" }, h("input", Object.assign({ placeholder: i.placeholder, type: i.type, min: i.min, max: i.max, value: i.value, id: i.id, tabIndex: i.tabindex }, i.attributes, { disabled: (_d = (_c = i.attributes) === null || _c === void 0 ? void 0 : _c.disabled) !== null && _d !== void 0 ? _d : i.disabled, class: inputClass(i), onInput: /* @__PURE__ */ __name((e) => {
-          var _a191;
+          var _a187;
           i.value = e.target.value;
-          if ((_a191 = i.attributes) === null || _a191 === void 0 ? void 0 : _a191.onInput) {
+          if ((_a187 = i.attributes) === null || _a187 === void 0 ? void 0 : _a187.onInput) {
             i.attributes.onInput(e);
           }
         }, "onInput") })));
@@ -8834,7 +4929,7 @@ var Alert = proxyCustomElement((_a15 = class extends H {
       md: alertMdCss
     };
   }
-}, __name(_a15, "Alert"), _a15), [290, "ion-alert", {
+}, __name(_a11, "Alert"), _a11), [290, "ion-alert", {
   "overlayIndex": [2, "overlay-index"],
   "delegate": [16],
   "hasController": [4, "has-controller"],
@@ -8864,8 +4959,8 @@ var Alert = proxyCustomElement((_a15 = class extends H {
   "inputs": ["inputsChanged"]
 }]);
 var inputClass = /* @__PURE__ */ __name((input) => {
-  var _a190, _b, _c;
-  return Object.assign(Object.assign({ "alert-input": true, "alert-input-disabled": ((_b = (_a190 = input.attributes) === null || _a190 === void 0 ? void 0 : _a190.disabled) !== null && _b !== void 0 ? _b : input.disabled) || false }, getClassMap(input.cssClass)), getClassMap(input.attributes ? (_c = input.attributes.class) === null || _c === void 0 ? void 0 : _c.toString() : ""));
+  var _a186, _b, _c;
+  return Object.assign(Object.assign({ "alert-input": true, "alert-input-disabled": ((_b = (_a186 = input.attributes) === null || _a186 === void 0 ? void 0 : _a186.disabled) !== null && _b !== void 0 ? _b : input.disabled) || false }, getClassMap(input.cssClass)), getClassMap(input.attributes ? (_c = input.attributes.class) === null || _c === void 0 ? void 0 : _c.toString() : ""));
 }, "inputClass");
 var buttonClass2 = /* @__PURE__ */ __name((button) => {
   return Object.assign({ "alert-button": true, "ion-focusable": true, "ion-activatable": true, [`alert-button-role-${button.role}`]: button.role !== void 0 }, getClassMap(button.cssClass));
@@ -8902,8 +4997,8 @@ var defineCustomElement15 = defineCustomElement14;
 
 // node_modules/@ionic/core/components/ion-app.js
 var appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
-var _a16;
-var App = proxyCustomElement((_a16 = class extends H {
+var _a12;
+var App = proxyCustomElement((_a12 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -8911,19 +5006,19 @@ var App = proxyCustomElement((_a16 = class extends H {
   componentDidLoad() {
     if (Build.isBrowser) {
       rIC(() => __async(this, null, function* () {
-        const isHybrid2 = isPlatform(window, "hybrid");
+        const isHybrid = isPlatform(window, "hybrid");
         if (!config.getBoolean("_testing")) {
-          import("./index7-5HC62VQL.js").then((module) => module.startTapClick(config));
+          import("./index7-S4K7SZEG.js").then((module) => module.startTapClick(config));
         }
-        if (config.getBoolean("statusTap", isHybrid2)) {
+        if (config.getBoolean("statusTap", isHybrid)) {
           import("./status-tap-JYM74VAY.js").then((module) => module.startStatusTap());
         }
         if (config.getBoolean("inputShims", needInputShims())) {
           const platform = isPlatform(window, "ios") ? "ios" : "android";
-          import("./input-shims-EUYIR3LX.js").then((module) => module.startInputShims(config, platform));
+          import("./input-shims-PYCIEHNT.js").then((module) => module.startInputShims(config, platform));
         }
         const hardwareBackButtonModule = yield import("./hardware-back-button-WGSNSH2S.js");
-        const supportsHardwareBackButtonEvents = isHybrid2 || shouldUseCloseWatcher();
+        const supportsHardwareBackButtonEvents = isHybrid || shouldUseCloseWatcher();
         if (config.getBoolean("hardwareBackButton", supportsHardwareBackButtonEvents)) {
           hardwareBackButtonModule.startHardwareBackButton();
         } else {
@@ -8971,7 +5066,7 @@ var App = proxyCustomElement((_a16 = class extends H {
   static get style() {
     return appCss;
   }
-}, __name(_a16, "App"), _a16), [256, "ion-app", {
+}, __name(_a12, "App"), _a12), [256, "ion-app", {
   "setFocus": [64]
 }]);
 var needInputShims = /* @__PURE__ */ __name(() => {
@@ -9013,8 +5108,8 @@ var defineCustomElement16 = defineCustomElement$15;
 // node_modules/@ionic/core/components/ion-avatar.js
 var avatarIosCss = ":host{border-radius:var(--border-radius);display:block}::slotted(ion-img),::slotted(img){border-radius:var(--border-radius);width:100%;height:100%;-o-object-fit:cover;object-fit:cover;overflow:hidden}:host{--border-radius:50%;width:48px;height:48px}";
 var avatarMdCss = ":host{border-radius:var(--border-radius);display:block}::slotted(ion-img),::slotted(img){border-radius:var(--border-radius);width:100%;height:100%;-o-object-fit:cover;object-fit:cover;overflow:hidden}:host{--border-radius:50%;width:64px;height:64px}";
-var _a17;
-var Avatar = proxyCustomElement((_a17 = class extends H {
+var _a13;
+var Avatar = proxyCustomElement((_a13 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9029,7 +5124,7 @@ var Avatar = proxyCustomElement((_a17 = class extends H {
       md: avatarMdCss
     };
   }
-}, __name(_a17, "Avatar"), _a17), [289, "ion-avatar"]);
+}, __name(_a13, "Avatar"), _a13), [289, "ion-avatar"]);
 function defineCustomElement$16() {
   if (typeof customElements === "undefined") {
     return;
@@ -9054,8 +5149,8 @@ var defineCustomElement18 = defineCustomElement5;
 // node_modules/@ionic/core/components/ion-badge.js
 var badgeIosCss = ":host{--background:var(--ion-color-primary, #0054e9);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:0.8125rem;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(:empty){display:none}:host{border-radius:10px;font-size:max(13px, 0.8125rem)}";
 var badgeMdCss = ":host{--background:var(--ion-color-primary, #0054e9);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:0.8125rem;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(:empty){display:none}:host{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}";
-var _a18;
-var Badge = proxyCustomElement((_a18 = class extends H {
+var _a14;
+var Badge = proxyCustomElement((_a14 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9073,7 +5168,7 @@ var Badge = proxyCustomElement((_a18 = class extends H {
       md: badgeMdCss
     };
   }
-}, __name(_a18, "Badge"), _a18), [289, "ion-badge", {
+}, __name(_a14, "Badge"), _a14), [289, "ion-badge", {
   "color": [513]
 }]);
 function defineCustomElement$17() {
@@ -9097,8 +5192,8 @@ var defineCustomElement19 = defineCustomElement$17;
 // node_modules/@ionic/core/components/ion-breadcrumb.js
 var breadcrumbIosCss = ":host{display:-ms-flexbox;display:flex;-ms-flex:0 0 auto;flex:0 0 auto;-ms-flex-align:center;align-items:center;color:var(--color);font-size:1rem;font-weight:400;line-height:1.5}.breadcrumb-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;outline:none;background:inherit}:host(.breadcrumb-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.breadcrumb-active){color:var(--color-active)}:host(.ion-focused){color:var(--color-focused)}:host(.ion-focused) .breadcrumb-native{background:var(--background-focused)}@media (any-hover: hover){:host(.ion-activatable:hover){color:var(--color-hover)}:host(.ion-activatable.in-breadcrumbs-color:hover),:host(.ion-activatable.ion-color:hover){color:var(--ion-color-shade)}}.breadcrumb-separator{display:-ms-inline-flexbox;display:inline-flex}:host(.breadcrumb-collapsed) .breadcrumb-native{display:none}:host(.in-breadcrumbs-color),:host(.in-breadcrumbs-color.breadcrumb-active){color:var(--ion-color-base)}:host(.in-breadcrumbs-color) .breadcrumb-separator{color:var(--ion-color-base)}:host(.ion-color){color:var(--ion-color-base)}:host(.in-toolbar-color),:host(.in-toolbar-color) .breadcrumb-separator{color:rgba(var(--ion-color-contrast-rgb), 0.8)}:host(.in-toolbar-color.breadcrumb-active){color:var(--ion-color-contrast)}.breadcrumbs-collapsed-indicator{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;-webkit-margin-start:14px;margin-inline-start:14px;-webkit-margin-end:14px;margin-inline-end:14px;margin-top:0;margin-bottom:0;display:-ms-flexbox;display:flex;-ms-flex:1 1 100%;flex:1 1 100%;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:32px;height:18px;border:0;outline:none;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}.breadcrumbs-collapsed-indicator ion-icon{margin-top:1px;font-size:1.375rem}:host{--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #2d4665));--color-active:var(--ion-text-color, #03060b);--color-hover:var(--ion-text-color, #03060b);--color-focused:var(--color-active);--background-focused:var(--ion-color-step-50, var(--ion-background-color-step-50, rgba(233, 237, 243, 0.7)));font-size:clamp(16px, 1rem, 22px)}:host(.breadcrumb-active){font-weight:600}.breadcrumb-native{border-radius:4px;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:5px;padding-bottom:5px;border:1px solid transparent}:host(.ion-focused) .breadcrumb-native{border-radius:8px}:host(.in-breadcrumbs-color.ion-focused) .breadcrumb-native,:host(.ion-color.ion-focused) .breadcrumb-native{background:rgba(var(--ion-color-base-rgb), 0.1);color:var(--ion-color-base)}:host(.ion-focused) ::slotted(ion-icon),:host(.in-breadcrumbs-color.ion-focused) ::slotted(ion-icon),:host(.ion-color.ion-focused) ::slotted(ion-icon){color:var(--ion-color-step-750, var(--ion-text-color-step-250, #445b78))}.breadcrumb-separator{color:var(--ion-color-step-550, var(--ion-text-color-step-450, #73849a))}::slotted(ion-icon){color:var(--ion-color-step-400, var(--ion-text-color-step-600, #92a0b3));font-size:min(1.125rem, 21.6px)}::slotted(ion-icon[slot=start]){-webkit-margin-end:8px;margin-inline-end:8px}::slotted(ion-icon[slot=end]){-webkit-margin-start:8px;margin-inline-start:8px}:host(.breadcrumb-active) ::slotted(ion-icon){color:var(--ion-color-step-850, var(--ion-text-color-step-150, #242d39))}.breadcrumbs-collapsed-indicator{border-radius:4px;background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e9edf3));color:var(--ion-color-step-550, var(--ion-text-color-step-450, #73849a))}.breadcrumbs-collapsed-indicator:hover{opacity:0.45}.breadcrumbs-collapsed-indicator:focus{background:var(--ion-color-step-150, var(--ion-background-color-step-150, #d9e0ea))}.breadcrumbs-collapsed-indicator ion-icon{font-size:min(1.375rem, 22px)}";
 var breadcrumbMdCss = ":host{display:-ms-flexbox;display:flex;-ms-flex:0 0 auto;flex:0 0 auto;-ms-flex-align:center;align-items:center;color:var(--color);font-size:1rem;font-weight:400;line-height:1.5}.breadcrumb-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;width:100%;outline:none;background:inherit}:host(.breadcrumb-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.breadcrumb-active){color:var(--color-active)}:host(.ion-focused){color:var(--color-focused)}:host(.ion-focused) .breadcrumb-native{background:var(--background-focused)}@media (any-hover: hover){:host(.ion-activatable:hover){color:var(--color-hover)}:host(.ion-activatable.in-breadcrumbs-color:hover),:host(.ion-activatable.ion-color:hover){color:var(--ion-color-shade)}}.breadcrumb-separator{display:-ms-inline-flexbox;display:inline-flex}:host(.breadcrumb-collapsed) .breadcrumb-native{display:none}:host(.in-breadcrumbs-color),:host(.in-breadcrumbs-color.breadcrumb-active){color:var(--ion-color-base)}:host(.in-breadcrumbs-color) .breadcrumb-separator{color:var(--ion-color-base)}:host(.ion-color){color:var(--ion-color-base)}:host(.in-toolbar-color),:host(.in-toolbar-color) .breadcrumb-separator{color:rgba(var(--ion-color-contrast-rgb), 0.8)}:host(.in-toolbar-color.breadcrumb-active){color:var(--ion-color-contrast)}.breadcrumbs-collapsed-indicator{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;-webkit-margin-start:14px;margin-inline-start:14px;-webkit-margin-end:14px;margin-inline-end:14px;margin-top:0;margin-bottom:0;display:-ms-flexbox;display:flex;-ms-flex:1 1 100%;flex:1 1 100%;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:32px;height:18px;border:0;outline:none;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}.breadcrumbs-collapsed-indicator ion-icon{margin-top:1px;font-size:1.375rem}:host{--color:var(--ion-color-step-600, var(--ion-text-color-step-400, #677483));--color-active:var(--ion-text-color, #03060b);--color-hover:var(--ion-text-color, #03060b);--color-focused:var(--ion-color-step-800, var(--ion-text-color-step-200, #35404e));--background-focused:var(--ion-color-step-50, var(--ion-background-color-step-50, #fff))}:host(.breadcrumb-active){font-weight:500}.breadcrumb-native{-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:6px;padding-bottom:6px}.breadcrumb-separator{-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px;margin-top:-1px}:host(.ion-focused) .breadcrumb-native{border-radius:4px;-webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 8px rgba(0, 0, 0, 0.12);box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2), 0px 2px 8px rgba(0, 0, 0, 0.12)}.breadcrumb-separator{color:var(--ion-color-step-550, var(--ion-text-color-step-450, #73849a))}::slotted(ion-icon){color:var(--ion-color-step-550, var(--ion-text-color-step-450, #7d8894));font-size:1.125rem}::slotted(ion-icon[slot=start]){-webkit-margin-end:8px;margin-inline-end:8px}::slotted(ion-icon[slot=end]){-webkit-margin-start:8px;margin-inline-start:8px}:host(.breadcrumb-active) ::slotted(ion-icon){color:var(--ion-color-step-850, var(--ion-text-color-step-150, #222d3a))}.breadcrumbs-collapsed-indicator{border-radius:2px;background:var(--ion-color-step-100, var(--ion-background-color-step-100, #eef1f3));color:var(--ion-color-step-550, var(--ion-text-color-step-450, #73849a))}.breadcrumbs-collapsed-indicator:hover{opacity:0.7}.breadcrumbs-collapsed-indicator:focus{background:var(--ion-color-step-150, var(--ion-background-color-step-150, #dfe5e8))}";
-var _a19;
-var Breadcrumb = proxyCustomElement((_a19 = class extends H {
+var _a15;
+var Breadcrumb = proxyCustomElement((_a15 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9167,7 +5262,7 @@ var Breadcrumb = proxyCustomElement((_a19 = class extends H {
       md: breadcrumbMdCss
     };
   }
-}, __name(_a19, "Breadcrumb"), _a19), [289, "ion-breadcrumb", {
+}, __name(_a15, "Breadcrumb"), _a15), [289, "ion-breadcrumb", {
   "collapsed": [4],
   "last": [4],
   "showCollapsedIndicator": [4, "show-collapsed-indicator"],
@@ -9208,8 +5303,8 @@ var defineCustomElement20 = defineCustomElement$18;
 // node_modules/@ionic/core/components/ion-breadcrumbs.js
 var breadcrumbsIosCss = ":host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center}:host(.in-toolbar-color),:host(.in-toolbar-color) .breadcrumbs-collapsed-indicator ion-icon{color:var(--ion-color-contrast)}:host(.in-toolbar-color) .breadcrumbs-collapsed-indicator{background:rgba(var(--ion-color-contrast-rgb), 0.11)}:host(.in-toolbar){-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px;padding-top:0;padding-bottom:0;-ms-flex-pack:center;justify-content:center}";
 var breadcrumbsMdCss = ":host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center}:host(.in-toolbar-color),:host(.in-toolbar-color) .breadcrumbs-collapsed-indicator ion-icon{color:var(--ion-color-contrast)}:host(.in-toolbar-color) .breadcrumbs-collapsed-indicator{background:rgba(var(--ion-color-contrast-rgb), 0.11)}:host(.in-toolbar){-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:0;padding-bottom:0}";
-var _a20;
-var Breadcrumbs = proxyCustomElement((_a20 = class extends H {
+var _a16;
+var Breadcrumbs = proxyCustomElement((_a16 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9308,7 +5403,7 @@ var Breadcrumbs = proxyCustomElement((_a20 = class extends H {
       md: breadcrumbsMdCss
     };
   }
-}, __name(_a20, "Breadcrumbs"), _a20), [289, "ion-breadcrumbs", {
+}, __name(_a16, "Breadcrumbs"), _a16), [289, "ion-breadcrumbs", {
   "color": [513],
   "maxItems": [2, "max-items"],
   "itemsBeforeCollapse": [2, "items-before-collapse"],
@@ -9341,8 +5436,8 @@ var defineCustomElement21 = defineCustomElement$19;
 // node_modules/@ionic/core/components/button.js
 var buttonIosCss = ':host{--overflow:hidden;--ripple-color:currentColor;--border-width:initial;--border-color:initial;--border-style:initial;--color-activated:var(--color);--color-focused:var(--color);--color-hover:var(--color);--box-shadow:none;display:inline-block;width:auto;color:var(--color);font-family:var(--ion-font-family, inherit);text-align:center;text-decoration:none;white-space:normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;vertical-align:-webkit-baseline-middle;-webkit-font-kerning:none;font-kerning:none}:host(.button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.button-solid){--background:var(--ion-color-primary, #0054e9);--color:var(--ion-color-primary-contrast, #fff)}:host(.button-outline){--border-color:var(--ion-color-primary, #0054e9);--background:transparent;--color:var(--ion-color-primary, #0054e9)}:host(.button-clear){--border-width:0;--background:transparent;--color:var(--ion-color-primary, #0054e9)}:host(.button-block){display:block}:host(.button-block) .button-native{margin-left:0;margin-right:0;width:100%;clear:both;contain:content}:host(.button-block) .button-native::after{clear:both}:host(.button-full){display:block}:host(.button-full) .button-native{margin-left:0;margin-right:0;width:100%;contain:content}:host(.button-full:not(.button-round)) .button-native{border-radius:0;border-right-width:0;border-left-width:0}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;height:100%;min-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);line-height:1;-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);contain:layout style;cursor:pointer;opacity:var(--opacity);overflow:var(--overflow);z-index:0;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-native::-moz-focus-inner{border:0}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}::slotted([slot=start]),::slotted([slot=end]){-ms-flex-negative:0;flex-shrink:0}::slotted(ion-icon){font-size:1.35em;pointer-events:none}::slotted(ion-icon[slot=start]){-webkit-margin-start:-0.3em;margin-inline-start:-0.3em;-webkit-margin-end:0.3em;margin-inline-end:0.3em;margin-top:0;margin-bottom:0}::slotted(ion-icon[slot=end]){-webkit-margin-start:0.3em;margin-inline-start:0.3em;-webkit-margin-end:-0.2em;margin-inline-end:-0.2em;margin-top:0;margin-bottom:0}ion-ripple-effect{color:var(--ripple-color)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}:host(.ion-focused){color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}@media (any-hover: hover){:host(:hover){color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-activated){color:var(--color-activated)}:host(.ion-activated) .button-native::after{background:var(--background-activated);opacity:var(--background-activated-opacity)}:host(.button-solid.ion-color) .button-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.button-outline.ion-color) .button-native{border-color:var(--ion-color-base);background:transparent;color:var(--ion-color-base)}:host(.button-clear.ion-color) .button-native{background:transparent;color:var(--ion-color-base)}:host(.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{color:var(--ion-toolbar-color, var(--color))}:host(.button-outline.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{border-color:var(--ion-toolbar-color, var(--color, var(--border-color)))}:host(.button-solid.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{background:var(--ion-toolbar-color, var(--background));color:var(--ion-toolbar-background, var(--color))}:host{--border-radius:14px;--padding-top:13px;--padding-bottom:13px;--padding-start:1em;--padding-end:1em;--transition:background-color, opacity 100ms linear;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px;margin-top:4px;margin-bottom:4px;min-height:3.1em;font-size:min(1rem, 48px);font-weight:500;letter-spacing:0}:host(.button-solid){--background-activated:var(--ion-color-primary-shade, #004acd);--background-focused:var(--ion-color-primary-shade, #004acd);--background-hover:var(--ion-color-primary-tint, #1a65eb);--background-activated-opacity:1;--background-focused-opacity:1;--background-hover-opacity:1}:host(.button-outline){--border-radius:14px;--border-width:1px;--border-style:solid;--background-activated:var(--ion-color-primary, #0054e9);--background-focused:var(--ion-color-primary, #0054e9);--background-hover:transparent;--background-focused-opacity:.1;--color-activated:var(--ion-color-primary-contrast, #fff)}:host(.button-clear){--background-activated:transparent;--background-activated-opacity:0;--background-focused:var(--ion-color-primary, #0054e9);--background-hover:transparent;--background-focused-opacity:.1;font-size:min(1.0625rem, 51px);font-weight:normal}:host(.in-buttons){font-size:clamp(17px, 1.0625rem, 21.08px);font-weight:400}:host(.button-large){--border-radius:16px;--padding-top:17px;--padding-start:1em;--padding-end:1em;--padding-bottom:17px;min-height:3.1em;font-size:min(1.25rem, 60px)}:host(.button-small){--border-radius:6px;--padding-top:4px;--padding-start:0.9em;--padding-end:0.9em;--padding-bottom:4px;min-height:2.1em;font-size:min(0.8125rem, 39px)}:host(.button-round){--border-radius:999px;--padding-top:0;--padding-start:26px;--padding-end:26px;--padding-bottom:0}:host(.button-strong){font-weight:600}:host(.button-has-icon-only){--padding-top:0;--padding-bottom:var(--padding-top);--padding-end:var(--padding-top);--padding-start:var(--padding-end);min-width:clamp(30px, 2.125em, 60px);min-height:clamp(30px, 2.125em, 60px)}::slotted(ion-icon[slot=icon-only]){font-size:clamp(15.12px, 1.125em, 43.02px)}:host(.button-small.button-has-icon-only){min-width:clamp(23px, 2.16em, 54px);min-height:clamp(23px, 2.16em, 54px)}:host(.button-small) ::slotted(ion-icon[slot=icon-only]){font-size:clamp(12.1394px, 1.308125em, 40.1856px)}:host(.button-large.button-has-icon-only){min-width:clamp(46px, 2.5em, 78px);min-height:clamp(46px, 2.5em, 78px)}:host(.button-large) ::slotted(ion-icon[slot=icon-only]){font-size:clamp(15.12px, 0.9em, 43.056px)}:host(.button-outline.ion-focused.ion-color) .button-native,:host(.button-clear.ion-focused.ion-color) .button-native{color:var(--ion-color-base)}:host(.button-outline.ion-focused.ion-color) .button-native::after,:host(.button-clear.ion-focused.ion-color) .button-native::after{background:var(--ion-color-base)}:host(.button-solid.ion-color.ion-focused) .button-native::after{background:var(--ion-color-shade)}@media (any-hover: hover){:host(.button-clear:not(.ion-activated):hover),:host(.button-outline:not(.ion-activated):hover){opacity:0.6}:host(.button-clear.ion-color:hover) .button-native,:host(.button-outline.ion-color:hover) .button-native{color:var(--ion-color-base)}:host(.button-clear.ion-color:hover) .button-native::after,:host(.button-outline.ion-color:hover) .button-native::after{background:transparent}:host(.button-solid.ion-color:hover) .button-native::after{background:var(--ion-color-tint)}:host(:hover.button-solid.in-toolbar:not(.ion-color):not(.in-toolbar-color):not(.ion-activated)) .button-native::after{background:#fff;opacity:0.1}}:host(.button-clear.ion-activated){opacity:0.4}:host(.button-outline.ion-activated.ion-color) .button-native{color:var(--ion-color-contrast)}:host(.button-outline.ion-activated.ion-color) .button-native::after{background:var(--ion-color-base)}:host(.button-solid.ion-color.ion-activated) .button-native::after{background:var(--ion-color-shade)}:host(.button-outline.ion-activated.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{background:var(--ion-toolbar-color, var(--color));color:var(--ion-toolbar-background, var(--background), var(--ion-color-primary-contrast, #fff))}';
 var buttonMdCss = ':host{--overflow:hidden;--ripple-color:currentColor;--border-width:initial;--border-color:initial;--border-style:initial;--color-activated:var(--color);--color-focused:var(--color);--color-hover:var(--color);--box-shadow:none;display:inline-block;width:auto;color:var(--color);font-family:var(--ion-font-family, inherit);text-align:center;text-decoration:none;white-space:normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;vertical-align:-webkit-baseline-middle;-webkit-font-kerning:none;font-kerning:none}:host(.button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.button-solid){--background:var(--ion-color-primary, #0054e9);--color:var(--ion-color-primary-contrast, #fff)}:host(.button-outline){--border-color:var(--ion-color-primary, #0054e9);--background:transparent;--color:var(--ion-color-primary, #0054e9)}:host(.button-clear){--border-width:0;--background:transparent;--color:var(--ion-color-primary, #0054e9)}:host(.button-block){display:block}:host(.button-block) .button-native{margin-left:0;margin-right:0;width:100%;clear:both;contain:content}:host(.button-block) .button-native::after{clear:both}:host(.button-full){display:block}:host(.button-full) .button-native{margin-left:0;margin-right:0;width:100%;contain:content}:host(.button-full:not(.button-round)) .button-native{border-radius:0;border-right-width:0;border-left-width:0}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;height:100%;min-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);line-height:1;-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);contain:layout style;cursor:pointer;opacity:var(--opacity);overflow:var(--overflow);z-index:0;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-native::-moz-focus-inner{border:0}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}::slotted([slot=start]),::slotted([slot=end]){-ms-flex-negative:0;flex-shrink:0}::slotted(ion-icon){font-size:1.35em;pointer-events:none}::slotted(ion-icon[slot=start]){-webkit-margin-start:-0.3em;margin-inline-start:-0.3em;-webkit-margin-end:0.3em;margin-inline-end:0.3em;margin-top:0;margin-bottom:0}::slotted(ion-icon[slot=end]){-webkit-margin-start:0.3em;margin-inline-start:0.3em;-webkit-margin-end:-0.2em;margin-inline-end:-0.2em;margin-top:0;margin-bottom:0}ion-ripple-effect{color:var(--ripple-color)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}:host(.ion-focused){color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}@media (any-hover: hover){:host(:hover){color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-activated){color:var(--color-activated)}:host(.ion-activated) .button-native::after{background:var(--background-activated);opacity:var(--background-activated-opacity)}:host(.button-solid.ion-color) .button-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.button-outline.ion-color) .button-native{border-color:var(--ion-color-base);background:transparent;color:var(--ion-color-base)}:host(.button-clear.ion-color) .button-native{background:transparent;color:var(--ion-color-base)}:host(.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{color:var(--ion-toolbar-color, var(--color))}:host(.button-outline.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{border-color:var(--ion-toolbar-color, var(--color, var(--border-color)))}:host(.button-solid.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{background:var(--ion-toolbar-color, var(--background));color:var(--ion-toolbar-background, var(--color))}:host{--border-radius:4px;--padding-top:8px;--padding-bottom:8px;--padding-start:1.1em;--padding-end:1.1em;--transition:box-shadow 280ms cubic-bezier(.4, 0, .2, 1),\n                background-color 15ms linear,\n                color 15ms linear;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px;margin-top:4px;margin-bottom:4px;min-height:36px;font-size:0.875rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase}:host(.button-solid){--background-activated:transparent;--background-hover:var(--ion-color-primary-contrast, #fff);--background-focused:var(--ion-color-primary-contrast, #fff);--background-activated-opacity:0;--background-focused-opacity:.24;--background-hover-opacity:.08;--box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)}:host(.button-solid.ion-activated){--box-shadow:0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12)}:host(.button-outline){--border-width:2px;--border-style:solid;--box-shadow:none;--background-activated:transparent;--background-focused:var(--ion-color-primary, #0054e9);--background-hover:var(--ion-color-primary, #0054e9);--background-activated-opacity:0;--background-focused-opacity:.12;--background-hover-opacity:.04}:host(.button-outline.ion-activated.ion-color) .button-native{background:transparent}:host(.button-clear){--background-activated:transparent;--background-focused:var(--ion-color-primary, #0054e9);--background-hover:var(--ion-color-primary, #0054e9);--background-activated-opacity:0;--background-focused-opacity:.12;--background-hover-opacity:.04}:host(.button-round){--border-radius:999px;--padding-top:0;--padding-start:26px;--padding-end:26px;--padding-bottom:0}:host(.button-large){--padding-top:14px;--padding-start:1em;--padding-end:1em;--padding-bottom:14px;min-height:2.8em;font-size:1.25rem}:host(.button-small){--padding-top:4px;--padding-start:0.9em;--padding-end:0.9em;--padding-bottom:4px;min-height:2.1em;font-size:0.8125rem}:host(.button-strong){font-weight:bold}:host(.button-has-icon-only){--padding-top:0;--padding-bottom:var(--padding-top);--padding-end:var(--padding-top);--padding-start:var(--padding-end);min-width:clamp(30px, 2.86em, 60px);min-height:clamp(30px, 2.86em, 60px)}::slotted(ion-icon[slot=icon-only]){font-size:clamp(15.104px, 1.6em, 43.008px)}:host(.button-small.button-has-icon-only){min-width:clamp(23px, 2.16em, 54px);min-height:clamp(23px, 2.16em, 54px)}:host(.button-small) ::slotted(ion-icon[slot=icon-only]){font-size:clamp(13.002px, 1.23125em, 40.385px)}:host(.button-large.button-has-icon-only){min-width:clamp(46px, 2.5em, 78px);min-height:clamp(46px, 2.5em, 78px)}:host(.button-large) ::slotted(ion-icon[slot=icon-only]){font-size:clamp(15.008px, 1.4em, 43.008px)}:host(.button-solid.ion-color.ion-focused) .button-native::after{background:var(--ion-color-contrast)}:host(.button-clear.ion-color.ion-focused) .button-native::after,:host(.button-outline.ion-color.ion-focused) .button-native::after{background:var(--ion-color-base)}@media (any-hover: hover){:host(.button-solid.ion-color:hover) .button-native::after{background:var(--ion-color-contrast)}:host(.button-clear.ion-color:hover) .button-native::after,:host(.button-outline.ion-color:hover) .button-native::after{background:var(--ion-color-base)}}:host(.button-outline.ion-activated.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native{background:var(--ion-toolbar-background, var(--color));color:var(--ion-toolbar-color, var(--background), var(--ion-color-primary-contrast, #fff))}';
-var _a21;
-var Button = proxyCustomElement((_a21 = class extends H {
+var _a17;
+var Button = proxyCustomElement((_a17 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9524,7 +5619,7 @@ var Button = proxyCustomElement((_a21 = class extends H {
       md: buttonMdCss
     };
   }
-}, __name(_a21, "Button"), _a21), [289, "ion-button", {
+}, __name(_a17, "Button"), _a17), [289, "ion-button", {
   "color": [513],
   "buttonType": [1025, "button-type"],
   "disabled": [516],
@@ -9575,8 +5670,8 @@ var defineCustomElement23 = defineCustomElement22;
 // node_modules/@ionic/core/components/buttons.js
 var buttonsIosCss = ".sc-ion-buttons-ios-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:99}.sc-ion-buttons-ios-s ion-button{--padding-top:0;--padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.sc-ion-buttons-ios-s ion-button{--padding-top:3px;--padding-bottom:3px;--padding-start:5px;--padding-end:5px;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px;min-height:32px}.sc-ion-buttons-ios-s .button-has-icon-only{--padding-top:0;--padding-bottom:0}.sc-ion-buttons-ios-s ion-button:not(.button-round){--border-radius:4px}.sc-ion-buttons-ios-h.ion-color.sc-ion-buttons-ios-s .button,.ion-color .sc-ion-buttons-ios-h.sc-ion-buttons-ios-s .button{--color:initial;--border-color:initial;--background-focused:var(--ion-color-contrast)}.sc-ion-buttons-ios-h.ion-color.sc-ion-buttons-ios-s .button-solid,.ion-color .sc-ion-buttons-ios-h.sc-ion-buttons-ios-s .button-solid{--background:var(--ion-color-contrast);--background-focused:#000;--background-focused-opacity:.12;--background-activated:#000;--background-activated-opacity:.12;--background-hover:var(--ion-color-base);--background-hover-opacity:0.45;--color:var(--ion-color-base);--color-focused:var(--ion-color-base)}.sc-ion-buttons-ios-h.ion-color.sc-ion-buttons-ios-s .button-clear,.ion-color .sc-ion-buttons-ios-h.sc-ion-buttons-ios-s .button-clear{--color-activated:var(--ion-color-contrast);--color-focused:var(--ion-color-contrast)}.sc-ion-buttons-ios-h.ion-color.sc-ion-buttons-ios-s .button-outline,.ion-color .sc-ion-buttons-ios-h.sc-ion-buttons-ios-s .button-outline{--color-activated:var(--ion-color-base);--color-focused:var(--ion-color-contrast);--background-activated:var(--ion-color-contrast)}.sc-ion-buttons-ios-s .button-clear,.sc-ion-buttons-ios-s .button-outline{--background-activated:transparent;--background-focused:currentColor;--background-hover:transparent}.sc-ion-buttons-ios-s .button-solid:not(.ion-color){--background-focused:#000;--background-focused-opacity:.12;--background-activated:#000;--background-activated-opacity:.12}.sc-ion-buttons-ios-s ion-icon[slot=start]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-margin-end:0.3em;margin-inline-end:0.3em;font-size:1.41em;line-height:0.67}.sc-ion-buttons-ios-s ion-icon[slot=end]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-margin-start:0.4em;margin-inline-start:0.4em;font-size:1.41em;line-height:0.67}.sc-ion-buttons-ios-s ion-icon[slot=icon-only]{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;font-size:1.65em;line-height:0.67}";
 var buttonsMdCss = ".sc-ion-buttons-md-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:99}.sc-ion-buttons-md-s ion-button{--padding-top:0;--padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.sc-ion-buttons-md-s ion-button{--padding-top:3px;--padding-bottom:3px;--padding-start:8px;--padding-end:8px;--box-shadow:none;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px;min-height:32px}.sc-ion-buttons-md-s .button-has-icon-only{--padding-top:0;--padding-bottom:0}.sc-ion-buttons-md-s ion-button:not(.button-round){--border-radius:2px}.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button,.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button{--color:initial;--color-focused:var(--ion-color-contrast);--color-hover:var(--ion-color-contrast);--background-activated:transparent;--background-focused:var(--ion-color-contrast);--background-hover:var(--ion-color-contrast)}.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button-solid,.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button-solid{--background:var(--ion-color-contrast);--background-activated:transparent;--background-focused:var(--ion-color-shade);--background-hover:var(--ion-color-base);--color:var(--ion-color-base);--color-focused:var(--ion-color-base);--color-hover:var(--ion-color-base)}.sc-ion-buttons-md-h.ion-color.sc-ion-buttons-md-s .button-outline,.ion-color .sc-ion-buttons-md-h.sc-ion-buttons-md-s .button-outline{--border-color:var(--ion-color-contrast)}.sc-ion-buttons-md-s .button-has-icon-only.button-clear{--padding-top:12px;--padding-end:12px;--padding-bottom:12px;--padding-start:12px;--border-radius:50%;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;width:3rem;height:3rem}.sc-ion-buttons-md-s .button{--background-hover:currentColor}.sc-ion-buttons-md-s .button-solid{--color:var(--ion-toolbar-background, var(--ion-background-color, #fff));--background:var(--ion-toolbar-color, var(--ion-text-color, #424242));--background-activated:transparent;--background-focused:currentColor}.sc-ion-buttons-md-s .button-outline{--color:initial;--background:transparent;--background-activated:transparent;--background-focused:currentColor;--background-hover:currentColor;--border-color:currentColor}.sc-ion-buttons-md-s .button-clear{--color:initial;--background:transparent;--background-activated:transparent;--background-focused:currentColor;--background-hover:currentColor}.sc-ion-buttons-md-s ion-icon[slot=start]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-margin-end:0.3em;margin-inline-end:0.3em;font-size:1.4em}.sc-ion-buttons-md-s ion-icon[slot=end]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-margin-start:0.4em;margin-inline-start:0.4em;font-size:1.4em}.sc-ion-buttons-md-s ion-icon[slot=icon-only]{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;font-size:1.8em}";
-var _a22;
-var Buttons = proxyCustomElement((_a22 = class extends H {
+var _a18;
+var Buttons = proxyCustomElement((_a18 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9595,7 +5690,7 @@ var Buttons = proxyCustomElement((_a22 = class extends H {
       md: buttonsMdCss
     };
   }
-}, __name(_a22, "Buttons"), _a22), [294, "ion-buttons", {
+}, __name(_a18, "Buttons"), _a18), [294, "ion-buttons", {
   "collapse": [4]
 }]);
 function defineCustomElement24() {
@@ -9621,8 +5716,8 @@ var defineCustomElement25 = defineCustomElement24;
 // node_modules/@ionic/core/components/ion-card.js
 var cardIosCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);contain:content;overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.card-disabled){cursor:default;opacity:0.3;pointer-events:none}.card-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:inherit}.card-native::-moz-focus-inner{border:0}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}ion-ripple-effect{color:var(--ripple-color)}:host{--background:var(--ion-card-background, var(--ion-item-background, var(--ion-background-color, #fff)));--color:var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))));-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:24px;margin-bottom:24px;border-radius:8px;-webkit-transition:-webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:-webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1), -webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);font-size:0.875rem;-webkit-box-shadow:0 4px 16px rgba(0, 0, 0, 0.12);box-shadow:0 4px 16px rgba(0, 0, 0, 0.12)}:host(.ion-activated){-webkit-transform:scale3d(0.97, 0.97, 1);transform:scale3d(0.97, 0.97, 1)}";
 var cardMdCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);contain:content;overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.card-disabled){cursor:default;opacity:0.3;pointer-events:none}.card-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:inherit}.card-native::-moz-focus-inner{border:0}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}ion-ripple-effect{color:var(--ripple-color)}:host{--background:var(--ion-card-background, var(--ion-item-background, var(--ion-background-color, #fff)));--color:var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-550, var(--ion-text-color-step-450, #737373))));-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px;margin-top:10px;margin-bottom:10px;border-radius:4px;font-size:0.875rem;-webkit-box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)}";
-var _a23;
-var Card = proxyCustomElement((_a23 = class extends H {
+var _a19;
+var Card = proxyCustomElement((_a19 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9671,7 +5766,7 @@ var Card = proxyCustomElement((_a23 = class extends H {
       md: cardMdCss
     };
   }
-}, __name(_a23, "Card"), _a23), [289, "ion-card", {
+}, __name(_a19, "Card"), _a19), [289, "ion-card", {
   "color": [513],
   "button": [4],
   "type": [1],
@@ -9709,8 +5804,8 @@ var defineCustomElement26 = defineCustomElement$110;
 // node_modules/@ionic/core/components/ion-card-content.js
 var cardContentIosCss = "ion-card-content{display:block;position:relative}.card-content-ios{-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px;padding-top:20px;padding-bottom:20px;font-size:1rem;line-height:1.4}.card-content-ios h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:1.5rem;font-weight:normal}.card-content-ios h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:1rem;font-weight:normal}.card-content-ios h3,.card-content-ios h4,.card-content-ios h5,.card-content-ios h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:0.875rem;font-weight:normal}.card-content-ios p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:0.875rem}ion-card-header+.card-content-ios{padding-top:0}";
 var cardContentMdCss = "ion-card-content{display:block;position:relative}.card-content-md{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:13px;padding-bottom:13px;font-size:0.875rem;line-height:1.5}.card-content-md h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:1.5rem;font-weight:normal}.card-content-md h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:1rem;font-weight:normal}.card-content-md h3,.card-content-md h4,.card-content-md h5,.card-content-md h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:0.875rem;font-weight:normal}.card-content-md p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:0.875rem;font-weight:normal;line-height:1.5}ion-card-header+.card-content-md{padding-top:0}";
-var _a24;
-var CardContent = proxyCustomElement((_a24 = class extends H {
+var _a20;
+var CardContent = proxyCustomElement((_a20 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9729,7 +5824,7 @@ var CardContent = proxyCustomElement((_a24 = class extends H {
       md: cardContentMdCss
     };
   }
-}, __name(_a24, "CardContent"), _a24), [288, "ion-card-content"]);
+}, __name(_a20, "CardContent"), _a20), [288, "ion-card-content"]);
 function defineCustomElement$111() {
   if (typeof customElements === "undefined") {
     return;
@@ -9751,8 +5846,8 @@ var defineCustomElement27 = defineCustomElement$111;
 // node_modules/@ionic/core/components/ion-card-header.js
 var cardHeaderIosCss = ":host{--background:transparent;--color:inherit;display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:column;flex-direction:column;background:var(--background);color:var(--color)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px;padding-top:20px;padding-bottom:16px;-ms-flex-direction:column-reverse;flex-direction:column-reverse}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.card-header-translucent){background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.9);-webkit-backdrop-filter:saturate(180%) blur(30px);backdrop-filter:saturate(180%) blur(30px)}}";
 var cardHeaderMdCss = ":host{--background:transparent;--color:inherit;display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:column;flex-direction:column;background:var(--background);color:var(--color)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:16px;padding-bottom:16px}::slotted(ion-card-title:not(:first-child)),::slotted(ion-card-subtitle:not(:first-child)){margin-top:8px}";
-var _a25;
-var CardHeader = proxyCustomElement((_a25 = class extends H {
+var _a21;
+var CardHeader = proxyCustomElement((_a21 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9773,7 +5868,7 @@ var CardHeader = proxyCustomElement((_a25 = class extends H {
       md: cardHeaderMdCss
     };
   }
-}, __name(_a25, "CardHeader"), _a25), [289, "ion-card-header", {
+}, __name(_a21, "CardHeader"), _a21), [289, "ion-card-header", {
   "color": [513],
   "translucent": [4]
 }]);
@@ -9798,8 +5893,8 @@ var defineCustomElement28 = defineCustomElement$112;
 // node_modules/@ionic/core/components/ion-card-subtitle.js
 var cardSubtitleIosCss = ":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));margin-left:0;margin-right:0;margin-top:0;margin-bottom:4px;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:0.75rem;font-weight:700;letter-spacing:0.4px;text-transform:uppercase}";
 var cardSubtitleMdCss = ":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-550, var(--ion-text-color-step-450, #737373));margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:0.875rem;font-weight:500}";
-var _a26;
-var CardSubtitle = proxyCustomElement((_a26 = class extends H {
+var _a22;
+var CardSubtitle = proxyCustomElement((_a22 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9818,7 +5913,7 @@ var CardSubtitle = proxyCustomElement((_a26 = class extends H {
       md: cardSubtitleMdCss
     };
   }
-}, __name(_a26, "CardSubtitle"), _a26), [289, "ion-card-subtitle", {
+}, __name(_a22, "CardSubtitle"), _a22), [289, "ion-card-subtitle", {
   "color": [513]
 }]);
 function defineCustomElement$113() {
@@ -9842,8 +5937,8 @@ var defineCustomElement29 = defineCustomElement$113;
 // node_modules/@ionic/core/components/ion-card-title.js
 var cardTitleIosCss = ":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-text-color, #000);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:1.75rem;font-weight:700;line-height:1.2}";
 var cardTitleMdCss = ":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:1.25rem;font-weight:500;line-height:1.2}";
-var _a27;
-var CardTitle = proxyCustomElement((_a27 = class extends H {
+var _a23;
+var CardTitle = proxyCustomElement((_a23 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9862,7 +5957,7 @@ var CardTitle = proxyCustomElement((_a27 = class extends H {
       md: cardTitleMdCss
     };
   }
-}, __name(_a27, "CardTitle"), _a27), [289, "ion-card-title", {
+}, __name(_a23, "CardTitle"), _a23), [289, "ion-card-title", {
   "color": [513]
 }]);
 function defineCustomElement$114() {
@@ -9886,8 +5981,8 @@ var defineCustomElement30 = defineCustomElement$114;
 // node_modules/@ionic/core/components/ion-chip.js
 var chipIosCss = ":host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.12);--color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.87);border-radius:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:4px;margin-inline-end:4px;margin-top:4px;margin-bottom:4px;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:6px;padding-bottom:6px;display:-ms-inline-flexbox;display:inline-flex;position:relative;-ms-flex-align:center;align-items:center;min-height:32px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);cursor:pointer;overflow:hidden;vertical-align:middle;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.chip-disabled){cursor:default;opacity:0.4;pointer-events:none}:host(.ion-color){background:rgba(var(--ion-color-base-rgb), 0.08);color:var(--ion-color-shade)}:host(.ion-color:focus){background:rgba(var(--ion-color-base-rgb), 0.12)}:host(.ion-color.ion-activated){background:rgba(var(--ion-color-base-rgb), 0.16)}:host(.chip-outline){border-width:1px;border-style:solid}:host(.chip-outline){border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.32);background:transparent}:host(.chip-outline.ion-color){border-color:rgba(var(--ion-color-base-rgb), 0.32)}:host(.chip-outline:not(.ion-color):focus){background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04)}:host(.chip-outline.ion-activated:not(.ion-color)){background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08)}::slotted(ion-icon){font-size:1.4285714286em}:host(:not(.ion-color)) ::slotted(ion-icon){color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54)}::slotted(ion-icon:first-child){-webkit-margin-start:-4px;margin-inline-start:-4px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:-4px;margin-bottom:-4px}::slotted(ion-icon:last-child){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:-4px;margin-inline-end:-4px;margin-top:-4px;margin-bottom:-4px}::slotted(ion-avatar){-ms-flex-negative:0;flex-shrink:0;width:1.7142857143em;height:1.7142857143em}::slotted(ion-avatar:first-child){-webkit-margin-start:-8px;margin-inline-start:-8px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:-4px;margin-bottom:-4px}::slotted(ion-avatar:last-child){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:-8px;margin-inline-end:-8px;margin-top:-4px;margin-bottom:-4px}:host(:focus){outline:none}:host(:focus){--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16)}:host(.ion-activated){--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}@media (any-hover: hover){:host(:hover){--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16)}:host(.ion-color:hover){background:rgba(var(--ion-color-base-rgb), 0.12)}:host(.chip-outline:not(.ion-color):hover){background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04)}}:host{font-size:clamp(13px, 0.875rem, 22px)}";
 var chipMdCss = ":host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.12);--color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.87);border-radius:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:4px;margin-inline-end:4px;margin-top:4px;margin-bottom:4px;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:6px;padding-bottom:6px;display:-ms-inline-flexbox;display:inline-flex;position:relative;-ms-flex-align:center;align-items:center;min-height:32px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);cursor:pointer;overflow:hidden;vertical-align:middle;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.chip-disabled){cursor:default;opacity:0.4;pointer-events:none}:host(.ion-color){background:rgba(var(--ion-color-base-rgb), 0.08);color:var(--ion-color-shade)}:host(.ion-color:focus){background:rgba(var(--ion-color-base-rgb), 0.12)}:host(.ion-color.ion-activated){background:rgba(var(--ion-color-base-rgb), 0.16)}:host(.chip-outline){border-width:1px;border-style:solid}:host(.chip-outline){border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.32);background:transparent}:host(.chip-outline.ion-color){border-color:rgba(var(--ion-color-base-rgb), 0.32)}:host(.chip-outline:not(.ion-color):focus){background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04)}:host(.chip-outline.ion-activated:not(.ion-color)){background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08)}::slotted(ion-icon){font-size:1.4285714286em}:host(:not(.ion-color)) ::slotted(ion-icon){color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54)}::slotted(ion-icon:first-child){-webkit-margin-start:-4px;margin-inline-start:-4px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:-4px;margin-bottom:-4px}::slotted(ion-icon:last-child){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:-4px;margin-inline-end:-4px;margin-top:-4px;margin-bottom:-4px}::slotted(ion-avatar){-ms-flex-negative:0;flex-shrink:0;width:1.7142857143em;height:1.7142857143em}::slotted(ion-avatar:first-child){-webkit-margin-start:-8px;margin-inline-start:-8px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:-4px;margin-bottom:-4px}::slotted(ion-avatar:last-child){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:-8px;margin-inline-end:-8px;margin-top:-4px;margin-bottom:-4px}:host(:focus){outline:none}:host(:focus){--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16)}:host(.ion-activated){--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}@media (any-hover: hover){:host(:hover){--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16)}:host(.ion-color:hover){background:rgba(var(--ion-color-base-rgb), 0.12)}:host(.chip-outline:not(.ion-color):hover){background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04)}}:host{font-size:0.875rem}";
-var _a28;
-var Chip = proxyCustomElement((_a28 = class extends H {
+var _a24;
+var Chip = proxyCustomElement((_a24 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -9910,7 +6005,7 @@ var Chip = proxyCustomElement((_a28 = class extends H {
       md: chipMdCss
     };
   }
-}, __name(_a28, "Chip"), _a28), [289, "ion-chip", {
+}, __name(_a24, "Chip"), _a24), [289, "ion-chip", {
   "color": [513],
   "outline": [4],
   "disabled": [4]
@@ -9960,8 +6055,8 @@ var colCss = ":host{-webkit-padding-start:var(--ion-grid-column-padding-xs, var(
 var win2 = typeof window !== "undefined" ? window : void 0;
 var SUPPORTS_VARS = win2 && !!(win2.CSS && win2.CSS.supports && win2.CSS.supports("--a: 0"));
 var BREAKPOINTS = ["", "xs", "sm", "md", "lg", "xl"];
-var _a29;
-var Col = proxyCustomElement((_a29 = class extends H {
+var _a25;
+var Col = proxyCustomElement((_a25 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -10039,7 +6134,7 @@ var Col = proxyCustomElement((_a29 = class extends H {
   static get style() {
     return colCss;
   }
-}, __name(_a29, "Col"), _a29), [257, "ion-col", {
+}, __name(_a25, "Col"), _a25), [257, "ion-col", {
   "offset": [1],
   "offsetXs": [1, "offset-xs"],
   "offsetSm": [1, "offset-sm"],
@@ -10085,8 +6180,8 @@ var defineCustomElement32 = defineCustomElement$116;
 
 // node_modules/@ionic/core/components/content.js
 var contentCss = ':host{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}:host(.ion-color) .inner-scroll{background:var(--ion-color-base);color:var(--ion-color-contrast)}#background-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}.inner-scroll{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden;-ms-touch-action:pan-x pan-y pinch-zoom;touch-action:pan-x pan-y pinch-zoom}.scroll-y,.scroll-x{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}.scroll-y{overflow-y:var(--overflow);overscroll-behavior-y:contain}.scroll-x{overflow-x:var(--overflow);overscroll-behavior-x:contain}.overscroll::before,.overscroll::after{position:absolute;width:1px;height:1px;content:""}.overscroll::before{bottom:-1px}.overscroll::after{top:-1px}:host(.content-sizing){display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-height:0;contain:none}:host(.content-sizing) .inner-scroll{position:relative;top:0;bottom:0;margin-top:calc(var(--offset-top) * -1);margin-bottom:calc(var(--offset-bottom) * -1)}.transition-effect{display:none;position:absolute;width:100%;height:100vh;opacity:0;pointer-events:none}:host(.content-ltr) .transition-effect{left:-100%;}:host(.content-rtl) .transition-effect{right:-100%;}.transition-cover{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}.transition-shadow{display:block;position:absolute;width:100%;height:100%;-webkit-box-shadow:inset -9px 0 9px 0 rgba(0, 0, 100, 0.03);box-shadow:inset -9px 0 9px 0 rgba(0, 0, 100, 0.03)}:host(.content-ltr) .transition-shadow{right:0;}:host(.content-rtl) .transition-shadow{left:0;-webkit-transform:scaleX(-1);transform:scaleX(-1)}::slotted([slot=fixed]){position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0)}';
-var _a30;
-var Content = proxyCustomElement((_a30 = class extends H {
+var _a26;
+var Content = proxyCustomElement((_a26 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -10386,7 +6481,7 @@ var Content = proxyCustomElement((_a30 = class extends H {
   static get style() {
     return contentCss;
   }
-}, __name(_a30, "Content"), _a30), [257, "ion-content", {
+}, __name(_a26, "Content"), _a26), [257, "ion-content", {
   "color": [513],
   "fullscreen": [4],
   "fixedSlotPlacement": [1, "fixed-slot-placement"],
@@ -10402,11 +6497,11 @@ var Content = proxyCustomElement((_a30 = class extends H {
   "scrollToPoint": [64]
 }, [[9, "resize", "onResize"]]]);
 var getParentElement = /* @__PURE__ */ __name((el) => {
-  var _a190;
+  var _a186;
   if (el.parentElement) {
     return el.parentElement;
   }
-  if ((_a190 = el.parentNode) === null || _a190 === void 0 ? void 0 : _a190.host) {
+  if ((_a186 = el.parentNode) === null || _a186 === void 0 ? void 0 : _a186.host) {
     return el.parentNode.host;
   }
   return null;
@@ -11026,9 +7121,9 @@ var getYear = /* @__PURE__ */ __name((locale, refParts) => {
   return getLocalizedDateTime(locale, refParts, { year: "numeric" });
 }, "getYear");
 var getNormalizedDate = /* @__PURE__ */ __name((refParts) => {
-  var _a190, _b, _c;
+  var _a186, _b, _c;
   const timeString = refParts.hour !== void 0 && refParts.minute !== void 0 ? ` ${refParts.hour}:${refParts.minute}` : "";
-  return /* @__PURE__ */ new Date(`${(_a190 = refParts.month) !== null && _a190 !== void 0 ? _a190 : 1}/${(_b = refParts.day) !== null && _b !== void 0 ? _b : 1}/${(_c = refParts.year) !== null && _c !== void 0 ? _c : 2023}${timeString} GMT+0000`);
+  return /* @__PURE__ */ new Date(`${(_a186 = refParts.month) !== null && _a186 !== void 0 ? _a186 : 1}/${(_b = refParts.day) !== null && _b !== void 0 ? _b : 1}/${(_c = refParts.year) !== null && _c !== void 0 ? _c : 2023}${timeString} GMT+0000`);
 }, "getNormalizedDate");
 var getLocalizedDateTime = /* @__PURE__ */ __name((locale, refParts, options) => {
   const date = getNormalizedDate(refParts);
@@ -11325,7 +7420,7 @@ var getDayColumnData = /* @__PURE__ */ __name((locale, refParts, minParts, maxPa
   return days;
 }, "getDayColumnData");
 var getYearColumnData = /* @__PURE__ */ __name((locale, refParts, minParts, maxParts, yearValues) => {
-  var _a190, _b;
+  var _a186, _b;
   let processedYears = [];
   if (yearValues !== void 0) {
     processedYears = yearValues;
@@ -11337,7 +7432,7 @@ var getYearColumnData = /* @__PURE__ */ __name((locale, refParts, minParts, maxP
     }
   } else {
     const { year } = refParts;
-    const maxYear = (_a190 = maxParts === null || maxParts === void 0 ? void 0 : maxParts.year) !== null && _a190 !== void 0 ? _a190 : year;
+    const maxYear = (_a186 = maxParts === null || maxParts === void 0 ? void 0 : maxParts.year) !== null && _a186 !== void 0 ? _a186 : year;
     const minYear = (_b = minParts === null || minParts === void 0 ? void 0 : minParts.year) !== null && _b !== void 0 ? _b : year - 100;
     for (let i = minYear; i <= maxYear; i++) {
       processedYears.push(i);
@@ -11429,8 +7524,8 @@ var getTimeColumnsData = /* @__PURE__ */ __name((locale, refParts, hourCycle, mi
 // node_modules/@ionic/core/components/ion-datetime-button.js
 var datetimeButtonIosCss = ":host{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}:host button{border-radius:8px;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px;margin-top:0px;margin-bottom:0px;position:relative;-webkit-transition:150ms color ease-in-out;transition:150ms color ease-in-out;border:none;background:var(--ion-color-step-300, var(--ion-background-color-step-300, #edeef0));color:var(--ion-text-color, #000);font-family:inherit;font-size:1rem;cursor:pointer;overflow:hidden;-webkit-appearance:none;-moz-appearance:none;appearance:none}:host(.time-active) #time-button,:host(.date-active) #date-button{color:var(--ion-color-base)}:host(.datetime-button-disabled){pointer-events:none}:host(.datetime-button-disabled) button{opacity:0.4}:host button{-webkit-padding-start:13px;padding-inline-start:13px;-webkit-padding-end:13px;padding-inline-end:13px;padding-top:7px;padding-bottom:7px}:host button.ion-activated{color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}";
 var datetimeButtonMdCss = ":host{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}:host button{border-radius:8px;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:2px;margin-inline-end:2px;margin-top:0px;margin-bottom:0px;position:relative;-webkit-transition:150ms color ease-in-out;transition:150ms color ease-in-out;border:none;background:var(--ion-color-step-300, var(--ion-background-color-step-300, #edeef0));color:var(--ion-text-color, #000);font-family:inherit;font-size:1rem;cursor:pointer;overflow:hidden;-webkit-appearance:none;-moz-appearance:none;appearance:none}:host(.time-active) #time-button,:host(.date-active) #date-button{color:var(--ion-color-base)}:host(.datetime-button-disabled){pointer-events:none}:host(.datetime-button-disabled) button{opacity:0.4}:host button{-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:6px;padding-bottom:6px}";
-var _a31;
-var DatetimeButton = proxyCustomElement((_a31 = class extends H {
+var _a27;
+var DatetimeButton = proxyCustomElement((_a27 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -11451,7 +7546,7 @@ var DatetimeButton = proxyCustomElement((_a31 = class extends H {
       return [value];
     };
     this.setDateTimeText = () => {
-      var _a190, _b, _c, _d, _e;
+      var _a186, _b, _c, _d, _e;
       const { datetimeEl, datetimePresentation } = this;
       if (!datetimeEl) {
         return;
@@ -11468,7 +7563,7 @@ var DatetimeButton = proxyCustomElement((_a31 = class extends H {
       switch (datetimePresentation) {
         case "date-time":
         case "time-date":
-          const dateText = getLocalizedDateTime(locale, firstParsedDatetime, (_a190 = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) !== null && _a190 !== void 0 ? _a190 : { month: "short", day: "numeric", year: "numeric" });
+          const dateText = getLocalizedDateTime(locale, firstParsedDatetime, (_a186 = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) !== null && _a186 !== void 0 ? _a186 : { month: "short", day: "numeric", year: "numeric" });
           const timeText = getLocalizedTime(locale, firstParsedDatetime, computedHourCycle, formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.time);
           if (preferWheel) {
             this.dateText = `${dateText} ${timeText}`;
@@ -11635,7 +7730,7 @@ var DatetimeButton = proxyCustomElement((_a31 = class extends H {
       md: datetimeButtonMdCss
     };
   }
-}, __name(_a31, "DatetimeButton"), _a31), [289, "ion-datetime-button", {
+}, __name(_a27, "DatetimeButton"), _a27), [289, "ion-datetime-button", {
   "color": [513],
   "disabled": [516],
   "datetime": [1],
@@ -11670,8 +7765,8 @@ var defineCustomElement35 = defineCustomElement$117;
 
 // node_modules/@ionic/core/components/ion-fab.js
 var fabCss = ":host{position:absolute;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;z-index:999}:host(.fab-horizontal-center){left:0px;right:0px;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}:host(.fab-horizontal-start){left:calc(10px + var(--ion-safe-area-left, 0px));}:host-context([dir=rtl]):host(.fab-horizontal-start),:host-context([dir=rtl]).fab-horizontal-start{right:calc(10px + var(--ion-safe-area-right, 0px));left:unset}@supports selector(:dir(rtl)){:host(.fab-horizontal-start:dir(rtl)){right:calc(10px + var(--ion-safe-area-right, 0px));left:unset}}:host(.fab-horizontal-end){right:calc(10px + var(--ion-safe-area-right, 0px));}:host-context([dir=rtl]):host(.fab-horizontal-end),:host-context([dir=rtl]).fab-horizontal-end{left:calc(10px + var(--ion-safe-area-left, 0px));right:unset}@supports selector(:dir(rtl)){:host(.fab-horizontal-end:dir(rtl)){left:calc(10px + var(--ion-safe-area-left, 0px));right:unset}}:host(.fab-vertical-top){top:10px}:host(.fab-vertical-top.fab-edge){top:0}:host(.fab-vertical-top.fab-edge) ::slotted(ion-fab-button){margin-top:-50%}:host(.fab-vertical-top.fab-edge) ::slotted(ion-fab-button.fab-button-small){margin-top:calc((-100% + 16px) / 2)}:host(.fab-vertical-top.fab-edge) ::slotted(ion-fab-list.fab-list-side-start),:host(.fab-vertical-top.fab-edge) ::slotted(ion-fab-list.fab-list-side-end){margin-top:-50%}:host(.fab-vertical-top.fab-edge) ::slotted(ion-fab-list.fab-list-side-top),:host(.fab-vertical-top.fab-edge) ::slotted(ion-fab-list.fab-list-side-bottom){margin-top:calc(50% + 10px)}:host(.fab-vertical-bottom){bottom:10px}:host(.fab-vertical-bottom.fab-edge){bottom:0}:host(.fab-vertical-bottom.fab-edge) ::slotted(ion-fab-button){margin-bottom:-50%}:host(.fab-vertical-bottom.fab-edge) ::slotted(ion-fab-button.fab-button-small){margin-bottom:calc((-100% + 16px) / 2)}:host(.fab-vertical-bottom.fab-edge) ::slotted(ion-fab-list.fab-list-side-start),:host(.fab-vertical-bottom.fab-edge) ::slotted(ion-fab-list.fab-list-side-end){margin-bottom:-50%}:host(.fab-vertical-bottom.fab-edge) ::slotted(ion-fab-list.fab-list-side-top),:host(.fab-vertical-bottom.fab-edge) ::slotted(ion-fab-list.fab-list-side-bottom){margin-bottom:calc(50% + 10px)}:host(.fab-vertical-center){top:0px;bottom:0px;margin-top:auto;margin-bottom:auto}";
-var _a32;
-var Fab = proxyCustomElement((_a32 = class extends H {
+var _a28;
+var Fab = proxyCustomElement((_a28 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -11738,7 +7833,7 @@ var Fab = proxyCustomElement((_a32 = class extends H {
   static get style() {
     return fabCss;
   }
-}, __name(_a32, "Fab"), _a32), [257, "ion-fab", {
+}, __name(_a28, "Fab"), _a28), [257, "ion-fab", {
   "horizontal": [1],
   "vertical": [1],
   "edge": [4],
@@ -11769,8 +7864,8 @@ var defineCustomElement36 = defineCustomElement$118;
 // node_modules/@ionic/core/components/ion-fab-button.js
 var fabButtonIosCss = ':host{--color-activated:var(--color);--color-focused:var(--color);--color-hover:var(--color);--background-hover:var(--ion-color-primary-contrast, #fff);--background-hover-opacity:.08;--transition:background-color, opacity 100ms linear;--ripple-color:currentColor;--border-radius:50%;--border-width:0;--border-style:none;--border-color:initial;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:56px;height:56px;font-size:14px;text-align:center;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:100%;height:100%;-webkit-transform:var(--transform);transform:var(--transform);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);background-clip:padding-box;color:var(--color);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);contain:strict;cursor:pointer;overflow:hidden;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}::slotted(ion-icon){line-height:1}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.button-inner{left:0;right:0;top:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:100%;-webkit-transition:all ease-in-out 300ms;transition:all ease-in-out 300ms;-webkit-transition-property:opacity, -webkit-transform;transition-property:opacity, -webkit-transform;transition-property:transform, opacity;transition-property:transform, opacity, -webkit-transform;z-index:1}:host(.fab-button-disabled){cursor:default;opacity:0.5;pointer-events:none}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}:host(.ion-activated) .button-native{color:var(--color-activated)}:host(.ion-activated) .button-native::after{background:var(--background-activated);opacity:var(--background-activated-opacity)}::slotted(ion-icon){line-height:1}:host(.fab-button-small){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:8px;margin-bottom:8px;width:40px;height:40px}.close-icon{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;left:0;right:0;top:0;position:absolute;height:100%;-webkit-transform:scale(0.4) rotateZ(-45deg);transform:scale(0.4) rotateZ(-45deg);-webkit-transition:all ease-in-out 300ms;transition:all ease-in-out 300ms;-webkit-transition-property:opacity, -webkit-transform;transition-property:opacity, -webkit-transform;transition-property:transform, opacity;transition-property:transform, opacity, -webkit-transform;font-size:var(--close-icon-font-size);opacity:0;z-index:1}:host(.fab-button-close-active) .close-icon{-webkit-transform:scale(1) rotateZ(0deg);transform:scale(1) rotateZ(0deg);opacity:1}:host(.fab-button-close-active) .button-inner{-webkit-transform:scale(0.4) rotateZ(45deg);transform:scale(0.4) rotateZ(45deg);opacity:0}ion-ripple-effect{color:var(--ripple-color)}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.fab-button-translucent) .button-native{-webkit-backdrop-filter:var(--backdrop-filter);backdrop-filter:var(--backdrop-filter)}}:host(.ion-color) .button-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{--background:var(--ion-color-primary, #0054e9);--background-activated:var(--ion-color-primary-shade, #004acd);--background-focused:var(--ion-color-primary-shade, #004acd);--background-hover:var(--ion-color-primary-tint, #1a65eb);--background-activated-opacity:1;--background-focused-opacity:1;--background-hover-opacity:1;--color:var(--ion-color-primary-contrast, #fff);--box-shadow:0 4px 16px rgba(0, 0, 0, 0.12);--transition:0.2s transform cubic-bezier(0.25, 1.11, 0.78, 1.59);--close-icon-font-size:28px}:host(.ion-activated){--box-shadow:0 4px 16px rgba(0, 0, 0, 0.12);--transform:scale(1.1);--transition:0.2s transform ease-out}::slotted(ion-icon){font-size:28px}:host(.fab-button-in-list){--background:var(--ion-color-light, #f4f5f8);--background-activated:var(--ion-color-light-shade, #d7d8da);--background-focused:var(--background-activated);--background-hover:var(--ion-color-light-tint, #f5f6f9);--color:var(--ion-color-light-contrast, #000);--color-activated:var(--ion-color-light-contrast, #000);--color-focused:var(--color-activated);--transition:transform 200ms ease 10ms, opacity 200ms ease 10ms}:host(.fab-button-in-list) ::slotted(ion-icon){font-size:18px}:host(.ion-color.ion-focused) .button-native::after{background:var(--ion-color-shade)}:host(.ion-color.ion-focused) .button-native,:host(.ion-color.ion-activated) .button-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-focused) .button-native::after,:host(.ion-color.ion-activated) .button-native::after{background:var(--ion-color-shade)}@media (any-hover: hover){:host(.ion-color:hover) .button-native{color:var(--ion-color-contrast)}:host(.ion-color:hover) .button-native::after{background:var(--ion-color-tint)}}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.fab-button-translucent){--background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.9);--background-hover:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.8);--background-focused:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.82);--backdrop-filter:saturate(180%) blur(20px)}:host(.fab-button-translucent-in-list){--background:rgba(var(--ion-color-light-rgb, 244, 245, 248), 0.9);--background-hover:rgba(var(--ion-color-light-rgb, 244, 245, 248), 0.8);--background-focused:rgba(var(--ion-color-light-rgb, 244, 245, 248), 0.82)}}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){@media (any-hover: hover){:host(.fab-button-translucent.ion-color:hover) .button-native{background:rgba(var(--ion-color-base-rgb), 0.8)}}:host(.ion-color.fab-button-translucent) .button-native{background:rgba(var(--ion-color-base-rgb), 0.9)}:host(.ion-color.ion-focused.fab-button-translucent) .button-native,:host(.ion-color.ion-activated.fab-button-translucent) .button-native{background:var(--ion-color-base)}}';
 var fabButtonMdCss = ':host{--color-activated:var(--color);--color-focused:var(--color);--color-hover:var(--color);--background-hover:var(--ion-color-primary-contrast, #fff);--background-hover-opacity:.08;--transition:background-color, opacity 100ms linear;--ripple-color:currentColor;--border-radius:50%;--border-width:0;--border-style:none;--border-color:initial;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:56px;height:56px;font-size:14px;text-align:center;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:100%;height:100%;-webkit-transform:var(--transform);transform:var(--transform);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);background-clip:padding-box;color:var(--color);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);contain:strict;cursor:pointer;overflow:hidden;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}::slotted(ion-icon){line-height:1}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.button-inner{left:0;right:0;top:0;display:-ms-flexbox;display:flex;position:absolute;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:100%;-webkit-transition:all ease-in-out 300ms;transition:all ease-in-out 300ms;-webkit-transition-property:opacity, -webkit-transform;transition-property:opacity, -webkit-transform;transition-property:transform, opacity;transition-property:transform, opacity, -webkit-transform;z-index:1}:host(.fab-button-disabled){cursor:default;opacity:0.5;pointer-events:none}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}:host(.ion-activated) .button-native{color:var(--color-activated)}:host(.ion-activated) .button-native::after{background:var(--background-activated);opacity:var(--background-activated-opacity)}::slotted(ion-icon){line-height:1}:host(.fab-button-small){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:8px;margin-bottom:8px;width:40px;height:40px}.close-icon{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;left:0;right:0;top:0;position:absolute;height:100%;-webkit-transform:scale(0.4) rotateZ(-45deg);transform:scale(0.4) rotateZ(-45deg);-webkit-transition:all ease-in-out 300ms;transition:all ease-in-out 300ms;-webkit-transition-property:opacity, -webkit-transform;transition-property:opacity, -webkit-transform;transition-property:transform, opacity;transition-property:transform, opacity, -webkit-transform;font-size:var(--close-icon-font-size);opacity:0;z-index:1}:host(.fab-button-close-active) .close-icon{-webkit-transform:scale(1) rotateZ(0deg);transform:scale(1) rotateZ(0deg);opacity:1}:host(.fab-button-close-active) .button-inner{-webkit-transform:scale(0.4) rotateZ(45deg);transform:scale(0.4) rotateZ(45deg);opacity:0}ion-ripple-effect{color:var(--ripple-color)}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.fab-button-translucent) .button-native{-webkit-backdrop-filter:var(--backdrop-filter);backdrop-filter:var(--backdrop-filter)}}:host(.ion-color) .button-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host{--background:var(--ion-color-primary, #0054e9);--background-activated:transparent;--background-focused:currentColor;--background-hover:currentColor;--background-activated-opacity:0;--background-focused-opacity:.24;--background-hover-opacity:.08;--color:var(--ion-color-primary-contrast, #fff);--box-shadow:0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);--transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1), color 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;--close-icon-font-size:24px}:host(.ion-activated){--box-shadow:0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12)}::slotted(ion-icon){font-size:24px}:host(.fab-button-in-list){--color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);--color-activated:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);--color-focused:var(--color-activated);--background:var(--ion-color-light, #f4f5f8);--background-activated:transparent;--background-focused:var(--ion-color-light-shade, #d7d8da);--background-hover:var(--ion-color-light-tint, #f5f6f9)}:host(.fab-button-in-list) ::slotted(ion-icon){font-size:18px}:host(.ion-color.ion-focused) .button-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-focused) .button-native::after{background:var(--ion-color-contrast)}:host(.ion-color.ion-activated) .button-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-activated) .button-native::after{background:transparent}@media (any-hover: hover){:host(.ion-color:hover) .button-native{color:var(--ion-color-contrast)}:host(.ion-color:hover) .button-native::after{background:var(--ion-color-contrast)}}';
-var _a33;
-var FabButton = proxyCustomElement((_a33 = class extends H {
+var _a29;
+var FabButton = proxyCustomElement((_a29 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -11839,7 +7934,7 @@ var FabButton = proxyCustomElement((_a33 = class extends H {
       md: fabButtonMdCss
     };
   }
-}, __name(_a33, "FabButton"), _a33), [289, "ion-fab-button", {
+}, __name(_a29, "FabButton"), _a29), [289, "ion-fab-button", {
   "color": [513],
   "activated": [4],
   "disabled": [4],
@@ -11885,8 +7980,8 @@ var defineCustomElement37 = defineCustomElement$119;
 
 // node_modules/@ionic/core/components/ion-fab-list.js
 var fabListCss = ":host{margin-left:0;margin-right:0;margin-top:calc(100% + 10px);margin-bottom:calc(100% + 10px);display:none;position:absolute;top:0;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;min-width:56px;min-height:56px}:host(.fab-list-active){display:-ms-flexbox;display:flex}::slotted(.fab-button-in-list){margin-left:0;margin-right:0;margin-top:8px;margin-bottom:8px;width:40px;height:40px;-webkit-transform:scale(0);transform:scale(0);opacity:0;visibility:hidden}:host(.fab-list-side-top) ::slotted(.fab-button-in-list),:host(.fab-list-side-bottom) ::slotted(.fab-button-in-list){margin-left:0;margin-right:0;margin-top:5px;margin-bottom:5px}:host(.fab-list-side-start) ::slotted(.fab-button-in-list),:host(.fab-list-side-end) ::slotted(.fab-button-in-list){-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:5px;margin-inline-end:5px;margin-top:0;margin-bottom:0}::slotted(.fab-button-in-list.fab-button-show){-webkit-transform:scale(1);transform:scale(1);opacity:1;visibility:visible}:host(.fab-list-side-top){top:auto;bottom:0;-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.fab-list-side-start){-webkit-margin-start:calc(100% + 10px);margin-inline-start:calc(100% + 10px);-webkit-margin-end:calc(100% + 10px);margin-inline-end:calc(100% + 10px);margin-top:0;margin-bottom:0;-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.fab-list-side-start){inset-inline-end:0}:host(.fab-list-side-end){-webkit-margin-start:calc(100% + 10px);margin-inline-start:calc(100% + 10px);-webkit-margin-end:calc(100% + 10px);margin-inline-end:calc(100% + 10px);margin-top:0;margin-bottom:0;-ms-flex-direction:row;flex-direction:row}:host(.fab-list-side-end){inset-inline-start:0}";
-var _a34;
-var FabList = proxyCustomElement((_a34 = class extends H {
+var _a30;
+var FabList = proxyCustomElement((_a30 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -11920,7 +8015,7 @@ var FabList = proxyCustomElement((_a34 = class extends H {
   static get style() {
     return fabListCss;
   }
-}, __name(_a34, "FabList"), _a34), [257, "ion-fab-list", {
+}, __name(_a30, "FabList"), _a30), [257, "ion-fab-list", {
   "activated": [4],
   "side": [1]
 }, void 0, {
@@ -12040,8 +8135,8 @@ var handleFooterFade = /* @__PURE__ */ __name((scrollEl, baseEl) => {
 }, "handleFooterFade");
 var footerIosCss = "ion-footer{display:block;position:relative;-ms-flex-order:1;order:1;width:100%;z-index:10}ion-footer.footer-toolbar-padding ion-toolbar:last-of-type{padding-bottom:var(--ion-safe-area-bottom, 0)}.footer-ios ion-toolbar:first-of-type{--border-width:0.55px 0 0}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){.footer-background{left:0;right:0;top:0;bottom:0;position:absolute;-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}.footer-translucent-ios ion-toolbar{--opacity:.8}}.footer-ios.ion-no-border ion-toolbar:first-of-type{--border-width:0}.footer-collapse-fade ion-toolbar{--opacity-scale:inherit}";
 var footerMdCss = "ion-footer{display:block;position:relative;-ms-flex-order:1;order:1;width:100%;z-index:10}ion-footer.footer-toolbar-padding ion-toolbar:last-of-type{padding-bottom:var(--ion-safe-area-bottom, 0)}.footer-md{-webkit-box-shadow:0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);box-shadow:0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12)}.footer-md.ion-no-border{-webkit-box-shadow:none;box-shadow:none}";
-var _a35;
-var Footer = proxyCustomElement((_a35 = class extends H {
+var _a31;
+var Footer = proxyCustomElement((_a31 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -12126,7 +8221,7 @@ var Footer = proxyCustomElement((_a35 = class extends H {
       md: footerMdCss
     };
   }
-}, __name(_a35, "Footer"), _a35), [292, "ion-footer", {
+}, __name(_a31, "Footer"), _a31), [292, "ion-footer", {
   "collapse": [1],
   "translucent": [4],
   "keyboardVisible": [32]
@@ -12151,8 +8246,8 @@ var defineCustomElement39 = defineCustomElement$121;
 
 // node_modules/@ionic/core/components/ion-grid.js
 var gridCss = ":host{-webkit-padding-start:var(--ion-grid-padding-xs, var(--ion-grid-padding, 5px));padding-inline-start:var(--ion-grid-padding-xs, var(--ion-grid-padding, 5px));-webkit-padding-end:var(--ion-grid-padding-xs, var(--ion-grid-padding, 5px));padding-inline-end:var(--ion-grid-padding-xs, var(--ion-grid-padding, 5px));padding-top:var(--ion-grid-padding-xs, var(--ion-grid-padding, 5px));padding-bottom:var(--ion-grid-padding-xs, var(--ion-grid-padding, 5px));-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;display:block;-ms-flex:1;flex:1}@media (min-width: 576px){:host{-webkit-padding-start:var(--ion-grid-padding-sm, var(--ion-grid-padding, 5px));padding-inline-start:var(--ion-grid-padding-sm, var(--ion-grid-padding, 5px));-webkit-padding-end:var(--ion-grid-padding-sm, var(--ion-grid-padding, 5px));padding-inline-end:var(--ion-grid-padding-sm, var(--ion-grid-padding, 5px));padding-top:var(--ion-grid-padding-sm, var(--ion-grid-padding, 5px));padding-bottom:var(--ion-grid-padding-sm, var(--ion-grid-padding, 5px))}}@media (min-width: 768px){:host{-webkit-padding-start:var(--ion-grid-padding-md, var(--ion-grid-padding, 5px));padding-inline-start:var(--ion-grid-padding-md, var(--ion-grid-padding, 5px));-webkit-padding-end:var(--ion-grid-padding-md, var(--ion-grid-padding, 5px));padding-inline-end:var(--ion-grid-padding-md, var(--ion-grid-padding, 5px));padding-top:var(--ion-grid-padding-md, var(--ion-grid-padding, 5px));padding-bottom:var(--ion-grid-padding-md, var(--ion-grid-padding, 5px))}}@media (min-width: 992px){:host{-webkit-padding-start:var(--ion-grid-padding-lg, var(--ion-grid-padding, 5px));padding-inline-start:var(--ion-grid-padding-lg, var(--ion-grid-padding, 5px));-webkit-padding-end:var(--ion-grid-padding-lg, var(--ion-grid-padding, 5px));padding-inline-end:var(--ion-grid-padding-lg, var(--ion-grid-padding, 5px));padding-top:var(--ion-grid-padding-lg, var(--ion-grid-padding, 5px));padding-bottom:var(--ion-grid-padding-lg, var(--ion-grid-padding, 5px))}}@media (min-width: 1200px){:host{-webkit-padding-start:var(--ion-grid-padding-xl, var(--ion-grid-padding, 5px));padding-inline-start:var(--ion-grid-padding-xl, var(--ion-grid-padding, 5px));-webkit-padding-end:var(--ion-grid-padding-xl, var(--ion-grid-padding, 5px));padding-inline-end:var(--ion-grid-padding-xl, var(--ion-grid-padding, 5px));padding-top:var(--ion-grid-padding-xl, var(--ion-grid-padding, 5px));padding-bottom:var(--ion-grid-padding-xl, var(--ion-grid-padding, 5px))}}:host(.grid-fixed){width:var(--ion-grid-width-xs, var(--ion-grid-width, 100%));max-width:100%}@media (min-width: 576px){:host(.grid-fixed){width:var(--ion-grid-width-sm, var(--ion-grid-width, 540px))}}@media (min-width: 768px){:host(.grid-fixed){width:var(--ion-grid-width-md, var(--ion-grid-width, 720px))}}@media (min-width: 992px){:host(.grid-fixed){width:var(--ion-grid-width-lg, var(--ion-grid-width, 960px))}}@media (min-width: 1200px){:host(.grid-fixed){width:var(--ion-grid-width-xl, var(--ion-grid-width, 1140px))}}:host(.ion-no-padding){--ion-grid-column-padding:0;--ion-grid-column-padding-xs:0;--ion-grid-column-padding-sm:0;--ion-grid-column-padding-md:0;--ion-grid-column-padding-lg:0;--ion-grid-column-padding-xl:0}";
-var _a36;
-var Grid = proxyCustomElement((_a36 = class extends H {
+var _a32;
+var Grid = proxyCustomElement((_a32 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -12169,7 +8264,7 @@ var Grid = proxyCustomElement((_a36 = class extends H {
   static get style() {
     return gridCss;
   }
-}, __name(_a36, "Grid"), _a36), [257, "ion-grid", {
+}, __name(_a32, "Grid"), _a32), [257, "ion-grid", {
   "fixed": [4]
 }]);
 function defineCustomElement$122() {
@@ -12331,8 +8426,8 @@ var handleHeaderFade = /* @__PURE__ */ __name((scrollEl, baseEl, condenseHeader)
 }, "handleHeaderFade");
 var headerIosCss = "ion-header{display:block;position:relative;-ms-flex-order:-1;order:-1;width:100%;z-index:10}ion-header ion-toolbar:first-of-type{padding-top:var(--ion-safe-area-top, 0)}.header-ios ion-toolbar:last-of-type{--border-width:0 0 0.55px}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){.header-background{left:0;right:0;top:0;bottom:0;position:absolute;-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}.header-translucent-ios ion-toolbar{--opacity:.8}.header-collapse-condense-inactive .header-background{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}}.header-ios.ion-no-border ion-toolbar:last-of-type{--border-width:0}.header-collapse-fade ion-toolbar{--opacity-scale:inherit}.header-collapse-condense{z-index:9}.header-collapse-condense ion-toolbar{position:-webkit-sticky;position:sticky;top:0}.header-collapse-condense ion-toolbar:first-of-type{padding-top:0px;z-index:1}.header-collapse-condense ion-toolbar{--background:var(--ion-background-color, #fff);z-index:0}.header-collapse-condense ion-toolbar:last-of-type{--border-width:0px}.header-collapse-condense ion-toolbar ion-searchbar{padding-top:0px;padding-bottom:13px}.header-collapse-main{--opacity-scale:1}.header-collapse-main ion-toolbar{--opacity-scale:inherit}.header-collapse-main ion-toolbar.in-toolbar ion-title,.header-collapse-main ion-toolbar.in-toolbar ion-buttons{-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out}.header-collapse-condense-inactive:not(.header-collapse-condense) ion-toolbar.in-toolbar ion-title,.header-collapse-condense-inactive:not(.header-collapse-condense) ion-toolbar.in-toolbar ion-buttons.buttons-collapse{opacity:0;pointer-events:none}.header-collapse-condense-inactive.header-collapse-condense ion-toolbar.in-toolbar ion-title,.header-collapse-condense-inactive.header-collapse-condense ion-toolbar.in-toolbar ion-buttons.buttons-collapse{visibility:hidden}ion-header.header-ios:not(.header-collapse-main):has(~ion-content ion-header.header-ios[collapse=condense],~ion-content ion-header.header-ios.header-collapse-condense){opacity:0}";
 var headerMdCss = "ion-header{display:block;position:relative;-ms-flex-order:-1;order:-1;width:100%;z-index:10}ion-header ion-toolbar:first-of-type{padding-top:var(--ion-safe-area-top, 0)}.header-md{-webkit-box-shadow:0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);box-shadow:0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12)}.header-collapse-condense{display:none}.header-md.ion-no-border{-webkit-box-shadow:none;box-shadow:none}";
-var _a37;
-var Header = proxyCustomElement((_a37 = class extends H {
+var _a33;
+var Header = proxyCustomElement((_a33 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -12468,7 +8563,7 @@ var Header = proxyCustomElement((_a37 = class extends H {
       md: headerMdCss
     };
   }
-}, __name(_a37, "Header"), _a37), [292, "ion-header", {
+}, __name(_a33, "Header"), _a33), [292, "ion-header", {
   "collapse": [1],
   "translucent": [4]
 }]);
@@ -12494,8 +8589,8 @@ var defineCustomElement42 = defineCustomElement41;
 
 // node_modules/@ionic/core/components/ion-img.js
 var imgCss = ":host{display:block;-o-object-fit:contain;object-fit:contain}img{display:block;width:100%;height:100%;-o-object-fit:inherit;object-fit:inherit;-o-object-position:inherit;object-position:inherit}";
-var _a38;
-var Img = proxyCustomElement((_a38 = class extends H {
+var _a34;
+var Img = proxyCustomElement((_a34 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -12564,7 +8659,7 @@ var Img = proxyCustomElement((_a38 = class extends H {
   static get style() {
     return imgCss;
   }
-}, __name(_a38, "Img"), _a38), [257, "ion-img", {
+}, __name(_a34, "Img"), _a34), [257, "ion-img", {
   "alt": [1],
   "src": [1],
   "loadSrc": [32],
@@ -12602,8 +8697,8 @@ var defineCustomElement43 = defineCustomElement$123;
 
 // node_modules/@ionic/core/components/ion-infinite-scroll.js
 var infiniteScrollCss = "ion-infinite-scroll{display:none;width:100%}.infinite-scroll-enabled{display:block}";
-var _a39;
-var InfiniteScroll = proxyCustomElement((_a39 = class extends H {
+var _a35;
+var InfiniteScroll = proxyCustomElement((_a35 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -12753,7 +8848,7 @@ var InfiniteScroll = proxyCustomElement((_a39 = class extends H {
   static get style() {
     return infiniteScrollCss;
   }
-}, __name(_a39, "InfiniteScroll"), _a39), [256, "ion-infinite-scroll", {
+}, __name(_a35, "InfiniteScroll"), _a35), [256, "ion-infinite-scroll", {
   "threshold": [1],
   "disabled": [4],
   "position": [1],
@@ -12923,8 +9018,8 @@ var spinners = {
 };
 var SPINNERS = spinners;
 var spinnerCss = ":host{display:inline-block;position:relative;width:28px;height:28px;color:var(--color);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.ion-color){color:var(--ion-color-base)}svg{-webkit-transform-origin:center;transform-origin:center;position:absolute;top:0;left:0;width:100%;height:100%;-webkit-transform:translateZ(0);transform:translateZ(0)}:host-context([dir=rtl]) svg{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}[dir=rtl] svg{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}@supports selector(:dir(rtl)){svg:dir(rtl){-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}}:host(.spinner-lines) line,:host(.spinner-lines-small) line{stroke-width:7px}:host(.spinner-lines-sharp) line,:host(.spinner-lines-sharp-small) line{stroke-width:4px}:host(.spinner-lines) line,:host(.spinner-lines-small) line,:host(.spinner-lines-sharp) line,:host(.spinner-lines-sharp-small) line{stroke-linecap:round;stroke:currentColor}:host(.spinner-lines) svg,:host(.spinner-lines-small) svg,:host(.spinner-lines-sharp) svg,:host(.spinner-lines-sharp-small) svg{-webkit-animation:spinner-fade-out 1s linear infinite;animation:spinner-fade-out 1s linear infinite}:host(.spinner-bubbles) svg{-webkit-animation:spinner-scale-out 1s linear infinite;animation:spinner-scale-out 1s linear infinite;fill:currentColor}:host(.spinner-circles) svg{-webkit-animation:spinner-fade-out 1s linear infinite;animation:spinner-fade-out 1s linear infinite;fill:currentColor}:host(.spinner-crescent) circle{fill:transparent;stroke-width:4px;stroke-dasharray:128px;stroke-dashoffset:82px;stroke:currentColor}:host(.spinner-crescent) svg{-webkit-animation:spinner-rotate 1s linear infinite;animation:spinner-rotate 1s linear infinite}:host(.spinner-dots) circle{stroke-width:0;fill:currentColor}:host(.spinner-dots) svg{-webkit-animation:spinner-dots 1s linear infinite;animation:spinner-dots 1s linear infinite}:host(.spinner-circular) svg{-webkit-animation:spinner-circular linear infinite;animation:spinner-circular linear infinite}:host(.spinner-circular) circle{-webkit-animation:spinner-circular-inner ease-in-out infinite;animation:spinner-circular-inner ease-in-out infinite;stroke:currentColor;stroke-dasharray:80px, 200px;stroke-dashoffset:0px;stroke-width:5.6;fill:none}:host(.spinner-paused),:host(.spinner-paused) svg,:host(.spinner-paused) circle{-webkit-animation-play-state:paused;animation-play-state:paused}@-webkit-keyframes spinner-fade-out{0%{opacity:1}100%{opacity:0}}@keyframes spinner-fade-out{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes spinner-scale-out{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1)}100%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}}@keyframes spinner-scale-out{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1)}100%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}}@-webkit-keyframes spinner-rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinner-rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spinner-dots{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}50%{-webkit-transform:scale(0.4, 0.4);transform:scale(0.4, 0.4);opacity:0.3}100%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}}@keyframes spinner-dots{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}50%{-webkit-transform:scale(0.4, 0.4);transform:scale(0.4, 0.4);opacity:0.3}100%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}}@-webkit-keyframes spinner-circular{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinner-circular{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spinner-circular-inner{0%{stroke-dasharray:1px, 200px;stroke-dashoffset:0px}50%{stroke-dasharray:100px, 200px;stroke-dashoffset:-15px}100%{stroke-dasharray:100px, 200px;stroke-dashoffset:-125px}}@keyframes spinner-circular-inner{0%{stroke-dasharray:1px, 200px;stroke-dashoffset:0px}50%{stroke-dasharray:100px, 200px;stroke-dashoffset:-15px}100%{stroke-dasharray:100px, 200px;stroke-dashoffset:-125px}}";
-var _a40;
-var Spinner = proxyCustomElement((_a40 = class extends H {
+var _a36;
+var Spinner = proxyCustomElement((_a36 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -12940,11 +9035,11 @@ var Spinner = proxyCustomElement((_a40 = class extends H {
     return mode === "ios" ? "lines" : "circular";
   }
   render() {
-    var _a190;
+    var _a186;
     const self = this;
     const mode = getIonMode(self);
     const spinnerName = self.getName();
-    const spinner = (_a190 = SPINNERS[spinnerName]) !== null && _a190 !== void 0 ? _a190 : SPINNERS["lines"];
+    const spinner = (_a186 = SPINNERS[spinnerName]) !== null && _a186 !== void 0 ? _a186 : SPINNERS["lines"];
     const duration = typeof self.duration === "number" && self.duration > 10 ? self.duration : spinner.dur;
     const svgs = [];
     if (spinner.circles !== void 0) {
@@ -12965,7 +9060,7 @@ var Spinner = proxyCustomElement((_a40 = class extends H {
   static get style() {
     return spinnerCss;
   }
-}, __name(_a40, "Spinner"), _a40), [257, "ion-spinner", {
+}, __name(_a36, "Spinner"), _a36), [257, "ion-spinner", {
   "color": [513],
   "duration": [2],
   "name": [1],
@@ -13001,8 +9096,8 @@ __name(defineCustomElement45, "defineCustomElement");
 // node_modules/@ionic/core/components/ion-infinite-scroll-content.js
 var infiniteScrollContentIosCss = "ion-infinite-scroll-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;min-height:84px;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.infinite-loading{margin-left:0;margin-right:0;margin-top:0;margin-bottom:32px;display:none;width:100%}.infinite-loading-text{-webkit-margin-start:32px;margin-inline-start:32px;-webkit-margin-end:32px;margin-inline-end:32px;margin-top:4px;margin-bottom:0}.infinite-scroll-loading ion-infinite-scroll-content>.infinite-loading{display:block}.infinite-scroll-content-ios .infinite-loading-text{color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}.infinite-scroll-content-ios .infinite-loading-spinner .spinner-lines-ios line,.infinite-scroll-content-ios .infinite-loading-spinner .spinner-lines-small-ios line,.infinite-scroll-content-ios .infinite-loading-spinner .spinner-crescent circle{stroke:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}.infinite-scroll-content-ios .infinite-loading-spinner .spinner-bubbles circle,.infinite-scroll-content-ios .infinite-loading-spinner .spinner-circles circle,.infinite-scroll-content-ios .infinite-loading-spinner .spinner-dots circle{fill:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}";
 var infiniteScrollContentMdCss = "ion-infinite-scroll-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;min-height:84px;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.infinite-loading{margin-left:0;margin-right:0;margin-top:0;margin-bottom:32px;display:none;width:100%}.infinite-loading-text{-webkit-margin-start:32px;margin-inline-start:32px;-webkit-margin-end:32px;margin-inline-end:32px;margin-top:4px;margin-bottom:0}.infinite-scroll-loading ion-infinite-scroll-content>.infinite-loading{display:block}.infinite-scroll-content-md .infinite-loading-text{color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}.infinite-scroll-content-md .infinite-loading-spinner .spinner-lines-md line,.infinite-scroll-content-md .infinite-loading-spinner .spinner-lines-small-md line,.infinite-scroll-content-md .infinite-loading-spinner .spinner-crescent circle{stroke:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}.infinite-scroll-content-md .infinite-loading-spinner .spinner-bubbles circle,.infinite-scroll-content-md .infinite-loading-spinner .spinner-circles circle,.infinite-scroll-content-md .infinite-loading-spinner .spinner-dots circle{fill:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}";
-var _a41;
-var InfiniteScrollContent = proxyCustomElement((_a41 = class extends H {
+var _a37;
+var InfiniteScrollContent = proxyCustomElement((_a37 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13035,7 +9130,7 @@ var InfiniteScrollContent = proxyCustomElement((_a41 = class extends H {
       md: infiniteScrollContentMdCss
     };
   }
-}, __name(_a41, "InfiniteScrollContent"), _a41), [288, "ion-infinite-scroll-content", {
+}, __name(_a37, "InfiniteScrollContent"), _a37), [288, "ion-infinite-scroll-content", {
   "loadingSpinner": [1025, "loading-spinner"],
   "loadingText": [1, "loading-text"]
 }]);
@@ -13065,8 +9160,8 @@ var defineCustomElement46 = defineCustomElement$125;
 // node_modules/@ionic/core/components/ion-input-password-toggle.js
 var iosInputPasswordToggleCss = "";
 var mdInputPasswordToggleCss = "";
-var _a42;
-var InputPasswordToggle = proxyCustomElement((_a42 = class extends H {
+var _a38;
+var InputPasswordToggle = proxyCustomElement((_a38 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13104,10 +9199,10 @@ var InputPasswordToggle = proxyCustomElement((_a42 = class extends H {
     this.inputElRef = null;
   }
   render() {
-    var _a190, _b;
+    var _a186, _b;
     const { color, type } = this;
     const mode = getIonMode(this);
-    const showPasswordIcon = (_a190 = this.showIcon) !== null && _a190 !== void 0 ? _a190 : eye;
+    const showPasswordIcon = (_a186 = this.showIcon) !== null && _a186 !== void 0 ? _a186 : eye;
     const hidePasswordIcon = (_b = this.hideIcon) !== null && _b !== void 0 ? _b : eyeOff;
     const isPasswordVisible = type === "text";
     return h(Host, { key: "91bc55664d496fe457518bd112865dd7811d0c17", class: createColorClasses(color, {
@@ -13130,7 +9225,7 @@ var InputPasswordToggle = proxyCustomElement((_a42 = class extends H {
       md: mdInputPasswordToggleCss
     };
   }
-}, __name(_a42, "InputPasswordToggle"), _a42), [289, "ion-input-password-toggle", {
+}, __name(_a38, "InputPasswordToggle"), _a38), [289, "ion-input-password-toggle", {
   "color": [513],
   "showIcon": [1, "show-icon"],
   "hideIcon": [1, "hide-icon"],
@@ -13174,8 +9269,8 @@ var defineCustomElement47 = defineCustomElement$126;
 // node_modules/@ionic/core/components/item.js
 var itemIosCss = ':host{--border-radius:0px;--border-width:0px;--border-style:solid;--padding-top:0px;--padding-bottom:0px;--padding-end:0px;--padding-start:0px;--inner-border-width:0px;--inner-padding-top:0px;--inner-padding-bottom:0px;--inner-padding-start:0px;--inner-padding-end:0px;--inner-box-shadow:none;--detail-icon-color:initial;--detail-icon-font-size:1.25em;--detail-icon-opacity:0.25;--color-activated:var(--color);--color-focused:var(--color);--color-hover:var(--color);--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);text-align:initial;text-decoration:none;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.ion-color) .item-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.ion-color) .item-native,:host(.ion-color) .item-inner{border-color:var(--ion-color-shade)}:host(.ion-activated) .item-native{color:var(--color-activated)}:host(.ion-activated) .item-native::after{background:var(--background-activated);opacity:var(--background-activated-opacity)}:host(.ion-color.ion-activated) .item-native{color:var(--ion-color-contrast)}:host(.ion-focused) .item-native{color:var(--color-focused)}:host(.ion-focused) .item-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}:host(.ion-color.ion-focused) .item-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-focused) .item-native::after{background:var(--ion-color-contrast)}@media (any-hover: hover){:host(.ion-activatable:not(.ion-focused):hover) .item-native{color:var(--color-hover)}:host(.ion-activatable:not(.ion-focused):hover) .item-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}:host(.ion-color.ion-activatable:not(.ion-focused):hover) .item-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-activatable:not(.ion-focused):hover) .item-native::after{background:var(--ion-color-contrast)}}:host(.item-control-needs-pointer-cursor){cursor:pointer}:host(.item-interactive-disabled:not(.item-multiple-inputs)){cursor:default;pointer-events:none}:host(.item-disabled){cursor:default;opacity:0.3;pointer-events:none}.item-native{border-radius:var(--border-radius);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-right:var(--padding-end);padding-left:calc(var(--padding-start) + var(--ion-safe-area-left, 0px));display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);overflow:inherit;z-index:1;-webkit-box-sizing:border-box;box-sizing:border-box}:host-context([dir=rtl]) .item-native{padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}[dir=rtl] .item-native{padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}@supports selector(:dir(rtl)){.item-native:dir(rtl){padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0;-webkit-transition:var(--transition);transition:var(--transition);z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}.item-inner{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--inner-padding-top);padding-bottom:var(--inner-padding-bottom);padding-right:calc(var(--ion-safe-area-right, 0px) + var(--inner-padding-end));padding-left:var(--inner-padding-start);display:-ms-flexbox;display:flex;position:relative;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;min-height:inherit;border-width:var(--inner-border-width);border-style:var(--border-style);border-color:var(--border-color);-webkit-box-shadow:var(--inner-box-shadow);box-shadow:var(--inner-box-shadow);overflow:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}:host-context([dir=rtl]) .item-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}[dir=rtl] .item-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}@supports selector(:dir(rtl)){.item-inner:dir(rtl){padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}}.item-detail-icon{-webkit-margin-start:calc(var(--inner-padding-end) / 2);margin-inline-start:calc(var(--inner-padding-end) / 2);-webkit-margin-end:-6px;margin-inline-end:-6px;color:var(--detail-icon-color);font-size:var(--detail-icon-font-size);opacity:var(--detail-icon-opacity)}::slotted(ion-icon){font-size:1.6em}::slotted(ion-button){--margin-top:0;--margin-bottom:0;--margin-start:0;--margin-end:0;z-index:1}::slotted(ion-label:not([slot=end])){-ms-flex:1;flex:1;width:-webkit-min-content;width:-moz-min-content;width:min-content;max-width:100%}:host(.item-input){-ms-flex-align:center;align-items:center}.input-wrapper{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;text-overflow:ellipsis;overflow:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.item-label-stacked),:host(.item-label-floating){-ms-flex-align:start;align-items:start}:host(.item-label-stacked) .input-wrapper,:host(.item-label-floating) .input-wrapper{-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column}:host(.item-multiple-inputs) ::slotted(ion-checkbox),:host(.item-multiple-inputs) ::slotted(ion-datetime),:host(.item-multiple-inputs) ::slotted(ion-radio){position:relative}:host(.item-textarea){-ms-flex-align:stretch;align-items:stretch}::slotted(ion-reorder[slot]){margin-top:0;margin-bottom:0}ion-ripple-effect{color:var(--ripple-color)}:host{--min-height:44px;--transition:background-color 200ms linear, opacity 200ms linear;--padding-start:16px;--inner-padding-end:16px;--inner-border-width:0px 0px 0.55px 0px;--background:var(--ion-item-background, var(--ion-background-color, #fff));--background-activated:var(--ion-text-color, #000);--background-focused:var(--ion-text-color, #000);--background-hover:currentColor;--background-activated-opacity:.12;--background-focused-opacity:.15;--background-hover-opacity:.04;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));--color:var(--ion-item-color, var(--ion-text-color, #000));font-size:1rem}:host(.ion-activated){--transition:none}:host(.ion-color.ion-focused) .item-native::after{background:#000;opacity:0.15}:host(.ion-color.ion-activated) .item-native::after{background:#000;opacity:0.12}:host(.item-lines-full){--border-width:0px 0px 0.55px 0px}:host(.item-lines-inset){--inner-border-width:0px 0px 0.55px 0px}:host(.item-lines-inset),:host(.item-lines-none){--border-width:0px}:host(.item-lines-full),:host(.item-lines-none){--inner-border-width:0px}::slotted([slot=start]){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:2px;margin-bottom:2px}::slotted(ion-icon[slot=start]),::slotted(ion-icon[slot=end]){margin-top:7px;margin-bottom:7px}::slotted(ion-toggle[slot=start]),::slotted(ion-toggle[slot=end]){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}:host(.item-label-stacked) ::slotted([slot=end]),:host(.item-label-floating) ::slotted([slot=end]){margin-top:7px;margin-bottom:7px}::slotted(.button-small){--padding-top:1px;--padding-bottom:1px;--padding-start:.5em;--padding-end:.5em;min-height:24px;font-size:0.8125rem}::slotted(ion-avatar){width:36px;height:36px}::slotted(ion-thumbnail){--size:56px}::slotted(ion-avatar[slot=end]),::slotted(ion-thumbnail[slot=end]){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:8px;margin-bottom:8px}:host(.item-radio) ::slotted(ion-label),:host(.item-toggle) ::slotted(ion-label){-webkit-margin-start:0px;margin-inline-start:0px}::slotted(ion-label){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:10px;margin-bottom:10px}:host(.item-label-floating),:host(.item-label-stacked){--min-height:68px}';
 var itemMdCss = ':host{--border-radius:0px;--border-width:0px;--border-style:solid;--padding-top:0px;--padding-bottom:0px;--padding-end:0px;--padding-start:0px;--inner-border-width:0px;--inner-padding-top:0px;--inner-padding-bottom:0px;--inner-padding-start:0px;--inner-padding-end:0px;--inner-box-shadow:none;--detail-icon-color:initial;--detail-icon-font-size:1.25em;--detail-icon-opacity:0.25;--color-activated:var(--color);--color-focused:var(--color);--color-hover:var(--color);--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);text-align:initial;text-decoration:none;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.ion-color) .item-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.ion-color) .item-native,:host(.ion-color) .item-inner{border-color:var(--ion-color-shade)}:host(.ion-activated) .item-native{color:var(--color-activated)}:host(.ion-activated) .item-native::after{background:var(--background-activated);opacity:var(--background-activated-opacity)}:host(.ion-color.ion-activated) .item-native{color:var(--ion-color-contrast)}:host(.ion-focused) .item-native{color:var(--color-focused)}:host(.ion-focused) .item-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}:host(.ion-color.ion-focused) .item-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-focused) .item-native::after{background:var(--ion-color-contrast)}@media (any-hover: hover){:host(.ion-activatable:not(.ion-focused):hover) .item-native{color:var(--color-hover)}:host(.ion-activatable:not(.ion-focused):hover) .item-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}:host(.ion-color.ion-activatable:not(.ion-focused):hover) .item-native{color:var(--ion-color-contrast)}:host(.ion-color.ion-activatable:not(.ion-focused):hover) .item-native::after{background:var(--ion-color-contrast)}}:host(.item-control-needs-pointer-cursor){cursor:pointer}:host(.item-interactive-disabled:not(.item-multiple-inputs)){cursor:default;pointer-events:none}:host(.item-disabled){cursor:default;opacity:0.3;pointer-events:none}.item-native{border-radius:var(--border-radius);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-right:var(--padding-end);padding-left:calc(var(--padding-start) + var(--ion-safe-area-left, 0px));display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);overflow:inherit;z-index:1;-webkit-box-sizing:border-box;box-sizing:border-box}:host-context([dir=rtl]) .item-native{padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}[dir=rtl] .item-native{padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}@supports selector(:dir(rtl)){.item-native:dir(rtl){padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0;-webkit-transition:var(--transition);transition:var(--transition);z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}.item-inner{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--inner-padding-top);padding-bottom:var(--inner-padding-bottom);padding-right:calc(var(--ion-safe-area-right, 0px) + var(--inner-padding-end));padding-left:var(--inner-padding-start);display:-ms-flexbox;display:flex;position:relative;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;min-height:inherit;border-width:var(--inner-border-width);border-style:var(--border-style);border-color:var(--border-color);-webkit-box-shadow:var(--inner-box-shadow);box-shadow:var(--inner-box-shadow);overflow:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}:host-context([dir=rtl]) .item-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}[dir=rtl] .item-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}@supports selector(:dir(rtl)){.item-inner:dir(rtl){padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}}.item-detail-icon{-webkit-margin-start:calc(var(--inner-padding-end) / 2);margin-inline-start:calc(var(--inner-padding-end) / 2);-webkit-margin-end:-6px;margin-inline-end:-6px;color:var(--detail-icon-color);font-size:var(--detail-icon-font-size);opacity:var(--detail-icon-opacity)}::slotted(ion-icon){font-size:1.6em}::slotted(ion-button){--margin-top:0;--margin-bottom:0;--margin-start:0;--margin-end:0;z-index:1}::slotted(ion-label:not([slot=end])){-ms-flex:1;flex:1;width:-webkit-min-content;width:-moz-min-content;width:min-content;max-width:100%}:host(.item-input){-ms-flex-align:center;align-items:center}.input-wrapper{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;text-overflow:ellipsis;overflow:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.item-label-stacked),:host(.item-label-floating){-ms-flex-align:start;align-items:start}:host(.item-label-stacked) .input-wrapper,:host(.item-label-floating) .input-wrapper{-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column}:host(.item-multiple-inputs) ::slotted(ion-checkbox),:host(.item-multiple-inputs) ::slotted(ion-datetime),:host(.item-multiple-inputs) ::slotted(ion-radio){position:relative}:host(.item-textarea){-ms-flex-align:stretch;align-items:stretch}::slotted(ion-reorder[slot]){margin-top:0;margin-bottom:0}ion-ripple-effect{color:var(--ripple-color)}:host{--min-height:48px;--background:var(--ion-item-background, var(--ion-background-color, #fff));--background-activated:transparent;--background-focused:currentColor;--background-hover:currentColor;--background-activated-opacity:0;--background-focused-opacity:.12;--background-hover-opacity:.04;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));--color:var(--ion-item-color, var(--ion-text-color, #000));--transition:opacity 15ms linear, background-color 15ms linear;--padding-start:16px;--inner-padding-end:16px;--inner-border-width:0 0 1px 0;font-size:1rem;font-weight:normal;text-transform:none}:host(.ion-color.ion-activated) .item-native::after{background:transparent}:host(.item-interactive){--border-width:0 0 1px 0;--inner-border-width:0}:host(.item-lines-full){--border-width:0 0 1px 0}:host(.item-lines-inset){--inner-border-width:0 0 1px 0}:host(.item-lines-inset),:host(.item-lines-none){--border-width:0}:host(.item-lines-full),:host(.item-lines-none){--inner-border-width:0}:host(.item-multi-line) ::slotted([slot=start]),:host(.item-multi-line) ::slotted([slot=end]){margin-top:16px;margin-bottom:16px;-ms-flex-item-align:start;align-self:flex-start}::slotted([slot=start]){-webkit-margin-end:16px;margin-inline-end:16px}::slotted([slot=end]){-webkit-margin-start:16px;margin-inline-start:16px}::slotted(ion-icon){color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);font-size:1.5em}:host(.ion-color) ::slotted(ion-icon){color:var(--ion-color-contrast)}::slotted(ion-icon[slot]){margin-top:12px;margin-bottom:12px}::slotted(ion-icon[slot=start]){-webkit-margin-end:32px;margin-inline-end:32px}::slotted(ion-icon[slot=end]){-webkit-margin-start:16px;margin-inline-start:16px}::slotted(ion-toggle[slot=start]),::slotted(ion-toggle[slot=end]){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}::slotted(ion-note){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-ms-flex-item-align:start;align-self:flex-start;font-size:0.6875rem}::slotted(ion-note[slot]){padding-left:0;padding-right:0;padding-top:18px;padding-bottom:10px}::slotted(ion-avatar){width:40px;height:40px}::slotted(ion-thumbnail){--size:56px}::slotted(ion-avatar),::slotted(ion-thumbnail){margin-top:8px;margin-bottom:8px}::slotted(ion-avatar[slot=start]),::slotted(ion-thumbnail[slot=start]){-webkit-margin-end:16px;margin-inline-end:16px}::slotted(ion-avatar[slot=end]),::slotted(ion-thumbnail[slot=end]){-webkit-margin-start:16px;margin-inline-start:16px}::slotted(ion-label){margin-left:0;margin-right:0;margin-top:10px;margin-bottom:10px}:host(.item-label-stacked) ::slotted([slot=end]),:host(.item-label-floating) ::slotted([slot=end]){margin-top:7px;margin-bottom:7px}:host(.item-toggle) ::slotted(ion-label),:host(.item-radio) ::slotted(ion-label){-webkit-margin-start:0;margin-inline-start:0}::slotted(.button-small){--padding-top:2px;--padding-bottom:2px;--padding-start:.6em;--padding-end:.6em;min-height:25px;font-size:0.75rem}:host(.item-label-floating),:host(.item-label-stacked){--min-height:55px}:host(.ion-focused:not(.ion-color)) ::slotted(.label-stacked),:host(.ion-focused:not(.ion-color)) ::slotted(.label-floating),:host(.item-has-focus:not(.ion-color)) ::slotted(.label-stacked),:host(.item-has-focus:not(.ion-color)) ::slotted(.label-floating){color:var(--ion-color-primary, #0054e9)}';
-var _a43;
-var Item = proxyCustomElement((_a43 = class extends H {
+var _a39;
+var Item = proxyCustomElement((_a39 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13366,7 +9461,7 @@ var Item = proxyCustomElement((_a43 = class extends H {
       md: itemMdCss
     };
   }
-}, __name(_a43, "Item"), _a43), [289, "ion-item", {
+}, __name(_a39, "Item"), _a39), [289, "ion-item", {
   "color": [513],
   "button": [4],
   "detail": [4],
@@ -13419,8 +9514,8 @@ var defineCustomElement49 = defineCustomElement48;
 // node_modules/@ionic/core/components/ion-item-divider.js
 var itemDividerIosCss = ":host{--padding-top:0px;--padding-end:0px;--padding-bottom:0px;--padding-start:0px;--inner-padding-top:0px;--inner-padding-end:0px;--inner-padding-bottom:0px;--inner-padding-start:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);padding-right:var(--padding-end);padding-left:calc(var(--padding-start) + var(--ion-safe-area-left, 0px));display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);overflow:hidden;z-index:100;-webkit-box-sizing:border-box;box-sizing:border-box}:host-context([dir=rtl]){padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}@supports selector(:dir(rtl)){:host(:dir(rtl)){padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.item-divider-sticky){position:-webkit-sticky;position:sticky;top:0}.item-divider-inner{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--inner-padding-top);padding-bottom:var(--inner-padding-bottom);padding-right:calc(var(--ion-safe-area-right, 0px) + var(--inner-padding-end));padding-left:var(--inner-padding-start);display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;min-height:inherit;border:0;overflow:hidden}:host-context([dir=rtl]) .item-divider-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}[dir=rtl] .item-divider-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}@supports selector(:dir(rtl)){.item-divider-inner:dir(rtl){padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}}.item-divider-wrapper{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;text-overflow:ellipsis;overflow:hidden}:host{--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6));--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));--padding-start:16px;--inner-padding-end:8px;border-radius:0;position:relative;min-height:28px;font-size:1.0625rem;font-weight:600}:host([slot=start]){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:2px;margin-bottom:2px}::slotted(ion-icon[slot=start]),::slotted(ion-icon[slot=end]){margin-top:7px;margin-bottom:7px}::slotted(h1){margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px}::slotted(h2){margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px}::slotted(h3),::slotted(h4),::slotted(h5),::slotted(h6){margin-left:0;margin-right:0;margin-top:0;margin-bottom:3px}::slotted(p){margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;color:var(--ion-text-color-step-550, #a3a3a3);font-size:0.875rem;line-height:normal;text-overflow:inherit;overflow:inherit}::slotted(h2:last-child) ::slotted(h3:last-child),::slotted(h4:last-child),::slotted(h5:last-child),::slotted(h6:last-child),::slotted(p:last-child){margin-bottom:0}";
 var itemDividerMdCss = ":host{--padding-top:0px;--padding-end:0px;--padding-bottom:0px;--padding-start:0px;--inner-padding-top:0px;--inner-padding-end:0px;--inner-padding-bottom:0px;--inner-padding-start:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);padding-right:var(--padding-end);padding-left:calc(var(--padding-start) + var(--ion-safe-area-left, 0px));display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);overflow:hidden;z-index:100;-webkit-box-sizing:border-box;box-sizing:border-box}:host-context([dir=rtl]){padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}@supports selector(:dir(rtl)){:host(:dir(rtl)){padding-right:calc(var(--padding-start) + var(--ion-safe-area-right, 0px));padding-left:var(--padding-end)}}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.item-divider-sticky){position:-webkit-sticky;position:sticky;top:0}.item-divider-inner{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-top:var(--inner-padding-top);padding-bottom:var(--inner-padding-bottom);padding-right:calc(var(--ion-safe-area-right, 0px) + var(--inner-padding-end));padding-left:var(--inner-padding-start);display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;min-height:inherit;border:0;overflow:hidden}:host-context([dir=rtl]) .item-divider-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}[dir=rtl] .item-divider-inner{padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}@supports selector(:dir(rtl)){.item-divider-inner:dir(rtl){padding-right:var(--inner-padding-start);padding-left:calc(var(--ion-safe-area-left, 0px) + var(--inner-padding-end))}}.item-divider-wrapper{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;text-overflow:ellipsis;overflow:hidden}:host{--background:var(--ion-background-color, #fff);--color:var(--ion-color-step-400, var(--ion-text-color-step-600, #999999));--padding-start:16px;--inner-padding-end:16px;min-height:30px;border-bottom:1px solid var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));font-size:0.875rem}::slotted([slot=start]){-webkit-margin-end:16px;margin-inline-end:16px}::slotted([slot=end]){-webkit-margin-start:16px;margin-inline-start:16px}::slotted(ion-label){margin-left:0;margin-right:0;margin-top:13px;margin-bottom:10px}::slotted(ion-icon){color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.54);font-size:1.7142857143em}:host(.ion-color) ::slotted(ion-icon){color:var(--ion-color-contrast)}::slotted(ion-icon[slot]){margin-top:12px;margin-bottom:12px}::slotted(ion-icon[slot=start]){-webkit-margin-end:32px;margin-inline-end:32px}::slotted(ion-icon[slot=end]){-webkit-margin-start:16px;margin-inline-start:16px}::slotted(ion-note){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-ms-flex-item-align:start;align-self:flex-start;font-size:0.6875rem}::slotted(ion-note[slot]){padding-left:0;padding-right:0;padding-top:18px;padding-bottom:10px}::slotted(ion-avatar){width:40px;height:40px}::slotted(ion-thumbnail){--size:56px}::slotted(ion-avatar),::slotted(ion-thumbnail){margin-top:8px;margin-bottom:8px}::slotted(ion-avatar[slot=start]),::slotted(ion-thumbnail[slot=start]){-webkit-margin-end:16px;margin-inline-end:16px}::slotted(ion-avatar[slot=end]),::slotted(ion-thumbnail[slot=end]){-webkit-margin-start:16px;margin-inline-start:16px}::slotted(h1){margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px}::slotted(h2){margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px}::slotted(h3,h4,h5,h6){margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px}::slotted(p){margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));font-size:0.875rem;line-height:normal;text-overflow:inherit;overflow:inherit}";
-var _a44;
-var ItemDivider = proxyCustomElement((_a44 = class extends H {
+var _a40;
+var ItemDivider = proxyCustomElement((_a40 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13444,7 +9539,7 @@ var ItemDivider = proxyCustomElement((_a44 = class extends H {
       md: itemDividerMdCss
     };
   }
-}, __name(_a44, "ItemDivider"), _a44), [289, "ion-item-divider", {
+}, __name(_a40, "ItemDivider"), _a40), [289, "ion-item-divider", {
   "color": [513],
   "sticky": [4]
 }]);
@@ -13469,8 +9564,8 @@ var defineCustomElement50 = defineCustomElement$127;
 // node_modules/@ionic/core/components/ion-item-group.js
 var itemGroupIosCss = "ion-item-group{display:block}";
 var itemGroupMdCss = "ion-item-group{display:block}";
-var _a45;
-var ItemGroup = proxyCustomElement((_a45 = class extends H {
+var _a41;
+var ItemGroup = proxyCustomElement((_a41 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13490,7 +9585,7 @@ var ItemGroup = proxyCustomElement((_a45 = class extends H {
       md: itemGroupMdCss
     };
   }
-}, __name(_a45, "ItemGroup"), _a45), [288, "ion-item-group"]);
+}, __name(_a41, "ItemGroup"), _a41), [288, "ion-item-group"]);
 function defineCustomElement$128() {
   if (typeof customElements === "undefined") {
     return;
@@ -13512,8 +9607,8 @@ var defineCustomElement51 = defineCustomElement$128;
 // node_modules/@ionic/core/components/ion-item-option.js
 var itemOptionIosCss = ":host{--background:var(--ion-color-primary, #0054e9);--color:var(--ion-color-primary-contrast, #fff);background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.button-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-webkit-padding-start:0.7em;padding-inline-start:0.7em;-webkit-padding-end:0.7em;padding-inline-end:0.7em;padding-top:0;padding-bottom:0;display:inline-block;position:relative;width:100%;height:100%;border:0;outline:none;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}.button-inner{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.horizontal-wrapper{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%}::slotted(*){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:5px;margin-inline-end:5px;margin-top:0;margin-bottom:0}::slotted([slot=end]){-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}::slotted([slot=icon-only]){padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px;margin-top:0;margin-bottom:0;min-width:0.9em;font-size:1.8em}:host(.item-option-expandable){-ms-flex-negative:0;flex-shrink:0;-webkit-transition-duration:0;transition-duration:0;-webkit-transition-property:none;transition-property:none;-webkit-transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1);transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1)}:host(.item-option-disabled){pointer-events:none}:host(.item-option-disabled) .button-native{cursor:default;opacity:0.5;pointer-events:none}:host{font-size:clamp(16px, 1rem, 35.2px)}:host(.ion-activated){background:var(--ion-color-primary-shade, #004acd)}:host(.ion-color.ion-activated){background:var(--ion-color-shade)}";
 var itemOptionMdCss = ":host{--background:var(--ion-color-primary, #0054e9);--color:var(--ion-color-primary-contrast, #fff);background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit)}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.button-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-webkit-padding-start:0.7em;padding-inline-start:0.7em;-webkit-padding-end:0.7em;padding-inline-end:0.7em;padding-top:0;padding-bottom:0;display:inline-block;position:relative;width:100%;height:100%;border:0;outline:none;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}.button-inner{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.horizontal-wrapper{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%}::slotted(*){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:5px;margin-inline-end:5px;margin-top:0;margin-bottom:0}::slotted([slot=end]){-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}::slotted([slot=icon-only]){padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px;margin-top:0;margin-bottom:0;min-width:0.9em;font-size:1.8em}:host(.item-option-expandable){-ms-flex-negative:0;flex-shrink:0;-webkit-transition-duration:0;transition-duration:0;-webkit-transition-property:none;transition-property:none;-webkit-transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1);transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1)}:host(.item-option-disabled){pointer-events:none}:host(.item-option-disabled) .button-native{cursor:default;opacity:0.5;pointer-events:none}:host{font-size:0.875rem;font-weight:500;text-transform:uppercase}";
-var _a46;
-var ItemOption = proxyCustomElement((_a46 = class extends H {
+var _a42;
+var ItemOption = proxyCustomElement((_a42 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13553,7 +9648,7 @@ var ItemOption = proxyCustomElement((_a46 = class extends H {
       md: itemOptionMdCss
     };
   }
-}, __name(_a46, "ItemOption"), _a46), [289, "ion-item-option", {
+}, __name(_a42, "ItemOption"), _a42), [289, "ion-item-option", {
   "color": [513],
   "disabled": [4],
   "download": [1],
@@ -13589,8 +9684,8 @@ var defineCustomElement52 = defineCustomElement$129;
 // node_modules/@ionic/core/components/ion-item-options.js
 var itemOptionsIosCss = "ion-item-options{top:0;right:0;-ms-flex-pack:end;justify-content:flex-end;display:none;position:absolute;height:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1}:host-context([dir=rtl]) ion-item-options{-ms-flex-pack:start;justify-content:flex-start}:host-context([dir=rtl]) ion-item-options:not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}[dir=rtl] ion-item-options{-ms-flex-pack:start;justify-content:flex-start}[dir=rtl] ion-item-options:not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}@supports selector(:dir(rtl)){ion-item-options:dir(rtl){-ms-flex-pack:start;justify-content:flex-start}ion-item-options:dir(rtl):not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}}.item-options-start{right:auto;left:0;-ms-flex-pack:start;justify-content:flex-start}:host-context([dir=rtl]) .item-options-start{-ms-flex-pack:end;justify-content:flex-end}[dir=rtl] .item-options-start{-ms-flex-pack:end;justify-content:flex-end}@supports selector(:dir(rtl)){.item-options-start:dir(rtl){-ms-flex-pack:end;justify-content:flex-end}}[dir=ltr] .item-options-start ion-item-option:first-child,[dir=rtl] .item-options-start ion-item-option:last-child{padding-left:var(--ion-safe-area-left)}[dir=ltr] .item-options-end ion-item-option:last-child,[dir=rtl] .item-options-end ion-item-option:first-child{padding-right:var(--ion-safe-area-right)}:host-context([dir=rtl]) .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}[dir=rtl] .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}@supports selector(:dir(rtl)){.item-sliding-active-slide:dir(rtl).item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}}.item-sliding-active-slide ion-item-options{display:-ms-flexbox;display:flex;visibility:hidden}.item-sliding-active-slide.item-sliding-active-options-start .item-options-start,.item-sliding-active-slide.item-sliding-active-options-end ion-item-options:not(.item-options-start){width:100%;visibility:visible}.item-options-ios{border-bottom-width:0;border-bottom-style:solid;border-bottom-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))))}.item-options-ios.item-options-end{border-bottom-width:0.55px}.list-ios-lines-none .item-options-ios{border-bottom-width:0}.list-ios-lines-full .item-options-ios,.list-ios-lines-inset .item-options-ios.item-options-end{border-bottom-width:0.55px}";
 var itemOptionsMdCss = "ion-item-options{top:0;right:0;-ms-flex-pack:end;justify-content:flex-end;display:none;position:absolute;height:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1}:host-context([dir=rtl]) ion-item-options{-ms-flex-pack:start;justify-content:flex-start}:host-context([dir=rtl]) ion-item-options:not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}[dir=rtl] ion-item-options{-ms-flex-pack:start;justify-content:flex-start}[dir=rtl] ion-item-options:not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}@supports selector(:dir(rtl)){ion-item-options:dir(rtl){-ms-flex-pack:start;justify-content:flex-start}ion-item-options:dir(rtl):not(.item-options-end){right:auto;left:0;-ms-flex-pack:end;justify-content:flex-end}}.item-options-start{right:auto;left:0;-ms-flex-pack:start;justify-content:flex-start}:host-context([dir=rtl]) .item-options-start{-ms-flex-pack:end;justify-content:flex-end}[dir=rtl] .item-options-start{-ms-flex-pack:end;justify-content:flex-end}@supports selector(:dir(rtl)){.item-options-start:dir(rtl){-ms-flex-pack:end;justify-content:flex-end}}[dir=ltr] .item-options-start ion-item-option:first-child,[dir=rtl] .item-options-start ion-item-option:last-child{padding-left:var(--ion-safe-area-left)}[dir=ltr] .item-options-end ion-item-option:last-child,[dir=rtl] .item-options-end ion-item-option:first-child{padding-right:var(--ion-safe-area-right)}:host-context([dir=rtl]) .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}[dir=rtl] .item-sliding-active-slide.item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}@supports selector(:dir(rtl)){.item-sliding-active-slide:dir(rtl).item-sliding-active-options-start ion-item-options:not(.item-options-end){width:100%;visibility:visible}}.item-sliding-active-slide ion-item-options{display:-ms-flexbox;display:flex;visibility:hidden}.item-sliding-active-slide.item-sliding-active-options-start .item-options-start,.item-sliding-active-slide.item-sliding-active-options-end ion-item-options:not(.item-options-start){width:100%;visibility:visible}.item-options-md{border-bottom-width:0;border-bottom-style:solid;border-bottom-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))))}.list-md-lines-none .item-options-md{border-bottom-width:0}.list-md-lines-full .item-options-md,.list-md-lines-inset .item-options-md.item-options-end{border-bottom-width:1px}";
-var _a47;
-var ItemOptions = proxyCustomElement((_a47 = class extends H {
+var _a43;
+var ItemOptions = proxyCustomElement((_a43 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13633,7 +9728,7 @@ var ItemOptions = proxyCustomElement((_a47 = class extends H {
       md: itemOptionsMdCss
     };
   }
-}, __name(_a47, "ItemOptions"), _a47), [288, "ion-item-options", {
+}, __name(_a43, "ItemOptions"), _a43), [288, "ion-item-options", {
   "side": [1],
   "fireSwipeEvent": [64]
 }]);
@@ -13692,8 +9787,8 @@ var itemSlidingCss = "ion-item-sliding{display:block;position:relative;width:100
 var SWIPE_MARGIN = 30;
 var ELASTIC_FACTOR = 0.55;
 var openSlidingItem;
-var _a48;
-var ItemSliding = proxyCustomElement((_a48 = class extends H {
+var _a44;
+var ItemSliding = proxyCustomElement((_a44 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -13775,8 +9870,8 @@ var ItemSliding = proxyCustomElement((_a48 = class extends H {
    */
   open(side) {
     return __async(this, null, function* () {
-      var _a190;
-      const item = this.item = (_a190 = this.item) !== null && _a190 !== void 0 ? _a190 : this.el.querySelector("ion-item");
+      var _a186;
+      const item = this.item = (_a186 = this.item) !== null && _a186 !== void 0 ? _a186 : this.el.querySelector("ion-item");
       if (item === null) {
         return;
       }
@@ -13845,14 +9940,14 @@ var ItemSliding = proxyCustomElement((_a48 = class extends H {
   }
   updateOptions() {
     return __async(this, null, function* () {
-      var _a190;
+      var _a186;
       const options = this.el.querySelectorAll("ion-item-options");
       let sides = 0;
       this.leftOptions = this.rightOptions = void 0;
       for (let i = 0; i < options.length; i++) {
         const item = options.item(i);
         const option = item.componentOnReady !== void 0 ? yield item.componentOnReady() : item;
-        const side = isEndSide((_a190 = option.side) !== null && _a190 !== void 0 ? _a190 : option.getAttribute("side")) ? "end" : "start";
+        const side = isEndSide((_a186 = option.side) !== null && _a186 !== void 0 ? _a186 : option.getAttribute("side")) ? "end" : "start";
         if (side === "start") {
           this.leftOptions = option;
           sides |= 1;
@@ -14035,7 +10130,7 @@ var ItemSliding = proxyCustomElement((_a48 = class extends H {
   static get style() {
     return itemSlidingCss;
   }
-}, __name(_a48, "ItemSliding"), _a48), [256, "ion-item-sliding", {
+}, __name(_a44, "ItemSliding"), _a44), [256, "ion-item-sliding", {
   "disabled": [4],
   "state": [32],
   "getOpenAmount": [64],
@@ -14070,8 +10165,8 @@ var defineCustomElement54 = defineCustomElement$131;
 // node_modules/@ionic/core/components/label.js
 var labelIosCss = ".item.sc-ion-label-ios-h,.item .sc-ion-label-ios-h{--color:initial;display:block;color:var(--color);font-family:var(--ion-font-family, inherit);font-size:inherit;text-overflow:ellipsis;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-label-ios-h{color:var(--ion-color-base)}.ion-text-nowrap.sc-ion-label-ios-h{overflow:hidden}.item-interactive-disabled.sc-ion-label-ios-h:not(.item-multiple-inputs),.item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-ios-h{cursor:default;opacity:0.3;pointer-events:none}.item-input.sc-ion-label-ios-h,.item-input .sc-ion-label-ios-h{-ms-flex:initial;flex:initial;max-width:200px;pointer-events:none}.item-textarea.sc-ion-label-ios-h,.item-textarea .sc-ion-label-ios-h{-ms-flex-item-align:baseline;align-self:baseline}.item-skeleton-text.sc-ion-label-ios-h,.item-skeleton-text .sc-ion-label-ios-h{overflow:hidden}.label-fixed.sc-ion-label-ios-h{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.label-stacked.sc-ion-label-ios-h,.label-floating.sc-ion-label-ios-h{margin-bottom:0;-ms-flex-item-align:stretch;align-self:stretch;width:auto;max-width:100%}.label-no-animate.label-floating.sc-ion-label-ios-h{-webkit-transition:none;transition:none}.sc-ion-label-ios-s h1,.sc-ion-label-ios-s h2,.sc-ion-label-ios-s h3,.sc-ion-label-ios-s h4,.sc-ion-label-ios-s h5,.sc-ion-label-ios-s h6{text-overflow:inherit;overflow:inherit}.ion-text-wrap.sc-ion-label-ios-h{font-size:0.875rem;line-height:1.5}.label-stacked.sc-ion-label-ios-h{margin-bottom:4px;font-size:0.875rem}.label-floating.sc-ion-label-ios-h{margin-bottom:0;-webkit-transform:translate(0, 29px);transform:translate(0, 29px);-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:-webkit-transform 150ms ease-in-out;transition:-webkit-transform 150ms ease-in-out;transition:transform 150ms ease-in-out;transition:transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out}[dir=rtl].sc-ion-label-ios-h -no-combinator.label-floating.sc-ion-label-ios-h,[dir=rtl] .sc-ion-label-ios-h -no-combinator.label-floating.sc-ion-label-ios-h,[dir=rtl].label-floating.sc-ion-label-ios-h,[dir=rtl] .label-floating.sc-ion-label-ios-h{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.label-floating.sc-ion-label-ios-h:dir(rtl){-webkit-transform-origin:right top;transform-origin:right top}}.item-textarea.label-floating.sc-ion-label-ios-h,.item-textarea .label-floating.sc-ion-label-ios-h{-webkit-transform:translate(0, 28px);transform:translate(0, 28px)}.item-has-focus.label-floating.sc-ion-label-ios-h,.item-has-focus .label-floating.sc-ion-label-ios-h,.item-has-placeholder.sc-ion-label-ios-h:not(.item-input).label-floating,.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-ios-h,.item-has-value.label-floating.sc-ion-label-ios-h,.item-has-value .label-floating.sc-ion-label-ios-h{-webkit-transform:scale(0.82);transform:scale(0.82)}.sc-ion-label-ios-s h1{margin-left:0;margin-right:0;margin-top:3px;margin-bottom:2px;font-size:1.375rem;font-weight:normal}.sc-ion-label-ios-s h2{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:1.0625rem;font-weight:normal}.sc-ion-label-ios-s h3,.sc-ion-label-ios-s h4,.sc-ion-label-ios-s h5,.sc-ion-label-ios-s h6{margin-left:0;margin-right:0;margin-top:0;margin-bottom:3px;font-size:0.875rem;font-weight:normal;line-height:normal}.sc-ion-label-ios-s p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:0.875rem;line-height:normal;text-overflow:inherit;overflow:inherit}.sc-ion-label-ios-s>p{color:var(--ion-color-step-400, var(--ion-text-color-step-600, #999999))}.sc-ion-label-ios-h.in-item-color.sc-ion-label-ios-s>p{color:inherit}.sc-ion-label-ios-s h2:last-child,.sc-ion-label-ios-s h3:last-child,.sc-ion-label-ios-s h4:last-child,.sc-ion-label-ios-s h5:last-child,.sc-ion-label-ios-s h6:last-child,.sc-ion-label-ios-s p:last-child{margin-bottom:0}";
 var labelMdCss = ".item.sc-ion-label-md-h,.item .sc-ion-label-md-h{--color:initial;display:block;color:var(--color);font-family:var(--ion-font-family, inherit);font-size:inherit;text-overflow:ellipsis;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-label-md-h{color:var(--ion-color-base)}.ion-text-nowrap.sc-ion-label-md-h{overflow:hidden}.item-interactive-disabled.sc-ion-label-md-h:not(.item-multiple-inputs),.item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-md-h{cursor:default;opacity:0.3;pointer-events:none}.item-input.sc-ion-label-md-h,.item-input .sc-ion-label-md-h{-ms-flex:initial;flex:initial;max-width:200px;pointer-events:none}.item-textarea.sc-ion-label-md-h,.item-textarea .sc-ion-label-md-h{-ms-flex-item-align:baseline;align-self:baseline}.item-skeleton-text.sc-ion-label-md-h,.item-skeleton-text .sc-ion-label-md-h{overflow:hidden}.label-fixed.sc-ion-label-md-h{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.label-stacked.sc-ion-label-md-h,.label-floating.sc-ion-label-md-h{margin-bottom:0;-ms-flex-item-align:stretch;align-self:stretch;width:auto;max-width:100%}.label-no-animate.label-floating.sc-ion-label-md-h{-webkit-transition:none;transition:none}.sc-ion-label-md-s h1,.sc-ion-label-md-s h2,.sc-ion-label-md-s h3,.sc-ion-label-md-s h4,.sc-ion-label-md-s h5,.sc-ion-label-md-s h6{text-overflow:inherit;overflow:inherit}.ion-text-wrap.sc-ion-label-md-h{line-height:1.5}.label-stacked.sc-ion-label-md-h,.label-floating.sc-ion-label-md-h{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-transform-origin:top left;transform-origin:top left}.label-stacked.label-rtl.sc-ion-label-md-h,.label-floating.label-rtl.sc-ion-label-md-h{-webkit-transform-origin:top right;transform-origin:top right}.label-stacked.sc-ion-label-md-h{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1)}.label-floating.sc-ion-label-md-h{-webkit-transform:translateY(96%);transform:translateY(96%);-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1)}.ion-focused.label-floating.sc-ion-label-md-h,.ion-focused .label-floating.sc-ion-label-md-h,.item-has-focus.label-floating.sc-ion-label-md-h,.item-has-focus .label-floating.sc-ion-label-md-h,.item-has-placeholder.sc-ion-label-md-h:not(.item-input).label-floating,.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-md-h,.item-has-value.label-floating.sc-ion-label-md-h,.item-has-value .label-floating.sc-ion-label-md-h{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75)}.ion-focused.label-stacked.sc-ion-label-md-h:not(.ion-color),.ion-focused .label-stacked.sc-ion-label-md-h:not(.ion-color),.ion-focused.label-floating.sc-ion-label-md-h:not(.ion-color),.ion-focused .label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus.label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus .label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--ion-color-primary, #0054e9)}.ion-focused.ion-color.label-stacked.sc-ion-label-md-h:not(.ion-color),.ion-focused.ion-color .label-stacked.sc-ion-label-md-h:not(.ion-color),.ion-focused.ion-color.label-floating.sc-ion-label-md-h:not(.ion-color),.ion-focused.ion-color .label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color.label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color .label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color.label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--ion-color-contrast)}.ion-invalid.ion-touched.label-stacked.sc-ion-label-md-h:not(.ion-color),.ion-invalid.ion-touched .label-stacked.sc-ion-label-md-h:not(.ion-color),.ion-invalid.ion-touched.label-floating.sc-ion-label-md-h:not(.ion-color),.ion-invalid.ion-touched .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--highlight-color-invalid)}.sc-ion-label-md-s h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:1.5rem;font-weight:normal}.sc-ion-label-md-s h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:1rem;font-weight:normal}.sc-ion-label-md-s h3,.sc-ion-label-md-s h4,.sc-ion-label-md-s h5,.sc-ion-label-md-s h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:0.875rem;font-weight:normal;line-height:normal}.sc-ion-label-md-s p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:0.875rem;line-height:1.25rem;text-overflow:inherit;overflow:inherit}.sc-ion-label-md-s>p{color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}.sc-ion-label-md-h.in-item-color.sc-ion-label-md-s>p{color:inherit}";
-var _a49;
-var Label = proxyCustomElement((_a49 = class extends H {
+var _a45;
+var Label = proxyCustomElement((_a45 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -14141,7 +10236,7 @@ var Label = proxyCustomElement((_a49 = class extends H {
       md: labelMdCss
     };
   }
-}, __name(_a49, "Label"), _a49), [294, "ion-label", {
+}, __name(_a45, "Label"), _a45), [294, "ion-label", {
   "color": [513],
   "position": [1],
   "noAnimate": [32]
@@ -14172,8 +10267,8 @@ var defineCustomElement56 = defineCustomElement55;
 // node_modules/@ionic/core/components/list.js
 var listIosCss = "ion-list{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:block;contain:content;list-style-type:none}ion-list.list-inset{-webkit-transform:translateZ(0);transform:translateZ(0);overflow:hidden}.list-ios{background:var(--ion-item-background, var(--ion-background-color, #fff))}.list-ios.list-inset{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px;border-radius:10px}.list-ios.list-inset ion-item:only-child,.list-ios.list-inset ion-item:not(:only-of-type):last-of-type,.list-ios.list-inset ion-item-sliding:last-of-type ion-item{--border-width:0;--inner-border-width:0}.list-ios.list-inset+ion-list.list-inset{margin-top:0}.list-ios-lines-none .item-lines-default{--inner-border-width:0px;--border-width:0px}.list-ios-lines-full .item-lines-default{--inner-border-width:0px;--border-width:0 0 0.55px 0}.list-ios-lines-inset .item-lines-default{--inner-border-width:0 0 0.55px 0;--border-width:0px}ion-card .list-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
 var listMdCss = "ion-list{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:block;contain:content;list-style-type:none}ion-list.list-inset{-webkit-transform:translateZ(0);transform:translateZ(0);overflow:hidden}.list-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:8px;padding-bottom:8px;background:var(--ion-item-background, var(--ion-background-color, #fff))}.list-md>.input:last-child::after{inset-inline-start:0}.list-md.list-inset{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px;border-radius:2px}.list-md.list-inset ion-item:not(:only-of-type):last-of-type,.list-md.list-inset ion-item-sliding:last-of-type ion-item{--border-width:0;--inner-border-width:0}.list-md.list-inset ion-item:only-child{--border-width:0;--inner-border-width:0}.list-md.list-inset+ion-list.list-inset{margin-top:0}.list-md-lines-none .item-lines-default{--inner-border-width:0px;--border-width:0px}.list-md-lines-full .item-lines-default{--inner-border-width:0px;--border-width:0 0 1px 0}.list-md-lines-inset .item-lines-default{--inner-border-width:0 0 1px 0;--border-width:0px}ion-card .list-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
-var _a50;
-var List = proxyCustomElement((_a50 = class extends H {
+var _a46;
+var List = proxyCustomElement((_a46 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -14215,7 +10310,7 @@ var List = proxyCustomElement((_a50 = class extends H {
       md: listMdCss
     };
   }
-}, __name(_a50, "List"), _a50), [288, "ion-list", {
+}, __name(_a46, "List"), _a46), [288, "ion-list", {
   "lines": [1],
   "inset": [4],
   "closeSlidingItems": [64]
@@ -14243,8 +10338,8 @@ var defineCustomElement58 = defineCustomElement57;
 // node_modules/@ionic/core/components/list-header.js
 var listHeaderIosCss = ":host{--border-style:solid;--border-width:0;--inner-border-width:0;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;min-height:40px;border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);color:var(--color);overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.list-header-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;min-height:inherit;border-width:var(--inner-border-width);border-style:var(--border-style);border-color:var(--border-color);overflow:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}::slotted(ion-label){-ms-flex:1 1 auto;flex:1 1 auto}:host(.list-header-lines-inset),:host(.list-header-lines-none){--border-width:0}:host(.list-header-lines-full),:host(.list-header-lines-none){--inner-border-width:0}:host{--background:transparent;--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));padding-right:var(--ion-safe-area-right);padding-left:calc(var(--ion-safe-area-left, 0px) + 16px);position:relative;-ms-flex-align:end;align-items:flex-end;font-size:min(1.375rem, 56.1px);font-weight:700;letter-spacing:0}:host-context([dir=rtl]){padding-right:calc(var(--ion-safe-area-right, 0px) + 16px);padding-left:var(--ion-safe-area-left)}@supports selector(:dir(rtl)){:host(:dir(rtl)){padding-right:calc(var(--ion-safe-area-right, 0px) + 16px);padding-left:var(--ion-safe-area-left)}}::slotted(ion-button),::slotted(ion-label){margin-top:29px;margin-bottom:6px}::slotted(ion-button){--padding-top:0;--padding-bottom:0;-webkit-margin-start:3px;margin-inline-start:3px;-webkit-margin-end:3px;margin-inline-end:3px;min-height:1.4em}:host(.list-header-lines-full){--border-width:0 0 0.55px 0}:host(.list-header-lines-inset){--inner-border-width:0 0 0.55px 0}";
 var listHeaderMdCss = ":host{--border-style:solid;--border-width:0;--inner-border-width:0;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;min-height:40px;border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);color:var(--color);overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.list-header-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex:1;flex:1;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-item-align:stretch;align-self:stretch;min-height:inherit;border-width:var(--inner-border-width);border-style:var(--border-style);border-color:var(--border-color);overflow:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}::slotted(ion-label){-ms-flex:1 1 auto;flex:1 1 auto}:host(.list-header-lines-inset),:host(.list-header-lines-none){--border-width:0}:host(.list-header-lines-full),:host(.list-header-lines-none){--inner-border-width:0}:host{--background:transparent;--color:var(--ion-text-color, #000);--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));padding-right:var(--ion-safe-area-right);padding-left:calc(var(--ion-safe-area-left, 0px) + 16px);min-height:45px;font-size:0.875rem}:host-context([dir=rtl]){padding-right:calc(var(--ion-safe-area-right, 0px) + 16px);padding-left:var(--ion-safe-area-left)}@supports selector(:dir(rtl)){:host(:dir(rtl)){padding-right:calc(var(--ion-safe-area-right, 0px) + 16px);padding-left:var(--ion-safe-area-left)}}:host(.list-header-lines-full){--border-width:0 0 1px 0}:host(.list-header-lines-inset){--inner-border-width:0 0 1px 0}";
-var _a51;
-var ListHeader = proxyCustomElement((_a51 = class extends H {
+var _a47;
+var ListHeader = proxyCustomElement((_a47 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -14264,7 +10359,7 @@ var ListHeader = proxyCustomElement((_a51 = class extends H {
       md: listHeaderMdCss
     };
   }
-}, __name(_a51, "ListHeader"), _a51), [289, "ion-list-header", {
+}, __name(_a47, "ListHeader"), _a47), [289, "ion-list-header", {
   "color": [513],
   "lines": [1]
 }]);
@@ -14290,7 +10385,7 @@ var defineCustomElement60 = defineCustomElement59;
 
 // node_modules/@ionic/core/components/ion-loading.js
 var iosEnterAnimation5 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
@@ -14300,10 +10395,10 @@ var iosEnterAnimation5 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: 0.01, transform: "scale(1.1)" },
     { offset: 1, opacity: 1, transform: "scale(1)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosEnterAnimation");
 var iosLeaveAnimation5 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
@@ -14311,10 +10406,10 @@ var iosLeaveAnimation5 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: 0.99, transform: "scale(1)" },
     { offset: 1, opacity: 0, transform: "scale(0.9)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosLeaveAnimation");
 var mdEnterAnimation5 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
@@ -14324,10 +10419,10 @@ var mdEnterAnimation5 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: 0.01, transform: "scale(1.1)" },
     { offset: 1, opacity: 1, transform: "scale(1)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "mdEnterAnimation");
 var mdLeaveAnimation5 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0);
@@ -14335,12 +10430,12 @@ var mdLeaveAnimation5 = /* @__PURE__ */ __name((baseEl) => {
     { offset: 0, opacity: 0.99, transform: "scale(1)" },
     { offset: 1, opacity: 0, transform: "scale(0.9)" }
   ]);
-  return baseAnimation2.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("ease-in-out").duration(200).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "mdLeaveAnimation");
 var loadingIosCss = ".sc-ion-loading-ios-h{--min-width:auto;--width:auto;--min-height:auto;--height:auto;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:fixed;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-loading-ios-h{display:none}.loading-wrapper.sc-ion-loading-ios{display:-ms-flexbox;display:flex;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);opacity:0;z-index:10}ion-spinner.sc-ion-loading-ios{color:var(--spinner-color)}.sc-ion-loading-ios-h{--background:var(--ion-overlay-background-color, var(--ion-color-step-100, var(--ion-background-color-step-100, #f9f9f9)));--max-width:270px;--max-height:90%;--spinner-color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));--backdrop-opacity:var(--ion-backdrop-opacity, 0.3);color:var(--ion-text-color, #000);font-size:0.875rem}.loading-wrapper.sc-ion-loading-ios{border-radius:8px;-webkit-padding-start:34px;padding-inline-start:34px;-webkit-padding-end:34px;padding-inline-end:34px;padding-top:24px;padding-bottom:24px}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){.loading-translucent.sc-ion-loading-ios-h .loading-wrapper.sc-ion-loading-ios{background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}}.loading-content.sc-ion-loading-ios{font-weight:bold}.loading-spinner.sc-ion-loading-ios+.loading-content.sc-ion-loading-ios{-webkit-margin-start:16px;margin-inline-start:16px}";
 var loadingMdCss = ".sc-ion-loading-md-h{--min-width:auto;--width:auto;--min-height:auto;--height:auto;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:fixed;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-ms-touch-action:none;touch-action:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.overlay-hidden.sc-ion-loading-md-h{display:none}.loading-wrapper.sc-ion-loading-md{display:-ms-flexbox;display:flex;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);opacity:0;z-index:10}ion-spinner.sc-ion-loading-md{color:var(--spinner-color)}.sc-ion-loading-md-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--max-width:280px;--max-height:90%;--spinner-color:var(--ion-color-primary, #0054e9);--backdrop-opacity:var(--ion-backdrop-opacity, 0.32);color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));font-size:0.875rem}.loading-wrapper.sc-ion-loading-md{border-radius:2px;-webkit-padding-start:24px;padding-inline-start:24px;-webkit-padding-end:24px;padding-inline-end:24px;padding-top:24px;padding-bottom:24px;-webkit-box-shadow:0 16px 20px rgba(0, 0, 0, 0.4);box-shadow:0 16px 20px rgba(0, 0, 0, 0.4)}.loading-spinner.sc-ion-loading-md+.loading-content.sc-ion-loading-md{-webkit-margin-start:16px;margin-inline-start:16px}";
-var _a52;
-var Loading = proxyCustomElement((_a52 = class extends H {
+var _a48;
+var Loading = proxyCustomElement((_a48 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -14387,12 +10482,12 @@ var Loading = proxyCustomElement((_a52 = class extends H {
     this.triggerChanged();
   }
   componentWillLoad() {
-    var _a190;
+    var _a186;
     if (this.spinner === void 0) {
       const mode = getIonMode(this);
       this.spinner = config.get("loadingSpinner", config.get("spinner", mode === "ios" ? "lines" : "crescent"));
     }
-    if (!((_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id)) {
+    if (!((_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id)) {
       setOverlayId(this.el);
     }
   }
@@ -14488,7 +10583,7 @@ var Loading = proxyCustomElement((_a52 = class extends H {
       md: loadingMdCss
     };
   }
-}, __name(_a52, "Loading"), _a52), [290, "ion-loading", {
+}, __name(_a48, "Loading"), _a48), [290, "ion-loading", {
   "overlayIndex": [2, "overlay-index"],
   "delegate": [16],
   "hasController": [4, "has-controller"],
@@ -14549,8 +10644,8 @@ var iosEasing = "cubic-bezier(0.32,0.72,0,1)";
 var mdEasing = "cubic-bezier(0.0,0.0,0.2,1)";
 var iosEasingReverse = "cubic-bezier(1, 0, 0.68, 0.28)";
 var mdEasingReverse = "cubic-bezier(0.4, 0, 0.6, 1)";
-var _a53;
-var Menu = proxyCustomElement((_a53 = class extends H {
+var _a49;
+var Menu = proxyCustomElement((_a49 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -14926,7 +11021,7 @@ var Menu = proxyCustomElement((_a53 = class extends H {
     }
   }
   afterAnimation(isOpen, role) {
-    var _a190;
+    var _a186;
     this._isOpen = isOpen;
     this.isAnimating = false;
     if (!this._isOpen) {
@@ -14937,7 +11032,7 @@ var Menu = proxyCustomElement((_a53 = class extends H {
         this.el.removeAttribute("aria-hidden");
       }
       this.ionDidOpen.emit();
-      const focusedMenu = (_a190 = document.activeElement) === null || _a190 === void 0 ? void 0 : _a190.closest("ion-menu");
+      const focusedMenu = (_a186 = document.activeElement) === null || _a186 === void 0 ? void 0 : _a186.closest("ion-menu");
       if (focusedMenu !== this.el) {
         this.el.focus();
       }
@@ -15001,7 +11096,7 @@ var Menu = proxyCustomElement((_a53 = class extends H {
       md: menuMdCss
     };
   }
-}, __name(_a53, "Menu"), _a53), [289, "ion-menu", {
+}, __name(_a49, "Menu"), _a49), [289, "ion-menu", {
   "contentId": [513, "content-id"],
   "menuId": [513, "menu-id"],
   "type": [1025],
@@ -15068,8 +11163,8 @@ var updateVisibility = /* @__PURE__ */ __name((menu) => __async(null, null, func
 // node_modules/@ionic/core/components/ion-menu-button.js
 var menuButtonIosCss = ':host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;min-height:inherit;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;min-height:inherit;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity, 0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.1;--border-radius:4px;--color:var(--ion-color-primary, #0054e9);--padding-start:5px;--padding-end:5px;min-height:32px;font-size:clamp(31px, 1.9375rem, 38.13px)}:host(.ion-activated){opacity:0.4}@media (any-hover: hover){:host(:hover){opacity:0.6}}';
 var menuButtonMdCss = ':host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;min-height:inherit;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;min-height:inherit;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity, 0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.12;--background-hover:currentColor;--background-hover-opacity:.04;--border-radius:50%;--color:initial;--padding-start:8px;--padding-end:8px;width:3rem;height:3rem;font-size:1.5rem}:host(.ion-color.ion-focused)::after{background:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native::after{background:var(--ion-color-base)}}';
-var _a54;
-var MenuButton = proxyCustomElement((_a54 = class extends H {
+var _a50;
+var MenuButton = proxyCustomElement((_a50 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -15124,7 +11219,7 @@ var MenuButton = proxyCustomElement((_a54 = class extends H {
       md: menuButtonMdCss
     };
   }
-}, __name(_a54, "MenuButton"), _a54), [289, "ion-menu-button", {
+}, __name(_a50, "MenuButton"), _a50), [289, "ion-menu-button", {
   "color": [513],
   "disabled": [4],
   "menu": [1],
@@ -15162,8 +11257,8 @@ var defineCustomElement63 = defineCustomElement$134;
 
 // node_modules/@ionic/core/components/ion-menu-toggle.js
 var menuToggleCss = ":host(.menu-toggle-hidden){display:none}";
-var _a55;
-var MenuToggle = proxyCustomElement((_a55 = class extends H {
+var _a51;
+var MenuToggle = proxyCustomElement((_a51 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -15193,7 +11288,7 @@ var MenuToggle = proxyCustomElement((_a55 = class extends H {
   static get style() {
     return menuToggleCss;
   }
-}, __name(_a55, "MenuToggle"), _a55), [257, "ion-menu-toggle", {
+}, __name(_a51, "MenuToggle"), _a51), [257, "ion-menu-toggle", {
   "menu": [1],
   "autoHide": [4, "auto-hide"],
   "visible": [32]
@@ -15234,8 +11329,8 @@ var navLink = /* @__PURE__ */ __name((el, routerDirection, component, componentP
   }
   return Promise.resolve(false);
 }, "navLink");
-var _a56;
-var NavLink = proxyCustomElement((_a56 = class extends H {
+var _a52;
+var NavLink = proxyCustomElement((_a52 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -15250,7 +11345,7 @@ var NavLink = proxyCustomElement((_a56 = class extends H {
   get el() {
     return this;
   }
-}, __name(_a56, "NavLink"), _a56), [256, "ion-nav-link", {
+}, __name(_a52, "NavLink"), _a52), [256, "ion-nav-link", {
   "component": [1],
   "componentProps": [16, "component-props"],
   "routerDirection": [1, "router-direction"],
@@ -15277,8 +11372,8 @@ var defineCustomElement65 = defineCustomElement$136;
 // node_modules/@ionic/core/components/ion-note.js
 var noteIosCss = ":host{color:var(--color);font-family:var(--ion-font-family, inherit);-webkit-box-sizing:border-box;box-sizing:border-box}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-350, var(--ion-text-color-step-650, #a6a6a6));font-size:max(14px, 1rem)}";
 var noteMdCss = ":host{color:var(--color);font-family:var(--ion-font-family, inherit);-webkit-box-sizing:border-box;box-sizing:border-box}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));font-size:0.875rem}";
-var _a57;
-var Note = proxyCustomElement((_a57 = class extends H {
+var _a53;
+var Note = proxyCustomElement((_a53 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -15296,7 +11391,7 @@ var Note = proxyCustomElement((_a57 = class extends H {
       md: noteMdCss
     };
   }
-}, __name(_a57, "Note"), _a57), [289, "ion-note", {
+}, __name(_a53, "Note"), _a53), [289, "ion-note", {
   "color": [513]
 }]);
 function defineCustomElement$137() {
@@ -15320,8 +11415,8 @@ var defineCustomElement66 = defineCustomElement$137;
 // node_modules/@ionic/core/components/picker.js
 var pickerIosCss = ":host{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:200px;direction:ltr;z-index:0}:host .picker-before,:host .picker-after{position:absolute;width:100%;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:1;pointer-events:none}:host .picker-before{top:0;height:83px}:host .picker-before{inset-inline-start:0}:host .picker-after{top:116px;height:84px}:host .picker-after{inset-inline-start:0}:host .picker-highlight{border-radius:var(--highlight-border-radius, 8px);left:0;right:0;top:50%;bottom:0;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;position:absolute;width:calc(100% - 16px);height:34px;-webkit-transform:translateY(-50%);transform:translateY(-50%);background:var(--highlight-background);z-index:-1}:host input{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}:host ::slotted(ion-picker-column:first-of-type){text-align:start}:host ::slotted(ion-picker-column:last-of-type){text-align:end}:host ::slotted(ion-picker-column:only-child){text-align:center}:host .picker-before{background:-webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1)), to(rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0.8)));background:linear-gradient(to bottom, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1) 20%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0.8) 100%)}:host .picker-after{background:-webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1)), to(rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0.8)));background:linear-gradient(to top, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1) 20%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0.8) 100%)}:host .picker-highlight{background:var(--highlight-background, var(--ion-color-step-150, var(--ion-background-color-step-150, #eeeeef)))}";
 var pickerMdCss = ":host{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:200px;direction:ltr;z-index:0}:host .picker-before,:host .picker-after{position:absolute;width:100%;-webkit-transform:translateZ(0);transform:translateZ(0);z-index:1;pointer-events:none}:host .picker-before{top:0;height:83px}:host .picker-before{inset-inline-start:0}:host .picker-after{top:116px;height:84px}:host .picker-after{inset-inline-start:0}:host .picker-highlight{border-radius:var(--highlight-border-radius, 8px);left:0;right:0;top:50%;bottom:0;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;position:absolute;width:calc(100% - 16px);height:34px;-webkit-transform:translateY(-50%);transform:translateY(-50%);background:var(--highlight-background);z-index:-1}:host input{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}:host ::slotted(ion-picker-column:first-of-type){text-align:start}:host ::slotted(ion-picker-column:last-of-type){text-align:end}:host ::slotted(ion-picker-column:only-child){text-align:center}:host .picker-before{background:-webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1)), color-stop(90%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0)));background:linear-gradient(to bottom, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1) 20%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0) 90%)}:host .picker-after{background:-webkit-gradient(linear, left bottom, left top, color-stop(30%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1)), color-stop(90%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0)));background:linear-gradient(to top, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 1) 30%, rgba(var(--fade-background-rgb, var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255))), 0) 90%)}";
-var _a58;
-var Picker = proxyCustomElement((_a58 = class extends H {
+var _a54;
+var Picker = proxyCustomElement((_a54 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -15585,9 +11680,9 @@ var Picker = proxyCustomElement((_a58 = class extends H {
   }
   render() {
     return h(Host, { key: "28f81e4ed44a633178561757c5199c2c98f94b74", onPointerDown: /* @__PURE__ */ __name((ev) => this.onPointerDown(ev), "onPointerDown"), onClick: /* @__PURE__ */ __name(() => this.onClick(), "onClick") }, h("input", { key: "abb3d1ad25ef63856af7804111175a4d50008bc0", "aria-hidden": "true", tabindex: -1, inputmode: "numeric", type: "number", onKeyDown: /* @__PURE__ */ __name((ev) => {
-      var _a190;
+      var _a186;
       if (ev.key === "Enter") {
-        (_a190 = this.inputEl) === null || _a190 === void 0 ? void 0 : _a190.blur();
+        (_a186 = this.inputEl) === null || _a186 === void 0 ? void 0 : _a186.blur();
       }
     }, "onKeyDown"), ref: /* @__PURE__ */ __name((el) => this.inputEl = el, "ref"), onInput: /* @__PURE__ */ __name(() => this.onInputChange(), "onInput"), onBlur: /* @__PURE__ */ __name(() => this.exitInputMode(), "onBlur") }), h("div", { key: "334a5abdc02e6b127c57177f626d7e4ff5526183", class: "picker-before" }), h("div", { key: "ffd6271931129e88fc7c820e919d684899e420c5", class: "picker-after" }), h("div", { key: "78d1d95fd09e04f154ea59f24a1cece72c47ed7b", class: "picker-highlight", ref: /* @__PURE__ */ __name((el) => this.highlightEl = el, "ref") }), h("slot", { key: "0bd5b9f875d3c71f6cbbde2054baeb1b0a2e8cd5" }));
   }
@@ -15600,7 +11695,7 @@ var Picker = proxyCustomElement((_a58 = class extends H {
       md: pickerMdCss
     };
   }
-}, __name(_a58, "Picker"), _a58), [289, "ion-picker", {
+}, __name(_a54, "Picker"), _a54), [289, "ion-picker", {
   "exitInputMode": [64]
 }, [[1, "touchstart", "preventTouchStartPropagation"]]]);
 function defineCustomElement67() {
@@ -15625,8 +11720,8 @@ var defineCustomElement68 = defineCustomElement67;
 
 // node_modules/@ionic/core/components/picker-column.js
 var pickerColumnCss = ":host{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;max-width:100%;height:200px;font-size:22px;text-align:center}.assistive-focusable{left:0;right:0;top:0;bottom:0;position:absolute;z-index:1;pointer-events:none}.assistive-focusable:focus{outline:none}.picker-opts{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:0px;padding-bottom:0px;min-width:26px;max-height:200px;outline:none;text-align:inherit;-webkit-scroll-snap-type:y mandatory;-ms-scroll-snap-type:y mandatory;scroll-snap-type:y mandatory;overflow-x:hidden;overflow-y:scroll;scrollbar-width:none}.picker-item-empty{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;height:34px;border:0px;outline:none;background:transparent;color:inherit;font-family:var(--ion-font-family, inherit);font-size:inherit;line-height:34px;text-align:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.picker-opts::-webkit-scrollbar{display:none}::slotted(ion-picker-column-option){display:block;scroll-snap-align:center}.picker-item-empty,:host(:not([disabled])) ::slotted(ion-picker-column-option.option-disabled){scroll-snap-align:none}::slotted([slot=prefix]),::slotted([slot=suffix]){max-width:200px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}::slotted([slot=prefix]){-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:0;padding-bottom:0;-ms-flex-pack:end;justify-content:end}::slotted([slot=suffix]){-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:0;padding-bottom:0;-ms-flex-pack:start;justify-content:start}:host(.picker-column-disabled) .picker-opts{overflow-y:hidden}:host(.picker-column-disabled) ::slotted(ion-picker-column-option){cursor:default;opacity:0.4;pointer-events:none}@media (any-hover: hover){:host(:focus) .picker-opts{outline:none;background:rgba(var(--ion-color-base-rgb), 0.2)}}";
-var _a59;
-var PickerColumn = proxyCustomElement((_a59 = class extends H {
+var _a55;
+var PickerColumn = proxyCustomElement((_a55 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -15691,7 +11786,7 @@ var PickerColumn = proxyCustomElement((_a59 = class extends H {
       let activeEl = this.activeItem;
       const scrollCallback = /* @__PURE__ */ __name(() => {
         raf(() => {
-          var _a190;
+          var _a186;
           if (!scrollEl)
             return;
           if (timeout) {
@@ -15734,7 +11829,7 @@ var PickerColumn = proxyCustomElement((_a59 = class extends H {
           activeEl = newActiveElement;
           this.setPickerItemActiveState(newActiveElement, true);
           if (this.updateValueTextOnScroll) {
-            (_a190 = this.assistiveFocusable) === null || _a190 === void 0 ? void 0 : _a190.setAttribute("aria-valuetext", this.getOptionValueText(newActiveElement));
+            (_a186 = this.assistiveFocusable) === null || _a186 === void 0 ? void 0 : _a186.setAttribute("aria-valuetext", this.getOptionValueText(newActiveElement));
           }
           timeout = setTimeout(() => {
             this.isScrolling = false;
@@ -15831,8 +11926,8 @@ var PickerColumn = proxyCustomElement((_a59 = class extends H {
       }
     };
     this.getOptionValueText = (el) => {
-      var _a190;
-      return el ? (_a190 = el.getAttribute("aria-label")) !== null && _a190 !== void 0 ? _a190 : el.innerText : "";
+      var _a186;
+      return el ? (_a186 = el.getAttribute("aria-label")) !== null && _a186 !== void 0 ? _a186 : el.innerText : "";
     };
     this.renderAssistiveFocusable = () => {
       const { activeItem } = this;
@@ -15929,8 +12024,8 @@ var PickerColumn = proxyCustomElement((_a59 = class extends H {
     });
   }
   connectedCallback() {
-    var _a190;
-    this.ariaLabel = (_a190 = this.el.getAttribute("aria-label")) !== null && _a190 !== void 0 ? _a190 : "Select a value";
+    var _a186;
+    this.ariaLabel = (_a186 = this.el.getAttribute("aria-label")) !== null && _a186 !== void 0 ? _a186 : "Select a value";
   }
   get activeItem() {
     const { value } = this;
@@ -15990,7 +12085,7 @@ var PickerColumn = proxyCustomElement((_a59 = class extends H {
   static get style() {
     return pickerColumnCss;
   }
-}, __name(_a59, "PickerColumn"), _a59), [257, "ion-picker-column", {
+}, __name(_a55, "PickerColumn"), _a55), [257, "ion-picker-column", {
   "disabled": [4],
   "value": [1032],
   "color": [513],
@@ -16028,8 +12123,8 @@ var defineCustomElement70 = defineCustomElement69;
 // node_modules/@ionic/core/components/picker-column-option.js
 var pickerColumnOptionIosCss = "button{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;width:100%;height:34px;border:0px;outline:none;background:transparent;color:inherit;font-family:var(--ion-font-family, inherit);font-size:inherit;line-height:34px;text-align:inherit;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;overflow:hidden}:host(.option-disabled){opacity:0.4}:host(.option-disabled) button{cursor:default}";
 var pickerColumnOptionMdCss = "button{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;width:100%;height:34px;border:0px;outline:none;background:transparent;color:inherit;font-family:var(--ion-font-family, inherit);font-size:inherit;line-height:34px;text-align:inherit;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;overflow:hidden}:host(.option-disabled){opacity:0.4}:host(.option-disabled) button{cursor:default}:host(.option-active){color:var(--ion-color-base)}";
-var _a60;
-var PickerColumnOption = proxyCustomElement((_a60 = class extends H {
+var _a56;
+var PickerColumnOption = proxyCustomElement((_a56 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -16111,7 +12206,7 @@ var PickerColumnOption = proxyCustomElement((_a60 = class extends H {
       md: pickerColumnOptionMdCss
     };
   }
-}, __name(_a60, "PickerColumnOption"), _a60), [289, "ion-picker-column-option", {
+}, __name(_a56, "PickerColumnOption"), _a56), [289, "ion-picker-column-option", {
   "disabled": [4],
   "value": [8],
   "color": [513],
@@ -16142,8 +12237,8 @@ var defineCustomElement72 = defineCustomElement71;
 // node_modules/@ionic/core/components/picker-column2.js
 var pickerColumnIosCss = ".picker-col{display:-ms-flexbox;display:flex;position:relative;-ms-flex:1;flex:1;-ms-flex-pack:center;justify-content:center;height:100%;-webkit-box-sizing:content-box;box-sizing:content-box;contain:content}.picker-opts{position:relative;-ms-flex:1;flex:1;max-width:100%}.picker-opt{top:0;display:block;position:absolute;width:100%;border:0;text-align:center;text-overflow:ellipsis;white-space:nowrap;contain:strict;overflow:hidden;will-change:transform}.picker-opt{inset-inline-start:0}.picker-opt.picker-opt-disabled{pointer-events:none}.picker-opt-disabled{opacity:0}.picker-opts-left{-ms-flex-pack:start;justify-content:flex-start}.picker-opts-right{-ms-flex-pack:end;justify-content:flex-end}.picker-opt:active,.picker-opt:focus{outline:none}.picker-prefix{position:relative;-ms-flex:1;flex:1;text-align:end;white-space:nowrap}.picker-suffix{position:relative;-ms-flex:1;flex:1;text-align:start;white-space:nowrap}.picker-col{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:4px;padding-inline-end:4px;padding-top:0;padding-bottom:0;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.picker-prefix,.picker-suffix,.picker-opts{top:77px;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;color:inherit;font-size:20px;line-height:42px;pointer-events:none}.picker-opt{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-transform-origin:center center;transform-origin:center center;height:46px;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;-webkit-transition-timing-function:ease-out;transition-timing-function:ease-out;background:transparent;color:inherit;font-size:20px;line-height:42px;-webkit-backface-visibility:hidden;backface-visibility:hidden;pointer-events:auto}:host-context([dir=rtl]) .picker-opt{-webkit-transform-origin:calc(100% - center) center;transform-origin:calc(100% - center) center}[dir=rtl] .picker-opt{-webkit-transform-origin:calc(100% - center) center;transform-origin:calc(100% - center) center}@supports selector(:dir(rtl)){.picker-opt:dir(rtl){-webkit-transform-origin:calc(100% - center) center;transform-origin:calc(100% - center) center}}";
 var pickerColumnMdCss = ".picker-col{display:-ms-flexbox;display:flex;position:relative;-ms-flex:1;flex:1;-ms-flex-pack:center;justify-content:center;height:100%;-webkit-box-sizing:content-box;box-sizing:content-box;contain:content}.picker-opts{position:relative;-ms-flex:1;flex:1;max-width:100%}.picker-opt{top:0;display:block;position:absolute;width:100%;border:0;text-align:center;text-overflow:ellipsis;white-space:nowrap;contain:strict;overflow:hidden;will-change:transform}.picker-opt{inset-inline-start:0}.picker-opt.picker-opt-disabled{pointer-events:none}.picker-opt-disabled{opacity:0}.picker-opts-left{-ms-flex-pack:start;justify-content:flex-start}.picker-opts-right{-ms-flex-pack:end;justify-content:flex-end}.picker-opt:active,.picker-opt:focus{outline:none}.picker-prefix{position:relative;-ms-flex:1;flex:1;text-align:end;white-space:nowrap}.picker-suffix{position:relative;-ms-flex:1;flex:1;text-align:start;white-space:nowrap}.picker-col{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:0;padding-bottom:0;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.picker-prefix,.picker-suffix,.picker-opts{top:77px;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;color:inherit;font-size:22px;line-height:42px;pointer-events:none}.picker-opt{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;height:43px;-webkit-transition-timing-function:ease-out;transition-timing-function:ease-out;background:transparent;color:inherit;font-size:22px;line-height:42px;-webkit-backface-visibility:hidden;backface-visibility:hidden;pointer-events:auto}.picker-prefix,.picker-suffix,.picker-opt.picker-opt-selected{color:var(--ion-color-primary, #0054e9)}";
-var _a61;
-var PickerColumnCmp = proxyCustomElement((_a61 = class extends H {
+var _a57;
+var PickerColumnCmp = proxyCustomElement((_a57 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -16377,7 +12472,7 @@ var PickerColumnCmp = proxyCustomElement((_a61 = class extends H {
     }
   }
   refresh(forceRefresh, animated) {
-    var _a190;
+    var _a186;
     let min = this.col.options.length - 1;
     let max = 0;
     const options = this.col.options;
@@ -16390,7 +12485,7 @@ var PickerColumnCmp = proxyCustomElement((_a61 = class extends H {
     if (this.velocity !== 0) {
       return;
     }
-    const selectedIndex = clamp(min, (_a190 = this.col.selectedIndex) !== null && _a190 !== void 0 ? _a190 : 0, max);
+    const selectedIndex = clamp(min, (_a186 = this.col.selectedIndex) !== null && _a186 !== void 0 ? _a186 : 0, max);
     if (this.col.prevSelected !== selectedIndex || forceRefresh) {
       const y = selectedIndex * this.optHeight * -1;
       const duration = animated ? TRANSITION_DURATION : 0;
@@ -16426,7 +12521,7 @@ var PickerColumnCmp = proxyCustomElement((_a61 = class extends H {
       md: pickerColumnMdCss
     };
   }
-}, __name(_a61, "PickerColumnCmp"), _a61), [288, "ion-picker-legacy-column", {
+}, __name(_a57, "PickerColumnCmp"), _a57), [288, "ion-picker-legacy-column", {
   "col": [16]
 }, void 0, {
   "col": ["colChanged"]
@@ -16454,27 +12549,27 @@ __name(defineCustomElement73, "defineCustomElement");
 
 // node_modules/@ionic/core/components/ion-picker-legacy.js
 var iosEnterAnimation6 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", 0.01, "var(--backdrop-opacity)").beforeStyles({
     "pointer-events": "none"
   }).afterClearStyles(["pointer-events"]);
   wrapperAnimation.addElement(baseEl.querySelector(".picker-wrapper")).fromTo("transform", "translateY(100%)", "translateY(0%)");
-  return baseAnimation2.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosEnterAnimation");
 var iosLeaveAnimation6 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const backdropAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   backdropAnimation.addElement(baseEl.querySelector("ion-backdrop")).fromTo("opacity", "var(--backdrop-opacity)", 0.01);
   wrapperAnimation.addElement(baseEl.querySelector(".picker-wrapper")).fromTo("transform", "translateY(0%)", "translateY(100%)");
-  return baseAnimation2.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
+  return baseAnimation.addElement(baseEl).easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation([backdropAnimation, wrapperAnimation]);
 }, "iosLeaveAnimation");
 var pickerIosCss2 = ".sc-ion-picker-legacy-ios-h{--border-radius:0;--border-style:solid;--min-width:auto;--width:100%;--max-width:500px;--min-height:auto;--max-height:auto;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.sc-ion-picker-legacy-ios-h{inset-inline-start:0}.overlay-hidden.sc-ion-picker-legacy-ios-h{display:none}.picker-wrapper.sc-ion-picker-legacy-ios{border-radius:var(--border-radius);left:0;right:0;bottom:0;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:auto;margin-bottom:auto;-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);contain:strict;overflow:hidden;z-index:10}.picker-toolbar.sc-ion-picker-legacy-ios{width:100%;background:transparent;contain:strict;z-index:1}.picker-button.sc-ion-picker-legacy-ios{border:0;font-family:inherit}.picker-button.sc-ion-picker-legacy-ios:active,.picker-button.sc-ion-picker-legacy-ios:focus{outline:none}.picker-columns.sc-ion-picker-legacy-ios{display:-ms-flexbox;display:flex;position:relative;-ms-flex-pack:center;justify-content:center;margin-bottom:var(--ion-safe-area-bottom, 0);contain:strict;overflow:hidden}.picker-above-highlight.sc-ion-picker-legacy-ios,.picker-below-highlight.sc-ion-picker-legacy-ios{display:none;pointer-events:none}.sc-ion-picker-legacy-ios-h{--background:var(--ion-background-color, #fff);--border-width:1px 0 0;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));--height:260px;--backdrop-opacity:var(--ion-backdrop-opacity, 0.26);color:var(--ion-item-color, var(--ion-text-color, #000))}.picker-toolbar.sc-ion-picker-legacy-ios{display:-ms-flexbox;display:flex;height:44px;border-bottom:0.55px solid var(--border-color)}.picker-toolbar-button.sc-ion-picker-legacy-ios{-ms-flex:1;flex:1;text-align:end}.picker-toolbar-button.sc-ion-picker-legacy-ios:last-child .picker-button.sc-ion-picker-legacy-ios{font-weight:600}.picker-toolbar-button.sc-ion-picker-legacy-ios:first-child{font-weight:normal;text-align:start}.picker-button.sc-ion-picker-legacy-ios,.picker-button.ion-activated.sc-ion-picker-legacy-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:1em;padding-inline-start:1em;-webkit-padding-end:1em;padding-inline-end:1em;padding-top:0;padding-bottom:0;height:44px;background:transparent;color:var(--ion-color-primary, #0054e9);font-size:16px}.picker-columns.sc-ion-picker-legacy-ios{height:215px;-webkit-perspective:1000px;perspective:1000px}.picker-above-highlight.sc-ion-picker-legacy-ios{top:0;-webkit-transform:translate3d(0,  0,  90px);transform:translate3d(0,  0,  90px);display:block;position:absolute;width:100%;height:81px;border-bottom:1px solid var(--border-color);background:-webkit-gradient(linear, left top, left bottom, color-stop(20%, var(--background, var(--ion-background-color, #fff))), to(rgba(var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255)), 0.8)));background:linear-gradient(to bottom, var(--background, var(--ion-background-color, #fff)) 20%, rgba(var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255)), 0.8) 100%);z-index:10}.picker-above-highlight.sc-ion-picker-legacy-ios{inset-inline-start:0}.picker-below-highlight.sc-ion-picker-legacy-ios{top:115px;-webkit-transform:translate3d(0,  0,  90px);transform:translate3d(0,  0,  90px);display:block;position:absolute;width:100%;height:119px;border-top:1px solid var(--border-color);background:-webkit-gradient(linear, left bottom, left top, color-stop(30%, var(--background, var(--ion-background-color, #fff))), to(rgba(var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255)), 0.8)));background:linear-gradient(to top, var(--background, var(--ion-background-color, #fff)) 30%, rgba(var(--background-rgb, var(--ion-background-color-rgb, 255, 255, 255)), 0.8) 100%);z-index:11}.picker-below-highlight.sc-ion-picker-legacy-ios{inset-inline-start:0}";
 var pickerMdCss2 = ".sc-ion-picker-legacy-md-h{--border-radius:0;--border-style:solid;--min-width:auto;--width:100%;--max-width:500px;--min-height:auto;--max-height:auto;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;font-family:var(--ion-font-family, inherit);contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:1001}.sc-ion-picker-legacy-md-h{inset-inline-start:0}.overlay-hidden.sc-ion-picker-legacy-md-h{display:none}.picker-wrapper.sc-ion-picker-legacy-md{border-radius:var(--border-radius);left:0;right:0;bottom:0;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:auto;margin-bottom:auto;-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);contain:strict;overflow:hidden;z-index:10}.picker-toolbar.sc-ion-picker-legacy-md{width:100%;background:transparent;contain:strict;z-index:1}.picker-button.sc-ion-picker-legacy-md{border:0;font-family:inherit}.picker-button.sc-ion-picker-legacy-md:active,.picker-button.sc-ion-picker-legacy-md:focus{outline:none}.picker-columns.sc-ion-picker-legacy-md{display:-ms-flexbox;display:flex;position:relative;-ms-flex-pack:center;justify-content:center;margin-bottom:var(--ion-safe-area-bottom, 0);contain:strict;overflow:hidden}.picker-above-highlight.sc-ion-picker-legacy-md,.picker-below-highlight.sc-ion-picker-legacy-md{display:none;pointer-events:none}.sc-ion-picker-legacy-md-h{--background:var(--ion-background-color, #fff);--border-width:0.55px 0 0;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));--height:260px;--backdrop-opacity:var(--ion-backdrop-opacity, 0.26);color:var(--ion-item-color, var(--ion-text-color, #000))}.picker-toolbar.sc-ion-picker-legacy-md{display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;height:44px}.picker-button.sc-ion-picker-legacy-md,.picker-button.ion-activated.sc-ion-picker-legacy-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:1.1em;padding-inline-start:1.1em;-webkit-padding-end:1.1em;padding-inline-end:1.1em;padding-top:0;padding-bottom:0;height:44px;background:transparent;color:var(--ion-color-primary, #0054e9);font-size:14px;font-weight:500;text-transform:uppercase;-webkit-box-shadow:none;box-shadow:none}.picker-columns.sc-ion-picker-legacy-md{height:216px;-webkit-perspective:1800px;perspective:1800px}.picker-above-highlight.sc-ion-picker-legacy-md{top:0;-webkit-transform:translate3d(0,  0,  90px);transform:translate3d(0,  0,  90px);position:absolute;width:100%;height:81px;border-bottom:1px solid var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));background:-webkit-gradient(linear, left top, left bottom, color-stop(20%, var(--ion-background-color, #fff)), to(rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8)));background:linear-gradient(to bottom, var(--ion-background-color, #fff) 20%, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8) 100%);z-index:10}.picker-above-highlight.sc-ion-picker-legacy-md{inset-inline-start:0}.picker-below-highlight.sc-ion-picker-legacy-md{top:115px;-webkit-transform:translate3d(0,  0,  90px);transform:translate3d(0,  0,  90px);position:absolute;width:100%;height:119px;border-top:1px solid var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));background:-webkit-gradient(linear, left bottom, left top, color-stop(30%, var(--ion-background-color, #fff)), to(rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8)));background:linear-gradient(to top, var(--ion-background-color, #fff) 30%, rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8) 100%);z-index:11}.picker-below-highlight.sc-ion-picker-legacy-md{inset-inline-start:0}";
-var _a62;
-var Picker2 = proxyCustomElement((_a62 = class extends H {
+var _a58;
+var Picker2 = proxyCustomElement((_a58 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -16531,8 +12626,8 @@ var Picker2 = proxyCustomElement((_a62 = class extends H {
     this.triggerController.removeClickListener();
   }
   componentWillLoad() {
-    var _a190;
-    if (!((_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id)) {
+    var _a186;
+    if (!((_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id)) {
       setOverlayId(this.el);
     }
   }
@@ -16663,7 +12758,7 @@ var Picker2 = proxyCustomElement((_a62 = class extends H {
       md: pickerMdCss2
     };
   }
-}, __name(_a62, "Picker"), _a62), [290, "ion-picker-legacy", {
+}, __name(_a58, "Picker"), _a58), [290, "ion-picker-legacy", {
   "overlayIndex": [2, "overlay-index"],
   "delegate": [16],
   "hasController": [4, "has-controller"],
@@ -16730,8 +12825,8 @@ var defineCustomElement74 = defineCustomElement$138;
 // node_modules/@ionic/core/components/ion-progress-bar.js
 var progressBarIosCss = ":host{--background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.3);--progress-background:var(--ion-color-primary, #0054e9);display:block;position:relative;width:100%;contain:strict;direction:ltr;overflow:hidden}.progress,.progress-indeterminate,.indeterminate-bar-primary,.indeterminate-bar-secondary,.progress-buffer-bar{left:0;right:0;top:0;bottom:0;position:absolute;width:100%;height:100%}.buffer-circles-container,.buffer-circles{left:0;right:0;top:0;bottom:0;position:absolute}.buffer-circles{right:-10px;left:-10px;}.progress,.progress-buffer-bar,.buffer-circles-container{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:-webkit-transform 150ms linear;transition:-webkit-transform 150ms linear;transition:transform 150ms linear;transition:transform 150ms linear, -webkit-transform 150ms linear}.progress,.progress-indeterminate{background:var(--progress-background);z-index:2}.progress-buffer-bar{background:var(--background);z-index:1}.buffer-circles-container{overflow:hidden}.indeterminate-bar-primary{top:0;right:0;bottom:0;left:-145.166611%;-webkit-animation:primary-indeterminate-translate 2s infinite linear;animation:primary-indeterminate-translate 2s infinite linear}.indeterminate-bar-primary .progress-indeterminate{-webkit-animation:primary-indeterminate-scale 2s infinite linear;animation:primary-indeterminate-scale 2s infinite linear;-webkit-animation-play-state:inherit;animation-play-state:inherit}.indeterminate-bar-secondary{top:0;right:0;bottom:0;left:-54.888891%;-webkit-animation:secondary-indeterminate-translate 2s infinite linear;animation:secondary-indeterminate-translate 2s infinite linear}.indeterminate-bar-secondary .progress-indeterminate{-webkit-animation:secondary-indeterminate-scale 2s infinite linear;animation:secondary-indeterminate-scale 2s infinite linear;-webkit-animation-play-state:inherit;animation-play-state:inherit}.buffer-circles{background-image:radial-gradient(ellipse at center, var(--background) 0%, var(--background) 30%, transparent 30%);background-repeat:repeat-x;background-position:5px center;background-size:10px 10px;z-index:0;-webkit-animation:buffering 450ms infinite linear;animation:buffering 450ms infinite linear}:host(.progress-bar-reversed){-webkit-transform:scaleX(-1);transform:scaleX(-1)}:host(.progress-paused) .indeterminate-bar-secondary,:host(.progress-paused) .indeterminate-bar-primary,:host(.progress-paused) .buffer-circles{-webkit-animation-play-state:paused;animation-play-state:paused}:host(.ion-color) .buffer-circles{background-image:radial-gradient(ellipse at center, rgba(var(--ion-color-base-rgb), 0.3) 0%, rgba(var(--ion-color-base-rgb), 0.3) 30%, transparent 30%)}:host(.ion-color) .progress,:host(.ion-color) .progress-indeterminate{background:var(--ion-color-base)}@-webkit-keyframes primary-indeterminate-translate{0%{-webkit-transform:translateX(0);transform:translateX(0)}20%{-webkit-animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);-webkit-transform:translateX(0);transform:translateX(0)}59.15%{-webkit-animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);-webkit-transform:translateX(83.67142%);transform:translateX(83.67142%)}100%{-webkit-transform:translateX(200.611057%);transform:translateX(200.611057%)}}@keyframes primary-indeterminate-translate{0%{-webkit-transform:translateX(0);transform:translateX(0)}20%{-webkit-animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);-webkit-transform:translateX(0);transform:translateX(0)}59.15%{-webkit-animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);-webkit-transform:translateX(83.67142%);transform:translateX(83.67142%)}100%{-webkit-transform:translateX(200.611057%);transform:translateX(200.611057%)}}@-webkit-keyframes primary-indeterminate-scale{0%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}36.65%{-webkit-animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}69.15%{-webkit-animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);-webkit-transform:scaleX(0.661479);transform:scaleX(0.661479)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@keyframes primary-indeterminate-scale{0%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}36.65%{-webkit-animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}69.15%{-webkit-animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);-webkit-transform:scaleX(0.661479);transform:scaleX(0.661479)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@-webkit-keyframes secondary-indeterminate-translate{0%{-webkit-animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);-webkit-transform:translateX(0);transform:translateX(0)}25%{-webkit-animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);-webkit-transform:translateX(37.651913%);transform:translateX(37.651913%)}48.35%{-webkit-animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);-webkit-transform:translateX(84.386165%);transform:translateX(84.386165%)}100%{-webkit-transform:translateX(160.277782%);transform:translateX(160.277782%)}}@keyframes secondary-indeterminate-translate{0%{-webkit-animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);-webkit-transform:translateX(0);transform:translateX(0)}25%{-webkit-animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);-webkit-transform:translateX(37.651913%);transform:translateX(37.651913%)}48.35%{-webkit-animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);-webkit-transform:translateX(84.386165%);transform:translateX(84.386165%)}100%{-webkit-transform:translateX(160.277782%);transform:translateX(160.277782%)}}@-webkit-keyframes secondary-indeterminate-scale{0%{-webkit-animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}19.15%{-webkit-animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);-webkit-transform:scaleX(0.457104);transform:scaleX(0.457104)}44.15%{-webkit-animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);-webkit-transform:scaleX(0.72796);transform:scaleX(0.72796)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@keyframes secondary-indeterminate-scale{0%{-webkit-animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}19.15%{-webkit-animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);-webkit-transform:scaleX(0.457104);transform:scaleX(0.457104)}44.15%{-webkit-animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);-webkit-transform:scaleX(0.72796);transform:scaleX(0.72796)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@-webkit-keyframes buffering{to{-webkit-transform:translateX(-10px);transform:translateX(-10px)}}@keyframes buffering{to{-webkit-transform:translateX(-10px);transform:translateX(-10px)}}:host{border-radius:9999px;height:4px}:host(.progress-bar-solid){--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}";
 var progressBarMdCss = ":host{--background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.3);--progress-background:var(--ion-color-primary, #0054e9);display:block;position:relative;width:100%;contain:strict;direction:ltr;overflow:hidden}.progress,.progress-indeterminate,.indeterminate-bar-primary,.indeterminate-bar-secondary,.progress-buffer-bar{left:0;right:0;top:0;bottom:0;position:absolute;width:100%;height:100%}.buffer-circles-container,.buffer-circles{left:0;right:0;top:0;bottom:0;position:absolute}.buffer-circles{right:-10px;left:-10px;}.progress,.progress-buffer-bar,.buffer-circles-container{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:-webkit-transform 150ms linear;transition:-webkit-transform 150ms linear;transition:transform 150ms linear;transition:transform 150ms linear, -webkit-transform 150ms linear}.progress,.progress-indeterminate{background:var(--progress-background);z-index:2}.progress-buffer-bar{background:var(--background);z-index:1}.buffer-circles-container{overflow:hidden}.indeterminate-bar-primary{top:0;right:0;bottom:0;left:-145.166611%;-webkit-animation:primary-indeterminate-translate 2s infinite linear;animation:primary-indeterminate-translate 2s infinite linear}.indeterminate-bar-primary .progress-indeterminate{-webkit-animation:primary-indeterminate-scale 2s infinite linear;animation:primary-indeterminate-scale 2s infinite linear;-webkit-animation-play-state:inherit;animation-play-state:inherit}.indeterminate-bar-secondary{top:0;right:0;bottom:0;left:-54.888891%;-webkit-animation:secondary-indeterminate-translate 2s infinite linear;animation:secondary-indeterminate-translate 2s infinite linear}.indeterminate-bar-secondary .progress-indeterminate{-webkit-animation:secondary-indeterminate-scale 2s infinite linear;animation:secondary-indeterminate-scale 2s infinite linear;-webkit-animation-play-state:inherit;animation-play-state:inherit}.buffer-circles{background-image:radial-gradient(ellipse at center, var(--background) 0%, var(--background) 30%, transparent 30%);background-repeat:repeat-x;background-position:5px center;background-size:10px 10px;z-index:0;-webkit-animation:buffering 450ms infinite linear;animation:buffering 450ms infinite linear}:host(.progress-bar-reversed){-webkit-transform:scaleX(-1);transform:scaleX(-1)}:host(.progress-paused) .indeterminate-bar-secondary,:host(.progress-paused) .indeterminate-bar-primary,:host(.progress-paused) .buffer-circles{-webkit-animation-play-state:paused;animation-play-state:paused}:host(.ion-color) .buffer-circles{background-image:radial-gradient(ellipse at center, rgba(var(--ion-color-base-rgb), 0.3) 0%, rgba(var(--ion-color-base-rgb), 0.3) 30%, transparent 30%)}:host(.ion-color) .progress,:host(.ion-color) .progress-indeterminate{background:var(--ion-color-base)}@-webkit-keyframes primary-indeterminate-translate{0%{-webkit-transform:translateX(0);transform:translateX(0)}20%{-webkit-animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);-webkit-transform:translateX(0);transform:translateX(0)}59.15%{-webkit-animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);-webkit-transform:translateX(83.67142%);transform:translateX(83.67142%)}100%{-webkit-transform:translateX(200.611057%);transform:translateX(200.611057%)}}@keyframes primary-indeterminate-translate{0%{-webkit-transform:translateX(0);transform:translateX(0)}20%{-webkit-animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);animation-timing-function:cubic-bezier(0.5, 0, 0.701732, 0.495819);-webkit-transform:translateX(0);transform:translateX(0)}59.15%{-webkit-animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);animation-timing-function:cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);-webkit-transform:translateX(83.67142%);transform:translateX(83.67142%)}100%{-webkit-transform:translateX(200.611057%);transform:translateX(200.611057%)}}@-webkit-keyframes primary-indeterminate-scale{0%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}36.65%{-webkit-animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}69.15%{-webkit-animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);-webkit-transform:scaleX(0.661479);transform:scaleX(0.661479)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@keyframes primary-indeterminate-scale{0%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}36.65%{-webkit-animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);animation-timing-function:cubic-bezier(0.334731, 0.12482, 0.785844, 1);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}69.15%{-webkit-animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);animation-timing-function:cubic-bezier(0.06, 0.11, 0.6, 1);-webkit-transform:scaleX(0.661479);transform:scaleX(0.661479)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@-webkit-keyframes secondary-indeterminate-translate{0%{-webkit-animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);-webkit-transform:translateX(0);transform:translateX(0)}25%{-webkit-animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);-webkit-transform:translateX(37.651913%);transform:translateX(37.651913%)}48.35%{-webkit-animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);-webkit-transform:translateX(84.386165%);transform:translateX(84.386165%)}100%{-webkit-transform:translateX(160.277782%);transform:translateX(160.277782%)}}@keyframes secondary-indeterminate-translate{0%{-webkit-animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);animation-timing-function:cubic-bezier(0.15, 0, 0.515058, 0.409685);-webkit-transform:translateX(0);transform:translateX(0)}25%{-webkit-animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);animation-timing-function:cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);-webkit-transform:translateX(37.651913%);transform:translateX(37.651913%)}48.35%{-webkit-animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);animation-timing-function:cubic-bezier(0.4, 0.627035, 0.6, 0.902026);-webkit-transform:translateX(84.386165%);transform:translateX(84.386165%)}100%{-webkit-transform:translateX(160.277782%);transform:translateX(160.277782%)}}@-webkit-keyframes secondary-indeterminate-scale{0%{-webkit-animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}19.15%{-webkit-animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);-webkit-transform:scaleX(0.457104);transform:scaleX(0.457104)}44.15%{-webkit-animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);-webkit-transform:scaleX(0.72796);transform:scaleX(0.72796)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@keyframes secondary-indeterminate-scale{0%{-webkit-animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);animation-timing-function:cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971);-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}19.15%{-webkit-animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);animation-timing-function:cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315);-webkit-transform:scaleX(0.457104);transform:scaleX(0.457104)}44.15%{-webkit-animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);animation-timing-function:cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179);-webkit-transform:scaleX(0.72796);transform:scaleX(0.72796)}100%{-webkit-transform:scaleX(0.08);transform:scaleX(0.08)}}@-webkit-keyframes buffering{to{-webkit-transform:translateX(-10px);transform:translateX(-10px)}}@keyframes buffering{to{-webkit-transform:translateX(-10px);transform:translateX(-10px)}}:host{height:4px}:host(.ion-color) .progress-buffer-bar{background:rgba(var(--ion-color-base-rgb), 0.3)}";
-var _a63;
-var ProgressBar = proxyCustomElement((_a63 = class extends H {
+var _a59;
+var ProgressBar = proxyCustomElement((_a59 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -16760,7 +12855,7 @@ var ProgressBar = proxyCustomElement((_a63 = class extends H {
       md: progressBarMdCss
     };
   }
-}, __name(_a63, "ProgressBar"), _a63), [289, "ion-progress-bar", {
+}, __name(_a59, "ProgressBar"), _a59), [289, "ion-progress-bar", {
   "type": [1],
   "reversed": [4],
   "value": [2],
@@ -16827,8 +12922,8 @@ var isOptionSelected = /* @__PURE__ */ __name((currentValue, compareValue, compa
 }, "isOptionSelected");
 var radioIosCss = ':host{--inner-border-radius:50%;display:inline-block;position:relative;max-width:100%;min-height:inherit;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.radio-disabled){pointer-events:none}.radio-icon{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;contain:layout size style}.radio-icon,.radio-inner{-webkit-box-sizing:border-box;box-sizing:border-box}input{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}:host(:focus){outline:none}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0;width:100%;height:100%}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}.radio-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;min-height:inherit;cursor:inherit}.label-text-wrapper{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host(.in-item) .label-text-wrapper{margin-top:10px;margin-bottom:10px}:host(.in-item.radio-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.radio-label-placement-stacked) .native-wrapper{margin-bottom:10px}.label-text-wrapper-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}:host(.radio-justify-space-between) .radio-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.radio-justify-start) .radio-wrapper{-ms-flex-pack:start;justify-content:start}:host(.radio-justify-end) .radio-wrapper{-ms-flex-pack:end;justify-content:end}:host(.radio-alignment-start) .radio-wrapper{-ms-flex-align:start;align-items:start}:host(.radio-alignment-center) .radio-wrapper{-ms-flex-align:center;align-items:center}:host(.radio-justify-space-between),:host(.radio-justify-start),:host(.radio-justify-end),:host(.radio-alignment-start),:host(.radio-alignment-center){display:block}:host(.radio-label-placement-start) .radio-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.radio-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.radio-label-placement-end) .radio-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.radio-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.radio-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.radio-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px}:host(.radio-label-placement-stacked) .radio-wrapper{-ms-flex-direction:column;flex-direction:column}:host(.radio-label-placement-stacked) .label-text-wrapper{-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host(.radio-label-placement-stacked.radio-alignment-start) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]):host(.radio-label-placement-stacked.radio-alignment-start) .label-text-wrapper,:host-context([dir=rtl]).radio-label-placement-stacked.radio-alignment-start .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.radio-label-placement-stacked.radio-alignment-start:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.radio-label-placement-stacked.radio-alignment-center) .label-text-wrapper{-webkit-transform-origin:center top;transform-origin:center top}:host-context([dir=rtl]):host(.radio-label-placement-stacked.radio-alignment-center) .label-text-wrapper,:host-context([dir=rtl]).radio-label-placement-stacked.radio-alignment-center .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}@supports selector(:dir(rtl)){:host(.radio-label-placement-stacked.radio-alignment-center:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}}:host{--color-checked:var(--ion-color-primary, #0054e9)}:host(.ion-color.radio-checked) .radio-inner{border-color:var(--ion-color-base)}.item-radio.item-ios ion-label{-webkit-margin-start:0;margin-inline-start:0}.radio-inner{width:33%;height:50%}:host(.radio-checked) .radio-inner{-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:0.125rem;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--color-checked)}:host(.radio-disabled){opacity:0.3}:host(.ion-focused) .radio-icon::after{border-radius:var(--inner-border-radius);top:-8px;display:block;position:absolute;width:36px;height:36px;background:var(--ion-color-primary-tint, #1a65eb);content:"";opacity:0.2}:host(.ion-focused) .radio-icon::after{inset-inline-start:-9px}.native-wrapper .radio-icon{width:0.9375rem;height:1.5rem}';
 var radioMdCss = ':host{--inner-border-radius:50%;display:inline-block;position:relative;max-width:100%;min-height:inherit;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.radio-disabled){pointer-events:none}.radio-icon{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;contain:layout size style}.radio-icon,.radio-inner{-webkit-box-sizing:border-box;box-sizing:border-box}input{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}:host(:focus){outline:none}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0;width:100%;height:100%}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}.radio-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;min-height:inherit;cursor:inherit}.label-text-wrapper{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host(.in-item) .label-text-wrapper{margin-top:10px;margin-bottom:10px}:host(.in-item.radio-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.radio-label-placement-stacked) .native-wrapper{margin-bottom:10px}.label-text-wrapper-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}:host(.radio-justify-space-between) .radio-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.radio-justify-start) .radio-wrapper{-ms-flex-pack:start;justify-content:start}:host(.radio-justify-end) .radio-wrapper{-ms-flex-pack:end;justify-content:end}:host(.radio-alignment-start) .radio-wrapper{-ms-flex-align:start;align-items:start}:host(.radio-alignment-center) .radio-wrapper{-ms-flex-align:center;align-items:center}:host(.radio-justify-space-between),:host(.radio-justify-start),:host(.radio-justify-end),:host(.radio-alignment-start),:host(.radio-alignment-center){display:block}:host(.radio-label-placement-start) .radio-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.radio-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.radio-label-placement-end) .radio-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.radio-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.radio-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.radio-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px}:host(.radio-label-placement-stacked) .radio-wrapper{-ms-flex-direction:column;flex-direction:column}:host(.radio-label-placement-stacked) .label-text-wrapper{-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host(.radio-label-placement-stacked.radio-alignment-start) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]):host(.radio-label-placement-stacked.radio-alignment-start) .label-text-wrapper,:host-context([dir=rtl]).radio-label-placement-stacked.radio-alignment-start .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.radio-label-placement-stacked.radio-alignment-start:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.radio-label-placement-stacked.radio-alignment-center) .label-text-wrapper{-webkit-transform-origin:center top;transform-origin:center top}:host-context([dir=rtl]):host(.radio-label-placement-stacked.radio-alignment-center) .label-text-wrapper,:host-context([dir=rtl]).radio-label-placement-stacked.radio-alignment-center .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}@supports selector(:dir(rtl)){:host(.radio-label-placement-stacked.radio-alignment-center:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}}:host{--color:rgb(var(--ion-text-color-rgb, 0, 0, 0), 0.6);--color-checked:var(--ion-color-primary, #0054e9);--border-width:0.125rem;--border-style:solid;--border-radius:50%}:host(.ion-color) .radio-inner{background:var(--ion-color-base)}:host(.ion-color.radio-checked) .radio-icon{border-color:var(--ion-color-base)}.radio-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:var(--border-radius);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--color)}.radio-inner{border-radius:var(--inner-border-radius);width:calc(50% + var(--border-width));height:calc(50% + var(--border-width));-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0);-webkit-transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);background:var(--color-checked)}:host(.radio-checked) .radio-icon{border-color:var(--color-checked)}:host(.radio-checked) .radio-inner{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}:host(.radio-disabled) .label-text-wrapper{opacity:0.38}:host(.radio-disabled) .native-wrapper{opacity:0.63}:host(.ion-focused) .radio-icon::after{border-radius:var(--inner-border-radius);display:block;position:absolute;width:36px;height:36px;background:var(--ion-color-primary-tint, #1a65eb);content:"";opacity:0.2}.native-wrapper .radio-icon{width:1.25rem;height:1.25rem}';
-var _a64;
-var Radio = proxyCustomElement((_a64 = class extends H {
+var _a60;
+var Radio = proxyCustomElement((_a60 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -16945,7 +13040,7 @@ var Radio = proxyCustomElement((_a64 = class extends H {
       md: radioMdCss
     };
   }
-}, __name(_a64, "Radio"), _a64), [289, "ion-radio", {
+}, __name(_a60, "Radio"), _a60), [289, "ion-radio", {
   "color": [513],
   "name": [1],
   "disabled": [4],
@@ -16996,7 +13091,7 @@ var createBaseAnimation = /* @__PURE__ */ __name((pullingRefresherIcon) => {
   const spinnerArrowContainer = pullingRefresherIcon.querySelector(".spinner-arrow-container");
   const arrowContainer = pullingRefresherIcon.querySelector(".arrow-container");
   const arrow = arrowContainer ? arrowContainer.querySelector("ion-icon") : null;
-  const baseAnimation2 = createAnimation().duration(1e3).easing("ease-out");
+  const baseAnimation = createAnimation().duration(1e3).easing("ease-out");
   const spinnerArrowContainerAnimation = createAnimation().addElement(spinnerArrowContainer).keyframes([
     { offset: 0, opacity: "0.3" },
     { offset: 0.45, opacity: "0.3" },
@@ -17026,9 +13121,9 @@ var createBaseAnimation = /* @__PURE__ */ __name((pullingRefresherIcon) => {
       { offset: 0.55, transform: "translateX(-1.5px) scale(1)" },
       { offset: 1, transform: "translateX(-1.5px) scale(1)" }
     ]);
-    baseAnimation2.addAnimation([arrowContainerAnimation, arrowAnimation]);
+    baseAnimation.addAnimation([arrowContainerAnimation, arrowAnimation]);
   }
-  return baseAnimation2.addAnimation([spinnerArrowContainerAnimation, circleInnerAnimation, circleOuterAnimation]);
+  return baseAnimation.addAnimation([spinnerArrowContainerAnimation, circleInnerAnimation, circleOuterAnimation]);
 }, "createBaseAnimation");
 var createScaleAnimation = /* @__PURE__ */ __name((pullingRefresherIcon, refresherEl) => {
   const height = refresherEl.clientHeight;
@@ -17102,8 +13197,8 @@ var shouldUseNativeRefresher = /* @__PURE__ */ __name((referenceEl, mode) => __a
 // node_modules/@ionic/core/components/ion-refresher.js
 var refresherIosCss = "ion-refresher{top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}ion-refresher{inset-inline-start:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:200ms;transition:200ms;font-size:30px;text-align:center}:host-context([dir=rtl]) .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}[dir=rtl] .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}@supports selector(:dir(rtl)){.refresher-pulling-icon:dir(rtl),.refresher-refreshing-icon:dir(rtl){-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-ios .refresher-pulling-icon,.refresher-ios .refresher-refreshing-icon{color:var(--ion-text-color, #000)}.refresher-ios .refresher-pulling-text,.refresher-ios .refresher-refreshing-text{color:var(--ion-text-color, #000)}.refresher-ios .refresher-refreshing .spinner-lines-ios line,.refresher-ios .refresher-refreshing .spinner-lines-small-ios line,.refresher-ios .refresher-refreshing .spinner-crescent circle{stroke:var(--ion-text-color, #000)}.refresher-ios .refresher-refreshing .spinner-bubbles circle,.refresher-ios .refresher-refreshing .spinner-circles circle,.refresher-ios .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color, #000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0}.refresher-native .refresher-refreshing ion-spinner{--refreshing-rotation-duration:2s;display:none;-webkit-animation:var(--refreshing-rotation-duration) ease-out refresher-rotate forwards;animation:var(--refreshing-rotation-duration) ease-out refresher-rotate forwards}.refresher-native .refresher-refreshing{display:none;-webkit-animation:250ms linear refresher-pop forwards;animation:250ms linear refresher-pop forwards}.refresher-native ion-spinner{width:32px;height:32px;color:var(--ion-color-step-450, var(--ion-background-color-step-450, #747577))}.refresher-native.refresher-refreshing .refresher-pulling ion-spinner,.refresher-native.refresher-completing .refresher-pulling ion-spinner{display:none}.refresher-native.refresher-refreshing .refresher-refreshing ion-spinner,.refresher-native.refresher-completing .refresher-refreshing ion-spinner{display:block}.refresher-native.refresher-pulling .refresher-pulling ion-spinner{display:block}.refresher-native.refresher-pulling .refresher-refreshing ion-spinner{display:none}.refresher-native.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0) rotate(180deg);transform:scale(0) rotate(180deg);-webkit-transition:300ms;transition:300ms}@-webkit-keyframes refresher-pop{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes refresher-pop{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes refresher-rotate{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(180deg);transform:rotate(180deg)}}@keyframes refresher-rotate{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(180deg);transform:rotate(180deg)}}";
 var refresherMdCss = "ion-refresher{top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}ion-refresher{inset-inline-start:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:200ms;transition:200ms;font-size:30px;text-align:center}:host-context([dir=rtl]) .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}[dir=rtl] .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}@supports selector(:dir(rtl)){.refresher-pulling-icon:dir(rtl),.refresher-refreshing-icon:dir(rtl){-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-md .refresher-pulling-icon,.refresher-md .refresher-refreshing-icon{color:var(--ion-text-color, #000)}.refresher-md .refresher-pulling-text,.refresher-md .refresher-refreshing-text{color:var(--ion-text-color, #000)}.refresher-md .refresher-refreshing .spinner-lines-md line,.refresher-md .refresher-refreshing .spinner-lines-small-md line,.refresher-md .refresher-refreshing .spinner-crescent circle{stroke:var(--ion-text-color, #000)}.refresher-md .refresher-refreshing .spinner-bubbles circle,.refresher-md .refresher-refreshing .spinner-circles circle,.refresher-md .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color, #000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;width:24px;height:24px;color:var(--ion-color-primary, #0054e9)}ion-refresher.refresher-native .spinner-arrow-container{display:inherit}ion-refresher.refresher-native .arrow-container{display:block;position:absolute;width:24px;height:24px}ion-refresher.refresher-native .arrow-container ion-icon{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;left:0;right:0;bottom:-4px;position:absolute;color:var(--ion-color-primary, #0054e9);font-size:12px}ion-refresher.refresher-native.refresher-pulling ion-refresher-content .refresher-pulling,ion-refresher.refresher-native.refresher-ready ion-refresher-content .refresher-pulling{display:-ms-flexbox;display:flex}ion-refresher.refresher-native.refresher-refreshing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-completing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-cancelling ion-refresher-content .refresher-refreshing{display:-ms-flexbox;display:flex}ion-refresher.refresher-native .refresher-pulling-icon{-webkit-transform:translateY(calc(-100% - 10px));transform:translateY(calc(-100% - 10px))}ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;border-radius:100%;-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:8px;padding-bottom:8px;display:-ms-flexbox;display:flex;border:1px solid var(--ion-color-step-200, var(--ion-background-color-step-200, #ececec));background:var(--ion-color-step-250, var(--ion-background-color-step-250, #ffffff));-webkit-box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1);box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1)}";
-var _a65;
-var Refresher = proxyCustomElement((_a65 = class extends H {
+var _a61;
+var Refresher = proxyCustomElement((_a61 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -17556,13 +13651,13 @@ var Refresher = proxyCustomElement((_a65 = class extends H {
   }
   close(state, delay) {
     setTimeout(() => {
-      var _a190;
+      var _a186;
       this.state = 1;
       this.progress = 0;
       this.didStart = false;
       this.setCss(0, "0ms", false, "", true);
       if (this.contentFullscreen && this.backgroundContentEl) {
-        (_a190 = this.backgroundContentEl) === null || _a190 === void 0 ? void 0 : _a190.style.removeProperty("--offset-top");
+        (_a186 = this.backgroundContentEl) === null || _a186 === void 0 ? void 0 : _a186.style.removeProperty("--offset-top");
       }
     }, 600);
     this.state = state;
@@ -17635,7 +13730,7 @@ var Refresher = proxyCustomElement((_a65 = class extends H {
       md: refresherMdCss
     };
   }
-}, __name(_a65, "Refresher"), _a65), [288, "ion-refresher", {
+}, __name(_a61, "Refresher"), _a61), [288, "ion-refresher", {
   "pullMin": [2, "pull-min"],
   "pullMax": [2, "pull-max"],
   "closeDuration": [1, "close-duration"],
@@ -17669,8 +13764,8 @@ __name(defineCustomElement$140, "defineCustomElement$1");
 var defineCustomElement78 = defineCustomElement$140;
 
 // node_modules/@ionic/core/components/ion-refresher-content.js
-var _a66;
-var RefresherContent = proxyCustomElement((_a66 = class extends H {
+var _a62;
+var RefresherContent = proxyCustomElement((_a62 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -17711,7 +13806,7 @@ var RefresherContent = proxyCustomElement((_a66 = class extends H {
   get el() {
     return this;
   }
-}, __name(_a66, "RefresherContent"), _a66), [256, "ion-refresher-content", {
+}, __name(_a62, "RefresherContent"), _a62), [256, "ion-refresher-content", {
   "pullingIcon": [1025, "pulling-icon"],
   "pullingText": [1, "pulling-text"],
   "refreshingSpinner": [1025, "refreshing-spinner"],
@@ -17748,8 +13843,8 @@ var defineCustomElement79 = defineCustomElement$141;
 // node_modules/@ionic/core/components/ion-reorder.js
 var reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block}::slotted(ion-icon){font-size:dynamic-font(16px)}.reorder-icon{font-size:2.125rem;opacity:0.4}";
 var reorderMdCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block}::slotted(ion-icon){font-size:dynamic-font(16px)}.reorder-icon{font-size:1.9375rem;opacity:0.3}";
-var _a67;
-var Reorder = proxyCustomElement((_a67 = class extends H {
+var _a63;
+var Reorder = proxyCustomElement((_a63 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -17776,7 +13871,7 @@ var Reorder = proxyCustomElement((_a67 = class extends H {
       md: reorderMdCss
     };
   }
-}, __name(_a67, "Reorder"), _a67), [289, "ion-reorder", void 0, [[2, "click", "onClick"]]]);
+}, __name(_a63, "Reorder"), _a63), [289, "ion-reorder", void 0, [[2, "click", "onClick"]]]);
 function defineCustomElement$142() {
   if (typeof customElements === "undefined") {
     return;
@@ -17802,8 +13897,8 @@ var defineCustomElement80 = defineCustomElement$142;
 
 // node_modules/@ionic/core/components/ion-reorder-group.js
 var reorderGroupCss = ".reorder-list-active>*{display:block;-webkit-transition:-webkit-transform 300ms;transition:-webkit-transform 300ms;transition:transform 300ms;transition:transform 300ms, -webkit-transform 300ms;will-change:transform}.reorder-enabled{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.reorder-enabled ion-reorder{display:block;cursor:-webkit-grab;cursor:grab;pointer-events:all;-ms-touch-action:none;touch-action:none}.reorder-selected,.reorder-selected ion-reorder{cursor:-webkit-grabbing;cursor:grabbing}.reorder-selected{position:relative;-webkit-transition:none !important;transition:none !important;-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.4);box-shadow:0 0 10px rgba(0, 0, 0, 0.4);opacity:0.8;z-index:100}.reorder-visible ion-reorder .reorder-icon{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}";
-var _a68;
-var ReorderGroup = proxyCustomElement((_a68 = class extends H {
+var _a64;
+var ReorderGroup = proxyCustomElement((_a64 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18057,7 +14152,7 @@ var ReorderGroup = proxyCustomElement((_a68 = class extends H {
   static get style() {
     return reorderGroupCss;
   }
-}, __name(_a68, "ReorderGroup"), _a68), [256, "ion-reorder-group", {
+}, __name(_a64, "ReorderGroup"), _a64), [256, "ion-reorder-group", {
   "disabled": [4],
   "state": [32],
   "complete": [64]
@@ -18110,8 +14205,8 @@ var defineCustomElement82 = defineCustomElement2;
 
 // node_modules/@ionic/core/components/ion-row.js
 var rowCss = ":host{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}";
-var _a69;
-var Row = proxyCustomElement((_a69 = class extends H {
+var _a65;
+var Row = proxyCustomElement((_a65 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18123,7 +14218,7 @@ var Row = proxyCustomElement((_a69 = class extends H {
   static get style() {
     return rowCss;
   }
-}, __name(_a69, "Row"), _a69), [257, "ion-row"]);
+}, __name(_a65, "Row"), _a65), [257, "ion-row"]);
 function defineCustomElement$144() {
   if (typeof customElements === "undefined") {
     return;
@@ -18146,8 +14241,8 @@ var defineCustomElement83 = defineCustomElement$144;
 var segmentButtonIosCss = ':host{--color:initial;--color-hover:var(--color);--color-checked:var(--color);--color-disabled:var(--color);--padding-start:0;--padding-end:0;--padding-top:0;--padding-bottom:0;border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:column;flex-direction:column;height:auto;background:var(--background);color:var(--color);text-decoration:none;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;grid-row:1;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:0;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;min-width:inherit;max-width:inherit;height:auto;min-height:inherit;max-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border:none;outline:none;background:transparent;contain:content;pointer-events:none;overflow:hidden;z-index:2}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:inherit;flex-flow:inherit;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}:host(.segment-button-checked){background:var(--background-checked);color:var(--color-checked)}:host(.segment-button-disabled){cursor:default;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}:host(:focus){outline:none}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}:host(.segment-button-checked:hover) .button-native{color:var(--color-checked)}}::slotted(ion-icon){-ms-flex-negative:0;flex-shrink:0;-ms-flex-order:-1;order:-1;pointer-events:none}::slotted(ion-label){display:block;-ms-flex-item-align:center;align-self:center;max-width:100%;line-height:22px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;pointer-events:none}:host(.segment-button-layout-icon-top) .button-native{-ms-flex-direction:column;flex-direction:column}:host(.segment-button-layout-icon-start) .button-native{-ms-flex-direction:row;flex-direction:row}:host(.segment-button-layout-icon-end) .button-native{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.segment-button-layout-icon-bottom) .button-native{-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.segment-button-layout-icon-hide) ::slotted(ion-icon){display:none}:host(.segment-button-layout-label-hide) ::slotted(ion-label){display:none}ion-ripple-effect{color:var(--ripple-color, var(--color-checked))}.segment-button-indicator{-webkit-transform-origin:left;transform-origin:left;position:absolute;opacity:0;-webkit-box-sizing:border-box;box-sizing:border-box;will-change:transform, opacity;pointer-events:none}.segment-button-indicator-background{width:100%;height:var(--indicator-height);-webkit-transform:var(--indicator-transform);transform:var(--indicator-transform);-webkit-box-shadow:var(--indicator-box-shadow);box-shadow:var(--indicator-box-shadow);pointer-events:none}.segment-button-indicator-animated{-webkit-transition:var(--indicator-transition);transition:var(--indicator-transition)}:host(.segment-button-checked) .segment-button-indicator{opacity:1}@media (prefers-reduced-motion: reduce){.segment-button-indicator-background{-webkit-transform:none;transform:none}.segment-button-indicator-animated{-webkit-transition:none;transition:none}}:host{--background:none;--background-checked:none;--background-hover:none;--background-hover-opacity:0;--background-focused:none;--background-focused-opacity:0;--border-radius:7px;--border-width:1px;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.12);--border-style:solid;--indicator-box-shadow:0 0 5px rgba(0, 0, 0, 0.16);--indicator-color:var(--ion-color-step-350, var(--ion-background-color-step-350, var(--ion-background-color, #fff)));--indicator-height:100%;--indicator-transition:transform 260ms cubic-bezier(0.4, 0, 0.2, 1);--indicator-transform:none;--transition:100ms all linear;--padding-top:0;--padding-end:13px;--padding-bottom:0;--padding-start:13px;margin-top:2px;margin-bottom:2px;position:relative;-ms-flex-direction:row;flex-direction:row;min-width:70px;min-height:28px;-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);font-size:13px;font-weight:450;line-height:37px}:host::before{margin-left:0;margin-right:0;margin-top:5px;margin-bottom:5px;-webkit-transition:160ms opacity ease-in-out;transition:160ms opacity ease-in-out;-webkit-transition-delay:100ms;transition-delay:100ms;border-left:var(--border-width) var(--border-style) var(--border-color);content:"";opacity:1;will-change:opacity}:host(:first-of-type)::before{border-left-color:transparent}:host(.segment-button-disabled){opacity:0.3}::slotted(ion-icon){font-size:24px}:host(.segment-button-layout-icon-start) ::slotted(ion-label){-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:0;margin-inline-end:0}:host(.segment-button-layout-icon-end) ::slotted(ion-label){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:2px;margin-inline-end:2px}.segment-button-indicator{-webkit-padding-start:2px;padding-inline-start:2px;-webkit-padding-end:2px;padding-inline-end:2px;left:0;right:0;top:0;bottom:0}.segment-button-indicator-background{border-radius:var(--border-radius);background:var(--indicator-color)}.segment-button-indicator-background{-webkit-transition:var(--indicator-transition);transition:var(--indicator-transition)}:host(.segment-button-checked)::before,:host(.segment-button-after-checked)::before{opacity:0}:host(.segment-button-checked){z-index:-1}:host(.segment-button-activated){--indicator-transform:scale(0.95)}:host(.ion-focused) .button-native{opacity:0.7}@media (any-hover: hover){:host(:hover) .button-native{opacity:0.5}:host(.segment-button-checked:hover) .button-native{opacity:1}}:host(.in-segment-color){background:none;color:var(--ion-text-color, #000)}:host(.in-segment-color) .segment-button-indicator-background{background:var(--ion-color-step-350, var(--ion-background-color-step-350, var(--ion-background-color, #fff)))}@media (any-hover: hover){:host(.in-segment-color:hover) .button-native,:host(.in-segment-color.segment-button-checked:hover) .button-native{color:var(--ion-text-color, #000)}}:host(.in-toolbar:not(.in-segment-color)){--background-checked:var(--ion-toolbar-segment-background-checked, none);--color:var(--ion-toolbar-segment-color, var(--ion-toolbar-color), initial);--color-checked:var(--ion-toolbar-segment-color-checked, var(--ion-toolbar-color), initial);--indicator-color:var(--ion-toolbar-segment-indicator-color, var(--ion-color-step-350, var(--ion-background-color-step-350, var(--ion-background-color, #fff))))}:host(.in-toolbar-color) .segment-button-indicator-background{background:var(--ion-color-contrast)}:host(.in-toolbar-color:not(.in-segment-color)) .button-native{color:var(--ion-color-contrast)}:host(.in-toolbar-color.segment-button-checked:not(.in-segment-color)) .button-native{color:var(--ion-color-base)}@media (any-hover: hover){:host(.in-toolbar-color:not(.in-segment-color):hover) .button-native{color:var(--ion-color-contrast)}:host(.in-toolbar-color.segment-button-checked:not(.in-segment-color):hover) .button-native{color:var(--ion-color-base)}}';
 var segmentButtonMdCss = ':host{--color:initial;--color-hover:var(--color);--color-checked:var(--color);--color-disabled:var(--color);--padding-start:0;--padding-end:0;--padding-top:0;--padding-bottom:0;border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:column;flex-direction:column;height:auto;background:var(--background);color:var(--color);text-decoration:none;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;grid-row:1;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:0;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;min-width:inherit;max-width:inherit;height:auto;min-height:inherit;max-height:inherit;-webkit-transition:var(--transition);transition:var(--transition);border:none;outline:none;background:transparent;contain:content;pointer-events:none;overflow:hidden;z-index:2}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:inherit;flex-flow:inherit;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}:host(.segment-button-checked){background:var(--background-checked);color:var(--color-checked)}:host(.segment-button-disabled){cursor:default;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}:host(:focus){outline:none}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity)}:host(.segment-button-checked:hover) .button-native{color:var(--color-checked)}}::slotted(ion-icon){-ms-flex-negative:0;flex-shrink:0;-ms-flex-order:-1;order:-1;pointer-events:none}::slotted(ion-label){display:block;-ms-flex-item-align:center;align-self:center;max-width:100%;line-height:22px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;pointer-events:none}:host(.segment-button-layout-icon-top) .button-native{-ms-flex-direction:column;flex-direction:column}:host(.segment-button-layout-icon-start) .button-native{-ms-flex-direction:row;flex-direction:row}:host(.segment-button-layout-icon-end) .button-native{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.segment-button-layout-icon-bottom) .button-native{-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.segment-button-layout-icon-hide) ::slotted(ion-icon){display:none}:host(.segment-button-layout-label-hide) ::slotted(ion-label){display:none}ion-ripple-effect{color:var(--ripple-color, var(--color-checked))}.segment-button-indicator{-webkit-transform-origin:left;transform-origin:left;position:absolute;opacity:0;-webkit-box-sizing:border-box;box-sizing:border-box;will-change:transform, opacity;pointer-events:none}.segment-button-indicator-background{width:100%;height:var(--indicator-height);-webkit-transform:var(--indicator-transform);transform:var(--indicator-transform);-webkit-box-shadow:var(--indicator-box-shadow);box-shadow:var(--indicator-box-shadow);pointer-events:none}.segment-button-indicator-animated{-webkit-transition:var(--indicator-transition);transition:var(--indicator-transition)}:host(.segment-button-checked) .segment-button-indicator{opacity:1}@media (prefers-reduced-motion: reduce){.segment-button-indicator-background{-webkit-transform:none;transform:none}.segment-button-indicator-animated{-webkit-transition:none;transition:none}}:host{--background:none;--background-checked:none;--background-hover:var(--color-checked);--background-focused:var(--color-checked);--background-activated-opacity:0;--background-focused-opacity:.12;--background-hover-opacity:.04;--color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.6);--color-checked:var(--ion-color-primary, #0054e9);--indicator-box-shadow:none;--indicator-color:var(--color-checked);--indicator-height:2px;--indicator-transition:transform 250ms cubic-bezier(0.4, 0, 0.2, 1);--indicator-transform:none;--padding-top:0;--padding-end:16px;--padding-bottom:0;--padding-start:16px;--transition:color 0.15s linear 0s, opacity 0.15s linear 0s;min-width:90px;min-height:48px;border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);font-size:14px;font-weight:500;letter-spacing:0.06em;line-height:40px;text-transform:uppercase}:host(.segment-button-disabled){opacity:0.3}:host(.in-segment-color){background:none;color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.6)}:host(.in-segment-color) ion-ripple-effect{color:var(--ion-color-base)}:host(.in-segment-color) .segment-button-indicator-background{background:var(--ion-color-base)}:host(.in-segment-color.segment-button-checked) .button-native{color:var(--ion-color-base)}:host(.in-segment-color.ion-focused) .button-native::after{background:var(--ion-color-base)}@media (any-hover: hover){:host(.in-segment-color:hover) .button-native{color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.6)}:host(.in-segment-color:hover) .button-native::after{background:var(--ion-color-base)}:host(.in-segment-color.segment-button-checked:hover) .button-native{color:var(--ion-color-base)}}:host(.in-toolbar:not(.in-segment-color)){--background:var(--ion-toolbar-segment-background, none);--background-checked:var(--ion-toolbar-segment-background-checked, none);--color:var(--ion-toolbar-segment-color, rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.6));--color-checked:var(--ion-toolbar-segment-color-checked, var(--ion-color-primary, #0054e9));--indicator-color:var(--ion-toolbar-segment-color-checked, var(--color-checked))}:host(.in-toolbar-color:not(.in-segment-color)) .button-native{color:rgba(var(--ion-color-contrast-rgb), 0.6)}:host(.in-toolbar-color.segment-button-checked:not(.in-segment-color)) .button-native{color:var(--ion-color-contrast)}@media (any-hover: hover){:host(.in-toolbar-color:not(.in-segment-color)) .button-native::after{background:var(--ion-color-contrast)}}::slotted(ion-icon){margin-top:12px;margin-bottom:12px;font-size:24px}::slotted(ion-label){margin-top:12px;margin-bottom:12px}:host(.segment-button-layout-icon-top) ::slotted(ion-label),:host(.segment-button-layout-icon-bottom) ::slotted(ion-icon){margin-top:0}:host(.segment-button-layout-icon-top) ::slotted(ion-icon),:host(.segment-button-layout-icon-bottom) ::slotted(ion-label){margin-bottom:0}:host(.segment-button-layout-icon-start) ::slotted(ion-label){-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:0;margin-inline-end:0}:host(.segment-button-layout-icon-end) ::slotted(ion-label){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px}:host(.segment-button-has-icon-only) ::slotted(ion-icon){margin-top:12px;margin-bottom:12px}:host(.segment-button-has-label-only) ::slotted(ion-label){margin-top:12px;margin-bottom:12px}.segment-button-indicator{left:0;right:0;bottom:0}.segment-button-indicator-background{background:var(--indicator-color)}:host(.in-toolbar:not(.in-segment-color)) .segment-button-indicator-background{background:var(--ion-toolbar-segment-indicator-color, var(--indicator-color))}:host(.in-toolbar-color:not(.in-segment-color)) .segment-button-indicator-background{background:var(--ion-color-contrast)}';
 var ids = 0;
-var _a70;
-var SegmentButton = proxyCustomElement((_a70 = class extends H {
+var _a66;
+var SegmentButton = proxyCustomElement((_a66 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18264,7 +14359,7 @@ var SegmentButton = proxyCustomElement((_a70 = class extends H {
       md: segmentButtonMdCss
     };
   }
-}, __name(_a70, "SegmentButton"), _a70), [289, "ion-segment-button", {
+}, __name(_a66, "SegmentButton"), _a66), [289, "ion-segment-button", {
   "contentId": [513, "content-id"],
   "disabled": [1028],
   "layout": [1],
@@ -18300,8 +14395,8 @@ var defineCustomElement84 = defineCustomElement$145;
 
 // node_modules/@ionic/core/components/ion-segment-content.js
 var segmentContentCss = ":host{scroll-snap-align:center;scroll-snap-stop:always;-ms-flex-negative:0;flex-shrink:0;width:100%;min-height:1px;overflow-y:scroll;scrollbar-width:none;-ms-overflow-style:none;}:host::-webkit-scrollbar{display:none}";
-var _a71;
-var SegmentContent = proxyCustomElement((_a71 = class extends H {
+var _a67;
+var SegmentContent = proxyCustomElement((_a67 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18313,7 +14408,7 @@ var SegmentContent = proxyCustomElement((_a71 = class extends H {
   static get style() {
     return segmentContentCss;
   }
-}, __name(_a71, "SegmentContent"), _a71), [257, "ion-segment-content"]);
+}, __name(_a67, "SegmentContent"), _a67), [257, "ion-segment-content"]);
 function defineCustomElement$146() {
   if (typeof customElements === "undefined") {
     return;
@@ -18335,8 +14430,8 @@ var defineCustomElement85 = defineCustomElement$146;
 // node_modules/@ionic/core/components/ion-segment-view.js
 var segmentViewIosCss = ":host{display:-ms-flexbox;display:flex;height:100%;overflow-x:scroll;-webkit-scroll-snap-type:x mandatory;-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}:host::-webkit-scrollbar{display:none}:host(.segment-view-disabled){-ms-touch-action:none;touch-action:none;overflow-x:hidden}:host(.segment-view-scroll-disabled){pointer-events:none}:host(.segment-view-disabled){opacity:0.3}";
 var segmentViewMdCss = ":host{display:-ms-flexbox;display:flex;height:100%;overflow-x:scroll;-webkit-scroll-snap-type:x mandatory;-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}:host::-webkit-scrollbar{display:none}:host(.segment-view-disabled){-ms-touch-action:none;touch-action:none;overflow-x:hidden}:host(.segment-view-scroll-disabled){pointer-events:none}:host(.segment-view-disabled){opacity:0.3}";
-var _a72;
-var SegmentView = proxyCustomElement((_a72 = class extends H {
+var _a68;
+var SegmentView = proxyCustomElement((_a68 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18347,12 +14442,12 @@ var SegmentView = proxyCustomElement((_a72 = class extends H {
     this.disabled = false;
   }
   handleScroll(ev) {
-    var _a190;
+    var _a186;
     const { scrollLeft, scrollWidth, clientWidth } = ev.target;
     const scrollRatio = scrollLeft / (scrollWidth - clientWidth);
     this.ionSegmentViewScroll.emit({
       scrollRatio,
-      isManualScroll: (_a190 = this.isManualScroll) !== null && _a190 !== void 0 ? _a190 : true
+      isManualScroll: (_a186 = this.isManualScroll) !== null && _a186 !== void 0 ? _a186 : true
     });
     this.resetScrollEndTimeout();
   }
@@ -18446,7 +14541,7 @@ var SegmentView = proxyCustomElement((_a72 = class extends H {
       md: segmentViewMdCss
     };
   }
-}, __name(_a72, "SegmentView"), _a72), [289, "ion-segment-view", {
+}, __name(_a68, "SegmentView"), _a68), [289, "ion-segment-view", {
   "disabled": [4],
   "isManualScroll": [32],
   "setContent": [64]
@@ -18472,8 +14567,8 @@ var defineCustomElement86 = defineCustomElement$147;
 // node_modules/@ionic/core/components/checkbox.js
 var checkboxIosCss = ":host{--checkbox-background-checked:var(--ion-color-primary, #0054e9);--border-color-checked:var(--ion-color-primary, #0054e9);--checkmark-color:var(--ion-color-primary-contrast, #fff);--transition:none;display:inline-block;position:relative;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0;width:100%;height:100%}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}:host(.ion-color){--checkbox-background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}.checkbox-wrapper{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;cursor:inherit}.label-text-wrapper{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host(.in-item) .label-text-wrapper,:host(.in-item:not(.checkbox-label-placement-stacked):not([slot])) .native-wrapper{margin-top:10px;margin-bottom:10px}:host(.in-item.checkbox-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.checkbox-label-placement-stacked) .native-wrapper{margin-bottom:10px}.label-text-wrapper-hidden{display:none}input{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.checkbox-icon{border-radius:var(--border-radius);position:relative;width:var(--size);height:var(--size);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--checkbox-background);-webkit-box-sizing:border-box;box-sizing:border-box}.checkbox-icon path{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}.checkbox-bottom{padding-top:4px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;font-size:0.75rem;white-space:normal}:host(.checkbox-label-placement-stacked) .checkbox-bottom{font-size:1rem}.checkbox-bottom .error-text{display:none;color:var(--ion-color-danger, #c5000f)}.checkbox-bottom .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}:host(.ion-touched.ion-invalid) .checkbox-bottom .error-text{display:block}:host(.ion-touched.ion-invalid) .checkbox-bottom .helper-text{display:none}:host(.checkbox-label-placement-start) .checkbox-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.checkbox-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.checkbox-label-placement-end) .checkbox-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse;-ms-flex-pack:start;justify-content:start}:host(.checkbox-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.checkbox-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.checkbox-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.checkbox-label-placement-stacked) .checkbox-wrapper{-ms-flex-direction:column;flex-direction:column;text-align:center}:host(.checkbox-label-placement-stacked) .label-text-wrapper{-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host(.checkbox-label-placement-stacked.checkbox-alignment-start) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]):host(.checkbox-label-placement-stacked.checkbox-alignment-start) .label-text-wrapper,:host-context([dir=rtl]).checkbox-label-placement-stacked.checkbox-alignment-start .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.checkbox-label-placement-stacked.checkbox-alignment-start:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.checkbox-label-placement-stacked.checkbox-alignment-center) .label-text-wrapper{-webkit-transform-origin:center top;transform-origin:center top}:host-context([dir=rtl]):host(.checkbox-label-placement-stacked.checkbox-alignment-center) .label-text-wrapper,:host-context([dir=rtl]).checkbox-label-placement-stacked.checkbox-alignment-center .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}@supports selector(:dir(rtl)){:host(.checkbox-label-placement-stacked.checkbox-alignment-center:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}}:host(.checkbox-justify-space-between) .checkbox-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.checkbox-justify-start) .checkbox-wrapper{-ms-flex-pack:start;justify-content:start}:host(.checkbox-justify-end) .checkbox-wrapper{-ms-flex-pack:end;justify-content:end}:host(.checkbox-alignment-start) .checkbox-wrapper{-ms-flex-align:start;align-items:start}:host(.checkbox-alignment-center) .checkbox-wrapper{-ms-flex-align:center;align-items:center}:host(.checkbox-justify-space-between),:host(.checkbox-justify-start),:host(.checkbox-justify-end),:host(.checkbox-alignment-start),:host(.checkbox-alignment-center){display:block}:host(.checkbox-checked) .checkbox-icon,:host(.checkbox-indeterminate) .checkbox-icon{border-color:var(--border-color-checked);background:var(--checkbox-background-checked)}:host(.checkbox-checked) .checkbox-icon path,:host(.checkbox-indeterminate) .checkbox-icon path{opacity:1}:host(.checkbox-disabled){pointer-events:none}:host{--border-radius:50%;--border-width:0.125rem;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.23);--checkbox-background:var(--ion-item-background, var(--ion-background-color, #fff));--size:min(1.375rem, 55.836px);--checkmark-width:1.5px}:host(.checkbox-disabled){opacity:0.3}";
 var checkboxMdCss = ":host{--checkbox-background-checked:var(--ion-color-primary, #0054e9);--border-color-checked:var(--ion-color-primary, #0054e9);--checkmark-color:var(--ion-color-primary-contrast, #fff);--transition:none;display:inline-block;position:relative;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0;width:100%;height:100%}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}:host(.ion-color){--checkbox-background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}.checkbox-wrapper{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;cursor:inherit}.label-text-wrapper{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host(.in-item) .label-text-wrapper,:host(.in-item:not(.checkbox-label-placement-stacked):not([slot])) .native-wrapper{margin-top:10px;margin-bottom:10px}:host(.in-item.checkbox-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.checkbox-label-placement-stacked) .native-wrapper{margin-bottom:10px}.label-text-wrapper-hidden{display:none}input{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.checkbox-icon{border-radius:var(--border-radius);position:relative;width:var(--size);height:var(--size);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--checkbox-background);-webkit-box-sizing:border-box;box-sizing:border-box}.checkbox-icon path{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}.checkbox-bottom{padding-top:4px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;font-size:0.75rem;white-space:normal}:host(.checkbox-label-placement-stacked) .checkbox-bottom{font-size:1rem}.checkbox-bottom .error-text{display:none;color:var(--ion-color-danger, #c5000f)}.checkbox-bottom .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}:host(.ion-touched.ion-invalid) .checkbox-bottom .error-text{display:block}:host(.ion-touched.ion-invalid) .checkbox-bottom .helper-text{display:none}:host(.checkbox-label-placement-start) .checkbox-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.checkbox-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.checkbox-label-placement-end) .checkbox-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse;-ms-flex-pack:start;justify-content:start}:host(.checkbox-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.checkbox-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.checkbox-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.checkbox-label-placement-stacked) .checkbox-wrapper{-ms-flex-direction:column;flex-direction:column;text-align:center}:host(.checkbox-label-placement-stacked) .label-text-wrapper{-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host(.checkbox-label-placement-stacked.checkbox-alignment-start) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]):host(.checkbox-label-placement-stacked.checkbox-alignment-start) .label-text-wrapper,:host-context([dir=rtl]).checkbox-label-placement-stacked.checkbox-alignment-start .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.checkbox-label-placement-stacked.checkbox-alignment-start:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.checkbox-label-placement-stacked.checkbox-alignment-center) .label-text-wrapper{-webkit-transform-origin:center top;transform-origin:center top}:host-context([dir=rtl]):host(.checkbox-label-placement-stacked.checkbox-alignment-center) .label-text-wrapper,:host-context([dir=rtl]).checkbox-label-placement-stacked.checkbox-alignment-center .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}@supports selector(:dir(rtl)){:host(.checkbox-label-placement-stacked.checkbox-alignment-center:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}}:host(.checkbox-justify-space-between) .checkbox-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.checkbox-justify-start) .checkbox-wrapper{-ms-flex-pack:start;justify-content:start}:host(.checkbox-justify-end) .checkbox-wrapper{-ms-flex-pack:end;justify-content:end}:host(.checkbox-alignment-start) .checkbox-wrapper{-ms-flex-align:start;align-items:start}:host(.checkbox-alignment-center) .checkbox-wrapper{-ms-flex-align:center;align-items:center}:host(.checkbox-justify-space-between),:host(.checkbox-justify-start),:host(.checkbox-justify-end),:host(.checkbox-alignment-start),:host(.checkbox-alignment-center){display:block}:host(.checkbox-checked) .checkbox-icon,:host(.checkbox-indeterminate) .checkbox-icon{border-color:var(--border-color-checked);background:var(--checkbox-background-checked)}:host(.checkbox-checked) .checkbox-icon path,:host(.checkbox-indeterminate) .checkbox-icon path{opacity:1}:host(.checkbox-disabled){pointer-events:none}:host{--border-radius:calc(var(--size) * .125);--border-width:2px;--border-style:solid;--border-color:rgb(var(--ion-text-color-rgb, 0, 0, 0), 0.6);--checkmark-width:3;--checkbox-background:var(--ion-item-background, var(--ion-background-color, #fff));--transition:background 180ms cubic-bezier(0.4, 0, 0.2, 1);--size:18px}.checkbox-icon path{stroke-dasharray:30;stroke-dashoffset:30}:host(.checkbox-checked) .checkbox-icon path,:host(.checkbox-indeterminate) .checkbox-icon path{stroke-dashoffset:0;-webkit-transition:stroke-dashoffset 90ms linear 90ms;transition:stroke-dashoffset 90ms linear 90ms}:host(.checkbox-disabled) .label-text-wrapper{opacity:0.38}:host(.checkbox-disabled) .native-wrapper{opacity:0.63}";
-var _a73;
-var Checkbox = proxyCustomElement((_a73 = class extends H {
+var _a69;
+var Checkbox = proxyCustomElement((_a69 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18600,7 +14695,7 @@ var Checkbox = proxyCustomElement((_a73 = class extends H {
       md: checkboxMdCss
     };
   }
-}, __name(_a73, "Checkbox"), _a73), [289, "ion-checkbox", {
+}, __name(_a69, "Checkbox"), _a69), [289, "ion-checkbox", {
   "color": [513],
   "name": [1],
   "checked": [1028],
@@ -18636,8 +14731,8 @@ __name(defineCustomElement87, "defineCustomElement");
 // node_modules/@ionic/core/components/radio-group.js
 var radioGroupIosCss = "ion-radio-group{vertical-align:top}.radio-group-wrapper{display:inline}.radio-group-top{line-height:1.5}.radio-group-top .error-text{display:none;color:var(--ion-color-danger, #c5000f)}.radio-group-top .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}.ion-touched.ion-invalid .radio-group-top .error-text{display:block}.ion-touched.ion-invalid .radio-group-top .helper-text{display:none}ion-list .radio-group-top{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}";
 var radioGroupMdCss = "ion-radio-group{vertical-align:top}.radio-group-wrapper{display:inline}.radio-group-top{line-height:1.5}.radio-group-top .error-text{display:none;color:var(--ion-color-danger, #c5000f)}.radio-group-top .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}.ion-touched.ion-invalid .radio-group-top .error-text{display:block}.ion-touched.ion-invalid .radio-group-top .helper-text{display:none}ion-list .radio-group-top{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px}";
-var _a74;
-var RadioGroup = proxyCustomElement((_a74 = class extends H {
+var _a70;
+var RadioGroup = proxyCustomElement((_a70 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18790,7 +14885,7 @@ var RadioGroup = proxyCustomElement((_a74 = class extends H {
       md: radioGroupMdCss
     };
   }
-}, __name(_a74, "RadioGroup"), _a74), [292, "ion-radio-group", {
+}, __name(_a70, "RadioGroup"), _a70), [292, "ion-radio-group", {
   "allowEmptySelection": [4, "allow-empty-selection"],
   "compareWith": [1, "compare-with"],
   "name": [1],
@@ -18822,8 +14917,8 @@ __name(defineCustomElement88, "defineCustomElement");
 // node_modules/@ionic/core/components/title.js
 var titleIosCss = ":host{--color:initial;display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-align:center;align-items:center;-webkit-transform:translateZ(0);transform:translateZ(0);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}.toolbar-title{display:block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;pointer-events:auto}:host(.title-small) .toolbar-title{white-space:normal}:host{top:0;-webkit-padding-start:90px;padding-inline-start:90px;-webkit-padding-end:90px;padding-inline-end:90px;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);position:absolute;width:100%;height:100%;-webkit-transform:translateZ(0);transform:translateZ(0);font-size:min(1.0625rem, 20.4px);font-weight:600;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box;pointer-events:none}:host{inset-inline-start:0}:host(.title-small){-webkit-padding-start:9px;padding-inline-start:9px;-webkit-padding-end:9px;padding-inline-end:9px;padding-top:6px;padding-bottom:16px;position:relative;font-size:min(0.8125rem, 23.4px);font-weight:normal}:host(.title-large){-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:2px;padding-bottom:4px;-webkit-transform-origin:left center;transform-origin:left center;position:static;-ms-flex-align:end;align-items:flex-end;min-width:100%;font-size:min(2.125rem, 61.2px);font-weight:700;text-align:start}:host(.title-large.title-rtl){-webkit-transform-origin:right center;transform-origin:right center}:host(.title-large.ion-cloned-element){--color:var(--ion-text-color, #000);font-family:var(--ion-font-family)}:host(.title-large) .toolbar-title{-webkit-transform-origin:inherit;transform-origin:inherit;width:auto}:host-context([dir=rtl]):host(.title-large) .toolbar-title,:host-context([dir=rtl]).title-large .toolbar-title{-webkit-transform-origin:calc(100% - inherit);transform-origin:calc(100% - inherit)}@supports selector(:dir(rtl)){:host(.title-large:dir(rtl)) .toolbar-title{-webkit-transform-origin:calc(100% - inherit);transform-origin:calc(100% - inherit)}}";
 var titleMdCss = ":host{--color:initial;display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-align:center;align-items:center;-webkit-transform:translateZ(0);transform:translateZ(0);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}.toolbar-title{display:block;width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;pointer-events:auto}:host(.title-small) .toolbar-title{white-space:normal}:host{-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px;padding-top:0;padding-bottom:0;font-size:1.25rem;font-weight:500;letter-spacing:0.0125em}:host(.title-small){width:100%;height:100%;font-size:0.9375rem;font-weight:normal}";
-var _a75;
-var ToolbarTitle = proxyCustomElement((_a75 = class extends H {
+var _a71;
+var ToolbarTitle = proxyCustomElement((_a71 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18868,7 +14963,7 @@ var ToolbarTitle = proxyCustomElement((_a75 = class extends H {
       md: titleMdCss
     };
   }
-}, __name(_a75, "ToolbarTitle"), _a75), [289, "ion-title", {
+}, __name(_a71, "ToolbarTitle"), _a71), [289, "ion-title", {
   "color": [513],
   "size": [1]
 }, void 0, {
@@ -18894,8 +14989,8 @@ __name(defineCustomElement89, "defineCustomElement");
 // node_modules/@ionic/core/components/toolbar.js
 var toolbarIosCss = ":host{--border-width:0;--border-style:solid;--opacity:1;--opacity-scale:1;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;width:100%;padding-right:var(--ion-safe-area-right);padding-left:var(--ion-safe-area-left);color:var(--color);font-family:var(--ion-font-family, inherit);contain:content;z-index:10;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.ion-color){color:var(--ion-color-contrast)}:host(.ion-color) .toolbar-background{background:var(--ion-color-base)}.toolbar-container{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;min-height:var(--min-height);contain:content;overflow:hidden;z-index:10;-webkit-box-sizing:border-box;box-sizing:border-box}.toolbar-background{left:0;right:0;top:0;bottom:0;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);contain:strict;opacity:calc(var(--opacity) * var(--opacity-scale));z-index:-1;pointer-events:none}::slotted(ion-progress-bar){left:0;right:0;bottom:0;position:absolute}:host{--background:var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color-step-50, #f7f7f7)));--color:var(--ion-toolbar-color, var(--ion-text-color, #000));--border-color:var(--ion-toolbar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.2)))));--padding-top:3px;--padding-bottom:3px;--padding-start:4px;--padding-end:4px;--min-height:44px}.toolbar-content{-ms-flex:1;flex:1;-ms-flex-order:4;order:4;min-width:0}:host(.toolbar-segment) .toolbar-content{display:-ms-inline-flexbox;display:inline-flex}:host(.toolbar-searchbar) .toolbar-container{padding-top:0;padding-bottom:0}:host(.toolbar-searchbar) ::slotted(*){-ms-flex-item-align:start;align-self:start}:host(.toolbar-searchbar) ::slotted(ion-chip){margin-top:3px}::slotted(ion-buttons){min-height:38px}::slotted([slot=start]){-ms-flex-order:2;order:2}::slotted([slot=secondary]){-ms-flex-order:3;order:3}::slotted([slot=primary]){-ms-flex-order:5;order:5;text-align:end}::slotted([slot=end]){-ms-flex-order:6;order:6;text-align:end}:host(.toolbar-title-large) .toolbar-container{-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:start;align-items:flex-start}:host(.toolbar-title-large) .toolbar-content ion-title{-ms-flex:1;flex:1;-ms-flex-order:8;order:8;min-width:100%}";
 var toolbarMdCss = ":host{--border-width:0;--border-style:solid;--opacity:1;--opacity-scale:1;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;width:100%;padding-right:var(--ion-safe-area-right);padding-left:var(--ion-safe-area-left);color:var(--color);font-family:var(--ion-font-family, inherit);contain:content;z-index:10;-webkit-box-sizing:border-box;box-sizing:border-box}:host(.ion-color){color:var(--ion-color-contrast)}:host(.ion-color) .toolbar-background{background:var(--ion-color-base)}.toolbar-container{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:row;flex-direction:row;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;min-height:var(--min-height);contain:content;overflow:hidden;z-index:10;-webkit-box-sizing:border-box;box-sizing:border-box}.toolbar-background{left:0;right:0;top:0;bottom:0;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);contain:strict;opacity:calc(var(--opacity) * var(--opacity-scale));z-index:-1;pointer-events:none}::slotted(ion-progress-bar){left:0;right:0;bottom:0;position:absolute}:host{--background:var(--ion-toolbar-background, var(--ion-background-color, #fff));--color:var(--ion-toolbar-color, var(--ion-text-color, #424242));--border-color:var(--ion-toolbar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, #c1c4cd))));--padding-top:0;--padding-bottom:0;--padding-start:0;--padding-end:0;--min-height:56px}.toolbar-content{-ms-flex:1;flex:1;-ms-flex-order:3;order:3;min-width:0;max-width:100%}::slotted(.buttons-first-slot){-webkit-margin-start:4px;margin-inline-start:4px}::slotted(.buttons-last-slot){-webkit-margin-end:4px;margin-inline-end:4px}::slotted([slot=start]){-ms-flex-order:2;order:2}::slotted([slot=secondary]){-ms-flex-order:4;order:4}::slotted([slot=primary]){-ms-flex-order:5;order:5;text-align:end}::slotted([slot=end]){-ms-flex-order:6;order:6;text-align:end}";
-var _a76;
-var Toolbar = proxyCustomElement((_a76 = class extends H {
+var _a72;
+var Toolbar = proxyCustomElement((_a72 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -18958,7 +15053,7 @@ var Toolbar = proxyCustomElement((_a76 = class extends H {
       md: toolbarMdCss
     };
   }
-}, __name(_a76, "Toolbar"), _a76), [289, "ion-toolbar", {
+}, __name(_a72, "Toolbar"), _a72), [289, "ion-toolbar", {
   "color": [513]
 }, [[0, "ionStyle", "childrenStyle"]]]);
 function defineCustomElement90() {
@@ -18982,8 +15077,8 @@ __name(defineCustomElement90, "defineCustomElement");
 var ionicSelectModalMdCss = '.sc-ion-select-modal-ionic-h{height:100%}ion-list.sc-ion-select-modal-ionic ion-radio.sc-ion-select-modal-ionic::part(container),ion-list.sc-ion-select-modal-ionic ion-radio.sc-ion-select-modal-ionic [part~="container"]{display:none}ion-list.sc-ion-select-modal-ionic ion-radio.sc-ion-select-modal-ionic::part(label),ion-list.sc-ion-select-modal-ionic ion-radio.sc-ion-select-modal-ionic [part~="label"]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}ion-item.sc-ion-select-modal-ionic{--inner-border-width:0}.item-radio-checked.sc-ion-select-modal-ionic{--background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.08);--background-focused:var(--ion-color-primary, #0054e9);--background-focused-opacity:0.2;--background-hover:var(--ion-color-primary, #0054e9);--background-hover-opacity:0.12}.item-checkbox-checked.sc-ion-select-modal-ionic{--background-activated:var(--ion-item-color, var(--ion-text-color, #000));--background-focused:var(--ion-item-color, var(--ion-text-color, #000));--background-hover:var(--ion-item-color, var(--ion-text-color, #000));--color:var(--ion-color-primary, #0054e9)}';
 var selectModalIosCss = '.sc-ion-select-modal-ios-h{height:100%}ion-item.sc-ion-select-modal-ios{--inner-padding-end:0}ion-radio.sc-ion-select-modal-ios::after{bottom:0;position:absolute;width:calc(100% - 0.9375rem - 16px);border-width:0px 0px 0.55px 0px;border-style:solid;border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));content:""}ion-radio.sc-ion-select-modal-ios::after{inset-inline-start:calc(0.9375rem + 16px)}';
 var selectModalMdCss = '.sc-ion-select-modal-md-h{height:100%}ion-list.sc-ion-select-modal-md ion-radio.sc-ion-select-modal-md::part(container),ion-list.sc-ion-select-modal-md ion-radio.sc-ion-select-modal-md [part~="container"]{display:none}ion-list.sc-ion-select-modal-md ion-radio.sc-ion-select-modal-md::part(label),ion-list.sc-ion-select-modal-md ion-radio.sc-ion-select-modal-md [part~="label"]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}ion-item.sc-ion-select-modal-md{--inner-border-width:0}.item-radio-checked.sc-ion-select-modal-md{--background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.08);--background-focused:var(--ion-color-primary, #0054e9);--background-focused-opacity:0.2;--background-hover:var(--ion-color-primary, #0054e9);--background-hover-opacity:0.12}.item-checkbox-checked.sc-ion-select-modal-md{--background-activated:var(--ion-item-color, var(--ion-text-color, #000));--background-focused:var(--ion-item-color, var(--ion-text-color, #000));--background-hover:var(--ion-item-color, var(--ion-text-color, #000));--color:var(--ion-color-primary, #0054e9)}';
-var _a77;
-var SelectModal = proxyCustomElement((_a77 = class extends H {
+var _a73;
+var SelectModal = proxyCustomElement((_a73 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19055,7 +15150,7 @@ var SelectModal = proxyCustomElement((_a77 = class extends H {
       md: selectModalMdCss
     };
   }
-}, __name(_a77, "SelectModal"), _a77), [290, "ion-select-modal", {
+}, __name(_a73, "SelectModal"), _a73), [290, "ion-select-modal", {
   "header": [1],
   "multiple": [4],
   "options": [16]
@@ -19147,8 +15242,8 @@ var defineCustomElement92 = defineCustomElement91;
 
 // node_modules/@ionic/core/components/ion-select-option.js
 var selectOptionCss = ":host{display:none}";
-var _a78;
-var SelectOption = proxyCustomElement((_a78 = class extends H {
+var _a74;
+var SelectOption = proxyCustomElement((_a74 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19165,7 +15260,7 @@ var SelectOption = proxyCustomElement((_a78 = class extends H {
   static get style() {
     return selectOptionCss;
   }
-}, __name(_a78, "SelectOption"), _a78), [257, "ion-select-option", {
+}, __name(_a74, "SelectOption"), _a74), [257, "ion-select-option", {
   "disabled": [4],
   "value": [8]
 }]);
@@ -19190,8 +15285,8 @@ var defineCustomElement93 = defineCustomElement$148;
 
 // node_modules/@ionic/core/components/ion-skeleton-text.js
 var skeletonTextCss = ":host{--background:rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065);border-radius:var(--border-radius, inherit);display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:var(--background);line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}span{display:inline-block}:host(.in-media){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;height:100%}:host(.skeleton-text-animated){position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065)), color-stop(18%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.135)), color-stop(33%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065)));background:linear-gradient(to right, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065) 8%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.135) 18%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}";
-var _a79;
-var SkeletonText = proxyCustomElement((_a79 = class extends H {
+var _a75;
+var SkeletonText = proxyCustomElement((_a75 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19224,7 +15319,7 @@ var SkeletonText = proxyCustomElement((_a79 = class extends H {
   static get style() {
     return skeletonTextCss;
   }
-}, __name(_a79, "SkeletonText"), _a79), [257, "ion-skeleton-text", {
+}, __name(_a75, "SkeletonText"), _a75), [257, "ion-skeleton-text", {
   "animated": [4]
 }]);
 function defineCustomElement$149() {
@@ -19261,8 +15356,8 @@ var QUERY = {
   xl: "(min-width: 1200px)",
   never: ""
 };
-var _a80;
-var SplitPane = proxyCustomElement((_a80 = class extends H {
+var _a76;
+var SplitPane = proxyCustomElement((_a76 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19387,7 +15482,7 @@ var SplitPane = proxyCustomElement((_a80 = class extends H {
       md: splitPaneMdCss
     };
   }
-}, __name(_a80, "SplitPane"), _a80), [289, "ion-split-pane", {
+}, __name(_a76, "SplitPane"), _a76), [289, "ion-split-pane", {
   "contentId": [513, "content-id"],
   "disabled": [4],
   "when": [8],
@@ -19432,8 +15527,8 @@ var defineCustomElement96 = defineCustomElement$150;
 
 // node_modules/@ionic/core/components/ion-tab.js
 var tabCss = ":host(.tab-hidden){display:none !important}";
-var _a81;
-var Tab = proxyCustomElement((_a81 = class extends H {
+var _a77;
+var Tab = proxyCustomElement((_a77 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19494,7 +15589,7 @@ var Tab = proxyCustomElement((_a81 = class extends H {
   static get style() {
     return tabCss;
   }
-}, __name(_a81, "Tab"), _a81), [257, "ion-tab", {
+}, __name(_a77, "Tab"), _a77), [257, "ion-tab", {
   "active": [1028],
   "delegate": [16],
   "tab": [1],
@@ -19524,8 +15619,8 @@ var defineCustomElement97 = defineCustomElement$151;
 // node_modules/@ionic/core/components/ion-tab-bar.js
 var tabBarIosCss = ":host{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:auto;padding-right:var(--ion-safe-area-right);padding-bottom:var(--ion-safe-area-bottom, 0);padding-left:var(--ion-safe-area-left);border-top:var(--border);background:var(--background);color:var(--color);text-align:center;contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:10;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}:host(.ion-color) ::slotted(ion-tab-button){--background-focused:var(--ion-color-shade);--color-selected:var(--ion-color-contrast)}:host(.ion-color) ::slotted(.tab-selected){color:var(--ion-color-contrast)}:host(.ion-color),:host(.ion-color) ::slotted(ion-tab-button){color:rgba(var(--ion-color-contrast-rgb), 0.7)}:host(.ion-color),:host(.ion-color) ::slotted(ion-tab-button){background:var(--ion-color-base)}:host(.ion-color) ::slotted(ion-tab-button.ion-focused),:host(.tab-bar-translucent) ::slotted(ion-tab-button.ion-focused){background:var(--background-focused)}:host(.tab-bar-translucent) ::slotted(ion-tab-button){background:transparent}:host([slot=top]){padding-top:var(--ion-safe-area-top, 0);padding-bottom:0;border-top:0;border-bottom:var(--border)}:host(.tab-bar-hidden){display:none !important}:host{--background:var(--ion-tab-bar-background, var(--ion-color-step-50, var(--ion-background-color-step-50, #f7f7f7)));--background-focused:var(--ion-tab-bar-background-focused, #e0e0e0);--border:0.55px solid var(--ion-tab-bar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.2)))));--color:var(--ion-tab-bar-color, var(--ion-color-step-600, var(--ion-text-color-step-400, #666666)));--color-selected:var(--ion-tab-bar-color-selected, var(--ion-color-primary, #0054e9));height:50px}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.tab-bar-translucent){--background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:saturate(210%) blur(20px);backdrop-filter:saturate(210%) blur(20px)}:host(.ion-color.tab-bar-translucent){background:rgba(var(--ion-color-base-rgb), 0.8)}:host(.tab-bar-translucent) ::slotted(ion-tab-button.ion-focused){background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.6)}}";
 var tabBarMdCss = ":host{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:auto;padding-right:var(--ion-safe-area-right);padding-bottom:var(--ion-safe-area-bottom, 0);padding-left:var(--ion-safe-area-left);border-top:var(--border);background:var(--background);color:var(--color);text-align:center;contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:10;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}:host(.ion-color) ::slotted(ion-tab-button){--background-focused:var(--ion-color-shade);--color-selected:var(--ion-color-contrast)}:host(.ion-color) ::slotted(.tab-selected){color:var(--ion-color-contrast)}:host(.ion-color),:host(.ion-color) ::slotted(ion-tab-button){color:rgba(var(--ion-color-contrast-rgb), 0.7)}:host(.ion-color),:host(.ion-color) ::slotted(ion-tab-button){background:var(--ion-color-base)}:host(.ion-color) ::slotted(ion-tab-button.ion-focused),:host(.tab-bar-translucent) ::slotted(ion-tab-button.ion-focused){background:var(--background-focused)}:host(.tab-bar-translucent) ::slotted(ion-tab-button){background:transparent}:host([slot=top]){padding-top:var(--ion-safe-area-top, 0);padding-bottom:0;border-top:0;border-bottom:var(--border)}:host(.tab-bar-hidden){display:none !important}:host{--background:var(--ion-tab-bar-background, var(--ion-background-color, #fff));--background-focused:var(--ion-tab-bar-background-focused, #e0e0e0);--border:1px solid var(--ion-tab-bar-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.07)))));--color:var(--ion-tab-bar-color, var(--ion-color-step-650, var(--ion-text-color-step-350, #595959)));--color-selected:var(--ion-tab-bar-color-selected, var(--ion-color-primary, #0054e9));height:56px}";
-var _a82;
-var TabBar = proxyCustomElement((_a82 = class extends H {
+var _a78;
+var TabBar = proxyCustomElement((_a78 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19588,7 +15683,7 @@ var TabBar = proxyCustomElement((_a82 = class extends H {
       md: tabBarMdCss
     };
   }
-}, __name(_a82, "TabBar"), _a82), [289, "ion-tab-bar", {
+}, __name(_a78, "TabBar"), _a78), [289, "ion-tab-bar", {
   "color": [513],
   "selectedTab": [1, "selected-tab"],
   "translucent": [4],
@@ -19617,8 +15712,8 @@ var defineCustomElement98 = defineCustomElement$152;
 // node_modules/@ionic/core/components/ion-tab-button.js
 var tabButtonIosCss = ':host{--ripple-color:var(--color-selected);--background-focused-opacity:1;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:100%;outline:none;background:var(--background);color:var(--color)}.button-native{border-radius:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:100%;height:100%;border:0;outline:none;background:transparent;text-decoration:none;cursor:pointer;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-drag:none}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:inherit;flex-flow:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:100%;height:100%;z-index:1}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}@media (any-hover: hover){a:hover{color:var(--color-selected)}}:host(.tab-selected){color:var(--color-selected)}:host(.tab-hidden){display:none !important}:host(.tab-disabled){pointer-events:none;opacity:0.4}::slotted(ion-label),::slotted(ion-icon){display:block;-ms-flex-item-align:center;align-self:center;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}::slotted(ion-label){-ms-flex-order:0;order:0}::slotted(ion-icon){-ms-flex-order:-1;order:-1;height:1em}:host(.tab-has-label-only) ::slotted(ion-label){white-space:normal}::slotted(ion-badge){-webkit-box-sizing:border-box;box-sizing:border-box;position:absolute;z-index:1}:host(.tab-layout-icon-start){-ms-flex-direction:row;flex-direction:row}:host(.tab-layout-icon-end){-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.tab-layout-icon-bottom){-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.tab-layout-icon-hide) ::slotted(ion-icon){display:none}:host(.tab-layout-label-hide) ::slotted(ion-label){display:none}ion-ripple-effect{color:var(--ripple-color)}:host{--padding-top:0;--padding-end:2px;--padding-bottom:0;--padding-start:2px;max-width:240px;font-size:10px}::slotted(ion-badge){-webkit-padding-start:6px;padding-inline-start:6px;-webkit-padding-end:6px;padding-inline-end:6px;padding-top:1px;padding-bottom:1px;top:4px;height:auto;font-size:12px;line-height:16px}::slotted(ion-badge){inset-inline-start:calc(50% + 6px)}::slotted(ion-icon){margin-top:2px;margin-bottom:2px;font-size:24px}::slotted(ion-icon::before){vertical-align:top}::slotted(ion-label){margin-top:0;margin-bottom:1px;min-height:11px;font-weight:500}:host(.tab-has-label-only) ::slotted(ion-label){margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:12px;font-size:14px;line-height:1.1}:host(.tab-layout-icon-end) ::slotted(ion-label),:host(.tab-layout-icon-start) ::slotted(ion-label),:host(.tab-layout-icon-hide) ::slotted(ion-label){margin-top:2px;margin-bottom:2px;font-size:14px;line-height:1.1}:host(.tab-layout-icon-end) ::slotted(ion-icon),:host(.tab-layout-icon-start) ::slotted(ion-icon){min-width:24px;height:26px;margin-top:2px;margin-bottom:1px;font-size:24px}:host(.tab-layout-icon-bottom) ::slotted(ion-badge){inset-inline-start:calc(50% + 12px)}:host(.tab-layout-icon-bottom) ::slotted(ion-icon){margin-top:0;margin-bottom:1px}:host(.tab-layout-icon-bottom) ::slotted(ion-label){margin-top:4px}:host(.tab-layout-icon-start) ::slotted(ion-badge),:host(.tab-layout-icon-end) ::slotted(ion-badge){top:10px}:host(.tab-layout-icon-start) ::slotted(ion-badge),:host(.tab-layout-icon-end) ::slotted(ion-badge){inset-inline-start:calc(50% + 35px)}:host(.tab-layout-icon-hide) ::slotted(ion-badge),:host(.tab-has-label-only) ::slotted(ion-badge){top:10px}:host(.tab-layout-icon-hide) ::slotted(ion-badge),:host(.tab-has-label-only) ::slotted(ion-badge){inset-inline-start:calc(50% + 30px)}:host(.tab-layout-label-hide) ::slotted(ion-badge),:host(.tab-has-icon-only) ::slotted(ion-badge){top:10px}:host(.tab-layout-label-hide) ::slotted(ion-icon){margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}:host(.tab-layout-label-hide) ::slotted(ion-icon),:host(.tab-has-icon-only) ::slotted(ion-icon){font-size:30px}';
 var tabButtonMdCss = ':host{--ripple-color:var(--color-selected);--background-focused-opacity:1;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:100%;outline:none;background:var(--background);color:var(--color)}.button-native{border-radius:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:-ms-flexbox;display:flex;position:relative;-ms-flex-direction:inherit;flex-direction:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:100%;height:100%;border:0;outline:none;background:transparent;text-decoration:none;cursor:pointer;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-drag:none}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:inherit;flex-flow:inherit;-ms-flex-align:inherit;align-items:inherit;-ms-flex-pack:inherit;justify-content:inherit;width:100%;height:100%;z-index:1}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}@media (any-hover: hover){a:hover{color:var(--color-selected)}}:host(.tab-selected){color:var(--color-selected)}:host(.tab-hidden){display:none !important}:host(.tab-disabled){pointer-events:none;opacity:0.4}::slotted(ion-label),::slotted(ion-icon){display:block;-ms-flex-item-align:center;align-self:center;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}::slotted(ion-label){-ms-flex-order:0;order:0}::slotted(ion-icon){-ms-flex-order:-1;order:-1;height:1em}:host(.tab-has-label-only) ::slotted(ion-label){white-space:normal}::slotted(ion-badge){-webkit-box-sizing:border-box;box-sizing:border-box;position:absolute;z-index:1}:host(.tab-layout-icon-start){-ms-flex-direction:row;flex-direction:row}:host(.tab-layout-icon-end){-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.tab-layout-icon-bottom){-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.tab-layout-icon-hide) ::slotted(ion-icon){display:none}:host(.tab-layout-label-hide) ::slotted(ion-label){display:none}ion-ripple-effect{color:var(--ripple-color)}:host{--padding-top:0;--padding-end:12px;--padding-bottom:0;--padding-start:12px;max-width:168px;font-size:12px;font-weight:normal;letter-spacing:0.03em}::slotted(ion-label){margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;text-transform:none}::slotted(ion-icon){margin-left:0;margin-right:0;margin-top:16px;margin-bottom:16px;-webkit-transform-origin:center center;transform-origin:center center;font-size:22px}:host-context([dir=rtl]) ::slotted(ion-icon){-webkit-transform-origin:calc(100% - center) center;transform-origin:calc(100% - center) center}[dir=rtl] ::slotted(ion-icon){-webkit-transform-origin:calc(100% - center) center;transform-origin:calc(100% - center) center}@supports selector(:dir(rtl)){::slotted(ion-icon):dir(rtl){-webkit-transform-origin:calc(100% - center) center;transform-origin:calc(100% - center) center}}::slotted(ion-badge){border-radius:8px;-webkit-padding-start:2px;padding-inline-start:2px;-webkit-padding-end:2px;padding-inline-end:2px;padding-top:3px;padding-bottom:2px;top:8px;min-width:12px;font-size:8px;font-weight:normal}::slotted(ion-badge){inset-inline-start:calc(50% + 6px)}::slotted(ion-badge:empty){display:block;min-width:8px;height:8px}:host(.tab-layout-icon-top) ::slotted(ion-icon){margin-top:6px;margin-bottom:2px}:host(.tab-layout-icon-top) ::slotted(ion-label){margin-top:0;margin-bottom:6px}:host(.tab-layout-icon-bottom) ::slotted(ion-badge){top:8px}:host(.tab-layout-icon-bottom) ::slotted(ion-badge){inset-inline-start:70%}:host(.tab-layout-icon-bottom) ::slotted(ion-icon){margin-top:0;margin-bottom:6px}:host(.tab-layout-icon-bottom) ::slotted(ion-label){margin-top:6px;margin-bottom:0}:host(.tab-layout-icon-start) ::slotted(ion-badge),:host(.tab-layout-icon-end) ::slotted(ion-badge){top:16px}:host(.tab-layout-icon-start) ::slotted(ion-badge),:host(.tab-layout-icon-end) ::slotted(ion-badge){inset-inline-start:80%}:host(.tab-layout-icon-start) ::slotted(ion-icon){-webkit-margin-end:6px;margin-inline-end:6px}:host(.tab-layout-icon-end) ::slotted(ion-icon){-webkit-margin-start:6px;margin-inline-start:6px}:host(.tab-layout-icon-hide) ::slotted(ion-badge),:host(.tab-has-label-only) ::slotted(ion-badge){top:16px}:host(.tab-layout-icon-hide) ::slotted(ion-badge),:host(.tab-has-label-only) ::slotted(ion-badge){inset-inline-start:70%}:host(.tab-layout-icon-hide) ::slotted(ion-label),:host(.tab-has-label-only) ::slotted(ion-label){margin-top:0;margin-bottom:0}:host(.tab-layout-label-hide) ::slotted(ion-badge),:host(.tab-has-icon-only) ::slotted(ion-badge){top:16px}:host(.tab-layout-label-hide) ::slotted(ion-icon),:host(.tab-has-icon-only) ::slotted(ion-icon){margin-top:0;margin-bottom:0;font-size:24px}';
-var _a83;
-var TabButton = proxyCustomElement((_a83 = class extends H {
+var _a79;
+var TabButton = proxyCustomElement((_a79 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19699,7 +15794,7 @@ var TabButton = proxyCustomElement((_a83 = class extends H {
       md: tabButtonMdCss
     };
   }
-}, __name(_a83, "TabButton"), _a83), [289, "ion-tab-button", {
+}, __name(_a79, "TabButton"), _a79), [289, "ion-tab-button", {
   "disabled": [4],
   "download": [1],
   "href": [1],
@@ -19734,8 +15829,8 @@ var defineCustomElement99 = defineCustomElement$153;
 
 // node_modules/@ionic/core/components/ion-text.js
 var textCss = ":host(.ion-color){color:var(--ion-color-base)}";
-var _a84;
-var Text = proxyCustomElement((_a84 = class extends H {
+var _a80;
+var Text = proxyCustomElement((_a80 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19750,7 +15845,7 @@ var Text = proxyCustomElement((_a84 = class extends H {
   static get style() {
     return textCss;
   }
-}, __name(_a84, "Text"), _a84), [257, "ion-text", {
+}, __name(_a80, "Text"), _a80), [257, "ion-text", {
   "color": [513]
 }]);
 function defineCustomElement$154() {
@@ -19773,8 +15868,8 @@ var defineCustomElement100 = defineCustomElement$154;
 
 // node_modules/@ionic/core/components/ion-thumbnail.js
 var thumbnailCss = ":host{--size:48px;--border-radius:0;border-radius:var(--border-radius);display:block;width:var(--size);height:var(--size)}::slotted(ion-img),::slotted(img){border-radius:var(--border-radius);width:100%;height:100%;-o-object-fit:cover;object-fit:cover;overflow:hidden}";
-var _a85;
-var Thumbnail = proxyCustomElement((_a85 = class extends H {
+var _a81;
+var Thumbnail = proxyCustomElement((_a81 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -19786,7 +15881,7 @@ var Thumbnail = proxyCustomElement((_a85 = class extends H {
   static get style() {
     return thumbnailCss;
   }
-}, __name(_a85, "Thumbnail"), _a85), [257, "ion-thumbnail"]);
+}, __name(_a81, "Thumbnail"), _a81), [257, "ion-thumbnail"]);
 function defineCustomElement$155() {
   if (typeof customElements === "undefined") {
     return;
@@ -19846,7 +15941,7 @@ var getOffsetForMiddlePosition = /* @__PURE__ */ __name((toastHeight, wrapperHei
   return Math.floor(toastHeight / 2 - wrapperHeight / 2);
 }, "getOffsetForMiddlePosition");
 var iosEnterAnimation7 = /* @__PURE__ */ __name((baseEl, opts) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   const { position, top, bottom } = opts;
   const root = getElementRoot(baseEl);
@@ -19865,10 +15960,10 @@ var iosEnterAnimation7 = /* @__PURE__ */ __name((baseEl, opts) => {
       wrapperAnimation.fromTo("transform", "translateY(100%)", `translateY(${bottom})`);
       break;
   }
-  return baseAnimation2.easing("cubic-bezier(.155,1.105,.295,1.12)").duration(400).addAnimation(wrapperAnimation);
+  return baseAnimation.easing("cubic-bezier(.155,1.105,.295,1.12)").duration(400).addAnimation(wrapperAnimation);
 }, "iosEnterAnimation");
 var iosLeaveAnimation7 = /* @__PURE__ */ __name((baseEl, opts) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   const { position, top, bottom } = opts;
   const root = getElementRoot(baseEl);
@@ -19885,10 +15980,10 @@ var iosLeaveAnimation7 = /* @__PURE__ */ __name((baseEl, opts) => {
       wrapperAnimation.fromTo("transform", `translateY(${bottom})`, "translateY(100%)");
       break;
   }
-  return baseAnimation2.easing("cubic-bezier(.36,.66,.04,1)").duration(300).addAnimation(wrapperAnimation);
+  return baseAnimation.easing("cubic-bezier(.36,.66,.04,1)").duration(300).addAnimation(wrapperAnimation);
 }, "iosLeaveAnimation");
 var mdEnterAnimation6 = /* @__PURE__ */ __name((baseEl, opts) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   const { position, top, bottom } = opts;
   const root = getElementRoot(baseEl);
@@ -19909,15 +16004,15 @@ var mdEnterAnimation6 = /* @__PURE__ */ __name((baseEl, opts) => {
       wrapperAnimation.fromTo("opacity", 0.01, 1);
       break;
   }
-  return baseAnimation2.easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation(wrapperAnimation);
+  return baseAnimation.easing("cubic-bezier(.36,.66,.04,1)").duration(400).addAnimation(wrapperAnimation);
 }, "mdEnterAnimation");
 var mdLeaveAnimation6 = /* @__PURE__ */ __name((baseEl) => {
-  const baseAnimation2 = createAnimation();
+  const baseAnimation = createAnimation();
   const wrapperAnimation = createAnimation();
   const root = getElementRoot(baseEl);
   const wrapperEl = root.querySelector(".toast-wrapper");
   wrapperAnimation.addElement(wrapperEl).fromTo("opacity", 0.99, 0);
-  return baseAnimation2.easing("cubic-bezier(.36,.66,.04,1)").duration(300).addAnimation(wrapperAnimation);
+  return baseAnimation.easing("cubic-bezier(.36,.66,.04,1)").duration(300).addAnimation(wrapperAnimation);
 }, "mdLeaveAnimation");
 var createSwipeToDismissGesture = /* @__PURE__ */ __name((el, toastPosition, onDismiss) => {
   const wrapperEl = Build.isTesting ? document.createElement("div") : getElementRoot(el).querySelector(".toast-wrapper");
@@ -20028,8 +16123,8 @@ var createSwipeToDismissGesture = /* @__PURE__ */ __name((el, toastPosition, onD
 }, "createSwipeToDismissGesture");
 var toastIosCss = ":host{--border-width:0;--border-style:none;--border-color:initial;--box-shadow:none;--min-width:auto;--width:auto;--min-height:auto;--height:auto;--max-height:auto;--white-space:normal;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);contain:strict;z-index:1001;pointer-events:none}:host{inset-inline-start:0}:host(.overlay-hidden){display:none}:host(.ion-color){--button-color:inherit;color:var(--ion-color-contrast)}:host(.ion-color) .toast-button-cancel{color:inherit}:host(.ion-color) .toast-wrapper{background:var(--ion-color-base)}.toast-wrapper{border-radius:var(--border-radius);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);pointer-events:auto}.toast-wrapper{inset-inline-start:var(--start);inset-inline-end:var(--end)}.toast-wrapper.toast-top{-webkit-transform:translate3d(0,  -100%,  0);transform:translate3d(0,  -100%,  0);top:0}.toast-wrapper.toast-bottom{-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);bottom:0}.toast-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:inherit;min-height:inherit;max-height:inherit;contain:content}.toast-layout-stacked .toast-container{-ms-flex-wrap:wrap;flex-wrap:wrap}.toast-layout-baseline .toast-content{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.toast-icon{-webkit-margin-start:16px;margin-inline-start:16px}.toast-content{min-width:0}.toast-message{-ms-flex:1;flex:1;white-space:var(--white-space)}.toast-button-group{display:-ms-flexbox;display:flex}.toast-layout-stacked .toast-button-group{-ms-flex-pack:end;justify-content:end;width:100%}.toast-button{border:0;outline:none;color:var(--button-color);z-index:0}.toast-icon,.toast-button-icon{font-size:1.4em}.toast-button-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}@media (any-hover: hover){.toast-button:hover{cursor:pointer}}:host{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--border-radius:14px;--button-color:var(--ion-color-primary, #0054e9);--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));--max-width:700px;--max-height:478px;--start:10px;--end:10px;font-size:clamp(14px, 0.875rem, 43.4px)}.toast-wrapper{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:auto;margin-bottom:auto;display:block;position:absolute;z-index:10}@supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0))){:host(.toast-translucent) .toast-wrapper{background:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}:host(.ion-color.toast-translucent) .toast-wrapper{background:rgba(var(--ion-color-base-rgb), 0.8)}}.toast-wrapper.toast-middle{opacity:0.01}.toast-content{-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px;padding-top:15px;padding-bottom:15px}.toast-header{margin-bottom:2px;font-weight:500}.toast-button{-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px;padding-top:10px;padding-bottom:10px;min-height:44px;-webkit-transition:background-color, opacity 100ms linear;transition:background-color, opacity 100ms linear;border:0;background-color:transparent;font-family:var(--ion-font-family);font-size:clamp(17px, 1.0625rem, 21.998px);font-weight:500;overflow:hidden}.toast-button.ion-activated{opacity:0.4}@media (any-hover: hover){.toast-button:hover{opacity:0.6}}";
 var toastMdCss = ":host{--border-width:0;--border-style:none;--border-color:initial;--box-shadow:none;--min-width:auto;--width:auto;--min-height:auto;--height:auto;--max-height:auto;--white-space:normal;top:0;display:block;position:absolute;width:100%;height:100%;outline:none;color:var(--color);font-family:var(--ion-font-family, inherit);contain:strict;z-index:1001;pointer-events:none}:host{inset-inline-start:0}:host(.overlay-hidden){display:none}:host(.ion-color){--button-color:inherit;color:var(--ion-color-contrast)}:host(.ion-color) .toast-button-cancel{color:inherit}:host(.ion-color) .toast-wrapper{background:var(--ion-color-base)}.toast-wrapper{border-radius:var(--border-radius);width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);pointer-events:auto}.toast-wrapper{inset-inline-start:var(--start);inset-inline-end:var(--end)}.toast-wrapper.toast-top{-webkit-transform:translate3d(0,  -100%,  0);transform:translate3d(0,  -100%,  0);top:0}.toast-wrapper.toast-bottom{-webkit-transform:translate3d(0,  100%,  0);transform:translate3d(0,  100%,  0);bottom:0}.toast-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;height:inherit;min-height:inherit;max-height:inherit;contain:content}.toast-layout-stacked .toast-container{-ms-flex-wrap:wrap;flex-wrap:wrap}.toast-layout-baseline .toast-content{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.toast-icon{-webkit-margin-start:16px;margin-inline-start:16px}.toast-content{min-width:0}.toast-message{-ms-flex:1;flex:1;white-space:var(--white-space)}.toast-button-group{display:-ms-flexbox;display:flex}.toast-layout-stacked .toast-button-group{-ms-flex-pack:end;justify-content:end;width:100%}.toast-button{border:0;outline:none;color:var(--button-color);z-index:0}.toast-icon,.toast-button-icon{font-size:1.4em}.toast-button-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}@media (any-hover: hover){.toast-button:hover{cursor:pointer}}:host{--background:var(--ion-color-step-800, var(--ion-background-color-step-800, #333333));--border-radius:4px;--box-shadow:0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);--button-color:var(--ion-color-primary, #0054e9);--color:var(--ion-color-step-50, var(--ion-text-color-step-950, #f2f2f2));--max-width:700px;--start:8px;--end:8px;font-size:0.875rem}.toast-wrapper{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:auto;margin-bottom:auto;display:block;position:absolute;opacity:0.01;z-index:10}.toast-content{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:14px;padding-bottom:14px}.toast-header{margin-bottom:2px;font-weight:500;line-height:1.25rem}.toast-message{line-height:1.25rem}.toast-layout-baseline .toast-button-group-start{-webkit-margin-start:8px;margin-inline-start:8px}.toast-layout-stacked .toast-button-group-start{-webkit-margin-end:8px;margin-inline-end:8px;margin-top:8px}.toast-layout-baseline .toast-button-group-end{-webkit-margin-end:8px;margin-inline-end:8px}.toast-layout-stacked .toast-button-group-end{-webkit-margin-end:8px;margin-inline-end:8px;margin-bottom:8px}.toast-button{-webkit-padding-start:15px;padding-inline-start:15px;-webkit-padding-end:15px;padding-inline-end:15px;padding-top:10px;padding-bottom:10px;position:relative;background-color:transparent;font-family:var(--ion-font-family);font-size:0.875rem;font-weight:500;letter-spacing:0.84px;text-transform:uppercase;overflow:hidden}.toast-button-cancel{color:var(--ion-color-step-100, var(--ion-text-color-step-900, #e6e6e6))}.toast-button-icon-only{border-radius:50%;-webkit-padding-start:9px;padding-inline-start:9px;-webkit-padding-end:9px;padding-inline-end:9px;padding-top:9px;padding-bottom:9px;width:36px;height:36px}@media (any-hover: hover){.toast-button:hover{background-color:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.08)}.toast-button-cancel:hover{background-color:rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.08)}}";
-var _a86;
-var Toast = proxyCustomElement((_a86 = class extends H {
+var _a82;
+var Toast = proxyCustomElement((_a82 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -20109,8 +16204,8 @@ var Toast = proxyCustomElement((_a86 = class extends H {
     this.triggerController.removeClickListener();
   }
   componentWillLoad() {
-    var _a190;
-    if (!((_a190 = this.htmlAttributes) === null || _a190 === void 0 ? void 0 : _a190.id)) {
+    var _a186;
+    if (!((_a186 = this.htmlAttributes) === null || _a186 === void 0 ? void 0 : _a186.id)) {
       setOverlayId(this.el);
     }
   }
@@ -20160,7 +16255,7 @@ var Toast = proxyCustomElement((_a86 = class extends H {
    */
   dismiss(data, role) {
     return __async(this, null, function* () {
-      var _a190, _b;
+      var _a186, _b;
       const unlock = yield this.lockController.lock();
       const { durationTimeout, position, lastPresentedPosition } = this;
       if (durationTimeout) {
@@ -20180,7 +16275,7 @@ var Toast = proxyCustomElement((_a86 = class extends H {
          */
         {
           position,
-          top: (_a190 = lastPresentedPosition === null || lastPresentedPosition === void 0 ? void 0 : lastPresentedPosition.top) !== null && _a190 !== void 0 ? _a190 : "",
+          top: (_a186 = lastPresentedPosition === null || lastPresentedPosition === void 0 ? void 0 : lastPresentedPosition.top) !== null && _a186 !== void 0 ? _a186 : "",
           bottom: (_b = lastPresentedPosition === null || lastPresentedPosition === void 0 ? void 0 : lastPresentedPosition.bottom) !== null && _b !== void 0 ? _b : ""
         }
       );
@@ -20333,7 +16428,7 @@ var Toast = proxyCustomElement((_a86 = class extends H {
       md: toastMdCss
     };
   }
-}, __name(_a86, "Toast"), _a86), [289, "ion-toast", {
+}, __name(_a82, "Toast"), _a82), [289, "ion-toast", {
   "overlayIndex": [2, "overlay-index"],
   "delegate": [16],
   "hasController": [4, "has-controller"],
@@ -20477,8 +16572,8 @@ var convertToViews = /* @__PURE__ */ __name((pages) => {
   }).filter((v) => v !== null);
 }, "convertToViews");
 var navCss = ":host{left:0;right:0;top:0;bottom:0;position:absolute;contain:layout size style;z-index:0}";
-var _a87;
-var Nav = proxyCustomElement((_a87 = class extends H {
+var _a83;
+var Nav = proxyCustomElement((_a83 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -20528,7 +16623,7 @@ var Nav = proxyCustomElement((_a87 = class extends H {
     return __async(this, null, function* () {
       this.didLoad = true;
       this.rootChanged();
-      this.gesture = (yield import("./swipe-back-I6MCE3N6.js")).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
+      this.gesture = (yield import("./swipe-back-T2ZLW6E4.js")).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
       this.swipeGestureChanged();
     });
   }
@@ -20817,8 +16912,8 @@ var Nav = proxyCustomElement((_a87 = class extends H {
    */
   queueTrns(ti, done) {
     return __async(this, null, function* () {
-      var _a190, _b;
-      if (this.isTransitioning && ((_a190 = ti.opts) === null || _a190 === void 0 ? void 0 : _a190.skipIfBusy)) {
+      var _a186, _b;
+      if (this.isTransitioning && ((_a186 = ti.opts) === null || _a186 === void 0 ? void 0 : _a186.skipIfBusy)) {
         return false;
       }
       const promise = new Promise((resolve, reject) => {
@@ -20941,10 +17036,10 @@ var Nav = proxyCustomElement((_a87 = class extends H {
     });
   }
   prepareTI(ti) {
-    var _a190, _b;
+    var _a186, _b;
     var _c;
     const viewsLength = this.views.length;
-    (_a190 = ti.opts) !== null && _a190 !== void 0 ? _a190 : ti.opts = {};
+    (_a186 = ti.opts) !== null && _a186 !== void 0 ? _a186 : ti.opts = {};
     (_b = (_c = ti.opts).delegate) !== null && _b !== void 0 ? _b : _c.delegate = this.delegate;
     if (ti.removeView !== void 0) {
       assert(ti.removeStart !== void 0, "removeView needs removeStart");
@@ -21025,7 +17120,7 @@ var Nav = proxyCustomElement((_a87 = class extends H {
    * @param ti The instructions.
    */
   postViewInit(enteringView, leavingView, ti) {
-    var _a190, _b, _c;
+    var _a186, _b, _c;
     assert(leavingView || enteringView, "Both leavingView and enteringView are null");
     assert(ti.resolve, "resolve must be valid");
     assert(ti.reject, "reject must be valid");
@@ -21042,7 +17137,7 @@ var Nav = proxyCustomElement((_a87 = class extends H {
           destroyQueue.push(view);
         }
       }
-      (_a190 = opts.direction) !== null && _a190 !== void 0 ? _a190 : opts.direction = "back";
+      (_a186 = opts.direction) !== null && _a186 !== void 0 ? _a186 : opts.direction = "back";
     }
     const finalNumViews = this.views.length + ((_b = insertViews === null || insertViews === void 0 ? void 0 : insertViews.length) !== null && _b !== void 0 ? _b : 0) - (removeCount !== null && removeCount !== void 0 ? removeCount : 0);
     assert(finalNumViews >= 0, "final balance can not be negative");
@@ -21223,7 +17318,7 @@ var Nav = proxyCustomElement((_a87 = class extends H {
   static get style() {
     return navCss;
   }
-}, __name(_a87, "Nav"), _a87), [257, "ion-nav", {
+}, __name(_a83, "Nav"), _a83), [257, "ion-nav", {
   "delegate": [16],
   "swipeGesture": [1028, "swipe-gesture"],
   "animated": [4],
@@ -21353,8 +17448,8 @@ var getHighlightStyles = /* @__PURE__ */ __name((highlightedDates, dateIsoString
   return void 0;
 }, "getHighlightStyles");
 var warnIfTimeZoneProvided = /* @__PURE__ */ __name((el, formatOptions) => {
-  var _a190, _b, _c, _d;
-  if (((_a190 = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) === null || _a190 === void 0 ? void 0 : _a190.timeZone) || ((_b = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) === null || _b === void 0 ? void 0 : _b.timeZoneName) || ((_c = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.time) === null || _c === void 0 ? void 0 : _c.timeZone) || ((_d = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.time) === null || _d === void 0 ? void 0 : _d.timeZoneName)) {
+  var _a186, _b, _c, _d;
+  if (((_a186 = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) === null || _a186 === void 0 ? void 0 : _a186.timeZone) || ((_b = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) === null || _b === void 0 ? void 0 : _b.timeZoneName) || ((_c = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.time) === null || _c === void 0 ? void 0 : _c.timeZone) || ((_d = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.time) === null || _d === void 0 ? void 0 : _d.timeZoneName)) {
     printIonWarning('[ion-datetime] - "timeZone" and "timeZoneName" are not supported in "formatOptions".', el);
   }
 }, "warnIfTimeZoneProvided");
@@ -21385,8 +17480,8 @@ var checkForPresentationFormatMismatch = /* @__PURE__ */ __name((el, presentatio
 }, "checkForPresentationFormatMismatch");
 var datetimeIosCss = ':host{display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column;background:var(--background);overflow:hidden}:host(.datetime-size-fixed){width:auto;height:auto}:host(.datetime-size-fixed:not(.datetime-prefer-wheel)){max-width:350px}:host(.datetime-size-fixed.datetime-prefer-wheel){min-width:350px;max-width:-webkit-max-content;max-width:-moz-max-content;max-width:max-content}:host(.datetime-size-cover){width:100%}:host .calendar-body,:host .datetime-year{opacity:0}:host(:not(.datetime-ready)) .datetime-year{position:absolute;pointer-events:none}:host(.datetime-ready) .calendar-body{opacity:1}:host(.datetime-ready) .datetime-year{display:none;opacity:1}:host .wheel-order-year-first .day-column{-ms-flex-order:3;order:3;text-align:end}:host .wheel-order-year-first .month-column{-ms-flex-order:2;order:2;text-align:end}:host .wheel-order-year-first .year-column{-ms-flex-order:1;order:1;text-align:start}:host .datetime-calendar,:host .datetime-year{display:-ms-flexbox;display:flex;-ms-flex:1 1 auto;flex:1 1 auto;-ms-flex-flow:column;flex-flow:column}:host(.show-month-and-year) .datetime-year{display:-ms-flexbox;display:flex}:host(.show-month-and-year) .calendar-next-prev,:host(.show-month-and-year) .calendar-days-of-week,:host(.show-month-and-year) .calendar-body,:host(.show-month-and-year) .datetime-time{display:none}:host(.month-year-picker-open) .datetime-footer{display:none}:host(.datetime-disabled){pointer-events:none}:host(.datetime-disabled) .calendar-days-of-week,:host(.datetime-disabled) .datetime-time{opacity:0.4}:host(.datetime-readonly){pointer-events:none;}:host(.datetime-readonly) .calendar-action-buttons,:host(.datetime-readonly) .calendar-body,:host(.datetime-readonly) .datetime-year{pointer-events:initial}:host(.datetime-readonly) .calendar-day[disabled]:not(.calendar-day-constrained),:host(.datetime-readonly) .datetime-action-buttons ion-button[disabled]{opacity:1}:host .datetime-header .datetime-title{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host .datetime-action-buttons.has-clear-button{width:100%}:host .datetime-action-buttons ion-buttons{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.datetime-action-buttons .datetime-action-buttons-container{display:-ms-flexbox;display:flex}:host .calendar-action-buttons{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}:host .calendar-action-buttons ion-button{--background:transparent}:host .calendar-days-of-week{display:grid;grid-template-columns:repeat(7, 1fr);text-align:center}.calendar-days-of-week .day-of-week{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0}:host .calendar-body{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1;-webkit-scroll-snap-type:x mandatory;-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory;overflow-x:scroll;overflow-y:hidden;scrollbar-width:none;outline:none}:host .calendar-body .calendar-month{display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column;scroll-snap-align:start;scroll-snap-stop:always;-ms-flex-negative:0;flex-shrink:0;width:100%}:host .calendar-body .calendar-month-disabled{scroll-snap-align:none}:host .calendar-body::-webkit-scrollbar{display:none}:host .calendar-body .calendar-month-grid{display:grid;grid-template-columns:repeat(7, 1fr)}:host .calendar-day-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;min-width:0;min-height:0;overflow:visible}.calendar-day{border-radius:50%;-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:0px;padding-bottom:0px;-webkit-margin-start:0px;margin-inline-start:0px;-webkit-margin-end:0px;margin-inline-end:0px;margin-top:0px;margin-bottom:0px;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;border:none;outline:none;background:none;color:currentColor;font-family:var(--ion-font-family, inherit);cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;z-index:0}:host .calendar-day[disabled]{pointer-events:none;opacity:0.4}.calendar-day:not(.calendar-day-adjacent-day):focus{background:rgba(var(--ion-color-base-rgb), 0.2);-webkit-box-shadow:0px 0px 0px 4px rgba(var(--ion-color-base-rgb), 0.2);box-shadow:0px 0px 0px 4px rgba(var(--ion-color-base-rgb), 0.2)}:host .datetime-time{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}:host(.datetime-presentation-time) .datetime-time{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}:host ion-popover{--height:200px}:host .time-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}:host .time-body{border-radius:8px;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:6px;padding-bottom:6px;display:-ms-flexbox;display:flex;border:none;background:var(--ion-color-step-300, var(--ion-background-color-step-300, #edeef0));color:var(--ion-text-color, #000);font-family:inherit;font-size:inherit;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}:host .time-body-active{color:var(--ion-color-base)}:host(.in-item){position:static}:host(.show-month-and-year) .calendar-action-buttons .calendar-month-year-toggle{color:var(--ion-color-base)}.calendar-month-year{min-width:0}.calendar-month-year-toggle{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;position:relative;border:0;outline:none;background:transparent;cursor:pointer;z-index:1}.calendar-month-year-toggle::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0;-webkit-transition:opacity 15ms linear, background-color 15ms linear;transition:opacity 15ms linear, background-color 15ms linear;z-index:-1}.calendar-month-year-toggle.ion-focused::after{background:currentColor}.calendar-month-year-toggle:disabled{opacity:0.3;pointer-events:none}.calendar-month-year-toggle ion-icon{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:0;padding-inline-end:0;padding-top:0;padding-bottom:0;-ms-flex-negative:0;flex-shrink:0}.calendar-month-year-toggle #toggle-wrapper{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}ion-picker{--highlight-background:var(--wheel-highlight-background);--highlight-border-radius:var(--wheel-highlight-border-radius);--fade-background-rgb:var(--wheel-fade-background-rgb)}:host{--background:var(--ion-color-light, #f4f5f8);--background-rgb:var(--ion-color-light-rgb, 244, 245, 248);--title-color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666))}:host(.datetime-presentation-date-time:not(.datetime-prefer-wheel)),:host(.datetime-presentation-time-date:not(.datetime-prefer-wheel)),:host(.datetime-presentation-date:not(.datetime-prefer-wheel)){min-height:350px}:host .datetime-header{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:16px;padding-bottom:16px;border-bottom:0.55px solid var(--ion-color-step-200, var(--ion-background-color-step-200, #cccccc));font-size:min(0.875rem, 22.4px)}:host .datetime-header .datetime-title{color:var(--title-color)}:host .datetime-header .datetime-selected-date{margin-top:10px}.calendar-month-year-toggle{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:0px;padding-bottom:0px;min-height:44px;font-size:min(1rem, 25.6px);font-weight:600}.calendar-month-year-toggle.ion-focused::after{opacity:0.15}.calendar-month-year-toggle #toggle-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px;margin-top:10px;margin-bottom:10px}:host .calendar-action-buttons .calendar-month-year-toggle ion-icon,:host .calendar-action-buttons ion-buttons ion-button{color:var(--ion-color-base)}:host .calendar-action-buttons ion-buttons{padding-left:0;padding-right:0;padding-top:8px;padding-bottom:0}:host .calendar-action-buttons ion-buttons ion-button{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}:host .calendar-days-of-week{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:0;padding-bottom:0;color:var(--ion-color-step-300, var(--ion-text-color-step-700, #b3b3b3));font-size:min(0.75rem, 19.2px);font-weight:600;line-height:24px;text-transform:uppercase}@supports (border-radius: mod(1px, 1px)){.calendar-days-of-week .day-of-week{width:clamp(20px, calc(mod(min(1rem, 24px), 24px) * 10), 100%);height:24px;overflow:hidden}.calendar-day{border-radius:max(8px, mod(min(1rem, 24px), 24px) * 10)}}@supports ((border-radius: mod(1px, 1px)) and (background: -webkit-named-image(apple-pay-logo-black)) and (not (contain-intrinsic-size: none))) or (not (border-radius: mod(1px, 1px))){.calendar-days-of-week .day-of-week{width:auto;height:auto;overflow:initial}.calendar-day{border-radius:32px}}:host .calendar-body .calendar-month .calendar-month-grid{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:8px;padding-bottom:8px;-ms-flex-align:center;align-items:center;height:calc(100% - 16px)}:host .calendar-day-wrapper{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:4px;padding-inline-end:4px;padding-top:4px;padding-bottom:4px;height:0;min-height:1rem}:host .calendar-day{width:40px;min-width:40px;height:40px;font-size:min(1.25rem, 32px)}.calendar-day.calendar-day-active{background:rgba(var(--ion-color-base-rgb), 0.2);font-size:min(1.375rem, 35.2px)}:host .calendar-day.calendar-day-today{color:var(--ion-color-base)}:host .calendar-day.calendar-day-active,:host .calendar-day.calendar-day-adjacent-day.calendar-day-active{color:var(--ion-color-base);font-weight:600}:host .calendar-day.calendar-day-today.calendar-day-active{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host .calendar-day.calendar-day-adjacent-day{color:var(--ion-color-step-300, var(--ion-text-color-step-700, #b3b3b3))}:host .datetime-time{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:8px;padding-bottom:16px;font-size:min(1rem, 25.6px)}:host .datetime-time .time-header{font-weight:600}:host .datetime-buttons{-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:8px;padding-bottom:8px;border-top:0.55px solid var(--ion-color-step-200, var(--ion-background-color-step-200, #cccccc))}:host .datetime-buttons ::slotted(ion-buttons),:host .datetime-buttons ion-buttons{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}:host .datetime-action-buttons{width:100%}';
 var datetimeMdCss = ':host{display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column;background:var(--background);overflow:hidden}:host(.datetime-size-fixed){width:auto;height:auto}:host(.datetime-size-fixed:not(.datetime-prefer-wheel)){max-width:350px}:host(.datetime-size-fixed.datetime-prefer-wheel){min-width:350px;max-width:-webkit-max-content;max-width:-moz-max-content;max-width:max-content}:host(.datetime-size-cover){width:100%}:host .calendar-body,:host .datetime-year{opacity:0}:host(:not(.datetime-ready)) .datetime-year{position:absolute;pointer-events:none}:host(.datetime-ready) .calendar-body{opacity:1}:host(.datetime-ready) .datetime-year{display:none;opacity:1}:host .wheel-order-year-first .day-column{-ms-flex-order:3;order:3;text-align:end}:host .wheel-order-year-first .month-column{-ms-flex-order:2;order:2;text-align:end}:host .wheel-order-year-first .year-column{-ms-flex-order:1;order:1;text-align:start}:host .datetime-calendar,:host .datetime-year{display:-ms-flexbox;display:flex;-ms-flex:1 1 auto;flex:1 1 auto;-ms-flex-flow:column;flex-flow:column}:host(.show-month-and-year) .datetime-year{display:-ms-flexbox;display:flex}:host(.show-month-and-year) .calendar-next-prev,:host(.show-month-and-year) .calendar-days-of-week,:host(.show-month-and-year) .calendar-body,:host(.show-month-and-year) .datetime-time{display:none}:host(.month-year-picker-open) .datetime-footer{display:none}:host(.datetime-disabled){pointer-events:none}:host(.datetime-disabled) .calendar-days-of-week,:host(.datetime-disabled) .datetime-time{opacity:0.4}:host(.datetime-readonly){pointer-events:none;}:host(.datetime-readonly) .calendar-action-buttons,:host(.datetime-readonly) .calendar-body,:host(.datetime-readonly) .datetime-year{pointer-events:initial}:host(.datetime-readonly) .calendar-day[disabled]:not(.calendar-day-constrained),:host(.datetime-readonly) .datetime-action-buttons ion-button[disabled]{opacity:1}:host .datetime-header .datetime-title{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host .datetime-action-buttons.has-clear-button{width:100%}:host .datetime-action-buttons ion-buttons{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.datetime-action-buttons .datetime-action-buttons-container{display:-ms-flexbox;display:flex}:host .calendar-action-buttons{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}:host .calendar-action-buttons ion-button{--background:transparent}:host .calendar-days-of-week{display:grid;grid-template-columns:repeat(7, 1fr);text-align:center}.calendar-days-of-week .day-of-week{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0}:host .calendar-body{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1;-webkit-scroll-snap-type:x mandatory;-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory;overflow-x:scroll;overflow-y:hidden;scrollbar-width:none;outline:none}:host .calendar-body .calendar-month{display:-ms-flexbox;display:flex;-ms-flex-flow:column;flex-flow:column;scroll-snap-align:start;scroll-snap-stop:always;-ms-flex-negative:0;flex-shrink:0;width:100%}:host .calendar-body .calendar-month-disabled{scroll-snap-align:none}:host .calendar-body::-webkit-scrollbar{display:none}:host .calendar-body .calendar-month-grid{display:grid;grid-template-columns:repeat(7, 1fr)}:host .calendar-day-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;min-width:0;min-height:0;overflow:visible}.calendar-day{border-radius:50%;-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:0px;padding-bottom:0px;-webkit-margin-start:0px;margin-inline-start:0px;-webkit-margin-end:0px;margin-inline-end:0px;margin-top:0px;margin-bottom:0px;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;border:none;outline:none;background:none;color:currentColor;font-family:var(--ion-font-family, inherit);cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;z-index:0}:host .calendar-day[disabled]{pointer-events:none;opacity:0.4}.calendar-day:not(.calendar-day-adjacent-day):focus{background:rgba(var(--ion-color-base-rgb), 0.2);-webkit-box-shadow:0px 0px 0px 4px rgba(var(--ion-color-base-rgb), 0.2);box-shadow:0px 0px 0px 4px rgba(var(--ion-color-base-rgb), 0.2)}:host .datetime-time{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}:host(.datetime-presentation-time) .datetime-time{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}:host ion-popover{--height:200px}:host .time-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}:host .time-body{border-radius:8px;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:6px;padding-bottom:6px;display:-ms-flexbox;display:flex;border:none;background:var(--ion-color-step-300, var(--ion-background-color-step-300, #edeef0));color:var(--ion-text-color, #000);font-family:inherit;font-size:inherit;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}:host .time-body-active{color:var(--ion-color-base)}:host(.in-item){position:static}:host(.show-month-and-year) .calendar-action-buttons .calendar-month-year-toggle{color:var(--ion-color-base)}.calendar-month-year{min-width:0}.calendar-month-year-toggle{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;position:relative;border:0;outline:none;background:transparent;cursor:pointer;z-index:1}.calendar-month-year-toggle::after{left:0;right:0;top:0;bottom:0;position:absolute;content:"";opacity:0;-webkit-transition:opacity 15ms linear, background-color 15ms linear;transition:opacity 15ms linear, background-color 15ms linear;z-index:-1}.calendar-month-year-toggle.ion-focused::after{background:currentColor}.calendar-month-year-toggle:disabled{opacity:0.3;pointer-events:none}.calendar-month-year-toggle ion-icon{-webkit-padding-start:4px;padding-inline-start:4px;-webkit-padding-end:0;padding-inline-end:0;padding-top:0;padding-bottom:0;-ms-flex-negative:0;flex-shrink:0}.calendar-month-year-toggle #toggle-wrapper{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}ion-picker{--highlight-background:var(--wheel-highlight-background);--highlight-border-radius:var(--wheel-highlight-border-radius);--fade-background-rgb:var(--wheel-fade-background-rgb)}:host{--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #ffffff));--title-color:var(--ion-color-contrast)}:host .datetime-header{-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:20px;padding-inline-end:20px;padding-top:20px;padding-bottom:20px;background:var(--ion-color-base);color:var(--title-color)}:host .datetime-header .datetime-title{font-size:0.75rem;text-transform:uppercase}:host .datetime-header .datetime-selected-date{margin-top:30px;font-size:2.125rem}:host .calendar-action-buttons ion-button{--color:var(--ion-color-step-650, var(--ion-text-color-step-350, #595959))}.calendar-month-year-toggle{-webkit-padding-start:20px;padding-inline-start:20px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:12px;padding-bottom:12px;min-height:48px;background:transparent;color:var(--ion-color-step-650, var(--ion-text-color-step-350, #595959));z-index:1}.calendar-month-year-toggle.ion-focused::after{opacity:0.04}.calendar-month-year-toggle ion-ripple-effect{color:currentColor}@media (any-hover: hover){.calendar-month-year-toggle.ion-activatable:not(.ion-focused):hover::after{background:currentColor;opacity:0.04}}:host .calendar-days-of-week{-webkit-padding-start:10px;padding-inline-start:10px;-webkit-padding-end:10px;padding-inline-end:10px;padding-top:0px;padding-bottom:0px;color:var(--ion-color-step-500, var(--ion-text-color-step-500, gray));font-size:0.875rem;line-height:36px}:host .calendar-body .calendar-month .calendar-month-grid{-webkit-padding-start:10px;padding-inline-start:10px;-webkit-padding-end:10px;padding-inline-end:10px;padding-top:4px;padding-bottom:4px;grid-template-rows:repeat(6, 1fr)}:host .calendar-day{width:42px;min-width:42px;height:42px;font-size:0.875rem}:host .calendar-day.calendar-day-today{border:1px solid var(--ion-color-base);color:var(--ion-color-base)}:host .calendar-day.calendar-day-active,:host .calendar-day.calendar-day-adjacent-day.calendar-day-active{color:var(--ion-color-contrast)}.calendar-day.calendar-day-active,.calendar-day.calendar-day-active:focus{border:1px solid var(--ion-color-base);background:var(--ion-color-base)}:host .calendar-day.calendar-day-adjacent-day{color:var(--ion-color-step-500, var(--ion-text-color-step-500, gray))}:host .datetime-time{-webkit-padding-start:16px;padding-inline-start:16px;-webkit-padding-end:16px;padding-inline-end:16px;padding-top:8px;padding-bottom:8px}:host .time-header{color:var(--ion-color-step-650, var(--ion-text-color-step-350, #595959))}:host(.datetime-presentation-month) .datetime-year,:host(.datetime-presentation-year) .datetime-year,:host(.datetime-presentation-month-year) .datetime-year{margin-top:20px;margin-bottom:20px}:host .datetime-buttons{-webkit-padding-start:10px;padding-inline-start:10px;-webkit-padding-end:10px;padding-inline-end:10px;padding-top:10px;padding-bottom:10px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:end;justify-content:flex-end}';
-var _a88;
-var Datetime = proxyCustomElement((_a88 = class extends H {
+var _a84;
+var Datetime = proxyCustomElement((_a84 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -21444,9 +17539,9 @@ var Datetime = proxyCustomElement((_a88 = class extends H {
       this.ionChange.emit({ value });
     };
     this.getActivePartsWithFallback = () => {
-      var _a190;
+      var _a186;
       const { defaultParts } = this;
-      return (_a190 = this.getActivePart()) !== null && _a190 !== void 0 ? _a190 : defaultParts;
+      return (_a186 = this.getActivePart()) !== null && _a186 !== void 0 ? _a186 : defaultParts;
     };
     this.getActivePart = () => {
       const { activeParts } = this;
@@ -21492,9 +17587,9 @@ var Datetime = proxyCustomElement((_a88 = class extends H {
       const root = this.el.shadowRoot;
       const currentMonth = calendarBodyRef.querySelector(".calendar-month:nth-of-type(2)");
       const checkCalendarBodyFocus = /* @__PURE__ */ __name((ev) => {
-        var _a190;
+        var _a186;
         const record = ev[0];
-        if (((_a190 = record.oldValue) === null || _a190 === void 0 ? void 0 : _a190.includes("ion-focused")) || !calendarBodyRef.classList.contains("ion-focused")) {
+        if (((_a186 = record.oldValue) === null || _a186 === void 0 ? void 0 : _a186.includes("ion-focused")) || !calendarBodyRef.classList.contains("ion-focused")) {
           return;
         }
         this.focusWorkingDay(currentMonth);
@@ -22115,13 +18210,13 @@ var Datetime = proxyCustomElement((_a88 = class extends H {
     return renderArray;
   }
   renderDayPickerColumn(days) {
-    var _a190;
+    var _a186;
     if (days.length === 0) {
       return [];
     }
     const { disabled, workingParts } = this;
     const activePart = this.getActivePartsWithFallback();
-    const pickerColumnValue = (_a190 = workingParts.day !== null ? workingParts.day : this.defaultParts.day) !== null && _a190 !== void 0 ? _a190 : void 0;
+    const pickerColumnValue = (_a186 = workingParts.day !== null ? workingParts.day : this.defaultParts.day) !== null && _a186 !== void 0 ? _a186 : void 0;
     return h("ion-picker-column", { "aria-label": "Select a day", class: "day-column", color: this.color, disabled, value: pickerColumnValue, onIonChange: /* @__PURE__ */ __name((ev) => {
       this.setWorkingParts(Object.assign(Object.assign({}, workingParts), { day: ev.detail.value }));
       this.setActiveParts(Object.assign(Object.assign({}, activePart), { day: ev.detail.value }));
@@ -22408,7 +18503,7 @@ var Datetime = proxyCustomElement((_a88 = class extends H {
     ];
   }
   getHeaderSelectedDateText() {
-    var _a190;
+    var _a186;
     const { activeParts, formatOptions, multiple, titleSelectedDatesFormatter } = this;
     const isArray = Array.isArray(activeParts);
     let headerText;
@@ -22422,7 +18517,7 @@ var Datetime = proxyCustomElement((_a88 = class extends H {
         }
       }
     } else {
-      headerText = getLocalizedDateTime(this.locale, this.getActivePartsWithFallback(), (_a190 = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) !== null && _a190 !== void 0 ? _a190 : { weekday: "short", month: "short", day: "numeric" });
+      headerText = getLocalizedDateTime(this.locale, this.getActivePartsWithFallback(), (_a186 = formatOptions === null || formatOptions === void 0 ? void 0 : formatOptions.date) !== null && _a186 !== void 0 ? _a186 : { weekday: "short", month: "short", day: "numeric" });
     }
     return headerText;
   }
@@ -22543,7 +18638,7 @@ var Datetime = proxyCustomElement((_a88 = class extends H {
       md: datetimeMdCss
     };
   }
-}, __name(_a88, "Datetime"), _a88), [289, "ion-datetime", {
+}, __name(_a84, "Datetime"), _a84), [289, "ion-datetime", {
   "color": [1],
   "name": [1],
   "disabled": [4],
@@ -22767,8 +18862,8 @@ var isComplexType = /* @__PURE__ */ __name((o) => {
   return o === "object" || o === "function";
 }, "isComplexType");
 function queryNonceMetaTagContent(doc2) {
-  var _a190, _b, _c;
-  return (_c = (_b = (_a190 = doc2.head) == null ? void 0 : _a190.querySelector('meta[name="csp-nonce"]')) == null ? void 0 : _b.getAttribute("content")) != null ? _c : void 0;
+  var _a186, _b, _c;
+  return (_c = (_b = (_a186 = doc2.head) == null ? void 0 : _a186.querySelector('meta[name="csp-nonce"]')) == null ? void 0 : _b.getAttribute("content")) != null ? _c : void 0;
 }
 __name(queryNonceMetaTagContent, "queryNonceMetaTagContent");
 var escapeRegExpSpecialCharacters = /* @__PURE__ */ __name((text) => {
@@ -22828,9 +18923,9 @@ function createStyleSheetIfNeededAndSupported(styles2) {
 __name(createStyleSheetIfNeededAndSupported, "createStyleSheetIfNeededAndSupported");
 var globalStyleSheet;
 function createShadowRoot(cmpMeta) {
-  var _a190;
+  var _a186;
   const shadowRoot = this.attachShadow({ mode: "open" });
-  if (globalStyleSheet === void 0) globalStyleSheet = (_a190 = createStyleSheetIfNeededAndSupported()) != null ? _a190 : null;
+  if (globalStyleSheet === void 0) globalStyleSheet = (_a186 = createStyleSheetIfNeededAndSupported()) != null ? _a186 : null;
   if (globalStyleSheet) shadowRoot.adoptedStyleSheets.push(globalStyleSheet);
 }
 __name(createShadowRoot, "createShadowRoot");
@@ -22857,7 +18952,7 @@ var registerStyle = /* @__PURE__ */ __name((scopeId2, cssText, allowCS) => {
   styles.set(scopeId2, style);
 }, "registerStyle");
 var addStyle = /* @__PURE__ */ __name((styleContainerNode, cmpMeta, mode) => {
-  var _a190;
+  var _a186;
   const scopeId2 = getScopeId(cmpMeta);
   const style = styles.get(scopeId2);
   if (!win3.document) {
@@ -22876,7 +18971,7 @@ var addStyle = /* @__PURE__ */ __name((styleContainerNode, cmpMeta, mode) => {
         {
           styleElm = win3.document.createElement("style");
           styleElm.innerHTML = style;
-          const nonce = (_a190 = plt.$nonce$) != null ? _a190 : queryNonceMetaTagContent(win3.document);
+          const nonce = (_a186 = plt.$nonce$) != null ? _a186 : queryNonceMetaTagContent(win3.document);
           if (nonce != null) {
             styleElm.setAttribute("nonce", nonce);
           }
@@ -23457,7 +19552,7 @@ var enqueue = /* @__PURE__ */ __name((maybePromise, fn) => isPromisey(maybePromi
 }) : fn(), "enqueue");
 var isPromisey = /* @__PURE__ */ __name((maybePromise) => maybePromise instanceof Promise || maybePromise && maybePromise.then && typeof maybePromise.then === "function", "isPromisey");
 var updateComponent = /* @__PURE__ */ __name((hostRef, instance, isInitialLoad) => __async(null, null, function* () {
-  var _a190;
+  var _a186;
   const elm = hostRef.$hostElement$;
   const endUpdate = createTime("update", hostRef.$cmpMeta$.$tagName$);
   const rc = elm["s-rc"];
@@ -23475,7 +19570,7 @@ var updateComponent = /* @__PURE__ */ __name((hostRef, instance, isInitialLoad) 
   endRender();
   endUpdate();
   {
-    const childrenPromises = (_a190 = elm["s-p"]) != null ? _a190 : [];
+    const childrenPromises = (_a186 = elm["s-p"]) != null ? _a186 : [];
     const postUpdate = /* @__PURE__ */ __name(() => postUpdateComponent(hostRef), "postUpdate");
     if (childrenPromises.length === 0) {
       postUpdate();
@@ -23556,8 +19651,8 @@ var safeCall2 = /* @__PURE__ */ __name((instance, method, arg, elm) => {
   return void 0;
 }, "safeCall");
 var addHydratedFlag = /* @__PURE__ */ __name((elm) => {
-  var _a190;
-  return elm.classList.add((_a190 = BUILD.hydratedSelectorName) != null ? _a190 : "hydrated");
+  var _a186;
+  return elm.classList.add((_a186 = BUILD.hydratedSelectorName) != null ? _a186 : "hydrated");
 }, "addHydratedFlag");
 var getValue = /* @__PURE__ */ __name((ref, propName) => getHostRef(ref).$instanceValues$.get(propName), "getValue");
 var setValue = /* @__PURE__ */ __name((ref, propName, newVal, cmpMeta) => {
@@ -23599,13 +19694,13 @@ var setValue = /* @__PURE__ */ __name((ref, propName, newVal, cmpMeta) => {
   }
 }, "setValue");
 var proxyComponent = /* @__PURE__ */ __name((Cstr, cmpMeta, flags) => {
-  var _a190, _b;
+  var _a186, _b;
   const prototype = Cstr.prototype;
   if (cmpMeta.$members$ || (cmpMeta.$watchers$ || Cstr.watchers)) {
     if (Cstr.watchers && !cmpMeta.$watchers$) {
       cmpMeta.$watchers$ = Cstr.watchers;
     }
-    const members = Object.entries((_a190 = cmpMeta.$members$) != null ? _a190 : {});
+    const members = Object.entries((_a186 = cmpMeta.$members$) != null ? _a186 : {});
     members.map(([memberName, [memberFlags]]) => {
       if (memberFlags & 31 || memberFlags & 32) {
         const { get: origGetter, set: origSetter } = Object.getOwnPropertyDescriptor(prototype, memberName) || {};
@@ -23855,7 +19950,7 @@ var getIconMap2 = /* @__PURE__ */ __name(() => {
     return CACHED_MAP2;
   }
 }, "getIconMap");
-var getUrl3 = /* @__PURE__ */ __name((i) => {
+var getUrl2 = /* @__PURE__ */ __name((i) => {
   let url = getSrc2(i.src);
   if (url) {
     return url;
@@ -24036,8 +20131,8 @@ function fetchSvg2(url, sanitize) {
 }
 __name(fetchSvg2, "fetchSvg");
 var iconCss2 = ":host{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;box-sizing:content-box !important}:host .ionicon{stroke:currentColor}.ionicon-fill-none{fill:none}.ionicon-stroke-width{stroke-width:var(--ionicon-stroke-width, 32px)}.icon-inner,.ionicon,svg{display:block;height:100%;width:100%}@supports (background: -webkit-named-image(i)){:host(.icon-rtl) .icon-inner{transform:scaleX(-1)}}@supports not selector(:dir(rtl)) and selector(:host-context([dir='rtl'])){:host(.icon-rtl) .icon-inner{transform:scaleX(-1)}}:host(.flip-rtl):host-context([dir='rtl']) .icon-inner{transform:scaleX(-1)}@supports selector(:dir(rtl)){:host(.flip-rtl:dir(rtl)) .icon-inner{transform:scaleX(-1)}:host(.flip-rtl:dir(ltr)) .icon-inner{transform:scaleX(1)}}:host(.icon-small){font-size:1.125rem !important}:host(.icon-large){font-size:2rem !important}:host(.ion-color){color:var(--ion-color-base) !important}:host(.ion-color-primary){--ion-color-base:var(--ion-color-primary, #3880ff)}:host(.ion-color-secondary){--ion-color-base:var(--ion-color-secondary, #0cd1e8)}:host(.ion-color-tertiary){--ion-color-base:var(--ion-color-tertiary, #f4a942)}:host(.ion-color-success){--ion-color-base:var(--ion-color-success, #10dc60)}:host(.ion-color-warning){--ion-color-base:var(--ion-color-warning, #ffce00)}:host(.ion-color-danger){--ion-color-base:var(--ion-color-danger, #f14141)}:host(.ion-color-light){--ion-color-base:var(--ion-color-light, #f4f5f8)}:host(.ion-color-medium){--ion-color-base:var(--ion-color-medium, #989aa2)}:host(.ion-color-dark){--ion-color-base:var(--ion-color-dark, #222428)}";
-var _a89;
-var Icon2 = proxyCustomElement2((_a89 = class extends H2 {
+var _a85;
+var Icon2 = proxyCustomElement2((_a85 = class extends H2 {
   constructor() {
     super();
     this.__registerHost();
@@ -24102,7 +20197,7 @@ var Icon2 = proxyCustomElement2((_a89 = class extends H2 {
    */
   loadIcon() {
     if (this.isVisible) {
-      const url = getUrl3(this);
+      const url = getUrl2(this);
       if (url) {
         if (ioniconContent2.has(url)) {
           this.svgContent = ioniconContent2.get(url);
@@ -24139,7 +20234,7 @@ var Icon2 = proxyCustomElement2((_a89 = class extends H2 {
   static get style() {
     return iconCss2;
   }
-}, __name(_a89, "Icon"), _a89), [1, "ion-icon", {
+}, __name(_a85, "Icon"), _a85), [1, "ion-icon", {
   "mode": [1025],
   "color": [1],
   "ios": [1],
@@ -24311,7 +20406,7 @@ var createSlotMutationController = /* @__PURE__ */ __name((el, slotName, mutatio
     });
   }
   const watchForSlotChange = /* @__PURE__ */ __name((slottedEl) => {
-    var _a190;
+    var _a186;
     if (slottedContentMutationObserver) {
       slottedContentMutationObserver.disconnect();
       slottedContentMutationObserver = void 0;
@@ -24326,7 +20421,7 @@ var createSlotMutationController = /* @__PURE__ */ __name((el, slotName, mutatio
         }
       }
     });
-    slottedContentMutationObserver.observe((_a190 = slottedEl.parentElement) !== null && _a190 !== void 0 ? _a190 : slottedEl, { subtree: true, childList: true });
+    slottedContentMutationObserver.observe((_a186 = slottedEl.parentElement) !== null && _a186 !== void 0 ? _a186 : slottedEl, { subtree: true, childList: true });
   }, "watchForSlotChange");
   const destroy = /* @__PURE__ */ __name(() => {
     if (hostMutationObserver) {
@@ -24365,8 +20460,8 @@ var defaultCounterFormatter = /* @__PURE__ */ __name((length, maxlength) => {
 // node_modules/@ionic/core/components/ion-input.js
 var inputIosCss = ".sc-ion-input-ios-h{--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);--padding-top:0px;--padding-end:0px;--padding-bottom:0px;--padding-start:0px;--background:transparent;--color:initial;--border-style:solid;--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;width:100%;min-height:44px;padding:0 !important;color:var(--color);font-family:var(--ion-font-family, inherit);z-index:2}ion-item[slot=start].sc-ion-input-ios-h,ion-item [slot=start].sc-ion-input-ios-h,ion-item[slot=end].sc-ion-input-ios-h,ion-item [slot=end].sc-ion-input-ios-h{width:auto}.ion-color.sc-ion-input-ios-h{--highlight-color-focused:var(--ion-color-base)}.input-label-placement-floating.sc-ion-input-ios-h,.input-label-placement-stacked.sc-ion-input-ios-h{min-height:56px}.native-input.sc-ion-input-ios{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:inline-block;position:relative;-ms-flex:1;flex:1;width:100%;max-width:100%;height:100%;max-height:100%;border:0;outline:none;background:transparent;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;z-index:1}.native-input.sc-ion-input-ios::-webkit-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-ios::-moz-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-ios:-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-ios::-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-ios::placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-ios:-webkit-autofill{background-color:transparent}.native-input.sc-ion-input-ios:invalid{-webkit-box-shadow:none;box-shadow:none}.native-input.sc-ion-input-ios::-ms-clear{display:none}.cloned-input.sc-ion-input-ios{top:0;bottom:0;position:absolute;pointer-events:none}.cloned-input.sc-ion-input-ios{inset-inline-start:0}.cloned-input.sc-ion-input-ios:disabled{opacity:1}.input-clear-icon.sc-ion-input-ios{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:auto;margin-bottom:auto;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;background-position:center;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:30px;height:30px;border:0;outline:none;background-color:transparent;background-repeat:no-repeat;color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));visibility:hidden;-webkit-appearance:none;-moz-appearance:none;appearance:none}.in-item-color.sc-ion-input-ios-h .input-clear-icon.sc-ion-input-ios{color:inherit}.input-clear-icon.sc-ion-input-ios:focus{opacity:0.5}.has-value.sc-ion-input-ios-h .input-clear-icon.sc-ion-input-ios{visibility:visible}.input-wrapper.sc-ion-input-ios{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:stretch;align-items:stretch;height:inherit;min-height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;background:var(--background);line-height:normal}.native-wrapper.sc-ion-input-ios{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;width:100%}.ion-touched.ion-invalid.sc-ion-input-ios-h{--highlight-color:var(--highlight-color-invalid)}.ion-valid.sc-ion-input-ios-h{--highlight-color:var(--highlight-color-valid)}.input-bottom.sc-ion-input-ios{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:5px;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;border-top:var(--border-width) var(--border-style) var(--border-color);font-size:0.75rem;white-space:normal}.has-focus.ion-valid.sc-ion-input-ios-h,.ion-touched.ion-invalid.sc-ion-input-ios-h{--border-color:var(--highlight-color)}.input-bottom.sc-ion-input-ios .error-text.sc-ion-input-ios{display:none;color:var(--highlight-color-invalid)}.input-bottom.sc-ion-input-ios .helper-text.sc-ion-input-ios{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}.ion-touched.ion-invalid.sc-ion-input-ios-h .input-bottom.sc-ion-input-ios .error-text.sc-ion-input-ios{display:block}.ion-touched.ion-invalid.sc-ion-input-ios-h .input-bottom.sc-ion-input-ios .helper-text.sc-ion-input-ios{display:none}.input-bottom.sc-ion-input-ios .counter.sc-ion-input-ios{-webkit-margin-start:auto;margin-inline-start:auto;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d));white-space:nowrap;-webkit-padding-start:16px;padding-inline-start:16px}.has-focus.sc-ion-input-ios-h input.sc-ion-input-ios{caret-color:var(--highlight-color)}.label-text-wrapper.sc-ion-input-ios{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;max-width:200px;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none}.label-text.sc-ion-input-ios,.sc-ion-input-ios-s>[slot=label]{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden.sc-ion-input-ios,.input-outline-notch-hidden.sc-ion-input-ios{display:none}.input-wrapper.sc-ion-input-ios input.sc-ion-input-ios{-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)}.input-label-placement-start.sc-ion-input-ios-h .input-wrapper.sc-ion-input-ios{-ms-flex-direction:row;flex-direction:row}.input-label-placement-start.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.input-label-placement-end.sc-ion-input-ios-h .input-wrapper.sc-ion-input-ios{-ms-flex-direction:row-reverse;flex-direction:row-reverse}.input-label-placement-end.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}.input-label-placement-fixed.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.input-label-placement-fixed.sc-ion-input-ios-h .label-text.sc-ion-input-ios{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.input-label-placement-stacked.sc-ion-input-ios-h .input-wrapper.sc-ion-input-ios,.input-label-placement-floating.sc-ion-input-ios-h .input-wrapper.sc-ion-input-ios{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:start}.input-label-placement-stacked.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,.input-label-placement-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-transform-origin:left top;transform-origin:left top;max-width:100%;z-index:2}[dir=rtl].sc-ion-input-ios-h -no-combinator.input-label-placement-stacked.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl] .sc-ion-input-ios-h -no-combinator.input-label-placement-stacked.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl].input-label-placement-stacked.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl] .input-label-placement-stacked.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl].sc-ion-input-ios-h -no-combinator.input-label-placement-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl] .sc-ion-input-ios-h -no-combinator.input-label-placement-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl].input-label-placement-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios,[dir=rtl] .input-label-placement-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.input-label-placement-stacked.sc-ion-input-ios-h:dir(rtl) .label-text-wrapper.sc-ion-input-ios,.input-label-placement-floating.sc-ion-input-ios-h:dir(rtl) .label-text-wrapper.sc-ion-input-ios{-webkit-transform-origin:right top;transform-origin:right top}}.input-label-placement-stacked.sc-ion-input-ios-h input.sc-ion-input-ios,.input-label-placement-floating.sc-ion-input-ios-h input.sc-ion-input-ios{margin-left:0;margin-right:0;margin-top:1px;margin-bottom:0}.input-label-placement-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-transform:translateY(100%) scale(1);transform:translateY(100%) scale(1)}.input-label-placement-floating.sc-ion-input-ios-h input.sc-ion-input-ios{opacity:0}.has-focus.input-label-placement-floating.sc-ion-input-ios-h input.sc-ion-input-ios,.has-value.input-label-placement-floating.sc-ion-input-ios-h input.sc-ion-input-ios{opacity:1}.label-floating.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);max-width:calc(100% / 0.75)}.sc-ion-input-ios-s>[slot=start]:last-of-type{-webkit-margin-end:16px;margin-inline-end:16px;-webkit-margin-start:0;margin-inline-start:0}.sc-ion-input-ios-s>[slot=end]:first-of-type{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}.sc-ion-input-ios-h[disabled].sc-ion-input-ios-s>ion-input-password-toggle,.sc-ion-input-ios-h[disabled] .sc-ion-input-ios-s>ion-input-password-toggle,.sc-ion-input-ios-h[readonly].sc-ion-input-ios-s>ion-input-password-toggle,.sc-ion-input-ios-h[readonly] .sc-ion-input-ios-s>ion-input-password-toggle{visibility:hidden}.sc-ion-input-ios-h{--border-width:0.55px;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));--highlight-height:0px;font-size:inherit}.input-clear-icon.sc-ion-input-ios ion-icon.sc-ion-input-ios{width:18px;height:18px}.input-disabled.sc-ion-input-ios-h{opacity:0.3}.sc-ion-input-ios-s>ion-button[slot=start].button-has-icon-only,.sc-ion-input-ios-s>ion-button[slot=end].button-has-icon-only{--border-radius:50%;--padding-start:0;--padding-end:0;--padding-top:0;--padding-bottom:0;aspect-ratio:1}";
 var inputMdCss = ".sc-ion-input-md-h{--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);--padding-top:0px;--padding-end:0px;--padding-bottom:0px;--padding-start:0px;--background:transparent;--color:initial;--border-style:solid;--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;width:100%;min-height:44px;padding:0 !important;color:var(--color);font-family:var(--ion-font-family, inherit);z-index:2}ion-item[slot=start].sc-ion-input-md-h,ion-item [slot=start].sc-ion-input-md-h,ion-item[slot=end].sc-ion-input-md-h,ion-item [slot=end].sc-ion-input-md-h{width:auto}.ion-color.sc-ion-input-md-h{--highlight-color-focused:var(--ion-color-base)}.input-label-placement-floating.sc-ion-input-md-h,.input-label-placement-stacked.sc-ion-input-md-h{min-height:56px}.native-input.sc-ion-input-md{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:inline-block;position:relative;-ms-flex:1;flex:1;width:100%;max-width:100%;height:100%;max-height:100%;border:0;outline:none;background:transparent;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;z-index:1}.native-input.sc-ion-input-md::-webkit-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-md::-moz-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-md:-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-md::-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-md::placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-input.sc-ion-input-md:-webkit-autofill{background-color:transparent}.native-input.sc-ion-input-md:invalid{-webkit-box-shadow:none;box-shadow:none}.native-input.sc-ion-input-md::-ms-clear{display:none}.cloned-input.sc-ion-input-md{top:0;bottom:0;position:absolute;pointer-events:none}.cloned-input.sc-ion-input-md{inset-inline-start:0}.cloned-input.sc-ion-input-md:disabled{opacity:1}.input-clear-icon.sc-ion-input-md{-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:auto;margin-bottom:auto;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;background-position:center;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:30px;height:30px;border:0;outline:none;background-color:transparent;background-repeat:no-repeat;color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));visibility:hidden;-webkit-appearance:none;-moz-appearance:none;appearance:none}.in-item-color.sc-ion-input-md-h .input-clear-icon.sc-ion-input-md{color:inherit}.input-clear-icon.sc-ion-input-md:focus{opacity:0.5}.has-value.sc-ion-input-md-h .input-clear-icon.sc-ion-input-md{visibility:visible}.input-wrapper.sc-ion-input-md{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:stretch;align-items:stretch;height:inherit;min-height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;background:var(--background);line-height:normal}.native-wrapper.sc-ion-input-md{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;width:100%}.ion-touched.ion-invalid.sc-ion-input-md-h{--highlight-color:var(--highlight-color-invalid)}.ion-valid.sc-ion-input-md-h{--highlight-color:var(--highlight-color-valid)}.input-bottom.sc-ion-input-md{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:5px;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;border-top:var(--border-width) var(--border-style) var(--border-color);font-size:0.75rem;white-space:normal}.has-focus.ion-valid.sc-ion-input-md-h,.ion-touched.ion-invalid.sc-ion-input-md-h{--border-color:var(--highlight-color)}.input-bottom.sc-ion-input-md .error-text.sc-ion-input-md{display:none;color:var(--highlight-color-invalid)}.input-bottom.sc-ion-input-md .helper-text.sc-ion-input-md{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}.ion-touched.ion-invalid.sc-ion-input-md-h .input-bottom.sc-ion-input-md .error-text.sc-ion-input-md{display:block}.ion-touched.ion-invalid.sc-ion-input-md-h .input-bottom.sc-ion-input-md .helper-text.sc-ion-input-md{display:none}.input-bottom.sc-ion-input-md .counter.sc-ion-input-md{-webkit-margin-start:auto;margin-inline-start:auto;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d));white-space:nowrap;-webkit-padding-start:16px;padding-inline-start:16px}.has-focus.sc-ion-input-md-h input.sc-ion-input-md{caret-color:var(--highlight-color)}.label-text-wrapper.sc-ion-input-md{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;max-width:200px;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none}.label-text.sc-ion-input-md,.sc-ion-input-md-s>[slot=label]{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden.sc-ion-input-md,.input-outline-notch-hidden.sc-ion-input-md{display:none}.input-wrapper.sc-ion-input-md input.sc-ion-input-md{-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)}.input-label-placement-start.sc-ion-input-md-h .input-wrapper.sc-ion-input-md{-ms-flex-direction:row;flex-direction:row}.input-label-placement-start.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.input-label-placement-end.sc-ion-input-md-h .input-wrapper.sc-ion-input-md{-ms-flex-direction:row-reverse;flex-direction:row-reverse}.input-label-placement-end.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}.input-label-placement-fixed.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.input-label-placement-fixed.sc-ion-input-md-h .label-text.sc-ion-input-md{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.input-label-placement-stacked.sc-ion-input-md-h .input-wrapper.sc-ion-input-md,.input-label-placement-floating.sc-ion-input-md-h .input-wrapper.sc-ion-input-md{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:start}.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform-origin:left top;transform-origin:left top;max-width:100%;z-index:2}[dir=rtl].sc-ion-input-md-h -no-combinator.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .sc-ion-input-md-h -no-combinator.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl].input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl].sc-ion-input-md-h -no-combinator.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .sc-ion-input-md-h -no-combinator.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl].input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.input-label-placement-stacked.sc-ion-input-md-h:dir(rtl) .label-text-wrapper.sc-ion-input-md,.input-label-placement-floating.sc-ion-input-md-h:dir(rtl) .label-text-wrapper.sc-ion-input-md{-webkit-transform-origin:right top;transform-origin:right top}}.input-label-placement-stacked.sc-ion-input-md-h input.sc-ion-input-md,.input-label-placement-floating.sc-ion-input-md-h input.sc-ion-input-md{margin-left:0;margin-right:0;margin-top:1px;margin-bottom:0}.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform:translateY(100%) scale(1);transform:translateY(100%) scale(1)}.input-label-placement-floating.sc-ion-input-md-h input.sc-ion-input-md{opacity:0}.has-focus.input-label-placement-floating.sc-ion-input-md-h input.sc-ion-input-md,.has-value.input-label-placement-floating.sc-ion-input-md-h input.sc-ion-input-md{opacity:1}.label-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);max-width:calc(100% / 0.75)}.sc-ion-input-md-s>[slot=start]:last-of-type{-webkit-margin-end:16px;margin-inline-end:16px;-webkit-margin-start:0;margin-inline-start:0}.sc-ion-input-md-s>[slot=end]:first-of-type{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}.sc-ion-input-md-h[disabled].sc-ion-input-md-s>ion-input-password-toggle,.sc-ion-input-md-h[disabled] .sc-ion-input-md-s>ion-input-password-toggle,.sc-ion-input-md-h[readonly].sc-ion-input-md-s>ion-input-password-toggle,.sc-ion-input-md-h[readonly] .sc-ion-input-md-s>ion-input-password-toggle{visibility:hidden}.input-fill-solid.sc-ion-input-md-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--border-color:var(--ion-color-step-500, var(--ion-background-color-step-500, gray));--border-radius:4px;--padding-start:16px;--padding-end:16px;min-height:56px}.input-fill-solid.sc-ion-input-md-h .input-wrapper.sc-ion-input-md{border-bottom:var(--border-width) var(--border-style) var(--border-color)}.has-focus.input-fill-solid.ion-valid.sc-ion-input-md-h,.input-fill-solid.ion-touched.ion-invalid.sc-ion-input-md-h{--border-color:var(--highlight-color)}.input-fill-solid.sc-ion-input-md-h .input-bottom.sc-ion-input-md{border-top:none}@media (any-hover: hover){.input-fill-solid.sc-ion-input-md-h:hover{--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6));--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}}.input-fill-solid.has-focus.sc-ion-input-md-h{--background:var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}.input-fill-solid.sc-ion-input-md-h .input-wrapper.sc-ion-input-md{border-start-start-radius:var(--border-radius);border-start-end-radius:var(--border-radius);border-end-end-radius:0px;border-end-start-radius:0px}.label-floating.input-fill-solid.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{max-width:calc(100% / 0.75)}.input-fill-outline.sc-ion-input-md-h{--border-color:var(--ion-color-step-300, var(--ion-background-color-step-300, #b3b3b3));--border-radius:4px;--padding-start:16px;--padding-end:16px;min-height:56px}.input-fill-outline.input-shape-round.sc-ion-input-md-h{--border-radius:28px;--padding-start:32px;--padding-end:32px}.has-focus.input-fill-outline.ion-valid.sc-ion-input-md-h,.input-fill-outline.ion-touched.ion-invalid.sc-ion-input-md-h{--border-color:var(--highlight-color)}@media (any-hover: hover){.input-fill-outline.sc-ion-input-md-h:hover{--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}}.input-fill-outline.has-focus.sc-ion-input-md-h{--border-width:var(--highlight-height);--border-color:var(--highlight-color)}.input-fill-outline.sc-ion-input-md-h .input-bottom.sc-ion-input-md{border-top:none}.input-fill-outline.sc-ion-input-md-h .input-wrapper.sc-ion-input-md{border-bottom:none}.input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,.input-fill-outline.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform-origin:left top;transform-origin:left top;position:absolute;max-width:calc(100% - var(--padding-start) - var(--padding-end))}[dir=rtl].sc-ion-input-md-h -no-combinator.input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .sc-ion-input-md-h -no-combinator.input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl].input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl].sc-ion-input-md-h -no-combinator.input-fill-outline.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .sc-ion-input-md-h -no-combinator.input-fill-outline.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl].input-fill-outline.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,[dir=rtl] .input-fill-outline.input-label-placement-floating.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h:dir(rtl) .label-text-wrapper.sc-ion-input-md,.input-fill-outline.input-label-placement-floating.sc-ion-input-md-h:dir(rtl) .label-text-wrapper.sc-ion-input-md{-webkit-transform-origin:right top;transform-origin:right top}}.input-fill-outline.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{position:relative}.label-floating.input-fill-outline.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{-webkit-transform:translateY(-32%) scale(0.75);transform:translateY(-32%) scale(0.75);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;max-width:calc((100% - var(--padding-start) - var(--padding-end) - 8px) / 0.75)}.input-fill-outline.input-label-placement-stacked.sc-ion-input-md-h input.sc-ion-input-md,.input-fill-outline.input-label-placement-floating.sc-ion-input-md-h input.sc-ion-input-md{margin-left:0;margin-right:0;margin-top:6px;margin-bottom:6px}.input-fill-outline.sc-ion-input-md-h .input-outline-container.sc-ion-input-md{left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;width:100%;height:100%}.input-fill-outline.sc-ion-input-md-h .input-outline-start.sc-ion-input-md,.input-fill-outline.sc-ion-input-md-h .input-outline-end.sc-ion-input-md{pointer-events:none}.input-fill-outline.sc-ion-input-md-h .input-outline-start.sc-ion-input-md,.input-fill-outline.sc-ion-input-md-h .input-outline-notch.sc-ion-input-md,.input-fill-outline.sc-ion-input-md-h .input-outline-end.sc-ion-input-md{border-top:var(--border-width) var(--border-style) var(--border-color);border-bottom:var(--border-width) var(--border-style) var(--border-color)}.input-fill-outline.sc-ion-input-md-h .input-outline-notch.sc-ion-input-md{max-width:calc(100% - var(--padding-start) - var(--padding-end))}.input-fill-outline.sc-ion-input-md-h .notch-spacer.sc-ion-input-md{-webkit-padding-end:8px;padding-inline-end:8px;font-size:calc(1em * 0.75);opacity:0;pointer-events:none;-webkit-box-sizing:content-box;box-sizing:content-box}.input-fill-outline.sc-ion-input-md-h .input-outline-start.sc-ion-input-md{border-start-start-radius:var(--border-radius);border-start-end-radius:0px;border-end-end-radius:0px;border-end-start-radius:var(--border-radius);-webkit-border-start:var(--border-width) var(--border-style) var(--border-color);border-inline-start:var(--border-width) var(--border-style) var(--border-color);width:calc(var(--padding-start) - 4px)}.input-fill-outline.sc-ion-input-md-h .input-outline-end.sc-ion-input-md{-webkit-border-end:var(--border-width) var(--border-style) var(--border-color);border-inline-end:var(--border-width) var(--border-style) var(--border-color);border-start-start-radius:0px;border-start-end-radius:var(--border-radius);border-end-end-radius:var(--border-radius);border-end-start-radius:0px;-ms-flex-positive:1;flex-grow:1}.label-floating.input-fill-outline.sc-ion-input-md-h .input-outline-notch.sc-ion-input-md{border-top:none}.sc-ion-input-md-h{--border-width:1px;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));--highlight-height:2px;font-size:inherit}.input-clear-icon.sc-ion-input-md ion-icon.sc-ion-input-md{width:22px;height:22px}.input-disabled.sc-ion-input-md-h{opacity:0.38}.has-focus.ion-valid.sc-ion-input-md-h,.ion-touched.ion-invalid.sc-ion-input-md-h{--border-color:var(--highlight-color)}.input-bottom.sc-ion-input-md .counter.sc-ion-input-md{letter-spacing:0.0333333333em}.input-label-placement-floating.has-focus.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,.input-label-placement-stacked.has-focus.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{color:var(--highlight-color)}.has-focus.input-label-placement-floating.ion-valid.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,.input-label-placement-floating.ion-touched.ion-invalid.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,.has-focus.input-label-placement-stacked.ion-valid.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md,.input-label-placement-stacked.ion-touched.ion-invalid.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md{color:var(--highlight-color)}.input-highlight.sc-ion-input-md{bottom:-1px;position:absolute;width:100%;height:var(--highlight-height);-webkit-transform:scale(0);transform:scale(0);-webkit-transition:-webkit-transform 200ms;transition:-webkit-transform 200ms;transition:transform 200ms;transition:transform 200ms, -webkit-transform 200ms;background:var(--highlight-color)}.input-highlight.sc-ion-input-md{inset-inline-start:0}.has-focus.sc-ion-input-md-h .input-highlight.sc-ion-input-md{-webkit-transform:scale(1);transform:scale(1)}.in-item.sc-ion-input-md-h .input-highlight.sc-ion-input-md{bottom:0}.in-item.sc-ion-input-md-h .input-highlight.sc-ion-input-md{inset-inline-start:0}.input-shape-round.sc-ion-input-md-h{--border-radius:16px}.sc-ion-input-md-s>ion-button[slot=start].button-has-icon-only,.sc-ion-input-md-s>ion-button[slot=end].button-has-icon-only{--border-radius:50%;--padding-start:8px;--padding-end:8px;--padding-top:8px;--padding-bottom:8px;aspect-ratio:1;min-height:40px}";
-var _a90;
-var Input2 = proxyCustomElement((_a90 = class extends H {
+var _a86;
+var Input = proxyCustomElement((_a86 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -24509,8 +20604,8 @@ var Input2 = proxyCustomElement((_a90 = class extends H {
     this.debounceChanged();
   }
   componentDidRender() {
-    var _a190;
-    (_a190 = this.notchController) === null || _a190 === void 0 ? void 0 : _a190.calculateNotchWidth();
+    var _a186;
+    (_a186 = this.notchController) === null || _a186 === void 0 ? void 0 : _a186.calculateNotchWidth();
   }
   disconnectedCallback() {
     if (Build.isBrowser) {
@@ -24726,7 +20821,7 @@ var Input2 = proxyCustomElement((_a90 = class extends H {
       md: inputMdCss
     };
   }
-}, __name(_a90, "Input"), _a90), [294, "ion-input", {
+}, __name(_a86, "Input"), _a86), [294, "ion-input", {
   "color": [513],
   "autocapitalize": [1],
   "autocomplete": [1],
@@ -24780,7 +20875,7 @@ function defineCustomElement$160() {
     switch (tagName) {
       case "ion-input":
         if (!customElements.get(tagName)) {
-          customElements.define(tagName, Input2);
+          customElements.define(tagName, Input);
         }
         break;
       case "ion-icon":
@@ -24797,8 +20892,8 @@ var defineCustomElement109 = defineCustomElement$160;
 // node_modules/@ionic/core/components/ion-input-otp.js
 var inputOtpIosCss = ".sc-ion-input-otp-ios-h{--margin-top:0;--margin-end:0;--margin-bottom:0;--margin-start:0;--padding-top:16px;--padding-end:0;--padding-bottom:16px;--padding-start:0;--color:initial;--min-width:40px;--separator-width:8px;--separator-height:var(--separator-width);--separator-border-radius:999px;--separator-color:var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;font-size:0.875rem}.input-otp-group.sc-ion-input-otp-ios{-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.native-wrapper.sc-ion-input-otp-ios{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;min-width:var(--min-width)}.native-input.sc-ion-input-otp-ios{border-radius:var(--border-radius);width:var(--width);min-width:inherit;height:var(--height);border-width:var(--border-width);border-style:solid;border-color:var(--border-color);background:var(--background);color:var(--color);font-size:inherit;text-align:center;-webkit-appearance:none;-moz-appearance:none;appearance:none}.has-focus.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios{caret-color:var(--highlight-color)}.input-otp-description.sc-ion-input-otp-ios{color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d));font-size:0.75rem;line-height:1.25rem;text-align:center}.input-otp-description-hidden.sc-ion-input-otp-ios{display:none}.input-otp-separator.sc-ion-input-otp-ios{border-radius:var(--separator-border-radius);-ms-flex-negative:0;flex-shrink:0;width:var(--separator-width);height:var(--separator-height);background:var(--separator-color)}.input-otp-size-small.sc-ion-input-otp-ios-h{--width:40px;--height:40px}.input-otp-size-small.sc-ion-input-otp-ios-h .input-otp-group.sc-ion-input-otp-ios{gap:8px}.input-otp-size-medium.sc-ion-input-otp-ios-h{--width:48px;--height:48px}.input-otp-size-large.sc-ion-input-otp-ios-h{--width:56px;--height:56px}.input-otp-size-medium.sc-ion-input-otp-ios-h .input-otp-group.sc-ion-input-otp-ios,.input-otp-size-large.sc-ion-input-otp-ios-h .input-otp-group.sc-ion-input-otp-ios{gap:12px}.input-otp-shape-round.sc-ion-input-otp-ios-h{--border-radius:16px}.input-otp-shape-soft.sc-ion-input-otp-ios-h{--border-radius:8px}.input-otp-shape-rectangular.sc-ion-input-otp-ios-h{--border-radius:0}.input-otp-fill-outline.sc-ion-input-otp-ios-h{--background:none}.input-otp-fill-solid.sc-ion-input-otp-ios-h{--border-color:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2))}.input-otp-disabled.sc-ion-input-otp-ios-h{--color:var(--ion-color-step-350, var(--ion-text-color-step-650, #a6a6a6))}.input-otp-fill-outline.input-otp-disabled.sc-ion-input-otp-ios-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--border-color:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.input-otp-disabled.sc-ion-input-otp-ios-h,.input-otp-disabled.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios:disabled{cursor:not-allowed}.has-focus.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios:focus{--border-color:var(--highlight-color);outline:none}.input-otp-fill-outline.input-otp-readonly.sc-ion-input-otp-ios-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2))}.input-otp-fill-solid.input-otp-disabled.sc-ion-input-otp-ios-h,.input-otp-fill-solid.input-otp-readonly.sc-ion-input-otp-ios-h{--border-color:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6));--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.ion-touched.ion-invalid.sc-ion-input-otp-ios-h{--highlight-color:var(--highlight-color-invalid)}.ion-valid.sc-ion-input-otp-ios-h{--highlight-color:var(--highlight-color-valid)}.has-focus.ion-valid.sc-ion-input-otp-ios-h,.ion-touched.ion-invalid.sc-ion-input-otp-ios-h{--border-color:var(--highlight-color)}.ion-color.sc-ion-input-otp-ios-h{--highlight-color-focused:var(--ion-color-base)}.input-otp-fill-outline.ion-color.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-solid.ion-color.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios:focus{border-color:rgba(var(--ion-color-base-rgb), 0.6)}.input-otp-fill-outline.ion-color.ion-invalid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-solid.ion-color.ion-invalid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-outline.ion-color.has-focus.ion-invalid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-solid.ion-color.has-focus.ion-invalid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios{border-color:var(--ion-color-danger, #c5000f)}.input-otp-fill-outline.ion-color.ion-valid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-solid.ion-color.ion-valid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-outline.ion-color.has-focus.ion-valid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios,.input-otp-fill-solid.ion-color.has-focus.ion-valid.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios{border-color:var(--ion-color-success, #2dd55b)}.input-otp-fill-outline.input-otp-disabled.ion-color.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios{border-color:rgba(var(--ion-color-base-rgb), 0.3)}.sc-ion-input-otp-ios-h{--border-width:0.55px}.has-focus.sc-ion-input-otp-ios-h .native-input.sc-ion-input-otp-ios:focus{--border-width:1px}.input-otp-fill-outline.sc-ion-input-otp-ios-h{--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))))}";
 var inputOtpMdCss = ".sc-ion-input-otp-md-h{--margin-top:0;--margin-end:0;--margin-bottom:0;--margin-start:0;--padding-top:16px;--padding-end:0;--padding-bottom:16px;--padding-start:0;--color:initial;--min-width:40px;--separator-width:8px;--separator-height:var(--separator-width);--separator-border-radius:999px;--separator-color:var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;font-size:0.875rem}.input-otp-group.sc-ion-input-otp-md{-webkit-margin-start:var(--margin-start);margin-inline-start:var(--margin-start);-webkit-margin-end:var(--margin-end);margin-inline-end:var(--margin-end);margin-top:var(--margin-top);margin-bottom:var(--margin-bottom);-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.native-wrapper.sc-ion-input-otp-md{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;min-width:var(--min-width)}.native-input.sc-ion-input-otp-md{border-radius:var(--border-radius);width:var(--width);min-width:inherit;height:var(--height);border-width:var(--border-width);border-style:solid;border-color:var(--border-color);background:var(--background);color:var(--color);font-size:inherit;text-align:center;-webkit-appearance:none;-moz-appearance:none;appearance:none}.has-focus.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md{caret-color:var(--highlight-color)}.input-otp-description.sc-ion-input-otp-md{color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d));font-size:0.75rem;line-height:1.25rem;text-align:center}.input-otp-description-hidden.sc-ion-input-otp-md{display:none}.input-otp-separator.sc-ion-input-otp-md{border-radius:var(--separator-border-radius);-ms-flex-negative:0;flex-shrink:0;width:var(--separator-width);height:var(--separator-height);background:var(--separator-color)}.input-otp-size-small.sc-ion-input-otp-md-h{--width:40px;--height:40px}.input-otp-size-small.sc-ion-input-otp-md-h .input-otp-group.sc-ion-input-otp-md{gap:8px}.input-otp-size-medium.sc-ion-input-otp-md-h{--width:48px;--height:48px}.input-otp-size-large.sc-ion-input-otp-md-h{--width:56px;--height:56px}.input-otp-size-medium.sc-ion-input-otp-md-h .input-otp-group.sc-ion-input-otp-md,.input-otp-size-large.sc-ion-input-otp-md-h .input-otp-group.sc-ion-input-otp-md{gap:12px}.input-otp-shape-round.sc-ion-input-otp-md-h{--border-radius:16px}.input-otp-shape-soft.sc-ion-input-otp-md-h{--border-radius:8px}.input-otp-shape-rectangular.sc-ion-input-otp-md-h{--border-radius:0}.input-otp-fill-outline.sc-ion-input-otp-md-h{--background:none}.input-otp-fill-solid.sc-ion-input-otp-md-h{--border-color:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2))}.input-otp-disabled.sc-ion-input-otp-md-h{--color:var(--ion-color-step-350, var(--ion-text-color-step-650, #a6a6a6))}.input-otp-fill-outline.input-otp-disabled.sc-ion-input-otp-md-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--border-color:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.input-otp-disabled.sc-ion-input-otp-md-h,.input-otp-disabled.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md:disabled{cursor:not-allowed}.has-focus.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md:focus{--border-color:var(--highlight-color);outline:none}.input-otp-fill-outline.input-otp-readonly.sc-ion-input-otp-md-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2))}.input-otp-fill-solid.input-otp-disabled.sc-ion-input-otp-md-h,.input-otp-fill-solid.input-otp-readonly.sc-ion-input-otp-md-h{--border-color:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6));--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6))}.ion-touched.ion-invalid.sc-ion-input-otp-md-h{--highlight-color:var(--highlight-color-invalid)}.ion-valid.sc-ion-input-otp-md-h{--highlight-color:var(--highlight-color-valid)}.has-focus.ion-valid.sc-ion-input-otp-md-h,.ion-touched.ion-invalid.sc-ion-input-otp-md-h{--border-color:var(--highlight-color)}.ion-color.sc-ion-input-otp-md-h{--highlight-color-focused:var(--ion-color-base)}.input-otp-fill-outline.ion-color.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-solid.ion-color.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md:focus{border-color:rgba(var(--ion-color-base-rgb), 0.6)}.input-otp-fill-outline.ion-color.ion-invalid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-solid.ion-color.ion-invalid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-outline.ion-color.has-focus.ion-invalid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-solid.ion-color.has-focus.ion-invalid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md{border-color:var(--ion-color-danger, #c5000f)}.input-otp-fill-outline.ion-color.ion-valid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-solid.ion-color.ion-valid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-outline.ion-color.has-focus.ion-valid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md,.input-otp-fill-solid.ion-color.has-focus.ion-valid.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md{border-color:var(--ion-color-success, #2dd55b)}.input-otp-fill-outline.input-otp-disabled.ion-color.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md{border-color:rgba(var(--ion-color-base-rgb), 0.3)}.sc-ion-input-otp-md-h{--border-width:1px}.has-focus.sc-ion-input-otp-md-h .native-input.sc-ion-input-otp-md:focus{--border-width:2px}.input-otp-fill-outline.sc-ion-input-otp-md-h{--border-color:var(--ion-color-step-300, var(--ion-background-color-step-300, #b3b3b3))}";
-var _a91;
-var InputOTP = proxyCustomElement((_a91 = class extends H {
+var _a87;
+var InputOTP = proxyCustomElement((_a87 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -24825,7 +20920,7 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
     this.type = "number";
     this.value = "";
     this.onFocus = (index) => (event) => {
-      var _a190;
+      var _a186;
       const { inputRefs } = this;
       if (!this.hasFocus) {
         this.ionFocus.emit(event);
@@ -24836,7 +20931,7 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
       if (!this.isKeyboardNavigation) {
         const targetIndex = this.inputValues[index] ? index : this.getFirstEmptyIndex();
         finalIndex = targetIndex === -1 ? this.length - 1 : targetIndex;
-        (_a190 = this.inputRefs[finalIndex]) === null || _a190 === void 0 ? void 0 : _a190.focus();
+        (_a186 = this.inputRefs[finalIndex]) === null || _a186 === void 0 ? void 0 : _a186.focus();
       }
       inputRefs.forEach((input, i) => {
         input.tabIndex = i === finalIndex ? 0 : -1;
@@ -24897,7 +20992,7 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
       }
     };
     this.onInput = (index) => (event) => {
-      var _a190, _b;
+      var _a186, _b;
       const { length, validKeyPattern } = this;
       const input = event.target;
       const value = input.value;
@@ -24918,9 +21013,9 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
         }
         this.updateValue(event);
         setTimeout(() => {
-          var _a191;
+          var _a187;
           const nextIndex = validChars.length < length ? validChars.length : length - 1;
-          (_a191 = this.inputRefs[nextIndex]) === null || _a191 === void 0 ? void 0 : _a191.focus();
+          (_a187 = this.inputRefs[nextIndex]) === null || _a187 === void 0 ? void 0 : _a187.focus();
         }, 20);
         this.previousInputValues = [...this.inputValues];
         return;
@@ -24961,7 +21056,7 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
         this.previousInputValues = [...this.inputValues];
         return;
       }
-      const cursorPos = (_a190 = input.selectionStart) !== null && _a190 !== void 0 ? _a190 : value.length;
+      const cursorPos = (_a186 = input.selectionStart) !== null && _a186 !== void 0 ? _a186 : value.length;
       const newCharIndex = cursorPos - 1;
       const newChar = (_b = value[newCharIndex]) !== null && _b !== void 0 ? _b : value[0];
       if (!validKeyPattern.test(newChar)) {
@@ -24975,10 +21070,10 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
       this.previousInputValues = [...this.inputValues];
     };
     this.onPaste = (event) => {
-      var _a190, _b;
+      var _a186, _b;
       const { inputRefs, length, validKeyPattern } = this;
       event.preventDefault();
-      const pastedText = (_a190 = event.clipboardData) === null || _a190 === void 0 ? void 0 : _a190.getData("text");
+      const pastedText = (_a186 = event.clipboardData) === null || _a186 === void 0 ? void 0 : _a186.getData("text");
       if (!pastedText) {
         this.emitIonInput(event);
         return;
@@ -25004,10 +21099,10 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
    */
   setFocus(index) {
     return __async(this, null, function* () {
-      var _a190, _b;
+      var _a186, _b;
       if (typeof index === "number") {
         const validIndex = Math.max(0, Math.min(index, this.length - 1));
-        (_a190 = this.inputRefs[validIndex]) === null || _a190 === void 0 ? void 0 : _a190.focus();
+        (_a186 = this.inputRefs[validIndex]) === null || _a186 === void 0 ? void 0 : _a186.focus();
       } else {
         const tabbableIndex = this.getTabbableIndex();
         (_b = this.inputRefs[tabbableIndex]) === null || _b === void 0 ? void 0 : _b.focus();
@@ -25161,20 +21256,20 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
    * Focuses the next input box.
    */
   focusNext(currentIndex) {
-    var _a190;
+    var _a186;
     const { inputRefs, length } = this;
     if (currentIndex < length - 1) {
-      (_a190 = inputRefs[currentIndex + 1]) === null || _a190 === void 0 ? void 0 : _a190.focus();
+      (_a186 = inputRefs[currentIndex + 1]) === null || _a186 === void 0 ? void 0 : _a186.focus();
     }
   }
   /**
    * Focuses the previous input box.
    */
   focusPrevious(currentIndex) {
-    var _a190;
+    var _a186;
     const { inputRefs } = this;
     if (currentIndex > 0) {
-      (_a190 = inputRefs[currentIndex - 1]) === null || _a190 === void 0 ? void 0 : _a190.focus();
+      (_a186 = inputRefs[currentIndex - 1]) === null || _a186 === void 0 ? void 0 : _a186.focus();
     }
   }
   /**
@@ -25183,10 +21278,10 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
    * Returns -1 if all inputs are filled.
    */
   getFirstEmptyIndex() {
-    var _a190;
+    var _a186;
     const { inputValues, length } = this;
     const values = Array.from({ length }, (_, i) => inputValues[i] || "");
-    return (_a190 = values.findIndex((value) => !value || value === "")) !== null && _a190 !== void 0 ? _a190 : -1;
+    return (_a186 = values.findIndex((value) => !value || value === "")) !== null && _a186 !== void 0 ? _a186 : -1;
   }
   /**
    * Returns the index of the input that should be tabbed to.
@@ -25228,13 +21323,13 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
     return this.parsedSeparators.includes(index + 1) && index < length - 1;
   }
   render() {
-    var _a190, _b;
+    var _a186, _b;
     const { autocapitalize, color, disabled, el, fill, hasFocus, inheritedAttributes, inputId, inputRefs, inputValues, length, readonly, shape, size } = this;
     const mode = getIonMode(this);
     const inputmode = this.getInputmode();
     const tabbableIndex = this.getTabbableIndex();
     const pattern = this.getPattern();
-    const hasDescription = ((_b = (_a190 = el.querySelector(".input-otp-description")) === null || _a190 === void 0 ? void 0 : _a190.textContent) === null || _b === void 0 ? void 0 : _b.trim()) !== "";
+    const hasDescription = ((_b = (_a186 = el.querySelector(".input-otp-description")) === null || _a186 === void 0 ? void 0 : _a186.textContent) === null || _b === void 0 ? void 0 : _b.trim()) !== "";
     return h(Host, { key: "f15a29fb17b681ef55885ca36d3d5f899cbaca83", class: createColorClasses(color, {
       [mode]: true,
       "has-focus": hasFocus,
@@ -25264,7 +21359,7 @@ var InputOTP = proxyCustomElement((_a91 = class extends H {
       md: inputOtpMdCss
     };
   }
-}, __name(_a91, "InputOTP"), _a91), [294, "ion-input-otp", {
+}, __name(_a87, "InputOTP"), _a87), [294, "ion-input-otp", {
   "autocapitalize": [1],
   "color": [513],
   "disabled": [516],
@@ -25327,8 +21422,8 @@ function roundToMaxDecimalPlaces(n, ...references) {
 __name(roundToMaxDecimalPlaces, "roundToMaxDecimalPlaces");
 var rangeIosCss = ":host{--knob-handle-size:calc(var(--knob-size) * 2);display:-ms-flexbox;display:flex;position:relative;-ms-flex:3;flex:3;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.range-disabled){pointer-events:none}::slotted(ion-label){-ms-flex:initial;flex:initial}::slotted(ion-icon[slot]){font-size:24px}.range-slider{position:relative;-ms-flex:1;flex:1;width:100%;height:var(--height);contain:size layout style;cursor:-webkit-grab;cursor:grab;-ms-touch-action:pan-y;touch-action:pan-y}:host(.range-pressed) .range-slider{cursor:-webkit-grabbing;cursor:grabbing}.range-pin{position:absolute;background:var(--ion-color-base);color:var(--ion-color-contrast);text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.range-knob-handle{top:calc((var(--height) - var(--knob-handle-size)) / 2);-webkit-margin-start:calc(0px - var(--knob-handle-size) / 2);margin-inline-start:calc(0px - var(--knob-handle-size) / 2);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-pack:center;justify-content:center;width:var(--knob-handle-size);height:var(--knob-handle-size);text-align:center}.range-knob-handle{inset-inline-start:0}:host-context([dir=rtl]) .range-knob-handle{left:unset}[dir=rtl] .range-knob-handle{left:unset}@supports selector(:dir(rtl)){.range-knob-handle:dir(rtl){left:unset}}.range-knob-handle:active,.range-knob-handle:focus{outline:none}.range-bar-container{border-radius:var(--bar-border-radius);top:calc((var(--height) - var(--bar-height)) / 2);position:absolute;width:100%;height:var(--bar-height)}.range-bar-container{inset-inline-start:0}:host-context([dir=rtl]) .range-bar-container{left:unset}[dir=rtl] .range-bar-container{left:unset}@supports selector(:dir(rtl)){.range-bar-container:dir(rtl){left:unset}}.range-bar{border-radius:var(--bar-border-radius);position:absolute;width:100%;height:var(--bar-height);background:var(--bar-background);pointer-events:none}.range-knob{border-radius:var(--knob-border-radius);top:calc(50% - var(--knob-size) / 2);position:absolute;width:var(--knob-size);height:var(--knob-size);background:var(--knob-background);-webkit-box-shadow:var(--knob-box-shadow);box-shadow:var(--knob-box-shadow);z-index:2;pointer-events:none}.range-knob{inset-inline-start:calc(50% - var(--knob-size) / 2)}:host-context([dir=rtl]) .range-knob{left:unset}[dir=rtl] .range-knob{left:unset}@supports selector(:dir(rtl)){.range-knob:dir(rtl){left:unset}}:host(.range-pressed) .range-bar-active{will-change:left, right}:host(.in-item){width:100%}:host([slot=start]),:host([slot=end]){width:auto}:host(.in-item) ::slotted(ion-label){-ms-flex-item-align:center;align-self:center}.range-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;height:inherit}::slotted([slot=label]){max-width:200px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center}:host(.range-label-placement-start) .range-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.range-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.range-label-placement-end) .range-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.range-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}:host(.range-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.range-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.range-label-placement-stacked) .range-wrapper{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:stretch;align-items:stretch}:host(.range-label-placement-stacked) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host-context([dir=rtl]):host(.range-label-placement-stacked) .label-text-wrapper,:host-context([dir=rtl]).range-label-placement-stacked .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.range-label-placement-stacked:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.in-item.range-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.range-label-placement-stacked) .native-wrapper{margin-bottom:0px}:host{--knob-border-radius:50%;--knob-background:#ffffff;--knob-box-shadow:0px 0.5px 4px rgba(0, 0, 0, 0.12), 0px 6px 13px rgba(0, 0, 0, 0.12);--knob-size:26px;--bar-height:4px;--bar-background:var(--ion-color-step-900, var(--ion-background-color-step-900, #e6e6e6));--bar-background-active:var(--ion-color-primary, #0054e9);--bar-border-radius:2px;--height:42px}:host(.range-item-start-adjustment){-webkit-padding-start:24px;padding-inline-start:24px}:host(.range-item-end-adjustment){-webkit-padding-end:24px;padding-inline-end:24px}:host(.ion-color) .range-bar-active,:host(.ion-color) .range-tick-active{background:var(--ion-color-base)}::slotted([slot=start]){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}::slotted([slot=end]){-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}:host(.range-has-pin:not(.range-label-placement-stacked)){padding-top:calc(8px + 0.75rem)}:host(.range-has-pin.range-label-placement-stacked) .label-text-wrapper{margin-bottom:calc(8px + 0.75rem)}.range-bar-active{bottom:0;width:auto;background:var(--bar-background-active)}.range-bar-active.has-ticks{border-radius:0;-webkit-margin-start:-2px;margin-inline-start:-2px;-webkit-margin-end:-2px;margin-inline-end:-2px}.range-tick{-webkit-margin-start:-2px;margin-inline-start:-2px;border-radius:0;position:absolute;top:17px;width:4px;height:8px;background:var(--ion-color-step-900, var(--ion-background-color-step-900, #e6e6e6));pointer-events:none}.range-tick-active{background:var(--bar-background-active)}.range-pin{-webkit-transform:translate3d(0,  100%,  0) scale(0.01);transform:translate3d(0,  100%,  0) scale(0.01);-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:8px;padding-bottom:8px;min-width:28px;-webkit-transition:-webkit-transform 120ms ease;transition:-webkit-transform 120ms ease;transition:transform 120ms ease;transition:transform 120ms ease, -webkit-transform 120ms ease;background:transparent;color:var(--ion-text-color, #000);font-size:0.75rem;text-align:center}.range-knob-pressed .range-pin,.range-knob-handle.ion-focused .range-pin{-webkit-transform:translate3d(0, calc(-100% + 11px), 0) scale(1);transform:translate3d(0, calc(-100% + 11px), 0) scale(1)}:host(.range-disabled){opacity:0.3}";
 var rangeMdCss = ':host{--knob-handle-size:calc(var(--knob-size) * 2);display:-ms-flexbox;display:flex;position:relative;-ms-flex:3;flex:3;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.range-disabled){pointer-events:none}::slotted(ion-label){-ms-flex:initial;flex:initial}::slotted(ion-icon[slot]){font-size:24px}.range-slider{position:relative;-ms-flex:1;flex:1;width:100%;height:var(--height);contain:size layout style;cursor:-webkit-grab;cursor:grab;-ms-touch-action:pan-y;touch-action:pan-y}:host(.range-pressed) .range-slider{cursor:-webkit-grabbing;cursor:grabbing}.range-pin{position:absolute;background:var(--ion-color-base);color:var(--ion-color-contrast);text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.range-knob-handle{top:calc((var(--height) - var(--knob-handle-size)) / 2);-webkit-margin-start:calc(0px - var(--knob-handle-size) / 2);margin-inline-start:calc(0px - var(--knob-handle-size) / 2);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-pack:center;justify-content:center;width:var(--knob-handle-size);height:var(--knob-handle-size);text-align:center}.range-knob-handle{inset-inline-start:0}:host-context([dir=rtl]) .range-knob-handle{left:unset}[dir=rtl] .range-knob-handle{left:unset}@supports selector(:dir(rtl)){.range-knob-handle:dir(rtl){left:unset}}.range-knob-handle:active,.range-knob-handle:focus{outline:none}.range-bar-container{border-radius:var(--bar-border-radius);top:calc((var(--height) - var(--bar-height)) / 2);position:absolute;width:100%;height:var(--bar-height)}.range-bar-container{inset-inline-start:0}:host-context([dir=rtl]) .range-bar-container{left:unset}[dir=rtl] .range-bar-container{left:unset}@supports selector(:dir(rtl)){.range-bar-container:dir(rtl){left:unset}}.range-bar{border-radius:var(--bar-border-radius);position:absolute;width:100%;height:var(--bar-height);background:var(--bar-background);pointer-events:none}.range-knob{border-radius:var(--knob-border-radius);top:calc(50% - var(--knob-size) / 2);position:absolute;width:var(--knob-size);height:var(--knob-size);background:var(--knob-background);-webkit-box-shadow:var(--knob-box-shadow);box-shadow:var(--knob-box-shadow);z-index:2;pointer-events:none}.range-knob{inset-inline-start:calc(50% - var(--knob-size) / 2)}:host-context([dir=rtl]) .range-knob{left:unset}[dir=rtl] .range-knob{left:unset}@supports selector(:dir(rtl)){.range-knob:dir(rtl){left:unset}}:host(.range-pressed) .range-bar-active{will-change:left, right}:host(.in-item){width:100%}:host([slot=start]),:host([slot=end]){width:auto}:host(.in-item) ::slotted(ion-label){-ms-flex-item-align:center;align-self:center}.range-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;height:inherit}::slotted([slot=label]){max-width:200px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center}:host(.range-label-placement-start) .range-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.range-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.range-label-placement-end) .range-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.range-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}:host(.range-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.range-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.range-label-placement-stacked) .range-wrapper{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:stretch;align-items:stretch}:host(.range-label-placement-stacked) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host-context([dir=rtl]):host(.range-label-placement-stacked) .label-text-wrapper,:host-context([dir=rtl]).range-label-placement-stacked .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.range-label-placement-stacked:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.in-item.range-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.range-label-placement-stacked) .native-wrapper{margin-bottom:0px}:host{--knob-border-radius:50%;--knob-background:var(--bar-background-active);--knob-box-shadow:none;--knob-size:18px;--bar-height:2px;--bar-background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.26);--bar-background-active:var(--ion-color-primary, #0054e9);--bar-border-radius:0;--height:42px;--pin-background:var(--ion-color-primary, #0054e9);--pin-color:var(--ion-color-primary-contrast, #fff)}::slotted(:not(ion-icon)[slot=start]),::slotted(:not(ion-icon)[slot=end]),.native-wrapper{font-size:0.75rem}:host(.range-item-start-adjustment){-webkit-padding-start:18px;padding-inline-start:18px}:host(.range-item-end-adjustment){-webkit-padding-end:18px;padding-inline-end:18px}:host(.ion-color) .range-bar{background:rgba(var(--ion-color-base-rgb), 0.26)}:host(.ion-color) .range-bar-active,:host(.ion-color) .range-knob,:host(.ion-color) .range-knob::before,:host(.ion-color) .range-pin,:host(.ion-color) .range-pin::before,:host(.ion-color) .range-tick{background:var(--ion-color-base);color:var(--ion-color-contrast)}::slotted([slot=start]){-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:14px;margin-inline-end:14px;margin-top:0;margin-bottom:0}::slotted([slot=end]){-webkit-margin-start:14px;margin-inline-start:14px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}:host(.range-has-pin:not(.range-label-placement-stacked)){padding-top:1.75rem}:host(.range-has-pin.range-label-placement-stacked) .label-text-wrapper{margin-bottom:1.75rem}.range-bar-active{bottom:0;width:auto;background:var(--bar-background-active)}.range-knob{-webkit-transform:scale(0.67);transform:scale(0.67);-webkit-transition-duration:120ms;transition-duration:120ms;-webkit-transition-property:background-color, border, -webkit-transform;transition-property:background-color, border, -webkit-transform;transition-property:transform, background-color, border;transition-property:transform, background-color, border, -webkit-transform;-webkit-transition-timing-function:ease;transition-timing-function:ease;z-index:2}.range-knob::before{border-radius:50%;position:absolute;width:var(--knob-size);height:var(--knob-size);-webkit-transform:scale(1);transform:scale(1);-webkit-transition:0.267s cubic-bezier(0, 0, 0.58, 1);transition:0.267s cubic-bezier(0, 0, 0.58, 1);background:var(--knob-background);content:"";opacity:0.13;pointer-events:none}.range-knob::before{inset-inline-start:0}.range-tick{position:absolute;top:calc((var(--height) - var(--bar-height)) / 2);width:var(--bar-height);height:var(--bar-height);background:var(--bar-background-active);z-index:1;pointer-events:none}.range-tick-active{background:transparent}.range-pin{padding-left:0;padding-right:0;padding-top:8px;padding-bottom:8px;border-radius:50%;-webkit-transform:translate3d(0,  0,  0) scale(0.01);transform:translate3d(0,  0,  0) scale(0.01);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:1.75rem;height:1.75rem;-webkit-transition:background 120ms ease, -webkit-transform 120ms ease;transition:background 120ms ease, -webkit-transform 120ms ease;transition:transform 120ms ease, background 120ms ease;transition:transform 120ms ease, background 120ms ease, -webkit-transform 120ms ease;background:var(--pin-background);color:var(--pin-color)}.range-pin::before{bottom:-1px;-webkit-margin-start:-13px;margin-inline-start:-13px;border-radius:50% 50% 50% 0;position:absolute;width:26px;height:26px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transition:background 120ms ease;transition:background 120ms ease;background:var(--pin-background);content:"";z-index:-1}.range-pin::before{inset-inline-start:50%}:host-context([dir=rtl]) .range-pin::before{left:unset}[dir=rtl] .range-pin::before{left:unset}@supports selector(:dir(rtl)){.range-pin::before:dir(rtl){left:unset}}.range-knob-pressed .range-pin,.range-knob-handle.ion-focused .range-pin{-webkit-transform:translate3d(0, calc(-100% + 4px), 0) scale(1);transform:translate3d(0, calc(-100% + 4px), 0) scale(1)}@media (any-hover: hover){.range-knob-handle:hover .range-knob:before{-webkit-transform:scale(2);transform:scale(2);opacity:0.13}}.range-knob-handle.ion-activated .range-knob:before,.range-knob-handle.ion-focused .range-knob:before,.range-knob-handle.range-knob-pressed .range-knob:before{-webkit-transform:scale(2);transform:scale(2)}.range-knob-handle.ion-focused .range-knob::before{opacity:0.13}.range-knob-handle.ion-activated .range-knob::before,.range-knob-handle.range-knob-pressed .range-knob::before{opacity:0.25}:host(:not(.range-has-pin)) .range-knob-pressed .range-knob,:host(:not(.range-has-pin)) .range-knob-handle.ion-focused .range-knob{-webkit-transform:scale(1);transform:scale(1)}:host(.range-disabled) .range-bar-active,:host(.range-disabled) .range-bar,:host(.range-disabled) .range-tick{background-color:var(--ion-color-step-250, var(--ion-background-color-step-250, #bfbfbf))}:host(.range-disabled) .range-knob{-webkit-transform:scale(0.55);transform:scale(0.55);outline:5px solid #fff;background-color:var(--ion-color-step-250, var(--ion-background-color-step-250, #bfbfbf))}:host(.range-disabled) .label-text-wrapper,:host(.range-disabled) ::slotted([slot=start]),:host(.range-disabled) ::slotted([slot=end]){opacity:0.38}';
-var _a92;
-var Range = proxyCustomElement((_a92 = class extends H {
+var _a88;
+var Range = proxyCustomElement((_a88 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -25446,8 +21541,8 @@ var Range = proxyCustomElement((_a92 = class extends H {
     };
     this.onKnobBlur = () => {
       setTimeout(() => {
-        var _a190;
-        const activeElement = (_a190 = this.el.shadowRoot) === null || _a190 === void 0 ? void 0 : _a190.activeElement;
+        var _a186;
+        const activeElement = (_a186 = this.el.shadowRoot) === null || _a186 === void 0 ? void 0 : _a186.activeElement;
         const isStillFocusedOnKnob = activeElement && activeElement.classList.contains("range-knob-handle");
         if (!isStillFocusedOnKnob) {
           if (this.hasFocus) {
@@ -25531,7 +21626,7 @@ var Range = proxyCustomElement((_a92 = class extends H {
     this.didLoad = true;
   }
   connectedCallback() {
-    var _a190;
+    var _a186;
     this.updateRatio();
     this.debounceChanged();
     this.disabledChanged();
@@ -25540,7 +21635,7 @@ var Range = proxyCustomElement((_a92 = class extends H {
       this.setupGesture();
     }
     const ionContent = findClosestIonContent(this.el);
-    this.contentEl = (_a190 = ionContent === null || ionContent === void 0 ? void 0 : ionContent.querySelector(".ion-content-scroll-host")) !== null && _a190 !== void 0 ? _a190 : ionContent;
+    this.contentEl = (_a186 = ionContent === null || ionContent === void 0 ? void 0 : ionContent.querySelector(".ion-content-scroll-host")) !== null && _a186 !== void 0 ? _a186 : ionContent;
   }
   disconnectedCallback() {
     if (this.gesture) {
@@ -25549,8 +21644,8 @@ var Range = proxyCustomElement((_a92 = class extends H {
     }
   }
   getValue() {
-    var _a190;
-    const value = (_a190 = this.value) !== null && _a190 !== void 0 ? _a190 : 0;
+    var _a186;
+    const value = (_a186 = this.value) !== null && _a186 !== void 0 ? _a186 : 0;
     if (this.dualKnobs) {
       if (typeof value === "object") {
         return value;
@@ -25619,9 +21714,9 @@ var Range = proxyCustomElement((_a92 = class extends H {
    * @param detail The details of the gesture or mouse event.
    */
   onEnd(detail) {
-    var _a190;
+    var _a186;
     const { contentEl, initialContentScrollY } = this;
-    const currentX = (_a190 = detail.currentX) !== null && _a190 !== void 0 ? _a190 : detail.clientX;
+    const currentX = (_a186 = detail.currentX) !== null && _a186 !== void 0 ? _a186 : detail.clientX;
     if (this.pressedKnob === void 0) {
       this.setPressedKnob(currentX);
     }
@@ -25723,7 +21818,7 @@ var Range = proxyCustomElement((_a92 = class extends H {
     return this.label !== void 0 || this.el.querySelector('[slot="label"]') !== null;
   }
   renderRangeSlider() {
-    var _a190;
+    var _a186;
     const { min, max, step, handleKeyboard, pressedKnob, disabled, pin, ratioLower, ratioUpper, pinFormatter, inheritedAttributes } = this;
     let barStart = `${ratioLower * 100}%`;
     let barEnd = `${100 - ratioUpper * 100}%`;
@@ -25736,7 +21831,7 @@ var Range = proxyCustomElement((_a92 = class extends H {
       };
     }, "tickStyle");
     if (this.dualKnobs === false) {
-      if (this.valA < ((_a190 = this.activeBarStart) !== null && _a190 !== void 0 ? _a190 : this.min)) {
+      if (this.valA < ((_a186 = this.activeBarStart) !== null && _a186 !== void 0 ? _a186 : this.min)) {
         barStart = `${ratioUpper * 100}%`;
         barEnd = `${100 - ratioLower * 100}%`;
       } else {
@@ -25866,7 +21961,7 @@ var Range = proxyCustomElement((_a92 = class extends H {
       md: rangeMdCss
     };
   }
-}, __name(_a92, "Range"), _a92), [289, "ion-range", {
+}, __name(_a88, "Range"), _a88), [289, "ion-range", {
   "color": [513],
   "debounce": [2],
   "name": [1],
@@ -25958,8 +22053,8 @@ var defineCustomElement112 = defineCustomElement$162;
 // node_modules/@ionic/core/components/ion-searchbar.js
 var searchbarIosCss = ".sc-ion-searchbar-ios-h{--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;color:var(--color);font-family:var(--ion-font-family, inherit);-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-searchbar-ios-h{color:var(--ion-color-contrast)}.ion-color.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios{background:var(--ion-color-base)}.ion-color.sc-ion-searchbar-ios-h .searchbar-clear-button.sc-ion-searchbar-ios,.ion-color.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios,.ion-color.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios{color:inherit}.searchbar-search-icon.sc-ion-searchbar-ios{color:var(--icon-color);pointer-events:none}.searchbar-input-container.sc-ion-searchbar-ios{display:block;position:relative;-ms-flex-negative:1;flex-shrink:1;width:100%}.searchbar-input.sc-ion-searchbar-ios{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;border-radius:var(--border-radius);display:block;width:100%;min-height:inherit;border:0;outline:none;background:var(--background);font-family:inherit;-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}.searchbar-input.sc-ion-searchbar-ios::-webkit-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-ios::-moz-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-ios:-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-ios::-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-ios::placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-ios::-webkit-search-cancel-button,.searchbar-input.sc-ion-searchbar-ios::-ms-clear{display:none}.searchbar-cancel-button.sc-ion-searchbar-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:none;height:100%;border:0;outline:none;color:var(--cancel-button-color);cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}.searchbar-cancel-button.sc-ion-searchbar-ios>div.sc-ion-searchbar-ios{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.searchbar-clear-button.sc-ion-searchbar-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:none;min-height:0;outline:none;color:var(--clear-button-color);-webkit-appearance:none;-moz-appearance:none;appearance:none}.searchbar-clear-button.sc-ion-searchbar-ios:focus{opacity:0.5}.searchbar-has-value.searchbar-should-show-clear.sc-ion-searchbar-ios-h .searchbar-clear-button.sc-ion-searchbar-ios{display:block}.searchbar-disabled.sc-ion-searchbar-ios-h{cursor:default;opacity:0.4;pointer-events:none}.sc-ion-searchbar-ios-h{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.07);--border-radius:10px;--box-shadow:none;--cancel-button-color:var(--ion-color-primary, #0054e9);--clear-button-color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));--color:var(--ion-text-color, #000);--icon-color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px;padding-top:12px;padding-bottom:12px;min-height:60px;contain:content}.searchbar-input-container.sc-ion-searchbar-ios{min-height:36px}.searchbar-search-icon.sc-ion-searchbar-ios{-webkit-margin-start:calc(50% - 60px);margin-inline-start:calc(50% - 60px);top:0;position:absolute;width:1.375rem;height:100%;contain:strict}.searchbar-search-icon.sc-ion-searchbar-ios{inset-inline-start:5px}.searchbar-input.sc-ion-searchbar-ios{-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:6px;padding-bottom:6px;height:100%;font-size:1.0625rem;font-weight:400;contain:strict}.searchbar-has-value.searchbar-should-show-clear.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios{-webkit-padding-start:1.75rem;padding-inline-start:1.75rem;-webkit-padding-end:1.75rem;padding-inline-end:1.75rem}.searchbar-clear-button.sc-ion-searchbar-ios{top:0;background-position:center;position:absolute;width:1.875rem;height:100%;border:0;background-color:transparent}.searchbar-clear-button.sc-ion-searchbar-ios{inset-inline-end:0}.searchbar-clear-icon.sc-ion-searchbar-ios{width:1.125rem;height:100%}.searchbar-cancel-button.sc-ion-searchbar-ios{-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:0;padding-inline-end:0;padding-top:0;padding-bottom:0;-ms-flex-negative:0;flex-shrink:0;background-color:transparent;font-size:17px}.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios{-webkit-margin-start:0;margin-inline-start:0}.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios{-webkit-padding-start:1.875rem;padding-inline-start:1.875rem}.searchbar-has-focus.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios,.searchbar-should-show-cancel.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios,.searchbar-animated.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios{display:block}.searchbar-animated.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios,.searchbar-animated.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios{-webkit-transition:all 300ms ease;transition:all 300ms ease}.searchbar-animated.searchbar-has-focus.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios,.searchbar-animated.searchbar-should-show-cancel.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios{opacity:1;pointer-events:auto}.searchbar-animated.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios{-webkit-margin-end:-100%;margin-inline-end:-100%;-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0);-webkit-transition:all 300ms ease;transition:all 300ms ease;opacity:0;pointer-events:none}.searchbar-no-animate.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios,.searchbar-no-animate.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios,.searchbar-no-animate.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios{-webkit-transition-duration:0ms;transition-duration:0ms}.ion-color.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios{color:var(--ion-color-base)}@media (any-hover: hover){.ion-color.sc-ion-searchbar-ios-h .searchbar-cancel-button.sc-ion-searchbar-ios:hover{color:var(--ion-color-tint)}}ion-toolbar.sc-ion-searchbar-ios-h,ion-toolbar .sc-ion-searchbar-ios-h{padding-top:1px;padding-bottom:15px;min-height:52px}ion-toolbar.ion-color.sc-ion-searchbar-ios-h:not(.ion-color),ion-toolbar.ion-color .sc-ion-searchbar-ios-h:not(.ion-color){color:inherit}ion-toolbar.ion-color.sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-cancel-button.sc-ion-searchbar-ios,ion-toolbar.ion-color .sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-cancel-button.sc-ion-searchbar-ios{color:currentColor}ion-toolbar.ion-color.sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios,ion-toolbar.ion-color .sc-ion-searchbar-ios-h .searchbar-search-icon.sc-ion-searchbar-ios{color:currentColor;opacity:0.5}ion-toolbar.ion-color.sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-input.sc-ion-searchbar-ios,ion-toolbar.ion-color .sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-input.sc-ion-searchbar-ios{background:rgba(var(--ion-color-contrast-rgb), 0.07);color:currentColor}ion-toolbar.ion-color.sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-clear-button.sc-ion-searchbar-ios,ion-toolbar.ion-color .sc-ion-searchbar-ios-h:not(.ion-color) .searchbar-clear-button.sc-ion-searchbar-ios{color:currentColor;opacity:0.5}";
 var searchbarMdCss = ".sc-ion-searchbar-md-h{--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;color:var(--color);font-family:var(--ion-font-family, inherit);-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-searchbar-md-h{color:var(--ion-color-contrast)}.ion-color.sc-ion-searchbar-md-h .searchbar-input.sc-ion-searchbar-md{background:var(--ion-color-base)}.ion-color.sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md,.ion-color.sc-ion-searchbar-md-h .searchbar-cancel-button.sc-ion-searchbar-md,.ion-color.sc-ion-searchbar-md-h .searchbar-search-icon.sc-ion-searchbar-md{color:inherit}.searchbar-search-icon.sc-ion-searchbar-md{color:var(--icon-color);pointer-events:none}.searchbar-input-container.sc-ion-searchbar-md{display:block;position:relative;-ms-flex-negative:1;flex-shrink:1;width:100%}.searchbar-input.sc-ion-searchbar-md{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;border-radius:var(--border-radius);display:block;width:100%;min-height:inherit;border:0;outline:none;background:var(--background);font-family:inherit;-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}.searchbar-input.sc-ion-searchbar-md::-webkit-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-md::-moz-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-md:-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-md::-ms-input-placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-md::placeholder{color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.searchbar-input.sc-ion-searchbar-md::-webkit-search-cancel-button,.searchbar-input.sc-ion-searchbar-md::-ms-clear{display:none}.searchbar-cancel-button.sc-ion-searchbar-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:none;height:100%;border:0;outline:none;color:var(--cancel-button-color);cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none}.searchbar-cancel-button.sc-ion-searchbar-md>div.sc-ion-searchbar-md{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.searchbar-clear-button.sc-ion-searchbar-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:none;min-height:0;outline:none;color:var(--clear-button-color);-webkit-appearance:none;-moz-appearance:none;appearance:none}.searchbar-clear-button.sc-ion-searchbar-md:focus{opacity:0.5}.searchbar-has-value.searchbar-should-show-clear.sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md{display:block}.searchbar-disabled.sc-ion-searchbar-md-h{cursor:default;opacity:0.4;pointer-events:none}.sc-ion-searchbar-md-h{--background:var(--ion-background-color, #fff);--border-radius:2px;--box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);--cancel-button-color:var(--ion-color-step-900, var(--ion-text-color-step-100, #1a1a1a));--clear-button-color:initial;--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));--icon-color:var(--ion-color-step-600, var(--ion-text-color-step-400, #666666));-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px;padding-top:8px;padding-bottom:8px;background:inherit}.searchbar-search-icon.sc-ion-searchbar-md{top:11px;width:1.3125rem;height:1.3125rem}.searchbar-search-icon.sc-ion-searchbar-md{inset-inline-start:16px}.searchbar-cancel-button.sc-ion-searchbar-md{top:0;background-color:transparent;font-size:1.5em}.searchbar-cancel-button.sc-ion-searchbar-md{inset-inline-start:9px}.searchbar-search-icon.sc-ion-searchbar-md,.searchbar-cancel-button.sc-ion-searchbar-md{position:absolute}.searchbar-search-icon.ion-activated.sc-ion-searchbar-md,.searchbar-cancel-button.ion-activated.sc-ion-searchbar-md{background-color:transparent}.searchbar-input.sc-ion-searchbar-md{-webkit-padding-start:3.4375rem;padding-inline-start:3.4375rem;-webkit-padding-end:3.4375rem;padding-inline-end:3.4375rem;padding-top:0.375rem;padding-bottom:0.375rem;background-position:left 8px center;height:auto;font-size:1rem;font-weight:400;line-height:30px}[dir=rtl].sc-ion-searchbar-md-h .searchbar-input.sc-ion-searchbar-md,[dir=rtl] .sc-ion-searchbar-md-h .searchbar-input.sc-ion-searchbar-md{background-position:right 8px center}[dir=rtl].sc-ion-searchbar-md .searchbar-input.sc-ion-searchbar-md{background-position:right 8px center}@supports selector(:dir(rtl)){.searchbar-input.sc-ion-searchbar-md:dir(rtl){background-position:right 8px center}}.searchbar-clear-button.sc-ion-searchbar-md{top:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;position:absolute;height:100%;border:0;background-color:transparent}.searchbar-clear-button.sc-ion-searchbar-md{inset-inline-end:13px}.searchbar-clear-button.ion-activated.sc-ion-searchbar-md{background-color:transparent}.searchbar-clear-icon.sc-ion-searchbar-md{width:1.375rem;height:100%}.searchbar-has-focus.sc-ion-searchbar-md-h .searchbar-search-icon.sc-ion-searchbar-md{display:block}.searchbar-has-focus.sc-ion-searchbar-md-h .searchbar-cancel-button.sc-ion-searchbar-md,.searchbar-should-show-cancel.sc-ion-searchbar-md-h .searchbar-cancel-button.sc-ion-searchbar-md{display:block}.searchbar-has-focus.sc-ion-searchbar-md-h .searchbar-cancel-button.sc-ion-searchbar-md+.searchbar-search-icon.sc-ion-searchbar-md,.searchbar-should-show-cancel.sc-ion-searchbar-md-h .searchbar-cancel-button.sc-ion-searchbar-md+.searchbar-search-icon.sc-ion-searchbar-md{display:none}ion-toolbar.sc-ion-searchbar-md-h,ion-toolbar .sc-ion-searchbar-md-h{-webkit-padding-start:7px;padding-inline-start:7px;-webkit-padding-end:7px;padding-inline-end:7px;padding-top:3px;padding-bottom:3px}";
-var _a93;
-var Searchbar = proxyCustomElement((_a93 = class extends H {
+var _a89;
+var Searchbar = proxyCustomElement((_a89 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -26298,7 +22393,7 @@ var Searchbar = proxyCustomElement((_a93 = class extends H {
       md: searchbarMdCss
     };
   }
-}, __name(_a93, "Searchbar"), _a93), [290, "ion-searchbar", {
+}, __name(_a89, "Searchbar"), _a89), [290, "ion-searchbar", {
   "color": [513],
   "animated": [4],
   "autocapitalize": [1],
@@ -26359,8 +22454,8 @@ var defineCustomElement113 = defineCustomElement$163;
 // node_modules/@ionic/core/components/ion-segment.js
 var segmentIosCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:grid;grid-auto-columns:1fr;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto;grid-auto-columns:minmax(-webkit-min-content, 1fr);grid-auto-columns:minmax(min-content, 1fr)}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.065);border-radius:8px;overflow:hidden;z-index:0}:host(.ion-color){background:rgba(var(--ion-color-base-rgb), 0.065)}:host(.in-toolbar){-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;margin-top:0;margin-bottom:0;width:auto}:host(.in-toolbar:not(.ion-color)){background:var(--ion-toolbar-segment-background, var(--background))}:host(.in-toolbar-color:not(.ion-color)){background:rgba(var(--ion-color-contrast-rgb), 0.11)}";
 var segmentMdCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:grid;grid-auto-columns:1fr;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto;grid-auto-columns:minmax(-webkit-min-content, 1fr);grid-auto-columns:minmax(min-content, 1fr)}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:transparent;grid-auto-columns:minmax(auto, 360px)}:host(.in-toolbar){min-height:var(--min-height)}:host(.segment-scrollable) ::slotted(ion-segment-button){min-width:auto}";
-var _a94;
-var Segment = proxyCustomElement((_a94 = class extends H {
+var _a90;
+var Segment = proxyCustomElement((_a90 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -26401,7 +22496,7 @@ var Segment = proxyCustomElement((_a94 = class extends H {
       this.valueChanged(this.value);
     };
     this.getSegmentButton = (selector) => {
-      var _a190, _b;
+      var _a186, _b;
       const buttons = this.getButtons().filter((button) => !button.disabled);
       const currIndex = buttons.findIndex((button) => button === document.activeElement);
       switch (selector) {
@@ -26410,7 +22505,7 @@ var Segment = proxyCustomElement((_a94 = class extends H {
         case "last":
           return buttons[buttons.length - 1];
         case "next":
-          return (_a190 = buttons[currIndex + 1]) !== null && _a190 !== void 0 ? _a190 : buttons[0];
+          return (_a186 = buttons[currIndex + 1]) !== null && _a186 !== void 0 ? _a186 : buttons[0];
         case "previous":
           return (_b = buttons[currIndex - 1]) !== null && _b !== void 0 ? _b : buttons[buttons.length - 1];
         default:
@@ -26789,7 +22884,7 @@ var Segment = proxyCustomElement((_a94 = class extends H {
       md: segmentMdCss
     };
   }
-}, __name(_a94, "Segment"), _a94), [289, "ion-segment", {
+}, __name(_a90, "Segment"), _a90), [289, "ion-segment", {
   "color": [513],
   "disabled": [4],
   "scrollable": [4],
@@ -26824,8 +22919,8 @@ var defineCustomElement114 = defineCustomElement$164;
 // node_modules/@ionic/core/components/select-popover.js
 var selectPopoverIosCss = ".sc-ion-select-popover-ios-h ion-list.sc-ion-select-popover-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}ion-list-header.sc-ion-select-popover-ios,ion-label.sc-ion-select-popover-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.sc-ion-select-popover-ios-h{overflow-y:auto}";
 var selectPopoverMdCss = '.sc-ion-select-popover-md-h ion-list.sc-ion-select-popover-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}ion-list-header.sc-ion-select-popover-md,ion-label.sc-ion-select-popover-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.sc-ion-select-popover-md-h{overflow-y:auto}ion-list.sc-ion-select-popover-md ion-radio.sc-ion-select-popover-md::part(container),ion-list.sc-ion-select-popover-md ion-radio.sc-ion-select-popover-md [part~="container"]{display:none}ion-list.sc-ion-select-popover-md ion-radio.sc-ion-select-popover-md::part(label),ion-list.sc-ion-select-popover-md ion-radio.sc-ion-select-popover-md [part~="label"]{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}ion-item.sc-ion-select-popover-md{--inner-border-width:0}.item-radio-checked.sc-ion-select-popover-md{--background:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.08);--background-focused:var(--ion-color-primary, #0054e9);--background-focused-opacity:0.2;--background-hover:var(--ion-color-primary, #0054e9);--background-hover-opacity:0.12}.item-checkbox-checked.sc-ion-select-popover-md{--background-activated:var(--ion-item-color, var(--ion-text-color, #000));--background-focused:var(--ion-item-color, var(--ion-text-color, #000));--background-hover:var(--ion-item-color, var(--ion-text-color, #000));--color:var(--ion-color-primary, #0054e9)}';
-var _a95;
-var SelectPopover = proxyCustomElement((_a95 = class extends H {
+var _a91;
+var SelectPopover = proxyCustomElement((_a91 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -26916,7 +23011,7 @@ var SelectPopover = proxyCustomElement((_a95 = class extends H {
       md: selectPopoverMdCss
     };
   }
-}, __name(_a95, "SelectPopover"), _a95), [290, "ion-select-popover", {
+}, __name(_a91, "SelectPopover"), _a91), [290, "ion-select-popover", {
   "header": [1],
   "subHeader": [1, "sub-header"],
   "message": [1],
@@ -26988,8 +23083,8 @@ __name(defineCustomElement115, "defineCustomElement");
 // node_modules/@ionic/core/components/ion-select.js
 var selectIosCss = ":host{--padding-top:0px;--padding-end:0px;--padding-bottom:0px;--padding-start:0px;--placeholder-color:currentColor;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);--background:transparent;--border-style:solid;--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;width:100%;min-height:44px;font-family:var(--ion-font-family, inherit);white-space:nowrap;cursor:pointer;z-index:2}:host(.select-label-placement-floating),:host(.select-label-placement-stacked){min-height:56px}:host(.ion-color){--highlight-color-focused:var(--ion-color-base)}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0}:host(.select-disabled){pointer-events:none}:host(.has-focus) button{border:2px solid #5e9ed6}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}.select-icon{-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0;position:relative;-ms-flex-negative:0;flex-shrink:0}:host(.in-item-color) .select-icon{color:inherit}:host(.select-label-placement-stacked) .select-icon,:host(.select-label-placement-floating) .select-icon{position:absolute;height:100%}:host(.select-ltr.select-label-placement-stacked) .select-icon,:host(.select-ltr.select-label-placement-floating) .select-icon{right:var(--padding-end, 0)}:host(.select-rtl.select-label-placement-stacked) .select-icon,:host(.select-rtl.select-label-placement-floating) .select-icon{left:var(--padding-start, 0)}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:inherit;overflow:hidden}.select-wrapper{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;min-height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;background:var(--background);line-height:normal;cursor:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}.select-wrapper .select-placeholder{-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)}.select-wrapper-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;overflow:hidden}:host(.select-label-placement-stacked) .select-wrapper-inner,:host(.select-label-placement-floating) .select-wrapper-inner{-ms-flex-positive:1;flex-grow:1}:host(.ion-touched.ion-invalid){--highlight-color:var(--highlight-color-invalid)}:host(.ion-valid){--highlight-color:var(--highlight-color-valid)}.select-bottom{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:5px;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;border-top:var(--border-width) var(--border-style) var(--border-color);font-size:0.75rem;white-space:normal}:host(.has-focus.ion-valid),:host(.select-expanded.ion-valid),:host(.ion-touched.ion-invalid),:host(.select-expanded.ion-touched.ion-invalid){--border-color:var(--highlight-color)}.select-bottom .error-text{display:none;color:var(--highlight-color-invalid)}.select-bottom .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}:host(.ion-touched.ion-invalid) .select-bottom .error-text{display:block}:host(.ion-touched.ion-invalid) .select-bottom .helper-text{display:none}.label-text-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;max-width:200px;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none}.label-text,::slotted([slot=label]){text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden,.select-outline-notch-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);overflow:hidden}:host(.select-justify-space-between) .select-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.select-justify-start) .select-wrapper{-ms-flex-pack:start;justify-content:start}:host(.select-justify-end) .select-wrapper{-ms-flex-pack:end;justify-content:end}:host(.select-label-placement-start) .select-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.select-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.select-label-placement-end) .select-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.select-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}:host(.select-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.select-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.select-label-placement-stacked) .select-wrapper,:host(.select-label-placement-floating) .select-wrapper{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:start}:host(.select-label-placement-stacked) .label-text-wrapper,:host(.select-label-placement-floating) .label-text-wrapper{max-width:100%}:host(.select-ltr.select-label-placement-stacked) .label-text-wrapper,:host(.select-ltr.select-label-placement-floating) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host(.select-rtl.select-label-placement-stacked) .label-text-wrapper,:host(.select-rtl.select-label-placement-floating) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}:host(.select-label-placement-stacked) .native-wrapper,:host(.select-label-placement-floating) .native-wrapper{margin-left:0;margin-right:0;margin-top:1px;margin-bottom:0;-ms-flex-positive:1;flex-grow:1;width:100%}:host(.select-label-placement-floating) .label-text-wrapper{-webkit-transform:translateY(100%) scale(1);transform:translateY(100%) scale(1)}:host(.select-label-placement-floating:not(.label-floating)) .native-wrapper .select-placeholder{opacity:0}:host(.select-expanded.select-label-placement-floating) .native-wrapper .select-placeholder,:host(.has-focus.select-label-placement-floating) .native-wrapper .select-placeholder,:host(.has-value.select-label-placement-floating) .native-wrapper .select-placeholder{opacity:1}:host(.label-floating) .label-text-wrapper{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);max-width:calc(100% / 0.75)}::slotted([slot=start]),::slotted([slot=end]){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]:last-of-type){-webkit-margin-end:16px;margin-inline-end:16px;-webkit-margin-start:0;margin-inline-start:0}::slotted([slot=end]:first-of-type){-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host{--border-width:0.55px;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));--highlight-height:0px}.select-icon{width:1.125rem;height:1.125rem;color:var(--ion-color-step-650, var(--ion-text-color-step-350, #595959))}:host(.select-label-placement-stacked) .select-wrapper-inner,:host(.select-label-placement-floating) .select-wrapper-inner{width:calc(100% - 1.125rem - 4px)}:host(.select-disabled){opacity:0.3}::slotted(ion-button[slot=start].button-has-icon-only),::slotted(ion-button[slot=end].button-has-icon-only){--border-radius:50%;--padding-start:0;--padding-end:0;--padding-top:0;--padding-bottom:0;aspect-ratio:1}";
 var selectMdCss = ":host{--padding-top:0px;--padding-end:0px;--padding-bottom:0px;--padding-start:0px;--placeholder-color:currentColor;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);--background:transparent;--border-style:solid;--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;width:100%;min-height:44px;font-family:var(--ion-font-family, inherit);white-space:nowrap;cursor:pointer;z-index:2}:host(.select-label-placement-floating),:host(.select-label-placement-stacked){min-height:56px}:host(.ion-color){--highlight-color-focused:var(--ion-color-base)}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0}:host(.select-disabled){pointer-events:none}:host(.has-focus) button{border:2px solid #5e9ed6}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}.select-icon{-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0;position:relative;-ms-flex-negative:0;flex-shrink:0}:host(.in-item-color) .select-icon{color:inherit}:host(.select-label-placement-stacked) .select-icon,:host(.select-label-placement-floating) .select-icon{position:absolute;height:100%}:host(.select-ltr.select-label-placement-stacked) .select-icon,:host(.select-ltr.select-label-placement-floating) .select-icon{right:var(--padding-end, 0)}:host(.select-rtl.select-label-placement-stacked) .select-icon,:host(.select-rtl.select-label-placement-floating) .select-icon{left:var(--padding-start, 0)}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:inherit;overflow:hidden}.select-wrapper{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;min-height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;background:var(--background);line-height:normal;cursor:inherit;-webkit-box-sizing:border-box;box-sizing:border-box}.select-wrapper .select-placeholder{-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)}.select-wrapper-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;overflow:hidden}:host(.select-label-placement-stacked) .select-wrapper-inner,:host(.select-label-placement-floating) .select-wrapper-inner{-ms-flex-positive:1;flex-grow:1}:host(.ion-touched.ion-invalid){--highlight-color:var(--highlight-color-invalid)}:host(.ion-valid){--highlight-color:var(--highlight-color-valid)}.select-bottom{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:5px;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;border-top:var(--border-width) var(--border-style) var(--border-color);font-size:0.75rem;white-space:normal}:host(.has-focus.ion-valid),:host(.select-expanded.ion-valid),:host(.ion-touched.ion-invalid),:host(.select-expanded.ion-touched.ion-invalid){--border-color:var(--highlight-color)}.select-bottom .error-text{display:none;color:var(--highlight-color-invalid)}.select-bottom .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}:host(.ion-touched.ion-invalid) .select-bottom .error-text{display:block}:host(.ion-touched.ion-invalid) .select-bottom .helper-text{display:none}.label-text-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;max-width:200px;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none}.label-text,::slotted([slot=label]){text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden,.select-outline-notch-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);overflow:hidden}:host(.select-justify-space-between) .select-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.select-justify-start) .select-wrapper{-ms-flex-pack:start;justify-content:start}:host(.select-justify-end) .select-wrapper{-ms-flex-pack:end;justify-content:end}:host(.select-label-placement-start) .select-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.select-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.select-label-placement-end) .select-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse}:host(.select-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}:host(.select-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}:host(.select-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.select-label-placement-stacked) .select-wrapper,:host(.select-label-placement-floating) .select-wrapper{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:start}:host(.select-label-placement-stacked) .label-text-wrapper,:host(.select-label-placement-floating) .label-text-wrapper{max-width:100%}:host(.select-ltr.select-label-placement-stacked) .label-text-wrapper,:host(.select-ltr.select-label-placement-floating) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host(.select-rtl.select-label-placement-stacked) .label-text-wrapper,:host(.select-rtl.select-label-placement-floating) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}:host(.select-label-placement-stacked) .native-wrapper,:host(.select-label-placement-floating) .native-wrapper{margin-left:0;margin-right:0;margin-top:1px;margin-bottom:0;-ms-flex-positive:1;flex-grow:1;width:100%}:host(.select-label-placement-floating) .label-text-wrapper{-webkit-transform:translateY(100%) scale(1);transform:translateY(100%) scale(1)}:host(.select-label-placement-floating:not(.label-floating)) .native-wrapper .select-placeholder{opacity:0}:host(.select-expanded.select-label-placement-floating) .native-wrapper .select-placeholder,:host(.has-focus.select-label-placement-floating) .native-wrapper .select-placeholder,:host(.has-value.select-label-placement-floating) .native-wrapper .select-placeholder{opacity:1}:host(.label-floating) .label-text-wrapper{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);max-width:calc(100% / 0.75)}::slotted([slot=start]),::slotted([slot=end]){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]:last-of-type){-webkit-margin-end:16px;margin-inline-end:16px;-webkit-margin-start:0;margin-inline-start:0}::slotted([slot=end]:first-of-type){-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.select-fill-solid){--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--border-color:var(--ion-color-step-500, var(--ion-background-color-step-500, gray));--border-radius:4px;--padding-start:16px;--padding-end:16px;min-height:56px}:host(.select-fill-solid) .select-wrapper{border-bottom:var(--border-width) var(--border-style) var(--border-color)}:host(.select-expanded.select-fill-solid.ion-valid),:host(.has-focus.select-fill-solid.ion-valid),:host(.select-fill-solid.ion-touched.ion-invalid){--border-color:var(--highlight-color)}:host(.select-fill-solid) .select-bottom{border-top:none}@media (any-hover: hover){:host(.select-fill-solid:hover){--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6));--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}}:host(.select-fill-solid.select-expanded),:host(.select-fill-solid.has-focus){--background:var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));--border-color:var(--highlight-color)}:host(.select-fill-solid) .select-wrapper{border-start-start-radius:var(--border-radius);border-start-end-radius:var(--border-radius);border-end-end-radius:0px;border-end-start-radius:0px}:host(.label-floating.select-fill-solid) .label-text-wrapper{max-width:calc(100% / 0.75)}:host(.in-item.select-expanded.select-fill-solid) .select-wrapper .select-icon,:host(.in-item.has-focus.select-fill-solid) .select-wrapper .select-icon,:host(.in-item.has-focus.ion-valid.select-fill-solid) .select-wrapper .select-icon,:host(.in-item.ion-touched.ion-invalid.select-fill-solid) .select-wrapper .select-icon{color:var(--highlight-color)}:host(.select-fill-outline){--border-color:var(--ion-color-step-300, var(--ion-background-color-step-300, #b3b3b3));--border-radius:4px;--padding-start:16px;--padding-end:16px;min-height:56px}:host(.select-fill-outline.select-shape-round){--border-radius:28px;--padding-start:32px;--padding-end:32px}:host(.has-focus.select-fill-outline.ion-valid),:host(.select-fill-outline.ion-touched.ion-invalid){--border-color:var(--highlight-color)}@media (any-hover: hover){:host(.select-fill-outline:hover){--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}}:host(.select-fill-outline.select-expanded),:host(.select-fill-outline.has-focus){--border-width:var(--highlight-height);--border-color:var(--highlight-color)}:host(.select-fill-outline) .select-bottom{border-top:none}:host(.select-fill-outline) .select-wrapper{border-bottom:none}:host(.select-ltr.select-fill-outline.select-label-placement-stacked) .label-text-wrapper,:host(.select-ltr.select-fill-outline.select-label-placement-floating) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host(.select-rtl.select-fill-outline.select-label-placement-stacked) .label-text-wrapper,:host(.select-rtl.select-fill-outline.select-label-placement-floating) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}:host(.select-fill-outline.select-label-placement-stacked) .label-text-wrapper,:host(.select-fill-outline.select-label-placement-floating) .label-text-wrapper{position:absolute;max-width:calc(100% - var(--padding-start) - var(--padding-end))}:host(.select-fill-outline) .label-text-wrapper{position:relative;z-index:1}:host(.label-floating.select-fill-outline) .label-text-wrapper{-webkit-transform:translateY(-32%) scale(0.75);transform:translateY(-32%) scale(0.75);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;max-width:calc((100% - var(--padding-start) - var(--padding-end) - 8px) / 0.75)}:host(.select-fill-outline.select-label-placement-stacked) select,:host(.select-fill-outline.select-label-placement-floating) select{margin-left:0;margin-right:0;margin-top:6px;margin-bottom:6px}:host(.select-fill-outline) .select-outline-container{left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;width:100%;height:100%}:host(.select-fill-outline) .select-outline-start,:host(.select-fill-outline) .select-outline-end{pointer-events:none}:host(.select-fill-outline) .select-outline-start,:host(.select-fill-outline) .select-outline-notch,:host(.select-fill-outline) .select-outline-end{border-top:var(--border-width) var(--border-style) var(--border-color);border-bottom:var(--border-width) var(--border-style) var(--border-color);-webkit-box-sizing:border-box;box-sizing:border-box}:host(.select-fill-outline) .select-outline-notch{max-width:calc(100% - var(--padding-start) - var(--padding-end))}:host(.select-fill-outline) .notch-spacer{-webkit-padding-end:8px;padding-inline-end:8px;font-size:calc(1em * 0.75);opacity:0;pointer-events:none}:host(.select-fill-outline) .select-outline-start{-webkit-border-start:var(--border-width) var(--border-style) var(--border-color);border-inline-start:var(--border-width) var(--border-style) var(--border-color)}:host(.select-fill-outline) .select-outline-start{border-start-start-radius:var(--border-radius);border-start-end-radius:0px;border-end-end-radius:0px;border-end-start-radius:var(--border-radius)}:host(.select-fill-outline) .select-outline-start{width:calc(var(--padding-start) - 4px)}:host(.select-fill-outline) .select-outline-end{-webkit-border-end:var(--border-width) var(--border-style) var(--border-color);border-inline-end:var(--border-width) var(--border-style) var(--border-color)}:host(.select-fill-outline) .select-outline-end{border-start-start-radius:0px;border-start-end-radius:var(--border-radius);border-end-end-radius:var(--border-radius);border-end-start-radius:0px}:host(.select-fill-outline) .select-outline-end{-ms-flex-positive:1;flex-grow:1}:host(.label-floating.select-fill-outline) .select-outline-notch{border-top:none}:host(.in-item.select-expanded.select-fill-outline) .select-wrapper .select-icon,:host(.in-item.has-focus.select-fill-outline) .select-wrapper .select-icon,:host(.in-item.has-focus.ion-valid.select-fill-outline) .select-wrapper .select-icon,:host(.in-item.ion-touched.ion-invalid.select-fill-outline) .select-wrapper .select-icon{color:var(--highlight-color)}:host{--border-width:1px;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));--highlight-height:2px}:host(.select-label-placement-floating.select-expanded) .label-text-wrapper,:host(.select-label-placement-floating.has-focus) .label-text-wrapper,:host(.select-label-placement-stacked.select-expanded) .label-text-wrapper,:host(.select-label-placement-stacked.has-focus) .label-text-wrapper{color:var(--highlight-color)}:host(.has-focus.select-label-placement-floating.ion-valid) .label-text-wrapper,:host(.select-label-placement-floating.ion-touched.ion-invalid) .label-text-wrapper,:host(.has-focus.select-label-placement-stacked.ion-valid) .label-text-wrapper,:host(.select-label-placement-stacked.ion-touched.ion-invalid) .label-text-wrapper{color:var(--highlight-color)}.select-highlight{bottom:-1px;position:absolute;width:100%;height:var(--highlight-height);-webkit-transform:scale(0);transform:scale(0);-webkit-transition:-webkit-transform 200ms;transition:-webkit-transform 200ms;transition:transform 200ms;transition:transform 200ms, -webkit-transform 200ms;background:var(--highlight-color)}.select-highlight{inset-inline-start:0}:host(.select-expanded) .select-highlight,:host(.has-focus) .select-highlight{-webkit-transform:scale(1);transform:scale(1)}:host(.in-item) .select-highlight{bottom:0}:host(.in-item) .select-highlight{inset-inline-start:0}.select-icon{width:0.8125rem;-webkit-transition:-webkit-transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);transition:transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);transition:transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);color:var(--ion-color-step-500, var(--ion-text-color-step-500, gray))}:host(.select-expanded:not(.has-expanded-icon)) .select-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}:host(.in-item.select-expanded) .select-wrapper .select-icon,:host(.in-item.has-focus) .select-wrapper .select-icon,:host(.in-item.has-focus.ion-valid) .select-wrapper .select-icon,:host(.in-item.ion-touched.ion-invalid) .select-wrapper .select-icon{color:var(--ion-color-step-500, var(--ion-text-color-step-500, gray))}:host(.select-expanded) .select-wrapper .select-icon,:host(.has-focus.ion-valid) .select-wrapper .select-icon,:host(.ion-touched.ion-invalid) .select-wrapper .select-icon,:host(.has-focus) .select-wrapper .select-icon{color:var(--highlight-color)}:host(.select-shape-round){--border-radius:16px}:host(.select-label-placement-stacked) .select-wrapper-inner,:host(.select-label-placement-floating) .select-wrapper-inner{width:calc(100% - 0.8125rem - 4px)}:host(.select-disabled){opacity:0.38}::slotted(ion-button[slot=start].button-has-icon-only),::slotted(ion-button[slot=end].button-has-icon-only){--border-radius:50%;--padding-start:8px;--padding-end:8px;--padding-top:8px;--padding-bottom:8px;aspect-ratio:1;min-height:40px}";
-var _a96;
-var Select = proxyCustomElement((_a96 = class extends H {
+var _a92;
+var Select = proxyCustomElement((_a92 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -27385,8 +23480,8 @@ var Select = proxyCustomElement((_a96 = class extends H {
     }, part: "label" }, label === void 0 ? h("slot", { name: "label" }) : h("div", { class: "label-text" }, label));
   }
   componentDidRender() {
-    var _a190;
-    (_a190 = this.notchController) === null || _a190 === void 0 ? void 0 : _a190.calculateNotchWidth();
+    var _a186;
+    (_a186 = this.notchController) === null || _a186 === void 0 ? void 0 : _a186.calculateNotchWidth();
   }
   /**
    * Gets any content passed into the `label` slot,
@@ -27460,10 +23555,10 @@ var Select = proxyCustomElement((_a96 = class extends H {
     return h("ion-icon", { class: "select-icon", part: "icon", "aria-hidden": "true", icon });
   }
   get ariaLabel() {
-    var _a190;
+    var _a186;
     const { placeholder, inheritedAttributes } = this;
     const displayValue = this.getText();
-    const definedLabel = (_a190 = inheritedAttributes["aria-label"]) !== null && _a190 !== void 0 ? _a190 : this.labelText;
+    const definedLabel = (_a186 = inheritedAttributes["aria-label"]) !== null && _a186 !== void 0 ? _a186 : this.labelText;
     let renderedLabel = displayValue;
     if (renderedLabel === "" && placeholder !== void 0) {
       renderedLabel = placeholder;
@@ -27558,7 +23653,7 @@ var Select = proxyCustomElement((_a96 = class extends H {
       md: selectMdCss
     };
   }
-}, __name(_a96, "Select"), _a96), [289, "ion-select", {
+}, __name(_a92, "Select"), _a92), [289, "ion-select", {
   "cancelText": [1, "cancel-text"],
   "color": [513],
   "compareWith": [1, "compare-with"],
@@ -27752,8 +23847,8 @@ var defineCustomElement116 = defineCustomElement$165;
 // node_modules/@ionic/core/components/ion-textarea.js
 var textareaIosCss = '.sc-ion-textarea-ios-h{--background:initial;--color:initial;--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);--padding-top:0;--padding-end:0;--padding-bottom:8px;--padding-start:0;--border-radius:0;--border-style:solid;--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;width:100%;min-height:44px;color:var(--color);font-family:var(--ion-font-family, inherit);z-index:2;-webkit-box-sizing:border-box;box-sizing:border-box}.textarea-label-placement-floating.sc-ion-textarea-ios-h,.textarea-label-placement-stacked.sc-ion-textarea-ios-h{--padding-top:0px;min-height:56px}[cols].sc-ion-textarea-ios-h:not([auto-grow]){width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.ion-color.sc-ion-textarea-ios-h{--highlight-color-focused:var(--ion-color-base);background:initial}ion-item.sc-ion-textarea-ios-h,ion-item .sc-ion-textarea-ios-h{-ms-flex-item-align:baseline;align-self:baseline}ion-item[slot=start].sc-ion-textarea-ios-h,ion-item [slot=start].sc-ion-textarea-ios-h,ion-item[slot=end].sc-ion-textarea-ios-h,ion-item [slot=end].sc-ion-textarea-ios-h{width:auto}.native-textarea.sc-ion-textarea-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:block;position:relative;-ms-flex:1;flex:1;width:100%;max-width:100%;max-height:100%;border:0;outline:none;background:transparent;white-space:pre-wrap;z-index:1;-webkit-box-sizing:border-box;box-sizing:border-box;resize:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.native-textarea.sc-ion-textarea-ios::-webkit-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios::-moz-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios:-ms-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios::-ms-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios::placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios{color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-align:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;grid-area:1/1/2/2;word-break:break-word}.cloned-input.sc-ion-textarea-ios{top:0;bottom:0;position:absolute;pointer-events:none}.cloned-input.sc-ion-textarea-ios{inset-inline-start:0}.cloned-input.sc-ion-textarea-ios:disabled{opacity:1}[auto-grow].sc-ion-textarea-ios-h .cloned-input.sc-ion-textarea-ios{height:100%}[auto-grow].sc-ion-textarea-ios-h .native-textarea.sc-ion-textarea-ios{overflow:hidden}.textarea-wrapper.sc-ion-textarea-ios{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:0px;padding-bottom:0px;border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:start;align-items:flex-start;height:inherit;min-height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;background:var(--background);line-height:normal}.native-wrapper.sc-ion-textarea-ios{position:relative;width:100%;height:100%}.has-focus.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios{caret-color:var(--highlight-color)}.native-wrapper.sc-ion-textarea-ios textarea.sc-ion-textarea-ios{-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom)}.native-wrapper.sc-ion-textarea-ios{display:grid;min-width:inherit;max-width:inherit;min-height:inherit;max-height:inherit;grid-auto-rows:100%}.native-wrapper.sc-ion-textarea-ios::after{white-space:pre-wrap;content:attr(data-replicated-value) " ";visibility:hidden}.native-wrapper.sc-ion-textarea-ios::after{padding-left:0;padding-right:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:var(--border-radius);color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-align:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;grid-area:1/1/2/2;word-break:break-word}.textarea-wrapper-inner.sc-ion-textarea-ios{display:-ms-flexbox;display:flex;width:100%;min-height:inherit}.ion-touched.ion-invalid.sc-ion-textarea-ios-h{--highlight-color:var(--highlight-color-invalid)}.ion-valid.sc-ion-textarea-ios-h{--highlight-color:var(--highlight-color-valid)}.textarea-bottom.sc-ion-textarea-ios{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:5px;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;border-top:var(--border-width) var(--border-style) var(--border-color);font-size:0.75rem;white-space:normal}.has-focus.ion-valid.sc-ion-textarea-ios-h,.ion-touched.ion-invalid.sc-ion-textarea-ios-h{--border-color:var(--highlight-color)}.textarea-bottom.sc-ion-textarea-ios .error-text.sc-ion-textarea-ios{display:none;color:var(--highlight-color-invalid)}.textarea-bottom.sc-ion-textarea-ios .helper-text.sc-ion-textarea-ios{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}.ion-touched.ion-invalid.sc-ion-textarea-ios-h .textarea-bottom.sc-ion-textarea-ios .error-text.sc-ion-textarea-ios{display:block}.ion-touched.ion-invalid.sc-ion-textarea-ios-h .textarea-bottom.sc-ion-textarea-ios .helper-text.sc-ion-textarea-ios{display:none}.textarea-bottom.sc-ion-textarea-ios .counter.sc-ion-textarea-ios{-webkit-margin-start:auto;margin-inline-start:auto;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d));white-space:nowrap;-webkit-padding-start:16px;padding-inline-start:16px}.label-text-wrapper.sc-ion-textarea-ios{-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);max-width:200px;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none}.label-text.sc-ion-textarea-ios,.sc-ion-textarea-ios-s>[slot=label]{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden.sc-ion-textarea-ios,.textarea-outline-notch-hidden.sc-ion-textarea-ios{display:none}.textarea-wrapper.sc-ion-textarea-ios textarea.sc-ion-textarea-ios{-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)}.textarea-label-placement-start.sc-ion-textarea-ios-h .textarea-wrapper.sc-ion-textarea-ios{-ms-flex-direction:row;flex-direction:row}.textarea-label-placement-start.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.textarea-label-placement-end.sc-ion-textarea-ios-h .textarea-wrapper.sc-ion-textarea-ios{-ms-flex-direction:row-reverse;flex-direction:row-reverse}.textarea-label-placement-end.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}.textarea-label-placement-fixed.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.textarea-label-placement-fixed.sc-ion-textarea-ios-h .label-text.sc-ion-textarea-ios{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.textarea-label-placement-stacked.sc-ion-textarea-ios-h .textarea-wrapper.sc-ion-textarea-ios,.textarea-label-placement-floating.sc-ion-textarea-ios-h .textarea-wrapper.sc-ion-textarea-ios{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:start}.textarea-label-placement-stacked.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,.textarea-label-placement-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-transform-origin:left top;transform-origin:left top;-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:0px;padding-bottom:0px;max-width:100%;z-index:2}[dir=rtl].sc-ion-textarea-ios-h -no-combinator.textarea-label-placement-stacked.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl] .sc-ion-textarea-ios-h -no-combinator.textarea-label-placement-stacked.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl].textarea-label-placement-stacked.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl] .textarea-label-placement-stacked.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl].sc-ion-textarea-ios-h -no-combinator.textarea-label-placement-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl] .sc-ion-textarea-ios-h -no-combinator.textarea-label-placement-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl].textarea-label-placement-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios,[dir=rtl] .textarea-label-placement-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.textarea-label-placement-stacked.sc-ion-textarea-ios-h:dir(rtl) .label-text-wrapper.sc-ion-textarea-ios,.textarea-label-placement-floating.sc-ion-textarea-ios-h:dir(rtl) .label-text-wrapper.sc-ion-textarea-ios{-webkit-transform-origin:right top;transform-origin:right top}}.textarea-label-placement-stacked.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios,.textarea-label-placement-floating.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios,.textarea-label-placement-stacked[auto-grow].sc-ion-textarea-ios-h .native-wrapper.sc-ion-textarea-ios::after,.textarea-label-placement-floating[auto-grow].sc-ion-textarea-ios-h .native-wrapper.sc-ion-textarea-ios::after{-webkit-margin-start:0px;margin-inline-start:0px;-webkit-margin-end:0px;margin-inline-end:0px;margin-top:8px;margin-bottom:0px}.sc-ion-textarea-ios-h.textarea-label-placement-stacked.sc-ion-textarea-ios-s>[slot=start],.sc-ion-textarea-ios-h.textarea-label-placement-stacked .sc-ion-textarea-ios-s>[slot=start],.sc-ion-textarea-ios-h.textarea-label-placement-stacked.sc-ion-textarea-ios-s>[slot=end],.sc-ion-textarea-ios-h.textarea-label-placement-stacked .sc-ion-textarea-ios-s>[slot=end],.sc-ion-textarea-ios-h.textarea-label-placement-floating.sc-ion-textarea-ios-s>[slot=start],.sc-ion-textarea-ios-h.textarea-label-placement-floating .sc-ion-textarea-ios-s>[slot=start],.sc-ion-textarea-ios-h.textarea-label-placement-floating.sc-ion-textarea-ios-s>[slot=end],.sc-ion-textarea-ios-h.textarea-label-placement-floating .sc-ion-textarea-ios-s>[slot=end]{margin-top:8px}.textarea-label-placement-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-transform:translateY(100%) scale(1);transform:translateY(100%) scale(1)}.textarea-label-placement-floating.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios{opacity:0}.has-focus.textarea-label-placement-floating.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios,.has-value.textarea-label-placement-floating.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios{opacity:1}.label-floating.sc-ion-textarea-ios-h .label-text-wrapper.sc-ion-textarea-ios{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);max-width:calc(100% / 0.75)}.start-slot-wrapper.sc-ion-textarea-ios,.end-slot-wrapper.sc-ion-textarea-ios{padding-left:0;padding-right:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;-ms-flex-negative:0;flex-shrink:0;-ms-flex-item-align:start;align-self:start}.sc-ion-textarea-ios-s>[slot=start],.sc-ion-textarea-ios-s>[slot=end]{margin-top:0}.sc-ion-textarea-ios-s>[slot=start]:last-of-type{-webkit-margin-end:16px;margin-inline-end:16px;-webkit-margin-start:0;margin-inline-start:0}.sc-ion-textarea-ios-s>[slot=end]:first-of-type{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}.sc-ion-textarea-ios-h{--border-width:0.55px;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-250, var(--ion-background-color-step-250, #c8c7cc))));--padding-top:10px;--padding-end:0px;--padding-bottom:8px;--padding-start:0px;--highlight-height:0px;font-size:inherit}.textarea-disabled.sc-ion-textarea-ios-h{opacity:0.3}.sc-ion-textarea-ios-s>ion-button[slot=start].button-has-icon-only,.sc-ion-textarea-ios-s>ion-button[slot=end].button-has-icon-only{--border-radius:50%;--padding-start:0;--padding-end:0;--padding-top:0;--padding-bottom:0;aspect-ratio:1}';
 var textareaMdCss = '.sc-ion-textarea-md-h{--background:initial;--color:initial;--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:var(--ion-placeholder-opacity, 0.6);--padding-top:0;--padding-end:0;--padding-bottom:8px;--padding-start:0;--border-radius:0;--border-style:solid;--highlight-color-focused:var(--ion-color-primary, #0054e9);--highlight-color-valid:var(--ion-color-success, #2dd55b);--highlight-color-invalid:var(--ion-color-danger, #c5000f);--highlight-color:var(--highlight-color-focused);display:block;position:relative;width:100%;min-height:44px;color:var(--color);font-family:var(--ion-font-family, inherit);z-index:2;-webkit-box-sizing:border-box;box-sizing:border-box}.textarea-label-placement-floating.sc-ion-textarea-md-h,.textarea-label-placement-stacked.sc-ion-textarea-md-h{--padding-top:0px;min-height:56px}[cols].sc-ion-textarea-md-h:not([auto-grow]){width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.ion-color.sc-ion-textarea-md-h{--highlight-color-focused:var(--ion-color-base);background:initial}ion-item.sc-ion-textarea-md-h,ion-item .sc-ion-textarea-md-h{-ms-flex-item-align:baseline;align-self:baseline}ion-item[slot=start].sc-ion-textarea-md-h,ion-item [slot=start].sc-ion-textarea-md-h,ion-item[slot=end].sc-ion-textarea-md-h,ion-item [slot=end].sc-ion-textarea-md-h{width:auto}.native-textarea.sc-ion-textarea-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;display:block;position:relative;-ms-flex:1;flex:1;width:100%;max-width:100%;max-height:100%;border:0;outline:none;background:transparent;white-space:pre-wrap;z-index:1;-webkit-box-sizing:border-box;box-sizing:border-box;resize:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.native-textarea.sc-ion-textarea-md::-webkit-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-md::-moz-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-md:-ms-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-md::-ms-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-md::placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-md{color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-align:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;grid-area:1/1/2/2;word-break:break-word}.cloned-input.sc-ion-textarea-md{top:0;bottom:0;position:absolute;pointer-events:none}.cloned-input.sc-ion-textarea-md{inset-inline-start:0}.cloned-input.sc-ion-textarea-md:disabled{opacity:1}[auto-grow].sc-ion-textarea-md-h .cloned-input.sc-ion-textarea-md{height:100%}[auto-grow].sc-ion-textarea-md-h .native-textarea.sc-ion-textarea-md{overflow:hidden}.textarea-wrapper.sc-ion-textarea-md{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:0px;padding-bottom:0px;border-radius:var(--border-radius);display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:start;align-items:flex-start;height:inherit;min-height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;background:var(--background);line-height:normal}.native-wrapper.sc-ion-textarea-md{position:relative;width:100%;height:100%}.has-focus.sc-ion-textarea-md-h textarea.sc-ion-textarea-md{caret-color:var(--highlight-color)}.native-wrapper.sc-ion-textarea-md textarea.sc-ion-textarea-md{-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom)}.native-wrapper.sc-ion-textarea-md{display:grid;min-width:inherit;max-width:inherit;min-height:inherit;max-height:inherit;grid-auto-rows:100%}.native-wrapper.sc-ion-textarea-md::after{white-space:pre-wrap;content:attr(data-replicated-value) " ";visibility:hidden}.native-wrapper.sc-ion-textarea-md::after{padding-left:0;padding-right:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:var(--border-radius);color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-align:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;grid-area:1/1/2/2;word-break:break-word}.textarea-wrapper-inner.sc-ion-textarea-md{display:-ms-flexbox;display:flex;width:100%;min-height:inherit}.ion-touched.ion-invalid.sc-ion-textarea-md-h{--highlight-color:var(--highlight-color-invalid)}.ion-valid.sc-ion-textarea-md-h{--highlight-color:var(--highlight-color-valid)}.textarea-bottom.sc-ion-textarea-md{-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end);padding-top:5px;padding-bottom:0;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;border-top:var(--border-width) var(--border-style) var(--border-color);font-size:0.75rem;white-space:normal}.has-focus.ion-valid.sc-ion-textarea-md-h,.ion-touched.ion-invalid.sc-ion-textarea-md-h{--border-color:var(--highlight-color)}.textarea-bottom.sc-ion-textarea-md .error-text.sc-ion-textarea-md{display:none;color:var(--highlight-color-invalid)}.textarea-bottom.sc-ion-textarea-md .helper-text.sc-ion-textarea-md{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}.ion-touched.ion-invalid.sc-ion-textarea-md-h .textarea-bottom.sc-ion-textarea-md .error-text.sc-ion-textarea-md{display:block}.ion-touched.ion-invalid.sc-ion-textarea-md-h .textarea-bottom.sc-ion-textarea-md .helper-text.sc-ion-textarea-md{display:none}.textarea-bottom.sc-ion-textarea-md .counter.sc-ion-textarea-md{-webkit-margin-start:auto;margin-inline-start:auto;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d));white-space:nowrap;-webkit-padding-start:16px;padding-inline-start:16px}.label-text-wrapper.sc-ion-textarea-md{-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);max-width:200px;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none}.label-text.sc-ion-textarea-md,.sc-ion-textarea-md-s>[slot=label]{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.label-text-wrapper-hidden.sc-ion-textarea-md,.textarea-outline-notch-hidden.sc-ion-textarea-md{display:none}.textarea-wrapper.sc-ion-textarea-md textarea.sc-ion-textarea-md{-webkit-transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)}.textarea-label-placement-start.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md{-ms-flex-direction:row;flex-direction:row}.textarea-label-placement-start.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.textarea-label-placement-end.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md{-ms-flex-direction:row-reverse;flex-direction:row-reverse}.textarea-label-placement-end.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0;margin-top:0;margin-bottom:0}.textarea-label-placement-fixed.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:0;margin-bottom:0}.textarea-label-placement-fixed.sc-ion-textarea-md-h .label-text.sc-ion-textarea-md{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.textarea-label-placement-stacked.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md,.textarea-label-placement-floating.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:start}.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform-origin:left top;transform-origin:left top;-webkit-padding-start:0px;padding-inline-start:0px;-webkit-padding-end:0px;padding-inline-end:0px;padding-top:0px;padding-bottom:0px;max-width:100%;z-index:2}[dir=rtl].sc-ion-textarea-md-h -no-combinator.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .sc-ion-textarea-md-h -no-combinator.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl].textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl].sc-ion-textarea-md-h -no-combinator.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .sc-ion-textarea-md-h -no-combinator.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl].textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.textarea-label-placement-stacked.sc-ion-textarea-md-h:dir(rtl) .label-text-wrapper.sc-ion-textarea-md,.textarea-label-placement-floating.sc-ion-textarea-md-h:dir(rtl) .label-text-wrapper.sc-ion-textarea-md{-webkit-transform-origin:right top;transform-origin:right top}}.textarea-label-placement-stacked.sc-ion-textarea-md-h textarea.sc-ion-textarea-md,.textarea-label-placement-floating.sc-ion-textarea-md-h textarea.sc-ion-textarea-md,.textarea-label-placement-stacked[auto-grow].sc-ion-textarea-md-h .native-wrapper.sc-ion-textarea-md::after,.textarea-label-placement-floating[auto-grow].sc-ion-textarea-md-h .native-wrapper.sc-ion-textarea-md::after{-webkit-margin-start:0px;margin-inline-start:0px;-webkit-margin-end:0px;margin-inline-end:0px;margin-top:8px;margin-bottom:0px}.sc-ion-textarea-md-h.textarea-label-placement-stacked.sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-label-placement-stacked .sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-label-placement-stacked.sc-ion-textarea-md-s>[slot=end],.sc-ion-textarea-md-h.textarea-label-placement-stacked .sc-ion-textarea-md-s>[slot=end],.sc-ion-textarea-md-h.textarea-label-placement-floating.sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-label-placement-floating .sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-label-placement-floating.sc-ion-textarea-md-s>[slot=end],.sc-ion-textarea-md-h.textarea-label-placement-floating .sc-ion-textarea-md-s>[slot=end]{margin-top:8px}.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform:translateY(100%) scale(1);transform:translateY(100%) scale(1)}.textarea-label-placement-floating.sc-ion-textarea-md-h textarea.sc-ion-textarea-md{opacity:0}.has-focus.textarea-label-placement-floating.sc-ion-textarea-md-h textarea.sc-ion-textarea-md,.has-value.textarea-label-placement-floating.sc-ion-textarea-md-h textarea.sc-ion-textarea-md{opacity:1}.label-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);max-width:calc(100% / 0.75)}.start-slot-wrapper.sc-ion-textarea-md,.end-slot-wrapper.sc-ion-textarea-md{padding-left:0;padding-right:0;padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;-ms-flex-negative:0;flex-shrink:0;-ms-flex-item-align:start;align-self:start}.sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-s>[slot=end]{margin-top:0}.sc-ion-textarea-md-s>[slot=start]:last-of-type{-webkit-margin-end:16px;margin-inline-end:16px;-webkit-margin-start:0;margin-inline-start:0}.sc-ion-textarea-md-s>[slot=end]:first-of-type{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}.textarea-fill-solid.sc-ion-textarea-md-h{--background:var(--ion-color-step-50, var(--ion-background-color-step-50, #f2f2f2));--border-color:var(--ion-color-step-500, var(--ion-background-color-step-500, gray));--border-radius:4px;--padding-start:16px;--padding-end:16px;min-height:56px}.textarea-fill-solid.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md{border-bottom:var(--border-width) var(--border-style) var(--border-color)}.has-focus.textarea-fill-solid.ion-valid.sc-ion-textarea-md-h,.textarea-fill-solid.ion-touched.ion-invalid.sc-ion-textarea-md-h{--border-color:var(--highlight-color)}.textarea-fill-solid.sc-ion-textarea-md-h .textarea-bottom.sc-ion-textarea-md{border-top:none}@media (any-hover: hover){.textarea-fill-solid.sc-ion-textarea-md-h:hover{--background:var(--ion-color-step-100, var(--ion-background-color-step-100, #e6e6e6));--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}}.textarea-fill-solid.has-focus.sc-ion-textarea-md-h{--background:var(--ion-color-step-150, var(--ion-background-color-step-150, #d9d9d9));--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}.textarea-fill-solid.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md{border-start-start-radius:var(--border-radius);border-start-end-radius:var(--border-radius);border-end-end-radius:0px;border-end-start-radius:0px}.label-floating.textarea-fill-solid.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{max-width:calc(100% / 0.75)}.textarea-fill-outline.sc-ion-textarea-md-h{--border-color:var(--ion-color-step-300, var(--ion-background-color-step-300, #b3b3b3));--border-radius:4px;--padding-start:16px;--padding-end:16px;min-height:56px}.textarea-fill-outline.textarea-shape-round.sc-ion-textarea-md-h{--border-radius:28px;--padding-start:32px;--padding-end:32px}.has-focus.textarea-fill-outline.ion-valid.sc-ion-textarea-md-h,.textarea-fill-outline.ion-touched.ion-invalid.sc-ion-textarea-md-h{--border-color:var(--highlight-color)}@media (any-hover: hover){.textarea-fill-outline.sc-ion-textarea-md-h:hover{--border-color:var(--ion-color-step-750, var(--ion-background-color-step-750, #404040))}}.textarea-fill-outline.has-focus.sc-ion-textarea-md-h{--border-width:var(--highlight-height);--border-color:var(--highlight-color)}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-bottom.sc-ion-textarea-md{border-top:none}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-wrapper.sc-ion-textarea-md{border-bottom:none}.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform-origin:left top;transform-origin:left top;position:absolute;max-width:calc(100% - var(--padding-start) - var(--padding-end))}[dir=rtl].sc-ion-textarea-md-h -no-combinator.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .sc-ion-textarea-md-h -no-combinator.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl].textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl].sc-ion-textarea-md-h -no-combinator.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .sc-ion-textarea-md-h -no-combinator.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl].textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,[dir=rtl] .textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h:dir(rtl) .label-text-wrapper.sc-ion-textarea-md,.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h:dir(rtl) .label-text-wrapper.sc-ion-textarea-md{-webkit-transform-origin:right top;transform-origin:right top}}.textarea-fill-outline.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{position:relative}.label-floating.textarea-fill-outline.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{-webkit-transform:translateY(-32%) scale(0.75);transform:translateY(-32%) scale(0.75);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;max-width:calc(\n    (100% - var(--padding-start) - var(--padding-end) - 8px) / 0.75\n  )}.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-h textarea.sc-ion-textarea-md,.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-h textarea.sc-ion-textarea-md,.textarea-fill-outline.textarea-label-placement-stacked[auto-grow].sc-ion-textarea-md-h .native-wrapper.sc-ion-textarea-md::after,.textarea-fill-outline.textarea-label-placement-floating[auto-grow].sc-ion-textarea-md-h .native-wrapper.sc-ion-textarea-md::after{-webkit-margin-start:0px;margin-inline-start:0px;-webkit-margin-end:0px;margin-inline-end:0px;margin-top:12px;margin-bottom:0px}.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-stacked .sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-stacked.sc-ion-textarea-md-s>[slot=end],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-stacked .sc-ion-textarea-md-s>[slot=end],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-floating .sc-ion-textarea-md-s>[slot=start],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-floating.sc-ion-textarea-md-s>[slot=end],.sc-ion-textarea-md-h.textarea-fill-outline.textarea-label-placement-floating .sc-ion-textarea-md-s>[slot=end]{margin-top:12px}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-container.sc-ion-textarea-md{left:0;right:0;top:0;bottom:0;display:-ms-flexbox;display:flex;position:absolute;width:100%;height:100%}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-start.sc-ion-textarea-md,.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-end.sc-ion-textarea-md{pointer-events:none}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-start.sc-ion-textarea-md,.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-notch.sc-ion-textarea-md,.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-end.sc-ion-textarea-md{border-top:var(--border-width) var(--border-style) var(--border-color);border-bottom:var(--border-width) var(--border-style) var(--border-color)}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-notch.sc-ion-textarea-md{max-width:calc(100% - var(--padding-start) - var(--padding-end))}.textarea-fill-outline.sc-ion-textarea-md-h .notch-spacer.sc-ion-textarea-md{-webkit-padding-end:8px;padding-inline-end:8px;font-size:calc(1em * 0.75);opacity:0;pointer-events:none;-webkit-box-sizing:content-box;box-sizing:content-box}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-start.sc-ion-textarea-md{border-start-start-radius:var(--border-radius);border-start-end-radius:0px;border-end-end-radius:0px;border-end-start-radius:var(--border-radius);-webkit-border-start:var(--border-width) var(--border-style) var(--border-color);border-inline-start:var(--border-width) var(--border-style) var(--border-color);width:calc(var(--padding-start) - 4px)}.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-end.sc-ion-textarea-md{-webkit-border-end:var(--border-width) var(--border-style) var(--border-color);border-inline-end:var(--border-width) var(--border-style) var(--border-color);border-start-start-radius:0px;border-start-end-radius:var(--border-radius);border-end-end-radius:var(--border-radius);border-end-start-radius:0px;-ms-flex-positive:1;flex-grow:1}.label-floating.textarea-fill-outline.sc-ion-textarea-md-h .textarea-outline-notch.sc-ion-textarea-md{border-top:none}.sc-ion-textarea-md-h{--border-width:1px;--border-color:var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, var(--ion-background-color-step-150, rgba(0, 0, 0, 0.13)))));--padding-top:18px;--padding-end:0px;--padding-bottom:8px;--padding-start:0px;--highlight-height:2px;font-size:inherit}.textarea-bottom.sc-ion-textarea-md .counter.sc-ion-textarea-md{letter-spacing:0.0333333333em}.textarea-label-placement-floating.has-focus.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,.textarea-label-placement-stacked.has-focus.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{color:var(--highlight-color)}.has-focus.textarea-label-placement-floating.ion-valid.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,.textarea-label-placement-floating.ion-touched.ion-invalid.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,.has-focus.textarea-label-placement-stacked.ion-valid.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md,.textarea-label-placement-stacked.ion-touched.ion-invalid.sc-ion-textarea-md-h .label-text-wrapper.sc-ion-textarea-md{color:var(--highlight-color)}.textarea-disabled.sc-ion-textarea-md-h{opacity:0.38}.textarea-highlight.sc-ion-textarea-md{bottom:-1px;position:absolute;width:100%;height:var(--highlight-height);-webkit-transform:scale(0);transform:scale(0);-webkit-transition:-webkit-transform 200ms;transition:-webkit-transform 200ms;transition:transform 200ms;transition:transform 200ms, -webkit-transform 200ms;background:var(--highlight-color)}.textarea-highlight.sc-ion-textarea-md{inset-inline-start:0}.has-focus.sc-ion-textarea-md-h .textarea-highlight.sc-ion-textarea-md{-webkit-transform:scale(1);transform:scale(1)}.in-item.sc-ion-textarea-md-h .textarea-highlight.sc-ion-textarea-md{bottom:0}.in-item.sc-ion-textarea-md-h .textarea-highlight.sc-ion-textarea-md{inset-inline-start:0}.textarea-shape-round.sc-ion-textarea-md-h{--border-radius:16px}.sc-ion-textarea-md-s>ion-button[slot=start].button-has-icon-only,.sc-ion-textarea-md-s>ion-button[slot=end].button-has-icon-only{--border-radius:50%;--padding-start:8px;--padding-end:8px;--padding-top:8px;--padding-bottom:8px;aspect-ratio:1;min-height:40px}';
-var _a97;
-var Textarea = proxyCustomElement((_a97 = class extends H {
+var _a93;
+var Textarea = proxyCustomElement((_a93 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -27882,8 +23977,8 @@ var Textarea = proxyCustomElement((_a97 = class extends H {
     this.runAutoGrow();
   }
   componentDidRender() {
-    var _a190;
-    (_a190 = this.notchController) === null || _a190 === void 0 ? void 0 : _a190.calculateNotchWidth();
+    var _a186;
+    (_a186 = this.notchController) === null || _a186 === void 0 ? void 0 : _a186.calculateNotchWidth();
   }
   /**
    * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global
@@ -27931,9 +24026,9 @@ var Textarea = proxyCustomElement((_a97 = class extends H {
   runAutoGrow() {
     if (this.nativeInput && this.autoGrow) {
       writeTask(() => {
-        var _a190;
+        var _a186;
         if (this.textareaWrapper) {
-          this.textareaWrapper.dataset.replicatedValue = (_a190 = this.value) !== null && _a190 !== void 0 ? _a190 : "";
+          this.textareaWrapper.dataset.replicatedValue = (_a186 = this.value) !== null && _a186 !== void 0 ? _a186 : "";
         }
       });
     }
@@ -28078,7 +24173,7 @@ var Textarea = proxyCustomElement((_a97 = class extends H {
       md: textareaMdCss
     };
   }
-}, __name(_a97, "Textarea"), _a97), [294, "ion-textarea", {
+}, __name(_a93, "Textarea"), _a93), [294, "ion-textarea", {
   "color": [513],
   "autocapitalize": [1],
   "autofocus": [4],
@@ -28137,8 +24232,8 @@ var defineCustomElement117 = defineCustomElement$166;
 // node_modules/@ionic/core/components/ion-toggle.js
 var toggleIosCss = ":host{-webkit-box-sizing:content-box !important;box-sizing:content-box !important;display:inline-block;position:relative;max-width:100%;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0;width:100%;height:100%}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}:host(.ion-focused) input{border:2px solid #5e9ed6}:host(.toggle-disabled){pointer-events:none}input{display:none}.toggle-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;cursor:inherit}.label-text-wrapper{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host(.in-item) .label-text-wrapper{margin-top:10px;margin-bottom:10px}:host(.in-item.toggle-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.toggle-label-placement-stacked) .native-wrapper{margin-bottom:10px}.label-text-wrapper-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.toggle-bottom{padding-top:4px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;font-size:0.75rem;white-space:normal}:host(.toggle-label-placement-stacked) .toggle-bottom{font-size:1rem}.toggle-bottom .error-text{display:none;color:var(--ion-color-danger, #c5000f)}.toggle-bottom .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}:host(.ion-touched.ion-invalid) .toggle-bottom .error-text{display:block}:host(.ion-touched.ion-invalid) .toggle-bottom .helper-text{display:none}:host(.toggle-label-placement-start) .toggle-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.toggle-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.toggle-label-placement-end) .toggle-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse;-ms-flex-pack:start;justify-content:start}:host(.toggle-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.toggle-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.toggle-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.toggle-label-placement-stacked) .toggle-wrapper{-ms-flex-direction:column;flex-direction:column;text-align:center}:host(.toggle-label-placement-stacked) .label-text-wrapper{-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host(.toggle-label-placement-stacked.toggle-alignment-start) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]):host(.toggle-label-placement-stacked.toggle-alignment-start) .label-text-wrapper,:host-context([dir=rtl]).toggle-label-placement-stacked.toggle-alignment-start .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.toggle-label-placement-stacked.toggle-alignment-start:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.toggle-label-placement-stacked.toggle-alignment-center) .label-text-wrapper{-webkit-transform-origin:center top;transform-origin:center top}:host-context([dir=rtl]):host(.toggle-label-placement-stacked.toggle-alignment-center) .label-text-wrapper,:host-context([dir=rtl]).toggle-label-placement-stacked.toggle-alignment-center .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}@supports selector(:dir(rtl)){:host(.toggle-label-placement-stacked.toggle-alignment-center:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}}:host(.toggle-justify-space-between) .toggle-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.toggle-justify-start) .toggle-wrapper{-ms-flex-pack:start;justify-content:start}:host(.toggle-justify-end) .toggle-wrapper{-ms-flex-pack:end;justify-content:end}:host(.toggle-alignment-start) .toggle-wrapper{-ms-flex-align:start;align-items:start}:host(.toggle-alignment-center) .toggle-wrapper{-ms-flex-align:center;align-items:center}:host(.toggle-justify-space-between),:host(.toggle-justify-start),:host(.toggle-justify-end),:host(.toggle-alignment-start),:host(.toggle-alignment-center){display:block}.toggle-icon-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;height:100%;-webkit-transition:var(--handle-transition);transition:var(--handle-transition);will-change:transform}.toggle-icon{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;background:var(--track-background);overflow:inherit}:host(.toggle-checked) .toggle-icon{background:var(--track-background-checked)}.toggle-inner{border-radius:var(--handle-border-radius);position:absolute;left:var(--handle-spacing);width:var(--handle-width);height:var(--handle-height);max-height:var(--handle-max-height);-webkit-transition:var(--handle-transition);transition:var(--handle-transition);background:var(--handle-background);-webkit-box-shadow:var(--handle-box-shadow);box-shadow:var(--handle-box-shadow);contain:strict}:host(.toggle-ltr) .toggle-inner{left:var(--handle-spacing)}:host(.toggle-rtl) .toggle-inner{right:var(--handle-spacing)}:host(.toggle-ltr.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(100% - var(--handle-width)), 0, 0);transform:translate3d(calc(100% - var(--handle-width)), 0, 0)}:host(.toggle-rtl.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(-100% + var(--handle-width)), 0, 0);transform:translate3d(calc(-100% + var(--handle-width)), 0, 0)}:host(.toggle-checked) .toggle-inner{background:var(--handle-background-checked)}:host(.toggle-ltr.toggle-checked) .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0)}:host(.toggle-rtl.toggle-checked) .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0)}:host{--track-background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.088);--track-background-checked:var(--ion-color-primary, #0054e9);--border-radius:15.5px;--handle-background:#ffffff;--handle-background-checked:#ffffff;--handle-border-radius:25.5px;--handle-box-shadow:0 3px 4px rgba(0, 0, 0, 0.06), 0 3px 8px rgba(0, 0, 0, 0.06);--handle-height:calc(31px - (2px * 2));--handle-max-height:calc(100% - var(--handle-spacing) * 2);--handle-width:calc(31px - (2px * 2));--handle-spacing:2px;--handle-transition:transform 300ms, width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms}.native-wrapper .toggle-icon{width:51px;height:31px;overflow:hidden}:host(.ion-color.toggle-checked) .toggle-icon{background:var(--ion-color-base)}:host(.toggle-activated) .toggle-switch-icon{opacity:0}.toggle-icon{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);-webkit-transition:background-color 300ms;transition:background-color 300ms}.toggle-inner{will-change:transform}.toggle-switch-icon{position:absolute;top:50%;width:11px;height:11px;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:opacity 300ms, color 300ms;transition:opacity 300ms, color 300ms}.toggle-switch-icon{position:absolute;color:var(--ion-color-dark, #222428)}:host(.toggle-ltr) .toggle-switch-icon{right:6px}:host(.toggle-rtl) .toggle-switch-icon{right:initial;left:6px;}:host(.toggle-checked) .toggle-switch-icon.toggle-switch-icon-checked{color:var(--ion-color-contrast, #fff)}:host(.toggle-checked) .toggle-switch-icon:not(.toggle-switch-icon-checked){opacity:0}.toggle-switch-icon-checked{position:absolute;width:15px;height:15px;-webkit-transform:translateY(-50%) rotate(90deg);transform:translateY(-50%) rotate(90deg)}:host(.toggle-ltr) .toggle-switch-icon-checked{right:initial;left:4px;}:host(.toggle-rtl) .toggle-switch-icon-checked{right:4px}:host(.toggle-activated) .toggle-icon::before,:host(.toggle-checked) .toggle-icon::before{-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0)}:host(.toggle-activated.toggle-checked) .toggle-inner::before{-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0)}:host(.toggle-activated) .toggle-inner{width:calc(var(--handle-width) + 6px)}:host(.toggle-ltr.toggle-activated.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(100% - var(--handle-width) - 6px), 0, 0);transform:translate3d(calc(100% - var(--handle-width) - 6px), 0, 0)}:host(.toggle-rtl.toggle-activated.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(-100% + var(--handle-width) + 6px), 0, 0);transform:translate3d(calc(-100% + var(--handle-width) + 6px), 0, 0)}:host(.toggle-disabled){opacity:0.3}";
 var toggleMdCss = ":host{-webkit-box-sizing:content-box !important;box-sizing:content-box !important;display:inline-block;position:relative;max-width:100%;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}:host(.in-item){-ms-flex:1 1 0px;flex:1 1 0;width:100%;height:100%}:host([slot=start]),:host([slot=end]){-ms-flex:initial;flex:initial;width:auto}:host(.ion-focused) input{border:2px solid #5e9ed6}:host(.toggle-disabled){pointer-events:none}input{display:none}.toggle-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;height:inherit;-webkit-transition:background-color 15ms linear;transition:background-color 15ms linear;cursor:inherit}.label-text-wrapper{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}:host(.in-item) .label-text-wrapper{margin-top:10px;margin-bottom:10px}:host(.in-item.toggle-label-placement-stacked) .label-text-wrapper{margin-top:10px;margin-bottom:16px}:host(.in-item.toggle-label-placement-stacked) .native-wrapper{margin-bottom:10px}.label-text-wrapper-hidden{display:none}.native-wrapper{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.toggle-bottom{padding-top:4px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;font-size:0.75rem;white-space:normal}:host(.toggle-label-placement-stacked) .toggle-bottom{font-size:1rem}.toggle-bottom .error-text{display:none;color:var(--ion-color-danger, #c5000f)}.toggle-bottom .helper-text{display:block;color:var(--ion-color-step-700, var(--ion-text-color-step-300, #4d4d4d))}:host(.ion-touched.ion-invalid) .toggle-bottom .error-text{display:block}:host(.ion-touched.ion-invalid) .toggle-bottom .helper-text{display:none}:host(.toggle-label-placement-start) .toggle-wrapper{-ms-flex-direction:row;flex-direction:row}:host(.toggle-label-placement-start) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.toggle-label-placement-end) .toggle-wrapper{-ms-flex-direction:row-reverse;flex-direction:row-reverse;-ms-flex-pack:start;justify-content:start}:host(.toggle-label-placement-end) .label-text-wrapper{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:0;margin-inline-end:0}:host(.toggle-label-placement-fixed) .label-text-wrapper{-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:16px;margin-inline-end:16px}:host(.toggle-label-placement-fixed) .label-text-wrapper{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}:host(.toggle-label-placement-stacked) .toggle-wrapper{-ms-flex-direction:column;flex-direction:column;text-align:center}:host(.toggle-label-placement-stacked) .label-text-wrapper{-webkit-transform:scale(0.75);transform:scale(0.75);margin-left:0;margin-right:0;margin-bottom:16px;max-width:calc(100% / 0.75)}:host(.toggle-label-placement-stacked.toggle-alignment-start) .label-text-wrapper{-webkit-transform-origin:left top;transform-origin:left top}:host-context([dir=rtl]):host(.toggle-label-placement-stacked.toggle-alignment-start) .label-text-wrapper,:host-context([dir=rtl]).toggle-label-placement-stacked.toggle-alignment-start .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}@supports selector(:dir(rtl)){:host(.toggle-label-placement-stacked.toggle-alignment-start:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:right top;transform-origin:right top}}:host(.toggle-label-placement-stacked.toggle-alignment-center) .label-text-wrapper{-webkit-transform-origin:center top;transform-origin:center top}:host-context([dir=rtl]):host(.toggle-label-placement-stacked.toggle-alignment-center) .label-text-wrapper,:host-context([dir=rtl]).toggle-label-placement-stacked.toggle-alignment-center .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}@supports selector(:dir(rtl)){:host(.toggle-label-placement-stacked.toggle-alignment-center:dir(rtl)) .label-text-wrapper{-webkit-transform-origin:calc(100% - center) top;transform-origin:calc(100% - center) top}}:host(.toggle-justify-space-between) .toggle-wrapper{-ms-flex-pack:justify;justify-content:space-between}:host(.toggle-justify-start) .toggle-wrapper{-ms-flex-pack:start;justify-content:start}:host(.toggle-justify-end) .toggle-wrapper{-ms-flex-pack:end;justify-content:end}:host(.toggle-alignment-start) .toggle-wrapper{-ms-flex-align:start;align-items:start}:host(.toggle-alignment-center) .toggle-wrapper{-ms-flex-align:center;align-items:center}:host(.toggle-justify-space-between),:host(.toggle-justify-start),:host(.toggle-justify-end),:host(.toggle-alignment-start),:host(.toggle-alignment-center){display:block}.toggle-icon-wrapper{display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;width:100%;height:100%;-webkit-transition:var(--handle-transition);transition:var(--handle-transition);will-change:transform}.toggle-icon{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;background:var(--track-background);overflow:inherit}:host(.toggle-checked) .toggle-icon{background:var(--track-background-checked)}.toggle-inner{border-radius:var(--handle-border-radius);position:absolute;left:var(--handle-spacing);width:var(--handle-width);height:var(--handle-height);max-height:var(--handle-max-height);-webkit-transition:var(--handle-transition);transition:var(--handle-transition);background:var(--handle-background);-webkit-box-shadow:var(--handle-box-shadow);box-shadow:var(--handle-box-shadow);contain:strict}:host(.toggle-ltr) .toggle-inner{left:var(--handle-spacing)}:host(.toggle-rtl) .toggle-inner{right:var(--handle-spacing)}:host(.toggle-ltr.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(100% - var(--handle-width)), 0, 0);transform:translate3d(calc(100% - var(--handle-width)), 0, 0)}:host(.toggle-rtl.toggle-checked) .toggle-icon-wrapper{-webkit-transform:translate3d(calc(-100% + var(--handle-width)), 0, 0);transform:translate3d(calc(-100% + var(--handle-width)), 0, 0)}:host(.toggle-checked) .toggle-inner{background:var(--handle-background-checked)}:host(.toggle-ltr.toggle-checked) .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * -2), 0, 0)}:host(.toggle-rtl.toggle-checked) .toggle-inner{-webkit-transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0);transform:translate3d(calc(var(--handle-spacing) * 2), 0, 0)}:host{--track-background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.39);--track-background-checked:rgba(var(--ion-color-primary-rgb, 0, 84, 233), 0.5);--border-radius:14px;--handle-background:#ffffff;--handle-background-checked:var(--ion-color-primary, #0054e9);--handle-border-radius:50%;--handle-box-shadow:0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);--handle-width:20px;--handle-height:20px;--handle-max-height:calc(100% + 6px);--handle-spacing:0;--handle-transition:transform 160ms cubic-bezier(0.4, 0, 0.2, 1), background-color 160ms cubic-bezier(0.4, 0, 0.2, 1)}.native-wrapper .toggle-icon{width:36px;height:14px}:host(.ion-color.toggle-checked) .toggle-icon{background:rgba(var(--ion-color-base-rgb), 0.5)}:host(.ion-color.toggle-checked) .toggle-inner{background:var(--ion-color-base)}:host(.toggle-checked) .toggle-inner{color:var(--ion-color-contrast, #fff)}.toggle-icon{-webkit-transition:background-color 160ms;transition:background-color 160ms}.toggle-inner{will-change:background-color, transform;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;color:#000}.toggle-inner .toggle-switch-icon{-webkit-padding-start:1px;padding-inline-start:1px;-webkit-padding-end:1px;padding-inline-end:1px;padding-top:1px;padding-bottom:1px;width:100%;height:100%}:host(.toggle-disabled){opacity:0.38}";
-var _a98;
-var Toggle = proxyCustomElement((_a98 = class extends H {
+var _a94;
+var Toggle = proxyCustomElement((_a94 = class extends H {
   constructor() {
     super();
     this.__registerHost();
@@ -28343,7 +24438,7 @@ var Toggle = proxyCustomElement((_a98 = class extends H {
       md: toggleMdCss
     };
   }
-}, __name(_a98, "Toggle"), _a98), [289, "ion-toggle", {
+}, __name(_a94, "Toggle"), _a94), [289, "ion-toggle", {
   "color": [513],
   "name": [1],
   "checked": [1028],
@@ -28392,7 +24487,7 @@ __name(defineCustomElement$167, "defineCustomElement$1");
 var defineCustomElement118 = defineCustomElement$167;
 
 // node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs
-var _c02 = ["outletContent"];
+var _c0 = ["outletContent"];
 var _c1 = ["*"];
 function IonModal_div_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -28443,8 +24538,8 @@ function IonTabs_ng_content_4_Template(rf, ctx) {
   }
 }
 __name(IonTabs_ng_content_4_Template, "IonTabs_ng_content_4_Template");
-var _a99;
-var IonRouterOutlet2 = (_a99 = class extends IonRouterOutlet {
+var _a95;
+var IonRouterOutlet2 = (_a95 = class extends IonRouterOutlet {
   parentOutlet;
   /**
    * `static: true` must be set so the query results are resolved
@@ -28464,16 +24559,16 @@ var IonRouterOutlet2 = (_a99 = class extends IonRouterOutlet {
     super(name, tabs, commonLocation, elementRef, router, zone, activatedRoute, parentOutlet);
     this.parentOutlet = parentOutlet;
   }
-}, __name(_a99, "IonRouterOutlet"), /** @nocollapse */
-__publicField(_a99, "ɵfac", /* @__PURE__ */ __name(function IonRouterOutlet_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a99)(ɵɵinjectAttribute("name"), ɵɵinjectAttribute("tabs"), ɵɵdirectiveInject(Location), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(_a99, 12));
+}, __name(_a95, "IonRouterOutlet"), /** @nocollapse */
+__publicField(_a95, "ɵfac", /* @__PURE__ */ __name(function IonRouterOutlet_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a95)(ɵɵinjectAttribute("name"), ɵɵinjectAttribute("tabs"), ɵɵdirectiveInject(Location), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(_a95, 12));
 }, "IonRouterOutlet_Factory")), /** @nocollapse */
-__publicField(_a99, "ɵcmp", ɵɵdefineComponent({
-  type: _a99,
+__publicField(_a95, "ɵcmp", ɵɵdefineComponent({
+  type: _a95,
   selectors: [["ion-router-outlet"]],
   viewQuery: /* @__PURE__ */ __name(function IonRouterOutlet_Query(rf, ctx) {
     if (rf & 1) {
-      ɵɵviewQuery(_c02, 7, ViewContainerRef);
+      ɵɵviewQuery(_c0, 7, ViewContainerRef);
     }
     if (rf & 2) {
       let _t;
@@ -28494,7 +24589,7 @@ __publicField(_a99, "ɵcmp", ɵɵdefineComponent({
     }
   }, "IonRouterOutlet_Template"),
   encapsulation: 2
-})), _a99);
+})), _a95);
 IonRouterOutlet2 = __decorate([ProxyCmp({
   defineCustomElementFn: defineCustomElement4
 })], IonRouterOutlet2);
@@ -28549,17 +24644,17 @@ IonRouterOutlet2 = __decorate([ProxyCmp({
     }]
   });
 })();
-var _a100;
-var IonBackButton2 = (_a100 = class extends IonBackButton {
+var _a96;
+var IonBackButton2 = (_a96 = class extends IonBackButton {
   constructor(routerOutlet, navCtrl, config2, r, z, c) {
     super(routerOutlet, navCtrl, config2, r, z, c);
   }
-}, __name(_a100, "IonBackButton"), /** @nocollapse */
-__publicField(_a100, "ɵfac", /* @__PURE__ */ __name(function IonBackButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a100)(ɵɵdirectiveInject(IonRouterOutlet2, 8), ɵɵdirectiveInject(NavController), ɵɵdirectiveInject(Config), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
+}, __name(_a96, "IonBackButton"), /** @nocollapse */
+__publicField(_a96, "ɵfac", /* @__PURE__ */ __name(function IonBackButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a96)(ɵɵdirectiveInject(IonRouterOutlet2, 8), ɵɵdirectiveInject(NavController), ɵɵdirectiveInject(Config), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
 }, "IonBackButton_Factory")), /** @nocollapse */
-__publicField(_a100, "ɵcmp", ɵɵdefineComponent({
-  type: _a100,
+__publicField(_a96, "ɵcmp", ɵɵdefineComponent({
+  type: _a96,
   selectors: [["ion-back-button"]],
   features: [ɵɵInheritDefinitionFeature],
   ngContentSelectors: _c1,
@@ -28573,7 +24668,7 @@ __publicField(_a100, "ɵcmp", ɵɵdefineComponent({
   }, "IonBackButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a100);
+})), _a96);
 IonBackButton2 = __decorate([ProxyCmp({
   defineCustomElementFn: defineCustomElement3
 })], IonBackButton2);
@@ -28605,17 +24700,17 @@ IonBackButton2 = __decorate([ProxyCmp({
     }];
   }, null);
 })();
-var _a101;
-var IonModal2 = (_a101 = class extends IonModal {
-}, __name(_a101, "IonModal"), /** @nocollapse */
-__publicField(_a101, "ɵfac", /* @__PURE__ */ (() => {
+var _a97;
+var IonModal2 = (_a97 = class extends IonModal {
+}, __name(_a97, "IonModal"), /** @nocollapse */
+__publicField(_a97, "ɵfac", /* @__PURE__ */ (() => {
   let ɵIonModal_BaseFactory;
   return /* @__PURE__ */ __name(function IonModal_Factory(__ngFactoryType__) {
-    return (ɵIonModal_BaseFactory || (ɵIonModal_BaseFactory = ɵɵgetInheritedFactory(_a101)))(__ngFactoryType__ || _a101);
+    return (ɵIonModal_BaseFactory || (ɵIonModal_BaseFactory = ɵɵgetInheritedFactory(_a97)))(__ngFactoryType__ || _a97);
   }, "IonModal_Factory");
 })()), /** @nocollapse */
-__publicField(_a101, "ɵcmp", ɵɵdefineComponent({
-  type: _a101,
+__publicField(_a97, "ɵcmp", ɵɵdefineComponent({
+  type: _a97,
   selectors: [["ion-modal"]],
   features: [ɵɵInheritDefinitionFeature],
   decls: 1,
@@ -28632,7 +24727,7 @@ __publicField(_a101, "ɵcmp", ɵɵdefineComponent({
   dependencies: [CommonModule, NgIf, NgTemplateOutlet],
   encapsulation: 2,
   changeDetection: 0
-})), _a101);
+})), _a97);
 IonModal2 = __decorate([ProxyCmp({
   defineCustomElementFn: defineCustomElement7
 })], IonModal2);
@@ -28650,17 +24745,17 @@ IonModal2 = __decorate([ProxyCmp({
     }]
   }], null, null);
 })();
-var _a102;
-var IonPopover2 = (_a102 = class extends IonPopover {
-}, __name(_a102, "IonPopover"), /** @nocollapse */
-__publicField(_a102, "ɵfac", /* @__PURE__ */ (() => {
+var _a98;
+var IonPopover2 = (_a98 = class extends IonPopover {
+}, __name(_a98, "IonPopover"), /** @nocollapse */
+__publicField(_a98, "ɵfac", /* @__PURE__ */ (() => {
   let ɵIonPopover_BaseFactory;
   return /* @__PURE__ */ __name(function IonPopover_Factory(__ngFactoryType__) {
-    return (ɵIonPopover_BaseFactory || (ɵIonPopover_BaseFactory = ɵɵgetInheritedFactory(_a102)))(__ngFactoryType__ || _a102);
+    return (ɵIonPopover_BaseFactory || (ɵIonPopover_BaseFactory = ɵɵgetInheritedFactory(_a98)))(__ngFactoryType__ || _a98);
   }, "IonPopover_Factory");
 })()), /** @nocollapse */
-__publicField(_a102, "ɵcmp", ɵɵdefineComponent({
-  type: _a102,
+__publicField(_a98, "ɵcmp", ɵɵdefineComponent({
+  type: _a98,
   selectors: [["ion-popover"]],
   features: [ɵɵInheritDefinitionFeature],
   decls: 1,
@@ -28677,7 +24772,7 @@ __publicField(_a102, "ɵcmp", ɵɵdefineComponent({
   dependencies: [CommonModule, NgIf, NgTemplateOutlet],
   encapsulation: 2,
   changeDetection: 0
-})), _a102);
+})), _a98);
 IonPopover2 = __decorate([ProxyCmp({
   defineCustomElementFn: defineCustomElement9
 })], IonPopover2);
@@ -28745,7 +24840,7 @@ var IonRouterLinkWithHref = _IonRouterLinkWithHref;
     }]
   }], null, null);
 })();
-var proxyInputs2 = /* @__PURE__ */ __name((Cmp, inputs) => {
+var proxyInputs = /* @__PURE__ */ __name((Cmp, inputs) => {
   const Prototype = Cmp.prototype;
   inputs.forEach((item) => {
     Object.defineProperty(Prototype, item, {
@@ -28766,7 +24861,7 @@ var proxyInputs2 = /* @__PURE__ */ __name((Cmp, inputs) => {
     });
   });
 }, "proxyInputs");
-var proxyMethods2 = /* @__PURE__ */ __name((Cmp, methods) => {
+var proxyMethods = /* @__PURE__ */ __name((Cmp, methods) => {
   const Prototype = Cmp.prototype;
   methods.forEach((methodName) => {
     Prototype[methodName] = function() {
@@ -28775,7 +24870,7 @@ var proxyMethods2 = /* @__PURE__ */ __name((Cmp, methods) => {
     };
   });
 }, "proxyMethods");
-var proxyOutputs2 = /* @__PURE__ */ __name((instance, el, events) => {
+var proxyOutputs = /* @__PURE__ */ __name((instance, el, events) => {
   events.forEach((eventName) => instance[eventName] = fromEvent(el, eventName));
 }, "proxyOutputs");
 function ProxyCmp2(opts) {
@@ -28789,18 +24884,18 @@ function ProxyCmp2(opts) {
       defineCustomElementFn();
     }
     if (inputs) {
-      proxyInputs2(cls, inputs);
+      proxyInputs(cls, inputs);
     }
     if (methods) {
-      proxyMethods2(cls, methods);
+      proxyMethods(cls, methods);
     }
     return cls;
   }, "decorator");
   return decorator;
 }
 __name(ProxyCmp2, "ProxyCmp");
-var _a103;
-var IonAccordion = (_a103 = class {
+var _a99;
+var IonAccordion = (_a99 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -28808,12 +24903,12 @@ var IonAccordion = (_a103 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a103, "IonAccordion"), /** @nocollapse */
-__publicField(_a103, "ɵfac", /* @__PURE__ */ __name(function IonAccordion_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a103)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a99, "IonAccordion"), /** @nocollapse */
+__publicField(_a99, "ɵfac", /* @__PURE__ */ __name(function IonAccordion_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a99)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonAccordion_Factory")), /** @nocollapse */
-__publicField(_a103, "ɵcmp", ɵɵdefineComponent({
-  type: _a103,
+__publicField(_a99, "ɵcmp", ɵɵdefineComponent({
+  type: _a99,
   selectors: [["ion-accordion"]],
   inputs: {
     disabled: "disabled",
@@ -28834,7 +24929,7 @@ __publicField(_a103, "ɵcmp", ɵɵdefineComponent({
   }, "IonAccordion_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a103);
+})), _a99);
 IonAccordion = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement10,
   inputs: ["disabled", "mode", "readonly", "toggleIcon", "toggleIconSlot", "value"]
@@ -28860,22 +24955,22 @@ IonAccordion = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a104;
-var IonAccordionGroup = (_a104 = class {
+var _a100;
+var IonAccordionGroup = (_a100 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange"]);
+    proxyOutputs(this, this.el, ["ionChange"]);
   }
-}, __name(_a104, "IonAccordionGroup"), /** @nocollapse */
-__publicField(_a104, "ɵfac", /* @__PURE__ */ __name(function IonAccordionGroup_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a104)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a100, "IonAccordionGroup"), /** @nocollapse */
+__publicField(_a100, "ɵfac", /* @__PURE__ */ __name(function IonAccordionGroup_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a100)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonAccordionGroup_Factory")), /** @nocollapse */
-__publicField(_a104, "ɵcmp", ɵɵdefineComponent({
-  type: _a104,
+__publicField(_a100, "ɵcmp", ɵɵdefineComponent({
+  type: _a100,
   selectors: [["ion-accordion-group"]],
   inputs: {
     animated: "animated",
@@ -28897,7 +24992,7 @@ __publicField(_a104, "ɵcmp", ɵɵdefineComponent({
   }, "IonAccordionGroup_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a104);
+})), _a100);
 IonAccordionGroup = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement11,
   inputs: ["animated", "disabled", "expand", "mode", "multiple", "readonly", "value"]
@@ -28923,22 +25018,22 @@ IonAccordionGroup = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a105;
-var IonActionSheet = (_a105 = class {
+var _a101;
+var IonActionSheet = (_a101 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionActionSheetDidPresent", "ionActionSheetWillPresent", "ionActionSheetWillDismiss", "ionActionSheetDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
+    proxyOutputs(this, this.el, ["ionActionSheetDidPresent", "ionActionSheetWillPresent", "ionActionSheetWillDismiss", "ionActionSheetDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
   }
-}, __name(_a105, "IonActionSheet"), /** @nocollapse */
-__publicField(_a105, "ɵfac", /* @__PURE__ */ __name(function IonActionSheet_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a105)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a101, "IonActionSheet"), /** @nocollapse */
+__publicField(_a101, "ɵfac", /* @__PURE__ */ __name(function IonActionSheet_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a101)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonActionSheet_Factory")), /** @nocollapse */
-__publicField(_a105, "ɵcmp", ɵɵdefineComponent({
-  type: _a105,
+__publicField(_a101, "ɵcmp", ɵɵdefineComponent({
+  type: _a101,
   selectors: [["ion-action-sheet"]],
   inputs: {
     animated: "animated",
@@ -28967,7 +25062,7 @@ __publicField(_a105, "ɵcmp", ɵɵdefineComponent({
   }, "IonActionSheet_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a105);
+})), _a101);
 IonActionSheet = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement13,
   inputs: ["animated", "backdropDismiss", "buttons", "cssClass", "enterAnimation", "header", "htmlAttributes", "isOpen", "keyboardClose", "leaveAnimation", "mode", "subHeader", "translucent", "trigger"],
@@ -28994,22 +25089,22 @@ IonActionSheet = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a106;
-var IonAlert = (_a106 = class {
+var _a102;
+var IonAlert = (_a102 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionAlertDidPresent", "ionAlertWillPresent", "ionAlertWillDismiss", "ionAlertDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
+    proxyOutputs(this, this.el, ["ionAlertDidPresent", "ionAlertWillPresent", "ionAlertWillDismiss", "ionAlertDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
   }
-}, __name(_a106, "IonAlert"), /** @nocollapse */
-__publicField(_a106, "ɵfac", /* @__PURE__ */ __name(function IonAlert_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a106)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a102, "IonAlert"), /** @nocollapse */
+__publicField(_a102, "ɵfac", /* @__PURE__ */ __name(function IonAlert_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a102)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonAlert_Factory")), /** @nocollapse */
-__publicField(_a106, "ɵcmp", ɵɵdefineComponent({
-  type: _a106,
+__publicField(_a102, "ɵcmp", ɵɵdefineComponent({
+  type: _a102,
   selectors: [["ion-alert"]],
   inputs: {
     animated: "animated",
@@ -29040,7 +25135,7 @@ __publicField(_a106, "ɵcmp", ɵɵdefineComponent({
   }, "IonAlert_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a106);
+})), _a102);
 IonAlert = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement15,
   inputs: ["animated", "backdropDismiss", "buttons", "cssClass", "enterAnimation", "header", "htmlAttributes", "inputs", "isOpen", "keyboardClose", "leaveAnimation", "message", "mode", "subHeader", "translucent", "trigger"],
@@ -29067,8 +25162,8 @@ IonAlert = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a107;
-var IonApp = (_a107 = class {
+var _a103;
+var IonApp = (_a103 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29076,12 +25171,12 @@ var IonApp = (_a107 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a107, "IonApp"), /** @nocollapse */
-__publicField(_a107, "ɵfac", /* @__PURE__ */ __name(function IonApp_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a107)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a103, "IonApp"), /** @nocollapse */
+__publicField(_a103, "ɵfac", /* @__PURE__ */ __name(function IonApp_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a103)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonApp_Factory")), /** @nocollapse */
-__publicField(_a107, "ɵcmp", ɵɵdefineComponent({
-  type: _a107,
+__publicField(_a103, "ɵcmp", ɵɵdefineComponent({
+  type: _a103,
   selectors: [["ion-app"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -29094,7 +25189,7 @@ __publicField(_a107, "ɵcmp", ɵɵdefineComponent({
   }, "IonApp_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a107);
+})), _a103);
 IonApp = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement16,
   methods: ["setFocus"]
@@ -29120,8 +25215,8 @@ IonApp = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a108;
-var IonAvatar = (_a108 = class {
+var _a104;
+var IonAvatar = (_a104 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29129,12 +25224,12 @@ var IonAvatar = (_a108 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a108, "IonAvatar"), /** @nocollapse */
-__publicField(_a108, "ɵfac", /* @__PURE__ */ __name(function IonAvatar_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a108)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a104, "IonAvatar"), /** @nocollapse */
+__publicField(_a104, "ɵfac", /* @__PURE__ */ __name(function IonAvatar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a104)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonAvatar_Factory")), /** @nocollapse */
-__publicField(_a108, "ɵcmp", ɵɵdefineComponent({
-  type: _a108,
+__publicField(_a104, "ɵcmp", ɵɵdefineComponent({
+  type: _a104,
   selectors: [["ion-avatar"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -29147,7 +25242,7 @@ __publicField(_a108, "ɵcmp", ɵɵdefineComponent({
   }, "IonAvatar_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a108);
+})), _a104);
 IonAvatar = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement17
 })], IonAvatar);
@@ -29172,22 +25267,22 @@ IonAvatar = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a109;
-var IonBackdrop = (_a109 = class {
+var _a105;
+var IonBackdrop = (_a105 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionBackdropTap"]);
+    proxyOutputs(this, this.el, ["ionBackdropTap"]);
   }
-}, __name(_a109, "IonBackdrop"), /** @nocollapse */
-__publicField(_a109, "ɵfac", /* @__PURE__ */ __name(function IonBackdrop_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a109)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a105, "IonBackdrop"), /** @nocollapse */
+__publicField(_a105, "ɵfac", /* @__PURE__ */ __name(function IonBackdrop_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a105)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonBackdrop_Factory")), /** @nocollapse */
-__publicField(_a109, "ɵcmp", ɵɵdefineComponent({
-  type: _a109,
+__publicField(_a105, "ɵcmp", ɵɵdefineComponent({
+  type: _a105,
   selectors: [["ion-backdrop"]],
   inputs: {
     stopPropagation: "stopPropagation",
@@ -29205,7 +25300,7 @@ __publicField(_a109, "ɵcmp", ɵɵdefineComponent({
   }, "IonBackdrop_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a109);
+})), _a105);
 IonBackdrop = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement18,
   inputs: ["stopPropagation", "tappable", "visible"]
@@ -29231,8 +25326,8 @@ IonBackdrop = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a110;
-var IonBadge = (_a110 = class {
+var _a106;
+var IonBadge = (_a106 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29240,12 +25335,12 @@ var IonBadge = (_a110 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a110, "IonBadge"), /** @nocollapse */
-__publicField(_a110, "ɵfac", /* @__PURE__ */ __name(function IonBadge_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a110)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a106, "IonBadge"), /** @nocollapse */
+__publicField(_a106, "ɵfac", /* @__PURE__ */ __name(function IonBadge_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a106)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonBadge_Factory")), /** @nocollapse */
-__publicField(_a110, "ɵcmp", ɵɵdefineComponent({
-  type: _a110,
+__publicField(_a106, "ɵcmp", ɵɵdefineComponent({
+  type: _a106,
   selectors: [["ion-badge"]],
   inputs: {
     color: "color",
@@ -29262,7 +25357,7 @@ __publicField(_a110, "ɵcmp", ɵɵdefineComponent({
   }, "IonBadge_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a110);
+})), _a106);
 IonBadge = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement19,
   inputs: ["color", "mode"]
@@ -29288,22 +25383,22 @@ IonBadge = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a111;
-var IonBreadcrumb = (_a111 = class {
+var _a107;
+var IonBreadcrumb = (_a107 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionFocus", "ionBlur"]);
   }
-}, __name(_a111, "IonBreadcrumb"), /** @nocollapse */
-__publicField(_a111, "ɵfac", /* @__PURE__ */ __name(function IonBreadcrumb_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a111)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a107, "IonBreadcrumb"), /** @nocollapse */
+__publicField(_a107, "ɵfac", /* @__PURE__ */ __name(function IonBreadcrumb_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a107)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonBreadcrumb_Factory")), /** @nocollapse */
-__publicField(_a111, "ɵcmp", ɵɵdefineComponent({
-  type: _a111,
+__publicField(_a107, "ɵcmp", ɵɵdefineComponent({
+  type: _a107,
   selectors: [["ion-breadcrumb"]],
   inputs: {
     active: "active",
@@ -29329,7 +25424,7 @@ __publicField(_a111, "ɵcmp", ɵɵdefineComponent({
   }, "IonBreadcrumb_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a111);
+})), _a107);
 IonBreadcrumb = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement20,
   inputs: ["active", "color", "disabled", "download", "href", "mode", "rel", "routerAnimation", "routerDirection", "separator", "target"]
@@ -29355,22 +25450,22 @@ IonBreadcrumb = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a112;
-var IonBreadcrumbs = (_a112 = class {
+var _a108;
+var IonBreadcrumbs = (_a108 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionCollapsedClick"]);
+    proxyOutputs(this, this.el, ["ionCollapsedClick"]);
   }
-}, __name(_a112, "IonBreadcrumbs"), /** @nocollapse */
-__publicField(_a112, "ɵfac", /* @__PURE__ */ __name(function IonBreadcrumbs_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a112)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a108, "IonBreadcrumbs"), /** @nocollapse */
+__publicField(_a108, "ɵfac", /* @__PURE__ */ __name(function IonBreadcrumbs_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a108)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonBreadcrumbs_Factory")), /** @nocollapse */
-__publicField(_a112, "ɵcmp", ɵɵdefineComponent({
-  type: _a112,
+__publicField(_a108, "ɵcmp", ɵɵdefineComponent({
+  type: _a108,
   selectors: [["ion-breadcrumbs"]],
   inputs: {
     color: "color",
@@ -29390,7 +25485,7 @@ __publicField(_a112, "ɵcmp", ɵɵdefineComponent({
   }, "IonBreadcrumbs_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a112);
+})), _a108);
 IonBreadcrumbs = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement21,
   inputs: ["color", "itemsAfterCollapse", "itemsBeforeCollapse", "maxItems", "mode"]
@@ -29416,22 +25511,22 @@ IonBreadcrumbs = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a113;
-var IonButton = (_a113 = class {
+var _a109;
+var IonButton = (_a109 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionFocus", "ionBlur"]);
   }
-}, __name(_a113, "IonButton"), /** @nocollapse */
-__publicField(_a113, "ɵfac", /* @__PURE__ */ __name(function IonButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a113)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a109, "IonButton"), /** @nocollapse */
+__publicField(_a109, "ɵfac", /* @__PURE__ */ __name(function IonButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a109)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonButton_Factory")), /** @nocollapse */
-__publicField(_a113, "ɵcmp", ɵɵdefineComponent({
-  type: _a113,
+__publicField(_a109, "ɵcmp", ɵɵdefineComponent({
+  type: _a109,
   selectors: [["ion-button"]],
   inputs: {
     buttonType: "buttonType",
@@ -29463,7 +25558,7 @@ __publicField(_a113, "ɵcmp", ɵɵdefineComponent({
   }, "IonButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a113);
+})), _a109);
 IonButton = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement23,
   inputs: ["buttonType", "color", "disabled", "download", "expand", "fill", "form", "href", "mode", "rel", "routerAnimation", "routerDirection", "shape", "size", "strong", "target", "type"]
@@ -29489,8 +25584,8 @@ IonButton = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a114;
-var IonButtons = (_a114 = class {
+var _a110;
+var IonButtons = (_a110 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29498,12 +25593,12 @@ var IonButtons = (_a114 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a114, "IonButtons"), /** @nocollapse */
-__publicField(_a114, "ɵfac", /* @__PURE__ */ __name(function IonButtons_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a114)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a110, "IonButtons"), /** @nocollapse */
+__publicField(_a110, "ɵfac", /* @__PURE__ */ __name(function IonButtons_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a110)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonButtons_Factory")), /** @nocollapse */
-__publicField(_a114, "ɵcmp", ɵɵdefineComponent({
-  type: _a114,
+__publicField(_a110, "ɵcmp", ɵɵdefineComponent({
+  type: _a110,
   selectors: [["ion-buttons"]],
   inputs: {
     collapse: "collapse"
@@ -29519,7 +25614,7 @@ __publicField(_a114, "ɵcmp", ɵɵdefineComponent({
   }, "IonButtons_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a114);
+})), _a110);
 IonButtons = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement25,
   inputs: ["collapse"]
@@ -29545,8 +25640,8 @@ IonButtons = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a115;
-var IonCard = (_a115 = class {
+var _a111;
+var IonCard = (_a111 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29554,12 +25649,12 @@ var IonCard = (_a115 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a115, "IonCard"), /** @nocollapse */
-__publicField(_a115, "ɵfac", /* @__PURE__ */ __name(function IonCard_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a115)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a111, "IonCard"), /** @nocollapse */
+__publicField(_a111, "ɵfac", /* @__PURE__ */ __name(function IonCard_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a111)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonCard_Factory")), /** @nocollapse */
-__publicField(_a115, "ɵcmp", ɵɵdefineComponent({
-  type: _a115,
+__publicField(_a111, "ɵcmp", ɵɵdefineComponent({
+  type: _a111,
   selectors: [["ion-card"]],
   inputs: {
     button: "button",
@@ -29585,7 +25680,7 @@ __publicField(_a115, "ɵcmp", ɵɵdefineComponent({
   }, "IonCard_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a115);
+})), _a111);
 IonCard = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement26,
   inputs: ["button", "color", "disabled", "download", "href", "mode", "rel", "routerAnimation", "routerDirection", "target", "type"]
@@ -29611,8 +25706,8 @@ IonCard = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a116;
-var IonCardContent = (_a116 = class {
+var _a112;
+var IonCardContent = (_a112 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29620,12 +25715,12 @@ var IonCardContent = (_a116 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a116, "IonCardContent"), /** @nocollapse */
-__publicField(_a116, "ɵfac", /* @__PURE__ */ __name(function IonCardContent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a116)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a112, "IonCardContent"), /** @nocollapse */
+__publicField(_a112, "ɵfac", /* @__PURE__ */ __name(function IonCardContent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a112)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonCardContent_Factory")), /** @nocollapse */
-__publicField(_a116, "ɵcmp", ɵɵdefineComponent({
-  type: _a116,
+__publicField(_a112, "ɵcmp", ɵɵdefineComponent({
+  type: _a112,
   selectors: [["ion-card-content"]],
   inputs: {
     mode: "mode"
@@ -29641,7 +25736,7 @@ __publicField(_a116, "ɵcmp", ɵɵdefineComponent({
   }, "IonCardContent_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a116);
+})), _a112);
 IonCardContent = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement27,
   inputs: ["mode"]
@@ -29667,8 +25762,8 @@ IonCardContent = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a117;
-var IonCardHeader = (_a117 = class {
+var _a113;
+var IonCardHeader = (_a113 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29676,12 +25771,12 @@ var IonCardHeader = (_a117 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a117, "IonCardHeader"), /** @nocollapse */
-__publicField(_a117, "ɵfac", /* @__PURE__ */ __name(function IonCardHeader_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a117)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a113, "IonCardHeader"), /** @nocollapse */
+__publicField(_a113, "ɵfac", /* @__PURE__ */ __name(function IonCardHeader_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a113)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonCardHeader_Factory")), /** @nocollapse */
-__publicField(_a117, "ɵcmp", ɵɵdefineComponent({
-  type: _a117,
+__publicField(_a113, "ɵcmp", ɵɵdefineComponent({
+  type: _a113,
   selectors: [["ion-card-header"]],
   inputs: {
     color: "color",
@@ -29699,7 +25794,7 @@ __publicField(_a117, "ɵcmp", ɵɵdefineComponent({
   }, "IonCardHeader_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a117);
+})), _a113);
 IonCardHeader = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement28,
   inputs: ["color", "mode", "translucent"]
@@ -29725,8 +25820,8 @@ IonCardHeader = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a118;
-var IonCardSubtitle = (_a118 = class {
+var _a114;
+var IonCardSubtitle = (_a114 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29734,12 +25829,12 @@ var IonCardSubtitle = (_a118 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a118, "IonCardSubtitle"), /** @nocollapse */
-__publicField(_a118, "ɵfac", /* @__PURE__ */ __name(function IonCardSubtitle_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a118)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a114, "IonCardSubtitle"), /** @nocollapse */
+__publicField(_a114, "ɵfac", /* @__PURE__ */ __name(function IonCardSubtitle_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a114)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonCardSubtitle_Factory")), /** @nocollapse */
-__publicField(_a118, "ɵcmp", ɵɵdefineComponent({
-  type: _a118,
+__publicField(_a114, "ɵcmp", ɵɵdefineComponent({
+  type: _a114,
   selectors: [["ion-card-subtitle"]],
   inputs: {
     color: "color",
@@ -29756,7 +25851,7 @@ __publicField(_a118, "ɵcmp", ɵɵdefineComponent({
   }, "IonCardSubtitle_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a118);
+})), _a114);
 IonCardSubtitle = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement29,
   inputs: ["color", "mode"]
@@ -29782,8 +25877,8 @@ IonCardSubtitle = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a119;
-var IonCardTitle = (_a119 = class {
+var _a115;
+var IonCardTitle = (_a115 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29791,12 +25886,12 @@ var IonCardTitle = (_a119 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a119, "IonCardTitle"), /** @nocollapse */
-__publicField(_a119, "ɵfac", /* @__PURE__ */ __name(function IonCardTitle_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a119)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a115, "IonCardTitle"), /** @nocollapse */
+__publicField(_a115, "ɵfac", /* @__PURE__ */ __name(function IonCardTitle_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a115)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonCardTitle_Factory")), /** @nocollapse */
-__publicField(_a119, "ɵcmp", ɵɵdefineComponent({
-  type: _a119,
+__publicField(_a115, "ɵcmp", ɵɵdefineComponent({
+  type: _a115,
   selectors: [["ion-card-title"]],
   inputs: {
     color: "color",
@@ -29813,7 +25908,7 @@ __publicField(_a119, "ɵcmp", ɵɵdefineComponent({
   }, "IonCardTitle_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a119);
+})), _a115);
 IonCardTitle = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement30,
   inputs: ["color", "mode"]
@@ -29839,8 +25934,8 @@ IonCardTitle = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a120;
-var IonChip = (_a120 = class {
+var _a116;
+var IonChip = (_a116 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29848,12 +25943,12 @@ var IonChip = (_a120 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a120, "IonChip"), /** @nocollapse */
-__publicField(_a120, "ɵfac", /* @__PURE__ */ __name(function IonChip_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a120)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a116, "IonChip"), /** @nocollapse */
+__publicField(_a116, "ɵfac", /* @__PURE__ */ __name(function IonChip_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a116)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonChip_Factory")), /** @nocollapse */
-__publicField(_a120, "ɵcmp", ɵɵdefineComponent({
-  type: _a120,
+__publicField(_a116, "ɵcmp", ɵɵdefineComponent({
+  type: _a116,
   selectors: [["ion-chip"]],
   inputs: {
     color: "color",
@@ -29872,7 +25967,7 @@ __publicField(_a120, "ɵcmp", ɵɵdefineComponent({
   }, "IonChip_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a120);
+})), _a116);
 IonChip = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement31,
   inputs: ["color", "disabled", "mode", "outline"]
@@ -29898,8 +25993,8 @@ IonChip = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a121;
-var IonCol = (_a121 = class {
+var _a117;
+var IonCol = (_a117 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -29907,12 +26002,12 @@ var IonCol = (_a121 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a121, "IonCol"), /** @nocollapse */
-__publicField(_a121, "ɵfac", /* @__PURE__ */ __name(function IonCol_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a121)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a117, "IonCol"), /** @nocollapse */
+__publicField(_a117, "ɵfac", /* @__PURE__ */ __name(function IonCol_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a117)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonCol_Factory")), /** @nocollapse */
-__publicField(_a121, "ɵcmp", ɵɵdefineComponent({
-  type: _a121,
+__publicField(_a117, "ɵcmp", ɵɵdefineComponent({
+  type: _a117,
   selectors: [["ion-col"]],
   inputs: {
     offset: "offset",
@@ -29951,7 +26046,7 @@ __publicField(_a121, "ɵcmp", ɵɵdefineComponent({
   }, "IonCol_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a121);
+})), _a117);
 IonCol = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement32,
   inputs: ["offset", "offsetLg", "offsetMd", "offsetSm", "offsetXl", "offsetXs", "pull", "pullLg", "pullMd", "pullSm", "pullXl", "pullXs", "push", "pushLg", "pushMd", "pushSm", "pushXl", "pushXs", "size", "sizeLg", "sizeMd", "sizeSm", "sizeXl", "sizeXs"]
@@ -29977,22 +26072,22 @@ IonCol = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a122;
-var IonContent = (_a122 = class {
+var _a118;
+var IonContent = (_a118 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionScrollStart", "ionScroll", "ionScrollEnd"]);
+    proxyOutputs(this, this.el, ["ionScrollStart", "ionScroll", "ionScrollEnd"]);
   }
-}, __name(_a122, "IonContent"), /** @nocollapse */
-__publicField(_a122, "ɵfac", /* @__PURE__ */ __name(function IonContent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a122)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a118, "IonContent"), /** @nocollapse */
+__publicField(_a118, "ɵfac", /* @__PURE__ */ __name(function IonContent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a118)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonContent_Factory")), /** @nocollapse */
-__publicField(_a122, "ɵcmp", ɵɵdefineComponent({
-  type: _a122,
+__publicField(_a118, "ɵcmp", ɵɵdefineComponent({
+  type: _a118,
   selectors: [["ion-content"]],
   inputs: {
     color: "color",
@@ -30014,7 +26109,7 @@ __publicField(_a122, "ɵcmp", ɵɵdefineComponent({
   }, "IonContent_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a122);
+})), _a118);
 IonContent = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement34,
   inputs: ["color", "fixedSlotPlacement", "forceOverscroll", "fullscreen", "scrollEvents", "scrollX", "scrollY"],
@@ -30041,8 +26136,8 @@ IonContent = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a123;
-var IonDatetimeButton = (_a123 = class {
+var _a119;
+var IonDatetimeButton = (_a119 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30050,12 +26145,12 @@ var IonDatetimeButton = (_a123 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a123, "IonDatetimeButton"), /** @nocollapse */
-__publicField(_a123, "ɵfac", /* @__PURE__ */ __name(function IonDatetimeButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a123)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a119, "IonDatetimeButton"), /** @nocollapse */
+__publicField(_a119, "ɵfac", /* @__PURE__ */ __name(function IonDatetimeButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a119)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonDatetimeButton_Factory")), /** @nocollapse */
-__publicField(_a123, "ɵcmp", ɵɵdefineComponent({
-  type: _a123,
+__publicField(_a119, "ɵcmp", ɵɵdefineComponent({
+  type: _a119,
   selectors: [["ion-datetime-button"]],
   inputs: {
     color: "color",
@@ -30074,7 +26169,7 @@ __publicField(_a123, "ɵcmp", ɵɵdefineComponent({
   }, "IonDatetimeButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a123);
+})), _a119);
 IonDatetimeButton = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement35,
   inputs: ["color", "datetime", "disabled", "mode"]
@@ -30100,8 +26195,8 @@ IonDatetimeButton = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a124;
-var IonFab = (_a124 = class {
+var _a120;
+var IonFab = (_a120 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30109,12 +26204,12 @@ var IonFab = (_a124 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a124, "IonFab"), /** @nocollapse */
-__publicField(_a124, "ɵfac", /* @__PURE__ */ __name(function IonFab_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a124)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a120, "IonFab"), /** @nocollapse */
+__publicField(_a120, "ɵfac", /* @__PURE__ */ __name(function IonFab_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a120)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonFab_Factory")), /** @nocollapse */
-__publicField(_a124, "ɵcmp", ɵɵdefineComponent({
-  type: _a124,
+__publicField(_a120, "ɵcmp", ɵɵdefineComponent({
+  type: _a120,
   selectors: [["ion-fab"]],
   inputs: {
     activated: "activated",
@@ -30133,7 +26228,7 @@ __publicField(_a124, "ɵcmp", ɵɵdefineComponent({
   }, "IonFab_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a124);
+})), _a120);
 IonFab = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement36,
   inputs: ["activated", "edge", "horizontal", "vertical"],
@@ -30160,22 +26255,22 @@ IonFab = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a125;
-var IonFabButton = (_a125 = class {
+var _a121;
+var IonFabButton = (_a121 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionFocus", "ionBlur"]);
   }
-}, __name(_a125, "IonFabButton"), /** @nocollapse */
-__publicField(_a125, "ɵfac", /* @__PURE__ */ __name(function IonFabButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a125)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a121, "IonFabButton"), /** @nocollapse */
+__publicField(_a121, "ɵfac", /* @__PURE__ */ __name(function IonFabButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a121)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonFabButton_Factory")), /** @nocollapse */
-__publicField(_a125, "ɵcmp", ɵɵdefineComponent({
-  type: _a125,
+__publicField(_a121, "ɵcmp", ɵɵdefineComponent({
+  type: _a121,
   selectors: [["ion-fab-button"]],
   inputs: {
     activated: "activated",
@@ -30205,7 +26300,7 @@ __publicField(_a125, "ɵcmp", ɵɵdefineComponent({
   }, "IonFabButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a125);
+})), _a121);
 IonFabButton = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement37,
   inputs: ["activated", "closeIcon", "color", "disabled", "download", "href", "mode", "rel", "routerAnimation", "routerDirection", "show", "size", "target", "translucent", "type"]
@@ -30231,8 +26326,8 @@ IonFabButton = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a126;
-var IonFabList = (_a126 = class {
+var _a122;
+var IonFabList = (_a122 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30240,12 +26335,12 @@ var IonFabList = (_a126 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a126, "IonFabList"), /** @nocollapse */
-__publicField(_a126, "ɵfac", /* @__PURE__ */ __name(function IonFabList_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a126)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a122, "IonFabList"), /** @nocollapse */
+__publicField(_a122, "ɵfac", /* @__PURE__ */ __name(function IonFabList_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a122)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonFabList_Factory")), /** @nocollapse */
-__publicField(_a126, "ɵcmp", ɵɵdefineComponent({
-  type: _a126,
+__publicField(_a122, "ɵcmp", ɵɵdefineComponent({
+  type: _a122,
   selectors: [["ion-fab-list"]],
   inputs: {
     activated: "activated",
@@ -30262,7 +26357,7 @@ __publicField(_a126, "ɵcmp", ɵɵdefineComponent({
   }, "IonFabList_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a126);
+})), _a122);
 IonFabList = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement38,
   inputs: ["activated", "side"]
@@ -30288,8 +26383,8 @@ IonFabList = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a127;
-var IonFooter = (_a127 = class {
+var _a123;
+var IonFooter = (_a123 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30297,12 +26392,12 @@ var IonFooter = (_a127 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a127, "IonFooter"), /** @nocollapse */
-__publicField(_a127, "ɵfac", /* @__PURE__ */ __name(function IonFooter_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a127)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a123, "IonFooter"), /** @nocollapse */
+__publicField(_a123, "ɵfac", /* @__PURE__ */ __name(function IonFooter_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a123)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonFooter_Factory")), /** @nocollapse */
-__publicField(_a127, "ɵcmp", ɵɵdefineComponent({
-  type: _a127,
+__publicField(_a123, "ɵcmp", ɵɵdefineComponent({
+  type: _a123,
   selectors: [["ion-footer"]],
   inputs: {
     collapse: "collapse",
@@ -30320,7 +26415,7 @@ __publicField(_a127, "ɵcmp", ɵɵdefineComponent({
   }, "IonFooter_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a127);
+})), _a123);
 IonFooter = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement39,
   inputs: ["collapse", "mode", "translucent"]
@@ -30346,8 +26441,8 @@ IonFooter = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a128;
-var IonGrid = (_a128 = class {
+var _a124;
+var IonGrid = (_a124 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30355,12 +26450,12 @@ var IonGrid = (_a128 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a128, "IonGrid"), /** @nocollapse */
-__publicField(_a128, "ɵfac", /* @__PURE__ */ __name(function IonGrid_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a128)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a124, "IonGrid"), /** @nocollapse */
+__publicField(_a124, "ɵfac", /* @__PURE__ */ __name(function IonGrid_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a124)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonGrid_Factory")), /** @nocollapse */
-__publicField(_a128, "ɵcmp", ɵɵdefineComponent({
-  type: _a128,
+__publicField(_a124, "ɵcmp", ɵɵdefineComponent({
+  type: _a124,
   selectors: [["ion-grid"]],
   inputs: {
     fixed: "fixed"
@@ -30376,7 +26471,7 @@ __publicField(_a128, "ɵcmp", ɵɵdefineComponent({
   }, "IonGrid_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a128);
+})), _a124);
 IonGrid = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement40,
   inputs: ["fixed"]
@@ -30402,8 +26497,8 @@ IonGrid = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a129;
-var IonHeader = (_a129 = class {
+var _a125;
+var IonHeader = (_a125 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30411,12 +26506,12 @@ var IonHeader = (_a129 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a129, "IonHeader"), /** @nocollapse */
-__publicField(_a129, "ɵfac", /* @__PURE__ */ __name(function IonHeader_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a129)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a125, "IonHeader"), /** @nocollapse */
+__publicField(_a125, "ɵfac", /* @__PURE__ */ __name(function IonHeader_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a125)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonHeader_Factory")), /** @nocollapse */
-__publicField(_a129, "ɵcmp", ɵɵdefineComponent({
-  type: _a129,
+__publicField(_a125, "ɵcmp", ɵɵdefineComponent({
+  type: _a125,
   selectors: [["ion-header"]],
   inputs: {
     collapse: "collapse",
@@ -30434,7 +26529,7 @@ __publicField(_a129, "ɵcmp", ɵɵdefineComponent({
   }, "IonHeader_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a129);
+})), _a125);
 IonHeader = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement42,
   inputs: ["collapse", "mode", "translucent"]
@@ -30460,22 +26555,22 @@ IonHeader = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a130;
-var IonImg = (_a130 = class {
+var _a126;
+var IonImg = (_a126 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionImgWillLoad", "ionImgDidLoad", "ionError"]);
+    proxyOutputs(this, this.el, ["ionImgWillLoad", "ionImgDidLoad", "ionError"]);
   }
-}, __name(_a130, "IonImg"), /** @nocollapse */
-__publicField(_a130, "ɵfac", /* @__PURE__ */ __name(function IonImg_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a130)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a126, "IonImg"), /** @nocollapse */
+__publicField(_a126, "ɵfac", /* @__PURE__ */ __name(function IonImg_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a126)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonImg_Factory")), /** @nocollapse */
-__publicField(_a130, "ɵcmp", ɵɵdefineComponent({
-  type: _a130,
+__publicField(_a126, "ɵcmp", ɵɵdefineComponent({
+  type: _a126,
   selectors: [["ion-img"]],
   inputs: {
     alt: "alt",
@@ -30492,7 +26587,7 @@ __publicField(_a130, "ɵcmp", ɵɵdefineComponent({
   }, "IonImg_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a130);
+})), _a126);
 IonImg = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement43,
   inputs: ["alt", "src"]
@@ -30518,22 +26613,22 @@ IonImg = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a131;
-var IonInfiniteScroll = (_a131 = class {
+var _a127;
+var IonInfiniteScroll = (_a127 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionInfinite"]);
+    proxyOutputs(this, this.el, ["ionInfinite"]);
   }
-}, __name(_a131, "IonInfiniteScroll"), /** @nocollapse */
-__publicField(_a131, "ɵfac", /* @__PURE__ */ __name(function IonInfiniteScroll_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a131)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a127, "IonInfiniteScroll"), /** @nocollapse */
+__publicField(_a127, "ɵfac", /* @__PURE__ */ __name(function IonInfiniteScroll_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a127)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonInfiniteScroll_Factory")), /** @nocollapse */
-__publicField(_a131, "ɵcmp", ɵɵdefineComponent({
-  type: _a131,
+__publicField(_a127, "ɵcmp", ɵɵdefineComponent({
+  type: _a127,
   selectors: [["ion-infinite-scroll"]],
   inputs: {
     disabled: "disabled",
@@ -30551,7 +26646,7 @@ __publicField(_a131, "ɵcmp", ɵɵdefineComponent({
   }, "IonInfiniteScroll_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a131);
+})), _a127);
 IonInfiniteScroll = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement44,
   inputs: ["disabled", "position", "threshold"],
@@ -30578,8 +26673,8 @@ IonInfiniteScroll = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a132;
-var IonInfiniteScrollContent = (_a132 = class {
+var _a128;
+var IonInfiniteScrollContent = (_a128 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30587,12 +26682,12 @@ var IonInfiniteScrollContent = (_a132 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a132, "IonInfiniteScrollContent"), /** @nocollapse */
-__publicField(_a132, "ɵfac", /* @__PURE__ */ __name(function IonInfiniteScrollContent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a132)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a128, "IonInfiniteScrollContent"), /** @nocollapse */
+__publicField(_a128, "ɵfac", /* @__PURE__ */ __name(function IonInfiniteScrollContent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a128)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonInfiniteScrollContent_Factory")), /** @nocollapse */
-__publicField(_a132, "ɵcmp", ɵɵdefineComponent({
-  type: _a132,
+__publicField(_a128, "ɵcmp", ɵɵdefineComponent({
+  type: _a128,
   selectors: [["ion-infinite-scroll-content"]],
   inputs: {
     loadingSpinner: "loadingSpinner",
@@ -30609,7 +26704,7 @@ __publicField(_a132, "ɵcmp", ɵɵdefineComponent({
   }, "IonInfiniteScrollContent_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a132);
+})), _a128);
 IonInfiniteScrollContent = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement46,
   inputs: ["loadingSpinner", "loadingText"]
@@ -30635,8 +26730,8 @@ IonInfiniteScrollContent = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a133;
-var IonInputPasswordToggle = (_a133 = class {
+var _a129;
+var IonInputPasswordToggle = (_a129 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30644,12 +26739,12 @@ var IonInputPasswordToggle = (_a133 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a133, "IonInputPasswordToggle"), /** @nocollapse */
-__publicField(_a133, "ɵfac", /* @__PURE__ */ __name(function IonInputPasswordToggle_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a133)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a129, "IonInputPasswordToggle"), /** @nocollapse */
+__publicField(_a129, "ɵfac", /* @__PURE__ */ __name(function IonInputPasswordToggle_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a129)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonInputPasswordToggle_Factory")), /** @nocollapse */
-__publicField(_a133, "ɵcmp", ɵɵdefineComponent({
-  type: _a133,
+__publicField(_a129, "ɵcmp", ɵɵdefineComponent({
+  type: _a129,
   selectors: [["ion-input-password-toggle"]],
   inputs: {
     color: "color",
@@ -30668,7 +26763,7 @@ __publicField(_a133, "ɵcmp", ɵɵdefineComponent({
   }, "IonInputPasswordToggle_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a133);
+})), _a129);
 IonInputPasswordToggle = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement47,
   inputs: ["color", "hideIcon", "mode", "showIcon"]
@@ -30694,8 +26789,8 @@ IonInputPasswordToggle = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a134;
-var IonItem = (_a134 = class {
+var _a130;
+var IonItem = (_a130 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30703,12 +26798,12 @@ var IonItem = (_a134 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a134, "IonItem"), /** @nocollapse */
-__publicField(_a134, "ɵfac", /* @__PURE__ */ __name(function IonItem_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a134)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a130, "IonItem"), /** @nocollapse */
+__publicField(_a130, "ɵfac", /* @__PURE__ */ __name(function IonItem_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a130)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonItem_Factory")), /** @nocollapse */
-__publicField(_a134, "ɵcmp", ɵɵdefineComponent({
-  type: _a134,
+__publicField(_a130, "ɵcmp", ɵɵdefineComponent({
+  type: _a130,
   selectors: [["ion-item"]],
   inputs: {
     button: "button",
@@ -30737,7 +26832,7 @@ __publicField(_a134, "ɵcmp", ɵɵdefineComponent({
   }, "IonItem_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a134);
+})), _a130);
 IonItem = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement49,
   inputs: ["button", "color", "detail", "detailIcon", "disabled", "download", "href", "lines", "mode", "rel", "routerAnimation", "routerDirection", "target", "type"]
@@ -30763,8 +26858,8 @@ IonItem = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a135;
-var IonItemDivider = (_a135 = class {
+var _a131;
+var IonItemDivider = (_a131 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30772,12 +26867,12 @@ var IonItemDivider = (_a135 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a135, "IonItemDivider"), /** @nocollapse */
-__publicField(_a135, "ɵfac", /* @__PURE__ */ __name(function IonItemDivider_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a135)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a131, "IonItemDivider"), /** @nocollapse */
+__publicField(_a131, "ɵfac", /* @__PURE__ */ __name(function IonItemDivider_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a131)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonItemDivider_Factory")), /** @nocollapse */
-__publicField(_a135, "ɵcmp", ɵɵdefineComponent({
-  type: _a135,
+__publicField(_a131, "ɵcmp", ɵɵdefineComponent({
+  type: _a131,
   selectors: [["ion-item-divider"]],
   inputs: {
     color: "color",
@@ -30795,7 +26890,7 @@ __publicField(_a135, "ɵcmp", ɵɵdefineComponent({
   }, "IonItemDivider_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a135);
+})), _a131);
 IonItemDivider = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement50,
   inputs: ["color", "mode", "sticky"]
@@ -30821,8 +26916,8 @@ IonItemDivider = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a136;
-var IonItemGroup = (_a136 = class {
+var _a132;
+var IonItemGroup = (_a132 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30830,12 +26925,12 @@ var IonItemGroup = (_a136 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a136, "IonItemGroup"), /** @nocollapse */
-__publicField(_a136, "ɵfac", /* @__PURE__ */ __name(function IonItemGroup_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a136)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a132, "IonItemGroup"), /** @nocollapse */
+__publicField(_a132, "ɵfac", /* @__PURE__ */ __name(function IonItemGroup_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a132)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonItemGroup_Factory")), /** @nocollapse */
-__publicField(_a136, "ɵcmp", ɵɵdefineComponent({
-  type: _a136,
+__publicField(_a132, "ɵcmp", ɵɵdefineComponent({
+  type: _a132,
   selectors: [["ion-item-group"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -30848,7 +26943,7 @@ __publicField(_a136, "ɵcmp", ɵɵdefineComponent({
   }, "IonItemGroup_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a136);
+})), _a132);
 IonItemGroup = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement51
 })], IonItemGroup);
@@ -30873,8 +26968,8 @@ IonItemGroup = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a137;
-var IonItemOption = (_a137 = class {
+var _a133;
+var IonItemOption = (_a133 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -30882,12 +26977,12 @@ var IonItemOption = (_a137 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a137, "IonItemOption"), /** @nocollapse */
-__publicField(_a137, "ɵfac", /* @__PURE__ */ __name(function IonItemOption_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a137)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a133, "IonItemOption"), /** @nocollapse */
+__publicField(_a133, "ɵfac", /* @__PURE__ */ __name(function IonItemOption_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a133)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonItemOption_Factory")), /** @nocollapse */
-__publicField(_a137, "ɵcmp", ɵɵdefineComponent({
-  type: _a137,
+__publicField(_a133, "ɵcmp", ɵɵdefineComponent({
+  type: _a133,
   selectors: [["ion-item-option"]],
   inputs: {
     color: "color",
@@ -30911,7 +27006,7 @@ __publicField(_a137, "ɵcmp", ɵɵdefineComponent({
   }, "IonItemOption_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a137);
+})), _a133);
 IonItemOption = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement52,
   inputs: ["color", "disabled", "download", "expandable", "href", "mode", "rel", "target", "type"]
@@ -30937,22 +27032,22 @@ IonItemOption = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a138;
-var IonItemOptions = (_a138 = class {
+var _a134;
+var IonItemOptions = (_a134 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionSwipe"]);
+    proxyOutputs(this, this.el, ["ionSwipe"]);
   }
-}, __name(_a138, "IonItemOptions"), /** @nocollapse */
-__publicField(_a138, "ɵfac", /* @__PURE__ */ __name(function IonItemOptions_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a138)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a134, "IonItemOptions"), /** @nocollapse */
+__publicField(_a134, "ɵfac", /* @__PURE__ */ __name(function IonItemOptions_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a134)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonItemOptions_Factory")), /** @nocollapse */
-__publicField(_a138, "ɵcmp", ɵɵdefineComponent({
-  type: _a138,
+__publicField(_a134, "ɵcmp", ɵɵdefineComponent({
+  type: _a134,
   selectors: [["ion-item-options"]],
   inputs: {
     side: "side"
@@ -30968,7 +27063,7 @@ __publicField(_a138, "ɵcmp", ɵɵdefineComponent({
   }, "IonItemOptions_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a138);
+})), _a134);
 IonItemOptions = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement53,
   inputs: ["side"]
@@ -30994,22 +27089,22 @@ IonItemOptions = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a139;
-var IonItemSliding = (_a139 = class {
+var _a135;
+var IonItemSliding = (_a135 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionDrag"]);
+    proxyOutputs(this, this.el, ["ionDrag"]);
   }
-}, __name(_a139, "IonItemSliding"), /** @nocollapse */
-__publicField(_a139, "ɵfac", /* @__PURE__ */ __name(function IonItemSliding_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a139)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a135, "IonItemSliding"), /** @nocollapse */
+__publicField(_a135, "ɵfac", /* @__PURE__ */ __name(function IonItemSliding_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a135)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonItemSliding_Factory")), /** @nocollapse */
-__publicField(_a139, "ɵcmp", ɵɵdefineComponent({
-  type: _a139,
+__publicField(_a135, "ɵcmp", ɵɵdefineComponent({
+  type: _a135,
   selectors: [["ion-item-sliding"]],
   inputs: {
     disabled: "disabled"
@@ -31025,7 +27120,7 @@ __publicField(_a139, "ɵcmp", ɵɵdefineComponent({
   }, "IonItemSliding_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a139);
+})), _a135);
 IonItemSliding = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement54,
   inputs: ["disabled"],
@@ -31052,8 +27147,8 @@ IonItemSliding = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a140;
-var IonLabel = (_a140 = class {
+var _a136;
+var IonLabel = (_a136 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31061,12 +27156,12 @@ var IonLabel = (_a140 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a140, "IonLabel"), /** @nocollapse */
-__publicField(_a140, "ɵfac", /* @__PURE__ */ __name(function IonLabel_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a140)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a136, "IonLabel"), /** @nocollapse */
+__publicField(_a136, "ɵfac", /* @__PURE__ */ __name(function IonLabel_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a136)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonLabel_Factory")), /** @nocollapse */
-__publicField(_a140, "ɵcmp", ɵɵdefineComponent({
-  type: _a140,
+__publicField(_a136, "ɵcmp", ɵɵdefineComponent({
+  type: _a136,
   selectors: [["ion-label"]],
   inputs: {
     color: "color",
@@ -31084,7 +27179,7 @@ __publicField(_a140, "ɵcmp", ɵɵdefineComponent({
   }, "IonLabel_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a140);
+})), _a136);
 IonLabel = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement56,
   inputs: ["color", "mode", "position"]
@@ -31110,8 +27205,8 @@ IonLabel = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a141;
-var IonList = (_a141 = class {
+var _a137;
+var IonList = (_a137 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31119,12 +27214,12 @@ var IonList = (_a141 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a141, "IonList"), /** @nocollapse */
-__publicField(_a141, "ɵfac", /* @__PURE__ */ __name(function IonList_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a141)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a137, "IonList"), /** @nocollapse */
+__publicField(_a137, "ɵfac", /* @__PURE__ */ __name(function IonList_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a137)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonList_Factory")), /** @nocollapse */
-__publicField(_a141, "ɵcmp", ɵɵdefineComponent({
-  type: _a141,
+__publicField(_a137, "ɵcmp", ɵɵdefineComponent({
+  type: _a137,
   selectors: [["ion-list"]],
   inputs: {
     inset: "inset",
@@ -31142,7 +27237,7 @@ __publicField(_a141, "ɵcmp", ɵɵdefineComponent({
   }, "IonList_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a141);
+})), _a137);
 IonList = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement58,
   inputs: ["inset", "lines", "mode"],
@@ -31169,8 +27264,8 @@ IonList = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a142;
-var IonListHeader = (_a142 = class {
+var _a138;
+var IonListHeader = (_a138 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31178,12 +27273,12 @@ var IonListHeader = (_a142 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a142, "IonListHeader"), /** @nocollapse */
-__publicField(_a142, "ɵfac", /* @__PURE__ */ __name(function IonListHeader_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a142)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a138, "IonListHeader"), /** @nocollapse */
+__publicField(_a138, "ɵfac", /* @__PURE__ */ __name(function IonListHeader_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a138)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonListHeader_Factory")), /** @nocollapse */
-__publicField(_a142, "ɵcmp", ɵɵdefineComponent({
-  type: _a142,
+__publicField(_a138, "ɵcmp", ɵɵdefineComponent({
+  type: _a138,
   selectors: [["ion-list-header"]],
   inputs: {
     color: "color",
@@ -31201,7 +27296,7 @@ __publicField(_a142, "ɵcmp", ɵɵdefineComponent({
   }, "IonListHeader_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a142);
+})), _a138);
 IonListHeader = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement60,
   inputs: ["color", "lines", "mode"]
@@ -31227,22 +27322,22 @@ IonListHeader = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a143;
-var IonLoading = (_a143 = class {
+var _a139;
+var IonLoading = (_a139 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionLoadingDidPresent", "ionLoadingWillPresent", "ionLoadingWillDismiss", "ionLoadingDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
+    proxyOutputs(this, this.el, ["ionLoadingDidPresent", "ionLoadingWillPresent", "ionLoadingWillDismiss", "ionLoadingDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
   }
-}, __name(_a143, "IonLoading"), /** @nocollapse */
-__publicField(_a143, "ɵfac", /* @__PURE__ */ __name(function IonLoading_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a143)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a139, "IonLoading"), /** @nocollapse */
+__publicField(_a139, "ɵfac", /* @__PURE__ */ __name(function IonLoading_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a139)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonLoading_Factory")), /** @nocollapse */
-__publicField(_a143, "ɵcmp", ɵɵdefineComponent({
-  type: _a143,
+__publicField(_a139, "ɵcmp", ɵɵdefineComponent({
+  type: _a139,
   selectors: [["ion-loading"]],
   inputs: {
     animated: "animated",
@@ -31272,7 +27367,7 @@ __publicField(_a143, "ɵcmp", ɵɵdefineComponent({
   }, "IonLoading_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a143);
+})), _a139);
 IonLoading = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement61,
   inputs: ["animated", "backdropDismiss", "cssClass", "duration", "enterAnimation", "htmlAttributes", "isOpen", "keyboardClose", "leaveAnimation", "message", "mode", "showBackdrop", "spinner", "translucent", "trigger"],
@@ -31299,22 +27394,22 @@ IonLoading = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a144;
-var IonMenu = (_a144 = class {
+var _a140;
+var IonMenu = (_a140 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionWillOpen", "ionWillClose", "ionDidOpen", "ionDidClose"]);
+    proxyOutputs(this, this.el, ["ionWillOpen", "ionWillClose", "ionDidOpen", "ionDidClose"]);
   }
-}, __name(_a144, "IonMenu"), /** @nocollapse */
-__publicField(_a144, "ɵfac", /* @__PURE__ */ __name(function IonMenu_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a144)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a140, "IonMenu"), /** @nocollapse */
+__publicField(_a140, "ɵfac", /* @__PURE__ */ __name(function IonMenu_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a140)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonMenu_Factory")), /** @nocollapse */
-__publicField(_a144, "ɵcmp", ɵɵdefineComponent({
-  type: _a144,
+__publicField(_a140, "ɵcmp", ɵɵdefineComponent({
+  type: _a140,
   selectors: [["ion-menu"]],
   inputs: {
     contentId: "contentId",
@@ -31336,7 +27431,7 @@ __publicField(_a144, "ɵcmp", ɵɵdefineComponent({
   }, "IonMenu_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a144);
+})), _a140);
 IonMenu = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement62,
   inputs: ["contentId", "disabled", "maxEdgeStart", "menuId", "side", "swipeGesture", "type"],
@@ -31363,8 +27458,8 @@ IonMenu = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a145;
-var IonMenuButton = (_a145 = class {
+var _a141;
+var IonMenuButton = (_a141 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31372,12 +27467,12 @@ var IonMenuButton = (_a145 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a145, "IonMenuButton"), /** @nocollapse */
-__publicField(_a145, "ɵfac", /* @__PURE__ */ __name(function IonMenuButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a145)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a141, "IonMenuButton"), /** @nocollapse */
+__publicField(_a141, "ɵfac", /* @__PURE__ */ __name(function IonMenuButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a141)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonMenuButton_Factory")), /** @nocollapse */
-__publicField(_a145, "ɵcmp", ɵɵdefineComponent({
-  type: _a145,
+__publicField(_a141, "ɵcmp", ɵɵdefineComponent({
+  type: _a141,
   selectors: [["ion-menu-button"]],
   inputs: {
     autoHide: "autoHide",
@@ -31398,7 +27493,7 @@ __publicField(_a145, "ɵcmp", ɵɵdefineComponent({
   }, "IonMenuButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a145);
+})), _a141);
 IonMenuButton = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement63,
   inputs: ["autoHide", "color", "disabled", "menu", "mode", "type"]
@@ -31424,8 +27519,8 @@ IonMenuButton = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a146;
-var IonMenuToggle = (_a146 = class {
+var _a142;
+var IonMenuToggle = (_a142 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31433,12 +27528,12 @@ var IonMenuToggle = (_a146 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a146, "IonMenuToggle"), /** @nocollapse */
-__publicField(_a146, "ɵfac", /* @__PURE__ */ __name(function IonMenuToggle_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a146)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a142, "IonMenuToggle"), /** @nocollapse */
+__publicField(_a142, "ɵfac", /* @__PURE__ */ __name(function IonMenuToggle_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a142)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonMenuToggle_Factory")), /** @nocollapse */
-__publicField(_a146, "ɵcmp", ɵɵdefineComponent({
-  type: _a146,
+__publicField(_a142, "ɵcmp", ɵɵdefineComponent({
+  type: _a142,
   selectors: [["ion-menu-toggle"]],
   inputs: {
     autoHide: "autoHide",
@@ -31455,7 +27550,7 @@ __publicField(_a146, "ɵcmp", ɵɵdefineComponent({
   }, "IonMenuToggle_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a146);
+})), _a142);
 IonMenuToggle = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement64,
   inputs: ["autoHide", "menu"]
@@ -31481,8 +27576,8 @@ IonMenuToggle = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a147;
-var IonNavLink = (_a147 = class {
+var _a143;
+var IonNavLink = (_a143 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31490,12 +27585,12 @@ var IonNavLink = (_a147 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a147, "IonNavLink"), /** @nocollapse */
-__publicField(_a147, "ɵfac", /* @__PURE__ */ __name(function IonNavLink_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a147)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a143, "IonNavLink"), /** @nocollapse */
+__publicField(_a143, "ɵfac", /* @__PURE__ */ __name(function IonNavLink_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a143)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonNavLink_Factory")), /** @nocollapse */
-__publicField(_a147, "ɵcmp", ɵɵdefineComponent({
-  type: _a147,
+__publicField(_a143, "ɵcmp", ɵɵdefineComponent({
+  type: _a143,
   selectors: [["ion-nav-link"]],
   inputs: {
     component: "component",
@@ -31514,7 +27609,7 @@ __publicField(_a147, "ɵcmp", ɵɵdefineComponent({
   }, "IonNavLink_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a147);
+})), _a143);
 IonNavLink = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement65,
   inputs: ["component", "componentProps", "routerAnimation", "routerDirection"]
@@ -31540,8 +27635,8 @@ IonNavLink = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a148;
-var IonNote = (_a148 = class {
+var _a144;
+var IonNote = (_a144 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31549,12 +27644,12 @@ var IonNote = (_a148 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a148, "IonNote"), /** @nocollapse */
-__publicField(_a148, "ɵfac", /* @__PURE__ */ __name(function IonNote_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a148)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a144, "IonNote"), /** @nocollapse */
+__publicField(_a144, "ɵfac", /* @__PURE__ */ __name(function IonNote_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a144)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonNote_Factory")), /** @nocollapse */
-__publicField(_a148, "ɵcmp", ɵɵdefineComponent({
-  type: _a148,
+__publicField(_a144, "ɵcmp", ɵɵdefineComponent({
+  type: _a144,
   selectors: [["ion-note"]],
   inputs: {
     color: "color",
@@ -31571,7 +27666,7 @@ __publicField(_a148, "ɵcmp", ɵɵdefineComponent({
   }, "IonNote_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a148);
+})), _a144);
 IonNote = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement66,
   inputs: ["color", "mode"]
@@ -31597,8 +27692,8 @@ IonNote = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a149;
-var IonPicker = (_a149 = class {
+var _a145;
+var IonPicker = (_a145 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31606,12 +27701,12 @@ var IonPicker = (_a149 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a149, "IonPicker"), /** @nocollapse */
-__publicField(_a149, "ɵfac", /* @__PURE__ */ __name(function IonPicker_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a149)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a145, "IonPicker"), /** @nocollapse */
+__publicField(_a145, "ɵfac", /* @__PURE__ */ __name(function IonPicker_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a145)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonPicker_Factory")), /** @nocollapse */
-__publicField(_a149, "ɵcmp", ɵɵdefineComponent({
-  type: _a149,
+__publicField(_a145, "ɵcmp", ɵɵdefineComponent({
+  type: _a145,
   selectors: [["ion-picker"]],
   inputs: {
     mode: "mode"
@@ -31627,7 +27722,7 @@ __publicField(_a149, "ɵcmp", ɵɵdefineComponent({
   }, "IonPicker_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a149);
+})), _a145);
 IonPicker = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement68,
   inputs: ["mode"]
@@ -31653,22 +27748,22 @@ IonPicker = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a150;
-var IonPickerColumn = (_a150 = class {
+var _a146;
+var IonPickerColumn = (_a146 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange"]);
+    proxyOutputs(this, this.el, ["ionChange"]);
   }
-}, __name(_a150, "IonPickerColumn"), /** @nocollapse */
-__publicField(_a150, "ɵfac", /* @__PURE__ */ __name(function IonPickerColumn_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a150)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a146, "IonPickerColumn"), /** @nocollapse */
+__publicField(_a146, "ɵfac", /* @__PURE__ */ __name(function IonPickerColumn_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a146)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonPickerColumn_Factory")), /** @nocollapse */
-__publicField(_a150, "ɵcmp", ɵɵdefineComponent({
-  type: _a150,
+__publicField(_a146, "ɵcmp", ɵɵdefineComponent({
+  type: _a146,
   selectors: [["ion-picker-column"]],
   inputs: {
     color: "color",
@@ -31687,7 +27782,7 @@ __publicField(_a150, "ɵcmp", ɵɵdefineComponent({
   }, "IonPickerColumn_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a150);
+})), _a146);
 IonPickerColumn = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement70,
   inputs: ["color", "disabled", "mode", "value"],
@@ -31714,8 +27809,8 @@ IonPickerColumn = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a151;
-var IonPickerColumnOption = (_a151 = class {
+var _a147;
+var IonPickerColumnOption = (_a147 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31723,12 +27818,12 @@ var IonPickerColumnOption = (_a151 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a151, "IonPickerColumnOption"), /** @nocollapse */
-__publicField(_a151, "ɵfac", /* @__PURE__ */ __name(function IonPickerColumnOption_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a151)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a147, "IonPickerColumnOption"), /** @nocollapse */
+__publicField(_a147, "ɵfac", /* @__PURE__ */ __name(function IonPickerColumnOption_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a147)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonPickerColumnOption_Factory")), /** @nocollapse */
-__publicField(_a151, "ɵcmp", ɵɵdefineComponent({
-  type: _a151,
+__publicField(_a147, "ɵcmp", ɵɵdefineComponent({
+  type: _a147,
   selectors: [["ion-picker-column-option"]],
   inputs: {
     color: "color",
@@ -31746,7 +27841,7 @@ __publicField(_a151, "ɵcmp", ɵɵdefineComponent({
   }, "IonPickerColumnOption_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a151);
+})), _a147);
 IonPickerColumnOption = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement72,
   inputs: ["color", "disabled", "value"]
@@ -31772,22 +27867,22 @@ IonPickerColumnOption = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a152;
-var IonPickerLegacy = (_a152 = class {
+var _a148;
+var IonPickerLegacy = (_a148 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionPickerDidPresent", "ionPickerWillPresent", "ionPickerWillDismiss", "ionPickerDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
+    proxyOutputs(this, this.el, ["ionPickerDidPresent", "ionPickerWillPresent", "ionPickerWillDismiss", "ionPickerDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
   }
-}, __name(_a152, "IonPickerLegacy"), /** @nocollapse */
-__publicField(_a152, "ɵfac", /* @__PURE__ */ __name(function IonPickerLegacy_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a152)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a148, "IonPickerLegacy"), /** @nocollapse */
+__publicField(_a148, "ɵfac", /* @__PURE__ */ __name(function IonPickerLegacy_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a148)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonPickerLegacy_Factory")), /** @nocollapse */
-__publicField(_a152, "ɵcmp", ɵɵdefineComponent({
-  type: _a152,
+__publicField(_a148, "ɵcmp", ɵɵdefineComponent({
+  type: _a148,
   selectors: [["ion-picker-legacy"]],
   inputs: {
     animated: "animated",
@@ -31816,7 +27911,7 @@ __publicField(_a152, "ɵcmp", ɵɵdefineComponent({
   }, "IonPickerLegacy_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a152);
+})), _a148);
 IonPickerLegacy = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement74,
   inputs: ["animated", "backdropDismiss", "buttons", "columns", "cssClass", "duration", "enterAnimation", "htmlAttributes", "isOpen", "keyboardClose", "leaveAnimation", "mode", "showBackdrop", "trigger"],
@@ -31843,8 +27938,8 @@ IonPickerLegacy = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a153;
-var IonProgressBar = (_a153 = class {
+var _a149;
+var IonProgressBar = (_a149 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -31852,12 +27947,12 @@ var IonProgressBar = (_a153 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a153, "IonProgressBar"), /** @nocollapse */
-__publicField(_a153, "ɵfac", /* @__PURE__ */ __name(function IonProgressBar_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a153)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a149, "IonProgressBar"), /** @nocollapse */
+__publicField(_a149, "ɵfac", /* @__PURE__ */ __name(function IonProgressBar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a149)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonProgressBar_Factory")), /** @nocollapse */
-__publicField(_a153, "ɵcmp", ɵɵdefineComponent({
-  type: _a153,
+__publicField(_a149, "ɵcmp", ɵɵdefineComponent({
+  type: _a149,
   selectors: [["ion-progress-bar"]],
   inputs: {
     buffer: "buffer",
@@ -31878,7 +27973,7 @@ __publicField(_a153, "ɵcmp", ɵɵdefineComponent({
   }, "IonProgressBar_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a153);
+})), _a149);
 IonProgressBar = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement75,
   inputs: ["buffer", "color", "mode", "reversed", "type", "value"]
@@ -31904,22 +27999,22 @@ IonProgressBar = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a154;
-var IonRadio = (_a154 = class {
+var _a150;
+var IonRadio = (_a150 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionFocus", "ionBlur"]);
   }
-}, __name(_a154, "IonRadio"), /** @nocollapse */
-__publicField(_a154, "ɵfac", /* @__PURE__ */ __name(function IonRadio_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a154)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a150, "IonRadio"), /** @nocollapse */
+__publicField(_a150, "ɵfac", /* @__PURE__ */ __name(function IonRadio_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a150)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonRadio_Factory")), /** @nocollapse */
-__publicField(_a154, "ɵcmp", ɵɵdefineComponent({
-  type: _a154,
+__publicField(_a150, "ɵcmp", ɵɵdefineComponent({
+  type: _a150,
   selectors: [["ion-radio"]],
   inputs: {
     alignment: "alignment",
@@ -31942,7 +28037,7 @@ __publicField(_a154, "ɵcmp", ɵɵdefineComponent({
   }, "IonRadio_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a154);
+})), _a150);
 IonRadio = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement77,
   inputs: ["alignment", "color", "disabled", "justify", "labelPlacement", "mode", "name", "value"]
@@ -31968,22 +28063,22 @@ IonRadio = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a155;
-var IonRefresher = (_a155 = class {
+var _a151;
+var IonRefresher = (_a151 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionRefresh", "ionPull", "ionStart"]);
+    proxyOutputs(this, this.el, ["ionRefresh", "ionPull", "ionStart"]);
   }
-}, __name(_a155, "IonRefresher"), /** @nocollapse */
-__publicField(_a155, "ɵfac", /* @__PURE__ */ __name(function IonRefresher_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a155)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a151, "IonRefresher"), /** @nocollapse */
+__publicField(_a151, "ɵfac", /* @__PURE__ */ __name(function IonRefresher_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a151)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonRefresher_Factory")), /** @nocollapse */
-__publicField(_a155, "ɵcmp", ɵɵdefineComponent({
-  type: _a155,
+__publicField(_a151, "ɵcmp", ɵɵdefineComponent({
+  type: _a151,
   selectors: [["ion-refresher"]],
   inputs: {
     closeDuration: "closeDuration",
@@ -32005,7 +28100,7 @@ __publicField(_a155, "ɵcmp", ɵɵdefineComponent({
   }, "IonRefresher_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a155);
+})), _a151);
 IonRefresher = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement78,
   inputs: ["closeDuration", "disabled", "mode", "pullFactor", "pullMax", "pullMin", "snapbackDuration"],
@@ -32032,8 +28127,8 @@ IonRefresher = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a156;
-var IonRefresherContent = (_a156 = class {
+var _a152;
+var IonRefresherContent = (_a152 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32041,12 +28136,12 @@ var IonRefresherContent = (_a156 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a156, "IonRefresherContent"), /** @nocollapse */
-__publicField(_a156, "ɵfac", /* @__PURE__ */ __name(function IonRefresherContent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a156)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a152, "IonRefresherContent"), /** @nocollapse */
+__publicField(_a152, "ɵfac", /* @__PURE__ */ __name(function IonRefresherContent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a152)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonRefresherContent_Factory")), /** @nocollapse */
-__publicField(_a156, "ɵcmp", ɵɵdefineComponent({
-  type: _a156,
+__publicField(_a152, "ɵcmp", ɵɵdefineComponent({
+  type: _a152,
   selectors: [["ion-refresher-content"]],
   inputs: {
     pullingIcon: "pullingIcon",
@@ -32065,7 +28160,7 @@ __publicField(_a156, "ɵcmp", ɵɵdefineComponent({
   }, "IonRefresherContent_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a156);
+})), _a152);
 IonRefresherContent = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement79,
   inputs: ["pullingIcon", "pullingText", "refreshingSpinner", "refreshingText"]
@@ -32091,8 +28186,8 @@ IonRefresherContent = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a157;
-var IonReorder = (_a157 = class {
+var _a153;
+var IonReorder = (_a153 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32100,12 +28195,12 @@ var IonReorder = (_a157 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a157, "IonReorder"), /** @nocollapse */
-__publicField(_a157, "ɵfac", /* @__PURE__ */ __name(function IonReorder_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a157)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a153, "IonReorder"), /** @nocollapse */
+__publicField(_a153, "ɵfac", /* @__PURE__ */ __name(function IonReorder_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a153)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonReorder_Factory")), /** @nocollapse */
-__publicField(_a157, "ɵcmp", ɵɵdefineComponent({
-  type: _a157,
+__publicField(_a153, "ɵcmp", ɵɵdefineComponent({
+  type: _a153,
   selectors: [["ion-reorder"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -32118,7 +28213,7 @@ __publicField(_a157, "ɵcmp", ɵɵdefineComponent({
   }, "IonReorder_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a157);
+})), _a153);
 IonReorder = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement80
 })], IonReorder);
@@ -32143,22 +28238,22 @@ IonReorder = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a158;
-var IonReorderGroup = (_a158 = class {
+var _a154;
+var IonReorderGroup = (_a154 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionItemReorder", "ionReorderStart", "ionReorderMove", "ionReorderEnd"]);
+    proxyOutputs(this, this.el, ["ionItemReorder", "ionReorderStart", "ionReorderMove", "ionReorderEnd"]);
   }
-}, __name(_a158, "IonReorderGroup"), /** @nocollapse */
-__publicField(_a158, "ɵfac", /* @__PURE__ */ __name(function IonReorderGroup_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a158)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a154, "IonReorderGroup"), /** @nocollapse */
+__publicField(_a154, "ɵfac", /* @__PURE__ */ __name(function IonReorderGroup_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a154)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonReorderGroup_Factory")), /** @nocollapse */
-__publicField(_a158, "ɵcmp", ɵɵdefineComponent({
-  type: _a158,
+__publicField(_a154, "ɵcmp", ɵɵdefineComponent({
+  type: _a154,
   selectors: [["ion-reorder-group"]],
   inputs: {
     disabled: "disabled"
@@ -32174,7 +28269,7 @@ __publicField(_a158, "ɵcmp", ɵɵdefineComponent({
   }, "IonReorderGroup_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a158);
+})), _a154);
 IonReorderGroup = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement81,
   inputs: ["disabled"],
@@ -32201,8 +28296,8 @@ IonReorderGroup = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a159;
-var IonRippleEffect = (_a159 = class {
+var _a155;
+var IonRippleEffect = (_a155 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32210,12 +28305,12 @@ var IonRippleEffect = (_a159 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a159, "IonRippleEffect"), /** @nocollapse */
-__publicField(_a159, "ɵfac", /* @__PURE__ */ __name(function IonRippleEffect_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a159)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a155, "IonRippleEffect"), /** @nocollapse */
+__publicField(_a155, "ɵfac", /* @__PURE__ */ __name(function IonRippleEffect_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a155)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonRippleEffect_Factory")), /** @nocollapse */
-__publicField(_a159, "ɵcmp", ɵɵdefineComponent({
-  type: _a159,
+__publicField(_a155, "ɵcmp", ɵɵdefineComponent({
+  type: _a155,
   selectors: [["ion-ripple-effect"]],
   inputs: {
     type: "type"
@@ -32231,7 +28326,7 @@ __publicField(_a159, "ɵcmp", ɵɵdefineComponent({
   }, "IonRippleEffect_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a159);
+})), _a155);
 IonRippleEffect = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement82,
   inputs: ["type"],
@@ -32258,8 +28353,8 @@ IonRippleEffect = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a160;
-var IonRow = (_a160 = class {
+var _a156;
+var IonRow = (_a156 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32267,12 +28362,12 @@ var IonRow = (_a160 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a160, "IonRow"), /** @nocollapse */
-__publicField(_a160, "ɵfac", /* @__PURE__ */ __name(function IonRow_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a160)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a156, "IonRow"), /** @nocollapse */
+__publicField(_a156, "ɵfac", /* @__PURE__ */ __name(function IonRow_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a156)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonRow_Factory")), /** @nocollapse */
-__publicField(_a160, "ɵcmp", ɵɵdefineComponent({
-  type: _a160,
+__publicField(_a156, "ɵcmp", ɵɵdefineComponent({
+  type: _a156,
   selectors: [["ion-row"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -32285,7 +28380,7 @@ __publicField(_a160, "ɵcmp", ɵɵdefineComponent({
   }, "IonRow_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a160);
+})), _a156);
 IonRow = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement83
 })], IonRow);
@@ -32310,8 +28405,8 @@ IonRow = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a161;
-var IonSegmentButton = (_a161 = class {
+var _a157;
+var IonSegmentButton = (_a157 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32319,12 +28414,12 @@ var IonSegmentButton = (_a161 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a161, "IonSegmentButton"), /** @nocollapse */
-__publicField(_a161, "ɵfac", /* @__PURE__ */ __name(function IonSegmentButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a161)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a157, "IonSegmentButton"), /** @nocollapse */
+__publicField(_a157, "ɵfac", /* @__PURE__ */ __name(function IonSegmentButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a157)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSegmentButton_Factory")), /** @nocollapse */
-__publicField(_a161, "ɵcmp", ɵɵdefineComponent({
-  type: _a161,
+__publicField(_a157, "ɵcmp", ɵɵdefineComponent({
+  type: _a157,
   selectors: [["ion-segment-button"]],
   inputs: {
     contentId: "contentId",
@@ -32345,7 +28440,7 @@ __publicField(_a161, "ɵcmp", ɵɵdefineComponent({
   }, "IonSegmentButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a161);
+})), _a157);
 IonSegmentButton = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement84,
   inputs: ["contentId", "disabled", "layout", "mode", "type", "value"]
@@ -32371,8 +28466,8 @@ IonSegmentButton = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a162;
-var IonSegmentContent = (_a162 = class {
+var _a158;
+var IonSegmentContent = (_a158 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32380,12 +28475,12 @@ var IonSegmentContent = (_a162 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a162, "IonSegmentContent"), /** @nocollapse */
-__publicField(_a162, "ɵfac", /* @__PURE__ */ __name(function IonSegmentContent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a162)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a158, "IonSegmentContent"), /** @nocollapse */
+__publicField(_a158, "ɵfac", /* @__PURE__ */ __name(function IonSegmentContent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a158)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSegmentContent_Factory")), /** @nocollapse */
-__publicField(_a162, "ɵcmp", ɵɵdefineComponent({
-  type: _a162,
+__publicField(_a158, "ɵcmp", ɵɵdefineComponent({
+  type: _a158,
   selectors: [["ion-segment-content"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -32398,7 +28493,7 @@ __publicField(_a162, "ɵcmp", ɵɵdefineComponent({
   }, "IonSegmentContent_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a162);
+})), _a158);
 IonSegmentContent = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement85
 })], IonSegmentContent);
@@ -32423,22 +28518,22 @@ IonSegmentContent = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a163;
-var IonSegmentView = (_a163 = class {
+var _a159;
+var IonSegmentView = (_a159 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionSegmentViewScroll"]);
+    proxyOutputs(this, this.el, ["ionSegmentViewScroll"]);
   }
-}, __name(_a163, "IonSegmentView"), /** @nocollapse */
-__publicField(_a163, "ɵfac", /* @__PURE__ */ __name(function IonSegmentView_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a163)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a159, "IonSegmentView"), /** @nocollapse */
+__publicField(_a159, "ɵfac", /* @__PURE__ */ __name(function IonSegmentView_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a159)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSegmentView_Factory")), /** @nocollapse */
-__publicField(_a163, "ɵcmp", ɵɵdefineComponent({
-  type: _a163,
+__publicField(_a159, "ɵcmp", ɵɵdefineComponent({
+  type: _a159,
   selectors: [["ion-segment-view"]],
   inputs: {
     disabled: "disabled"
@@ -32454,7 +28549,7 @@ __publicField(_a163, "ɵcmp", ɵɵdefineComponent({
   }, "IonSegmentView_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a163);
+})), _a159);
 IonSegmentView = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement86,
   inputs: ["disabled"]
@@ -32480,8 +28575,8 @@ IonSegmentView = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a164;
-var IonSelectModal = (_a164 = class {
+var _a160;
+var IonSelectModal = (_a160 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32489,12 +28584,12 @@ var IonSelectModal = (_a164 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a164, "IonSelectModal"), /** @nocollapse */
-__publicField(_a164, "ɵfac", /* @__PURE__ */ __name(function IonSelectModal_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a164)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a160, "IonSelectModal"), /** @nocollapse */
+__publicField(_a160, "ɵfac", /* @__PURE__ */ __name(function IonSelectModal_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a160)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSelectModal_Factory")), /** @nocollapse */
-__publicField(_a164, "ɵcmp", ɵɵdefineComponent({
-  type: _a164,
+__publicField(_a160, "ɵcmp", ɵɵdefineComponent({
+  type: _a160,
   selectors: [["ion-select-modal"]],
   inputs: {
     header: "header",
@@ -32512,7 +28607,7 @@ __publicField(_a164, "ɵcmp", ɵɵdefineComponent({
   }, "IonSelectModal_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a164);
+})), _a160);
 IonSelectModal = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement92,
   inputs: ["header", "multiple", "options"]
@@ -32538,8 +28633,8 @@ IonSelectModal = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a165;
-var IonSelectOption = (_a165 = class {
+var _a161;
+var IonSelectOption = (_a161 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32547,12 +28642,12 @@ var IonSelectOption = (_a165 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a165, "IonSelectOption"), /** @nocollapse */
-__publicField(_a165, "ɵfac", /* @__PURE__ */ __name(function IonSelectOption_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a165)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a161, "IonSelectOption"), /** @nocollapse */
+__publicField(_a161, "ɵfac", /* @__PURE__ */ __name(function IonSelectOption_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a161)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSelectOption_Factory")), /** @nocollapse */
-__publicField(_a165, "ɵcmp", ɵɵdefineComponent({
-  type: _a165,
+__publicField(_a161, "ɵcmp", ɵɵdefineComponent({
+  type: _a161,
   selectors: [["ion-select-option"]],
   inputs: {
     disabled: "disabled",
@@ -32569,7 +28664,7 @@ __publicField(_a165, "ɵcmp", ɵɵdefineComponent({
   }, "IonSelectOption_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a165);
+})), _a161);
 IonSelectOption = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement93,
   inputs: ["disabled", "value"]
@@ -32595,8 +28690,8 @@ IonSelectOption = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a166;
-var IonSkeletonText = (_a166 = class {
+var _a162;
+var IonSkeletonText = (_a162 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32604,12 +28699,12 @@ var IonSkeletonText = (_a166 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a166, "IonSkeletonText"), /** @nocollapse */
-__publicField(_a166, "ɵfac", /* @__PURE__ */ __name(function IonSkeletonText_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a166)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a162, "IonSkeletonText"), /** @nocollapse */
+__publicField(_a162, "ɵfac", /* @__PURE__ */ __name(function IonSkeletonText_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a162)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSkeletonText_Factory")), /** @nocollapse */
-__publicField(_a166, "ɵcmp", ɵɵdefineComponent({
-  type: _a166,
+__publicField(_a162, "ɵcmp", ɵɵdefineComponent({
+  type: _a162,
   selectors: [["ion-skeleton-text"]],
   inputs: {
     animated: "animated"
@@ -32625,7 +28720,7 @@ __publicField(_a166, "ɵcmp", ɵɵdefineComponent({
   }, "IonSkeletonText_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a166);
+})), _a162);
 IonSkeletonText = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement94,
   inputs: ["animated"]
@@ -32651,8 +28746,8 @@ IonSkeletonText = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a167;
-var IonSpinner = (_a167 = class {
+var _a163;
+var IonSpinner = (_a163 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32660,12 +28755,12 @@ var IonSpinner = (_a167 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a167, "IonSpinner"), /** @nocollapse */
-__publicField(_a167, "ɵfac", /* @__PURE__ */ __name(function IonSpinner_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a167)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a163, "IonSpinner"), /** @nocollapse */
+__publicField(_a163, "ɵfac", /* @__PURE__ */ __name(function IonSpinner_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a163)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSpinner_Factory")), /** @nocollapse */
-__publicField(_a167, "ɵcmp", ɵɵdefineComponent({
-  type: _a167,
+__publicField(_a163, "ɵcmp", ɵɵdefineComponent({
+  type: _a163,
   selectors: [["ion-spinner"]],
   inputs: {
     color: "color",
@@ -32684,7 +28779,7 @@ __publicField(_a167, "ɵcmp", ɵɵdefineComponent({
   }, "IonSpinner_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a167);
+})), _a163);
 IonSpinner = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement95,
   inputs: ["color", "duration", "name", "paused"]
@@ -32710,22 +28805,22 @@ IonSpinner = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a168;
-var IonSplitPane = (_a168 = class {
+var _a164;
+var IonSplitPane = (_a164 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionSplitPaneVisible"]);
+    proxyOutputs(this, this.el, ["ionSplitPaneVisible"]);
   }
-}, __name(_a168, "IonSplitPane"), /** @nocollapse */
-__publicField(_a168, "ɵfac", /* @__PURE__ */ __name(function IonSplitPane_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a168)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a164, "IonSplitPane"), /** @nocollapse */
+__publicField(_a164, "ɵfac", /* @__PURE__ */ __name(function IonSplitPane_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a164)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonSplitPane_Factory")), /** @nocollapse */
-__publicField(_a168, "ɵcmp", ɵɵdefineComponent({
-  type: _a168,
+__publicField(_a164, "ɵcmp", ɵɵdefineComponent({
+  type: _a164,
   selectors: [["ion-split-pane"]],
   inputs: {
     contentId: "contentId",
@@ -32743,7 +28838,7 @@ __publicField(_a168, "ɵcmp", ɵɵdefineComponent({
   }, "IonSplitPane_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a168);
+})), _a164);
 IonSplitPane = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement96,
   inputs: ["contentId", "disabled", "when"]
@@ -32769,8 +28864,8 @@ IonSplitPane = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a169;
-var IonTab = (_a169 = class {
+var _a165;
+var IonTab = (_a165 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32778,12 +28873,12 @@ var IonTab = (_a169 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a169, "IonTab"), /** @nocollapse */
-__publicField(_a169, "ɵfac", /* @__PURE__ */ __name(function IonTab_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a169)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a165, "IonTab"), /** @nocollapse */
+__publicField(_a165, "ɵfac", /* @__PURE__ */ __name(function IonTab_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a165)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonTab_Factory")), /** @nocollapse */
-__publicField(_a169, "ɵcmp", ɵɵdefineComponent({
-  type: _a169,
+__publicField(_a165, "ɵcmp", ɵɵdefineComponent({
+  type: _a165,
   selectors: [["ion-tab"]],
   inputs: {
     component: "component",
@@ -32800,7 +28895,7 @@ __publicField(_a169, "ɵcmp", ɵɵdefineComponent({
   }, "IonTab_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a169);
+})), _a165);
 IonTab = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement97,
   inputs: ["component", "tab"],
@@ -32827,8 +28922,8 @@ IonTab = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a170;
-var IonTabBar = (_a170 = class {
+var _a166;
+var IonTabBar = (_a166 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32836,12 +28931,12 @@ var IonTabBar = (_a170 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a170, "IonTabBar"), /** @nocollapse */
-__publicField(_a170, "ɵfac", /* @__PURE__ */ __name(function IonTabBar_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a170)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a166, "IonTabBar"), /** @nocollapse */
+__publicField(_a166, "ɵfac", /* @__PURE__ */ __name(function IonTabBar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a166)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonTabBar_Factory")), /** @nocollapse */
-__publicField(_a170, "ɵcmp", ɵɵdefineComponent({
-  type: _a170,
+__publicField(_a166, "ɵcmp", ɵɵdefineComponent({
+  type: _a166,
   selectors: [["ion-tab-bar"]],
   inputs: {
     color: "color",
@@ -32860,7 +28955,7 @@ __publicField(_a170, "ɵcmp", ɵɵdefineComponent({
   }, "IonTabBar_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a170);
+})), _a166);
 IonTabBar = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement98,
   inputs: ["color", "mode", "selectedTab", "translucent"]
@@ -32886,8 +28981,8 @@ IonTabBar = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a171;
-var IonTabButton = (_a171 = class {
+var _a167;
+var IonTabButton = (_a167 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32895,12 +28990,12 @@ var IonTabButton = (_a171 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a171, "IonTabButton"), /** @nocollapse */
-__publicField(_a171, "ɵfac", /* @__PURE__ */ __name(function IonTabButton_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a171)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a167, "IonTabButton"), /** @nocollapse */
+__publicField(_a167, "ɵfac", /* @__PURE__ */ __name(function IonTabButton_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a167)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonTabButton_Factory")), /** @nocollapse */
-__publicField(_a171, "ɵcmp", ɵɵdefineComponent({
-  type: _a171,
+__publicField(_a167, "ɵcmp", ɵɵdefineComponent({
+  type: _a167,
   selectors: [["ion-tab-button"]],
   inputs: {
     disabled: "disabled",
@@ -32924,7 +29019,7 @@ __publicField(_a171, "ɵcmp", ɵɵdefineComponent({
   }, "IonTabButton_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a171);
+})), _a167);
 IonTabButton = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement99,
   inputs: ["disabled", "download", "href", "layout", "mode", "rel", "selected", "tab", "target"]
@@ -32950,8 +29045,8 @@ IonTabButton = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a172;
-var IonText = (_a172 = class {
+var _a168;
+var IonText = (_a168 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -32959,12 +29054,12 @@ var IonText = (_a172 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a172, "IonText"), /** @nocollapse */
-__publicField(_a172, "ɵfac", /* @__PURE__ */ __name(function IonText_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a172)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a168, "IonText"), /** @nocollapse */
+__publicField(_a168, "ɵfac", /* @__PURE__ */ __name(function IonText_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a168)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonText_Factory")), /** @nocollapse */
-__publicField(_a172, "ɵcmp", ɵɵdefineComponent({
-  type: _a172,
+__publicField(_a168, "ɵcmp", ɵɵdefineComponent({
+  type: _a168,
   selectors: [["ion-text"]],
   inputs: {
     color: "color",
@@ -32981,7 +29076,7 @@ __publicField(_a172, "ɵcmp", ɵɵdefineComponent({
   }, "IonText_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a172);
+})), _a168);
 IonText = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement100,
   inputs: ["color", "mode"]
@@ -33007,8 +29102,8 @@ IonText = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a173;
-var IonThumbnail = (_a173 = class {
+var _a169;
+var IonThumbnail = (_a169 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -33016,12 +29111,12 @@ var IonThumbnail = (_a173 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a173, "IonThumbnail"), /** @nocollapse */
-__publicField(_a173, "ɵfac", /* @__PURE__ */ __name(function IonThumbnail_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a173)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a169, "IonThumbnail"), /** @nocollapse */
+__publicField(_a169, "ɵfac", /* @__PURE__ */ __name(function IonThumbnail_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a169)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonThumbnail_Factory")), /** @nocollapse */
-__publicField(_a173, "ɵcmp", ɵɵdefineComponent({
-  type: _a173,
+__publicField(_a169, "ɵcmp", ɵɵdefineComponent({
+  type: _a169,
   selectors: [["ion-thumbnail"]],
   ngContentSelectors: _c1,
   decls: 1,
@@ -33034,7 +29129,7 @@ __publicField(_a173, "ɵcmp", ɵɵdefineComponent({
   }, "IonThumbnail_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a173);
+})), _a169);
 IonThumbnail = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement101
 })], IonThumbnail);
@@ -33059,8 +29154,8 @@ IonThumbnail = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a174;
-var IonTitle = (_a174 = class {
+var _a170;
+var IonTitle = (_a170 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -33068,12 +29163,12 @@ var IonTitle = (_a174 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a174, "IonTitle"), /** @nocollapse */
-__publicField(_a174, "ɵfac", /* @__PURE__ */ __name(function IonTitle_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a174)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a170, "IonTitle"), /** @nocollapse */
+__publicField(_a170, "ɵfac", /* @__PURE__ */ __name(function IonTitle_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a170)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonTitle_Factory")), /** @nocollapse */
-__publicField(_a174, "ɵcmp", ɵɵdefineComponent({
-  type: _a174,
+__publicField(_a170, "ɵcmp", ɵɵdefineComponent({
+  type: _a170,
   selectors: [["ion-title"]],
   inputs: {
     color: "color",
@@ -33090,7 +29185,7 @@ __publicField(_a174, "ɵcmp", ɵɵdefineComponent({
   }, "IonTitle_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a174);
+})), _a170);
 IonTitle = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement102,
   inputs: ["color", "size"]
@@ -33116,22 +29211,22 @@ IonTitle = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a175;
-var IonToast = (_a175 = class {
+var _a171;
+var IonToast = (_a171 = class {
   z;
   el;
   constructor(c, r, z) {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionToastDidPresent", "ionToastWillPresent", "ionToastWillDismiss", "ionToastDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
+    proxyOutputs(this, this.el, ["ionToastDidPresent", "ionToastWillPresent", "ionToastWillDismiss", "ionToastDidDismiss", "didPresent", "willPresent", "willDismiss", "didDismiss"]);
   }
-}, __name(_a175, "IonToast"), /** @nocollapse */
-__publicField(_a175, "ɵfac", /* @__PURE__ */ __name(function IonToast_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a175)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a171, "IonToast"), /** @nocollapse */
+__publicField(_a171, "ɵfac", /* @__PURE__ */ __name(function IonToast_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a171)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonToast_Factory")), /** @nocollapse */
-__publicField(_a175, "ɵcmp", ɵɵdefineComponent({
-  type: _a175,
+__publicField(_a171, "ɵcmp", ɵɵdefineComponent({
+  type: _a171,
   selectors: [["ion-toast"]],
   inputs: {
     animated: "animated",
@@ -33166,7 +29261,7 @@ __publicField(_a175, "ɵcmp", ɵɵdefineComponent({
   }, "IonToast_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a175);
+})), _a171);
 IonToast = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement103,
   inputs: ["animated", "buttons", "color", "cssClass", "duration", "enterAnimation", "header", "htmlAttributes", "icon", "isOpen", "keyboardClose", "layout", "leaveAnimation", "message", "mode", "position", "positionAnchor", "swipeGesture", "translucent", "trigger"],
@@ -33193,8 +29288,8 @@ IonToast = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _a176;
-var IonToolbar = (_a176 = class {
+var _a172;
+var IonToolbar = (_a172 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -33202,12 +29297,12 @@ var IonToolbar = (_a176 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a176, "IonToolbar"), /** @nocollapse */
-__publicField(_a176, "ɵfac", /* @__PURE__ */ __name(function IonToolbar_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a176)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a172, "IonToolbar"), /** @nocollapse */
+__publicField(_a172, "ɵfac", /* @__PURE__ */ __name(function IonToolbar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a172)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonToolbar_Factory")), /** @nocollapse */
-__publicField(_a176, "ɵcmp", ɵɵdefineComponent({
-  type: _a176,
+__publicField(_a172, "ɵcmp", ɵɵdefineComponent({
+  type: _a172,
   selectors: [["ion-toolbar"]],
   inputs: {
     color: "color",
@@ -33224,7 +29319,7 @@ __publicField(_a176, "ɵcmp", ɵɵdefineComponent({
   }, "IonToolbar_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a176);
+})), _a172);
 IonToolbar = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement104,
   inputs: ["color", "mode"]
@@ -33250,23 +29345,23 @@ IonToolbar = __decorate([ProxyCmp2({
     }];
   }, null);
 })();
-var _IonTabs2 = class _IonTabs2 extends IonTabs {
+var _IonTabs = class _IonTabs extends IonTabs {
   outlet;
   tabBar;
   tabBars;
   tabs;
 };
-__name(_IonTabs2, "IonTabs");
+__name(_IonTabs, "IonTabs");
 /** @nocollapse */
-__publicField(_IonTabs2, "ɵfac", /* @__PURE__ */ (() => {
+__publicField(_IonTabs, "ɵfac", /* @__PURE__ */ (() => {
   let ɵIonTabs_BaseFactory;
   return /* @__PURE__ */ __name(function IonTabs_Factory(__ngFactoryType__) {
-    return (ɵIonTabs_BaseFactory || (ɵIonTabs_BaseFactory = ɵɵgetInheritedFactory(_IonTabs2)))(__ngFactoryType__ || _IonTabs2);
+    return (ɵIonTabs_BaseFactory || (ɵIonTabs_BaseFactory = ɵɵgetInheritedFactory(_IonTabs)))(__ngFactoryType__ || _IonTabs);
   }, "IonTabs_Factory");
 })());
 /** @nocollapse */
-__publicField(_IonTabs2, "ɵcmp", ɵɵdefineComponent({
-  type: _IonTabs2,
+__publicField(_IonTabs, "ɵcmp", ɵɵdefineComponent({
+  type: _IonTabs,
   selectors: [["ion-tabs"]],
   contentQueries: /* @__PURE__ */ __name(function IonTabs_ContentQueries(rf, ctx, dirIndex) {
     if (rf & 1) {
@@ -33314,7 +29409,7 @@ __publicField(_IonTabs2, "ɵcmp", ɵɵdefineComponent({
   dependencies: [IonRouterOutlet2, NgIf],
   styles: ["[_nghost-%COMP%]{display:flex;position:absolute;inset:0;flex-direction:column;width:100%;height:100%;contain:layout size style}.tabs-inner[_ngcontent-%COMP%]{position:relative;flex:1;contain:layout size style}"]
 }));
-var IonTabs2 = _IonTabs2;
+var IonTabs2 = _IonTabs;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IonTabs2, [{
     type: Component,
@@ -33600,23 +29695,23 @@ var LoadingController = _LoadingController;
     return [];
   }, null);
 })();
-var _MenuController2 = class _MenuController2 extends MenuController {
+var _MenuController = class _MenuController extends MenuController {
   constructor() {
     super(menuController);
   }
 };
-__name(_MenuController2, "MenuController");
+__name(_MenuController, "MenuController");
 /** @nocollapse */
-__publicField(_MenuController2, "ɵfac", /* @__PURE__ */ __name(function MenuController_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _MenuController2)();
+__publicField(_MenuController, "ɵfac", /* @__PURE__ */ __name(function MenuController_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MenuController)();
 }, "MenuController_Factory"));
 /** @nocollapse */
-__publicField(_MenuController2, "ɵprov", ɵɵdefineInjectable({
-  token: _MenuController2,
-  factory: _MenuController2.ɵfac,
+__publicField(_MenuController, "ɵprov", ɵɵdefineInjectable({
+  token: _MenuController,
+  factory: _MenuController.ɵfac,
   providedIn: "root"
 }));
-var MenuController2 = _MenuController2;
+var MenuController2 = _MenuController;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MenuController2, [{
     type: Injectable,
@@ -33683,17 +29778,17 @@ var ToastController = _ToastController;
     return [];
   }, null);
 })();
-var _a177;
-var IonNav2 = (_a177 = class extends IonNav {
+var _a173;
+var IonNav2 = (_a173 = class extends IonNav {
   constructor(ref, environmentInjector, injector, angularDelegate, z, c) {
     super(ref, environmentInjector, injector, angularDelegate, z, c);
   }
-}, __name(_a177, "IonNav"), /** @nocollapse */
-__publicField(_a177, "ɵfac", /* @__PURE__ */ __name(function IonNav_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a177)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(EnvironmentInjector), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(AngularDelegate), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
+}, __name(_a173, "IonNav"), /** @nocollapse */
+__publicField(_a173, "ɵfac", /* @__PURE__ */ __name(function IonNav_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a173)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(EnvironmentInjector), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(AngularDelegate), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
 }, "IonNav_Factory")), /** @nocollapse */
-__publicField(_a177, "ɵcmp", ɵɵdefineComponent({
-  type: _a177,
+__publicField(_a173, "ɵcmp", ɵɵdefineComponent({
+  type: _a173,
   selectors: [["ion-nav"]],
   features: [ɵɵInheritDefinitionFeature],
   ngContentSelectors: _c1,
@@ -33706,7 +29801,7 @@ __publicField(_a177, "ɵcmp", ɵɵdefineComponent({
     }
   }, "IonNav_Template"),
   encapsulation: 2
-})), _a177);
+})), _a173);
 IonNav2 = __decorate([ProxyCmp({
   defineCustomElementFn: defineCustomElement105
 })], IonNav2);
@@ -33740,8 +29835,8 @@ var accessorProvider$a = {
   useExisting: forwardRef(() => IonCheckbox),
   multi: true
 };
-var _a178;
-var IonCheckbox = (_a178 = class extends ValueAccessor {
+var _a174;
+var IonCheckbox = (_a174 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -33749,7 +29844,7 @@ var IonCheckbox = (_a178 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange", "ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionChange", "ionFocus", "ionBlur"]);
   }
   writeValue(value) {
     this.elementRef.nativeElement.checked = this.lastValue = value;
@@ -33758,12 +29853,12 @@ var IonCheckbox = (_a178 = class extends ValueAccessor {
   handleIonChange(el) {
     this.handleValueChange(el, el.checked);
   }
-}, __name(_a178, "IonCheckbox"), /** @nocollapse */
-__publicField(_a178, "ɵfac", /* @__PURE__ */ __name(function IonCheckbox_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a178)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a174, "IonCheckbox"), /** @nocollapse */
+__publicField(_a174, "ɵfac", /* @__PURE__ */ __name(function IonCheckbox_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a174)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonCheckbox_Factory")), /** @nocollapse */
-__publicField(_a178, "ɵcmp", ɵɵdefineComponent({
-  type: _a178,
+__publicField(_a174, "ɵcmp", ɵɵdefineComponent({
+  type: _a174,
   selectors: [["ion-checkbox"]],
   hostBindings: /* @__PURE__ */ __name(function IonCheckbox_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -33797,7 +29892,7 @@ __publicField(_a178, "ɵcmp", ɵɵdefineComponent({
   }, "IonCheckbox_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a178);
+})), _a174);
 IonCheckbox = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement106,
   inputs: CHECKBOX_INPUTS
@@ -33837,8 +29932,8 @@ var accessorProvider$9 = {
   useExisting: forwardRef(() => IonDatetime),
   multi: true
 };
-var _a179;
-var IonDatetime = (_a179 = class extends ValueAccessor {
+var _a175;
+var IonDatetime = (_a175 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -33846,17 +29941,17 @@ var IonDatetime = (_a179 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionCancel", "ionChange", "ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionCancel", "ionChange", "ionFocus", "ionBlur"]);
   }
   handleIonChange(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a179, "IonDatetime"), /** @nocollapse */
-__publicField(_a179, "ɵfac", /* @__PURE__ */ __name(function IonDatetime_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a179)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a175, "IonDatetime"), /** @nocollapse */
+__publicField(_a175, "ɵfac", /* @__PURE__ */ __name(function IonDatetime_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a175)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonDatetime_Factory")), /** @nocollapse */
-__publicField(_a179, "ɵcmp", ɵɵdefineComponent({
-  type: _a179,
+__publicField(_a175, "ɵcmp", ɵɵdefineComponent({
+  type: _a175,
   selectors: [["ion-datetime"]],
   hostBindings: /* @__PURE__ */ __name(function IonDatetime_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -33911,7 +30006,7 @@ __publicField(_a179, "ɵcmp", ɵɵdefineComponent({
   }, "IonDatetime_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a179);
+})), _a175);
 IonDatetime = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement107,
   inputs: DATETIME_INPUTS,
@@ -33946,8 +30041,8 @@ IonDatetime = __decorate([ProxyCmp2({
     }]
   });
 })();
-var _a180;
-var IonIcon = (_a180 = class {
+var _a176;
+var IonIcon = (_a176 = class {
   z;
   el;
   constructor(c, r, z) {
@@ -33955,12 +30050,12 @@ var IonIcon = (_a180 = class {
     c.detach();
     this.el = r.nativeElement;
   }
-}, __name(_a180, "IonIcon"), /** @nocollapse */
-__publicField(_a180, "ɵfac", /* @__PURE__ */ __name(function IonIcon_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a180)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+}, __name(_a176, "IonIcon"), /** @nocollapse */
+__publicField(_a176, "ɵfac", /* @__PURE__ */ __name(function IonIcon_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a176)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
 }, "IonIcon_Factory")), /** @nocollapse */
-__publicField(_a180, "ɵcmp", ɵɵdefineComponent({
-  type: _a180,
+__publicField(_a176, "ɵcmp", ɵɵdefineComponent({
+  type: _a176,
   selectors: [["ion-icon"]],
   inputs: {
     color: "color",
@@ -33986,7 +30081,7 @@ __publicField(_a180, "ɵcmp", ɵɵdefineComponent({
   }, "IonIcon_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a180);
+})), _a176);
 IonIcon = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement108,
   inputs: ["color", "flipRtl", "icon", "ios", "lazy", "md", "mode", "name", "sanitize", "size", "src"]
@@ -34018,8 +30113,8 @@ var accessorProvider$8 = {
   useExisting: forwardRef(() => IonInput),
   multi: true
 };
-var _a181;
-var IonInput = (_a181 = class extends ValueAccessor {
+var _a177;
+var IonInput = (_a177 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34027,7 +30122,7 @@ var IonInput = (_a181 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionInput", "ionChange", "ionBlur", "ionFocus"]);
+    proxyOutputs(this, this.el, ["ionInput", "ionChange", "ionBlur", "ionFocus"]);
   }
   handleIonInput(el) {
     this.handleValueChange(el, el.value);
@@ -34041,12 +30136,12 @@ var IonInput = (_a181 = class extends ValueAccessor {
       }
     });
   }
-}, __name(_a181, "IonInput"), /** @nocollapse */
-__publicField(_a181, "ɵfac", /* @__PURE__ */ __name(function IonInput_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a181)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a177, "IonInput"), /** @nocollapse */
+__publicField(_a177, "ɵfac", /* @__PURE__ */ __name(function IonInput_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a177)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonInput_Factory")), /** @nocollapse */
-__publicField(_a181, "ɵcmp", ɵɵdefineComponent({
-  type: _a181,
+__publicField(_a177, "ɵcmp", ɵɵdefineComponent({
+  type: _a177,
   selectors: [["ion-input"]],
   hostBindings: /* @__PURE__ */ __name(function IonInput_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34105,7 +30200,7 @@ __publicField(_a181, "ɵcmp", ɵɵdefineComponent({
   }, "IonInput_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a181);
+})), _a177);
 IonInput = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement109,
   inputs: INPUT_INPUTS,
@@ -34146,8 +30241,8 @@ var accessorProvider$7 = {
   useExisting: forwardRef(() => IonInputOtp),
   multi: true
 };
-var _a182;
-var IonInputOtp = (_a182 = class extends ValueAccessor {
+var _a178;
+var IonInputOtp = (_a178 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34155,7 +30250,7 @@ var IonInputOtp = (_a182 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionInput", "ionChange", "ionComplete", "ionBlur", "ionFocus"]);
+    proxyOutputs(this, this.el, ["ionInput", "ionChange", "ionComplete", "ionBlur", "ionFocus"]);
   }
   handleIonInput(el) {
     this.handleValueChange(el, el.value);
@@ -34169,12 +30264,12 @@ var IonInputOtp = (_a182 = class extends ValueAccessor {
       }
     });
   }
-}, __name(_a182, "IonInputOtp"), /** @nocollapse */
-__publicField(_a182, "ɵfac", /* @__PURE__ */ __name(function IonInputOtp_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a182)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a178, "IonInputOtp"), /** @nocollapse */
+__publicField(_a178, "ɵfac", /* @__PURE__ */ __name(function IonInputOtp_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a178)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonInputOtp_Factory")), /** @nocollapse */
-__publicField(_a182, "ɵcmp", ɵɵdefineComponent({
-  type: _a182,
+__publicField(_a178, "ɵcmp", ɵɵdefineComponent({
+  type: _a178,
   selectors: [["ion-input-otp"]],
   hostBindings: /* @__PURE__ */ __name(function IonInputOtp_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34210,7 +30305,7 @@ __publicField(_a182, "ɵcmp", ɵɵdefineComponent({
   }, "IonInputOtp_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a182);
+})), _a178);
 IonInputOtp = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement110,
   inputs: INPUT_OTP_INPUTS,
@@ -34251,8 +30346,8 @@ var accessorProvider$6 = {
   useExisting: forwardRef(() => IonRadioGroup),
   multi: true
 };
-var _a183;
-var IonRadioGroup = (_a183 = class extends ValueAccessor {
+var _a179;
+var IonRadioGroup = (_a179 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34260,17 +30355,17 @@ var IonRadioGroup = (_a183 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange"]);
+    proxyOutputs(this, this.el, ["ionChange"]);
   }
   handleIonChange(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a183, "IonRadioGroup"), /** @nocollapse */
-__publicField(_a183, "ɵfac", /* @__PURE__ */ __name(function IonRadioGroup_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a183)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a179, "IonRadioGroup"), /** @nocollapse */
+__publicField(_a179, "ɵfac", /* @__PURE__ */ __name(function IonRadioGroup_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a179)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonRadioGroup_Factory")), /** @nocollapse */
-__publicField(_a183, "ɵcmp", ɵɵdefineComponent({
-  type: _a183,
+__publicField(_a179, "ɵcmp", ɵɵdefineComponent({
+  type: _a179,
   selectors: [["ion-radio-group"]],
   hostBindings: /* @__PURE__ */ __name(function IonRadioGroup_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34299,7 +30394,7 @@ __publicField(_a183, "ɵcmp", ɵɵdefineComponent({
   }, "IonRadioGroup_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a183);
+})), _a179);
 IonRadioGroup = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement111,
   inputs: RADIO_GROUP_INPUTS
@@ -34339,8 +30434,8 @@ var accessorProvider$5 = {
   useExisting: forwardRef(() => IonRange),
   multi: true
 };
-var _a184;
-var IonRange = (_a184 = class extends ValueAccessor {
+var _a180;
+var IonRange = (_a180 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34348,17 +30443,17 @@ var IonRange = (_a184 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange", "ionInput", "ionFocus", "ionBlur", "ionKnobMoveStart", "ionKnobMoveEnd"]);
+    proxyOutputs(this, this.el, ["ionChange", "ionInput", "ionFocus", "ionBlur", "ionKnobMoveStart", "ionKnobMoveEnd"]);
   }
   handleIonInput(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a184, "IonRange"), /** @nocollapse */
-__publicField(_a184, "ɵfac", /* @__PURE__ */ __name(function IonRange_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a184)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a180, "IonRange"), /** @nocollapse */
+__publicField(_a180, "ɵfac", /* @__PURE__ */ __name(function IonRange_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a180)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonRange_Factory")), /** @nocollapse */
-__publicField(_a184, "ɵcmp", ɵɵdefineComponent({
-  type: _a184,
+__publicField(_a180, "ɵcmp", ɵɵdefineComponent({
+  type: _a180,
   selectors: [["ion-range"]],
   hostBindings: /* @__PURE__ */ __name(function IonRange_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34398,7 +30493,7 @@ __publicField(_a184, "ɵcmp", ɵɵdefineComponent({
   }, "IonRange_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a184);
+})), _a180);
 IonRange = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement112,
   inputs: RANGE_INPUTS
@@ -34438,8 +30533,8 @@ var accessorProvider$4 = {
   useExisting: forwardRef(() => IonSearchbar),
   multi: true
 };
-var _a185;
-var IonSearchbar = (_a185 = class extends ValueAccessor {
+var _a181;
+var IonSearchbar = (_a181 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34447,17 +30542,17 @@ var IonSearchbar = (_a185 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionInput", "ionChange", "ionCancel", "ionClear", "ionBlur", "ionFocus"]);
+    proxyOutputs(this, this.el, ["ionInput", "ionChange", "ionCancel", "ionClear", "ionBlur", "ionFocus"]);
   }
   handleIonInput(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a185, "IonSearchbar"), /** @nocollapse */
-__publicField(_a185, "ɵfac", /* @__PURE__ */ __name(function IonSearchbar_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a185)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a181, "IonSearchbar"), /** @nocollapse */
+__publicField(_a181, "ɵfac", /* @__PURE__ */ __name(function IonSearchbar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a181)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonSearchbar_Factory")), /** @nocollapse */
-__publicField(_a185, "ɵcmp", ɵɵdefineComponent({
-  type: _a185,
+__publicField(_a181, "ɵcmp", ɵɵdefineComponent({
+  type: _a181,
   selectors: [["ion-searchbar"]],
   hostBindings: /* @__PURE__ */ __name(function IonSearchbar_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34500,7 +30595,7 @@ __publicField(_a185, "ɵcmp", ɵɵdefineComponent({
   }, "IonSearchbar_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a185);
+})), _a181);
 IonSearchbar = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement113,
   inputs: SEARCHBAR_INPUTS,
@@ -34541,8 +30636,8 @@ var accessorProvider$3 = {
   useExisting: forwardRef(() => IonSegment),
   multi: true
 };
-var _a186;
-var IonSegment = (_a186 = class extends ValueAccessor {
+var _a182;
+var IonSegment = (_a182 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34550,17 +30645,17 @@ var IonSegment = (_a186 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange"]);
+    proxyOutputs(this, this.el, ["ionChange"]);
   }
   handleIonChange(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a186, "IonSegment"), /** @nocollapse */
-__publicField(_a186, "ɵfac", /* @__PURE__ */ __name(function IonSegment_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a186)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a182, "IonSegment"), /** @nocollapse */
+__publicField(_a182, "ɵfac", /* @__PURE__ */ __name(function IonSegment_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a182)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonSegment_Factory")), /** @nocollapse */
-__publicField(_a186, "ɵcmp", ɵɵdefineComponent({
-  type: _a186,
+__publicField(_a182, "ɵcmp", ɵɵdefineComponent({
+  type: _a182,
   selectors: [["ion-segment"]],
   hostBindings: /* @__PURE__ */ __name(function IonSegment_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34590,7 +30685,7 @@ __publicField(_a186, "ɵcmp", ɵɵdefineComponent({
   }, "IonSegment_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a186);
+})), _a182);
 IonSegment = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement114,
   inputs: SEGMENT_INPUTS
@@ -34630,8 +30725,8 @@ var accessorProvider$2 = {
   useExisting: forwardRef(() => IonSelect),
   multi: true
 };
-var _a187;
-var IonSelect = (_a187 = class extends ValueAccessor {
+var _a183;
+var IonSelect = (_a183 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34639,17 +30734,17 @@ var IonSelect = (_a187 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange", "ionCancel", "ionDismiss", "ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionChange", "ionCancel", "ionDismiss", "ionFocus", "ionBlur"]);
   }
   handleIonChange(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a187, "IonSelect"), /** @nocollapse */
-__publicField(_a187, "ɵfac", /* @__PURE__ */ __name(function IonSelect_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a187)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a183, "IonSelect"), /** @nocollapse */
+__publicField(_a183, "ɵfac", /* @__PURE__ */ __name(function IonSelect_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a183)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonSelect_Factory")), /** @nocollapse */
-__publicField(_a187, "ɵcmp", ɵɵdefineComponent({
-  type: _a187,
+__publicField(_a183, "ɵcmp", ɵɵdefineComponent({
+  type: _a183,
   selectors: [["ion-select"]],
   hostBindings: /* @__PURE__ */ __name(function IonSelect_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34694,7 +30789,7 @@ __publicField(_a187, "ɵcmp", ɵɵdefineComponent({
   }, "IonSelect_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a187);
+})), _a183);
 IonSelect = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement116,
   inputs: SELECT_INPUTS,
@@ -34735,8 +30830,8 @@ var accessorProvider$1 = {
   useExisting: forwardRef(() => IonTextarea),
   multi: true
 };
-var _a188;
-var IonTextarea = (_a188 = class extends ValueAccessor {
+var _a184;
+var IonTextarea = (_a184 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34744,17 +30839,17 @@ var IonTextarea = (_a188 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange", "ionInput", "ionBlur", "ionFocus"]);
+    proxyOutputs(this, this.el, ["ionChange", "ionInput", "ionBlur", "ionFocus"]);
   }
   handleIonInput(el) {
     this.handleValueChange(el, el.value);
   }
-}, __name(_a188, "IonTextarea"), /** @nocollapse */
-__publicField(_a188, "ɵfac", /* @__PURE__ */ __name(function IonTextarea_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a188)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a184, "IonTextarea"), /** @nocollapse */
+__publicField(_a184, "ɵfac", /* @__PURE__ */ __name(function IonTextarea_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a184)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonTextarea_Factory")), /** @nocollapse */
-__publicField(_a188, "ɵcmp", ɵɵdefineComponent({
-  type: _a188,
+__publicField(_a184, "ɵcmp", ɵɵdefineComponent({
+  type: _a184,
   selectors: [["ion-textarea"]],
   hostBindings: /* @__PURE__ */ __name(function IonTextarea_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34806,7 +30901,7 @@ __publicField(_a188, "ɵcmp", ɵɵdefineComponent({
   }, "IonTextarea_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a188);
+})), _a184);
 IonTextarea = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement117,
   inputs: TEXTAREA_INPUTS,
@@ -34847,8 +30942,8 @@ var accessorProvider = {
   useExisting: forwardRef(() => IonToggle),
   multi: true
 };
-var _a189;
-var IonToggle = (_a189 = class extends ValueAccessor {
+var _a185;
+var IonToggle = (_a185 = class extends ValueAccessor {
   z;
   el;
   constructor(c, r, z, injector) {
@@ -34856,7 +30951,7 @@ var IonToggle = (_a189 = class extends ValueAccessor {
     this.z = z;
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs2(this, this.el, ["ionChange", "ionFocus", "ionBlur"]);
+    proxyOutputs(this, this.el, ["ionChange", "ionFocus", "ionBlur"]);
   }
   writeValue(value) {
     this.elementRef.nativeElement.checked = this.lastValue = value;
@@ -34865,12 +30960,12 @@ var IonToggle = (_a189 = class extends ValueAccessor {
   handleIonChange(el) {
     this.handleValueChange(el, el.checked);
   }
-}, __name(_a189, "IonToggle"), /** @nocollapse */
-__publicField(_a189, "ɵfac", /* @__PURE__ */ __name(function IonToggle_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _a189)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
+}, __name(_a185, "IonToggle"), /** @nocollapse */
+__publicField(_a185, "ɵfac", /* @__PURE__ */ __name(function IonToggle_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _a185)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Injector));
 }, "IonToggle_Factory")), /** @nocollapse */
-__publicField(_a189, "ɵcmp", ɵɵdefineComponent({
-  type: _a189,
+__publicField(_a185, "ɵcmp", ɵɵdefineComponent({
+  type: _a185,
   selectors: [["ion-toggle"]],
   hostBindings: /* @__PURE__ */ __name(function IonToggle_HostBindings(rf, ctx) {
     if (rf & 1) {
@@ -34904,7 +30999,7 @@ __publicField(_a189, "ɵcmp", ɵɵdefineComponent({
   }, "IonToggle_Template"),
   encapsulation: 2,
   changeDetection: 0
-})), _a189);
+})), _a185);
 IonToggle = __decorate([ProxyCmp2({
   defineCustomElementFn: defineCustomElement118,
   inputs: TOGGLE_INPUTS
@@ -35063,14 +31158,6 @@ export {
 };
 /*! Bundled license information:
 
-@ionic/core/components/cubic-bezier.js:
-@ionic/core/components/ionic-global.js:
-@ionic/core/components/config.js:
-@ionic/core/components/theme.js:
-@ionic/core/components/index5.js:
-@ionic/core/components/framework-delegate.js:
-@ionic/core/components/overlays.js:
-@ionic/core/components/index.js:
 @ionic/core/components/index6.js:
 @ionic/core/components/icon.js:
 @ionic/core/components/ripple-effect.js:

@@ -45,3 +45,20 @@ ion-app {
   --ion-background-color: #f8f7f6;
   font-family: 'Catamaran', sans-serif;
 }
+
+/* Asegurar que los toasts queden sobre cualquier overlay personalizado */
+ion-toast {
+  z-index: 11000 !important;
+}
+
+/* Stacking para toasts en top */
+.notif-toast {
+  position: fixed !important;
+  top: calc(env(safe-area-inset-top) + 12px) !important;
+}
+.notif-offset-0 { margin-top: 0 !important; }
+.notif-offset-1 { margin-top: 64px !important; }
+.notif-offset-2 { margin-top: 128px !important; }
+.notif-offset-3 { margin-top: 192px !important; }
+.notif-offset-4 { margin-top: 256px !important; }
+.notif-offset-5 { margin-top: 320px !important; }

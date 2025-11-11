@@ -8,6 +8,7 @@ import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd, bag, person} from 'ionicons/icons';
+import { Perimisos } from '../services/perimisos';
 
 //Iconos
 addIcons({ 
@@ -29,14 +30,21 @@ export class ProductosPage implements OnInit {
 
   mdi = {edit: mdiPencil};
 
-  productos: { id: number; nombre: string; precio: number }[] = [];
+  productos: { id: number; nombre: string; precio: number; stock: number }[] = [];
   mostrarModal = false;
-  productoSeleccionado: { id: number; nombre: string; precio: number } | null = null;
+  mostrarModalStock = false;
+  productoSeleccionado: { id: number; nombre: string; precio: number; stock: number } | null = null;
   nuevoPrecio: number | null = null;
+  nuevoStock: number | null = null;
+  editProductos = false;
+  editStock = false;
+  editPrecio = false;
 
-  constructor(private api: ApiService, private router: Router) { }
+  constructor(private api: ApiService, private router: Router, private permisos: Perimisos) { }
 
   async ngOnInit() {
+    this.editPrecio = true;
+    this.editProductos = await this.permisos.checkPermission('edit_productos')
     this.productos = await this.api.productos();
     this.cargarDatosUsuario();
   }
@@ -54,16 +62,40 @@ export class ProductosPage implements OnInit {
     }
   }
 
-  abrirModal(producto: { id: number; nombre: string; precio: number }) {
+  abrirModal(producto: { id: number; nombre: string; precio: number; stock: number }) {
     this.productoSeleccionado = { ...producto };
     this.nuevoPrecio = producto.precio;
     this.mostrarModal = true;
+  }
+
+  abrirModalStock(producto: { id: number; nombre: string; precio: number; stock: number }){
+    this.productoSeleccionado = {...producto};
+    this.nuevoStock = producto.stock;
+    this.mostrarModalStock = true
+  }
+
+  editarStock(){
+    this.editPrecio = false;
+    this.editStock = true;
+    console.log(this.editPrecio, this.editStock)
+  }
+
+  editarPrecio(){
+    this.editPrecio = true;
+    this.editStock = false;
+    console.log(this.editPrecio, this.editStock)
   }
 
   cerrarModal() {
     this.mostrarModal = false;
     this.productoSeleccionado = null;
     this.nuevoPrecio = null;
+  }
+
+  cerrarModalStock() {
+    this.mostrarModalStock = false;
+    this.productoSeleccionado = null;
+    this.nuevoStock = null;
   }
 
   async confirmarCambio() {
@@ -75,6 +107,17 @@ export class ProductosPage implements OnInit {
     const idx = this.productos.findIndex(p => p.id === id);
     if (idx >= 0) this.productos[idx] = { ...this.productos[idx], precio };
     this.cerrarModal();
+  }
+
+  async confirmarCambioStock() {
+    if (!this.productoSeleccionado || this.nuevoStock == null) return;
+    const id = this.productoSeleccionado.id;
+    const stock = Number(this.nuevoStock);
+    if (Number.isNaN(stock) || stock < 0) return;
+    await this.api.actualizarStock(stock, id);
+    const idx = this.productos.findIndex(p => p.id === id);
+    if (idx >= 0) this.productos[idx] = { ...this.productos[idx], stock };
+    this.cerrarModalStock();
   }
 
   //Variables del menú
@@ -108,6 +151,16 @@ export class ProductosPage implements OnInit {
   Irapedidosmenu() {
     this.cerrarMenu();
     this.router.navigate(['/pedidos']);
+  }
+
+  IrAUsuarios() {
+    this.cerrarMenu();
+    this.router.navigate(['/usuarios']);
+  }
+
+  IrAPerfil() {
+    this.cerrarMenu();
+    this.router.navigate(['/perfil']);
   }
 
   Irafacturasmenu() {

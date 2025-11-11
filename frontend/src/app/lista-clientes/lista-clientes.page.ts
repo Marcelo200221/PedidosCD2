@@ -35,7 +35,11 @@ export class ListaClientesPage implements OnInit {
   agregarCliente(){
     this.router.navigate(['/clientes']);
   }
+  
+  editarCliente(id: string){
 
+    this.router.navigate(['/clientes', id])
+  }
   
 
 }

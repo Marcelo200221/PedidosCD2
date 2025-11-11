@@ -139,6 +139,17 @@ export class ApiService{
     })
   }
 
+  async darPermisos(id: string){
+    try{
+      await api.put(`dar/permisos/${id}`)
+      console.log("Permisos de administrador asignados ")
+      alert("Permisos de administrador asignados")
+
+    } catch(error){
+      console.error(error)
+    }
+  }
+
   async saveToken(token: string){
     await ssSetItem('auth_token', token);
   }
@@ -163,6 +174,16 @@ export class ApiService{
 
   async getToken(): Promise<string | null> {
     return await ssGetItem('auth_token');
+  }
+
+  async actualizarPerfil(payload: { first_name?: string; last_name?: string; email?: string; nombre?: string; apellido?: string; correo?: string }): Promise<any> {
+    try {
+      const res = await api.patch('usuarios/perfil', payload);
+      return res.data;
+    } catch (error) {
+      console.error('Error actualizando perfil:', error);
+      throw error;
+    }
   }
 
   async logout(){
@@ -433,39 +454,53 @@ export class ApiService{
     }
   }
 
+  async infoCliente(id: String){
+    try{
+      const res = await api.get(`datos/cliente/${id}`);
+      const data = res.data || {};
+      const normalizado = {
+        id: data.id_cliente ?? data.id ?? String(id),
+        rut: data.rut ?? '',
+        nombre: data.nombre ?? '',
+        direccion: data.direccion ?? '',
+        razonSocial: data.razon_social ?? data.razonSocial ?? ''
+      };
+      console.log('Cliente (normalizado):', normalizado);
+      return normalizado;
+    } catch(error){
+      console.error(error);
+      throw error;
+    }
+  }
+
+  async editarCliente(id: string, rut: string, nombre: string, direccion: string, razonSocial: string){
+    try{
+      await api.put(`editar/cliente/${id}`, {
+        rut: rut,
+        nombre: nombre,
+        direccion: direccion, 
+        razon_social: razonSocial
+      })
+      this.router.navigate(['/lista-clientes'])
+    } catch(error){
+      console.error(error);
+    }
+  }
+
   async actualizarEstadoPedido(id: number, estado: string) {
     try {
       console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
-      
-      //Primero obtenemos el pedido completo
-      const getResponse = await api.get(`pedidos/${id}/`);
-      const pedidoActual = getResponse.data;
-      
-      console.log('Pedido actual:', pedidoActual);
-      
-      //Construimos el payload manteniendo TODA la estructura original
-      const payload = {
-        direccion: pedidoActual.direccion,
-        fecha_entrega: pedidoActual.fecha_entrega,
-        estado: estado,  //Solo cambiamos el estado
-        lineas: pedidoActual.lineas.map((linea: any) => ({
-          producto_id: linea.producto.id,
-          cajas: linea.cajas && linea.cajas.length > 0 
-            ? linea.cajas.map((caja: any) => ({
-                peso: Number(caja.peso),
-                etiqueta: caja.etiqueta || `Caja ${linea.cajas.indexOf(caja) + 1}`
-              }))
-            : []
-        }))
-      };
-      
-      console.log('Payload a enviar:', JSON.stringify(payload, null, 2));
-      
-      const updateResponse = await api.put(`pedidos/${id}/`, payload);
+
+      // Importante: enviar SOLO el cambio de estado.
+      // No reenviar 'lineas' para evitar borrar cajas accidentalmente
+      // cuando no estamos editando pesos/cajas.
+      const payload = { estado } as any;
+
+      const updateResponse = await api.patch(`pedidos/${id}/`, payload);
       console.log('Estado actualizado exitosamente');
       return updateResponse;
-      
-    } catch(error: any) {
+
+    } catch (error: any) {
       console.error('Error completo:', error);
       console.error('Response data:', error.response?.data);
       console.error('Status:', error.response?.status);
@@ -484,6 +519,27 @@ export class ApiService{
     }
   }
 
+  async actualizarStock(stock: number, id: number){
+    try{
+      await api.put("editar/stock", {
+        stock: stock,
+        pk: id
+      })
+    }catch(error){
+      console.error(error)
+    }
+  }
+
+  // Avisos del bot: obtiene la lista de avisos actuales
+  async getAvisos(): Promise<any[]> {
+    try {
+      const res = await api.get("avisos/");
+      return Array.isArray(res.data) ? res.data : [];
+    } catch (error) {
+      console.error('Error obteniendo avisos:', error);
+      return [];
+    }
+  }
   async listarProductosMasVendidos(): Promise<any[]> {
   try {
     console.log("Obteniendo productos más vendidos");

@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.spec';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/angular/standalone';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-clientes',
@@ -14,7 +15,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from
 })
 export class ClientesPage implements OnInit {
 
-  constructor( private api: ApiService) { }
+  constructor( private api: ApiService, private activeRouter: ActivatedRoute) { }
   
     //Definicion de variables
     id: string = '';
@@ -22,6 +23,7 @@ export class ClientesPage implements OnInit {
     nombre: string = '';
     direccion: string = '';
     razonSocial: string = '';
+    cliente = this.activeRouter.snapshot.params['id']
   
     //Definicion de variables de error
     rutError: string = '';
@@ -165,6 +167,18 @@ export class ClientesPage implements OnInit {
       this.rut.replace(/\D/g, '').substring(0, 4) +
       this.direccion.substring(0, 3)
     ).toUpperCase()
+
+    if(this.cliente){
+      try{
+        this.api.editarCliente(this.cliente, this.rut,
+          this.nombre,
+          this.direccion,
+          this.razonSocial);
+        return;
+      } catch(error){
+        console.error(error)
+      }
+    }
   
     this.api.agregarCliente(
       this.id,
@@ -187,7 +201,17 @@ export class ClientesPage implements OnInit {
   
   
   
-    ngOnInit() {
+    async ngOnInit() {
+      console.log("Data del usuario", this.activeRouter.snapshot.params['id'])
+      if(this.cliente){
+        const infoCliente = await this.api.infoCliente(this.cliente)
+
+        this.id = infoCliente.id
+        this.rut = infoCliente.rut
+        this.nombre = infoCliente.nombre
+        this.direccion = infoCliente.direccion
+        this.razonSocial = infoCliente.razonSocial
+      }
     }
 
 }

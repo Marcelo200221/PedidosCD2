@@ -29,6 +29,11 @@
     </div>
     
     <div class="menu-contenido">
+      <div class="menu-item" (click)="IrAPerfil()">
+        <ion-icon name="person"></ion-icon>
+        <span>Perfil</span>
+      </div>
+      <div class="menu-divider"></div>
       <div class="menu-item" (click)="Irapedidosmenu()">
         <ion-icon name="cube"></ion-icon>
         <span>Pedidos</span>
@@ -46,9 +51,9 @@
 
       <div class="menu-divider"></div>
 
-      <div class="menu-item" (click)="IrListarClientes()">
+      <div *ngIf="puedeIr" class="menu-item" (click)="IrAUsuarios()">
         <ion-icon name="person"></ion-icon>
-        <span>Usuario</span>
+        <span>Usuarios</span>
       </div>
       
       <div class="menu-item" (click)="IrListarClientes()">
@@ -380,14 +385,19 @@
         <div class="input-container">
           <h1 class="titulos-small">Tipo de Carne</h1>
 
-          <ion-select placeholder="Seleccione tipo de carne" 
-            [(ngModel)]="producto.id" 
-            (ionChange)="actualizarNombreProducto($event, i)"
+            <ion-select placeholder="Seleccione tipo de carne" 
+              [(ngModel)]="producto.id" 
+              (ionChange)="actualizarNombreProducto($event, i)"
             interface="popover" 
             class="select-carne">
             <ion-select-option *ngFor="let productoDisponible of getProductosDisponiblesParaIndice(i)" 
               [value]="productoDisponible.id">
-              {{ productoDisponible.nombre }}
+              <span 
+                [style.color]="(productoDisponible.stock ?? 0) < 20 ? '#c62828' : null"
+                [style.font-weight]="(productoDisponible.stock ?? 0) < 20 ? '700' : null"
+              >
+                {{ productoDisponible.nombre }} - ${{ productoDisponible.precio }} (Stock: {{ productoDisponible.stock ?? 0 }})
+              </span>
             </ion-select-option>
           </ion-select>
           <div class="underline" [ngStyle]="{'background-color': underlinesProductosNombre[i] || '#cccccc'}"></div>

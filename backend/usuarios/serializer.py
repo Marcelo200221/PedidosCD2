@@ -99,5 +99,5 @@ class JWTSerializer(serializers.Serializer):
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['id', 'rut', 'email', 'first_name', 'last_name', 'username']
+        fields = ['id', 'rut', 'email', 'first_name', 'last_name', 'username', 'groups']
 

@@ -23,6 +23,9 @@
         <div class="acciones">
           <ion-button *ngIf="puedeEditar" class="btn-eliminar" (click)="eliminarCliente(cliente.id_cliente)">Eliminar</ion-button>
         </div>
+        <div class="acciones">
+          <ion-button *ngIf="puedeEditar" class="btn-editar" (click)="editarCliente(cliente.id_cliente)">Editar</ion-button>
+        </div>
       </ion-label>
     </ion-item>
   </ion-list>

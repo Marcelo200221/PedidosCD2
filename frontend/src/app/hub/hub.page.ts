@@ -8,6 +8,9 @@ import { addIcons } from 'ionicons';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd, bag, person} from 'ionicons/icons';
 import { ApiService } from '../services/api.spec';
+import { ToastController } from '@ionic/angular';
+import { NotificacionService } from '../services/notificacion.service';
+import { Perimisos } from '../services/perimisos';
 
 //Iconos
 addIcons({ 
@@ -34,18 +37,39 @@ export class HubPage implements OnInit {
   menuAbierto: boolean = false;
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
+  private avisosVistos = new Set<number>();
+  private avisosTimer: any;
+  puedeIr = false;
+  verReportes = false;
+  verProductos = false;
 
   constructor(
     private api: ApiService, 
-    private router: Router
+    private router: Router,
+    private toast: ToastController,
+    private notificaciones: NotificacionService,
+    private permisos: Perimisos
   ) {}
   
-  ngOnInit() {
+  async ngOnInit() {
+    this.verProductos = await this.permisos.checkPermission('view_productos')
+    this.puedeIr = await this.permisos.checkPermission('view_usuarios')
+    this.verReportes = await this.permisos.checkPermission('view_reportes')
     this.cargarDatosUsuario();
+  }
+
+  iniciarAvisos() {
+    this.notificaciones.start();
   }
 
   ngOnDestroy() {
     this.menuAbierto = false;
+    // Detener avisos si están activos
+    this.notificaciones.stop();
+    if (this.avisosTimer) {
+      clearInterval(this.avisosTimer);
+      this.avisosTimer = null;
+    }
   }
 
   async cargarDatosUsuario() {
@@ -54,6 +78,8 @@ export class HubPage implements OnInit {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
       console.log('Usuario cargado:', usuario); 
+      // Iniciar avisos solo cuando hay usuario en IndexedDB (login hecho)
+      this.iniciarAvisos();
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');
@@ -89,6 +115,11 @@ export class HubPage implements OnInit {
     this.router.navigate(['/pedidos']);
   }
 
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil'])
+  }
+
   Irafacturasmenu() {
     this.cerrarMenu();
     this.router.navigate(['/facturacion']);
@@ -107,6 +138,11 @@ export class HubPage implements OnInit {
   IrClientes() {
     this.cerrarMenu();
     this.router.navigate(['/clientes']);
+  }
+
+  IrUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['usuarios'])
   }
 
   IrListarClientes() {
