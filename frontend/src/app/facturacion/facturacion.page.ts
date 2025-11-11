@@ -336,6 +336,16 @@ export class FacturacionPage implements OnInit {
     this.cerrarMenu();
     this.router.navigate(['/dashboard']);
   }
+
+  IrAUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['/usuarios'])
+  }
+
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil'])
+  }
   
   IrMenu() {
     this.cerrarMenu();

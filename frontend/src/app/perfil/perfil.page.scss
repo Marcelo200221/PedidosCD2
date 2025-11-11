@@ -1,0 +1,161 @@
+.barra-superior {
+  width: 100%;
+  height: 40px;
+  background-color: #6a0d0d;
+}
+
+.barra-inferior {
+  width: 55%;
+  height: 40px;
+  background-color: #97201d;
+  border-bottom-right-radius: 15px;
+}
+
+.titulo-texto {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 1%;
+}
+
+.barra-texto {
+  width: 30%;
+  height: 4px;
+  background-color: #97201d;
+  margin-left: 10%;
+  margin-bottom: 10%;
+}
+
+.titulo-actions {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn-cambiar {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 10px;
+  height: 36px;
+  padding: 0 14px;
+}
+
+.btn-cancelar {
+  --background: #9e9e9e;
+}
+
+.titulos {
+  color: #000;
+  font-weight: bold;
+  font-family: catamaran, sans-serif;
+  margin-top: 5%;
+  margin-bottom: 6px;
+  font-size: 125%;
+}
+
+.inputs-row {
+  display: flex;
+  gap: 20px;
+  margin-right: 10%;
+}
+
+.input-container {
+  position: relative;
+  margin: 10px 0;
+  margin-left: 10%;
+  flex: 1 1 0;
+}
+
+.input-container ion-input {
+  width: 85%;
+  font-size: 100%;
+  --color: #111;
+  --placeholder-color: #555;
+  color: #111;
+}
+
+ion-input[disabled] {
+  opacity: 1;
+  --color: #222;
+  --placeholder-color: #666;
+}
+
+/* Contraseñas lado a lado sin tocar el HTML */
+.input-container ion-input[type="password"] {
+  width: 42%;
+  display: inline-block;
+}
+
+.input-container ion-input[type="password"] + .underline {
+  width: 42%;
+  display: inline-block;
+  margin-right: 4%;
+}
+
+/* Quitar margen superior adicional del segundo campo si quedó stacked en pantallas angostas */
+@media (max-width: 768px) {
+  .input-container ion-input[type="password"],
+  .input-container ion-input[type="password"] + .underline {
+    width: 85%;
+    display: block;
+    margin-right: 0;
+  }
+}
+
+.underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 3px;
+  width: 85%;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.mensaje-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.botones {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-login {
+  width: 75%;
+  height: 40px;
+  font-size: 90%;
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 15px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+ion-input {
+  --highlight-color-focused: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
+}
+
+@media (max-width: 768px) {
+  .inputs-row {
+    flex-direction: column;
+  }
+}
+
+.inputs-row--compact {
+  align-items: center;
+  gap: 8px;
+}

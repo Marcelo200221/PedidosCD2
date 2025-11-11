@@ -187,6 +187,16 @@ async cargarClientesDisponibles() {
     this.router.navigate(['/hub']);
   }
 
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil']);
+  }
+
+  IrAUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['/usuarios']);
+  }
+
   IrClientes() {
     this.cerrarMenu();
     this.router.navigate(['/clientes']);

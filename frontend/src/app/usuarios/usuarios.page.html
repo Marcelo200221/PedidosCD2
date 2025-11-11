@@ -14,11 +14,12 @@
   <!-- Lista de clientes -->
   <ion-list class="clientes-list">
     <ion-item class="cliente-item" lines="none" *ngFor="let usuario of usuarios">
-      <ion-label class="cliente-card">
+      <ion-label class="cliente-card" >
         <h2 class="cliente-nombre">{{ usuario.first_name}} {{usuario.last_name}}</h2>
         <p class="cliente-detalle"><strong>ID:</strong> {{ usuario.id }}</p>
         <p class="cliente-detalle"><strong>RUT:</strong> {{ usuario.rut }}</p>
         <p class="cliente-detalle"><strong>Dirección:</strong> {{ usuario.email }}</p>
+        <ion-button *ngIf="!esGerente(usuario)" (click)="darPermisos(usuario.id)">Dar Permisos Superiores</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>

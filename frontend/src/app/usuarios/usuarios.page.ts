@@ -17,8 +17,22 @@ export class UsuariosPage implements OnInit {
 
   usuarios: any[] = [];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public permisos: Perimisos) { }
 
+
+  darPermisos(id: string){
+    this.api.darPermisos(id);
+  }
+  
+  esGerente(u: any): boolean {
+    const g = u?.groups;
+    if (!g) return false;
+    // Puede venir como array de nombres, objetos o ids
+    if (Array.isArray(g)) {
+      return g.some((x: any) => x === 'gerente' || x?.name === 'gerente' || x === 1 || x === '1');
+    }
+    return false;
+  }
   
   
 

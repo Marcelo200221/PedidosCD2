@@ -70,8 +70,27 @@ def editar_cliente(request, pk):
     except Cliente.DoesNotExist:
         return Response({"error": f"No existe cliente con id {pk}"}, status=status.HTTP_404_NOT_FOUND)
 
+    # Preparar datos y validar unicidad excluyendo el propio registro
+    data = request.data.copy() if hasattr(request, 'data') else {}
+
+    nuevo_rut = data.get('rut')
+    if nuevo_rut is not None:
+        if str(nuevo_rut) == str(cliente.rut):
+            data.pop('rut', None)
+        else:
+            if Cliente.objects.exclude(pk=pk).filter(rut=nuevo_rut).exists():
+                return Response({"rut": "Este RUT ya esta registrado"}, status=status.HTTP_400_BAD_REQUEST)
+
+    nuevo_id = data.get('id_cliente')
+    if nuevo_id is not None:
+        if str(nuevo_id) == str(cliente.id_cliente):
+            data.pop('id_cliente', None)
+        else:
+            if Cliente.objects.exclude(pk=pk).filter(id_cliente=nuevo_id).exists():
+                return Response({"id_cliente": "Este ID ya existe"}, status=status.HTTP_400_BAD_REQUEST)
+
     # Enlazar el cliente existente con los nuevos datos
-    serializer = ClienteSerializer(cliente, data=request.data, partial=True)  
+    serializer = ClienteSerializer(cliente, data=data, partial=True)  
     # 👆 'partial=True' permite editar solo algunos campos (no todos obligatorios)
 
     # Validar los datos enviados

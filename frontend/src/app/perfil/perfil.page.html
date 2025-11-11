@@ -1,13 +1,83 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+<ion-content class="login-page" fullscreen>
+  <!-- Header -->
+  <div class="login-header">
+    <div class="barra-superior"></div>
+    <div class="barra-inferior"></div>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Título -->
+  <div class="titulo-container">
+    <h1 class="titulo-texto">Perfil</h1>
+    <div class="barra-texto"></div>
+  </div>
+
+  <!-- Acciones del título -->
+  <div class="titulo-actions">
+    <ion-button *ngIf="!enableEdit" (click)="editar()" class="btn-cambiar">Editar Perfil</ion-button>
+    <ion-button *ngIf="enableEdit" (click)="cancelar()" class="btn-cambiar btn-cancelar">Cancelar</ion-button>
+  </div>
+
+  <!-- Nombre y Apellido -->
+  <div class="inputs-row">
+    <div class="input-container">
+      <h1 class="titulos">Nombre</h1>
+      <ion-input [(ngModel)]="nombre" (ionInput)="actualizarNombre($event)" [disabled]="!enableEdit"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineNombre}"></div>
+      <p class="mensaje-error" *ngIf="nombreError">{{nombreError}}</p>
+    </div>
+
+    <div class="input-container">
+      <h1 class="titulos">Apellido</h1>
+      <ion-input [(ngModel)]="apellido" (ionInput)="actualizarApellido($event)" [disabled]="!enableEdit"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineApellido}"></div>
+      <p class="mensaje-error" *ngIf="apellidoError">{{apellidoError}}</p>
+    </div>
+  </div>
+
+  <!-- RUT -->
+  <div class="input-container">
+    <h1 class="titulos">RUT</h1>
+    <ion-input [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)" [disabled]="true"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
+
+  <!-- Correo -->
+  <div class="input-container">
+    <h1 class="titulos">Correo</h1>
+    <ion-input [(ngModel)]="correo" (ionInput)="actualizarCorreo($event)" [disabled]="!enableEdit"></ion-input>
+    <div class="underline" [ngStyle]="{'background-color': underlineCorreo}"></div>
+  </div>
+  <p class="mensaje-error" *ngIf="correoError">{{correoError}}</p>
+
+  <!-- Guardar -->
+  <div class="botones">
+    <ion-button expand="block" class="btn-login" (click)="guardarPerfil()" [disabled]="!enableEdit">Guardar</ion-button>
+  </div>
+
+  <!-- Cambiar contraseña (solo en edición) -->
+  <div class="input-container" *ngIf="enableEdit">
+    <h1 class="titulos">Cambiar contraseña</h1>
+    <div class="inputs-row inputs-row--compact">
+      <ion-input placeholder="Código recibido" [(ngModel)]="codigoPass"></ion-input>
+      <ion-button size="small" (click)="enviarCodigoPassword()">Enviar código</ion-button>
+    </div>
+    <div class="inputs-row">
+      <div class="input-container">
+        <ion-input placeholder="Nueva contraseña" [(ngModel)]="nuevaPass" type="password"></ion-input>
+        <div class="underline"></div>
+      </div>
+      <div class="input-container">
+        <ion-input placeholder="Confirmar contraseña" [(ngModel)]="confirmarPass" type="password"></ion-input>
+        <div class="underline"></div>
+      </div>
+    </div>
+    <div class="botones" style="margin-top:10px;">
+      <ion-button expand="block" class="btn-login" (click)="cambiarPassword()">Actualizar Contraseña</ion-button>
+    </div>
+  </div>
+
 </ion-content>
+</body>
+

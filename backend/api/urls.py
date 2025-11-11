@@ -16,6 +16,7 @@ urlpatterns = [
     path('password-reset-change/', usuarios.password_reset_change),
     path('usuarios/lista', usuarios.usuario_lista, name="usuario-lista"),
     path('usuarios/permisos', usuarios.permisos_usuario, name="usuario-permisos"),
+    path('usuarios/perfil', usuarios.perfil_actual, name='usuario-perfil'),
     path('productos/', pedidos.productos, name="productos"),
     path('lista/clientes', clientes.ClienteVIew.as_view(), name="lista_clientes"),
     path("agregar-cliente/", clientes.agregar_cliente, name="agregar-cliente"),
@@ -30,4 +31,5 @@ urlpatterns = [
     path('avisos/', avisos.listar_avisos, name='avisos-listar'),
     path('productos/mas-vendidos/', pedidos.productos_mas_vendidos, name='productos-mas-vendidos'),
     path('clientes-mas-pedidos/', pedidos.clientes_con_mas_pedidos, name='clientes-mas-pedidos'),
+    path('dar/permisos/<int:pk>', usuarios.dar_permisos, name="dar-permisos"),
 ] + router.urls

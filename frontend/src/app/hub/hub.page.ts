@@ -115,6 +115,11 @@ export class HubPage implements OnInit {
     this.router.navigate(['/pedidos']);
   }
 
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil'])
+  }
+
   Irafacturasmenu() {
     this.cerrarMenu();
     this.router.navigate(['/facturacion']);

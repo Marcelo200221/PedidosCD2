@@ -101,6 +101,11 @@
     </div>
     
     <div class="menu-contenido">
+      <div class="menu-item" (click)="IrAPerfil()">
+        <ion-icon name="person"></ion-icon>
+        <span>Perfil</span>
+      </div>
+      <div class="menu-divider"></div>
       <div class="menu-item" (click)="Irapedidosmenu()">
         <ion-icon name="cube"></ion-icon>
         <span>Pedidos</span>
@@ -118,9 +123,9 @@
 
       <div class="menu-divider"></div>
 
-      <div class="menu-item" (click)="IrListarClientes()">
+      <div class="menu-item" (click)="IrAUsuarios()">
         <ion-icon name="person"></ion-icon>
-        <span>Usuario</span>
+        <span>Usuarios</span>
       </div>
       
       <div class="menu-item" (click)="IrListarClientes()">

@@ -153,6 +153,16 @@ export class ProductosPage implements OnInit {
     this.router.navigate(['/pedidos']);
   }
 
+  IrAUsuarios() {
+    this.cerrarMenu();
+    this.router.navigate(['/usuarios']);
+  }
+
+  IrAPerfil() {
+    this.cerrarMenu();
+    this.router.navigate(['/perfil']);
+  }
+
   Irafacturasmenu() {
     this.cerrarMenu();
     this.router.navigate(['/facturacion']);

@@ -139,6 +139,17 @@ export class ApiService{
     })
   }
 
+  async darPermisos(id: string){
+    try{
+      await api.put(`dar/permisos/${id}`)
+      console.log("Permisos de administrador asignados ")
+      alert("Permisos de administrador asignados")
+
+    } catch(error){
+      console.error(error)
+    }
+  }
+
   async saveToken(token: string){
     await ssSetItem('auth_token', token);
   }
@@ -163,6 +174,16 @@ export class ApiService{
 
   async getToken(): Promise<string | null> {
     return await ssGetItem('auth_token');
+  }
+
+  async actualizarPerfil(payload: { first_name?: string; last_name?: string; email?: string; nombre?: string; apellido?: string; correo?: string }): Promise<any> {
+    try {
+      const res = await api.patch('usuarios/perfil', payload);
+      return res.data;
+    } catch (error) {
+      console.error('Error actualizando perfil:', error);
+      throw error;
+    }
   }
 
   async logout(){
@@ -455,7 +476,6 @@ export class ApiService{
   async editarCliente(id: string, rut: string, nombre: string, direccion: string, razonSocial: string){
     try{
       await api.put(`editar/cliente/${id}`, {
-        id_cliente: id,
         rut: rut,
         nombre: nombre,
         direccion: direccion, 

@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from django.core.mail import send_mail
 from django.conf import settings
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.models import Group
 
 from usuarios.models import Usuario
 from usuarios.serializer import UsuarioSerializer
@@ -127,6 +128,69 @@ def permisos_usuario(request):
         'groups': grupos,
         'permisos': permisos,
     }, status=status.HTTP_200_OK)
+
+
+@api_view(['GET', 'PATCH'])
+@permission_classes([IsAuthenticated])
+def perfil_actual(request):
+    """Devuelve y permite actualizar el perfil del usuario autenticado.
+
+    PATCH acepta: first_name, last_name, email. No permite cambiar rut.
+    """
+    user: Usuario = request.user
+
+    if request.method == 'GET':
+        serializer = UsuarioSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    data = request.data or {}
+    first_name = data.get('first_name') or data.get('nombre')
+    last_name = data.get('last_name') or data.get('apellido')
+    email = data.get('email') or data.get('correo')
+
+    # Validación de email único si cambia
+    if email and email != user.email:
+        if Usuario.objects.exclude(pk=user.pk).filter(email=email).exists():
+            return Response({'email': 'Este email ya está registrado'}, status=status.HTTP_400_BAD_REQUEST)
+
+    if first_name is not None:
+        user.first_name = first_name
+    if last_name is not None:
+        user.last_name = last_name
+    if email is not None:
+        user.email = email
+
+    user.save()
+    serializer = UsuarioSerializer(user)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(["PUT"])
+@permission_classes([IsAuthenticated])
+def dar_permisos(request, pk):
+    """
+    Asigna el grupo 'gerente' al usuario indicado, sobrescribiendo grupos previos.
+    Si ya lo tiene, mantiene solo ese grupo. Opcionalmente podría marcar is_staff.
+    """
+    try:
+        user = Usuario.objects.get(pk=pk)
+    except Usuario.DoesNotExist:
+        return Response({"error": f"Usuario no encontrado para id {pk}"}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        grupo_gerente = Group.objects.get(name="gerente")
+    except Group.DoesNotExist:
+        return Response({"error": "Grupo 'gerente' no existe"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    # Sobrescribir grupos del usuario con solo 'gerente'
+    user.groups.set([grupo_gerente])
+    # Opcional: elevar flag staff si aplica
+    if not getattr(user, "is_staff", False):
+        user.is_staff = True
+    user.save()
+
+    return Response({"success": True, "id": user.id, "grupos": [g.name for g in user.groups.all()]}, status=status.HTTP_200_OK)
+
 
 
 
