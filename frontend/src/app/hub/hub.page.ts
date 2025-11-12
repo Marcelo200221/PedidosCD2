@@ -27,8 +27,7 @@ addIcons({
   imports: [
     FormsModule,
     CommonModule,
-    IonContent, IonButton, IonSearchbar, IonList, IonItem,
-    IonLabel, IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton
+    IonContent, IonButton, IonIcon
   ]
 })
 export class HubPage implements OnInit {

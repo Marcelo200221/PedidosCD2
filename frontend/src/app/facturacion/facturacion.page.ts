@@ -46,7 +46,7 @@ addIcons({
     FormsModule,
     CommonModule,
     IonContent, IonButton, IonSearchbar, IonList, IonItem,
-    IonLabel, IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton
+     IonIcon, IonCheckbox, IonSpinner, IonFab, IonFabList, IonFabButton
   ]
 })
 export class FacturacionPage implements OnInit {

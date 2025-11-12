@@ -10,7 +10,7 @@ import { Perimisos } from '../services/perimisos';
   templateUrl: './usuarios.page.html',
   styleUrls: ['./usuarios.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonItem, IonLabel, IonButton]
+  imports: [IonContent, CommonModule, FormsModule, IonList, IonItem, IonLabel, IonButton]
 })
 export class UsuariosPage implements OnInit {
   puedeEditar = false;

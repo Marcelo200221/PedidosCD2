@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './acceso-denegado.page.html',
   styleUrls: ['./acceso-denegado.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, CommonModule, FormsModule]
+  imports: [IonContent, IonButton, CommonModule, FormsModule]
 })
 export class AccesoDenegadoPage implements OnInit {
 

@@ -53,8 +53,8 @@ addIcons({
   imports: [
     CommonModule,
     FormsModule,
-    IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader,
-    IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonButton, IonIcon,
+    IonContent, IonCard, IonCardHeader,
+    IonCardTitle, IonCardContent, IonIcon,
     IonSpinner
   ]
 })
@@ -593,6 +593,14 @@ export class DashboardPage implements OnInit {
   Irafacturasmenu() {
     this.cerrarMenu();
     this.router.navigate(['/facturacion']);
+  }
+  IrAPerfil() {
+    this.cerrarMenu();
+    this.router.navigate(['/perfil']);
+  }
+  IrAUsuarios() {
+    this.cerrarMenu();
+    this.router.navigate(['/usuarios']);
   }
 
   Iradashboardsmenu() {

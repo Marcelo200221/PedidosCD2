@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonInput, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonList, IonItem, IonLabel, IonButton, IonInput, IonIcon } from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import {mdiPencil} from '@mdi/js';
 import { addIcons } from 'ionicons';
@@ -22,7 +22,7 @@ addIcons({
   templateUrl: './productos.page.html',
   styleUrls: ['./productos.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonInput, CommonModule, FormsModule, IonIcon]
+  imports: [IonContent, IonList, IonItem, IonLabel, IonButton, IonInput, CommonModule, FormsModule, IonIcon]
 })
 
 

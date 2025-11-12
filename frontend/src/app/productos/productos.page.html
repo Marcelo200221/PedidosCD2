@@ -58,7 +58,7 @@
       <h3>Cambiar precio</h3>
     </div>
     <div class="modal-body">
-      <p *ngIf="productoSeleccionado">{{ productoSeleccionado?.nombre }}</p>
+      <p *ngIf="productoSeleccionado">{{ productoSeleccionado.nombre }}</p>
       <ion-item>
         <ion-label position="stacked">Nuevo precio (CLP)</ion-label>
         <ion-input type="number" [(ngModel)]="nuevoPrecio"></ion-input>
@@ -76,7 +76,7 @@
       <h3>Cambiar stock</h3>
     </div>
     <div class="modal-body">
-      <p *ngIf="productoSeleccionado">{{ productoSeleccionado?.nombre }}</p>
+      <p *ngIf="productoSeleccionado">{{ productoSeleccionado.nombre }}</p>
       <ion-item>
         <ion-label position="stacked">Nuevo stock</ion-label>
         <ion-input type="number" [(ngModel)]="nuevoStock"></ion-input>

@@ -11,7 +11,7 @@ import { Perimisos } from '../services/perimisos';
   templateUrl: './lista-clientes.page.html',
   styleUrls: ['./lista-clientes.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonItem, IonList, IonButton]
+  imports: [IonContent, CommonModule, FormsModule, IonLabel, IonItem, IonList, IonButton]
 })
 export class ListaClientesPage implements OnInit {
 

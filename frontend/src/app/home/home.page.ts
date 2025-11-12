@@ -8,9 +8,6 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/a
   styleUrls: ['home.page.scss'],
   standalone: true, 
   imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
     IonContent,
     IonButton 
   ],

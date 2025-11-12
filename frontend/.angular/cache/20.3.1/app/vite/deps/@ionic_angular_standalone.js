@@ -87,10 +87,7 @@ import {
   setIonicClasses,
   setOverlayId,
   toastController
-} from "./chunk-XZI6ZLOC.js";
-import {
-  mdTransitionAnimation
-} from "./chunk-6PXER3CY.js";
+} from "./chunk-KNPX4GID.js";
 import {
   GESTURE_CONTROLLER,
   createGesture
@@ -100,7 +97,10 @@ import {
 } from "./chunk-PV6F2B3V.js";
 import {
   iosTransitionAnimation
-} from "./chunk-J6ZS7UTP.js";
+} from "./chunk-RZO5B7WV.js";
+import {
+  mdTransitionAnimation
+} from "./chunk-6EQ74STZ.js";
 import {
   LIFECYCLE_DID_LEAVE,
   LIFECYCLE_WILL_LEAVE,
@@ -111,7 +111,7 @@ import {
   setPageHidden,
   transition,
   waitForMount
-} from "./chunk-WG3HAAMV.js";
+} from "./chunk-PFGFVLIL.js";
 import {
   Build,
   Fragment,
@@ -155,20 +155,20 @@ import {
   printIonWarning
 } from "./chunk-FWNV42WI.js";
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-B643ERWT.js";
+import {
   ActivatedRoute,
   Router
-} from "./chunk-JODPBHML.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-VSHBVSWM.js";
-import "./chunk-REIBDCTS.js";
+} from "./chunk-M2QJOJJH.js";
+import "./chunk-MBOJX7Y7.js";
 import {
   CommonModule,
   Location,
   NgIf,
   NgTemplateOutlet
-} from "./chunk-BZJSKMYE.js";
-import "./chunk-YHSQNZJX.js";
+} from "./chunk-ISROFK6K.js";
+import "./chunk-CIW3M5WR.js";
 import "./chunk-SQNCADWX.js";
 import {
   APP_INITIALIZER,
@@ -190,6 +190,7 @@ import {
   SkipSelf,
   ViewChild,
   ViewContainerRef,
+  __decorate,
   forwardRef,
   fromEvent,
   inject,
@@ -223,10 +224,7 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-XDQ7H4UV.js";
-import {
-  __decorate
-} from "./chunk-TBSHZMKZ.js";
+} from "./chunk-34JUPYZJ.js";
 import {
   __async,
   __name,

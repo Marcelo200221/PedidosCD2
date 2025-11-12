@@ -10,7 +10,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, CommonModule, FormsModule]
+  imports: [IonContent, IonButton, IonInput, CommonModule, FormsModule]
 })
 export class RegistroPage implements OnInit {
 
