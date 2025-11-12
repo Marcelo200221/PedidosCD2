@@ -458,12 +458,12 @@
       <div *ngFor="let caja of [].constructor(producto.cajas); let cajaIndex = index" class="caja-peso-item">
         <div class="input-container-pesos">
           <h1 class="titulos-small">Caja {{ cajaIndex + 1 }} - Peso (KG)</h1>
-         <ion-input type="number" placeholder="Ingrese peso en KG" [value]="pesosTemporales[prodIndex]?.[cajaIndex]" (ionInput)="actualizarPesoCaja(prodIndex, cajaIndex, $event)"
+<ion-input type="number" placeholder="Ingrese peso en KG" [value]="pesosTemporales[prodIndex][cajaIndex]" (ionInput)="actualizarPesoCaja(prodIndex, cajaIndex, $event)"
             (keypress)="onKeyPressPeso($event)" min="0.001" step="0.001" inputmode="decimal" class="input-peso">
           </ion-input>
-          <div class="underline" [ngStyle]="{'background-color': underlinesPesos[prodIndex]?.[cajaIndex] || '#cccccc'}"></div>
+<div class="underline" [ngStyle]="{'background-color': underlinesPesos[prodIndex][cajaIndex] || '#cccccc'}"></div>
         </div>
-        <p class="mensaje-error" *ngIf="pesosErrors[prodIndex]?.[cajaIndex]">{{ pesosErrors[prodIndex][cajaIndex] }}</p>
+<p class="mensaje-error" *ngIf="pesosErrors[prodIndex][cajaIndex]">{{ pesosErrors[prodIndex][cajaIndex] }}</p>
       </div>
     </div>
 

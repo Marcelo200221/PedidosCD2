@@ -11,7 +11,7 @@ import { getItem as ssGetItem, setItem as ssSetItem } from '../services/token-st
   templateUrl: './perfil.page.html',
   styleUrls: ['./perfil.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonInput]
+  imports: [IonContent, CommonModule, FormsModule, IonButton, IonInput]
 })
 export class PerfilPage implements OnInit {
     constructor( private api: ApiService) { }

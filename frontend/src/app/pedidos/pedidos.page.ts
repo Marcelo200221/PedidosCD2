@@ -50,7 +50,7 @@ addIcons({
     FormsModule,
     CommonModule,
     IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton,
-    IonList, IonItem, IonLabel, IonIcon, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonSpinner
+    IonList, IonItem, IonIcon, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonSpinner
   ]
 })
 export class PedidosPage implements OnInit {

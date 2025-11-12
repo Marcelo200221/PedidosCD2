@@ -10,7 +10,7 @@ import { ApiService } from '../services/api.spec'; // Mantén tu import actual
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonTitle, IonInput, IonButton, CommonModule, FormsModule]
+  imports: [IonContent, IonInput, IonButton, CommonModule, FormsModule]
 })
 
 export class LoginPage implements OnInit {

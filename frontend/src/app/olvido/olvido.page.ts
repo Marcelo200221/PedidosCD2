@@ -11,7 +11,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput } from
   templateUrl: './olvido.page.html',
   styleUrls: ['./olvido.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonInput, CommonModule, FormsModule]
+  imports: [IonContent, IonButton, IonInput, CommonModule, FormsModule]
 })
 export class OlvidoPage implements OnInit {
 
