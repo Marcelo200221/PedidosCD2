@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carnes Darras | Recuperación de contraseña</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f8f7f6;font-family:'Catamaran',Arial,sans-serif;">
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color:#f8f7f6;padding:24px 8px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width:560px;background:#ffffff;border-radius:16px;box-shadow:0 12px 28px rgba(0,0,0,0.08);overflow:hidden;">
+                    <tr>
+                        <td style="background:linear-gradient(135deg,#6a0d0d,#97201d);padding:32px;text-align:center;color:#f8f7f6;">
+                            <h1 style="margin:0;font-size:24px;font-weight:700;">Carnes Darras</h1>
+                            <p style="margin:6px 0 0;font-size:16px;letter-spacing:1px;text-transform:uppercase;">Pedidos CD</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:32px 32px 24px;color:#2b2b2b;">
+                            <p style="margin:0 0 12px;font-size:18px;font-weight:600;">Hola {{ nombre }},</p>
+                            <p style="margin:0 0 16px;font-size:15px;line-height:1.6;">
+                                Recibimos una solicitud para restablecer tu contraseña. Usa el siguiente código para continuar con el proceso desde la app.
+                            </p>
+                            <div style="margin:24px 0;text-align:center;">
+                                <span style="display:inline-block;background:#fff4f2;border:2px solid #97201d;color:#97201d;font-size:32px;font-weight:700;letter-spacing:6px;padding:16px 32px;border-radius:12px;">
+                                    {{ codigo }}
+                                </span>
+                            </div>
+                            <p style="margin:0 0 12px;font-size:14px;color:#555;">
+                                El código es válido por 1 hora. Si no solicitaste este cambio, puedes ignorar este correo; tu cuenta seguirá segura.
+                            </p>
+                            <p style="margin:0;font-size:14px;color:#555;">
+                                Equipo Pedidos CD · Carnes Darras
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background:#f3e9e9;padding:18px;text-align:center;color:#6a0d0d;font-size:12px;">
+                            <p style="margin:0;">Carnes Darras · Santiago, Chile</p>
+                            <p style="margin:6px 0 0;">Este mensaje fue generado automáticamente. No respondas a este correo.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

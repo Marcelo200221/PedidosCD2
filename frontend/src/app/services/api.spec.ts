@@ -3,8 +3,10 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
 import axios from "axios";
-import { environment } from "src/environments/environment";
+import { environment } from "src/environments/environment.prod";
 import { getItem as ssGetItem, setItem as ssSetItem, removeItem as ssRemoveItem } from './token-storage';
+import { Capacitor } from '@capacitor/core';
+import { Filesystem, Directory } from '@capacitor/filesystem';
 
 const api = axios.create({
     baseURL: environment.apiUrl,
@@ -386,14 +388,20 @@ export class ApiService{
     try {
       const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
       const blob = new Blob([res.data], { type: 'application/pdf' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `factura-pedido-${pedidoId}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      window.URL.revokeObjectURL(url);
+      const fileName = `factura-pedido-${pedidoId}.pdf`;
+
+      if (Capacitor.isNativePlatform()) {
+        await this.guardarArchivoNativo(fileName, blob);
+      } else {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+      }
     } catch (error) {
       console.error('Error al generar factura:', error);
       throw error;
@@ -411,8 +419,14 @@ export class ApiService{
     try {
       const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
       const blob = new Blob([res.data], { type: 'application/pdf' });
-      const url = window.URL.createObjectURL(blob);
-      window.open(url, '_blank');
+      const fileName = `factura-pedido-${pedidoId}-preview.pdf`;
+
+      if (Capacitor.isNativePlatform()) {
+        await this.guardarArchivoNativo(fileName, blob, Directory.Cache);
+      } else {
+        const url = window.URL.createObjectURL(blob);
+        window.open(url, '_blank');
+      }
     } catch (error) {
       console.error('Error al previsualizar factura:', error);
       throw error;
@@ -540,31 +554,67 @@ export class ApiService{
       return [];
     }
   }
+
   async listarProductosMasVendidos(): Promise<any[]> {
-  try {
-    console.log("Obteniendo productos más vendidos");
-    const res = await api.get("productos/mas-vendidos/");
-    
-    console.log("Productos más vendidos:", res.data);
-    return res.data;
-  } catch (error) {
-    console.error("Error al obtener productos más vendidos:", error);
-    //Retornar array vacío en caso de error
-    return [];
+    try {
+      console.log('Obteniendo productos mas vendidos');
+      const res = await api.get("productos/mas-vendidos/");
+      console.log('Productos mas vendidos:', res.data);
+      return res.data;
+    } catch (error) {
+      console.error('Error al obtener productos mas vendidos:', error);
+      return [];
+    }
   }
-}
 
-async listarClientesConMasPedidos(): Promise<any[]> {
-  try {
-    console.log("🔄 Obteniendo clientes con más pedidos");
-    const res = await api.get("clientes-mas-pedidos/");
-    
-    console.log("Clientes con más pedidos:", res.data);
-    return res.data;
-  } catch (error) {
-    console.error("Error al obtener clientes con más pedidos:", error);
-    return [];
+  async listarClientesConMasPedidos(): Promise<any[]> {
+    try {
+      console.log('Obteniendo clientes con mas pedidos');
+      const res = await api.get("clientes-mas-pedidos/");
+      console.log('Clientes con mas pedidos:', res.data);
+      return res.data;
+    } catch (error) {
+      console.error('Error al obtener clientes con mas pedidos:', error);
+      return [];
+    }
   }
-}
 
+  private async guardarArchivoNativo(fileName: string, blob: Blob, directory: Directory = Directory.Documents) {
+    const folder = directory === Directory.Documents ? 'facturas' : 'facturas/tmp';
+    const pathFile = `${folder}/${fileName}`;
+    const base64Data = await this.blobToBase64(blob);
+
+    try {
+      await Filesystem.mkdir({ path: folder, directory, recursive: true });
+    } catch (err: any) {
+      const message = String(err?.message || '').toLowerCase();
+      if (!message.includes('exist')) {
+        throw err;
+      }
+    }
+
+    await Filesystem.writeFile({
+      path: pathFile,
+      data: base64Data,
+      directory
+    });
+    console.log(`Archivo guardado en ${directory}/${pathFile}`);
+  }
+
+  private blobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const data = reader.result;
+        if (typeof data === 'string') {
+          const commaIndex = data.indexOf(',');
+          resolve(commaIndex >= 0 ? data.slice(commaIndex + 1) : data);
+        } else {
+          reject(new Error('No se pudo convertir el archivo a base64'));
+        }
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
 }

@@ -29,7 +29,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "10.208.215.227"
+]
 
 
 # Application definition
@@ -188,12 +192,26 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_LOGIN_METHODS = {"username"}
 ACCOUNT_SIGNUP_FIELDS = ["first_name", "last_name", "email", "rut", "username", "password1", "password2"]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net'  # O tu servidor SMTP
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
-DEFAULT_FROM_EMAIL = 'marcelo.darras35@gmail.com'
+MAILERSEND_API_KEY = os.getenv("MAILERSEND_API_KEY")
+MAILERSEND_SENDER = os.getenv("MAILERSEND_SENDER")
+MAILERSEND_SENDER_LOCAL_PART = os.getenv("MAILERSEND_SENDER_LOCAL_PART", "no-reply")
+MAILERSEND_FROM_NAME = os.getenv("MAILERSEND_FROM_NAME", "Pedidos CD")
+
+
+def _build_mailersend_email(sender: str | None, local_part: str | None) -> str | None:
+    if not sender:
+        return None
+    sender = sender.strip()
+    if "@" in sender:
+        return sender
+    local = (local_part or "no-reply").strip() or "no-reply"
+    return f"{local}@{sender}"
+
+
+MAILERSEND_FROM_EMAIL = _build_mailersend_email(
+    MAILERSEND_SENDER,
+    MAILERSEND_SENDER_LOCAL_PART,
+)
+DEFAULT_FROM_EMAIL = MAILERSEND_FROM_EMAIL
 
 DEFAULT_CHARSET = 'utf-8'

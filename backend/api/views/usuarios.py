@@ -3,8 +3,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.views import APIView
 from django.shortcuts import render
 from rest_framework.response import Response
-from django.core.mail import send_mail
 from django.conf import settings
+from django.template.loader import render_to_string
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import Group
 
@@ -12,6 +12,7 @@ from usuarios.models import Usuario
 from usuarios.serializer import UsuarioSerializer
 from api.models import PasswordResetCode
 from api.serializers import PasswordResetConfirmSerializer, PasswordResetRequestSerielizer, PasswordChangeConfirmSerializer
+from api.utils.mailersend_client import send_plain_text_email
 
 @api_view(['POST'])
 def password_reset_request(request):
@@ -23,16 +24,23 @@ def password_reset_request(request):
             reset_code = PasswordResetCode.objects.create(user=user)
             
             # Texto sin caracteres especiales para prueba
-            subject = 'Codigo de Recuperacion'
-            message = f'Tu codigo de verificacion es: {reset_code.code}'
+            subject = 'Código de recuperación'
+            plain_message = f'Tu código de verificación es: {reset_code.code}'
+            html_message = render_to_string(
+                "mails/cambio_contraseña/cambio_contraseña.html",
+                {
+                    "codigo": reset_code.code,
+                    "nombre": user.get_full_name() or user.first_name or user.username or "Usuario",
+                },
+            )
             
             try:
-                send_mail(
+                send_plain_text_email(
                     subject=subject,
-                    message=message,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[email],
-                    fail_silently=False,
+                    message=plain_message,
+                    html_message=html_message,
+                    recipients=[{"email": email, "name": user.get_full_name() or user.username or email}],
+                    sender_name=settings.MAILERSEND_FROM_NAME,
                 )
                 return Response({'message': 'Código enviado'}, status=status.HTTP_200_OK)
             except Exception as e:

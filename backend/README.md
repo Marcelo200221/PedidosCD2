@@ -25,7 +25,12 @@ Es necesario tener la version de python instalada localmente
 $ pip install -r requirements.txt
 ```
 
-4. Configurar .env en carpeta appPedidos (Las claves secretas las compartira Marcelo Darras de ser pedidas)
+4. Configurar .env en carpeta appPedidos (Las claves secretas las compartira Marcelo Darras de ser pedidas). Debe definir al menos:
+   - `SECRET_KEY`
+   - `MAILERSEND_API_KEY`
+   - `MAILERSEND_SENDER` (correo completo o dominio verificado en MailerSend)
+   - `MAILERSEND_SENDER_LOCAL_PART` (opcional, usado si lo anterior es solo un dominio; por defecto `no-reply`)
+   - `MAILERSEND_FROM_NAME` (opcional, usado como nombre que ver?n los destinatarios)
 
 5. Instalar MySQL server desde: https://dev.mysql.com/downloads/mysql/?spm=a2ty_o01.29997173.0.0.49d1c921lFtyC1 (Descargar version 8.0, no la mas reciente)
 
@@ -82,4 +87,3 @@ NOTAS:
 1. Si mysql da problemas, verificar que se encuentra en PATH y que el servicio MySQL80 se encuentra activo
 
 2. Se asume que todo lo que se realiza luego de encender el entorno virtual, se hace en el entorno virtual NO DESCARGUES NADA FUERA DEL ENTORNO.
-
