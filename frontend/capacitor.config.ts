@@ -4,12 +4,16 @@ const config: CapacitorConfig = {
   appId: 'com.tuapp.app',
   appName: 'TuApp',
   webDir: 'www',
+  server: {
+    androidScheme: 'http',
+    cleartext: true
+  },
   plugins: {
     SplashScreen: {
-      launchShowDuration: 3000, // tiempo que se mostrará (ms)
-      launchAutoHide: true,     // si se oculta automáticamente
-      backgroundColor: '#f8f7f6', // color de fondo
-      androidScaleType: 'CENTER_CROP', // escala de imagen en Android
+      launchShowDuration: 3000,
+      launchAutoHide: true,
+      backgroundColor: '#f8f7f6',
+      androidScaleType: 'CENTER_CROP'
     }
   }
 };

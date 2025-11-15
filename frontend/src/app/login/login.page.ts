@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonTitle, IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.spec'; // Mantén tu import actual
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -112,6 +113,7 @@ export class LoginPage implements OnInit {
     
     try {
       console.log('Intentando login con RUT:', this.rut);
+      console.log("BASE URL: ", environment.apiUrl);
       
       // Tu servicio ya maneja la navegación y el alert interno
       await this.api.login(this.rut, this.password);
