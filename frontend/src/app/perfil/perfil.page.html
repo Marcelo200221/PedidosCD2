@@ -2,24 +2,29 @@
 <ion-content class="login-page" fullscreen>
   <!-- Header -->
   <div class="login-header">
-    <div class="barra-superior"></div>
+    <div class="barra-superior">
+        <ion-icon name="menu" class="icon-left" (click)="toggleMenu()"></ion-icon>
+    </div>
     <div class="barra-inferior"></div>
   </div>
 
   <!-- Título -->
   <div class="titulo-container">
-    <h1 class="titulo-texto">Perfil</h1>
+    <h1 class="titulo-texto">Mi Perfil</h1>
     <div class="barra-texto"></div>
   </div>
 
-  <!-- Acciones del título -->
-  <div class="titulo-actions">
-    <ion-button *ngIf="!enableEdit" (click)="editar()" class="btn-cambiar">Editar Perfil</ion-button>
-    <ion-button *ngIf="enableEdit" (click)="cancelar()" class="btn-cambiar btn-cancelar">Cancelar</ion-button>
+  <!-- Navegacion -->
+  <div class="tabs-container">
+    <div class="tab" [class.active]="tabActiva === 'perfil'" (click)="cambiarTab('perfil')"><span>Perfil</span>
+    </div>
+    <div class="tab" [class.active]="tabActiva === 'password'" (click)="cambiarTab('password')"><span>Contraseña</span>
+    </div>
   </div>
 
-  <!-- Nombre y Apellido -->
-  <div class="inputs-row">
+  <!--Vista: Perfil -->
+  <div *ngIf="tabActiva === 'perfil'" class="tab-content">
+    
     <div class="input-container">
       <h1 class="titulos">Nombre</h1>
       <ion-input [(ngModel)]="nombre" (ionInput)="actualizarNombre($event)" [disabled]="!enableEdit"></ion-input>
@@ -33,51 +38,141 @@
       <div class="underline" [ngStyle]="{'background-color': underlineApellido}"></div>
       <p class="mensaje-error" *ngIf="apellidoError">{{apellidoError}}</p>
     </div>
-  </div>
 
-  <!-- RUT -->
-  <div class="input-container">
-    <h1 class="titulos">RUT</h1>
-    <ion-input [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)" [disabled]="true"></ion-input>
-    <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
-  </div>
-  <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
-
-  <!-- Correo -->
-  <div class="input-container">
-    <h1 class="titulos">Correo</h1>
-    <ion-input [(ngModel)]="correo" (ionInput)="actualizarCorreo($event)" [disabled]="!enableEdit"></ion-input>
-    <div class="underline" [ngStyle]="{'background-color': underlineCorreo}"></div>
-  </div>
-  <p class="mensaje-error" *ngIf="correoError">{{correoError}}</p>
-
-  <!-- Guardar -->
-  <div class="botones">
-    <ion-button expand="block" class="btn-login" (click)="guardarPerfil()" [disabled]="!enableEdit">Guardar</ion-button>
-  </div>
-
-  <!-- Cambiar contraseña (solo en edición) -->
-  <div class="input-container" *ngIf="enableEdit">
-    <h1 class="titulos">Cambiar contraseña</h1>
-    <div class="inputs-row inputs-row--compact">
-      <ion-input placeholder="Código recibido" [(ngModel)]="codigoPass"></ion-input>
-      <ion-button size="small" (click)="enviarCodigoPassword()">Enviar código</ion-button>
+    <div class="input-container">
+      <h1 class="titulos">RUT</h1>
+      <ion-input [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)" [disabled]="true"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
+      <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
     </div>
-    <div class="inputs-row">
-      <div class="input-container">
-        <ion-input placeholder="Nueva contraseña" [(ngModel)]="nuevaPass" type="password"></ion-input>
-        <div class="underline"></div>
+
+    <div class="input-container">
+      <h1 class="titulos">Correo</h1>
+      <ion-input [(ngModel)]="correo" (ionInput)="actualizarCorreo($event)" [disabled]="!enableEdit"></ion-input>
+      <div class="underline" [ngStyle]="{'background-color': underlineCorreo}"></div>
+      <p class="mensaje-error" *ngIf="correoError">{{correoError}}</p>
+    </div>
+
+    <!-- Botones de Perfil -->
+    <div class="botones">
+      <ion-button *ngIf="!enableEdit" (click)="editar()" class="btn-cambiar">Editar Perfil</ion-button>
+
+        <!-- Botones de accion -->
+      <ion-button *ngIf="enableEdit" expand="block" class="btn-login" (click)="guardarPerfil()">Guardar Cambios</ion-button>
+      <ion-button *ngIf="enableEdit" (click)="cancelar()" class="btn-cambiar btn-cancelar">Cancelar</ion-button>
+    </div>
+  </div>
+
+  <!-- ======= Vista: Enviar codigo ======= -->
+  <div *ngIf="tabActiva === 'password'" class="tab-content">
+    <div class="password-section">
+      <div *ngIf="!enablePasswordEdit">
+        <p class="info-text">Para cambiar tu contraseña, primero solicita un código de verificación a tu correo electrónico.</p>
+
+        <div class="input-container">
+          <h1 class="titulos">Correo electrónico</h1>
+          <ion-input [(ngModel)]="correo" [disabled]="true"></ion-input>
+          <div class="underline"></div>
+        </div>
+
+        <div class="botones">
+          <ion-button expand="block" class="btn-cambiar" (click)="enviarCodigoPassword()">Enviar Código</ion-button>
+        </div>
       </div>
-      <div class="input-container">
-        <ion-input placeholder="Confirmar contraseña" [(ngModel)]="confirmarPass" type="password"></ion-input>
-        <div class="underline"></div>
+
+      <!-- Editar: Cambiar contraseña ======= -->
+      <div *ngIf="enablePasswordEdit">
+        <p class="info-text">Ingresa el código recibido en tu correo y tu nueva contraseña.</p>
+
+        <div class="input-container">
+          <h1 class="titulos">Código de verificación</h1>
+          <ion-input placeholder="Ingresa el código recibido" [(ngModel)]="codigoPass"></ion-input>
+          <div class="underline"></div>
+        </div>
+
+        <div class="input-container">
+          <h1 class="titulos">Nueva contraseña</h1>
+          <ion-input placeholder="Mínimo 8 caracteres" [(ngModel)]="nuevaPass" type="password"></ion-input>
+          <div class="underline"></div>
+        </div>
+        <div class="input-container">
+          <h1 class="titulos">Confirmar contraseña</h1>
+          <ion-input placeholder="Repite tu nueva contraseña" [(ngModel)]="confirmarPass" type="password"></ion-input>
+          <div class="underline"></div>
+        </div>
+
+        <!-- Botones de accion -->
+        <div class="botones">
+          <ion-button expand="block" class="btn-login" (click)="cambiarPassword()">Actualizar Contraseña</ion-button>
+          <ion-button class="btn-cambiar btn-cancelar" (click)="cancelarPassword()">Cancelar</ion-button>
+        </div>
       </div>
-    </div>
-    <div class="botones" style="margin-top:10px;">
-      <ion-button expand="block" class="btn-login" (click)="cambiarPassword()">Actualizar Contraseña</ion-button>
     </div>
   </div>
 
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
+
+  <!-- Menú lateral -->
+  <div class="menu-lateral" [class.abierto]="menuAbierto">
+    <div class="menu-header">
+      <div class="menu-user-info">
+        <p>Bienvenido,</p><p class="user-name" *ngIf="nombreUsuario">{{ nombreUsuario }} {{ apellidoUsuario }}</p>
+      </div>
+      <ion-icon name="close" class="icon-cerrar-menu" (click)="cerrarMenu()"></ion-icon>
+    </div>
+    
+    <div class="menu-contenido">
+      <div class="menu-item" (click)="IrAPerfil()">
+        <ion-icon name="person"></ion-icon>
+        <span>Perfil</span>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item" (click)="Irapedidosmenu()">
+        <ion-icon name="cube"></ion-icon>
+        <span>Pedidos</span>
+      </div>
+      
+      <div class="menu-item" (click)="Irafacturasmenu()">
+        <ion-icon name="document-text"></ion-icon>
+        <span>Facturas</span>
+      </div>
+      
+      <div *ngIf="verReportes" class="menu-item" (click)="Iradashboardsmenu()">
+        <ion-icon name="bar-chart"></ion-icon>
+        <span>Dashboards</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div *ngIf="puedeIr" class="menu-item" (click)="IrUsuarios()">
+        <ion-icon name="person"></ion-icon>
+        <span>Usuarios</span>
+      </div>
+      
+      <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="people"></ion-icon>
+        <span>Clientes</span>
+      </div>
+
+      <div *ngIf="verProductos" class="menu-item" (click)="IraProductos()">
+        <ion-icon name="bag"></ion-icon>
+        <span>Productos</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item" (click)="IrMenu()">
+        <ion-icon name="arrow-undo"></ion-icon>
+        <span>Volver al Menu</span>
+      </div>
+      
+      <div class="menu-item" (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+        <span>Cerrar Sesión</span>
+      </div>
+    </div>
+  </div>
+  
 </ion-content>
 </body>
-

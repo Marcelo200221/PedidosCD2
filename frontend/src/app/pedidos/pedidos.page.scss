@@ -1306,3 +1306,74 @@ ion-item.item-seleccionable {
   font-size: 100%;
   color: #000;
 }
+
+.custom-toast {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  &::part(message) {
+    padding: 16px 20px;
+  }
+  
+  &::part(button) {
+    font-size: 20px;
+  }
+}
+
+.toast-success {
+  --background: #28a745;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-error {
+  --background: #c5000f;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-warning {
+  --background: #ffc107;
+  --color: #000000;
+  --button-color: #000000;
+}
+
+.toast-info {
+  --background: #2196f3;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-custom {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --button-color: #f8f7f6;
+}
+
+.select-cliente {
+  ion-select-option {
+    --color: #000;
+    font-size: 14px;
+    
+    // Resaltar la dirección en el selector
+    &::part(native) {
+      white-space: normal;
+      line-height: 1.4;
+    }
+  }
+}
+
+// Hacer el input de dirección editable visualmente
+.input-container ion-input[readonly] {
+  --color: #999;
+  cursor: not-allowed;
+}
+
+.input-container ion-input:not([readonly]) {
+  --color: #000;
+  cursor: text;
+}
+

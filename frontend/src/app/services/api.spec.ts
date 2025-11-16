@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Injector } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { environment } from "src/environments/environment.prod";
 import { getItem as ssGetItem, setItem as ssSetItem, removeItem as ssRemoveItem } from './token-storage';
 import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
+import { NotificacionService } from './notificacion.service';
 
 const api = axios.create({
     baseURL: environment.apiUrl,
@@ -45,9 +46,20 @@ api.interceptors.response.use(
   providedIn: 'root'
 })
 
-
 export class ApiService{
-  constructor(private router: Router){ }
+  private _notificacion?: NotificacionService; 
+
+  constructor(
+    private router: Router,
+    private injector: Injector 
+  ){ }
+
+  private get notificacion(): NotificacionService {
+    if (!this._notificacion) {
+      this._notificacion = this.injector.get(NotificacionService);
+    }
+    return this._notificacion;
+  }
 
   async registro(
     rut: string, 
@@ -66,28 +78,26 @@ export class ApiService{
       password2: '***'
     });
     
-    // dj-rest-auth espera password1 y password2
     const response = await api.post("registration/", {
       rut: rut,
       first_name: nombre,
       last_name: apellido,
       email: email,
-      password1: password,  // IMPORTANTE: dj-rest-auth usa password1 y password2
+      password1: password,
       password2: password
     });
     
     console.log("Respuesta del registro:", response.data);
     
-    // dj-rest-auth con JWT retorna el token directamente
     const access = response.data.token.access || response.data.access;
     
     if (access) {
-      alert("Registro exitoso");
+      await this.notificacion.showSuccess("Registro exitoso");
       await ssSetItem('auth_token', access);
       this.router.navigate(['/hub']);
     } else {
       console.log("Estructura de respuesta:", response.data);
-      alert("Registro exitoso pero verifica el token en consola");
+      await this.notificacion.showWarning("Registro exitoso pero verifica el token en consola");
     }
     
   } catch (error: any) {
@@ -98,13 +108,11 @@ export class ApiService{
     if (error.response?.data) {
       const errores = error.response.data;
       
-      // Si es HTML (error 404)
       if (typeof errores === 'string' && errores.includes('<!DOCTYPE')) {
-        alert("Error: Endpoint no encontrado");
+        await this.notificacion.showError("Error: Endpoint no encontrado");
         return;
       }
       
-      // Mostrar errores específicos
       let mensajeError = "Errores en el registro:\n";
       for (const [campo, mensajes] of Object.entries(errores)) {
         if (Array.isArray(mensajes)) {
@@ -113,27 +121,26 @@ export class ApiService{
           mensajeError += `${campo}: ${mensajes}\n`;
         }
       }
-      alert(mensajeError);
+      await this.notificacion.showError(mensajeError);
     } else {
-      alert("Error al registrar usuario");
+      await this.notificacion.showError("Error al registrar usuario");
     }
     
     throw error;
   }
 }
 
-
   async login(rut: string, password: string){
     return await api.post("auth/login/", {
       username: rut,
       password: password
-    }).then(response => {
+    }).then(async response => {
       const access = response.data.token.access;
       const user = response.data.user;
       console.log(response.data)
       
       if(access){
-        alert("Inicio de sesion exitoso")
+        await this.notificacion.showSuccess("Inicio de sesión exitoso");
         ssSetItem('auth_token', access)
         ssSetItem('user', JSON.stringify(user))
         this.router.navigate(['/hub']);
@@ -145,7 +152,7 @@ export class ApiService{
     try{
       await api.put(`dar/permisos/${id}`)
       console.log("Permisos de administrador asignados ")
-      alert("Permisos de administrador asignados")
+      await this.notificacion.showSuccess("Permisos de administrador asignados");
 
     } catch(error){
       console.error(error)
@@ -155,7 +162,7 @@ export class ApiService{
   async saveToken(token: string){
     await ssSetItem('auth_token', token);
   }
-  // Agregar estos métodos nuevos
+
   async getUsuarioActual(): Promise<any | null> {
     const userStr = await ssGetItem('user');
     if (!userStr) return null;
@@ -191,7 +198,7 @@ export class ApiService{
   async logout(){
     await ssRemoveItem('auth_token');
     await ssRemoveItem('user');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
   getHello(){
@@ -224,25 +231,26 @@ export class ApiService{
   }
 
   async cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
-  console.log("Enviando cambio de contraseña:", {
-    code: codigo,
-    new_password: '***',
-    confirm_password: '***'
-  });
-  
-  return await api.post("password-reset-change/", {
-    code: codigo,
-    new_password: nuevaPassword,
-    confirm_password: confirmarPassword
-  }).then(response => {
-    console.log("Respuesta del cambio:", response.data);
-    return response.data;
-  }).catch(error => {
-    console.error("Error en cambio de contraseña:", error);
-    console.error("Detalles del error:", error.response?.data);
-    throw error.response?.data || error;
-  });
-}
+    console.log("Enviando cambio de contraseña:", {
+      code: codigo,
+      new_password: '***',
+      confirm_password: '***'
+    });
+    
+    return await api.post("password-reset-change/", {
+      code: codigo,
+      new_password: nuevaPassword,
+      confirm_password: confirmarPassword
+    }).then(response => {
+      console.log("Respuesta del cambio:", response.data);
+      return response.data;
+    }).catch(error => {
+      console.error("Error en cambio de contraseña:", error);
+      console.error("Detalles del error:", error.response?.data);
+      throw error.response?.data || error;
+    });
+  }
+
   async crearPedido(cliente: String,direccion: String, fechaEntrega: String, lineas: {
     producto_id: Number, cajas: {peso: Number, etiqueta?: String}[]
   }[]){
@@ -257,8 +265,6 @@ export class ApiService{
       });
 
       console.log("Pedido creado correctamente: ", res.data)
-
-      alert("Pedido creado con éxito");
 
       return res.data
     }catch(error: any){
@@ -275,9 +281,9 @@ export class ApiService{
             mensaje += `${campo}: ${mensajes}\n`;
           }
         }
-        alert(mensaje);
+        await this.notificacion.showError(mensaje);
       }else{
-        alert("Error desconocido al crear el pedido");
+        await this.notificacion.showError("Error desconocido al crear el pedido");
       }
 
       throw error;
@@ -295,8 +301,6 @@ export class ApiService{
     } catch (error) {
       console.error(error)
     }
-    
-
   }
 
   async listarPedidos(){
@@ -322,10 +326,9 @@ export class ApiService{
         }
       });
       console.log("Pedido eliminado");
-      alert("Pedido eliminado");
     } catch(error){
       console.error("Se produjo un error al eliminar");
-      alert("Se produjo un erro al eliminar");
+      await this.notificacion.showError("Se produjo un error al eliminar");
     }
   };
 
@@ -333,10 +336,9 @@ export class ApiService{
     try{
       await api.delete(`pedidos/${id}/`);
       console.log("Pedido eliminado");
-      alert("Pedido eliminado");
     } catch(error){
       console.error("Se produjo un error al eliminar");
-      alert("Se produjo un erro al eliminar");
+      await this.notificacion.showError("Se produjo un error al eliminar");
     }
   };
 
@@ -344,10 +346,8 @@ export class ApiService{
     try{
       await api.put(`pedidos/${id}/`, pedido)
       console.log('Pedido editado con exito');
-      alert('Pedido editado con exito');
     } catch(error){
       console.error('Error al editar pedido');
-      alert('Error al editar pedido');
     }
   };
 
@@ -377,7 +377,6 @@ export class ApiService{
     }
   }
 
-  //Facturación: generar PDF por pedido (descargar)
   async generarFacturaPorPedido(pedidoId: number, opciones?: {
     factura_numero?: string;
     descuento?: number;
@@ -408,7 +407,6 @@ export class ApiService{
     }
   }
 
-  //Facturación: previsualizar PDF por pedido (abre en nueva pestaña)
   async previsualizarFacturaPorPedido(pedidoId: number, opciones?: {
     factura_numero?: string;
     descuento?: number;
@@ -505,9 +503,6 @@ export class ApiService{
     try {
       console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
 
-      // Importante: enviar SOLO el cambio de estado.
-      // No reenviar 'lineas' para evitar borrar cajas accidentalmente
-      // cuando no estamos editando pesos/cajas.
       const payload = { estado } as any;
 
       const updateResponse = await api.patch(`pedidos/${id}/`, payload);
@@ -544,7 +539,6 @@ export class ApiService{
     }
   }
 
-  // Avisos del bot: obtiene la lista de avisos actuales
   async getAvisos(): Promise<any[]> {
     try {
       const res = await api.get("avisos/");

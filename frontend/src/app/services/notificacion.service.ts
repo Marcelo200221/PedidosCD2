@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ApiService } from './api.spec';
 import { getItem as ssGetItem } from './token-storage';
+import { AlertController } from '@ionic/angular';
 
 @Injectable({ providedIn: 'root' })
 export class NotificacionService {
@@ -11,7 +12,8 @@ export class NotificacionService {
 
   constructor(
     private api: ApiService,
-    private toast: ToastController
+    private toast: ToastController,
+    private alertController: AlertController
   ) {}
 
   async start() {
@@ -88,6 +90,140 @@ export class NotificacionService {
         toRemove.forEach((c) => cl.remove(c));
         cl.add(`notif-offset-${i}`);
       } catch (_) { /* noop */ }
+    });
+  }
+
+   //Toast Generales
+
+  /**
+   * Toast de éxito (verde)
+   */
+  async showSuccess(message: string, duration: number = 3000) {
+    const t = await this.toast.create({
+      message: message,
+      duration: duration,
+      position: 'top',
+      color: 'success',
+      cssClass: 'custom-toast toast-success',
+      buttons: [
+        {
+          icon: 'checkmark-circle',
+          role: 'cancel'
+        }
+      ]
+    });
+    await t.present();
+  }
+
+  /**
+   * Toast de error (rojo)
+   */
+  async showError(message: string, duration: number = 4000) {
+    const t = await this.toast.create({
+      message: message,
+      duration: duration,
+      position: 'top',
+      color: 'danger',
+      cssClass: 'custom-toast toast-error',
+      buttons: [
+        {
+          icon: 'close-circle',
+          role: 'cancel'
+        }
+      ]
+    });
+    await t.present();
+  }
+
+  /**
+   * Toast de advertencia (amarillo/naranja)
+   */
+  async showWarning(message: string, duration: number = 3500) {
+    const t = await this.toast.create({
+      message: message,
+      duration: duration,
+      position: 'top',
+      color: 'warning',
+      cssClass: 'custom-toast toast-warning',
+      buttons: [
+        {
+          icon: 'alert-circle',
+          role: 'cancel'
+        }
+      ]
+    });
+    await t.present();
+  }
+
+  /**
+   * Toast de información (azul)
+   */
+  async showInfo(message: string, duration: number = 3000) {
+    const t = await this.toast.create({
+      message: message,
+      duration: duration,
+      position: 'top',
+      color: 'primary',
+      cssClass: 'custom-toast toast-info',
+      buttons: [
+        {
+          icon: 'information-circle',
+          role: 'cancel'
+        }
+      ]
+    });
+    await t.present();
+  }
+
+  /**
+   * Toast personalizado con color corporativo
+   */
+  async showCustom(message: string, duration: number = 3000) {
+    const t = await this.toast.create({
+      message: message,
+      duration: duration,
+      position: 'top',
+      cssClass: 'custom-toast toast-custom',
+      buttons: [
+        {
+          icon: 'checkmark-done',
+          role: 'cancel'
+        }
+      ]
+    });
+    await t.present();
+  }
+
+  /**
+   * Alert de confirmación con estilo personalizado
+   */
+  async showConfirm(
+    message: string,
+    header: string = '¿Confirmar acción?',
+    confirmText: string = 'Aceptar',
+    cancelText: string = 'Cancelar'
+  ): Promise<boolean> {
+    return new Promise(async (resolve) => {
+      const alert = await this.alertController.create({
+        header: header,
+        message: message,
+        cssClass: 'custom-alert',
+        buttons: [
+          {
+            text: confirmText,
+            cssClass: 'alert-button-confirm',
+            handler: () => resolve(true)
+          },
+          {
+            text: cancelText,
+            role: 'cancel',
+            cssClass: 'alert-button-cancel',
+            handler: () => resolve(false)
+          }
+        ]
+      });
+
+      await alert.present();
     });
   }
 }

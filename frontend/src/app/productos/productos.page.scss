@@ -1,4 +1,7 @@
-/* Encabezado consistente */
+ion-content.productos-page {
+  --background: #f8f7f6;
+  --ion-background-color: #f8f7f6;
+}
 
 .barra-superior {
   width: 100%;
@@ -26,6 +29,7 @@
   flex-grow: 1;
   margin-right: 10%;
   margin-top: 4%;
+  font-size: 24px;
 }
 
 .user-name {
@@ -40,8 +44,40 @@
   margin-left: 2%;
 }
 
+.tabs-container {
+  display: flex;
+  margin: 20px 10% 0 10%;
+  border-bottom: 2px solid #e0e0e0;
+  background: transparent;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+  background: transparent;
+}
+
+.tab:hover {
+  color: #97201d;
+}
+
+.tab.active {
+  color: #97201d;
+  border-bottom: 3px solid #97201d;
+}
+
 .lista-productos {
-  padding: 0 10% 20% 10%;
+  padding: 20px 10%;
   background: transparent;
 
   ion-list {
@@ -55,47 +91,78 @@
     --inner-padding-end: 0;
     --min-height: unset;
     border: none;
-    margin: 0 0 14px 0;
+    margin: 0 0 12px 0;
   }
 }
 
 .producto-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 12px 14px;
+  padding: 16px 18px;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.producto-info {
+  flex: 1;
 }
 
 .producto-nombre {
   color: #000;
   font-weight: bold;
   font-family: catamaran, sans-serif;
-  font-size: 115%;
-  margin: 0 0 4px 0;
+  font-size: 18px;
+  margin: 0 0 8px 0;
 }
 
 .producto-detalle {
-  color: #000;
-  font-size: 92%;
-}
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+  margin-top: 4px;
 
+  .label {
+    color: #666;
+  }
+
+  .valor {
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+  }
+    &.stock-bajo {
+      color: #dc3545;
+    }
+  }
 .acciones {
   display: flex;
   justify-content: flex-end;
 }
 
-.btn-cambiar {
+.btn-editar {
   --background: #97201d;
   --color: #f8f7f6;
-  --border-radius: 12px;
-  height: 36px;
+  --border-radius: 8px;
+  height: 40px;
+  width: 40px;
   font-weight: bold;
+  
+  ion-icon {
+    font-size: 20px;
+  }
 }
 
 .modal-backdrop {
@@ -104,8 +171,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
 }
 
 .modal {
@@ -115,57 +183,114 @@
   transform: translate(-50%, -50%);
   background: #ffffff;
   color: #000000;
-  width: min(520px, 92%);
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  width: min(420px, 92%);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
   z-index: 1001;
   display: flex;
   flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .modal-header {
-  padding: 16px;
-  border-bottom: 1px solid var(--ion-color-step-150, #ececec);
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+  }
+
+  .close-icon {
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #97201d;
+    }
+  }
 }
 
 .modal-body {
-  padding: 12px 16px;
+  padding: 20px;
   color: #000;
 
-  p { color: #000; }
+  .producto-modal-nombre {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0 0 8px 0;
+  }
+
+  .precio-actual-info {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+
+    strong {
+      color: #97201d;
+    }
+  }
 
   ion-item {
     --background: transparent;
+    margin-bottom: 0;
   }
 
-  ion-label { color: #000; }
+  ion-label {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
 
   ion-input {
     --color: #000;
-  }
-
-  ion-input::part(native) {
-    color: #000;
+    --placeholder-color: #999;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px !important;
+    margin-top: 8px;
   }
 }
 
 .modal-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  padding: 12px 16px 16px;
+  gap: 10px;
+  padding: 16px 20px 20px;
+  border-top: 1px solid #e0e0e0;
 }
 
 .btn-guardar {
   --background: #97201d;
   --color: #f8f7f6;
-  --border-radius: 12px;
+  --border-radius: 8px;
+  font-weight: 600;
 }
 
 .btn-cancelar {
-  --color: #97201d;
+  --color: #666;
+  font-weight: 600;
 }
-
 
 .menu-overlay {
   position: fixed;
@@ -310,5 +435,13 @@
     &:hover {
       padding-left: 35px;
     }
+  }
+
+  .producto-nombre {
+    font-size: 20px;
+  }
+
+  .producto-detalle {
+    font-size: 15px;
   }
 }

@@ -1,12 +1,13 @@
-<body>
 <ion-content class="login-page" fullscreen>
-<!-- Header -->
+  <!-- Header -->
   <div class="login-header">
-    <div class="barra-superior"></div>
+    <div class="barra-superior">
+      <ion-icon name="menu" class="icon-left" (click)="toggleMenu()"></ion-icon>
+    </div>
     <div class="barra-inferior"></div>
   </div>
 
-<!-- Titulo Inicio de Sesión -->
+  <!-- Titulo -->
   <div class="titulo-container">
     <h1 *ngIf="cliente; else tituloAgregar" class="titulo-texto">Editar Cliente</h1>
     <ng-template #tituloAgregar>
@@ -15,54 +16,114 @@
     <div class="barra-texto"></div>
   </div>
 
-<!-- Input Nombre -->
+  <!-- Input: Nombre -->
   <div class="input-container">
     <h1 class="titulos">Nombre</h1>
-    <ion-input 
-      placeholder="Ingrese Nombre del cliente" 
-      [(ngModel)]="nombre"
-      (ionInput)="actualizarNombre($event)">
-    
-      
-    </ion-input>
+    <ion-input placeholder="Ingrese nombre del cliente" [(ngModel)]="nombre" (ionInput)="actualizarNombre($event)"></ion-input>
     <div class="underline" [ngStyle]="{'background-color': underlineNombre}"></div>
   </div>
-  <p class="mensaje-error" *ngIf="nombreError" style="color:red; font-size:12px">{{nombreError}}</p>
+  <p class="mensaje-error" *ngIf="nombreError">{{nombreError}}</p>
 
-<!-- Input Rut -->
+  <!-- Input: RUT -->
   <div class="input-container">
     <h1 class="titulos">RUT</h1>
-    <ion-input *ngIf="cliente; else rutAgregar" placeholder="rut" [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)"></ion-input>
-    <ng-template #rutAgregar>
-      <ion-input placeholder="Ingrese RUT del cliente" [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)"></ion-input>
-    </ng-template>
+    <ion-input placeholder="Ingrese RUT del cliente (ej: 12345678-9)" [(ngModel)]="rut" (keypress)="onKeyPress($event)" (input)="actualizarRut($event)">
+    </ion-input>
     <div class="underline" [ngStyle]="{'background-color': underlineColor}"></div>
   </div>
   <p class="mensaje-error" *ngIf="rutError">{{rutError}}</p>
 
-<!-- Input Correo -->
+  <!-- Input Dirección -->
   <div class="input-container">
-    <h1 class="titulos">Direccion</h1>
-    <ion-input *ngIf="cliente" placeholder="Ingrese direccion del cliente"[(ngModel)]="direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
+    <h1 class="titulos">Dirección</h1>
+    <ion-input placeholder="Ingrese dirección del cliente"[(ngModel)]="direccion"(ionInput)="actualizarDireccion($event)"></ion-input>
     <div class="underline" [ngStyle]="{'background-color': underlineDireccion}"></div>
   </div>
-  <p class="mensaje-error" *ngIf="direccionError" style="color:red; font-size:12px">{{direccionError}}</p>
+  <p class="mensaje-error" *ngIf="direccionError">{{direccionError}}</p>
 
-<!-- Input Contraseña -->
+  <!-- Input Razón Social -->
   <div class="input-container">
-    <h1 class="titulos">Razon Social</h1>
-    <ion-input [(ngModel)]="razonSocial"(input)="actualizarRazonSocial($event)" placeholder="Ingrese razon social del cliente"></ion-input>
+    <h1 class="titulos">Razón Social</h1>
+    <ion-input [(ngModel)]="razonSocial"(input)="actualizarRazonSocial($event)" placeholder="Ingrese razón social del cliente"></ion-input>
     <div class="underline" [ngStyle]="{'background-color': underlineRazonSocial}"></div>
   </div>
-  <p class="mensaje-error" *ngIf="razonSocial">{{razonSocialError}}</p>
+  <p class="mensaje-error" *ngIf="razonSocialError">{{razonSocialError}}</p>
 
-<!-- Boton Registro -->
+  <!-- Botones Guardar/Editar y Cancelar -->
   <div class="botones">
-    <ion-button *ngIf="cliente; else btnGuardar" expand="block" class="btn-login" (click)="handleClick()">Editar</ion-button>
+    <ion-button *ngIf="cliente; else btnGuardar" expand="block" class="btn-login" (click)="handleClick()">Editar Cliente</ion-button>
     <ng-template #btnGuardar>
-      <ion-button expand="block" class="btn-login" (click)="handleClick()">Guardar</ion-button>
+      <ion-button expand="block" class="btn-login" (click)="handleClick()">Guardar Cliente</ion-button>
     </ng-template>
+    
+    <ion-button expand="block" class="btn-cancelar" (click)="cancelar()">Cancelar</ion-button>
+  </div>
+
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
+
+  <!-- Menú lateral -->
+  <div class="menu-lateral" [class.abierto]="menuAbierto">
+    <div class="menu-header">
+      <div class="menu-user-info">
+        <p>Bienvenido,</p>
+        <p class="user-name" *ngIf="nombreUsuario">{{ nombreUsuario }} {{ apellidoUsuario }}</p>
+      </div>
+      <ion-icon name="close" class="icon-cerrar-menu" (click)="cerrarMenu()"></ion-icon>
+    </div>
+    
+    <div class="menu-contenido">
+      <div class="menu-item" (click)="IrAPerfil()">
+        <ion-icon name="person"></ion-icon>
+        <span>Perfil</span>
+      </div>
+      
+      <div class="menu-divider"></div>
+      
+      <div class="menu-item" (click)="Irapedidosmenu()">
+        <ion-icon name="cube"></ion-icon>
+        <span>Pedidos</span>
+      </div>
+      
+      <div class="menu-item" (click)="Irafacturasmenu()">
+        <ion-icon name="document-text"></ion-icon>
+        <span>Facturas</span>
+      </div>
+      
+      <div *ngIf="verReportes" class="menu-item" (click)="Iradashboardsmenu()">
+        <ion-icon name="bar-chart"></ion-icon>
+        <span>Dashboards</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div *ngIf="puedeIr" class="menu-item" (click)="IrUsuarios()">
+        <ion-icon name="person"></ion-icon>
+        <span>Usuarios</span>
+      </div>
+      
+      <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="people"></ion-icon>
+        <span>Clientes</span>
+      </div>
+
+      <div *ngIf="verProductos" class="menu-item" (click)="IraProductos()">
+        <ion-icon name="bag"></ion-icon>
+        <span>Productos</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item" (click)="IrMenu()">
+        <ion-icon name="arrow-undo"></ion-icon>
+        <span>Volver al Menú</span>
+      </div>
+      
+      <div class="menu-item" (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+        <span>Cerrar Sesión</span>
+      </div>
+    </div>
   </div>
 
 </ion-content>
-</body>

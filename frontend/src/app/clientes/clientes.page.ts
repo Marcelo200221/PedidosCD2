@@ -3,19 +3,37 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.spec';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/angular/standalone';
-import { ActivatedRoute } from '@angular/router';
+import { IonContent, IonButton, IonIcon, IonInput} from '@ionic/angular/standalone';
+import { ActivatedRoute } from '@angular/router'
+import { addIcons } from 'ionicons';
+import { Router } from '@angular/router';
+import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
+  bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
+import { Perimisos } from '../services/perimisos';
+import { NotificacionService } from '../services/notificacion.service';
+
+//Iconos
+addIcons({ 
+ pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
+  bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone
+});
 
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.page.html',
   styleUrls: ['./clientes.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, IonInput, IonButton]
+  imports: [FormsModule,
+      CommonModule,
+      IonContent, IonButton, IonIcon, IonInput]
 })
 export class ClientesPage implements OnInit {
 
-  constructor( private api: ApiService, private activeRouter: ActivatedRoute) { }
+  constructor(private api: ApiService, private activeRouter: ActivatedRoute, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService) { }
   
     //Definicion de variables
     id: string = '';
@@ -24,6 +42,16 @@ export class ClientesPage implements OnInit {
     direccion: string = '';
     razonSocial: string = '';
     cliente = this.activeRouter.snapshot.params['id']
+
+    
+    //Variables del menú
+    menuAbierto: boolean = false;
+    nombreUsuario: string = '';
+    apellidoUsuario: string = '';
+    puedeIr = false;
+    verReportes = false;
+    verProductos = false;
+    cargando: boolean = true;
   
     //Definicion de variables de error
     rutError: string = '';
@@ -148,17 +176,17 @@ export class ClientesPage implements OnInit {
     }
 
   
-    handleClick() {
+    async handleClick() {
     //Verificar que todos los campos tengan valor
     if (!this.nombre || !this.rut  || !this.direccion || !this.razonSocial) {
-      alert('Por favor, completa todos los campos.');
+      await this.notificaciones.showWarning('Por favor, completa todos los campos.');
       return;
     }
   
   
     //Verificar errores individuales
     if (this.nombreError || this.rutError || this.direccionError || this.razonSocialError) {
-      alert('Por favor corrige los errores antes de continuar.');
+      await this.notificaciones.showWarning('Por favor corrige los errores antes de continuar.');
       return;
     }
 
@@ -174,8 +202,11 @@ export class ClientesPage implements OnInit {
           this.nombre,
           this.direccion,
           this.razonSocial);
+        this.cargarDatosUsuario(),
+        await this.notificaciones.showSuccess("Cliente editado correctamente")
         return;
       } catch(error){
+        await this.notificaciones.showError("No se a podido editar el cliente")
         console.error(error)
       }
     }
@@ -196,12 +227,29 @@ export class ClientesPage implements OnInit {
       direccion: this.direccion,
       razonSocial: this.razonSocial
     });
-    alert('Cliente ingresado con éxito');
+    await this.notificaciones.showSuccess('Cliente ingresado con éxito');
+  }
+
+    async cargarDatosUsuario() {
+    const usuario = await this.api.getUsuarioActual();
+    if (usuario) {
+      this.nombreUsuario = usuario.nombre;
+      this.apellidoUsuario = usuario.apellido;
+      console.log('Usuario cargado:', usuario); 
+    } else {
+      //Si no hay usuario, redirigir al login
+      console.warn('No hay usuario en IndexedDB, redirigiendo al login');
+      this.router.navigate(['/login']);
+    }
   }
   
-  
-  
     async ngOnInit() {
+      this.verProductos = await this.permisos.checkPermission('view_productos')
+      this.puedeIr = await this.permisos.checkPermission('view_usuarios')
+      this.verReportes = await this.permisos.checkPermission('view_reportes')
+      this.cargarDatosUsuario();
+      // Inicializa el servicio de avisos si hay sesión
+      try { await this.notificaciones.start(); } catch {}
       console.log("Data del usuario", this.activeRouter.snapshot.params['id'])
       if(this.cliente){
         const infoCliente = await this.api.infoCliente(this.cliente)
@@ -214,4 +262,89 @@ export class ClientesPage implements OnInit {
       }
     }
 
+  //Metodo para recargar cada vez que se entre a la pagina
+  async ionViewWillEnter() {
+    this.cargando = true;
+    
+    //Cargar todos los dashboards en paralelo
+    try {
+      await Promise.all([
+      this.verProductos = await this.permisos.checkPermission('view_productos'),
+      this.puedeIr = await this.permisos.checkPermission('view_usuarios'),
+      this.verReportes = await this.permisos.checkPermission('view_reportes'),
+      this.cargarDatosUsuario(),
+      ]);
+    } catch (error) {
+      console.error('Error cargando dashboards:', error);
+    } finally {
+      this.cargando = false;
+    }
+  }
+    
+//Control del menú
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
+
+  //Navegación desde menú lateral
+  Irapedidosmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/pedidos']);
+  }
+
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil'])
+  }
+
+  Irafacturasmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/facturacion']);
+  }
+
+  Iradashboardsmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/dashboard']);
+  }
+  
+  IrMenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/hub']);
+  }
+
+  IrClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/clientes']);
+  }
+
+  IrUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['usuarios'])
+  }
+
+  IrListarClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/lista-clientes']);
+  }
+
+  IraProductos() {
+    this.cerrarMenu();
+    this.router.navigate(['/productos']);
+  }
+
+  //Cerrar sesión
+  cerrarSesion() {
+    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+      this.api.logout();
+      this.cerrarMenu();
+    }
+  }
+
+  cancelar() { 
+  this.router.navigate(['/lista-clientes']);
+  }
 }

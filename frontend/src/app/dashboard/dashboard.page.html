@@ -47,8 +47,7 @@
             type="date" 
             [(ngModel)]="filtroFechaInicio"
             [max]="filtroFechaFin"
-            class="filtro-input" />
-          <ion-icon name="calendar" class="calendar-icon"></ion-icon>
+            class="filtro-input"/>
         </div>
       </div>
 
@@ -61,7 +60,6 @@
             [(ngModel)]="filtroFechaFin"
             [min]="filtroFechaInicio"
             class="filtro-input" />
-          <ion-icon name="calendar" class="calendar-icon"></ion-icon>
         </div>
       </div>
 
@@ -96,14 +94,13 @@
     </div>
   </div>
 
-  <!-- Indicador de Filtro Activo -->
-  <div *ngIf="filtroActivo" class="filtro-indicador">
-    <span class="mostrando-filtro">
-      Mostrando datos del {{ formatearFecha(filtroFechaInicio) }} al {{ formatearFecha(filtroFechaFin) }}
+  <!-- Indicador de Filtro - Siempre Visible -->
+  <div class="filtro-indicador">
+    <span class="mostrando-filtro" *ngIf="!filtroActivo">Mostrando pedidos del día de hoy</span>
+    <span class="mostrando-filtro" *ngIf="filtroActivo">
+      Mostrando pedidos del {{ formatearFecha(filtroFechaInicio) }} al {{ formatearFecha(filtroFechaFin) }}
     </span>
-    <button class="filtro-quitar-btn" (click)="limpiarFiltro()">
-      Quitar Filtro
-    </button>
+    <button class="filtro-quitar-btn" *ngIf="filtroActivo" (click)="limpiarFiltro()">Quitar Filtro</button>
   </div>
 </div>
 
@@ -118,33 +115,25 @@
     </div>
     
     <div class="menu-dashboard-opciones">
-      <div class="menu-dashboard-item" 
-           [class.activo]="tipoDashboard === 'completo'"
-           (click)="cambiarTipoDashboard('completo')">
+      <div class="menu-dashboard-item" [class.activo]="tipoDashboard === 'completo'" (click)="cambiarTipoDashboard('completo')">
         <ion-icon name="apps"></ion-icon>
         <span>Todos los Dashboards</span>
         <ion-icon name="checkmark-circle" *ngIf="tipoDashboard === 'completo'" class="check-icon"></ion-icon>
       </div>
       
-      <div class="menu-dashboard-item"
-           [class.activo]="tipoDashboard === 'pedidos'"
-           (click)="cambiarTipoDashboard('pedidos')">
+      <div class="menu-dashboard-item" [class.activo]="tipoDashboard === 'pedidos'" (click)="cambiarTipoDashboard('pedidos')">
         <ion-icon name="pie-Chart"></ion-icon>
         <span>Solo Pedidos</span>
         <ion-icon name="checkmark-circle" *ngIf="tipoDashboard === 'pedidos'" class="check-icon"></ion-icon>
       </div>
       
-      <div class="menu-dashboard-item"
-           [class.activo]="tipoDashboard === 'ventas'"
-           (click)="cambiarTipoDashboard('ventas')">
+      <div class="menu-dashboard-item" [class.activo]="tipoDashboard === 'ventas'" (click)="cambiarTipoDashboard('ventas')">
         <ion-icon name="podium"></ion-icon>
         <span>Solo Ventas</span>
         <ion-icon name="checkmark-circle" *ngIf="tipoDashboard === 'ventas'" class="check-icon"></ion-icon>
       </div>
       
-      <div class="menu-dashboard-item"
-           [class.activo]="tipoDashboard === 'clientes'"
-           (click)="cambiarTipoDashboard('clientes')">
+      <div class="menu-dashboard-item" [class.activo]="tipoDashboard === 'clientes'" (click)="cambiarTipoDashboard('clientes')">
         <ion-icon name="people"></ion-icon>
         <span>Solo Clientes</span>
         <ion-icon name="checkmark-circle" *ngIf="tipoDashboard === 'clientes'" class="check-icon"></ion-icon>
@@ -234,55 +223,72 @@
           <ion-card-title>Estado de Pedidos</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <div class="resumen-total">
-            <div class="grafico-torta">
-              <svg viewBox="0 0 400 400" class="pie-chart">
-
-                <!-- Circulo base -->
-                <circle cx="200" cy="200" r="150" fill="#f5f5f5"/>
-
-                <!-- Segmentos del gráfico -->
-                <g *ngFor="let stat of estadisticas; let i = index">
-                  <path 
-                    [attr.d]="calcularSegmento(i)" 
-                    [attr.fill]="stat.color"
-                    class="pie-segment"
-                    [attr.data-porcentaje]="stat.porcentaje"
-                  />
-                </g>
-
-                <!-- Círculo central para efecto dona -->
-                <circle cx="200" cy="200" r="80" fill="white"/>
-
-                <!-- Texto central -->
-                <text x="200" y="195" text-anchor="middle" class="pie-center-text">
-                  Total
-                </text>
-                <text x="200" y="220" text-anchor="middle" class="pie-center-number">
-                  {{ totalPedidos }}
-                </text>
-              </svg>
-            </div>
+          
+          <!-- Mensaje cuando no hay pedidos -->
+          <div *ngIf="totalPedidos === 0" class="empty-state">
+            <ion-icon name="pie-chart"></ion-icon>
+            <p class="empty-title">No hay pedidos registrados todavía</p>
+            <p class="empty-subtitle">Los pedidos aparecerán cuando los crees</p>
           </div>
 
-          <div class="estadisticas-lista">
-            <div 
-              *ngFor="let stat of estadisticas" 
-              class="estadistica-item"
-              [style.border-left]="'4px solid ' + stat.color">
-              <div class="estadistica-info">
-                <div class="estadistica-header">
-                  <span class="estadistica-nombre">{{ stat.estado }}</span>
-                  <span class="estadistica-porcentaje">{{ stat.porcentaje }}%</span>
-                </div>
-                <div class="estadistica-barra">
-                  <div 
-                    class="estadistica-progreso" 
-                    [style.width.%]="stat.porcentaje"
-                    [style.background-color]="stat.color">
+          <!-- Grafico cuando hay pedidos -->
+          <div *ngIf="totalPedidos > 0">
+            <div class="resumen-total">
+              <div class="grafico-torta">
+                <svg viewBox="0 0 400 400" class="pie-chart">
+                  <circle cx="200" cy="200" r="150" fill="#f5f5f5"/>
+                  
+                  <ng-container *ngIf="totalPedidos > 0">
+                    <g *ngFor="let stat of estadisticas; let i = index">
+                      <circle 
+                        *ngIf="stat.porcentaje === 100"
+                        cx="200" 
+                        cy="200" 
+                        r="150" 
+                        [attr.fill]="stat.color"
+                        class="pie-segment"/>
+                      
+                      <path 
+                        *ngIf="stat.porcentaje > 0 && stat.porcentaje < 100"
+                        [attr.d]="calcularSegmento(i)" 
+                        [attr.fill]="stat.color"
+                        class="pie-segment"
+                        [attr.data-porcentaje]="stat.porcentaje"/>
+                    </g>
+                  </ng-container>
+                  
+                  <circle cx="200" cy="200" r="80" fill="white"/>
+
+                  <!-- Texto central -->
+                  <text x="200" y="195" text-anchor="middle" class="pie-center-text">
+                    Total
+                  </text>
+                  <text x="200" y="220" text-anchor="middle" class="pie-center-number">
+                    {{ totalPedidos }}
+                  </text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="estadisticas-lista">
+              <div 
+                *ngFor="let stat of estadisticas" 
+                class="estadistica-item"
+                [style.border-left]="'4px solid ' + stat.color">
+                <div class="estadistica-info">
+                  <div class="estadistica-header">
+                    <span class="estadistica-nombre">{{ stat.estado }}</span>
+                    <span class="estadistica-porcentaje">{{ stat.porcentaje }}%</span>
                   </div>
+                  <div class="estadistica-barra">
+                    <div 
+                      class="estadistica-progreso" 
+                      [style.width.%]="stat.porcentaje"
+                      [style.background-color]="stat.color">
+                    </div>
+                  </div>
+                  <span class="estadistica-cantidad">{{ stat.cantidad }} pedido(s)</span>
                 </div>
-                <span class="estadistica-cantidad">{{ stat.cantidad }} pedido(s)</span>
               </div>
             </div>
           </div>

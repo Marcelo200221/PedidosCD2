@@ -8,42 +8,45 @@
     </div>
   </div>
 
+  <!-- Pestañas de navegación -->
+  <div class="tabs-container">
+    <div class="tab" [class.active]="editPrecio && !editStock" (click)="editarPrecio()">
+      <span>Precios</span>
+    </div>
+    <div class="tab" [class.active]="editStock && !editPrecio" (click)="editarStock()">
+      <span>Stock</span>
+    </div>
+  </div>
+
+  <!-- Lista de productos -->
   <div class="lista-productos">
-    <ion-button *ngIf="editStock && !editPrecio" (click)="editarPrecio()" class="btn-cambiar">
-      Editar Precio
-    </ion-button>
-    <ion-button *ngIf="!editStock && editPrecio" (click)="editarStock()" class="btn-cambiar">
-      Editar Stock
-    </ion-button>
     <ion-list>
-      <ion-item class="producto-item" *ngFor="let p of productos">
+      <ion-item class="producto-item" lines="none" *ngFor="let p of productos">
         <div class="producto-card">
-          <div *ngIf="!editStock && editPrecio" class="producto-info">
+          <div class="producto-info">
             <div class="producto-nombre">{{ p.nombre }}</div>
-            <div class="producto-detalle">Precio actual: <b>{{ p.precio | number:'1.0-0' }} CLP</b></div>
+            
+            <!-- Mostrar precio -->
+            <div *ngIf="editPrecio && !editStock" class="producto-detalle">
+              <span class="label">Precio actual:</span>
+              <span class="valor">{{ p.precio | number:'1.0-0' }} CLP</span>
+            </div>
+            
+            <!-- Mostrar stock -->
+            <div *ngIf="editStock && !editPrecio" class="producto-detalle">
+              <span class="label">Stock actual:</span>
+              <span class="valor valor-stock" [class.stock-bajo]="p.stock < 10">{{ p.stock | number:'1.0-0' }} unidades</span>
+            </div>
           </div>
-          <div *ngIf="editStock && !editPrecio" class="producto-info">
-            <div class="producto-nombre">{{ p.nombre }}</div>
-            <div class="producto-detalle">Stock actual: <b>{{ p.stock | number:'1.0-0' }}</b></div>
-          </div>
+
+          <!-- Botón de edición -->
           <div *ngIf="editProductos" class="acciones">
-            <ion-button *ngIf="editPrecio && !editStock" class="btn-cambiar" (click)="abrirModal(p)">
-                <svg slot="start"
-                    viewBox="0 0 24 24"
-                    width="22" height="22"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" focusable="false">
-                  <path [attr.d]="mdi.edit" fill="currentColor"></path>
-                </svg>
+            <ion-button *ngIf="editPrecio && !editStock" class="btn-editar" (click)="abrirModal(p)"> 
+            <ion-icon name="create"></ion-icon>
             </ion-button>
-            <ion-button *ngIf="!editPrecio && editStock" class="btn-cambiar" (click)="abrirModalStock(p)">
-                <svg slot="start"
-                    viewBox="0 0 24 24"
-                    width="22" height="22"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" focusable="false">
-                  <path [attr.d]="mdi.edit" fill="currentColor"></path>
-                </svg>
+            
+            <ion-button *ngIf="!editPrecio && editStock" class="btn-editar" (click)="abrirModalStock(p)">
+              <ion-icon name="create"></ion-icon>
             </ion-button>
           </div>
         </div>
@@ -51,17 +54,21 @@
     </ion-list>
   </div>
 
-  <!-- Modal simple controlado por flags -->
+  <!-- Modal de Precio -->
   <div class="modal-backdrop" *ngIf="mostrarModal && editPrecio && !editStock" (click)="cerrarModal()"></div>
   <div class="modal" *ngIf="mostrarModal" (click)="$event.stopPropagation()">
     <div class="modal-header">
       <h3>Cambiar precio</h3>
+      <ion-icon name="close" class="close-icon" (click)="cerrarModal()"></ion-icon>
     </div>
     <div class="modal-body">
-      <p *ngIf="productoSeleccionado">{{ productoSeleccionado.nombre }}</p>
-      <ion-item>
+      <p class="producto-modal-nombre" *ngIf="productoSeleccionado">{{ productoSeleccionado.nombre }}</p>
+      <p class="precio-actual-info" *ngIf="productoSeleccionado">
+        Precio actual: <strong>{{ productoSeleccionado.precio | number:'1.0-0' }} CLP</strong>
+      </p>
+      <ion-item lines="none">
         <ion-label position="stacked">Nuevo precio (CLP)</ion-label>
-        <ion-input type="number" [(ngModel)]="nuevoPrecio"></ion-input>
+        <ion-input type="number" [(ngModel)]="nuevoPrecio" placeholder="Ingrese el nuevo precio"></ion-input>
       </ion-item>
     </div>
     <div class="modal-actions">
@@ -70,16 +77,21 @@
     </div>
   </div>
 
+  <!-- Modal de Stock -->
   <div class="modal-backdrop" *ngIf="mostrarModalStock && !editPrecio && editStock" (click)="cerrarModalStock()"></div>
   <div class="modal" *ngIf="mostrarModalStock" (click)="$event.stopPropagation()">
     <div class="modal-header">
       <h3>Cambiar stock</h3>
+      <ion-icon name="close" class="close-icon" (click)="cerrarModalStock()"></ion-icon>
     </div>
     <div class="modal-body">
-      <p *ngIf="productoSeleccionado">{{ productoSeleccionado.nombre }}</p>
-      <ion-item>
+      <p class="producto-modal-nombre" *ngIf="productoSeleccionado">{{ productoSeleccionado.nombre }}</p>
+      <p class="precio-actual-info" *ngIf="productoSeleccionado">
+        Stock actual: <strong>{{ productoSeleccionado.stock | number:'1.0-0' }} unidades</strong>
+      </p>
+      <ion-item lines="none">
         <ion-label position="stacked">Nuevo stock</ion-label>
-        <ion-input type="number" [(ngModel)]="nuevoStock"></ion-input>
+        <ion-input type="number" [(ngModel)]="nuevoStock" placeholder="Ingrese el nuevo stock"></ion-input>
       </ion-item>
     </div>
     <div class="modal-actions">
@@ -88,7 +100,7 @@
     </div>
   </div>
 
-    <!-- Overlay del menú -->
+  <!-- Overlay del menú -->
   <div class="menu-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
 
   <!-- Menú lateral -->

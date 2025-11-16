@@ -9,8 +9,10 @@ import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
 import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person  } from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person, download} from 'ionicons/icons';
 import { Perimisos } from '../services/perimisos';
+import { AlertController } from '@ionic/angular';
+
 
 // Interfaces
 export interface Producto {
@@ -34,7 +36,7 @@ export interface Pedido {
 addIcons({ 
   pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, bag, person, download
 });
 
 @Component({
@@ -70,7 +72,21 @@ export class FacturacionPage implements OnInit {
 
   constructor(private api: ApiService, 
     private router: Router, private permisos: Perimisos,
-    private notificaciones: NotificacionService) { }
+    private notificaciones: NotificacionService,
+    private alertController: AlertController) { }
+
+  async ionViewWillEnter() {
+    this.cargando = true;
+    try {
+      await Promise.all([
+    await this.cargarPedidosPendientesConfirmacion()
+      ]);
+    } catch (error) {
+      console.error('Error cargando dashboards:', error);
+    } finally {
+      this.cargando = false;
+    }
+  }
 
   async ngOnInit() {
     this.puedeIr = await this.permisos.checkPermission('view_usuarios')
@@ -108,7 +124,7 @@ export class FacturacionPage implements OnInit {
       
     } catch (error) {
       console.error('Error al cargar pedidos:', error);
-      alert('Error al cargar los pedidos de facturación');
+      await this.notificaciones.showError('Error al cargar los pedidos de facturación');
     } finally {
       this.cargando = false;
     }
@@ -169,24 +185,24 @@ export class FacturacionPage implements OnInit {
       await this.api.previsualizarFacturaPorPedido(pedido.id);
     } catch (error) {
       console.error('Error al previsualizar factura:', error);
-      alert('No se pudo previsualizar la factura');
+      await this.notificaciones.showError('No se pudo previsualizar la factura');
     }
   }
 
   async generarFacturasSeleccionadas() {
     const seleccionados = this.pedidos.filter(p => p.seleccionado);
     if (seleccionados.length === 0) {
-      alert('Selecciona al menos un pedido');
+      await this.notificaciones.showWarning('Selecciona al menos un pedido');
       return;
     }
     try {
       for (const pedido of seleccionados) {
         await this.api.generarFacturaPorPedido(pedido.id);
       }
-      alert(`Se generaron ${seleccionados.length} factura(s).`);
+      await this.notificaciones.showSuccess(`Se generaron ${seleccionados.length} factura(s).`);
     } catch (error) {
       console.error('Error generando facturas:', error);
-      alert('Ocurrió un error al generar alguna factura');
+      await this.notificaciones.showError('Ocurrió un error al generar alguna factura');
     }
   }
 
@@ -216,9 +232,9 @@ export class FacturacionPage implements OnInit {
   }
 
   //Selección múltiple
-  activarSeleccionMultiple() {
+  async activarSeleccionMultiple() {
     if (this.pedidos.length === 0) {
-      alert('No hay pedidos para seleccionar');
+      await this.notificaciones.showWarning('No hay pedidos para seleccionar');
       return;
     }
     this.mostrarSeleccionMultiple = true;
@@ -243,13 +259,15 @@ export class FacturacionPage implements OnInit {
     const seleccionados = this.pedidos.filter(p => p.seleccionado);
     
     if (seleccionados.length === 0) {
-      alert('Selecciona al menos un pedido para confirmar');
+      await this.notificaciones.showWarning('Selecciona al menos un pedido para confirmar');
       return;
     }
 
-    const confirmar = confirm(
-      `¿Confirmar la facturación de ${seleccionados.length} pedido(s)?\n\n` +
-      `Esto cambiará su estado a "Completado".`
+    const confirmar = await this.notificaciones.showConfirm(
+      `Esto cambiará el estado de ${seleccionados.length} pedido(s) a "Completado".`,
+      '¿Confirmar la facturación?',
+      'Sí, confirmar',
+      'Cancelar'
     );
     
     if (!confirmar) return;
@@ -260,7 +278,6 @@ export class FacturacionPage implements OnInit {
         await this.api.generarFacturaPorPedido(pedido.id);
         await this.api.actualizarEstadoPedido(pedido.id, 'completado');
         await this.recargarPedidos();
-        // Revisar avisos tras completar (posible alerta de stock bajo)
         try { await this.notificaciones.checkNow(); } catch {}
       }
 
@@ -268,19 +285,20 @@ export class FacturacionPage implements OnInit {
       this.pedidosFiltrados = [...this.pedidos];
       
       this.mostrarSeleccionMultiple = false;
-      alert(`${seleccionados.length} pedido(s) confirmado(s) exitosamente`);
+      await this.notificaciones.showSuccess(`${seleccionados.length} pedido(s) confirmado(s) exitosamente`);
       
     } catch (error) {
       console.error('Error al confirmar facturación:', error);
-      alert('Error al confirmar la facturación');
+      await this.notificaciones.showError('Error al confirmar la facturación');
     }
   }
 
   async confirmarFacturacionIndividual(pedido: Pedido) {
-    const confirmar = confirm(
-      `¿Confirmar la facturación del ${pedido.nombre}?\n\n` +
-      `Dirección: ${pedido.direccion}\n` +
-      `Esto cambiará su estado a "Completado".`
+    const confirmar = await this.notificaciones.showConfirm(
+      `Dirección: ${pedido.direccion}\n\nEsto cambiará su estado a "Completado".`,
+      `¿Confirmar la facturación del ${pedido.nombre}?`,
+      'Sí, confirmar',
+      'Cancelar'
     );
     
     if (!confirmar) return;
@@ -288,7 +306,6 @@ export class FacturacionPage implements OnInit {
     try {
       await this.api.generarFacturaPorPedido(pedido.id);
       await this.api.actualizarEstadoPedido(pedido.id, 'completado');
-      // Revisar avisos tras completar
       try { await this.notificaciones.checkNow(); } catch {}
       await this.recargarPedidos();
       
@@ -296,11 +313,11 @@ export class FacturacionPage implements OnInit {
       this.pedidos = this.pedidos.filter(p => p.id !== pedido.id);
       this.pedidosFiltrados = [...this.pedidos];
       
-      alert(`${pedido.nombre} confirmado exitosamente`);
+      await this.notificaciones.showSuccess(`${pedido.nombre} confirmado exitosamente`);
       
     } catch (error) {
       console.error('Error al confirmar facturación:', error);
-      alert('Error al confirmar la facturación');
+      await this.notificaciones.showError('Error al confirmar la facturación');
     }
   }
 
@@ -368,8 +385,15 @@ export class FacturacionPage implements OnInit {
   }
 
   //Cerrar sesión
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
       this.api.logout();
       this.cerrarMenu();
     }

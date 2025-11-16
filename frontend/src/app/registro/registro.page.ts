@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.spec';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/angular/standalone';
+import { NotificacionService } from '../services/notificacion.service';
 
 @Component({
   selector: 'app-registro',
@@ -14,7 +15,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from
 })
 export class RegistroPage implements OnInit {
 
-  constructor( private api: ApiService) { }
+  constructor( private api: ApiService, private notificaciones: NotificacionService) { }
 
   //Definicion de variables
   rut: string = '';
@@ -183,28 +184,28 @@ export class RegistroPage implements OnInit {
     }
   }
 
-  handleClick() {
+  async handleClick() {
   //Verificar que todos los campos tengan valor
   if (!this.nombre || !this.apellido || !this.rut || !this.correo || !this.password || !this.confirmPassword) {
-    alert('Por favor, completa todos los campos.');
+    await this.notificaciones.showWarning('Por favor, completa todos los campos.');
     return;
   }
 
   //Verificar longitud de contraseña
   if (this.password.length < 8) {
-    alert('La contraseña debe tener al menos 8 caracteres.');
+    await this.notificaciones.showWarning('La contraseña debe tener al menos 8 caracteres.');
     return;
   }
 
   //Verificar coincidencia de contraseña
   if (this.password !== this.confirmPassword) {
-    alert('Las contraseñas no coinciden.');
+    await this.notificaciones.showWarning('Las contraseñas no coinciden.');
     return;
   }
 
   //Verificar errores individuales
   if (this.nombreError || this.apellidoError || this.rutError || this.correoError || this.passwordError || this.confirmPasswordError) {
-    alert('Por favor corrige los errores antes de continuar.');
+    await this.notificaciones.showWarning('Por favor corrige los errores antes de continuar.');
     return;
   }
 
@@ -227,9 +228,8 @@ export class RegistroPage implements OnInit {
   });
 }
 
-
-
   ngOnInit() {
+    this.notificaciones.start();
   }
 
 }

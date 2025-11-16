@@ -2,34 +2,119 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.spec';
-import { Router } from '@angular/router';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonItem, IonList, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonList, IonItem, IonIcon, IonLabel} from '@ionic/angular/standalone';
 import { Perimisos } from '../services/perimisos';
+import { addIcons } from 'ionicons';
+import { Router } from '@angular/router';
+import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
+  bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
+import { NotificacionService } from '../services/notificacion.service';
+
+//Iconos
+addIcons({ 
+ pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
+  chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
+  bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone
+});
 
 @Component({
   selector: 'app-lista-clientes',
   templateUrl: './lista-clientes.page.html',
   styleUrls: ['./lista-clientes.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, IonLabel, IonItem, IonList, IonButton]
+  imports: [FormsModule,
+      CommonModule, IonContent, IonButton, IonList, IonItem, IonIcon, IonLabel]
 })
 export class ListaClientesPage implements OnInit {
+
+    //Variables del menú
+    menuAbierto: boolean = false;
+    nombreUsuario: string = '';
+    apellidoUsuario: string = '';
+    puedeIr = false;
+    verReportes = false;
+    verProductos = false;
+    cargando: boolean = true;
 
   puedeEditar = false;
 
   clientes: any[] = [];
 
-  constructor(private api: ApiService, private router: Router, public permisos: Perimisos) { }
+  constructor(private api: ApiService, private router: Router, public permisos: Perimisos, private notificaciones: NotificacionService) { }
 
   async ngOnInit() {
+    this.verProductos = await this.permisos.checkPermission('view_productos')
+    this.puedeIr = await this.permisos.checkPermission('view_usuarios')
+    this.verReportes = await this.permisos.checkPermission('view_reportes')
+    this.cargarDatosUsuario();
     this.puedeEditar = await this.permisos.checkPermission('editar_clientes')
     const response = await this.api.listarClientes()
     console.log("Respuesta del backend", response)
     this.clientes = response;
+    // Inicializa el servicio de avisos si hay sesión
+    try { await this.notificaciones.start(); } catch {}
   }
 
-  async eliminarCliente(id: string){
-    this.api.eliminarCliente(id)
+    //Metodo para recargar cada vez que se entre a la pagina
+  async ionViewWillEnter() {
+    this.cargando = true;
+    const response = await this.api.listarClientes()
+    //Cargar todos los dashboards en paralelo
+    try {
+      await Promise.all([
+      this.cargarDatosUsuario(),
+      this.verProductos = await this.permisos.checkPermission('view_productos'),
+      this.puedeIr = await this.permisos.checkPermission('view_usuarios'),
+      this.verReportes = await this.permisos.checkPermission('view_reportes'),
+      this.puedeEditar = await this.permisos.checkPermission('editar_clientes'),
+      this.clientes = response
+      ]);
+    } catch (error) {
+      console.error('Error cargando dashboards:', error);
+    } finally {
+      this.cargando = false;
+    }
+  }
+
+  async cargarDatosUsuario() {
+    const usuario = await this.api.getUsuarioActual();
+    if (usuario) {
+      this.nombreUsuario = usuario.nombre;
+      this.apellidoUsuario = usuario.apellido;
+      console.log('Usuario cargado:', usuario); 
+    } else {
+      //Si no hay usuario, redirigir al login
+      console.warn('No hay usuario en IndexedDB, redirigiendo al login');
+      this.router.navigate(['/login']);
+    }
+  }
+
+  async eliminarCliente(id: string) {
+    const confirmar = await this.notificaciones.showConfirm(
+      'Esta acción no se puede deshacer.',
+      '¿Confirmar eliminación del cliente?',
+      'Sí, eliminar',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
+      try {
+        await this.api.eliminarCliente(id);
+        await this.recargarClientes();
+        await this.notificaciones.showSuccess('Cliente eliminado correctamente');
+      } catch (error) {
+        console.error('Error al eliminar cliente:', error);
+        await this.notificaciones.showError('Error al eliminar el cliente');
+      }
+    }
+  }
+
+  async recargarClientes() {
+    const response = await this.api.listarClientes();
+    this.clientes = response;
   }
 
   agregarCliente(){
@@ -37,9 +122,70 @@ export class ListaClientesPage implements OnInit {
   }
   
   editarCliente(id: string){
-
     this.router.navigate(['/clientes', id])
   }
+
+  //Control del menú
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
+
+  //Navegación desde menú lateral
+  Irapedidosmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/pedidos']);
+  }
+
+  IrAPerfil(){
+    this.cerrarMenu();
+    this.router.navigate(['/perfil'])
+  }
+
+  Irafacturasmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/facturacion']);
+  }
+
+  Iradashboardsmenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/dashboard']);
+  }
   
+  IrMenu() {
+    this.cerrarMenu();
+    this.router.navigate(['/hub']);
+  }
+
+  IrClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/clientes']);
+  }
+
+  IrUsuarios(){
+    this.cerrarMenu();
+    this.router.navigate(['usuarios'])
+  }
+
+  IrListarClientes() {
+    this.cerrarMenu();
+    this.router.navigate(['/lista-clientes']);
+  }
+
+  IraProductos() {
+    this.cerrarMenu();
+    this.router.navigate(['/productos']);
+  }
+
+  //Cerrar sesión
+  cerrarSesion() {
+    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+      this.api.logout();
+      this.cerrarMenu();
+    }
+  }
 
 }

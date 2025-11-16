@@ -10,9 +10,9 @@ import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
   bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
-
 import { Perimisos } from '../services/perimisos';
 import { NotificacionService } from '../services/notificacion.service';
+import { AlertController } from '@ionic/angular';
 
 //Interfaces
 export interface Producto {
@@ -26,7 +26,7 @@ export interface Pedido {
   id: number;
   nombre: string;
   cliente: string;
-  clienteId?: string; // AGREGAR ESTA LÍNEA (opcional)
+  clienteId?: string;
   direccion: string;
   productos: Producto[];
   seleccionado?: boolean;
@@ -116,7 +116,8 @@ export class PedidosPage implements OnInit {
   productosErrors: string[] = [''];
   pesosErrors: { [productoIndex: number]: string[] } = {};
 
-  constructor(private api: ApiService, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService) { }
+  constructor(private api: ApiService, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService,
+              private alertController: AlertController) { }
 
 async ngOnInit() {
   this.puedeIr = await this.permisos.checkPermission('view_usuarios')
@@ -135,7 +136,7 @@ async cargarClientesDisponibles() {
     console.log('Clientes cargados: ', this.clientesDisponibles);
   } catch(error) {
     console.error("Error al cargar clientes: ", error);
-    alert("Error al cargar clientes disponibles");
+    await this.notificaciones.showError("Error al cargar clientes disponibles");
   }
 }
 
@@ -213,13 +214,20 @@ async cargarClientesDisponibles() {
   }
 
   //Cerrar sesión
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar sesión',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
       this.api.logout();
       this.cerrarMenu();
     }
   }
-
+  
   async cargarPedidosDesdeBackend(){
     try{
       const pedidosBackend = await this.api.listarPedidos();
@@ -235,7 +243,7 @@ async cargarClientesDisponibles() {
       console.log('Pedidos transformados y ordenados:', this.pedidos);
     } catch(error) {
       console.error('Error al cargar pedidos:', error);
-      alert('Error al cargar los pedidos');
+      await this.notificaciones.showError('Error al cargar los pedidos');
     }
   }
 
@@ -289,7 +297,7 @@ async cargarClientesDisponibles() {
       console.log('Productos cargados: ', this.productosDisponibles)
     } catch(error){
       console.error("Error al cargar productos: ", error);
-      alert("Error al cargar productos disponibles");
+      await this.notificaciones.showError('Error al cargar productos disponibles');
     }
   }
 
@@ -385,21 +393,19 @@ async cargarClientesDisponibles() {
   //Validacion: Cliente
   actualizarCliente(event: any) {
     const clienteId = event.detail.value;
-    
-    // Buscar el cliente seleccionado
     const clienteSeleccionado = this.clientesDisponibles.find(
       cliente => cliente.id_cliente === clienteId || cliente.id === clienteId
     );
     
     if (clienteSeleccionado) {
-      // Asignar nombre del cliente
+      //Asignar datos del cliente
       this.nuevoPedido.cliente = clienteSeleccionado.nombre || clienteSeleccionado.razon_social || '';
       this.nuevoPedido.clienteId = clienteSeleccionado.id_cliente || clienteSeleccionado.id;
       
-      // Autocompletar dirección
+      //Autocompletar dirección
       this.nuevoPedido.direccion = clienteSeleccionado.direccion || '';
       
-      // Actualizar estilos
+      //Actualizar estilos
       this.underlineCliente = '#28a745';
       this.underlineDireccion = this.nuevoPedido.direccion.length > 0 ? '#28a745' : '#cccccc';
       this.clienteError = '';
@@ -413,8 +419,28 @@ async cargarClientesDisponibles() {
 
   //Validacion: Direccion
   actualizarDireccion(event: any) {
-    this.nuevoPedido.direccion = event.target.value;
-    this.underlineDireccion = this.nuevoPedido.direccion.length > 0 ? '#28a745' : '#cccccc';
+    const direccionSeleccionada = event.detail.value;
+    const clienteEncontrado = this.clientesDisponibles.find(
+      cliente => cliente.direccion === direccionSeleccionada
+    );
+    
+    if (clienteEncontrado) {
+      //Asignar datos del cliente encontrado
+      this.nuevoPedido.cliente = clienteEncontrado.nombre || clienteEncontrado.razon_social || '';
+      this.nuevoPedido.clienteId = clienteEncontrado.id_cliente || clienteEncontrado.id;
+      this.nuevoPedido.direccion = direccionSeleccionada;
+      
+      //Actualizar estilos
+      this.underlineCliente = '#28a745';
+      this.underlineDireccion = '#28a745';
+      this.clienteError = '';
+      
+      console.log('Cliente encontrado por dirección:', clienteEncontrado);
+    } else {
+      //Si no se encuentra cliente, solo actualizar dirección
+      this.nuevoPedido.direccion = direccionSeleccionada;
+      this.underlineDireccion = direccionSeleccionada.length > 0 ? '#28a745' : '#cccccc';
+    }
   }
 
   //Validacion: Producto
@@ -426,7 +452,7 @@ async cargarClientesDisponibles() {
     );
     
     if (yaSeleccionado) {
-      alert('Este producto ya fue seleccionado. Por favor, elige otro.');
+      this.notificaciones.showWarning('Este producto ya fue seleccionado. Por favor, elige otro.');
       this.productosInputs[index].id = 0;
       this.productosInputs[index].nombre = '';
       this.underlinesProductosNombre[index] = '#ff4d4d';
@@ -568,23 +594,23 @@ async cargarClientesDisponibles() {
       this.underlinesProductosNombre.splice(index, 1);
       this.underlinesProductosCajas.splice(index, 1);
     } else {
-      alert('Debe haber al menos un producto');
+      this.notificaciones.showWarning('Debe haber al menos un producto');
     }
   }
 
   async guardarPedido() {
     if (!this.nuevoPedido.nombre.trim()) {
-      alert('Ingresa el nombre del pedido');
+      await this.notificaciones.showWarning('Ingresa el nombre del pedido');
       return;
     }
     
     if (!this.nuevoPedido.cliente || this.nuevoPedido.cliente.trim().length < 3) {
-      alert('Selecciona un cliente válido');
+      await this.notificaciones.showWarning('Selecciona un cliente válido'); 
       return;
     }
 
     if (!this.nuevoPedido.direccion.trim()) {
-      alert('La dirección de envío es requerida (debe tener el cliente seleccionado una dirección)');
+      await this.notificaciones.showWarning('La dirección de envío es requerida'); 
       return;
     }
 
@@ -594,7 +620,7 @@ async cargarClientesDisponibles() {
     });
 
     if (productosValidos.length === 0) {
-      alert('Agrega al menos un producto con tipo de carne seleccionado y cantidad de cajas mayor o igual a 1');
+      await this.notificaciones.showWarning('Agrega al menos un producto válido'); 
       return;
     }
 
@@ -633,6 +659,7 @@ async cargarClientesDisponibles() {
         this.underlinesProductosCajas = ['#cccccc'];
         this.clienteError = '';
         this.productosErrors = [''];
+        await this.notificaciones.showSuccess('Pedido editado correctamente');
         
       }else{
         console.log("Enviando pedido al backend:", payload);
@@ -643,7 +670,7 @@ async cargarClientesDisponibles() {
           payload.lineas
         );
 
-        console.log("Pedido creado exitosamente: ", res );
+        await this.notificaciones.showSuccess('Pedido creado con éxito');
 
         await this.cargarPedidosDesdeBackend();
 
@@ -662,7 +689,7 @@ async cargarClientesDisponibles() {
       }
     } catch(error) {
       console.error("Error al guardar pedido:", error);
-      alert("Error al guardar el pedido");
+      await this.notificaciones.showError("Error al guardar el pedido");
     }
   }
 
@@ -689,13 +716,13 @@ async cargarClientesDisponibles() {
     const pedidosActivos = this.pedidos.filter(p => p.estado !== 'completado');
 
     if (pedidosActivos.length === 0) {
-      alert('No hay pedidos activos para eliminar');
+      this.notificaciones.showInfo('No hay pedidos activos para eliminar');
       return;
     }
     
     const pedidosEliminables = pedidosActivos.filter(p => this.puedeEliminar(p));
     if (pedidosEliminables.length === 0) {
-      alert('No hay pedidos disponibles para eliminar. Solo se pueden eliminar pedidos en estado "Pendiente de Pesos" o "Pendiente de Confirmación"');
+      this.notificaciones.showWarning('No hay pedidos disponibles para eliminar');
       return;
     }
         
@@ -719,21 +746,28 @@ async cargarClientesDisponibles() {
 
   toggleSeleccionPedido(pedido: Pedido) {
     if (!this.puedeEliminar(pedido)) {
-      alert('Este pedido no se puede eliminar porque ya tiene pesos asignados o está en proceso de facturación');
+      this.notificaciones.showWarning('Este pedido no se puede eliminar');
       return;
     }
     pedido.seleccionado = !pedido.seleccionado;
   }
-  
+
   async eliminarPedidosSeleccionados() {
     const seleccionados = this.pedidos.filter(p => p.seleccionado);
     
     if (seleccionados.length === 0) {
-      alert('Selecciona al menos un pedido para eliminar');
+      await this.notificaciones.showWarning('Selecciona al menos un pedido para eliminar');
       return;
     }
 
-    if (confirm(`¿Estás seguro de eliminar ${seleccionados} pedido(s)?`)) {
+    const confirmar = await this.notificaciones.showConfirm(
+      `Se eliminarán ${seleccionados.length} pedido(s) de forma permanente.`,
+      '¿Confirmar eliminación?',
+      'Sí, eliminar',
+      'Cancelar'
+    );
+
+    if (confirmar) {
       const ids = seleccionados.map(pedido => pedido.id);
       this.pedidos = this.pedidos.filter(p => !p.seleccionado);
       this.pedidosFiltrados = this.pedidos.filter(pedido => {
@@ -741,14 +775,16 @@ async cargarClientesDisponibles() {
         
         const termino = this.terminoBusqueda.toLowerCase();
         return pedido.nombre.toLowerCase().includes(termino) ||
-               pedido.cliente.toLowerCase().includes(termino) ||
-               pedido.direccion.toLowerCase().includes(termino) ||
-               pedido.productos.some(prod => prod.nombre.toLowerCase().includes(termino));
+              pedido.cliente.toLowerCase().includes(termino) ||
+              pedido.direccion.toLowerCase().includes(termino) ||
+              pedido.productos.some(prod => prod.nombre.toLowerCase().includes(termino));
       });
       this.mostrarEliminarPedido = false;
       await this.api.eliminarPedidos(ids);
+      await this.notificaciones.showSuccess(`${seleccionados.length} pedido(s) eliminado(s)`);
     }
   }
+
   get pedidosSeleccionados(): number {
     return this.pedidos.filter(p => p.seleccionado).length;
   }
@@ -758,13 +794,13 @@ async cargarClientesDisponibles() {
   const pedidosActivos = this.pedidos.filter(p => p.estado == 'pendiente_pesos');
   
   if (pedidosActivos.length === 0) {
-    alert('No hay pedidos activos para editar');
+    this.notificaciones.showInfo('No hay pedidos activos para editar');
     return;
   }
   
   const pedidosEditables = pedidosActivos.filter(p => this.puedeEditar(p));
   if (pedidosEditables.length === 0) {
-    alert('No hay pedidos disponibles para editar. Solo se pueden editar pedidos en estado "Pendiente de Pesos"');
+    this.notificaciones.showWarning('No hay pedidos disponibles para editar');
     return;
   }
     
@@ -790,7 +826,7 @@ async cargarClientesDisponibles() {
 
   toggleSeleccionPedidoEditar(pedido: Pedido) {
     if (!this.puedeEditar(pedido)) {
-      alert('Este pedido no se puede editar porque ya tiene pesos asignados o está en proceso de facturación');
+      this.notificaciones.showWarning('Este pedido no se puede editar');
       return;
     }
     this.pedidos.forEach(p => {
@@ -806,7 +842,7 @@ async cargarClientesDisponibles() {
     const pedidoSeleccionado = this.pedidos.find(p => p.seleccionado);
     
     if (!pedidoSeleccionado) {
-      alert('Selecciona un pedido para editar');
+      await this.notificaciones.showWarning('Selecciona un pedido para Editar');
       return;
     }
 
@@ -849,13 +885,13 @@ async cargarClientesDisponibles() {
   const pedidosActivos = this.pedidos.filter(p => p.estado == 'pendiente_pesos');
     
     if (pedidosActivos.length === 0) {
-      alert('No hay pedidos activos para asignar pesos');
+      this.notificaciones.showInfo('No hay pedidos activos para asignar pesos');
       return;
     }
     
     const pedidosConPesosAsignables = pedidosActivos.filter(p => this.puedeAsignarPesos(p));
     if (pedidosConPesosAsignables.length === 0) {
-      alert('No hay pedidos disponibles para asignar pesos. Solo se pueden asignar pesos a pedidos en estado "Pendiente de Pesos"');
+      this.notificaciones.showWarning('No hay pedidos disponibles para asignar pesos');
       return;
     }
     
@@ -883,7 +919,7 @@ async cargarClientesDisponibles() {
 
   toggleSeleccionPedidoPesos(pedido: Pedido) {
     if (!this.puedeAsignarPesos(pedido)) {
-      alert('Este pedido no se puede modificar porque ya está en proceso de facturación');
+      this.notificaciones.showWarning('Este pedido no se puede modificar');
       return;
     }
     this.pedidos.forEach(p => {
@@ -899,7 +935,7 @@ async cargarClientesDisponibles() {
     const pedidoSeleccionado = this.pedidos.find(p => p.seleccionado);
     
     if (!pedidoSeleccionado) {
-      alert('Selecciona un pedido para asignar pesos');
+      this.notificaciones.showWarning('Selecciona un pedido para asignar pesos'); 
       return;
     }
 
@@ -962,7 +998,7 @@ async cargarClientesDisponibles() {
 
   async guardarPesos() {
     if (!this.pedidoParaPesos || !this.pedidoParaPesos.id){ 
-      alert('No se puede guardar: Pedido sin ID');
+      await this.notificaciones.showError('No se puede guardar: Pedido sin ID');
       return;
     }
 
@@ -973,13 +1009,13 @@ async cargarClientesDisponibles() {
       const numCajas = this.pedidoParaPesos.productos[i].cajas || 0;
       
       if (!pesos || pesos.length !== numCajas) {
-        alert(`Complete los pesos de todas las cajas del producto ${this.pedidoParaPesos.productos[i].nombre}`);
+        await this.notificaciones.showWarning(`Complete los pesos de ${this.pedidoParaPesos.productos[i].nombre}`); 
         return;
       }
 
       for (let j = 0; j < pesos.length; j++) {
         if (pesos[j] === null || pesos[j] <= 0) {
-          alert(`Ingrese un peso válido para la caja ${j + 1} del producto ${this.pedidoParaPesos.productos[i].nombre}`);
+          await this.notificaciones.showWarning(`Peso inválido en caja ${j + 1} de ${this.pedidoParaPesos.productos[i].nombre}`);
           return;
         }
       }
@@ -1003,7 +1039,7 @@ async cargarClientesDisponibles() {
 
       this.pedidoEditandoId = this.pedidoParaPesos.id
 
-      alert('Pesos asignados correctamente');
+      await this.notificaciones.showSuccess('Pesos asignados correctamente');
 
       this.pedidoParaPesos = null;
       this.indiceParaPesos = -1;
@@ -1011,7 +1047,7 @@ async cargarClientesDisponibles() {
       this.mostrarAsignarPesos = false;
     } catch(error) {
       console.error('Error al guardar pesos', error);
-      alert('Error al guardar los pesos. Por favor, intenta nuevamente.')
+      await this.notificaciones.showError('Error al guardar los pesos');
     }
   }
 
@@ -1157,27 +1193,27 @@ async cargarClientesDisponibles() {
   }
 
   //Enviar a Facturación
-
   async enviarAFacturacion(pedido: Pedido) {
     if (pedido.estado !== 'listo_facturar') {
-      alert('Solo se pueden enviar a facturación pedidos con estado "Listo para Facturar"');
+      await this.notificaciones.showWarning('Solo pedidos listos para facturar');
       return;
     }
     
-    const confirmar = confirm(`¿Deseas enviar el ${pedido.nombre} a facturación?\n\nDirección: ${pedido.direccion}`);
+    const confirmar = await this.notificaciones.showConfirm(
+      `Dirección: ${pedido.direccion}`,
+      `¿Deseas enviar el ${pedido.nombre} a facturación?`,
+      'Sí, enviar',
+      'Cancelar'
+    );
     
     if (!confirmar) {
       return;
     }
     
     try {
-      //Cambiar el estado a 'pendiente_confirmacion' o 'facturado'
       pedido.estado = 'pendiente_confirmacion';
-      
-      //Actualizar en el backend
       await this.api.actualizarEstadoPedido(pedido.id, pedido.estado);
       
-      //Actualizar la lista localmente
       const index = this.pedidos.findIndex(p => p.id === pedido.id);
       if (index !== -1) {
         this.pedidos[index] = pedido;
@@ -1186,13 +1222,13 @@ async cargarClientesDisponibles() {
       this.pedidosFiltrados = [...this.pedidos];
       this.aplicarFiltros();
       
-      alert(`${pedido.nombre} enviado a facturación exitosamente`);
+      await this.notificaciones.showSuccess(`${pedido.nombre} enviado a facturación`);
       
       console.log('Pedido enviado a facturación:', pedido);
       
     } catch (error) {
       console.error('Error al enviar a facturación:', error);
-      alert('Error al enviar el pedido a facturación');
+      await this.notificaciones.showError('Error al enviar a facturación');
     }
   }
 
@@ -1232,6 +1268,12 @@ ordenarPedidosPorEstado(pedidos: Pedido[]): Pedido[] {
 async ionViewWillEnter() {
   await this.cargarPedidosDesdeBackend();
   this.aplicarFiltros();
+   this.puedeIr = await this.permisos.checkPermission('view_usuarios')
+  this.pedidosFiltrados = [...this.pedidos];
+  await this.cargarProductosDisponibles();
+  await this.cargarClientesDisponibles(); 
+  await this.cargarPedidosDesdeBackend();
+  this.cargarDatosUsuario();
 }
 
 } 
