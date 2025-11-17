@@ -10,7 +10,7 @@ import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
   bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
-
+import { NotificacionService } from '../services/notificacion.service';
 
 //Iconos
 addIcons({ 
@@ -47,11 +47,12 @@ export class UsuariosPage implements OnInit {
 
   usuarios: any[] = [];
 
-  constructor(private api: ApiService, public permisos: Perimisos, private router: Router) { }
+  constructor(private api: ApiService, public permisos: Perimisos, private router: Router, private notificaciones: NotificacionService) { }
 
 
-  darPermisos(id: string){
+  async darPermisos(id: string){
     this.api.darPermisos(id);
+    await this.notificaciones.showSuccess('Permisos asignados correctamente');
   }
   
   esGerente(u: any): boolean {
@@ -85,6 +86,8 @@ export class UsuariosPage implements OnInit {
     this.puedeIr = await this.permisos.checkPermission('view_usuarios')
     this.verReportes = await this.permisos.checkPermission('view_reportes')
     this.cargarDatosUsuario();
+    // Inicializa el servicio de avisos si hay sesión
+    try { await this.notificaciones.start(); } catch {}
   }
 
   //Metodo para recargar cada vez que se entre a la pagina
@@ -105,7 +108,6 @@ export class UsuariosPage implements OnInit {
       this.cargando = false;
     }
   }
-
 
   //Control del menú
   toggleMenu() {
@@ -163,10 +165,18 @@ export class UsuariosPage implements OnInit {
   }
 
   //Cerrar sesión
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-      this.api.logout();
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar sesión',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
+      await this.api.logout();
       this.cerrarMenu();
+      this.router.navigate(['/home']); 
     }
   }
   

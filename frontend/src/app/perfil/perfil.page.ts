@@ -416,12 +416,18 @@ export class PerfilPage implements OnInit {
   }
 
   //Cerrar sesión
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {    
-      this.enablePasswordEdit = false;
-      this.enableEdit = false;
-      this.api.logout();
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar sesión',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
+      await this.api.logout();
       this.cerrarMenu();
+      this.router.navigate(['/home']); 
     }
   }
 

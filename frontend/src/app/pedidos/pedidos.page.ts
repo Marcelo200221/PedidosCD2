@@ -123,7 +123,7 @@ async ngOnInit() {
   this.puedeIr = await this.permisos.checkPermission('view_usuarios')
   this.pedidosFiltrados = [...this.pedidos];
   await this.cargarProductosDisponibles();
-  await this.cargarClientesDisponibles(); // AGREGAR ESTA LÍNEA
+  await this.cargarClientesDisponibles(); 
   await this.cargarPedidosDesdeBackend();
   this.cargarDatosUsuario();
   // Disparar chequeo de avisos solo al entrar a pedidos
@@ -716,7 +716,7 @@ async cargarClientesDisponibles() {
     const pedidosActivos = this.pedidos.filter(p => p.estado !== 'completado');
 
     if (pedidosActivos.length === 0) {
-      this.notificaciones.showInfo('No hay pedidos activos para eliminar');
+      this.notificaciones.showWarning('No hay pedidos activos para eliminar');
       return;
     }
     
@@ -794,7 +794,7 @@ async cargarClientesDisponibles() {
   const pedidosActivos = this.pedidos.filter(p => p.estado == 'pendiente_pesos');
   
   if (pedidosActivos.length === 0) {
-    this.notificaciones.showInfo('No hay pedidos activos para editar');
+    this.notificaciones.showWarning('No hay pedidos activos para editar');
     return;
   }
   
@@ -885,7 +885,7 @@ async cargarClientesDisponibles() {
   const pedidosActivos = this.pedidos.filter(p => p.estado == 'pendiente_pesos');
     
     if (pedidosActivos.length === 0) {
-      this.notificaciones.showInfo('No hay pedidos activos para asignar pesos');
+      this.notificaciones.showWarning('No hay pedidos activos para asignar pesos');
       return;
     }
     

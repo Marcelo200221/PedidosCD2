@@ -69,7 +69,16 @@ export class NotificacionService {
       duration: 3000,
       position: 'top',
       color: 'primary',
-      cssClass: ['notif-toast', `notif-offset-${index}`]
+      cssClass: ['notif-toast', `notif-offset-${index}`],
+      buttons: [
+        {
+          icon: 'close-Circle',
+          role: 'cancel',
+          handler: () => {
+            // El toast se cerrará automáticamente
+          }
+        }
+      ]
     });
     await t.present();
     this.activos.push(t as any);
@@ -79,7 +88,7 @@ export class NotificacionService {
       this.reordenarToasts();
     });
   }
-
+  
   private reordenarToasts() {
     this.activos.forEach((el, i) => {
       try {
@@ -107,7 +116,7 @@ export class NotificacionService {
       cssClass: 'custom-toast toast-success',
       buttons: [
         {
-          icon: 'checkmark-circle',
+          icon: 'close-Circle',
           role: 'cancel'
         }
       ]
@@ -127,7 +136,7 @@ export class NotificacionService {
       cssClass: 'custom-toast toast-error',
       buttons: [
         {
-          icon: 'close-circle',
+          icon: 'close-Circle',
           role: 'cancel'
         }
       ]
@@ -147,7 +156,7 @@ export class NotificacionService {
       cssClass: 'custom-toast toast-warning',
       buttons: [
         {
-          icon: 'alert-circle',
+          icon: 'close-Circle',
           role: 'cancel'
         }
       ]
@@ -167,7 +176,7 @@ export class NotificacionService {
       cssClass: 'custom-toast toast-info',
       buttons: [
         {
-          icon: 'information-circle',
+          icon: 'close-circle',
           role: 'cancel'
         }
       ]
@@ -176,7 +185,7 @@ export class NotificacionService {
   }
 
   /**
-   * Toast personalizado con color corporativo
+   * Toast para cerrar y aceptar
    */
   async showCustom(message: string, duration: number = 3000) {
     const t = await this.toast.create({
