@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, IonList, IonItem, IonLabel, IonIcon, IonInput, 
+import { IonHeader, IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, IonList, IonItem, IonLabel, IonIcon, IonInput, 
   IonCheckbox, IonSelect, IonSelectOption, IonSpinner} from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
@@ -30,6 +30,7 @@ export interface Pedido {
   direccion: string;
   productos: Producto[];
   seleccionado?: boolean;
+  fecha_entrega?: string;
   estado?: 'pendiente_pesos' | 'listo_facturar' | 'pendiente_confirmacion' | 'completado';
 }
 
@@ -49,7 +50,7 @@ addIcons({
   imports: [
     FormsModule,
     CommonModule,
-    IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton,
+    IonHeader, IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton,
     IonList, IonItem, IonIcon, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonSpinner
   ]
 })
@@ -133,9 +134,7 @@ async ngOnInit() {
 async cargarClientesDisponibles() {
   try {
     this.clientesDisponibles = await this.api.listarClientes();
-    console.log('Clientes cargados: ', this.clientesDisponibles);
   } catch(error) {
-    console.error("Error al cargar clientes: ", error);
     await this.notificaciones.showError("Error al cargar clientes disponibles");
   }
 }
@@ -145,10 +144,8 @@ async cargarClientesDisponibles() {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
-      console.warn('No hay usuario en IndexedDB, redirigiendo al login');
       this.router.navigate(['/login']);
     }
   }
@@ -227,24 +224,49 @@ async cargarClientesDisponibles() {
       this.cerrarMenu();
     }
   }
-  
+
   async cargarPedidosDesdeBackend(){
     try{
       const pedidosBackend = await this.api.listarPedidos();
-      console.log('Pedidos cargados desde backend:', pedidosBackend);
+      // Filtrar solo pedidos creados hoy (no por fecha de entrega)
+      const pedidosDelDia = this.filtrarPedidosCreadosHoy(pedidosBackend);
 
-      this.pedidos = pedidosBackend.map((pedido: any) => this.mapearPedidoBackend(pedido));
+      this.pedidos = pedidosDelDia.map((pedido: any) => this.mapearPedidoBackend(pedido));
       
-      //Orden
+      // Orden
       this.pedidos = this.ordenarPedidosPorEstado(this.pedidos);
       
       this.pedidosFiltrados = [...this.pedidos];
-
-      console.log('Pedidos transformados y ordenados:', this.pedidos);
     } catch(error) {
-      console.error('Error al cargar pedidos:', error);
-      await this.notificaciones.showError('Error al cargar los pedidos');
     }
+  }
+
+  // Cambiar a filtrar por fecha de CREACIÓN, no fecha de entrega
+  private filtrarPedidosCreadosHoy(pedidos: any[]): any[] {
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    
+    return pedidos.filter((pedido: any) => {
+      // Buscar el campo de fecha de creación (puede variar según tu backend)
+      const fechaCreacionStr = pedido.created_at || pedido.fecha_creacion || pedido.fecha;
+      
+      if (!fechaCreacionStr) {
+        return false;
+      }
+      
+      // Manejar diferentes formatos de fecha
+      const fechaCreacion = new Date(fechaCreacionStr);
+      
+      // Si la fecha es inválida, no filtrar
+      if (isNaN(fechaCreacion.getTime())) {
+        return false;
+      }
+      
+      fechaCreacion.setHours(0, 0, 0, 0);
+      
+      const esHoy = fechaCreacion.getTime() === hoy.getTime();
+      return esHoy;
+    });
   }
 
   private mapearPedidoBackend(pedidosBackend: any): Pedido {
@@ -258,7 +280,8 @@ async cargarClientesDisponibles() {
         id: linea.producto.id,
         nombre: linea.producto.nombre,
         cajas: linea.cantidad_cajas,
-        pesos: pesos.length > 0 ? pesos : undefined 
+        pesos: pesos.length > 0 ? pesos : undefined,
+        fecha_entrega: pedidosBackend.fecha_entrega
       };
     });
 
@@ -277,8 +300,6 @@ async cargarClientesDisponibles() {
       estado = todosTienenPesos ? 'listo_facturar' : 'pendiente_pesos';
     }
 
-    console.log(`Pedido ${pedidosBackend.id} - Estado: ${estado} - Productos:`, productos);
-
     return {
       id: pedidosBackend.id,
       nombre: `pedido ${pedidosBackend.id}`,
@@ -294,9 +315,7 @@ async cargarClientesDisponibles() {
   async cargarProductosDisponibles() {
     try{
       this.productosDisponibles = await this.api.productos();
-      console.log('Productos cargados: ', this.productosDisponibles)
     } catch(error){
-      console.error("Error al cargar productos: ", error);
       await this.notificaciones.showError('Error al cargar productos disponibles');
     }
   }
@@ -409,8 +428,7 @@ async cargarClientesDisponibles() {
       this.underlineCliente = '#28a745';
       this.underlineDireccion = this.nuevoPedido.direccion.length > 0 ? '#28a745' : '#cccccc';
       this.clienteError = '';
-      
-      console.log('Cliente seleccionado:', clienteSeleccionado);
+
     } else {
       this.underlineCliente = '#cccccc';
       this.clienteError = '';
@@ -434,8 +452,6 @@ async cargarClientesDisponibles() {
       this.underlineCliente = '#28a745';
       this.underlineDireccion = '#28a745';
       this.clienteError = '';
-      
-      console.log('Cliente encontrado por dirección:', clienteEncontrado);
     } else {
       //Si no se encuentra cliente, solo actualizar dirección
       this.nuevoPedido.direccion = direccionSeleccionada;
@@ -624,10 +640,19 @@ async cargarClientesDisponibles() {
       return;
     }
 
+    //Determinar la fecha correcta según si es edición o creación
+    let fechaEntrega: string;
+    if (this.pedidoEditandoId) {
+      const pedidoOriginal = this.pedidos.find(p => p.id === this.pedidoEditandoId);
+      fechaEntrega = pedidoOriginal?.fecha_entrega || new Date().toISOString().split('T')[0];
+    } else {
+      fechaEntrega = new Date().toISOString().split('T')[0];
+    }
+
     const payload = {
       cliente: this.nuevoPedido.cliente,
       direccion: this.nuevoPedido.direccion,
-      fecha_entrega: new Date().toISOString().split('T')[0],
+      fecha_entrega: fechaEntrega,  
       lineas: productosValidos.map(prod => ({
         producto_id: prod.id,
         cajas: Array.from({length: prod.cajas || 0}, () => ({
@@ -639,9 +664,7 @@ async cargarClientesDisponibles() {
 
     try{
       if(this.pedidoEditandoId){
-        console.log("Editando pedido con ID:", this.pedidoEditandoId);
         const res = await this.api.editarPedido(this.pedidoEditandoId, payload);
-        console.log("Pedido editado exitosamente: ", res);
         
         await this.cargarPedidosDesdeBackend(); 
         
@@ -649,7 +672,6 @@ async cargarClientesDisponibles() {
         this.productosInputs = [{ id: 0, nombre: '', cajas: null }];
         this.pedidoEditandoId = undefined; 
         this.indiceEditando = -1;
-
 
         this.mostrarAgregarPedido = false;
         this.underlineNombrePedido = '#cccccc';
@@ -662,7 +684,6 @@ async cargarClientesDisponibles() {
         await this.notificaciones.showSuccess('Pedido editado correctamente');
         
       }else{
-        console.log("Enviando pedido al backend:", payload);
         const res = await this.api.crearPedido(
           payload.cliente,
           payload.direccion,
@@ -688,7 +709,6 @@ async cargarClientesDisponibles() {
         
       }
     } catch(error) {
-      console.error("Error al guardar pedido:", error);
       await this.notificaciones.showError("Error al guardar el pedido");
     }
   }
@@ -1020,24 +1040,24 @@ async cargarClientesDisponibles() {
         }
       }
     }
+    
     try{
       const productosConPesos = this.pedidoParaPesos.productos.map((prod, index) => ({
         id: prod.id,
         pesos: this.pesosTemporales[index]
-      }))
-      await this.api.guardarPesosPedido(pedidoId, this.pedidoParaPesos, productosConPesos);
+      }));
+      
+      await this.api.guardarPesosPedido(pedidoId, productosConPesos);
     
-
       this.pedidoParaPesos.productos.forEach((prod, index) => {
         prod.pesos = this.pesosTemporales[index];
       });
 
       this.pedidoParaPesos.estado = 'listo_facturar';
-
       this.pedidos[this.indiceParaPesos] = this.pedidoParaPesos;
       this.pedidosFiltrados = [...this.pedidos];
 
-      this.pedidoEditandoId = this.pedidoParaPesos.id
+      this.pedidoEditandoId = this.pedidoParaPesos.id;
 
       await this.notificaciones.showSuccess('Pesos asignados correctamente');
 
@@ -1046,7 +1066,6 @@ async cargarClientesDisponibles() {
       this.pesosTemporales = {};
       this.mostrarAsignarPesos = false;
     } catch(error) {
-      console.error('Error al guardar pesos', error);
       await this.notificaciones.showError('Error al guardar los pesos');
     }
   }
@@ -1224,10 +1243,8 @@ async cargarClientesDisponibles() {
       
       await this.notificaciones.showSuccess(`${pedido.nombre} enviado a facturación`);
       
-      console.log('Pedido enviado a facturación:', pedido);
       
     } catch (error) {
-      console.error('Error al enviar a facturación:', error);
       await this.notificaciones.showError('Error al enviar a facturación');
     }
   }

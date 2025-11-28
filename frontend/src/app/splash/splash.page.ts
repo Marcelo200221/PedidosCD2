@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { getToken } from '../services/token-storage';
 
 @Component({
   selector: 'app-splash',
@@ -18,13 +19,17 @@ export class SplashPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.fadeOut = true;
-      setTimeout(() => {
-        this.router.navigate(['/home']);
-      }, 1000);
-    }, 3000); 
+    setTimeout(async () => {
+        this.fadeOut = true;
+        await new Promise(res => setTimeout(res, 800));
+        const token = await getToken();
+
+        if (token) {
+          this.router.navigate(['/hub'], { replaceUrl: true });
+        } else {
+          this.router.navigate(['/home'], { replaceUrl: true });
+        }
+
+      }, 1500); 
+    }
   }
-
-
-}

@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tuapp.app',
-  appName: 'TuApp',
+  appId: 'cl.dd.pedidoscd',
+  appName: 'Pedidos CD',
   webDir: 'www',
   server: {
     androidScheme: 'http',
