@@ -5,7 +5,8 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from decimal import Decimal
-
+from django.utils import timezone
+from datetime import timedelta
 from api.utils.invoices import build_invoice_pdf
 from api.models import Pedidos
 
@@ -50,7 +51,10 @@ class GenerarFacturaPorPedido(APIView):
         descuento = request.data.get('descuento', 0)
         moneda = request.data.get('moneda', 'CLP')
         factura_numero = request.data.get('factura_numero', f"P{pedido.id}")
-        fecha = request.data.get('fecha')  # si no viene, util usa hoy
+        fecha_factura = timezone.now().date()
+        fecha_base = pedido.fecha_entrega or pedido.created_at
+        fecha_entrega = fecha_base + timedelta(days=1)
+
 
         items = []
         for det in pedido.lineas.all():
@@ -76,7 +80,8 @@ class GenerarFacturaPorPedido(APIView):
             'cliente': cliente,
             'items': items,
             'factura_numero': factura_numero,
-            'fecha': fecha,
+            'fecha_factura': fecha_factura.strftime("%d-%m-%Y"),
+            'fecha_entrega': fecha_entrega.strftime("%d-%m-%Y") if fecha_entrega else "No especificada",
             'moneda': moneda,
             'descuento': descuento,
             'impuesto_porcentaje': impuesto_pct,

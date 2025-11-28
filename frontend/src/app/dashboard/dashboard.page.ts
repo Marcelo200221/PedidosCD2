@@ -111,6 +111,7 @@ export class DashboardPage implements OnInit {
     //Solo cargar datos del usuario una vez
     this.notificaciones.start();
     await this.cargarDatosUsuario();
+    this.inicializarFechasAlDiaActual();
   }
 
   //Metodo para recargar cada vez que se entre a la pagina
@@ -143,23 +144,56 @@ export class DashboardPage implements OnInit {
     }
   }
 
+  //Filtrar pedidos por el dia
+private filtrarPedidosDelDia(pedidos: any[]): any[] {
+  const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+  
+  return pedidos.filter((pedido: any) => {
+    const fechaPedidoStr = pedido.created_at;
+    
+    if (!fechaPedidoStr) {
+      console.warn('Pedido sin created_at:', pedido.id);
+      return false;
+    }
+    
+    const fechaPedido = new Date(fechaPedidoStr);
+    fechaPedido.setHours(0, 0, 0, 0);
+    
+    const esHoy = fechaPedido.getTime() === hoy.getTime();
+    return esHoy;
+  });
+}
+
+  //Inicialiar fechas del dia actual
+  private inicializarFechasAlDiaActual() {
+    const hoy = new Date();
+    const año = hoy.getFullYear();
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoy.getDate()).padStart(2, '0');
+    
+    this.filtroFechaInicio = `${año}-${mes}-${dia}`;
+    this.filtroFechaFin = `${año}-${mes}-${dia}`;
+  }
+
   //Metodo Cargar productos más vendidos
   async cargarProductosMasVendidos() {
     try {
-      console.log('Cargando productos más vendidos...');
       
       const pedidos = await this.api.listarPedidos();
-      const pedidosCompletados = pedidos.filter((pedido: any) => pedido.estado === 'completado');
+      const pedidosFiltrados = this.filtroActivo 
+        ? pedidos 
+        : this.filtrarPedidosDelDia(pedidos);
+      
+      const pedidosCompletados = pedidosFiltrados.filter((pedido: any) => pedido.estado === 'completado');
       const colores = ['#4CAF50', '#2196F3', '#FF9800', '#E91E63', '#9C27B0', '#00BCD4'];
       
       if (pedidosCompletados.length === 0) {
-        console.log('No hay productos vendidos en pedidos completados');
         this.productosVendidos = [];
         this.maxCantidadProducto = 0;
         return;
       }
-      
-      //Contar productos por cantidad de cajas
+  
       const conteoProductos: { [key: string]: { nombre: string, cantidad: number } } = {};
 
       pedidosCompletados.forEach((pedido: any) => {
@@ -179,7 +213,6 @@ export class DashboardPage implements OnInit {
         }
       });
 
-      // Convertir a array y ordenar
       const productosArray = Object.values(conteoProductos)
         .sort((a, b) => b.cantidad - a.cantidad);
       
@@ -189,11 +222,9 @@ export class DashboardPage implements OnInit {
         return;
       }
       
-      //Calcular el total de cajas vendidas
       const totalCajas = productosArray.reduce((sum, prod) => sum + prod.cantidad, 0);
       this.maxCantidadProducto = Math.max(...productosArray.map(p => p.cantidad));
       
-      // Mapear los productos (máximo 6 para el gráfico)
       this.productosVendidos = productosArray.slice(0, 6).map((producto, index: number) => ({
         nombre: producto.nombre,
         cantidad: producto.cantidad,
@@ -201,8 +232,6 @@ export class DashboardPage implements OnInit {
         color: colores[index % colores.length]
       }));
       
-      console.log('Productos más vendidos procesados:', this.productosVendidos);
-      console.log('Total de cajas vendidas:', totalCajas);
       
     } catch (error) {
       console.error('Error cargando productos más vendidos:', error);
@@ -214,21 +243,21 @@ export class DashboardPage implements OnInit {
   //Metodo Cargar clientes con más pedidos
   async cargarClientesConMasPedidos() {
     try {
-      console.log('Cargando clientes con más pedidos...');
       
-      // Obtener todos los pedidos
       const pedidos = await this.api.listarPedidos();
       
-      // Filtrar solo pedidos completados
-      const pedidosCompletados = pedidos.filter((pedido: any) => pedido.estado === 'completado');
+      //Filtro de pedidos del día actual, solo si no hay filtro activo
+      const pedidosFiltrados = this.filtroActivo 
+        ? pedidos 
+        : this.filtrarPedidosDelDia(pedidos);
       
-      console.log(`Pedidos completados: ${pedidosCompletados.length} de ${pedidos.length}`);
+      //Filtro de pedidos completados
+      const pedidosCompletados = pedidosFiltrados.filter((pedido: any) => pedido.estado === 'completado');
       
       //Colores para las barras
       const colores = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F'];
       
       if (pedidosCompletados.length === 0) {
-        console.log('No hay pedidos completados todavía');
         this.clientesPedidos = [];
         this.maxCantidadCliente = 0;
         return;
@@ -253,7 +282,6 @@ export class DashboardPage implements OnInit {
         conteoClientes[clienteNombre].cantidad++;
       });
 
-      //Convertir a array y ordenar
       const clientesArray = Object.values(conteoClientes)
         .sort((a, b) => b.cantidad - a.cantidad);
       
@@ -262,8 +290,6 @@ export class DashboardPage implements OnInit {
         this.maxCantidadCliente = 0;
         return;
       }
-      
-      //Calcular el total de pedidos
       const totalPedidos = clientesArray.reduce((sum, cliente) => sum + cliente.cantidad, 0);
       this.maxCantidadCliente = Math.max(...clientesArray.map(c => c.cantidad));
       
@@ -275,9 +301,6 @@ export class DashboardPage implements OnInit {
         color: colores[index % colores.length]
       }));
       
-      console.log('Clientes procesados para gráfico:', this.clientesPedidos);
-      console.log('Total de pedidos:', totalPedidos);
-      console.log('Máxima cantidad:', this.maxCantidadCliente);
       
     } catch (error) {
       console.error('Error cargando clientes con más pedidos:', error);
@@ -286,9 +309,14 @@ export class DashboardPage implements OnInit {
     }
   }
 
- async cargarEstadisticas() {
+  async cargarEstadisticas() {
     try {
       const pedidos = await this.api.listarPedidos();
+      
+      //Filtro de pedidos del día actual, solo si no hay filtro activo
+      const pedidosFiltrados = this.filtroActivo 
+        ? pedidos 
+        : this.filtrarPedidosDelDia(pedidos);
       
       //Contar pedidos por estado
       const conteoEstados: { [key: string]: number } = {
@@ -298,14 +326,13 @@ export class DashboardPage implements OnInit {
         'completado': 0
       };
 
-      pedidos.forEach((pedido: any) => {
+      pedidosFiltrados.forEach((pedido: any) => {
         const estado = pedido.estado || 'pendiente_pesos';
         conteoEstados[estado]++;
       });
 
-      this.totalPedidos = pedidos.length;
+      this.totalPedidos = pedidosFiltrados.length;
 
-      //Crear array de estadísticas - SIEMPRE mostrar todos los estados
       this.estadisticas = Object.keys(conteoEstados)
         .map(estado => ({
           estado: this.nombresEstados[estado],
@@ -316,7 +343,6 @@ export class DashboardPage implements OnInit {
           color: this.coloresEstados[estado]
         }));
 
-      console.log('Estadísticas cargadas:', this.estadisticas);
       
     } catch (error) {
       console.error('Error al cargar estadísticas:', error);
@@ -359,12 +385,6 @@ export class DashboardPage implements OnInit {
 
     this.filtroActivo = true;
     this.cerrarFiltroFechas();
-    
-    console.log('Aplicando filtro de fechas:', {
-      inicio: this.filtroFechaInicio,
-      fin: this.filtroFechaFin
-    });
-
     //Recargar todas las estadísticas con el filtro aplicado
     this.refrescarDatosConFiltro();
   }
@@ -374,8 +394,6 @@ export class DashboardPage implements OnInit {
     this.filtroFechaFin = '';
     this.filtroActivo = false;
     this.cerrarFiltroFechas();
-    
-    console.log('Limpiando filtro de fechas');
 
     //Recargar todas las estadísticas sin filtro
     this.refrescarDatos();
@@ -410,23 +428,26 @@ export class DashboardPage implements OnInit {
     try {
       const pedidos = await this.api.listarPedidos();
       
-      console.log('Filtro aplicado:', {
-        fechaInicio: this.filtroFechaInicio,
-        fechaFin: this.filtroFechaFin,
-        totalPedidos: pedidos.length
-      });
+      if (pedidos.length > 0) {
+      }
       
       //Filtrar pedidos por rango de fechas
       const pedidosFiltrados = pedidos.filter((pedido: any) => {
-        const fechaPedido = new Date(pedido.fecha_entrega + 'T00:00:00');
+        if (!pedido.created_at) return false;
+        
+        //Extraer solo la parte de la fecha
+        const fechaPedido = new Date(pedido.created_at);
+        fechaPedido.setHours(0, 0, 0, 0);
+        
         const fechaInicio = new Date(this.filtroFechaInicio + 'T00:00:00');
         const fechaFin = new Date(this.filtroFechaFin + 'T23:59:59');
-        return fechaPedido >= fechaInicio && fechaPedido <= fechaFin;
+        
+        const enRango = fechaPedido >= fechaInicio && fechaPedido <= fechaFin;
+        return enRango;
       });
 
       console.log(`Pedidos filtrados: ${pedidosFiltrados.length} de ${pedidos.length}`);
 
-      //Contar pedidos por estado
       const conteoEstados: { [key: string]: number } = {
         'pendiente_pesos': 0,
         'listo_facturar': 0,
@@ -452,7 +473,6 @@ export class DashboardPage implements OnInit {
         }))
         .filter(stat => stat.cantidad > 0);
 
-      //Si solo hay un estado setear a 100%
       if (this.estadisticas.length === 1) {
         this.estadisticas[0].porcentaje = 100;
       }
@@ -469,32 +489,23 @@ export class DashboardPage implements OnInit {
       console.log('Cargando productos más vendidos con filtro...');
       const pedidos = await this.api.listarPedidos();
       
-      console.log('Filtro aplicado:', {
-        fechaInicio: this.filtroFechaInicio,
-        fechaFin: this.filtroFechaFin
-      });
-      
-      //Filtrar pedidos por rango de fechas y estado completado
       const pedidosFiltrados = pedidos.filter((pedido: any) => {
-        const fechaPedido = new Date(pedido.fecha_entrega + 'T00:00:00');
+        if (!pedido.created_at) return false;
+        
+        const fechaPedido = new Date(pedido.created_at);
+        fechaPedido.setHours(0, 0, 0, 0);
+        
         const fechaInicio = new Date(this.filtroFechaInicio + 'T00:00:00');
         const fechaFin = new Date(this.filtroFechaFin + 'T23:59:59');
+        
         const enRango = fechaPedido >= fechaInicio && fechaPedido <= fechaFin;
         const completado = pedido.estado === 'completado';
-        
-        console.log('Pedido:', {
-          fecha: pedido.fecha_entrega,
-          estado: pedido.estado,
-          enRango,
-          completado
-        });
         
         return enRango && completado;
       });
 
       console.log(`Pedidos completados filtrados: ${pedidosFiltrados.length} de ${pedidos.length}`);
 
-      //Contar productos por cantidad de cajas
       const conteoProductos: { [key: string]: { nombre: string, cantidad: number } } = {};
 
       pedidosFiltrados.forEach((pedido: any) => {
@@ -514,7 +525,6 @@ export class DashboardPage implements OnInit {
         }
       });
 
-      //Convertir a array y ordenar
       const productosArray = Object.values(conteoProductos)
         .sort((a, b) => b.cantidad - a.cantidad);
 
@@ -537,8 +547,6 @@ export class DashboardPage implements OnInit {
         color: colores[index % colores.length]
       }));
 
-      console.log('Productos procesados:', this.productosVendidos);
-
     } catch (error) {
       console.error('Error cargando productos con filtro:', error);
       this.productosVendidos = [];
@@ -551,28 +559,21 @@ export class DashboardPage implements OnInit {
       console.log('Cargando clientes con más pedidos con filtro...');
       const pedidos = await this.api.listarPedidos();
       
-      if (pedidos.length > 0) {
-        console.log('Estructura del primer pedido:', pedidos[0]);
-        console.log('Cliente del primer pedido:', {
-          cliente_nombre: pedidos[0].cliente_nombre,
-          cliente: pedidos[0].cliente,
-          nombre_cliente: pedidos[0].nombre_cliente
-        });
-      }
-      
-      //Filtrar pedidos por rango de fechas y estado completado
       const pedidosFiltrados = pedidos.filter((pedido: any) => {
-        const fechaPedido = new Date(pedido.fecha_entrega + 'T00:00:00');
+        if (!pedido.created_at) return false;
+        
+        const fechaPedido = new Date(pedido.created_at);
+        fechaPedido.setHours(0, 0, 0, 0);
+        
         const fechaInicio = new Date(this.filtroFechaInicio + 'T00:00:00');
         const fechaFin = new Date(this.filtroFechaFin + 'T23:59:59');
+        
         const enRango = fechaPedido >= fechaInicio && fechaPedido <= fechaFin;
         const completado = pedido.estado === 'completado';
+        
         return enRango && completado;
       });
 
-      console.log(`Pedidos completados filtrados: ${pedidosFiltrados.length}`);
-
-      //Contar pedidos por cliente
       const conteoClientes: { [key: string]: { nombre: string, cantidad: number } } = {};
 
       pedidosFiltrados.forEach((pedido: any) => {
@@ -581,8 +582,6 @@ export class DashboardPage implements OnInit {
           || (pedido.cliente && pedido.cliente.nombre)
           || pedido.cliente
           || 'Cliente sin nombre';
-        
-        console.log('Nombre del cliente extraído:', clienteNombre, 'del pedido:', pedido);
         
         if (!conteoClientes[clienteNombre]) {
           conteoClientes[clienteNombre] = {
@@ -593,7 +592,6 @@ export class DashboardPage implements OnInit {
         conteoClientes[clienteNombre].cantidad++;
       });
 
-      //Convertir a array y ordenar
       const clientesArray = Object.values(conteoClientes)
         .sort((a, b) => b.cantidad - a.cantidad);
 
@@ -755,10 +753,19 @@ export class DashboardPage implements OnInit {
     this.router.navigate(['/productos']);
   }
 
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-      this.api.logout();
+  //Cerrar sesión
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar sesión',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
+      await this.api.logout();
       this.cerrarMenu();
+      this.router.navigate(['/home']); 
     }
   }
 }

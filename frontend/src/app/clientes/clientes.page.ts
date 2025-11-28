@@ -13,6 +13,7 @@ import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline
   bag, person, trophy, ellipsisVertical, swapVertical, calendar, funnel, apps, podium, checkmarkDone} from 'ionicons/icons';
 import { Perimisos } from '../services/perimisos';
 import { NotificacionService } from '../services/notificacion.service';
+import { AlertController } from '@ionic/angular';
 
 //Iconos
 addIcons({ 
@@ -33,7 +34,9 @@ addIcons({
 })
 export class ClientesPage implements OnInit {
 
-  constructor(private api: ApiService, private activeRouter: ActivatedRoute, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService) { }
+  constructor(private api: ApiService, private activeRouter: ActivatedRoute, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService,
+    private alertController: AlertController
+  ) { }
   
     //Definicion de variables
     id: string = '';
@@ -248,6 +251,7 @@ export class ClientesPage implements OnInit {
       this.puedeIr = await this.permisos.checkPermission('view_usuarios')
       this.verReportes = await this.permisos.checkPermission('view_reportes')
       this.cargarDatosUsuario();
+      this.notificaciones.start();
       // Inicializa el servicio de avisos si hay sesión
       try { await this.notificaciones.start(); } catch {}
       console.log("Data del usuario", this.activeRouter.snapshot.params['id'])
@@ -337,13 +341,21 @@ export class ClientesPage implements OnInit {
   }
 
   //Cerrar sesión
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-      this.api.logout();
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar sesión',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
+      await this.api.logout();
       this.cerrarMenu();
+      this.router.navigate(['/home']); 
     }
   }
-
+    
   cancelar() { 
   this.router.navigate(['/lista-clientes']);
   }

@@ -12,6 +12,8 @@
 
 
 /* Core CSS required for Ionic components to work properly */
+@import 'theme/variables.scss';
+@import 'theme/theme.scss';
 @import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -40,6 +42,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
 
 
+ion-input {
+  --highlight-color-focused: #ffffff00 !important;
+  --highlight-color-valid: #ffffff00 !important;
+  --highlight-color-invalid: #ffffff00 !important;
+}
 
 ion-app {
   --ion-background-color: #f8f7f6;
@@ -47,7 +54,28 @@ ion-app {
   
 }
 
-// src/global.scss
+:root {
+  --ion-safe-area-top: env(safe-area-inset-top + 10px);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+ion-header, ion-toolbar, ion-title, ion-content {
+  padding-top: env(safe-area-inset-top + 10px);
+}
+
+.android ion-header, ion-toolbar, ion-title, ion-content {
+  padding-top: env(safe-area-inset-top + 10px);
+}
+
+.menu-lateral{
+  margin-top: calc(env(safe-area-inset-top));
+}
+
+.barra-superior {
+  margin-top: calc(env(safe-area-inset-top));
+}
+
+
 /* Estilos de Toasts */
 .toast-success {
   --background: #28a745;
@@ -161,9 +189,9 @@ ion-alert.custom-alert {
     margin: 0 !important;
     border: none !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-    display: flex !important; /* ← Importante */
-    align-items: center !important; /* ← Centra verticalmente */
-    justify-content: center !important; /* ← Centra horizontalmente */
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
     
     span,
     .alert-button-inner {
@@ -221,19 +249,21 @@ ion-alert.custom-alert {
   }
 }
 
-/* Asegurar que los toasts queden sobre cualquier overlay personalizado */
 ion-toast {
-  z-index: 11000 !important;
+  --background: var(--ion-color-dark, #222);
+  --color: white;
+  z-index: 999999 !important;      /* más alto aún */
+  position: fixed !important;       /* fuerza overlay REAL */
+  top: calc( env(safe-area-inset-top) + 15px ) !important;
 }
 
-/* Stacking para toasts en top */
-.notif-toast {
+/* Corregir clases personalizadas */
+.toast-success,
+.toast-error,
+.toast-warning,
+.toast-info,
+.toast-custom {
   position: fixed !important;
-  top: calc(env(safe-area-inset-top) + 12px) !important;
+  top: calc(env(safe-area-inset-top) + 15px) !important;
+  z-index: 999999 !important;
 }
-.notif-offset-0 { margin-top: 0 !important; }
-.notif-offset-1 { margin-top: 64px !important; }
-.notif-offset-2 { margin-top: 128px !important; }
-.notif-offset-3 { margin-top: 192px !important; }
-.notif-offset-4 { margin-top: 256px !important; }
-.notif-offset-5 { margin-top: 320px !important; }

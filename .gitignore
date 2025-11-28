@@ -11,6 +11,8 @@ backend/*/*/*/*/__pycache__/
 env_pedidoscd/
 
 node_modules/
+frontend/www/
+frontend/android/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
