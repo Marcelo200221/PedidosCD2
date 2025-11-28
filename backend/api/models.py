@@ -73,6 +73,8 @@ class Pedidos(models.Model):
     
     direccion = models.CharField(max_length=200)
     fecha_entrega = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    
     # Relación al cliente que realiza el pedido
     cliente = models.ForeignKey('Cliente', on_delete=models.PROTECT, related_name='pedidos', null=True, blank=True)
 

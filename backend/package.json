@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@capacitor/filesystem": "^7.1.4",
+    "@capacitor/share": "^7.0.2"
+  }
+}

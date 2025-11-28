@@ -109,9 +109,12 @@ class PedidoSerializer(serializers.ModelSerializer):
         allow_null=True,
     )
 
+    fecha_entrega = serializers.DateField()
+    created_at = serializers.DateTimeField(read_only=True)
+
     class Meta:
         model = Pedidos
-        fields = ['id', 'direccion', 'fecha_entrega', 'estado', 'cliente', 'cliente_id', 'lineas']
+        fields = ['id', 'direccion', 'fecha_entrega', 'created_at', 'estado', 'cliente', 'cliente_id', 'lineas']
     
     def create(self, validated_data):
         lineas_data = validated_data.pop('lineas', [])
