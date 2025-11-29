@@ -133,23 +133,15 @@
 
         <!-- Acciones de factura -->
         <div class="acciones-factura">
-          <ion-button size="small" (click)="verFactura(pedido)">
+          <ion-button class="btn-ver-factura" size="small" (click)="verFactura(pedido)">
             <ion-icon slot="start" name="document-text"></ion-icon>
             Ver factura
           </ion-button>
-          <ion-button size="small" (click)="confirmarFacturacionIndividual(pedido)">
+          <ion-button class="btn-facturar" size="small" (click)="confirmarFacturacionIndividual(pedido)">
             <ion-icon slot="start" name="download"></ion-icon>
-            Descargar PDF
+            Facturar
           </ion-button>
         </div>
-        
-        <!-- Botón de confirmar facturación individual -->
-        <ion-icon 
-          name="checkmark-circle" 
-          class="icon-confirmar-facturacion" 
-          (click)="confirmarFacturacionIndividual(pedido)" 
-          title="Confirmar Facturación">
-        </ion-icon>
       </div>
     </ion-item>
   </ion-list>

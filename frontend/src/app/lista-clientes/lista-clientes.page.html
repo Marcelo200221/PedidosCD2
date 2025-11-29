@@ -1,7 +1,9 @@
 <ion-content class="lista-clientes-page" fullscreen>
   <!-- Header consistente -->
   <div class="login-header">
-    <div class="barra-superior"></div>
+    <div class="barra-superior">
+      <ion-icon name="menu" class="icon-left" (click)="toggleMenu()"></ion-icon>
+    </div>
     <div class="barra-inferior"></div>
   </div>
 
@@ -20,11 +22,17 @@
         <p class="cliente-detalle"><strong>RUT:</strong> {{ cliente.rut }}</p>
         <p class="cliente-detalle"><strong>Dirección:</strong> {{ cliente.direccion }}</p>
         <p class="cliente-detalle"><strong>Razón social:</strong> {{ cliente.razon_social }}</p>
-        <div class="acciones">
-          <ion-button *ngIf="puedeEditar" class="btn-eliminar" (click)="eliminarCliente(cliente.id_cliente)">Eliminar</ion-button>
-        </div>
-        <div class="acciones">
-          <ion-button *ngIf="puedeEditar" class="btn-editar" (click)="editarCliente(cliente.id_cliente)">Editar</ion-button>
+        
+        <!-- Botones uno encima del otro -->
+        <div class="acciones" *ngIf="puedeEditar">
+          <ion-button class="btn-editar" (click)="editarCliente(cliente.id_cliente)">
+            <ion-icon slot="start" name="pencil"></ion-icon>
+            Editar
+          </ion-button>
+          <ion-button class="btn-eliminar" (click)="eliminarCliente(cliente.id_cliente)">
+            <ion-icon slot="start" name="trash-bin"></ion-icon>
+            Eliminar
+          </ion-button>
         </div>
       </ion-label>
     </ion-item>
@@ -32,6 +40,77 @@
 
   <!-- Botón agregar -->
   <div class="botones">
-    <ion-button *ngIf="puedeEditar" expand="block" class="btn-agregar" (click)="agregarCliente()">Agregar Cliente</ion-button>
+    <ion-button *ngIf="puedeEditar" expand="block" class="btn-agregar" (click)="agregarCliente()">
+      <ion-icon slot="start" name="add-circle"></ion-icon>
+      Agregar Cliente
+    </ion-button>
   </div>
+
+  <!-- Overlay del menú -->
+  <div class="menu-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
+
+  <!-- Menú lateral -->
+  <div class="menu-lateral" [class.abierto]="menuAbierto">
+    <div class="menu-header">
+      <div class="menu-user-info">
+        <p>Bienvenido,</p>
+        <p class="user-name" *ngIf="nombreUsuario">{{ nombreUsuario }} {{ apellidoUsuario }}</p>
+      </div>
+      <ion-icon name="close" class="icon-cerrar-menu" (click)="cerrarMenu()"></ion-icon>
+    </div>
+    
+    <div class="menu-contenido">
+      <div class="menu-item" (click)="IrAPerfil()">
+        <ion-icon name="person"></ion-icon>
+        <span>Perfil</span>
+      </div>
+      
+      <div class="menu-divider"></div>
+      
+      <div class="menu-item" (click)="Irapedidosmenu()">
+        <ion-icon name="cube"></ion-icon>
+        <span>Pedidos</span>
+      </div>
+      
+      <div class="menu-item" (click)="Irafacturasmenu()">
+        <ion-icon name="document-text"></ion-icon>
+        <span>Facturas</span>
+      </div>
+      
+      <div *ngIf="verReportes" class="menu-item" (click)="Iradashboardsmenu()">
+        <ion-icon name="bar-chart"></ion-icon>
+        <span>Dashboards</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div *ngIf="puedeIr" class="menu-item" (click)="IrUsuarios()">
+        <ion-icon name="person"></ion-icon>
+        <span>Usuarios</span>
+      </div>
+      
+      <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="people"></ion-icon>
+        <span>Clientes</span>
+      </div>
+
+      <div *ngIf="verProductos" class="menu-item" (click)="IraProductos()">
+        <ion-icon name="bag"></ion-icon>
+        <span>Productos</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item" (click)="IrMenu()">
+        <ion-icon name="arrow-undo"></ion-icon>
+        <span>Volver al Menú</span>
+      </div>
+      
+      <div class="menu-item" (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+        <span>Cerrar Sesión</span>
+      </div>
+    </div>
+  </div>
+
 </ion-content>

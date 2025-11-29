@@ -41,7 +41,8 @@ def build_invoice_pdf(data: dict) -> bytes:
 
     # FACTURA INFO
     story.append(Paragraph(f"<b>Factura:</b> {factura_numero}", styles['Heading3']))
-    story.append(Paragraph(f"<b>Fecha:</b> {fecha}", styles['Normal']))
+    fecha_factura = data.get("fecha_factura")  # viene desde la view
+    story.append(Paragraph(f"<b>Factura generada el:</b> {fecha_factura}", styles['Normal']))
     story.append(Spacer(1, 6))
 
     # CLIENTE

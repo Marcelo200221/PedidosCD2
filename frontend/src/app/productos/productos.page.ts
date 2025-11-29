@@ -7,14 +7,15 @@ import {mdiPencil} from '@mdi/js';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
 import { chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
-  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd, bag, person} from 'ionicons/icons';
+  documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, arrowUndo, people, personAdd, bag, person, create} from 'ionicons/icons';
 import { Perimisos } from '../services/perimisos';
+import { NotificacionService } from '../services/notificacion.service';
 
 //Iconos
 addIcons({ 
   chevronUpCircle, menu, pencil, removeCircle, addCircle, filter, close, 
   trashBin, checkmarkCircle, search, documentText, cube, calculator, scale, eye, send, closeCircle, people, personAdd,
-  logOut, barChart, arrowUndo, bag, person
+  logOut, barChart, arrowUndo, bag, person, create
 });
 
 @Component({
@@ -40,13 +41,15 @@ export class ProductosPage implements OnInit {
   editStock = false;
   editPrecio = false;
 
-  constructor(private api: ApiService, private router: Router, private permisos: Perimisos) { }
+  constructor(private api: ApiService, private router: Router, private permisos: Perimisos, private notificaciones: NotificacionService) { }
 
   async ngOnInit() {
     this.editPrecio = true;
     this.editProductos = await this.permisos.checkPermission('edit_productos')
     this.productos = await this.api.productos();
     this.cargarDatosUsuario();
+    // Inicializa el servicio de avisos si hay sesión
+    try { await this.notificaciones.start(); } catch {}
   }
 
   async cargarDatosUsuario() {
@@ -106,6 +109,7 @@ export class ProductosPage implements OnInit {
     await this.api.actualizarPrecios(precio, id);
     const idx = this.productos.findIndex(p => p.id === id);
     if (idx >= 0) this.productos[idx] = { ...this.productos[idx], precio };
+    await this.notificaciones.showSuccess('Precio cambiado correctamente');
     this.cerrarModal();
   }
 
@@ -117,6 +121,7 @@ export class ProductosPage implements OnInit {
     await this.api.actualizarStock(stock, id);
     const idx = this.productos.findIndex(p => p.id === id);
     if (idx >= 0) this.productos[idx] = { ...this.productos[idx], stock };
+    await this.notificaciones.showSuccess('Stock cambiado correctamente');
     this.cerrarModalStock();
   }
 
@@ -194,10 +199,18 @@ export class ProductosPage implements OnInit {
   }
 
   //Cerrar sesión
-  cerrarSesion() {
-    if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-      this.api.logout();
+  async cerrarSesion() {
+    const confirmar = await this.notificaciones.showConfirm(
+      '¿Estás seguro que deseas cerrar sesión?',
+      'Cerrar Sesión',
+      'Sí, cerrar sesión',
+      'Cancelar'
+    );
+    
+    if (confirmar) {
+      await this.api.logout();
       this.cerrarMenu();
+      this.router.navigate(['/home']); 
     }
   }
 }

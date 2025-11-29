@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonTitle, IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
-import { ApiService } from '../services/api.spec'; // Mantén tu import actual
+import { ApiService } from '../services/api.spec'; 
 import { environment } from 'src/environments/environment.prod';
+import { NotificacionService } from '../services/notificacion.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonInput, IonButton, CommonModule, FormsModule]
+  imports: [ IonContent, IonInput, IonButton, CommonModule, FormsModule]
 })
 
 export class LoginPage implements OnInit {
-  constructor(private router: Router, private api: ApiService) { }
+  constructor(private router: Router, private api: ApiService, private notificaciones: NotificacionService) { }
   
   //Definicion de variables
   rut: string = '';
@@ -94,17 +95,17 @@ export class LoginPage implements OnInit {
   async handleClick() {
     // Validaciones previas
     if (!this.rut || !this.password) {
-      alert('Por favor, completa todos los campos.');
+      await this.notificaciones.showWarning('Por favor, completa todos los campos.');
       return;
     }
     
     if (this.password.length < 8) {
-      alert('La contraseña debe tener al menos 8 caracteres.');
+      await this.notificaciones.showWarning('La contraseña debe tener al menos 8 caracteres.');
       return;
     }
 
     if (this.rutError || this.passwordError) {
-      alert('Por favor corrige los errores antes de continuar.');
+      await this.notificaciones.showWarning('Por favor corrige los errores antes de continuar.');
       return;
     }
    
@@ -115,10 +116,7 @@ export class LoginPage implements OnInit {
       console.log('Intentando login con RUT:', this.rut);
       console.log("BASE URL: ", environment.apiUrl);
       
-      // Tu servicio ya maneja la navegación y el alert interno
       await this.api.login(this.rut, this.password);
-      
-      // Si llegamos aquí, el login fue exitoso
       console.log('Login completado exitosamente');
       
     } catch (error: any) {
@@ -130,26 +128,26 @@ export class LoginPage implements OnInit {
         const data = error.response.data;
         
         if (status === 404) {
-          alert('El RUT ingresado no está registrado en el sistema.');
+          await this.notificaciones.showError('El RUT ingresado no está registrado en el sistema.');
         } else if (status === 401) {
-          alert('Contraseña incorrecta. Por favor, verifica tus credenciales.');
+          await this.notificaciones.showWarning('Contraseña incorrecta. Por favor, verifica tus credenciales.');
         } else if (status === 400) {
           // Errores de validación del backend
           if (data.non_field_errors) {
-            alert(data.non_field_errors.join('\n'));
+            await this.notificaciones.showWarning(data.non_field_errors.join('\n'));
           } else if (data.detail) {
-            alert(data.detail);
+            await this.notificaciones.showWarning(data.detail);
           } else {
-            alert('Datos incorrectos. Verifica el RUT y contraseña.');
+            await this.notificaciones.showWarning('Datos incorrectos. Verifica el RUT y contraseña.');
           }
         } else {
-          alert('Error al iniciar sesión. Por favor, intenta nuevamente.');
+          await this.notificaciones.showError('Error al iniciar sesión. Por favor, intenta nuevamente.');
         }
       } else if (error.request) {
         // Error de red
-        alert('No se pudo conectar con el servidor. Verifica tu conexión.');
+        await this.notificaciones.showError('No se pudo conectar con el servidor. Verifica tu conexión.');
       } else {
-        alert('Error inesperado. Por favor, intenta nuevamente.');
+        await this.notificaciones.showError('Error inesperado. Por favor, intenta nuevamente.');
       }
     } finally {
       // Desactivar indicador de carga
@@ -162,5 +160,6 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.notificaciones.start();
   }
 }

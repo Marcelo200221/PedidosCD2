@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
 import axios from "axios";
 import { environment } from "src/environments/environment.prod";
 import { getItem as ssGetItem, setItem as ssSetItem, removeItem as ssRemoveItem } from './token-storage';
 import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
+import { LocalNotifications } from '@capacitor/local-notifications';
+import { FileOpener } from '@capacitor-community/file-opener';
 
 const api = axios.create({
     baseURL: environment.apiUrl,
@@ -45,9 +45,292 @@ api.interceptors.response.use(
   providedIn: 'root'
 })
 
-
 export class ApiService{
   constructor(private router: Router){ }
+
+  // Solicitar permisos de almacenamiento y notificaciones
+  async solicitarPermisos(): Promise<boolean> {
+    if (!Capacitor.isNativePlatform()) {
+      return true; // En web no se necesitan permisos especiales
+    }
+
+    try {
+      const notifPermission = await LocalNotifications.requestPermissions();
+      
+      if (notifPermission.display !== 'granted') {
+        console.warn('Permiso de notificaciones denegado');
+      }
+      return true;
+    } catch (error) {
+      console.error('Error solicitando permisos:', error);
+      return false;
+    }
+  }
+
+  private async notificarPedidoCreado(id: number, cliente: string) {
+  if (!Capacitor.isNativePlatform()) return; // Solo móvil
+
+  try {
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          id: Date.now(),
+          title: "Pedido creado",
+          body: `Se creó el pedido #${id} para ${cliente}`,
+          smallIcon: "ic_stat_icon",
+          sound: "default",
+          extra: { pedidoId: id }
+        }
+      ]
+    });
+  } catch (error) {
+    console.error("Error mostrando notificación de creación:", error);
+  }
+}
+
+private async notificarPedidoEliminado(id: number) {
+  if (!Capacitor.isNativePlatform()) return; // Solo móvil
+
+  try {
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          id: Date.now(),
+          title: "Pedido eliminado",
+          body: `El pedido #${id} fue eliminado`,
+          smallIcon: "ic_stat_icon",
+          sound: "default",
+          extra: { pedidoId: id }
+        }
+      ]
+    });
+  } catch (error) {
+    console.error("Error mostrando notificación de eliminación:", error);
+  }
+}
+
+private async notificarPedidosEliminados(ids: number[]) {
+  if (!Capacitor.isNativePlatform()) return; // Solo móvil
+
+  try {
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          id: Date.now(),
+          title: "Pedidos eliminados",
+          body: `Se eliminaron ${ids.length} pedidos`,
+          smallIcon: "ic_stat_icon",
+          sound: "default",
+          extra: { ids }
+        }
+      ]
+    });
+  } catch (error) {
+    console.error("Error mostrando notificación múltiple:", error);
+  }
+}
+
+  // Generar factura con notificación y apertura
+  async generarFacturaPorPedido(pedidoId: number, opciones?: {
+    factura_numero?: string;
+    descuento?: number;
+    impuesto_porcentaje?: number;
+    moneda?: string;
+    notas?: string;
+  }): Promise<void> {
+    try {
+      //Solicitar permisos antes de descargar
+      await this.solicitarPermisos();
+
+      //Generar el PDF
+      const payload = {
+        ...opciones,
+        fecha: new Date().toISOString().split("T")[0] 
+      };
+
+      const res = await api.post(
+        `facturas/generar-por-pedido/${pedidoId}`,
+        payload,
+        { responseType: 'blob' }
+      );
+
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const fileName = `factura-pedido-${pedidoId}.pdf`;
+
+      if (Capacitor.isNativePlatform()) {
+        // Guardar en móvil
+        const filePath = await this.guardarArchivoNativo(fileName, blob);
+        
+        // Mostrar notificación con capacidad de abrir el archivo
+        await this.mostrarNotificacionDescarga(pedidoId, filePath, fileName);
+      } else {
+        // Descargar en navegador web
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+        
+      }
+    } catch (error) {
+      console.error('Error al generar factura:', error);
+      throw error;
+    }
+  }
+
+  // Previsualizar factura
+  async previsualizarFacturaPorPedido(pedidoId: number, opciones?: {
+    factura_numero?: string;
+    descuento?: number;
+    impuesto_porcentaje?: number;
+    moneda?: string;
+    notas?: string;
+  }): Promise<void> {
+    try {
+      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { 
+        responseType: 'blob' 
+      });
+      
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const fileName = `factura-pedido-${pedidoId}-preview.pdf`;
+
+      if (Capacitor.isNativePlatform()) {
+        // Guardar temporalmente y abrir
+        const filePath = await this.guardarArchivoNativo(fileName, blob, Directory.Cache);
+        await this.abrirArchivoPDF(filePath);
+      } else {
+        // Abrir en nueva pestaña en web
+        const url = window.URL.createObjectURL(blob);
+        window.open(url, '_blank');
+      }
+    } catch (error) {
+      console.error('Error al previsualizar factura:', error);
+      throw error;
+    }
+  }
+
+  // Mostrar notificación de descarga completada
+  private async mostrarNotificacionDescarga(pedidoId: number, filePath: string, fileName: string): Promise<void> {
+    try {
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            title: 'Factura Generada',
+            body: `El PDF de la orden #${pedidoId} se generó correctamente`,
+            id: pedidoId,
+            sound: 'default',
+            attachments: undefined,
+            actionTypeId: '',
+            extra: {
+              filePath: filePath,
+              fileName: fileName
+            }
+          }
+        ]
+      });
+
+      // Escuchar cuando el usuario toque la notificación
+      await LocalNotifications.addListener('localNotificationActionPerformed', async (notification) => {
+        if (notification.notification.id === pedidoId) {
+          const path = notification.notification.extra?.filePath;
+          if (path) {
+            await this.abrirArchivoPDF(path);
+          }
+        }
+      });
+
+    } catch (error) {
+      console.error('Error mostrando notificación:', error);
+    }
+  }
+
+  // Abrir archivo PDF en el visor nativo
+  private async abrirArchivoPDF(filePath: string): Promise<void> {
+    try {
+      // Usar FileOpener para abrir el PDF
+      await FileOpener.open({
+        filePath: filePath,
+        contentType: 'application/pdf',
+        openWithDefault: true
+      });
+    } catch (error: any) {
+      console.error('Error abriendo PDF:', error);
+      
+      // Si falla, intentar compartir el archivo
+      try {
+        const { Share } = await import('@capacitor/share');
+        await Share.share({
+          title: 'Factura PDF',
+          text: 'Abrir factura',
+          url: filePath,
+          dialogTitle: 'Abrir con...'
+        });
+      } catch (shareError) {
+        console.error('Error compartiendo archivo:', shareError);
+      }
+    }
+  }
+
+  // Guardar archivo en el dispositivo nativo
+  private async guardarArchivoNativo(
+    fileName: string, 
+    blob: Blob, 
+    directory: Directory = Directory.Documents
+  ): Promise<string> {
+    const folder = directory === Directory.Documents ? 'facturas' : 'facturas/tmp';
+    const pathFile = `${folder}/${fileName}`;
+    const base64Data = await this.blobToBase64(blob);
+
+    try {
+      // Crear carpeta si no existe
+      await Filesystem.mkdir({ 
+        path: folder, 
+        directory, 
+        recursive: true 
+      });
+    } catch (err: any) {
+      const message = String(err?.message || '').toLowerCase();
+      if (!message.includes('exist')) {
+        console.warn('Error creando directorio:', err);
+      }
+    }
+
+    // Guardar el archivo
+    const result = await Filesystem.writeFile({
+      path: pathFile,
+      data: base64Data,
+      directory,
+      recursive: true
+    });
+
+    console.log(`Archivo guardado en: ${result.uri}`);
+    
+    // Retornar la URI del archivo para abrirlo después
+    return result.uri;
+  }
+
+  // Convertir Blob a Base64
+  private blobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const data = reader.result;
+        if (typeof data === 'string') {
+          const commaIndex = data.indexOf(',');
+          resolve(commaIndex >= 0 ? data.slice(commaIndex + 1) : data);
+        } else {
+          reject(new Error('No se pudo convertir el archivo a base64'));
+        }
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  // ... resto de tus métodos existentes ...
 
   async registro(
     rut: string, 
@@ -56,72 +339,63 @@ export class ApiService{
     email: string, 
     password: string
   ) {
-  try {
-    console.log("Enviando datos de registro:", { 
-      rut, 
-      first_name: nombre, 
-      last_name: apellido, 
-      email,
-      password1: '***',
-      password2: '***'
-    });
-    
-    // dj-rest-auth espera password1 y password2
-    const response = await api.post("registration/", {
-      rut: rut,
-      first_name: nombre,
-      last_name: apellido,
-      email: email,
-      password1: password,  // IMPORTANTE: dj-rest-auth usa password1 y password2
-      password2: password
-    });
-    
-    console.log("Respuesta del registro:", response.data);
-    
-    // dj-rest-auth con JWT retorna el token directamente
-    const access = response.data.token.access || response.data.access;
-    
-    if (access) {
-      alert("Registro exitoso");
-      await ssSetItem('auth_token', access);
-      this.router.navigate(['/hub']);
-    } else {
-      console.log("Estructura de respuesta:", response.data);
-      alert("Registro exitoso pero verifica el token en consola");
-    }
-    
-  } catch (error: any) {
-    console.error("Error completo:", error);
-    console.error("Respuesta del servidor:", error.response?.data);
-    console.error("Status:", error.response?.status);
-    
-    if (error.response?.data) {
-      const errores = error.response.data;
+    try {
+      console.log("Enviando datos de registro:", { 
+        rut, 
+        first_name: nombre, 
+        last_name: apellido, 
+        email,
+        password1: '***',
+        password2: '***'
+      });
       
-      // Si es HTML (error 404)
-      if (typeof errores === 'string' && errores.includes('<!DOCTYPE')) {
-        alert("Error: Endpoint no encontrado");
-        return;
+      const response = await api.post("registration/", {
+        rut: rut,
+        first_name: nombre,
+        last_name: apellido,
+        email: email,
+        password1: password,
+        password2: password
+      });
+      
+      console.log("Respuesta del registro:", response.data);
+      
+      const access = response.data.token.access || response.data.access;
+      
+      if (access) {
+        await ssSetItem('auth_token', access);
+        this.router.navigate(['/hub']);
+      } else {
+        console.log("Estructura de respuesta:", response.data);
       }
       
-      // Mostrar errores específicos
-      let mensajeError = "Errores en el registro:\n";
-      for (const [campo, mensajes] of Object.entries(errores)) {
-        if (Array.isArray(mensajes)) {
-          mensajeError += `${campo}: ${mensajes.join(', ')}\n`;
-        } else {
-          mensajeError += `${campo}: ${mensajes}\n`;
+    } catch (error: any) {
+      console.error("Error completo:", error);
+      console.error("Respuesta del servidor:", error.response?.data);
+      console.error("Status:", error.response?.status);
+      
+      if (error.response?.data) {
+        const errores = error.response.data;
+        
+        if (typeof errores === 'string' && errores.includes('<!DOCTYPE')) {
+          return;
         }
+        
+        let mensajeError = "Errores en el registro:\n";
+        for (const [campo, mensajes] of Object.entries(errores)) {
+          if (Array.isArray(mensajes)) {
+            mensajeError += `${campo}: ${mensajes.join(', ')}\n`;
+          } else {
+            mensajeError += `${campo}: ${mensajes}\n`;
+          }
+        }
+        alert(mensajeError);
+      } else {
       }
-      alert(mensajeError);
-    } else {
-      alert("Error al registrar usuario");
+      
+      throw error;
     }
-    
-    throw error;
   }
-}
-
 
   async login(rut: string, password: string){
     return await api.post("auth/login/", {
@@ -133,7 +407,6 @@ export class ApiService{
       console.log(response.data)
       
       if(access){
-        alert("Inicio de sesion exitoso")
         ssSetItem('auth_token', access)
         ssSetItem('user', JSON.stringify(user))
         this.router.navigate(['/hub']);
@@ -145,8 +418,6 @@ export class ApiService{
     try{
       await api.put(`dar/permisos/${id}`)
       console.log("Permisos de administrador asignados ")
-      alert("Permisos de administrador asignados")
-
     } catch(error){
       console.error(error)
     }
@@ -155,7 +426,7 @@ export class ApiService{
   async saveToken(token: string){
     await ssSetItem('auth_token', token);
   }
-  // Agregar estos métodos nuevos
+
   async getUsuarioActual(): Promise<any | null> {
     const userStr = await ssGetItem('user');
     if (!userStr) return null;
@@ -167,11 +438,6 @@ export class ApiService{
     } catch (_) {
       return null;
     }
-  }
-
-  async getNombreCompleto(): Promise<string> {
-    const usuario = await this.getUsuarioActual();
-    return usuario ? `${usuario.nombre ?? ''} ${usuario.apellido ?? ''}`.trim() : '';
   }
 
   async getToken(): Promise<string | null> {
@@ -191,11 +457,7 @@ export class ApiService{
   async logout(){
     await ssRemoveItem('auth_token');
     await ssRemoveItem('user');
-    this.router.navigate(['/login']);
-  }
-
-  getHello(){
-    return api.get("hello/");
+    this.router.navigate(['/home']);
   }
 
   getUsuarios(){
@@ -224,25 +486,26 @@ export class ApiService{
   }
 
   async cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
-  console.log("Enviando cambio de contraseña:", {
-    code: codigo,
-    new_password: '***',
-    confirm_password: '***'
-  });
-  
-  return await api.post("password-reset-change/", {
-    code: codigo,
-    new_password: nuevaPassword,
-    confirm_password: confirmarPassword
-  }).then(response => {
-    console.log("Respuesta del cambio:", response.data);
-    return response.data;
-  }).catch(error => {
-    console.error("Error en cambio de contraseña:", error);
-    console.error("Detalles del error:", error.response?.data);
-    throw error.response?.data || error;
-  });
-}
+    console.log("Enviando cambio de contraseña:", {
+      code: codigo,
+      new_password: '***',
+      confirm_password: '***'
+    });
+    
+    return await api.post("password-reset-change/", {
+      code: codigo,
+      new_password: nuevaPassword,
+      confirm_password: confirmarPassword
+    }).then(response => {
+      console.log("Respuesta del cambio:", response.data);
+      return response.data;
+    }).catch(error => {
+      console.error("Error en cambio de contraseña:", error);
+      console.error("Detalles del error:", error.response?.data);
+      throw error.response?.data || error;
+    });
+  }
+
   async crearPedido(cliente: String,direccion: String, fechaEntrega: String, lineas: {
     producto_id: Number, cajas: {peso: Number, etiqueta?: String}[]
   }[]){
@@ -257,9 +520,7 @@ export class ApiService{
       });
 
       console.log("Pedido creado correctamente: ", res.data)
-
-      alert("Pedido creado con éxito");
-
+      await this.notificarPedidoCreado(res.data.id, String(cliente));
       return res.data
     }catch(error: any){
       console.error("Error al crear pedido: ", error);
@@ -275,9 +536,7 @@ export class ApiService{
             mensaje += `${campo}: ${mensajes}\n`;
           }
         }
-        alert(mensaje);
       }else{
-        alert("Error desconocido al crear el pedido");
       }
 
       throw error;
@@ -288,74 +547,61 @@ export class ApiService{
     let productos
     try{
       const res = await api.get("productos/")
-
       productos = res.data
-
       return productos
     } catch (error) {
       console.error(error)
     }
-    
-
   }
 
   async listarPedidos(){
     let pedidos;
     try{
-      console.log("Mostrando proyectos del día");
       const res = await api.get("pedidos/");
-
       pedidos = res.data;
-
-      console.log(pedidos);
       return pedidos
     } catch(error){
       console.log(error);
     }
   }
 
-  async eliminarPedidos(ids: object){
-    try{
-      await api.delete("pedidos/eliminar_multiples/",{
-        data: {
-          ids
-        }
+  async eliminarPedidos(ids: number[]) {
+    try {
+      await api.delete("pedidos/eliminar_multiples/", {
+        data: { ids }
       });
-      console.log("Pedido eliminado");
-      alert("Pedido eliminado");
-    } catch(error){
-      console.error("Se produjo un error al eliminar");
-      alert("Se produjo un erro al eliminar");
-    }
-  };
+      await this.notificarPedidosEliminados(ids);
 
-  async eliminarPedido(id: number){
-    try{
-      await api.delete(`pedidos/${id}/`);
-      console.log("Pedido eliminado");
-      alert("Pedido eliminado");
-    } catch(error){
-      console.error("Se produjo un error al eliminar");
-      alert("Se produjo un erro al eliminar");
+    } catch (error) {
+      console.error("Error al eliminar múltiples pedidos:", error);
     }
-  };
+  }
 
   async editarPedido(id: number, pedido: object){
     try{
       await api.put(`pedidos/${id}/`, pedido)
       console.log('Pedido editado con exito');
-      alert('Pedido editado con exito');
     } catch(error){
       console.error('Error al editar pedido');
-      alert('Error al editar pedido');
     }
-  };
+  }
 
-  async guardarPesosPedido(id: number, pedidoCompleto: any, productosConPesos: any[]) {
+  async guardarPesosPedido(id: number, productosConPesos: any[]) {
     try {
+      // Primero obtener el pedido completo del backend para tener todos los datos
+      const pedidosBackend = await api.get("pedidos/");
+      const pedidoOriginal = pedidosBackend.data.find((p: any) => p.id === id);
+      
+      if (!pedidoOriginal) {
+        throw new Error('Pedido no encontrado');
+      }
+
+      console.log('Pedido original del backend:', pedidoOriginal);
+      console.log('Fecha de entrega original:', pedidoOriginal.fecha_entrega);
+
       const payload = {
-        direccion: pedidoCompleto.direccion,
-        fecha_entrega: new Date().toISOString().split('T')[0],
+        direccion: pedidoOriginal.direccion,
+        fecha_entrega: pedidoOriginal.fecha_entrega,
         estado: 'listo_facturar', 
         lineas: productosConPesos.map((producto) => ({
           producto_id: producto.id,
@@ -366,69 +612,11 @@ export class ApiService{
         }))
       };
 
-      console.log('Payload para guardar pesos:', JSON.stringify(payload, null, 2));
-
       const response = await api.put(`pedidos/${id}/`, payload);
       console.log('Pesos guardados con éxito');
       return response;
     } catch(error) {
       console.error('Error al guardar pesos:', error);
-      throw error;
-    }
-  }
-
-  //Facturación: generar PDF por pedido (descargar)
-  async generarFacturaPorPedido(pedidoId: number, opciones?: {
-    factura_numero?: string;
-    descuento?: number;
-    impuesto_porcentaje?: number;
-    moneda?: string;
-    notas?: string;
-  }): Promise<void> {
-    try {
-      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
-      const blob = new Blob([res.data], { type: 'application/pdf' });
-      const fileName = `factura-pedido-${pedidoId}.pdf`;
-
-      if (Capacitor.isNativePlatform()) {
-        await this.guardarArchivoNativo(fileName, blob);
-      } else {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = fileName;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-      }
-    } catch (error) {
-      console.error('Error al generar factura:', error);
-      throw error;
-    }
-  }
-
-  //Facturación: previsualizar PDF por pedido (abre en nueva pestaña)
-  async previsualizarFacturaPorPedido(pedidoId: number, opciones?: {
-    factura_numero?: string;
-    descuento?: number;
-    impuesto_porcentaje?: number;
-    moneda?: string;
-    notas?: string;
-  }): Promise<void> {
-    try {
-      const res = await api.post(`facturas/generar-por-pedido/${pedidoId}`, opciones || {}, { responseType: 'blob' });
-      const blob = new Blob([res.data], { type: 'application/pdf' });
-      const fileName = `factura-pedido-${pedidoId}-preview.pdf`;
-
-      if (Capacitor.isNativePlatform()) {
-        await this.guardarArchivoNativo(fileName, blob, Directory.Cache);
-      } else {
-        const url = window.URL.createObjectURL(blob);
-        window.open(url, '_blank');
-      }
-    } catch (error) {
-      console.error('Error al previsualizar factura:', error);
       throw error;
     }
   }
@@ -504,16 +692,10 @@ export class ApiService{
   async actualizarEstadoPedido(id: number, estado: string) {
     try {
       console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
-
-      // Importante: enviar SOLO el cambio de estado.
-      // No reenviar 'lineas' para evitar borrar cajas accidentalmente
-      // cuando no estamos editando pesos/cajas.
       const payload = { estado } as any;
-
       const updateResponse = await api.patch(`pedidos/${id}/`, payload);
       console.log('Estado actualizado exitosamente');
       return updateResponse;
-
     } catch (error: any) {
       console.error('Error completo:', error);
       console.error('Response data:', error.response?.data);
@@ -544,7 +726,6 @@ export class ApiService{
     }
   }
 
-  // Avisos del bot: obtiene la lista de avisos actuales
   async getAvisos(): Promise<any[]> {
     try {
       const res = await api.get("avisos/");
@@ -555,66 +736,5 @@ export class ApiService{
     }
   }
 
-  async listarProductosMasVendidos(): Promise<any[]> {
-    try {
-      console.log('Obteniendo productos mas vendidos');
-      const res = await api.get("productos/mas-vendidos/");
-      console.log('Productos mas vendidos:', res.data);
-      return res.data;
-    } catch (error) {
-      console.error('Error al obtener productos mas vendidos:', error);
-      return [];
-    }
-  }
 
-  async listarClientesConMasPedidos(): Promise<any[]> {
-    try {
-      console.log('Obteniendo clientes con mas pedidos');
-      const res = await api.get("clientes-mas-pedidos/");
-      console.log('Clientes con mas pedidos:', res.data);
-      return res.data;
-    } catch (error) {
-      console.error('Error al obtener clientes con mas pedidos:', error);
-      return [];
-    }
-  }
-
-  private async guardarArchivoNativo(fileName: string, blob: Blob, directory: Directory = Directory.Documents) {
-    const folder = directory === Directory.Documents ? 'facturas' : 'facturas/tmp';
-    const pathFile = `${folder}/${fileName}`;
-    const base64Data = await this.blobToBase64(blob);
-
-    try {
-      await Filesystem.mkdir({ path: folder, directory, recursive: true });
-    } catch (err: any) {
-      const message = String(err?.message || '').toLowerCase();
-      if (!message.includes('exist')) {
-        throw err;
-      }
-    }
-
-    await Filesystem.writeFile({
-      path: pathFile,
-      data: base64Data,
-      directory
-    });
-    console.log(`Archivo guardado en ${directory}/${pathFile}`);
-  }
-
-  private blobToBase64(blob: Blob): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const data = reader.result;
-        if (typeof data === 'string') {
-          const commaIndex = data.indexOf(',');
-          resolve(commaIndex >= 0 ? data.slice(commaIndex + 1) : data);
-        } else {
-          reject(new Error('No se pudo convertir el archivo a base64'));
-        }
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    });
-  }
 }

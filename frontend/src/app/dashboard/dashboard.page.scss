@@ -838,7 +838,7 @@ ion-card ion-card-title ion-icon {
   color: #1e40af;
   padding: 12px 16px;
   border-radius: 10px;
-  margin-top: 12px;
+  margin-top: 8px;
   font-size: 13px;
   font-weight: 600;
   animation: slideDown 0.3s ease-out;
@@ -915,4 +915,35 @@ ion-card ion-card-title ion-icon {
   .filtro-quitar-btn {
     width: 100%;
   }
+}
+
+
+.toast-success {
+  --background: #28a745;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-error {
+  --background: #c5000f;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-warning {
+  --background: #ffc107;
+  --color: #000000;
+  --button-color: #000000;
+}
+
+.toast-info {
+  --background: #2196f3;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-custom {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --button-color: #f8f7f6;
 }

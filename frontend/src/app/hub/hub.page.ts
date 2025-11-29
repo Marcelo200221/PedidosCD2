@@ -36,11 +36,11 @@ export class HubPage implements OnInit {
   menuAbierto: boolean = false;
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
-  private avisosVistos = new Set<number>();
   private avisosTimer: any;
   puedeIr = false;
   verReportes = false;
   verProductos = false;
+  cargando: boolean = true;
 
   constructor(
     private api: ApiService, 
@@ -55,6 +55,22 @@ export class HubPage implements OnInit {
     this.puedeIr = await this.permisos.checkPermission('view_usuarios')
     this.verReportes = await this.permisos.checkPermission('view_reportes')
     this.cargarDatosUsuario();
+  }
+
+    async ionViewWillEnter() {
+    this.cargando = true;
+    try {
+      await Promise.all([
+    this.verProductos = await this.permisos.checkPermission('view_productos'),
+    this.puedeIr = await this.permisos.checkPermission('view_usuarios'),
+    this.verReportes = await this.permisos.checkPermission('view_reportes'),
+    this.cargarDatosUsuario()
+      ]);
+    } catch (error) {
+      console.error('Error cargando dashboards:', error);
+    } finally {
+      this.cargando = false;
+    }
   }
 
   iniciarAvisos() {

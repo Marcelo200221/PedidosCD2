@@ -9,11 +9,25 @@ ion-content.lista-clientes-page {
   --background: transparent;
 }
 
+.user-name {
+  font-weight: bold;
+}
+
 /* Encabezado consistente con resto de vistas */
+.login-header {
+  position: relative;
+  z-index: 10;
+}
+
 .barra-superior {
   width: 100%;
   height: 40px;
   background-color: #6a0d0d;
+  display: flex;
+  align-items: center;
+  padding: 0 2%;
+  position: relative;
+  z-index: 11;
 }
 
 .barra-inferior {
@@ -23,6 +37,23 @@ ion-content.lista-clientes-page {
   border-bottom-right-radius: 15px;
 }
 
+.icon-left {
+  font-size: 32px;
+  color: #f8f7f6;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 12;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
 .titulo-texto {
   color: #000;
   font-weight: bold;
@@ -30,6 +61,7 @@ ion-content.lista-clientes-page {
   margin-left: 10%;
   margin-top: 10%;
   margin-bottom: 1%;
+  font-size: 28px;
 }
 
 .barra-texto {
@@ -42,22 +74,22 @@ ion-content.lista-clientes-page {
 
 /* Lista de clientes */
 .clientes-list {
-  padding: 0 10% 20% 10%;
+  padding: 0 10% 0 10%;
 }
 
 ion-item.cliente-item {
   --background: transparent;
   --inner-padding-end: 0;
   --min-height: unset;
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
 }
 
 .cliente-card {
   background: #fff;
   border-radius: 12px;
-  padding: 12px 14px;
+  padding: 16px;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #eee;
 }
 
@@ -65,51 +97,292 @@ ion-item.cliente-item {
   color: #000;
   font-weight: bold;
   font-family: catamaran, sans-serif;
-  font-size: 115%;
-  margin: 0 0 4px 0;
+  font-size: 120%;
+  margin: 0 0 8px 0;
 }
 
 .cliente-detalle {
-  color: #000;
-  font-size: 92%;
-  margin: 2px 0;
+  color: #333;
+  font-size: 14px;
+  margin: 4px 0;
+  line-height: 1.4;
 }
 
+/* Contenedor de acciones - botones uno encima del otro */
 .acciones {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 8px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  align-items: stretch;
 }
 
+/* Botón Editar - Azul */
+.btn-editar {
+  --background: #007bff;
+  --background-hover: #0056b3;
+  --background-activated: #004085;
+  --color: #ffffff;
+  --border-radius: 8px;
+  height: 42px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: 'Catamaran', sans-serif;
+  text-transform: none;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.35);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  ion-icon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+}
+
+/* Botón Eliminar - Rojo */
 .btn-eliminar {
-  --background: #97201d;
-  --color: #f8f7f6;
-  --border-radius: 12px;
-  height: 36px;
-  font-weight: bold;
+  --background: #dc3545;
+  --background-hover: #c82333;
+  --background-activated: #bd2130;
+  --color: #ffffff;
+  --border-radius: 8px;
+  height: 42px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: 'Catamaran', sans-serif;
+  text-transform: none;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.25);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.35);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  ion-icon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
 }
 
+/* Contenedor del botón Agregar */
 .botones {
-  margin-top: 24px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 10%;
 }
 
+/* Botón Agregar - Verde */
 .btn-agregar {
-  width: 75%;
-  height: 40px;
-  font-size: 90%;
-  --background: #97201d;
-  --color: #f8f7f6;
-  --border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  height: 48px;
+  font-size: 16px;
+  --background: #28a745;
+  --background-hover: #218838;
+  --background-activated: #1e7e34;
+  --color: #ffffff;
+  --border-radius: 12px;
   font-family: 'Catamaran', sans-serif;
   font-weight: bold;
+  text-transform: none;
+  box-shadow: 0 3px 6px rgba(40, 167, 69, 0.3);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 5px 10px rgba(40, 167, 69, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  ion-icon {
+    font-size: 22px;
+    margin-right: 8px;
+  }
 }
 
 ion-input {
   --highlight-color-focused: transparent;
   --highlight-color-valid: transparent;
   --highlight-color-invalid: transparent;
+}
+
+/* ===== MENÚ LATERAL ===== */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: left 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  
+  &.abierto {
+    left: 0;
+  }
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #6a0d0d;
+  color: #f8f7f6;
+  
+  .menu-user-info {
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    .user-name {
+      font-size: 16px;
+      margin-top: 4px;
+    }
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Catamaran', sans-serif;
+  }
+  
+  .icon-cerrar-menu {
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.menu-contenido {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Catamaran', sans-serif;
+  color: #333;
+  
+  ion-icon {
+    font-size: 24px;
+    color: #97201d;
+  }
+  
+  span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  &:hover {
+    background: #f5f5f5;
+    padding-left: 30px;
+    
+    ion-icon {
+      color: #6a0d0d;
+    }
+  }
+  
+  &:active {
+    background: #e0e0e0;
+  }
+}
+
+.menu-divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 15px 25px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  .menu-lateral {
+    width: 320px;
+    left: -320px;
+  }
+  
+  .menu-item {
+    padding: 18px 30px;
+    
+    ion-icon {
+      font-size: 26px;
+    }
+    
+    span {
+      font-size: 18px;
+    }
+    
+    &:hover {
+      padding-left: 35px;
+    }
+  }
+  
+  .clientes-list {
+    padding: 0 15% 3% 15%;
+  }
+  
+  .botones {
+    padding: 0 15%;
+  }
+  
+  .btn-agregar {
+    max-width: 500px;
+  }
 }

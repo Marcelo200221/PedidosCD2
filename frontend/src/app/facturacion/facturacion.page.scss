@@ -439,6 +439,34 @@ ion-item.item-seleccionable {
   }
 }
 
+.btn-facturar{
+  width: 70%;                          
+  height: 25px;                       
+  font-size: 85%;                      
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 12px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: bold;
+  margin: 12px auto 0 auto;           
+  display: block;                      
+  text-transform: none;  
+}
+
+.btn-ver-factura{
+  width: 70%;                          
+  height: 25px;                       
+  font-size: 85%;                      
+  --background: #97201d;
+  --color: #f8f7f6;
+  --border-radius: 12px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: bold;
+  margin: 12px auto 0 auto;           
+  display: block;                      
+  text-transform: none;  
+}
+
 .botones-confirmar {
   position: fixed;
   bottom: 0;
@@ -834,4 +862,50 @@ ion-fab-button {
       padding-left: 35px;
     }
   }
+}
+
+.custom-toast {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  &::part(message) {
+    padding: 16px 20px;
+  }
+  
+  &::part(button) {
+    font-size: 20px;
+  }
+}
+
+.toast-success {
+  --background: #28a745;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-error {
+  --background: #c5000f;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-warning {
+  --background: #ffc107;
+  --color: #000000;
+  --button-color: #000000;
+}
+
+.toast-info {
+  --background: #2196f3;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-custom {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --button-color: #f8f7f6;
 }

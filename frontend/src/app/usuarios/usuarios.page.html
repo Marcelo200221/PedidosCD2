@@ -1,7 +1,10 @@
 <ion-content class="lista-clientes-page" fullscreen>
+
   <!-- Header consistente -->
   <div class="login-header">
-    <div class="barra-superior"></div>
+    <div class="barra-superior">
+        <ion-icon name="menu" class="icon-left" (click)="toggleMenu()"></ion-icon>
+    </div>
     <div class="barra-inferior"></div>
   </div>
 
@@ -19,8 +22,72 @@
         <p class="cliente-detalle"><strong>ID:</strong> {{ usuario.id }}</p>
         <p class="cliente-detalle"><strong>RUT:</strong> {{ usuario.rut }}</p>
         <p class="cliente-detalle"><strong>Dirección:</strong> {{ usuario.email }}</p>
-        <ion-button *ngIf="!esGerente(usuario)" (click)="darPermisos(usuario.id)">Dar Permisos Superiores</ion-button>
+        <ion-button class="permisos" *ngIf="!esGerente(usuario)" (click)="darPermisos(usuario.id)">Dar Permisos Superiores</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>
+
+   <!-- Overlay del menú -->
+  <div class="menu-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
+
+  <!-- Menú lateral -->
+  <div class="menu-lateral" [class.abierto]="menuAbierto">
+    <div class="menu-header">
+      <div class="menu-user-info">
+        <p>Bienvenido,</p><p class="user-name" *ngIf="nombreUsuario">{{ nombreUsuario }} {{ apellidoUsuario }}</p>
+      </div>
+      <ion-icon name="close" class="icon-cerrar-menu" (click)="cerrarMenu()"></ion-icon>
+    </div>
+    
+    <div class="menu-contenido">
+      <div class="menu-item" (click)="IrAPerfil()">
+        <ion-icon name="person"></ion-icon>
+        <span>Perfil</span>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item" (click)="Irapedidosmenu()">
+        <ion-icon name="cube"></ion-icon>
+        <span>Pedidos</span>
+      </div>
+      
+      <div class="menu-item" (click)="Irafacturasmenu()">
+        <ion-icon name="document-text"></ion-icon>
+        <span>Facturas</span>
+      </div>
+      
+      <div *ngIf="verReportes" class="menu-item" (click)="Iradashboardsmenu()">
+        <ion-icon name="bar-chart"></ion-icon>
+        <span>Dashboards</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div *ngIf="puedeIr" class="menu-item" (click)="IrUsuarios()">
+        <ion-icon name="person"></ion-icon>
+        <span>Usuarios</span>
+      </div>
+      
+      <div class="menu-item" (click)="IrListarClientes()">
+        <ion-icon name="people"></ion-icon>
+        <span>Clientes</span>
+      </div>
+
+      <div *ngIf="verProductos" class="menu-item" (click)="IraProductos()">
+        <ion-icon name="bag"></ion-icon>
+        <span>Productos</span>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item" (click)="IrMenu()">
+        <ion-icon name="arrow-undo"></ion-icon>
+        <span>Volver al Menu</span>
+      </div>
+      
+      <div class="menu-item" (click)="cerrarSesion()">
+        <ion-icon name="log-out"></ion-icon>
+        <span>Cerrar Sesión</span>
+      </div>
+    </div>
+  </div>
 </ion-content>

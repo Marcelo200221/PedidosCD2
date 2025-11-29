@@ -32,7 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "10.208.215.227"
+    "10.208.215.227",
+    "172.29.61.71"
 ]
 
 
@@ -71,6 +72,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'appPedidos.urls'
 
 TEMPLATES = [
@@ -95,7 +97,6 @@ WSGI_APPLICATION = 'appPedidos.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = ''
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',

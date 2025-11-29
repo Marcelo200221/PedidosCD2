@@ -1,5 +1,4 @@
-  <ion-content class="login-page" fullscreen>
-
+<ion-content class="login-page" fullscreen>
   <div class="login-header">
     <div class="barra-superior">
         <ion-icon name="menu" class="icon-left" (click)="toggleMenu()"></ion-icon>
@@ -7,10 +6,10 @@
     <div class="barra-inferior"></div>
   </div>
 
-  <!-- Titulo Inicio de Sesión -->
-  <div class="titulo-container">
-    <h1 class="titulo-texto">Seleccione una Categoria</h1>
-  </div>
+  <div class="contenedor-principal">
+    <div class="titulo-container">
+      <h1 class="titulo-texto">Seleccione una Categoria</h1>
+    </div>
 
     <!-- Botones de hub -->
     <div class="botones">
@@ -25,7 +24,7 @@
       <ion-button *ngIf="verReportes" expand="block" class="btn-dashboard" (click)="Iradashboards()">
         Dashboards
       </ion-button>
-
+      </div>
     </div>
 
       <!-- Overlay del menú -->

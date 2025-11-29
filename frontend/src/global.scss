@@ -12,6 +12,8 @@
 
 
 /* Core CSS required for Ionic components to work properly */
+@import 'theme/variables.scss';
+@import 'theme/theme.scss';
 @import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -40,25 +42,228 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
 
 
+ion-input {
+  --highlight-color-focused: #ffffff00 !important;
+  --highlight-color-valid: #ffffff00 !important;
+  --highlight-color-invalid: #ffffff00 !important;
+}
 
 ion-app {
   --ion-background-color: #f8f7f6;
   font-family: 'Catamaran', sans-serif;
+  
 }
 
-/* Asegurar que los toasts queden sobre cualquier overlay personalizado */
+:root {
+  --ion-safe-area-top: env(safe-area-inset-top + 10px);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+ion-header, ion-toolbar, ion-title, ion-content {
+  padding-top: env(safe-area-inset-top + 10px);
+}
+
+.android ion-header, ion-toolbar, ion-title, ion-content {
+  padding-top: env(safe-area-inset-top + 10px);
+}
+
+.menu-lateral{
+  margin-top: calc(env(safe-area-inset-top));
+}
+
+.barra-superior {
+  margin-top: calc(env(safe-area-inset-top));
+}
+
+
+/* Estilos de Toasts */
+.toast-success {
+  --background: #28a745;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-error {
+  --background: #c5000f;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-warning {
+  --background: #ffc107;
+  --color: #000000;
+  --button-color: #000000;
+}
+
+.toast-info {
+  --background: #2196f3;
+  --color: #ffffff;
+  --button-color: #ffffff;
+}
+
+.toast-custom {
+  --background: #97201d;
+  --color: #f8f7f6;
+  --button-color: #f8f7f6;
+}
+
+/* Opcional: Animaciones para los toasts */
+.custom-toast {
+  font-weight: 500;
+  border-radius: 8px;
+  
+  ion-icon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+}
+
+
+/* Alertas de configuracion */
+.custom-alert {
+  --backdrop-opacity: 0.5;
+  
+  &::part(backdrop) {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+ion-alert.custom-alert {
+  --background: #ffffff;
+  --max-width: 420px;
+  --width: 90%;
+  
+  .alert-wrapper {
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    border: none !important; /* ← Sin borde rojo */
+    overflow: hidden !important;
+  }
+  
+  .alert-head {
+    padding: 25px 25px 15px !important;
+    background: linear-gradient(135deg, #6a0d0d 0%, #97201d 100%) !important;
+    
+    h2 {
+      color: #f8f7f6 !important;
+      font-size: 22px !important;
+      font-weight: 700 !important;
+      font-family: 'Catamaran', sans-serif !important;
+      text-align: center !important;
+      margin: 0 !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+  
+  .alert-message {
+    padding: 25px !important;
+    color: #000000 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    font-family: 'Catamaran', sans-serif !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    white-space: pre-line !important;
+    background: #ffffff !important;
+  }
+  
+  .alert-button-group {
+    padding: 15px 20px 20px !important;
+    background: #ffffff !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    border-top: none !important;
+  }
+  
+  button.alert-button {
+    width: 100% !important;
+    min-height: 50px !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    font-family: 'Catamaran', sans-serif !important;
+    text-transform: none !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    
+    span,
+    .alert-button-inner {
+      color: #ffffff !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    &:active {
+      transform: scale(0.98) !important;
+    }
+  }
+  
+  button.alert-button-confirm {
+    background: #97201d !important;
+    
+    &:hover {
+      background: #7a1a17 !important;
+      box-shadow: 0 4px 12px rgba(151, 32, 29, 0.4) !important;
+    }
+  }
+  
+  button.alert-button-cancel {
+    background: #9e9e9e !important;
+    
+    &:hover {
+      background: #757575 !important;
+      box-shadow: 0 4px 12px rgba(158, 158, 158, 0.4) !important;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  ion-alert.custom-alert {
+    --width: 95%;
+    
+    .alert-head h2 {
+      font-size: 20px !important;
+    }
+    
+    .alert-message {
+      font-size: 15px !important;
+      padding: 20px !important;
+    }
+    
+    button.alert-button {
+      font-size: 16px !important;
+      min-height: 48px !important;
+      height: 48px !important;
+    }
+  }
+}
+
 ion-toast {
-  z-index: 11000 !important;
+  --background: var(--ion-color-dark, #222);
+  --color: white;
+  z-index: 999999 !important;      /* más alto aún */
+  position: fixed !important;       /* fuerza overlay REAL */
+  top: calc( env(safe-area-inset-top) + 15px ) !important;
 }
 
-/* Stacking para toasts en top */
-.notif-toast {
+/* Corregir clases personalizadas */
+.toast-success,
+.toast-error,
+.toast-warning,
+.toast-info,
+.toast-custom {
   position: fixed !important;
-  top: calc(env(safe-area-inset-top) + 12px) !important;
+  top: calc(env(safe-area-inset-top) + 15px) !important;
+  z-index: 999999 !important;
 }
-.notif-offset-0 { margin-top: 0 !important; }
-.notif-offset-1 { margin-top: 64px !important; }
-.notif-offset-2 { margin-top: 128px !important; }
-.notif-offset-3 { margin-top: 192px !important; }
-.notif-offset-4 { margin-top: 256px !important; }
-.notif-offset-5 { margin-top: 320px !important; }
