@@ -113,5 +113,4 @@ export async function removeItem(key: string): Promise<void> {
 // Helpers específicos para token
 const TOKEN_KEY = 'auth_token';
 export const getToken = () => getItem(TOKEN_KEY);
-export const setToken = (v: string) => setItem(TOKEN_KEY, v);
 export const removeToken = () => removeItem(TOKEN_KEY);

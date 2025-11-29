@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, 
-  IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonButton, IonIcon,
+import { IonContent, IonCard, IonCardHeader, 
+  IonCardTitle, IonCardContent, IonIcon,
   IonSpinner} from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { pieChart, statsChart, refresh, hourglassOutline, checkmarkCircleOutline, timeOutline, checkmarkDoneOutline, 
   chevronUpCircle, pencil, addCircle, removeCircle, filter, menu, close, trashBin, checkmarkCircle, search,
   documentText, cube, calculator, scale, eye, closeCircle, send, logOut, barChart, people, personAdd, arrowUndo, 
@@ -105,7 +104,7 @@ export class DashboardPage implements OnInit {
     'completado': 'Completado'
   };
 
-  constructor(private api: ApiService, private router: Router, private http: HttpClient, private notificaciones: NotificacionService) {}
+  constructor(private api: ApiService, private router: Router, private notificaciones: NotificacionService) {}
 
   async ngOnInit() {
     //Solo cargar datos del usuario una vez

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonHeader, IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, IonList, IonItem, IonLabel, IonIcon, IonInput, 
+import {  IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton, IonList, IonItem, IonLabel, IonIcon, IonInput, 
   IonCheckbox, IonSelect, IonSelectOption, IonSpinner} from '@ionic/angular/standalone';
 import { ApiService } from '../services/api.spec';
 import { addIcons } from 'ionicons';
@@ -24,7 +24,7 @@ export interface Producto {
 
 export interface Pedido {
   id: number;
-  nombre: string;
+  nombre?: string;
   cliente: string;
   clienteId?: string;
   direccion: string;
@@ -50,7 +50,7 @@ addIcons({
   imports: [
     FormsModule,
     CommonModule,
-    IonHeader, IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton,
+     IonContent, IonButton, IonSearchbar, IonFab, IonFabList, IonFabButton,
     IonList, IonItem, IonIcon, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonSpinner
   ]
 })
@@ -82,7 +82,6 @@ export class PedidosPage implements OnInit {
   //Variables de nuevo pedido
   nuevoPedido: Pedido = {
     id: 0,
-    nombre: '',
     cliente: '',
     direccion: '',
     productos: []
@@ -300,15 +299,21 @@ async cargarClientesDisponibles() {
       estado = todosTienenPesos ? 'listo_facturar' : 'pendiente_pesos';
     }
 
+    const nombrePedido = pedidosBackend.nombre || `Pedido ${pedidosBackend.id}`;
+
     return {
       id: pedidosBackend.id,
-      nombre: `pedido ${pedidosBackend.id}`,
+      nombre: nombrePedido,
       cliente: (pedidosBackend.cliente && (pedidosBackend.cliente.nombre || pedidosBackend.cliente.razon_social)) || 'Cliente por defecto',
       direccion: pedidosBackend.direccion,
       productos: productos,
       seleccionado: false,
       estado: estado
     };
+  }
+
+  private obtenerNombrePedido(pedido: Pedido): string {
+    return pedido.nombre ?? `Pedido ${pedido.id}`;
   }
 
 
@@ -357,7 +362,8 @@ async cargarClientesDisponibles() {
       }
       
       //Buscar por ID/nombre del pedido
-      if (pedido.nombre.toLowerCase().includes(termino)) {
+      const nombrePedido = this.obtenerNombrePedido(pedido);
+      if (nombrePedido.toLowerCase().includes(termino)) {
         return true;
       }
       
@@ -404,10 +410,6 @@ async cargarClientesDisponibles() {
 
   //Funcion de validacion
   //Validacion: Nombre pedido
-  actualizarNombrePedido(event: any) {
-    this.nuevoPedido.nombre = event.target.value;
-    this.underlineNombrePedido = this.nuevoPedido.nombre.length > 0 ? '#28a745' : '#cccccc';
-  }
 
   //Validacion: Cliente
   actualizarCliente(event: any) {
@@ -615,10 +617,6 @@ async cargarClientesDisponibles() {
   }
 
   async guardarPedido() {
-    if (!this.nuevoPedido.nombre.trim()) {
-      await this.notificaciones.showWarning('Ingresa el nombre del pedido');
-      return;
-    }
     
     if (!this.nuevoPedido.cliente || this.nuevoPedido.cliente.trim().length < 3) {
       await this.notificaciones.showWarning('Selecciona un cliente válido'); 
@@ -668,7 +666,7 @@ async cargarClientesDisponibles() {
         
         await this.cargarPedidosDesdeBackend(); 
         
-        this.nuevoPedido = { id: 0, nombre: '', cliente: '', direccion: '', productos: [] };
+        this.nuevoPedido = { id: 0, cliente: '', direccion: '', productos: [] };
         this.productosInputs = [{ id: 0, nombre: '', cajas: null }];
         this.pedidoEditandoId = undefined; 
         this.indiceEditando = -1;
@@ -794,7 +792,8 @@ async cargarClientesDisponibles() {
         if (!this.terminoBusqueda) return true;
         
         const termino = this.terminoBusqueda.toLowerCase();
-        return pedido.nombre.toLowerCase().includes(termino) ||
+        const nombrePedido = this.obtenerNombrePedido(pedido);
+        return nombrePedido.toLowerCase().includes(termino) ||
               pedido.cliente.toLowerCase().includes(termino) ||
               pedido.direccion.toLowerCase().includes(termino) ||
               pedido.productos.some(prod => prod.nombre.toLowerCase().includes(termino));
@@ -1182,7 +1181,8 @@ async cargarClientesDisponibles() {
     if (this.terminoBusqueda) {
       const termino = this.terminoBusqueda.toLowerCase();
       pedidosFiltrados = pedidosFiltrados.filter(pedido => {
-        return pedido.nombre.toLowerCase().includes(termino) ||
+        const nombrePedido = this.obtenerNombrePedido(pedido);
+        return nombrePedido.toLowerCase().includes(termino) ||
               pedido.cliente.toLowerCase().includes(termino) ||
               pedido.direccion.toLowerCase().includes(termino) ||
               pedido.productos.some(prod => prod.nombre.toLowerCase().includes(termino));
@@ -1220,7 +1220,7 @@ async cargarClientesDisponibles() {
     
     const confirmar = await this.notificaciones.showConfirm(
       `Dirección: ${pedido.direccion}`,
-      `¿Deseas enviar el ${pedido.nombre} a facturación?`,
+      `¿Deseas enviar el ${this.obtenerNombrePedido(pedido)} a facturación?`,
       'Sí, enviar',
       'Cancelar'
     );
@@ -1241,7 +1241,7 @@ async cargarClientesDisponibles() {
       this.pedidosFiltrados = [...this.pedidos];
       this.aplicarFiltros();
       
-      await this.notificaciones.showSuccess(`${pedido.nombre} enviado a facturación`);
+      await this.notificaciones.showSuccess(`${this.obtenerNombrePedido(pedido)} enviado a facturación`);
       
       
     } catch (error) {
@@ -1294,3 +1294,4 @@ async ionViewWillEnter() {
 }
 
 } 
+

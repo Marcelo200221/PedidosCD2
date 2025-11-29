@@ -1,7 +1,6 @@
 # api/views/facturas.py
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from decimal import Decimal
@@ -9,32 +8,6 @@ from django.utils import timezone
 from datetime import timedelta
 from api.utils.invoices import build_invoice_pdf
 from api.models import Pedidos
-
-class GenerarFacturaPDF(APIView):
-    permission_classes = [IsAuthenticated]  # o lo que uses
-
-    def post(self, request, *args, **kwargs):
-        data = request.data
-        pdf_bytes = build_invoice_pdf(data)
-
-        filename = f"factura-{data.get('factura_numero','SN')}.pdf"
-        resp = HttpResponse(pdf_bytes, content_type="application/pdf")
-        # Attachment para que se descargue; usa inline si quieres previsualizar
-        resp['Content-Disposition'] = f'attachment; filename="{filename}"'
-        return resp
-    
-class PreviewFacturaPDF(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def post(self, request, *args, **kwargs):
-        data = request.data
-        pdf_bytes = build_invoice_pdf(data)
-        resp = HttpResponse(pdf_bytes, content_type="application/pdf")
-        # inline => el navegador no forza descarga
-        resp['Content-Disposition'] = 'inline; filename="preview-factura.pdf"'
-        resp['Cache-Control'] = 'no-store'
-        return resp
-
 
 class GenerarFacturaPorPedido(APIView):
     permission_classes = [IsAuthenticated]

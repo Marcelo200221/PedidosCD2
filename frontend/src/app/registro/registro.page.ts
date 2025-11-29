@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.spec';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonInput, IonButton } from '@ionic/angular/standalone';
 import { NotificacionService } from '../services/notificacion.service';
 
 @Component({

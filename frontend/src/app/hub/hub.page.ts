@@ -36,7 +36,6 @@ export class HubPage implements OnInit {
   menuAbierto: boolean = false;
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
-  private avisosVistos = new Set<number>();
   private avisosTimer: any;
   puedeIr = false;
   verReportes = false;

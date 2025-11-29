@@ -1,6 +1,4 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable, onErrorResumeNext } from "rxjs";
 import { Router } from '@angular/router';
 import axios from "axios";
 import { environment } from "src/environments/environment.prod";
@@ -442,11 +440,6 @@ private async notificarPedidosEliminados(ids: number[]) {
     }
   }
 
-  async getNombreCompleto(): Promise<string> {
-    const usuario = await this.getUsuarioActual();
-    return usuario ? `${usuario.nombre ?? ''} ${usuario.apellido ?? ''}`.trim() : '';
-  }
-
   async getToken(): Promise<string | null> {
     return await ssGetItem('auth_token');
   }
@@ -465,10 +458,6 @@ private async notificarPedidosEliminados(ids: number[]) {
     await ssRemoveItem('auth_token');
     await ssRemoveItem('user');
     this.router.navigate(['/home']);
-  }
-
-  getHello(){
-    return api.get("hello/");
   }
 
   getUsuarios(){
@@ -585,16 +574,6 @@ private async notificarPedidosEliminados(ids: number[]) {
 
     } catch (error) {
       console.error("Error al eliminar múltiples pedidos:", error);
-    }
-  }
-
-  async eliminarPedido(id: number){
-    try{
-      await api.delete(`pedidos/${id}/`);
-      console.log("Pedido eliminado");
-      await this.notificarPedidoEliminado(id);
-    } catch(error){
-      console.error("Se produjo un error al eliminar");
     }
   }
 
@@ -757,27 +736,5 @@ private async notificarPedidosEliminados(ids: number[]) {
     }
   }
 
-  async listarProductosMasVendidos(): Promise<any[]> {
-    try {
-      console.log('Obteniendo productos mas vendidos');
-      const res = await api.get("productos/mas-vendidos/");
-      console.log('Productos mas vendidos:', res.data);
-      return res.data;
-    } catch (error) {
-      console.error('Error al obtener productos mas vendidos:', error);
-      return [];
-    }
-  }
 
-  async listarClientesConMasPedidos(): Promise<any[]> {
-    try {
-      console.log('Obteniendo clientes con mas pedidos');
-      const res = await api.get("clientes-mas-pedidos/");
-      console.log('Clientes con mas pedidos:', res.data);
-      return res.data;
-    } catch (error) {
-      console.error('Error al obtener clientes con mas pedidos:', error);
-      return [];
-    }
-  }
 }

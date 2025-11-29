@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from .views import pedidos, views, usuarios, clientes, avisos
-from .views.facturas import GenerarFacturaPDF, PreviewFacturaPDF, GenerarFacturaPorPedido
+from .views import pedidos, usuarios, clientes, avisos
+from .views.facturas import GenerarFacturaPorPedido
 from .views.pedidos import clientes_con_mas_pedidos
 
 
@@ -9,7 +9,6 @@ router = DefaultRouter()
 router.register(r'pedidos', pedidos.PedidoViewSet, basename='pedidos')
 
 urlpatterns = [
-    path('hello/', views.hello_api, name='hello_api'),
     path('lista/usuarios', usuarios.lista_usuarios, name="lista-usuarios"),
     path('password-reset-request/', usuarios.password_reset_request),
     path('password-reset-confirm/', usuarios.password_reset_confirm),
@@ -22,8 +21,6 @@ urlpatterns = [
     path("agregar-cliente/", clientes.agregar_cliente, name="agregar-cliente"),
     path("editar/cliente/<str:pk>", clientes.editar_cliente, name="editar-cliente"),
     path("eliminar/cliente/<str:pk>/", clientes.eliminar_cliente, name="eliminar-cliente"),
-    path('facturas/preview', PreviewFacturaPDF.as_view(), name='facturas-preview'),
-    path('facturas/generar', GenerarFacturaPDF.as_view(), name='facturas-generar'),
     path('facturas/generar-por-pedido/<int:pedido_id>', GenerarFacturaPorPedido.as_view(), name='facturas-generar-por-pedido'),
     path('asignar/precio', pedidos.asignar_precio_v2, name="asignar-precio"),
     path('editar/stock', pedidos.editar_stock, name="editar-stock"),

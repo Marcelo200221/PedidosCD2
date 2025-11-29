@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonHeader, IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.spec'; 
 import { environment } from 'src/environments/environment.prod';
@@ -12,7 +12,7 @@ import { NotificacionService } from '../services/notificacion.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonContent, IonInput, IonButton, CommonModule, FormsModule]
+  imports: [ IonContent, IonInput, IonButton, CommonModule, FormsModule]
 })
 
 export class LoginPage implements OnInit {

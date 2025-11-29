@@ -1,7 +1,5 @@
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.views import APIView
-from django.shortcuts import render
 from rest_framework.response import Response
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -23,7 +21,6 @@ def password_reset_request(request):
             user = Usuario.objects.get(email=email)
             reset_code = PasswordResetCode.objects.create(user=user)
             
-            # Texto sin caracteres especiales para prueba
             subject = 'Código de recuperación'
             plain_message = f'Tu código de verificación es: {reset_code.code}'
             html_message = render_to_string(

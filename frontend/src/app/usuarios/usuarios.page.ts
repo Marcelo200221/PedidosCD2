@@ -32,14 +32,11 @@ addIcons({
       IonList, IonItem, IonIcon, IonLabel]
 })
 export class UsuariosPage implements OnInit {
-  puedeEditar = false;
 
   //Variables del menú
   menuAbierto: boolean = false;
   nombreUsuario: string = '';
   apellidoUsuario: string = '';
-  private avisosVistos = new Set<number>();
-  private avisosTimer: any;
   puedeIr = false;
   verReportes = false;
   verProductos = false;

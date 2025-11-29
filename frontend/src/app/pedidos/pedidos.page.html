@@ -337,16 +337,6 @@
 
     <div class="seccion-pedido">
       <h2 class="titulo-seccion">Información del Pedido</h2>
-      
-      <div class="input-container">
-        <h1 class="titulos-small">Nombre del pedido</h1>
-        <ion-input 
-          placeholder="Ingrese nombre del pedido" 
-          [(ngModel)]="nuevoPedido.nombre"
-          (ionInput)="actualizarNombrePedido($event)">
-        </ion-input>
-        <div class="underline" [ngStyle]="{'background-color': underlineNombrePedido}"></div>
-      </div>
 
       <div class="input-container">
         <h1 class="titulos-small">Cliente</h1>
