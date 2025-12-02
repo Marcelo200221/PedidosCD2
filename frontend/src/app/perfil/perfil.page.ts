@@ -112,7 +112,6 @@ export class PerfilPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');

@@ -217,14 +217,6 @@ export class RegistroPage implements OnInit {
   );
   
 
-  //Si todo esta bien
-  console.log('Registro válido:', {
-    nombre: this.nombre,
-    apellido: this.apellido,
-    rut: this.rut,
-    correo: this.correo,
-    password: this.password
-  });
 }
 
   ngOnInit() {

@@ -136,7 +136,6 @@ export class DashboardPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');
       this.router.navigate(['/login']);
@@ -445,7 +444,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
         return enRango;
       });
 
-      console.log(`Pedidos filtrados: ${pedidosFiltrados.length} de ${pedidos.length}`);
 
       const conteoEstados: { [key: string]: number } = {
         'pendiente_pesos': 0,
@@ -476,7 +474,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
         this.estadisticas[0].porcentaje = 100;
       }
 
-      console.log('Estadísticas filtradas:', this.estadisticas);
 
     } catch (error) {
       console.error('Error al cargar estadísticas con filtro:', error);
@@ -485,7 +482,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
 
   async cargarProductosMasVendidosConFiltro() {
     try {
-      console.log('Cargando productos más vendidos con filtro...');
       const pedidos = await this.api.listarPedidos();
       
       const pedidosFiltrados = pedidos.filter((pedido: any) => {
@@ -503,7 +499,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
         return enRango && completado;
       });
 
-      console.log(`Pedidos completados filtrados: ${pedidosFiltrados.length} de ${pedidos.length}`);
 
       const conteoProductos: { [key: string]: { nombre: string, cantidad: number } } = {};
 
@@ -530,7 +525,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
       const colores = ['#4CAF50', '#2196F3', '#FF9800', '#E91E63', '#9C27B0', '#00BCD4'];
 
       if (productosArray.length === 0) {
-        console.log('No hay productos en el rango de fechas seleccionado');
         this.productosVendidos = [];
         this.maxCantidadProducto = 0;
         return;
@@ -555,7 +549,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
 
   async cargarClientesConMasPedidosConFiltro() {
     try {
-      console.log('Cargando clientes con más pedidos con filtro...');
       const pedidos = await this.api.listarPedidos();
       
       const pedidosFiltrados = pedidos.filter((pedido: any) => {
@@ -597,7 +590,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
       const colores = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F'];
 
       if (clientesArray.length === 0) {
-        console.log('No hay clientes en el rango de fechas seleccionado');
         this.clientesPedidos = [];
         this.maxCantidadCliente = 0;
         return;
@@ -613,7 +605,6 @@ private filtrarPedidosDelDia(pedidos: any[]): any[] {
         color: colores[index % colores.length]
       }));
 
-      console.log('Clientes procesados:', this.clientesPedidos);
 
     } catch (error) {
       console.error('Error cargando clientes con filtro:', error);

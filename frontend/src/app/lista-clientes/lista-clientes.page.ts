@@ -52,7 +52,6 @@ export class ListaClientesPage implements OnInit {
     this.cargarDatosUsuario();
     this.puedeEditar = await this.permisos.checkPermission('editar_clientes')
     const response = await this.api.listarClientes()
-    console.log("Respuesta del backend", response)
     this.clientes = response;
     // Inicializa el servicio de avisos si hay sesión
     try { await this.notificaciones.start(); } catch {}
@@ -84,7 +83,6 @@ export class ListaClientesPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');

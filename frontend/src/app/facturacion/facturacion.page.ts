@@ -101,7 +101,6 @@ export class FacturacionPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');
@@ -119,9 +118,7 @@ export class FacturacionPage implements OnInit {
         .filter((pedido: any) => pedido.estado === 'pendiente_confirmacion')
         .map((pedido: any) => this.mapearPedidoBackend(pedido));
       
-      this.pedidosFiltrados = [...this.pedidos];
-      console.log('Pedidos pendientes de confirmación:', this.pedidos);
-      
+      this.pedidosFiltrados = [...this.pedidos];      
     } catch (error) {
       console.error('Error al cargar pedidos:', error);
       await this.notificaciones.showError('Error al cargar los pedidos de facturación');

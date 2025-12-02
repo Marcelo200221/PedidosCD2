@@ -92,7 +92,6 @@ export class HubPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
       // Iniciar avisos solo cuando hay usuario en IndexedDB (login hecho)
       this.iniciarAvisos();
     } else {

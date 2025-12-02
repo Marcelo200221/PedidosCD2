@@ -67,7 +67,6 @@ export class UsuariosPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');
@@ -78,7 +77,6 @@ export class UsuariosPage implements OnInit {
   async ngOnInit() {
     const res = await this.api.getUsuarios()
     this.usuarios = res.data
-    console.log(this.usuarios)
     this.verProductos = await this.permisos.checkPermission('view_productos')
     this.puedeIr = await this.permisos.checkPermission('view_usuarios')
     this.verReportes = await this.permisos.checkPermission('view_reportes')

@@ -224,12 +224,6 @@ export class ClientesPage implements OnInit {
     
   
     //Si todo esta bien
-    console.log('Cliente ingresado con exito:', {
-      nombre: this.nombre,
-      rut: this.rut,
-      direccion: this.direccion,
-      razonSocial: this.razonSocial
-    });
     await this.notificaciones.showSuccess('Cliente ingresado con éxito');
   }
 
@@ -238,7 +232,6 @@ export class ClientesPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');
@@ -254,7 +247,6 @@ export class ClientesPage implements OnInit {
       this.notificaciones.start();
       // Inicializa el servicio de avisos si hay sesión
       try { await this.notificaciones.start(); } catch {}
-      console.log("Data del usuario", this.activeRouter.snapshot.params['id'])
       if(this.cliente){
         const infoCliente = await this.api.infoCliente(this.cliente)
 

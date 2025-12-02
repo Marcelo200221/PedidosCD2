@@ -305,8 +305,6 @@ private async notificarPedidosEliminados(ids: number[]) {
       directory,
       recursive: true
     });
-
-    console.log(`Archivo guardado en: ${result.uri}`);
     
     // Retornar la URI del archivo para abrirlo después
     return result.uri;
@@ -340,14 +338,6 @@ private async notificarPedidosEliminados(ids: number[]) {
     password: string
   ) {
     try {
-      console.log("Enviando datos de registro:", { 
-        rut, 
-        first_name: nombre, 
-        last_name: apellido, 
-        email,
-        password1: '***',
-        password2: '***'
-      });
       
       const response = await api.post("registration/", {
         rut: rut,
@@ -358,7 +348,6 @@ private async notificarPedidosEliminados(ids: number[]) {
         password2: password
       });
       
-      console.log("Respuesta del registro:", response.data);
       
       const access = response.data.token.access || response.data.access;
       
@@ -366,7 +355,7 @@ private async notificarPedidosEliminados(ids: number[]) {
         await ssSetItem('auth_token', access);
         this.router.navigate(['/hub']);
       } else {
-        console.log("Estructura de respuesta:", response.data);
+        alert("Por favor inicia sesión")
       }
       
     } catch (error: any) {
@@ -404,7 +393,6 @@ private async notificarPedidosEliminados(ids: number[]) {
     }).then(response => {
       const access = response.data.token.access;
       const user = response.data.user;
-      console.log(response.data)
       
       if(access){
         ssSetItem('auth_token', access)
@@ -417,7 +405,6 @@ private async notificarPedidosEliminados(ids: number[]) {
   async darPermisos(id: string){
     try{
       await api.put(`dar/permisos/${id}`)
-      console.log("Permisos de administrador asignados ")
     } catch(error){
       console.error(error)
     }
@@ -461,7 +448,6 @@ private async notificarPedidosEliminados(ids: number[]) {
   }
 
   getUsuarios(){
-    console.log("Obteniendo Usuarios")
     return api.get("lista/usuarios")
   }
 
@@ -486,18 +472,12 @@ private async notificarPedidosEliminados(ids: number[]) {
   }
 
   async cambiarPassword(codigo: string, nuevaPassword: string, confirmarPassword: string): Promise<any>{
-    console.log("Enviando cambio de contraseña:", {
-      code: codigo,
-      new_password: '***',
-      confirm_password: '***'
-    });
     
     return await api.post("password-reset-change/", {
       code: codigo,
       new_password: nuevaPassword,
       confirm_password: confirmarPassword
     }).then(response => {
-      console.log("Respuesta del cambio:", response.data);
       return response.data;
     }).catch(error => {
       console.error("Error en cambio de contraseña:", error);
@@ -510,7 +490,6 @@ private async notificarPedidosEliminados(ids: number[]) {
     producto_id: Number, cajas: {peso: Number, etiqueta?: String}[]
   }[]){
     try{
-      console.log("Creando pedido con: ", {direccion, fechaEntrega, lineas})
 
       const res = await api.post("pedidos/", {
         cliente: cliente,
@@ -519,7 +498,6 @@ private async notificarPedidosEliminados(ids: number[]) {
         lineas: lineas
       });
 
-      console.log("Pedido creado correctamente: ", res.data)
       await this.notificarPedidoCreado(res.data.id, String(cliente));
       return res.data
     }catch(error: any){
@@ -561,7 +539,7 @@ private async notificarPedidosEliminados(ids: number[]) {
       pedidos = res.data;
       return pedidos
     } catch(error){
-      console.log(error);
+      console.error(error);
     }
   }
 
@@ -580,7 +558,6 @@ private async notificarPedidosEliminados(ids: number[]) {
   async editarPedido(id: number, pedido: object){
     try{
       await api.put(`pedidos/${id}/`, pedido)
-      console.log('Pedido editado con exito');
     } catch(error){
       console.error('Error al editar pedido');
     }
@@ -596,8 +573,6 @@ private async notificarPedidosEliminados(ids: number[]) {
         throw new Error('Pedido no encontrado');
       }
 
-      console.log('Pedido original del backend:', pedidoOriginal);
-      console.log('Fecha de entrega original:', pedidoOriginal.fecha_entrega);
 
       const payload = {
         direccion: pedidoOriginal.direccion,
@@ -613,7 +588,6 @@ private async notificarPedidosEliminados(ids: number[]) {
       };
 
       const response = await api.put(`pedidos/${id}/`, payload);
-      console.log('Pesos guardados con éxito');
       return response;
     } catch(error) {
       console.error('Error al guardar pesos:', error);
@@ -649,7 +623,6 @@ private async notificarPedidosEliminados(ids: number[]) {
     try{
       const res = await api.get("lista/clientes");
       clientes = res.data
-      console.log(clientes)
       return clientes;
     } catch(error) {
       console.error(error);
@@ -667,7 +640,6 @@ private async notificarPedidosEliminados(ids: number[]) {
         direccion: data.direccion ?? '',
         razonSocial: data.razon_social ?? data.razonSocial ?? ''
       };
-      console.log('Cliente (normalizado):', normalizado);
       return normalizado;
     } catch(error){
       console.error(error);
@@ -691,10 +663,8 @@ private async notificarPedidosEliminados(ids: number[]) {
 
   async actualizarEstadoPedido(id: number, estado: string) {
     try {
-      console.log(`Actualizando estado del pedido ${id} a: ${estado}`);
       const payload = { estado } as any;
       const updateResponse = await api.patch(`pedidos/${id}/`, payload);
-      console.log('Estado actualizado exitosamente');
       return updateResponse;
     } catch (error: any) {
       console.error('Error completo:', error);

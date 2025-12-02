@@ -57,7 +57,6 @@ export class ProductosPage implements OnInit {
     if (usuario) {
       this.nombreUsuario = usuario.nombre;
       this.apellidoUsuario = usuario.apellido;
-      console.log('Usuario cargado:', usuario); 
     } else {
       //Si no hay usuario, redirigir al login
       console.warn('No hay usuario en IndexedDB, redirigiendo al login');
@@ -80,13 +79,11 @@ export class ProductosPage implements OnInit {
   editarStock(){
     this.editPrecio = false;
     this.editStock = true;
-    console.log(this.editPrecio, this.editStock)
   }
 
   editarPrecio(){
     this.editPrecio = true;
     this.editStock = false;
-    console.log(this.editPrecio, this.editStock)
   }
 
   cerrarModal() {

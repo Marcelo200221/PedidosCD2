@@ -66,7 +66,6 @@ export class OlvidoPage implements OnInit {
 
       //Si el correo es válido
       this.api.recuperarPassword(this.correo);
-      console.log('Código enviado a: ' + this.correo);
       alert('Codigo enviado a: ' + this.correo);
       this.mostrarCodigo = true; 
 }
@@ -163,7 +162,6 @@ validarCodigo() {
       this.confirmPassword
     );
     
-    console.log("Contraseña cambiada:", response);
     alert('Contraseña cambiada exitosamente.');
     this.mostrarNuevaContrasenia = false;
     this.router.navigate(['/login']);

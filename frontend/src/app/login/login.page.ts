@@ -113,11 +113,8 @@ export class LoginPage implements OnInit {
     this.isLoading = true;
     
     try {
-      console.log('Intentando login con RUT:', this.rut);
-      console.log("BASE URL: ", environment.apiUrl);
       
       await this.api.login(this.rut, this.password);
-      console.log('Login completado exitosamente');
       
     } catch (error: any) {
       console.error('Error en login:', error);
